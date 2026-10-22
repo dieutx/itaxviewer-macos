@@ -35,9 +35,22 @@ final class FormatterTests: XCTestCase {
                        "Quý 2 năm 2025")
         XCTAssertEqual(VietnameseFormat.period(type: "Y", period: "2024", from: nil, to: nil),
                        "Năm 2024")
+
+        // Windows reference: 01/GTGT shows "Tháng 06 năm 2025" even though the
+        // XML also carries kyKKhaiTuNgay/kyKKhaiDenNgay.
         XCTAssertEqual(VietnameseFormat.period(type: "M", period: "06/2025",
                                                from: "01/06/2025", to: "30/06/2025"),
-                       "Từ ngày 01/06/2025 đến ngày 30/06/2025")
+                       "Tháng 06 năm 2025")
+        XCTAssertEqual(VietnameseFormat.period(type: "Q", period: "2/2025",
+                                               from: "01/04/2025", to: "30/06/2025"),
+                       "Quý 2 năm 2025")
+        XCTAssertEqual(VietnameseFormat.period(type: "Y", period: "2024",
+                                               from: "01/04/2024", to: "31/03/2025"),
+                       "Năm 2024")
+        // No recognised kieuKy: fall back to the explicit date range.
+        XCTAssertEqual(VietnameseFormat.period(type: nil, period: nil,
+                                               from: "01/01/2025", to: "31/12/2025"),
+                       "Từ ngày 01/01/2025 đến ngày 31/12/2025")
     }
 
     func testHTMLEscaping() {
@@ -81,6 +94,46 @@ final class RendererTests: XCTestCase {
         XCTAssertTrue(rendered.html.contains("1.500.000.000"))
         XCTAssertTrue(rendered.html.contains("95.000.000"))
         XCTAssertTrue(rendered.html.contains("NVuKhauTruThue") == false)
+    }
+
+    func testHeaderPeriodMatchesWindowsReference() throws {
+        let (_, _, gtgt) = try render("gtgt_842_return")
+        XCTAssertTrue(gtgt.html.contains("Tháng 06 năm 2025"))
+        XCTAssertFalse(gtgt.html.contains("Từ ngày 01/06/2025 đến ngày 30/06/2025"))
+
+        let (_, _, tndn) = try render("tndn_892_03tndn_v2.9.4")
+        XCTAssertTrue(tndn.html.contains("Năm 2024"))
+        XCTAssertFalse(tndn.html.contains("Năm 2024 Từ 01/04/2024"))
+    }
+
+    func testQTTAuthorisationSectionNumbering() throws {
+        let registry = try FormRegistry.bundled()
+        let spec = try XCTUnwrap(registry.spec(for: "05/QTT-TNCN"))
+        XCTAssertEqual(spec.rows.first { $0.indicator == "35" }?.stt, "1")
+        XCTAssertEqual(spec.rows.first { $0.indicator == "36" }?.stt, "2")
+    }
+
+    func testParentRowsAreEmphasisedLikeTheWindowsRenderer() throws {
+        let (_, _, gtgt) = try render("gtgt_842_return")
+        XCTAssertTrue(gtgt.html.contains("<tr class=\"summary\">"))
+        XCTAssertTrue(gtgt.html.contains("tr.section td, tr.summary td, tr.check-row td { font-weight: bold; }"))
+
+        let (_, _, kk) = try render("tncn_394_05kk_tt92")
+        XCTAssertTrue(kk.html.contains("<tr class=\"summary\">"))
+        XCTAssertTrue(kk.html.contains("<tr class=\"summary\"><td class=\"c\">1</td>"))
+    }
+
+    func testPrintCSSAllowsPageBreaksInsideTables() throws {
+        let (_, _, rendered) = try render("gtgt_842_return")
+        XCTAssertTrue(rendered.html.contains("thead { display: table-header-group; }"))
+        XCTAssertTrue(rendered.html.contains("tr { page-break-inside: avoid; break-inside: avoid; }"))
+        XCTAssertFalse(rendered.html.contains("tbody, thead { page-break-inside: avoid; }"))
+    }
+
+    func testGTGTTableHeaderGroupsValueColumns() throws {
+        let (_, _, rendered) = try render("gtgt_842_return")
+        XCTAssertTrue(rendered.html.contains("<th colspan=\"2\">Giá trị hàng hóa, dịch vụ"))
+        XCTAssertTrue(rendered.html.contains("<th colspan=\"2\">Thuế giá trị gia tăng</th>"))
     }
 
     func testGenericVoucherPreservesSourceFields() throws {

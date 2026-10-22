@@ -14,14 +14,19 @@ final class ExternalFixturesTests: XCTestCase {
             throw XCTSkip("Set ITAX_FIXTURE_DIR to a local folder of tax XML files")
         }
         let directory = URL(fileURLWithPath: (configured as NSString).expandingTildeInPath)
-        let contents = try FileManager.default.contentsOfDirectory(
+        var files: [URL] = []
+        // `test-data/` and real sample folders keep files in subdirectories, so
+        // walk recursively instead of only looking at the top level.
+        if let walker = FileManager.default.enumerator(
             at: directory,
             includingPropertiesForKeys: [.isRegularFileKey],
             options: [.skipsHiddenFiles]
-        )
-        let files = contents
-            .filter { $0.pathExtension.lowercased() == "xml" }
-            .sorted { $0.lastPathComponent < $1.lastPathComponent }
+        ) {
+            for case let url as URL in walker where url.pathExtension.lowercased() == "xml" {
+                files.append(url)
+            }
+        }
+        files.sort { $0.lastPathComponent < $1.lastPathComponent }
 
         XCTAssertFalse(files.isEmpty, "No .xml files in \(directory.path)")
 

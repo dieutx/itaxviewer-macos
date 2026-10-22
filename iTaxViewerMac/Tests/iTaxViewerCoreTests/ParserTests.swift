@@ -39,6 +39,32 @@ final class ParserTests: XCTestCase {
         }
     }
 
+    func testRejectsDoctypeHiddenBehindLargeComment() {
+        // XML allows comments/PIs before the DOCTYPE. A 1 MB prefix scan used
+        // to miss this; the whole-file byte scan must still reject it.
+        let padding = String(repeating: "a", count: 1_100_000)
+        let xml = "<!--\(padding)--><!DOCTYPE HSoThueDTu [<!ENTITY x \"y\">]><HSoThueDTu/>"
+        XCTAssertThrowsError(try SecureXMLParser.parse(data: Data(xml.utf8))) { error in
+            XCTAssertEqual(error as? XMLInspectionError, XMLInspectionError.doctypeForbidden)
+        }
+    }
+
+    func testRejectsDoctypeInUTF16() {
+        let xml = "<?xml version=\"1.0\" encoding=\"UTF-16\"?><!DOCTYPE HSoThueDTu><HSoThueDTu/>"
+        let data = xml.data(using: .utf16LittleEndian)!
+        XCTAssertThrowsError(try SecureXMLParser.parse(data: data)) { error in
+            XCTAssertEqual(error as? XMLInspectionError, XMLInspectionError.doctypeForbidden)
+        }
+    }
+
+    func testRejectsTooManyNodes() {
+        let xml = "<r>" + String(repeating: "<i/>", count: 40) + "</r>"
+        let limits = XMLSecurityLimits(maxNodes: 10)
+        XCTAssertThrowsError(try SecureXMLParser.parse(data: Data(xml.utf8), limits: limits)) { error in
+            XCTAssertEqual(error as? XMLInspectionError, XMLInspectionError.tooManyNodes(limit: 10))
+        }
+    }
+
     func testRejectsMalformedXML() {
         let data = Data("<HSoThueDTu><unclosed>".utf8)
         XCTAssertThrowsError(try SecureXMLParser.parse(data: data))

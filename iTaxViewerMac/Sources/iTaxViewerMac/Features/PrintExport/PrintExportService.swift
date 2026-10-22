@@ -1,5 +1,5 @@
 import AppKit
-import WebKit
+@preconcurrency import WebKit
 import UniformTypeIdentifiers
 import iTaxViewerCore
 

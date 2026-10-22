@@ -83,9 +83,9 @@ public final class HTMLRenderer {
         var s = "<table class=\"tax-table gtgt\">"
         s += "<colgroup><col style=\"width:6%\"><col><col style=\"width:9%\"><col style=\"width:22%\"><col style=\"width:9%\"><col style=\"width:22%\"></colgroup>"
         s += "<thead><tr>"
-        s += "<th>STT</th><th>Chỉ tiêu</th><th>Mã</th>"
-        s += "<th>Giá trị hàng hóa, dịch vụ<br/>(chưa có thuế GTGT)</th>"
-        s += "<th>Mã</th><th>Thuế giá trị gia tăng</th>"
+        s += "<th>STT</th><th>Chỉ tiêu</th>"
+        s += "<th colspan=\"2\">Giá trị hàng hóa, dịch vụ<br/>(chưa có thuế GTGT)</th>"
+        s += "<th colspan=\"2\">Thuế giá trị gia tăng</th>"
         s += "</tr></thead><tbody>"
 
         for row in spec.rows {
@@ -109,7 +109,7 @@ public final class HTMLRenderer {
             let codes = padded(row.codes, to: 2)
             let v1 = values.count > 0 ? format(values[0]) : ""
             let v2 = values.count > 1 ? format(values[1]) : ""
-            s += "<tr>"
+            s += row.kind == "summary" ? "<tr class=\"summary\">" : "<tr>"
             s += "<td class=\"c\">\(esc(stt))</td>"
             if values.count <= 1 {
                 // Single amount: the original template spans the label over the
@@ -150,7 +150,10 @@ public final class HTMLRenderer {
             let indicator = row.indicator
             let unit = unitFor(indicator: indicator, displayCode: spec.displayCode)
             let value = row.values.first.map { resolve($0, context: context) } ?? ""
-            s += "<tr>"
+            // Parent rows (1, 2, 3…) are bold in the official 05/KK and
+            // 05/QTT layouts; sub-items (2.1, 5.3…) stay regular.
+            let isSummary = !stt.isEmpty && !stt.contains(".")
+            s += isSummary ? "<tr class=\"summary\">" : "<tr>"
             s += "<td class=\"c\">\(esc(stt))</td>"
             s += "<td>\(esc(row.label))</td>"
             s += "<td class=\"c code\">\(codeCell(indicator))</td>"
@@ -587,7 +590,8 @@ public final class HTMLRenderer {
         .masthead { width: 100%; border-collapse: collapse; }
         .masthead td { vertical-align: top; border: none; padding: 0; }
         .national { width: 68%; text-align: center; font-size: 11.5pt; line-height: 1.35; }
-        .form-id { width: 32%; text-align: center; font-size: 10pt; }
+        .form-id { width: 32%; text-align: center; font-size: 10pt;
+                    border: 1px solid #000 !important; padding: 4px 6px; }
         .form-code { font-size: 11pt; }
         .form-desc { font-size: 8.5pt; font-style: italic; margin-top: 3px; line-height: 1.25; }
         .doc-title { text-align: center; font-size: 15pt; font-weight: bold; margin: 12px 0 2px 0;
@@ -606,7 +610,7 @@ public final class HTMLRenderer {
             border: 1px solid #000; padding: 3px 4px; vertical-align: middle; font-size: 10.5pt; line-height: 1.25;
         }
         table.tax-table th, table.data-table th { text-align: center; font-weight: bold; background: #fff; }
-        tr.section td { font-weight: bold; }
+        tr.section td, tr.summary td, tr.check-row td { font-weight: bold; }
         td.c, th.c { text-align: center; }
         td.r { text-align: right; white-space: nowrap; }
         td.code { white-space: nowrap; font-weight: bold; }
@@ -627,8 +631,14 @@ public final class HTMLRenderer {
           .paper { width: auto !important; max-width: none !important; margin: 0 !important; padding: 0 !important;
                    box-shadow: none !important; }
           .no-print { display: none !important; }
-          tr, td, th, tbody, thead { page-break-inside: avoid; }
+          /* Keep individual rows intact, but let the table body break between
+             rows. Avoid on tbody/thead pushes the whole table to a new page
+             and leaves page 1 nearly blank. */
+          tr { page-break-inside: avoid; break-inside: avoid; }
+          td, th { page-break-inside: avoid; break-inside: avoid; }
+          tr.section { page-break-after: avoid; }
           thead { display: table-header-group; }
+          .doc-header { page-break-after: avoid; }
         }
         </style>
         </head>

@@ -1,5 +1,5 @@
 import SwiftUI
-import WebKit
+@preconcurrency import WebKit
 
 @MainActor
 final class WebViewStore: ObservableObject {

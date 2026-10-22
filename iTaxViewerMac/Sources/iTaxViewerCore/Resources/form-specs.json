@@ -39,7 +39,7 @@
       "path": "ct22"
      }
     ],
-    "kind": "row"
+    "kind": "summary"
    },
    {
     "stt": "C",
@@ -992,7 +992,7 @@
     "kind": "row"
    },
    {
-    "stt": "1",
+    "stt": "2",
     "label": "Tổng số thuế thu nhập cá nhân đã khấu trừ",
     "indicator": "36",
     "codes": [

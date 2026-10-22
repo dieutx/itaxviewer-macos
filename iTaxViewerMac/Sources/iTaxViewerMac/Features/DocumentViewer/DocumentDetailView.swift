@@ -2,7 +2,6 @@ import SwiftUI
 import AppKit
 import Combine
 import UniformTypeIdentifiers
-import WebKit
 import iTaxViewerCore
 
 struct DocumentDetailView: View {
