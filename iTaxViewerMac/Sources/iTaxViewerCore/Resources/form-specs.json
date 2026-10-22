@@ -1,0 +1,2151 @@
+[
+ {
+  "displayCode": "01/GTGT",
+  "maTKhai": "842",
+  "versions": [
+   "2.8.3",
+   "2.7.4",
+   "2.6.8",
+   "2.5.1"
+  ],
+  "sourceTemplate": "TKhai_GTGT_01_TT80.xslt",
+  "columns": [
+   "STT",
+   "Chỉ tiêu",
+   "Giá trị hàng hóa, dịch vụ (chưa có thuế giá trị gia tăng)",
+   "Thuế giá trị gia tăng"
+  ],
+  "rows": [
+   {
+    "stt": "A",
+    "label": "Không phát sinh hoạt động mua, bán trong kỳ (đánh dấu \"X\")",
+    "indicator": "21",
+    "codes": [
+     "21"
+    ],
+    "values": [],
+    "kind": "checkbox"
+   },
+   {
+    "stt": "B",
+    "label": "Thuế giá trị gia tăng còn được khấu trừ kỳ trước chuyển sang",
+    "indicator": "22",
+    "codes": [
+     "22"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ct22"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "C",
+    "label": "Kê khai thuế giá trị gia tăng phải nộp ngân sách nhà nước",
+    "indicator": "",
+    "codes": [],
+    "values": [],
+    "kind": "section"
+   },
+   {
+    "stt": "I",
+    "label": "Hàng hoá, dịch vụ mua vào trong kỳ",
+    "indicator": "",
+    "codes": [],
+    "values": [],
+    "kind": "section"
+   },
+   {
+    "stt": "1",
+    "label": "Giá trị và thuế giá trị gia tăng của hàng hóa, dịch vụ mua vào",
+    "indicator": "23",
+    "codes": [
+     "23",
+     "24"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "GiaTriVaThueGTGTHHDVMuaVao/ct23"
+     },
+     {
+      "root": "tkchinh",
+      "path": "GiaTriVaThueGTGTHHDVMuaVao/ct24"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "",
+    "label": "Trong đó: hàng hóa, dịch vụ nhập khẩu",
+    "indicator": "23a",
+    "codes": [
+     "23a",
+     "24a"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "HangHoaDichVuNhapKhau/ct23a"
+     },
+     {
+      "root": "tkchinh",
+      "path": "HangHoaDichVuNhapKhau/ct24a"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "2",
+    "label": "Thuế giá trị gia tăng của hàng hóa, dịch vụ mua vào được khấu trừ kỳ này",
+    "indicator": "25",
+    "codes": [
+     "25"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ct25"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "II",
+    "label": "Hàng hoá, dịch vụ bán ra trong kỳ",
+    "indicator": "",
+    "codes": [],
+    "values": [],
+    "kind": "section"
+   },
+   {
+    "stt": "1",
+    "label": "Hàng hóa, dịch vụ bán ra không chịu thuế giá trị gia tăng",
+    "indicator": "26",
+    "codes": [
+     "26"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ct26"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "2",
+    "label": "Hàng hóa, dịch vụ bán ra chịu thuế giá trị gia tăng ([27]=[29]+[30]+[32]+[32a]; [28]=[31]+[33])",
+    "indicator": "27",
+    "codes": [
+     "27",
+     "28"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "HHDVBRaChiuThueGTGT/ct27"
+     },
+     {
+      "root": "tkchinh",
+      "path": "HHDVBRaChiuThueGTGT/ct28"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "a",
+    "label": "Hàng hoá, dịch vụ bán ra chịu thuế suất 0%",
+    "indicator": "29",
+    "codes": [
+     "29"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ct29"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "b",
+    "label": "Hàng hoá, dịch vụ bán ra chịu thuế suất 5%",
+    "indicator": "30",
+    "codes": [
+     "30",
+     "31"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "HHDVBRaChiuTSuat5/ct30"
+     },
+     {
+      "root": "tkchinh",
+      "path": "HHDVBRaChiuTSuat5/ct31"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "c",
+    "label": "Hàng hoá, dịch vụ bán ra chịu thuế suất 10%",
+    "indicator": "32",
+    "codes": [
+     "32",
+     "33"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "HHDVBRaChiuTSuat10/ct32"
+     },
+     {
+      "root": "tkchinh",
+      "path": "HHDVBRaChiuTSuat10/ct33"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "d",
+    "label": "Hàng hoá, dịch vụ bán ra không tính thuế",
+    "indicator": "32a",
+    "codes": [
+     "32a"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ct32a"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "3",
+    "label": "Tổng doanh thu và thuế giá trị gia tăng của hàng hóa, dịch vụ bán ra ([34]=[26]+[27]; [35]=[28])",
+    "indicator": "34",
+    "codes": [
+     "34",
+     "35"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "TongDThuVaThueGTGTHHDVBRa/ct34"
+     },
+     {
+      "root": "tkchinh",
+      "path": "TongDThuVaThueGTGTHHDVBRa/ct35"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "III",
+    "label": "Thuế giá trị gia tăng phát sinh trong kỳ ([36]=[35]-[25])",
+    "indicator": "36",
+    "codes": [
+     "36"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ct36"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "IV",
+    "label": "Điều chỉnh tăng, giảm thuế giá trị gia tăng còn được khấu trừ của các kỳ trước",
+    "indicator": "",
+    "codes": [],
+    "values": [],
+    "kind": "section"
+   },
+   {
+    "stt": "1",
+    "label": "Điều chỉnh giảm",
+    "indicator": "37",
+    "codes": [
+     "37"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ct37"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "2",
+    "label": "Điều chỉnh tăng",
+    "indicator": "38",
+    "codes": [
+     "38"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ct38"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "V",
+    "label": "Thuế giá trị gia tăng nhận bàn giao được khấu trừ trong kỳ",
+    "indicator": "39a",
+    "codes": [
+     "39a"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ct39a"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "VI",
+    "label": "Xác định nghĩa vụ thuế giá trị gia tăng phải nộp trong kỳ:",
+    "indicator": "",
+    "codes": [],
+    "values": [],
+    "kind": "section"
+   },
+   {
+    "stt": "1",
+    "label": "Thuế giá trị gia tăng phải nộp của hoạt động sản xuất kinh doanh trong kỳ {[40a]=([36]-[22]+[37]-[38]-[39a]) ≥ 0}",
+    "indicator": "40a",
+    "codes": [
+     "40a"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ct40a"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "2",
+    "label": "Thuế giá trị gia tăng mua vào của dự án đầu tư được bù trừ với thuế GTGT còn phải nộp của hoạt động sản xuất kinh doanh cùng kỳ tính thuế ([40b]≤[40a])",
+    "indicator": "40b",
+    "codes": [
+     "40b"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ct40b"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "3",
+    "label": "Thuế giá trị gia tăng còn phải nộp trong kỳ ([40]=[40a]-[40b])",
+    "indicator": "40",
+    "codes": [
+     "40"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ct40"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "4",
+    "label": "Thuế giá trị gia tăng chưa khấu trừ hết kỳ này {[41]=([36]-[22]+[37]-[38]-[39a]) ≤ 0}",
+    "indicator": "41",
+    "codes": [
+     "41"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ct41"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "4.1",
+    "label": "Thuế giá trị gia tăng đề nghị hoàn ([42] ≤ [41])",
+    "indicator": "42",
+    "codes": [
+     "42"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ct42"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "4.2",
+    "label": "Thuế giá trị gia tăng còn được khấu trừ chuyển kỳ sau ([43]=[41]-[42])",
+    "indicator": "43",
+    "codes": [
+     "43"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ct43"
+     }
+    ],
+    "kind": "row"
+   }
+  ]
+ },
+ {
+  "displayCode": "05/KK-TNCN",
+  "maTKhai": "394",
+  "versions": [
+   "2.1.6"
+  ],
+  "sourceTemplate": "TKhai_05KK_TNCN.xslt",
+  "columns": [
+   "STT",
+   "Chỉ tiêu",
+   "Mã chỉ tiêu",
+   "Đơn vị tính",
+   "Số người/Số tiền"
+  ],
+  "rows": [
+   {
+    "stt": "1",
+    "label": "Tổng số người lao động:",
+    "indicator": "21",
+    "codes": [
+     "21"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ct21"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "Trong đó: Cá nhân cư trú có hợp đồng lao động",
+    "label": "Trong đó: Cá nhân cư trú có hợp đồng lao động",
+    "indicator": "22",
+    "codes": [
+     "22"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ct22"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "2",
+    "label": "Tổng số cá nhân đã khấu trừ thuế [23]=[24]+[25]",
+    "indicator": "23",
+    "codes": [
+     "23"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ct23"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "2.1",
+    "label": "Cá nhân cư trú",
+    "indicator": "24",
+    "codes": [
+     "24"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ct24"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "2.2",
+    "label": "Cá nhân không cư trú",
+    "indicator": "25",
+    "codes": [
+     "25"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ct25"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "3",
+    "label": "Tổng thu nhập chịu thuế (TNCT) trả cho cá nhân [26]=[27]+[28]",
+    "indicator": "26",
+    "codes": [
+     "26"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ct26"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "3.1",
+    "label": "Cá nhân cư trú",
+    "indicator": "27",
+    "codes": [
+     "27"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ct27"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "3.2",
+    "label": "Cá nhân không cư trú",
+    "indicator": "28",
+    "codes": [
+     "28"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ct28"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "4",
+    "label": "Tổng TNCT trả cho cá nhân thuộc diện phải khấu trừ thuế [29]=[30]+[31]",
+    "indicator": "29",
+    "codes": [
+     "29"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ct29"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "4.1",
+    "label": "Cá nhân cư trú",
+    "indicator": "30",
+    "codes": [
+     "30"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ct30"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "4.2",
+    "label": "Cá nhân không cư trú",
+    "indicator": "31",
+    "codes": [
+     "31"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ct31"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "5",
+    "label": "Tổng số thuế thu nhập cá nhân đã khấu trừ [32]=[33]+[34]",
+    "indicator": "32",
+    "codes": [
+     "32"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ct32"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "5.1",
+    "label": "Cá nhân cư trú",
+    "indicator": "33",
+    "codes": [
+     "33"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ct33"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "5.2",
+    "label": "Cá nhân không cư trú",
+    "indicator": "34",
+    "codes": [
+     "34"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ct34"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "6",
+    "label": "Tổng TNCT từ tiền phí mua bảo hiểm nhân thọ, bảo hiểm không bắt buộc khác của doanh nghiệp bảo hiểm không thành lập tại Việt Nam cho người lao động]",
+    "indicator": "35",
+    "codes": [
+     "35"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ct35"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "7",
+    "label": "Tổng số thuế TNCN đã khấu trừ trên tiền phí mua bảo hiểm nhân thọ, bảo hiểm không bắt buộc khác của doanh nghiệp bảo hiểm không thành lập tại Việt Nam cho người lao động",
+    "indicator": "36",
+    "codes": [
+     "36"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ct36"
+     }
+    ],
+    "kind": "row"
+   }
+  ]
+ },
+ {
+  "displayCode": "05/QTT-TNCN",
+  "maTKhai": "953",
+  "versions": [
+   "2.9.3",
+   "2.8.5",
+   "2.8.4",
+   "2.8.3",
+   "2.7.9",
+   "2.5.2",
+   "2.5.1"
+  ],
+  "sourceTemplate": "TKhai_05QTT_TNCN_TT80.xslt",
+  "columns": [
+   "STT",
+   "Chỉ tiêu",
+   "Mã chỉ tiêu",
+   "Đơn vị tính",
+   "Số người/ Số tiền"
+  ],
+  "rows": [
+   {
+    "stt": "1",
+    "label": "Tổng số người lao động:",
+    "indicator": "16",
+    "codes": [
+     "16"
+    ],
+    "values": [
+     {
+      "root": "ktru",
+      "path": "ct16"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "Trong đó: Cá nhân cư trú có hợp đồng lao động",
+    "label": "Trong đó: Cá nhân cư trú có hợp đồng lao động",
+    "indicator": "17",
+    "codes": [
+     "17"
+    ],
+    "values": [
+     {
+      "root": "ktru",
+      "path": "ct17"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "2",
+    "label": "Tổng số cá nhân đã khấu trừ thuế [18]=[19]+[20]",
+    "indicator": "18",
+    "codes": [
+     "18"
+    ],
+    "values": [
+     {
+      "root": "ktru",
+      "path": "ct18"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "2.1",
+    "label": "Cá nhân cư trú",
+    "indicator": "19",
+    "codes": [
+     "19"
+    ],
+    "values": [
+     {
+      "root": "ktru",
+      "path": "ct19"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "2.2",
+    "label": "Cá nhân không cư trú",
+    "indicator": "20",
+    "codes": [
+     "20"
+    ],
+    "values": [
+     {
+      "root": "ktru",
+      "path": "ct20"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "3",
+    "label": "Tổng số cá nhân thuộc diện được miễn, giảm thuế theo Hiệp định tránh đánh thuế hai lần",
+    "indicator": "21",
+    "codes": [
+     "21"
+    ],
+    "values": [
+     {
+      "root": "ktru",
+      "path": "ct21"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "4",
+    "label": "Tổng số cá nhân giảm trừ gia cảnh",
+    "indicator": "22",
+    "codes": [
+     "22"
+    ],
+    "values": [
+     {
+      "root": "ktru",
+      "path": "ct22"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "5",
+    "label": "Tổng thu nhập chịu thuế trả cho cá nhân [23]=[24]+[25]",
+    "indicator": "23",
+    "codes": [
+     "23"
+    ],
+    "values": [
+     {
+      "root": "ktru",
+      "path": "ct23"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "5.1",
+    "label": "Cá nhân cư trú",
+    "indicator": "24",
+    "codes": [
+     "24"
+    ],
+    "values": [
+     {
+      "root": "ktru",
+      "path": "ct24"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "5.2",
+    "label": "Cá nhân không cư trú",
+    "indicator": "25",
+    "codes": [
+     "25"
+    ],
+    "values": [
+     {
+      "root": "ktru",
+      "path": "ct25"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "5.3",
+    "label": "Trong đó: Tổng thu nhập chịu thuế từ tiền phí mua bảo hiểm nhân thọ, bảo hiểm không bắt buộc khác của doanh nghiệp bảo hiểm không thành lập tại Việt Nam cho người lao động",
+    "indicator": "26",
+    "codes": [
+     "26"
+    ],
+    "values": [
+     {
+      "root": "ktru",
+      "path": "ct26"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "6",
+    "label": "Trong đó tổng thu nhập chịu thuế được miễn theo quy định của Hợp đồng dầu khí",
+    "indicator": "27",
+    "codes": [
+     "27"
+    ],
+    "values": [
+     {
+      "root": "ktru",
+      "path": "ct27"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "7",
+    "label": "Tổng thu nhập chịu thuế trả cho cá nhân thuộc diện phải khấu trừ thuế [28]=[29]+[30]",
+    "indicator": "28",
+    "codes": [
+     "28"
+    ],
+    "values": [
+     {
+      "root": "ktru",
+      "path": "ct28"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "7.1",
+    "label": "Cá nhân cư trú",
+    "indicator": "29",
+    "codes": [
+     "29"
+    ],
+    "values": [
+     {
+      "root": "ktru",
+      "path": "ct29"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "7.2",
+    "label": "Cá nhân không cư trú",
+    "indicator": "30",
+    "codes": [
+     "30"
+    ],
+    "values": [
+     {
+      "root": "ktru",
+      "path": "ct30"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "8",
+    "label": "Tổng số thuế thu nhập cá nhân đã khấu trừ [31]=[32]+[33]",
+    "indicator": "31",
+    "codes": [
+     "31"
+    ],
+    "values": [
+     {
+      "root": "ktru",
+      "path": "ct31"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "8.1",
+    "label": "Cá nhân cư trú",
+    "indicator": "32",
+    "codes": [
+     "32"
+    ],
+    "values": [
+     {
+      "root": "ktru",
+      "path": "ct32"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "8.2",
+    "label": "Cá nhân không cư trú",
+    "indicator": "33",
+    "codes": [
+     "33"
+    ],
+    "values": [
+     {
+      "root": "ktru",
+      "path": "ct33"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "8.3",
+    "label": "Trong đó: Tổng số thuế thu nhập cá nhân đã khấu trừ trên tiền phí mua bảo hiểm nhân thọ, bảo hiểm không bắt buộc khác của doanh nghiệp bảo hiểm không thành lập tại Việt Nam cho người lao động",
+    "indicator": "34",
+    "codes": [
+     "34"
+    ],
+    "values": [
+     {
+      "root": "ktru",
+      "path": "ct34"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "1",
+    "label": "Tổng số cá nhân uỷ quyền cho tổ chức, cá nhân trả thu nhập quyết toán thay",
+    "indicator": "35",
+    "codes": [
+     "35"
+    ],
+    "values": [
+     {
+      "root": "qtoan",
+      "path": "ct35"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "1",
+    "label": "Tổng số thuế thu nhập cá nhân đã khấu trừ",
+    "indicator": "36",
+    "codes": [
+     "36"
+    ],
+    "values": [
+     {
+      "root": "qtoan",
+      "path": "ct36"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "Trong đó: Số thuế thu nhập cá nhân đã khấu trừ tại tổ chức trước khi điều chuyển (trường hợp có đánh dấu vào chỉ tiêu [04])",
+    "label": "Trong đó: Số thuế thu nhập cá nhân đã khấu trừ tại tổ chức trước khi điều chuyển (trường hợp có đánh dấu vào chỉ tiêu [04])",
+    "indicator": "37",
+    "codes": [
+     "37"
+    ],
+    "values": [
+     {
+      "root": "qtoan",
+      "path": "ct37"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "3",
+    "label": "Tổng số thuế thu nhập cá nhân phải nộp",
+    "indicator": "38",
+    "codes": [
+     "38"
+    ],
+    "values": [
+     {
+      "root": "qtoan",
+      "path": "ct38"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "4",
+    "label": "Tổng số thuế thu nhập cá nhân được miễn do cá nhân có số thuế còn phải nộp sau ủy quyền quyết toán từ 50.000 đồng trở xuống",
+    "indicator": "39",
+    "codes": [
+     "39"
+    ],
+    "values": [
+     {
+      "root": "qtoan",
+      "path": "ct39"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "5",
+    "label": "Tổng số thuế thu nhập cá nhân còn phải nộp",
+    "indicator": "40",
+    "codes": [
+     "40"
+    ],
+    "values": [
+     {
+      "root": "qtoan",
+      "path": "ct40"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "6",
+    "label": "Tổng số thuế thu nhập cá nhân đã nộp thừa",
+    "indicator": "41",
+    "codes": [
+     "41"
+    ],
+    "values": [
+     {
+      "root": "qtoan",
+      "path": "ct41"
+     }
+    ],
+    "kind": "row"
+   }
+  ]
+ },
+ {
+  "displayCode": "03/TNDN",
+  "maTKhai": "892",
+  "versions": [
+   "2.9.4",
+   "2.9.2",
+   "2.8.3",
+   "2.5.1"
+  ],
+  "sourceTemplate": "TKhai_TNDN_03_TT80.xslt",
+  "columns": [
+   "STT",
+   "Chỉ tiêu",
+   "Mã chỉ tiêu",
+   "Số tiền"
+  ],
+  "rows": [
+   {
+    "stt": "A",
+    "label": "Kết quả kinh doanh ghi nhận theo báo cáo tài chính",
+    "indicator": "A",
+    "codes": [
+     "A"
+    ],
+    "values": [],
+    "kind": "section"
+   },
+   {
+    "stt": "1",
+    "label": "Tổng lợi nhuận kế toán trước thuế thu nhập doanh nghiệp",
+    "indicator": "A1",
+    "codes": [
+     "A1"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ctA1"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "B",
+    "label": "Xác định thu nhập chịu thuế theo Luật thuế thu nhập doanh nghiệp",
+    "indicator": "B",
+    "codes": [
+     "B"
+    ],
+    "values": [],
+    "kind": "section"
+   },
+   {
+    "stt": "1",
+    "label": "Điều chỉnh tăng tổng lợi nhuận trước thuế thu nhập doanh nghiệp (B1= B2+B3+B4+B5+B6+B7)",
+    "indicator": "B1",
+    "codes": [
+     "B1"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ctB1"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "1.1",
+    "label": "Các khoản điều chỉnh tăng doanh thu",
+    "indicator": "B2",
+    "codes": [
+     "B2"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ctB2"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "1.2",
+    "label": "Chi phí của phần doanh thu điều chỉnh giảm",
+    "indicator": "B3",
+    "codes": [
+     "B3"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ctB3"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "1.3",
+    "label": "Các khoản chi không được trừ khi xác định thu nhập chịu thuế",
+    "indicator": "B4",
+    "codes": [
+     "B4"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ctB4"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "1.4",
+    "label": "Thuế thu nhập đã nộp cho phần thu nhập nhận được ở nước ngoài",
+    "indicator": "B5",
+    "codes": [
+     "B5"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ctB5"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "1.5",
+    "label": "Điều chỉnh tăng lợi nhuận do xác định giá thị trường đối với giao dịch liên kết",
+    "indicator": "B6",
+    "codes": [
+     "B6"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ctB6"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "1.6",
+    "label": "Các khoản điều chỉnh làm tăng lợi nhuận trước thuế khác",
+    "indicator": "B7",
+    "codes": [
+     "B7"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ctB7"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "2",
+    "label": "Điều chỉnh giảm tổng lợi nhuận trước thuế thu nhập doanh nghiệp (B8=B9+B10+B11+B12)",
+    "indicator": "B8",
+    "codes": [
+     "B8"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ctB8"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "2.1",
+    "label": "Giảm trừ các khoản doanh thu đã tính thuế năm trước",
+    "indicator": "B9",
+    "codes": [
+     "B9"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ctB9"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "2.2",
+    "label": "Chi phí của phần doanh thu điều chỉnh tăng",
+    "indicator": "B10",
+    "codes": [
+     "B10"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ctB10"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "2.3",
+    "label": "Chi phí lãi vay không được trừ kỳ trước được chuyển sang kỳ này của doanh nghiệp có giao dịch liên kết",
+    "indicator": "B11",
+    "codes": [
+     "B11"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ctB11"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "2.4",
+    "label": "Các khoản điều chỉnh làm giảm lợi nhuận trước thuế khác",
+    "indicator": "B12",
+    "codes": [
+     "B12"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ctB12"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "3",
+    "label": "Tổng thu nhập chịu thuế (B13=A1+B1-B8)",
+    "indicator": "B13",
+    "codes": [
+     "B13"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ctB13"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "3.1",
+    "label": "Thu nhập chịu thuế từ hoạt động sản xuất kinh doanh",
+    "indicator": "B14",
+    "codes": [
+     "B14"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ctB14"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "3.2",
+    "label": "Thu nhập chịu thuế từ hoạt động chuyển nhượng BĐS",
+    "indicator": "B15",
+    "codes": [
+     "B15"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ctB15"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "C",
+    "label": "Thuế thu nhập doanh nghiệp (TNDN) phải nộp từ hoạt động sản xuất kinh doanh",
+    "indicator": "",
+    "codes": [],
+    "values": [],
+    "kind": "section"
+   },
+   {
+    "stt": "1",
+    "label": "Thu nhập chịu thuế (C1 = B14)",
+    "indicator": "C1",
+    "codes": [
+     "C1"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ctC1"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "2",
+    "label": "Thu nhập miễn thuế",
+    "indicator": "C2",
+    "codes": [
+     "C2"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ctC2"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "",
+    "label": "Loại thu nhập miễn thuế",
+    "indicator": "",
+    "codes": [],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ten_loaiMien"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "3",
+    "label": "Chuyển lỗ và bù trừ lãi, lỗ (C3=C3a+C3b)",
+    "indicator": "C3",
+    "codes": [
+     "C3"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ctC3"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "",
+    "label": "Trong đó:",
+    "indicator": "",
+    "codes": [],
+    "values": [],
+    "kind": "section"
+   },
+   {
+    "stt": "3.1",
+    "label": "+ Lỗ từ hoạt động SXKD được chuyển trong kỳ",
+    "indicator": "",
+    "codes": [],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ctC3a"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "3.2",
+    "label": "+ Lỗ từ chuyển nhượng BĐS được bù trừ với lãi của hoạt động SXKD",
+    "indicator": "",
+    "codes": [],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ctC3b"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "4",
+    "label": "Thu nhập tính thuế (TNTT) (C4=C1-C2-C3)",
+    "indicator": "C4",
+    "codes": [
+     "C4"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ctC4"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "5",
+    "label": "Trích lập quỹ khoa học công nghệ (nếu có)",
+    "indicator": "C5",
+    "codes": [
+     "C5"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ctC5"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "6",
+    "label": "TNTT sau khi đã trích lập quỹ khoa học công nghệ (C6=C4-C5=C7+C8)",
+    "indicator": "C6",
+    "codes": [
+     "C6"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ctC6"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "",
+    "label": "Trong đó:",
+    "indicator": "",
+    "codes": [],
+    "values": [],
+    "kind": "section"
+   },
+   {
+    "stt": "6.1",
+    "label": "+ Thu nhập tính thuế áp dụng thuế suất 15% + Thu nhập tính thuế áp dụng thuế suất 17% + Thu nhập tính thuế áp dụng thuế suất 20%",
+    "indicator": "C7",
+    "codes": [
+     "C7"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ctC7_thuNhap"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "6.2",
+    "label": "+ Thu nhập tính thuế tính theo thuế suất không ưu đãi khác",
+    "indicator": "C8",
+    "codes": [
+     "C8"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ctC8"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "6.3",
+    "label": "+ Thuế suất không ưu đãi khác (%)",
+    "indicator": "",
+    "codes": [],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ctC8a"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "7",
+    "label": "Thuế TNDN từ hoạt động SXKD tính theo thuế suất không ưu đãi(C9 =(C7 x 15%) + (C8 x C8a)) Thuế TNDN từ hoạt động SXKD tính theo thuế suất không ưu đãi(C9 =(C7 x 17%) + (C8 x C8a)) Thuế TNDN từ hoạt động SXKD tính theo thuế suất không ưu đãi(C9 =(C7 x 20%) + (C8 x C8a))",
+    "indicator": "C9",
+    "codes": [
+     "C9"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ctC9"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "8",
+    "label": "Thuế TNDN được ưu đãi theo Luật thuế TNDN(C10 = C11 + C12 + C13)",
+    "indicator": "C10",
+    "codes": [
+     "C10"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ctC10"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "",
+    "label": "Trong đó:",
+    "indicator": "",
+    "codes": [],
+    "values": [],
+    "kind": "section"
+   },
+   {
+    "stt": "8.1",
+    "label": "+ Thuế TNDN chênh lệch do áp dụng mức thuế suất ưu đãi",
+    "indicator": "C11",
+    "codes": [
+     "C11"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ctC11"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "8.2",
+    "label": "+ Thuế TNDN được miễn trong kỳ",
+    "indicator": "C12",
+    "codes": [
+     "C12"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ctC12"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "8.3",
+    "label": "+ Thuế TNDN được giảm trong kỳ",
+    "indicator": "C13",
+    "codes": [
+     "C13"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ctC13"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "9",
+    "label": "Thuế TNDN được miễn, giảm theo Hiệp định thuế",
+    "indicator": "C14",
+    "codes": [
+     "C14"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ctC14"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "10",
+    "label": "Thuế TNDN được miễn, giảm theo từng thời kỳ",
+    "indicator": "C15",
+    "codes": [
+     "C15"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ctC15"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "11",
+    "label": "Thuế thu nhập đã nộp ở nước ngoài được trừ trong kỳ tính thuế",
+    "indicator": "C16",
+    "codes": [
+     "C16"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ctC16"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "12",
+    "label": "Thuế TNDN phải nộp của hoạt động sản xuất kinh doanh(C17=C9-C10-C14-C15-C16)",
+    "indicator": "C17",
+    "codes": [
+     "C17"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ctC17"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "D",
+    "label": "Thuế TNDN phải nộp từ hoạt động chuyển nhượng BĐS",
+    "indicator": "D",
+    "codes": [
+     "D"
+    ],
+    "values": [],
+    "kind": "section"
+   },
+   {
+    "stt": "1",
+    "label": "Thu nhập chịu thuế (D1 = B15)",
+    "indicator": "D1",
+    "codes": [
+     "D1"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ctD1"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "2",
+    "label": "Lỗ từ hoạt động chuyển nhượng BĐS được chuyển trong kỳ",
+    "indicator": "D2",
+    "codes": [
+     "D2"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ctD2"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "3",
+    "label": "Thu nhập tính thuế (D3=D1-D2)",
+    "indicator": "D3",
+    "codes": [
+     "D3"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ctD3"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "4",
+    "label": "Trích lập quỹ khoa học công nghệ (nếu có)",
+    "indicator": "D4",
+    "codes": [
+     "D4"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ctD4"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "5",
+    "label": "TNTT sau khi đã trích lập quỹ khoa học công nghệ (D5=D3-D4)",
+    "indicator": "D5",
+    "codes": [
+     "D5"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ctD5"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "6",
+    "label": "Thuế TNDN phải nộp của hoạt động chuyển nhượng BĐS trong kỳ",
+    "indicator": "D6",
+    "codes": [
+     "D6"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ctD6"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "7",
+    "label": "Thuế TNDN chênh lệch do áp dụng mức thuế suất ưu đãi đối với thu nhập từ thực hiện dự án đầu tư - kinh doanh nhà ở xã hội để bán, cho thuê, cho thuê mua",
+    "indicator": "D7",
+    "codes": [
+     "D7"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ctD7"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "8",
+    "label": "Thuế TNDN của hoạt động chuyển nhượng BĐS còn phải nộp kỳ này (D8=D6-D7)",
+    "indicator": "D8",
+    "codes": [
+     "D8"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ctD8"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "E",
+    "label": "Số thuế TNDN phải nộp quyết toán trong kỳ (E=E1+E2+E5)",
+    "indicator": "E",
+    "codes": [
+     "E"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ctE"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "1",
+    "label": "Thuế TNDN của hoạt động sản xuất kinh doanh",
+    "indicator": "E1",
+    "codes": [
+     "E1"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ctE1"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "2",
+    "label": "Thuế TNDN từ hoạt động chuyển nhượng bất động sản (E2=E3+E4)",
+    "indicator": "E2",
+    "codes": [
+     "E2"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ctE2"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "2.1",
+    "label": "Thuế TNDN từ hoạt động chuyển nhượng bất động sản",
+    "indicator": "E3",
+    "codes": [
+     "E3"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ctE3"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "2.2",
+    "label": "Thuế TNDN từ hoạt động chuyển nhượng cơ sở hạ tầng, nhà có thu tiền theo tiến độ",
+    "indicator": "E4",
+    "codes": [
+     "E4"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ctE4"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "3",
+    "label": "Thuế TNDN phải nộp khác (nếu có)",
+    "indicator": "E5",
+    "codes": [
+     "E5"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ctE5"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "3.1",
+    "label": "Trong đó thuế TNDN từ xử lý Quỹ phát triển khoa học công nghệ",
+    "indicator": "E6",
+    "codes": [
+     "E6"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ctE6"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "G",
+    "label": "Số thuế TNDN đã tạm nộp (G=G1+G2+G3+G4+G5)",
+    "indicator": "G",
+    "codes": [
+     "G"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ctG"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "1",
+    "label": "Thuế TNDN đã tạm nộp của hoạt động sản xuất kinh doanh",
+    "indicator": "",
+    "codes": [],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "thueTNDN_tamnop_sxkd"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "1.1",
+    "label": "Thuế TNDN nộp thừa kỳ trước chuyển sang kỳ này",
+    "indicator": "G1",
+    "codes": [
+     "G1"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ctG1"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "1.2",
+    "label": "Thuế TNDN đã tạm nộp trong năm",
+    "indicator": "G2",
+    "codes": [
+     "G2"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ctG2"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "2",
+    "label": "Thuế TNDN đã tạm nộp của hoạt động chuyển nhượng BĐS",
+    "indicator": "",
+    "codes": [],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "thueTNDN_tamnop_cnbds"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "2.1",
+    "label": "Thuế TNDN nộp thừa kỳ trước chuyển sang kỳ này của hoạt động chuyển nhượng BĐS",
+    "indicator": "G3",
+    "codes": [
+     "G3"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ctG3"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "2.2",
+    "label": "Thuế TNDN đã tạm nộp trong năm của hoạt động chuyển nhượng BĐS",
+    "indicator": "G4",
+    "codes": [
+     "G4"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ctG4"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "2.3",
+    "label": "Thuế TNDN đã tạm nộp các kỳ trước và trong năm quyết toán của hoạt động chuyển nhượng cơ sở hạ tầng, nhà có thu tiền theo tiến độ",
+    "indicator": "G5",
+    "codes": [
+     "G5"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ctG5"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "H",
+    "label": "Chênh lệch giữa số thuế phải nộp và số thuế đã tạm nộp",
+    "indicator": "H",
+    "codes": [
+     "H"
+    ],
+    "values": [],
+    "kind": "section"
+   },
+   {
+    "stt": "1",
+    "label": "Chênh lệch giữa số thuế phải nộp và số thuế đã tạm nộp trong năm của hoạt động sản xuất kinh doanh (H1=E1+E5-G2)",
+    "indicator": "H1",
+    "codes": [
+     "H1"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ctH1"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "2",
+    "label": "Chênh lệch giữa số thuế phải nộp và số thuế đã tạm nộp trong năm của hoạt động chuyển nhượng BĐS (H2=E3-G4)",
+    "indicator": "H2",
+    "codes": [
+     "H2"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ctH2"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "3",
+    "label": "Chênh lệch giữa số thuế phải nộp và số thuế đã tạm nộp của hoạt động chuyển nhượng cơ sở hạ tầng, nhà có thu tiền theo tiến độ (H3=E4-G5)",
+    "indicator": "H3",
+    "codes": [
+     "H3"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ctH3"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "I",
+    "label": "Số thuế TNDN còn phải nộp đến thời hạn nộp hồ sơ khai quyết toán thuế (I=E-G=I1+I2)",
+    "indicator": "I",
+    "codes": [
+     "I"
+    ],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ctI"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "1",
+    "label": "Thuế TNDN còn phải nộp của hoạt động sản xuất kinh doanh",
+    "indicator": "",
+    "codes": [],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ctI1"
+     }
+    ],
+    "kind": "row"
+   },
+   {
+    "stt": "2",
+    "label": "Thuế TNDN còn phải nộp của hoạt động chuyển nhượng BĐS",
+    "indicator": "",
+    "codes": [],
+    "values": [
+     {
+      "root": "tkchinh",
+      "path": "ctI2"
+     }
+    ],
+    "kind": "row"
+   }
+  ]
+ }
+]

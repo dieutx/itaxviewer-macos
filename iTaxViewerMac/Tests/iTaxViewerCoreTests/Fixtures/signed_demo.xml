@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HSoThueDTu xmlns="http://kekhaithue.gdt.gov.vn/TKhaiThue">
+  <HSoKhaiThue id="SIGNED_DEMO">
+    <TTinChung>
+      <TTinTKhaiThue>
+        <TKhaiThue>
+          <maTKhai>842</maTKhai>
+          <tenTKhai>Tờ khai thuế giá trị gia tăng (Mẫu số 01/GTGT)</tenTKhai>
+          <pbanTKhaiXML>2.8.3</pbanTKhaiXML>
+          <loaiTKhai>C</loaiTKhai>
+          <KyKKhaiThue><kieuKy>M</kieuKy><kyKKhai>06/2025</kyKKhai></KyKKhaiThue>
+        </TKhaiThue>
+        <NNT><mst>0000000000</mst><tenNNT>CÔNG TY TNHH DỮ LIỆU MẪU</tenNNT></NNT>
+      </TTinTKhaiThue>
+    </TTinChung>
+    <CTieuTKhaiChinh><ct22>0</ct22><ct40>0</ct40></CTieuTKhaiChinh>
+    <ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+      <ds:SignedInfo>
+        <ds:CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+        <ds:SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
+        <ds:Reference URI="#SIGNED_DEMO">
+          <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+          <ds:DigestValue>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</ds:DigestValue>
+        </ds:Reference>
+      </ds:SignedInfo>
+      <ds:SignatureValue>AAAA</ds:SignatureValue>
+      <ds:KeyInfo>
+        <ds:X509Data>
+          <ds:X509Certificate>MIIDejCCAmKgAwIBAgIQQnsDqhpMVIJE746o+SxKTjANBgkqhkiG9w0BAQsFADA/MQswCQYDVQQGEwJWTjENMAsGA1UECgwEREVNTzEhMB8GA1UEAwwYQ09ORyBUWSBUTkhIIERVIExJRVUgTUFVMB4XDTI2MTAyMjExNTIyNFoXDTI4MTAyMjEyMDIyNFowPzELMAkGA1UEBhMCVk4xDTALBgNVBAoMBERFTU8xITAfBgNVBAMMGENPTkcgVFkgVE5ISCBEVSBMSUVVIE1BVTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALjWFZRl7MdhMHTYw0wCG3LIIIPl1+j1cuiGKHK6nerd4HizAFQOmDfuMzRxxV1F3wlvey0WFi1HAFkNkl9WLxOfqAihvOuS45axi7GhUvu83SW8pEyhQDCJs2ygxbpfX87dW6gypNVGgbONTrGPXMkkeUX5/cfLEqDeoJ4Vl7/5SVEVy0g4iicWcb8UBe3d1WAON5gfAUt33f0dcaUviM9nbSSB0kX6+0jMQLaa1DKm2P5bpOdvBQOKWOWe2V5zQYYFZokOrlGKmLPOcLvFwcwzWUHJBXo+sStVbDC/4/17cyI5M8esvUXwyljjWrurxNOJli9tZNqwC6vWBqcT1kECAwEAAaNyMHAwDgYDVR0PAQH/BAQDAgWgMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATAgBgNVHREEGTAXghVkZW1vLml0YXh2aWV3ZXIubG9jYWwwHQYDVR0OBBYEFJVYDUS9+iuupitlsu9mucnHv9xLMA0GCSqGSIb3DQEBCwUAA4IBAQApxaLBg7dD/ckUVLbvZrWVxOwRPdYX7ftCZCFav+X+po5EFqETtuACrq5h4nQdUZ20w2nyQOUOq25SWdYGZJ6i21pq5nIdTyUUpvWXmTm3qRjGXIMBb1SarolXj9y4+MniiZNZUe1ajoVUNdplIYlzl8GhjTHVdFF4RjnyjWqlNfNgLkdDkxaAHYa6PeDulepLYqbWWzHzxevFRxl/pchuBU2H+BymTyp/Ztxc6+HdHfvaF42AYQpJsp87hqfgDyeca+fkD2+McIvgHCYkzahlkUWF9p138Xt5MZIgPJSRh957ooyXSq+unIp8aNsEQOPALmCXgmn0x+2LnB2TpE54</ds:X509Certificate>
+        </ds:X509Data>
+      </ds:KeyInfo>
+      <ds:Object>
+        <ds:SignatureProperties>
+          <ds:SignatureProperty Target="#SIGNED_DEMO">
+            <DateTimeStamp>2026-01-02T03:04:05</DateTimeStamp>
+          </ds:SignatureProperty>
+        </ds:SignatureProperties>
+      </ds:Object>
+    </ds:Signature>
+  </HSoKhaiThue>
+</HSoThueDTu>
+

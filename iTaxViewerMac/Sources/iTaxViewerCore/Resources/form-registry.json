@@ -1,0 +1,5143 @@
+{
+ "schemaVersion": 1,
+ "source": {
+  "application": "iTax Viewer",
+  "registryFile": "data/DMucTKhai.xml",
+  "entries": 1150,
+  "formCodes": 410
+ },
+ "supported": [
+  {
+   "displayCode": "01/GTGT",
+   "maTKhai": "842",
+   "versions": [
+    "2.8.3",
+    "2.7.4",
+    "2.6.8",
+    "2.5.1"
+   ],
+   "spec": "01/GTGT",
+   "orientation": "0",
+   "title": "Ban hành kèm theo Thông tư số 80/2021/TT-BTC ngày 29 tháng 9 năm 2021 của Bộ trưởng Bộ Tài chính"
+  },
+  {
+   "displayCode": "05/KK-TNCN",
+   "maTKhai": "394",
+   "versions": [
+    "2.1.6"
+   ],
+   "spec": "05/KK-TNCN",
+   "orientation": "0",
+   "title": "(Ban hành kèm theo Thông tư số 92/2015/TT-BTC ngày 15/6/2015 của Bộ Tài chính)"
+  },
+  {
+   "displayCode": "05/QTT-TNCN",
+   "maTKhai": "953",
+   "versions": [
+    "2.9.3",
+    "2.8.5",
+    "2.8.4",
+    "2.8.3",
+    "2.7.9",
+    "2.5.2",
+    "2.5.1"
+   ],
+   "spec": "05/QTT-TNCN",
+   "orientation": "0",
+   "title": "Ban hành kèm theo Thông tư số 80/2021/TT-BTC ngày 29 tháng 9 năm 2021 của Bộ trưởng Bộ Tài chính"
+  },
+  {
+   "displayCode": "03/TNDN",
+   "maTKhai": "892",
+   "versions": [
+    "2.9.4",
+    "2.9.2",
+    "2.8.3",
+    "2.5.1"
+   ],
+   "spec": "03/TNDN",
+   "orientation": "0",
+   "title": "Ban hành kèm theo Thông tư số 80/2021/TT-BTC ngày 29 tháng 9 năm 2021 của Bộ trưởng Bộ Tài chính"
+  }
+ ],
+ "codes": {
+  "01": {
+   "displayCode": "01/GTGT",
+   "latestVersion": "2.6.2",
+   "versions": [
+    "2.0.6",
+    "2.0.7",
+    "2.1.2",
+    "2.2.8",
+    "2.3.3",
+    "2.4.0",
+    "2.5.0",
+    "2.6.2"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "02": {
+   "displayCode": "02/GTGT",
+   "latestVersion": "2.7.0",
+   "versions": [
+    "2.0.1",
+    "2.0.2",
+    "2.0.4",
+    "2.0.6",
+    "2.1.2",
+    "2.4.1",
+    "2.4.5",
+    "2.7.0"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "04": {
+   "displayCode": "03/GTGT",
+   "latestVersion": "2.0.6",
+   "versions": [
+    "2.0.0",
+    "2.0.1",
+    "2.0.2",
+    "2.0.4",
+    "2.0.6"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "07": {
+   "displayCode": "04/GTGT",
+   "latestVersion": "2.5.0",
+   "versions": [
+    "2.0.1",
+    "2.0.2",
+    "2.0.4",
+    "2.0.6",
+    "2.1.0",
+    "2.1.2",
+    "2.4.1",
+    "2.5.0"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "53": {
+   "displayCode": "05/GTGT",
+   "latestVersion": "2.6.2",
+   "versions": [
+    "2.0.0",
+    "2.0.2",
+    "2.0.4",
+    "2.6.2"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "11": {
+   "displayCode": "01A/TNDN",
+   "latestVersion": "2.0.7",
+   "versions": [
+    "2.0.0",
+    "2.0.2",
+    "2.0.7"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "12": {
+   "displayCode": "01B/TNDN",
+   "latestVersion": "2.0.7",
+   "versions": [
+    "2.0.0",
+    "2.0.2",
+    "2.0.7"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "": {
+   "displayCode": "02/TNDN",
+   "latestVersion": "3.0.9",
+   "versions": [
+    "2.0.0",
+    "3.0.9"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "47": {
+   "displayCode": "02/KK-TNCN",
+   "latestVersion": "2.0.0",
+   "versions": [
+    "2.0.0"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "48": {
+   "displayCode": "03/KK-TNCN",
+   "latestVersion": "2.0.0",
+   "versions": [
+    "2.0.0"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "139": {
+   "displayCode": "01/KK-BHĐC",
+   "latestVersion": "2.0.0",
+   "versions": [
+    "2.0.0"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "9": {
+   "displayCode": "01/KK-BHĐC",
+   "latestVersion": "2.0.0",
+   "versions": [
+    "2.0.0"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B"
+   ]
+  },
+  "46": {
+   "displayCode": "01/KK-XS",
+   "latestVersion": "2.0.0",
+   "versions": [
+    "2.0.0"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "147": {
+   "displayCode": "07/KK-TNCN",
+   "latestVersion": "2.0.0",
+   "versions": [
+    "2.0.0"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "136": {
+   "displayCode": "08/KK-TNCN",
+   "latestVersion": "2.0.1",
+   "versions": [
+    "2.0.0",
+    "2.0.1"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "151": {
+   "displayCode": "08A/KK-TNCN",
+   "latestVersion": "2.0.1",
+   "versions": [
+    "2.0.0",
+    "2.0.1"
+   ],
+   "orientation": "1",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "144": {
+   "displayCode": "19/KK-TNCN",
+   "latestVersion": "2.0.0",
+   "versions": [
+    "2.0.0"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "06": {
+   "displayCode": "01/TAIN",
+   "latestVersion": "2.0.4",
+   "versions": [
+    "2.0.0",
+    "2.0.1",
+    "2.0.2",
+    "2.0.4"
+   ],
+   "orientation": "1",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "05": {
+   "displayCode": "01/TTĐB",
+   "latestVersion": "2.3.3",
+   "versions": [
+    "2.0.0",
+    "2.0.1",
+    "2.0.2",
+    "2.0.7",
+    "2.1.2",
+    "2.2.8",
+    "2.3.3"
+   ],
+   "orientation": "1",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "132": {
+   "displayCode": "01/TĐ-GTGT",
+   "latestVersion": "2.6.2",
+   "versions": [
+    "2.0.0",
+    "2.0.1",
+    "2.0.2",
+    "2.0.4",
+    "2.2.8",
+    "2.6.2"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "133": {
+   "displayCode": "03/TĐ-TAIN",
+   "latestVersion": "2.6.2",
+   "versions": [
+    "2.0.0",
+    "2.0.2",
+    "2.0.4",
+    "2.2.8",
+    "2.6.2"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "135": {
+   "displayCode": "01/TAIN-DK",
+   "latestVersion": "2.0.4",
+   "versions": [
+    "2.0.0",
+    "2.0.2",
+    "2.0.3",
+    "2.0.4"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "149": {
+   "displayCode": "01A/TNDN-DK",
+   "latestVersion": "2.0.4",
+   "versions": [
+    "2.0.0",
+    "2.0.2",
+    "2.0.3",
+    "2.0.4"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "85": {
+   "displayCode": "01B/TNDN-DK",
+   "latestVersion": "2.0.4",
+   "versions": [
+    "2.0.0",
+    "2.0.2",
+    "2.0.3",
+    "2.0.4"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "87": {
+   "displayCode": "01/BCTL-DK",
+   "latestVersion": "2.0.3",
+   "versions": [
+    "2.0.0",
+    "2.0.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "252": {
+   "displayCode": "01/KK-TTS",
+   "latestVersion": "2.0.0",
+   "versions": [
+    "2.0.0"
+   ],
+   "orientation": "1",
+   "loai": [
+    "C"
+   ]
+  },
+  "260": {
+   "displayCode": "TB01/AC",
+   "latestVersion": "2.0.0",
+   "versions": [
+    "2.0.0"
+   ],
+   "orientation": "1",
+   "loai": [
+    "C"
+   ]
+  },
+  "261": {
+   "displayCode": "BC01/AC",
+   "latestVersion": "2.0.0",
+   "versions": [
+    "2.0.0"
+   ],
+   "orientation": "1",
+   "loai": [
+    "C"
+   ]
+  },
+  "262": {
+   "displayCode": "BC21/AC",
+   "latestVersion": "2.1.0",
+   "versions": [
+    "2.0.0",
+    "2.1.0"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "104": {
+   "displayCode": "BC21/AC",
+   "latestVersion": "2.1.0",
+   "versions": [
+    "2.0.0",
+    "2.1.0"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "263": {
+   "displayCode": "TB03/AC",
+   "latestVersion": "2.1.0",
+   "versions": [
+    "2.0.0",
+    "2.1.0"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "275": {
+   "displayCode": "BC7/AC",
+   "latestVersion": "2.0.0",
+   "versions": [
+    "2.0.0"
+   ],
+   "orientation": "1",
+   "loai": [
+    "C"
+   ]
+  },
+  "106": {
+   "displayCode": "TB01/AC",
+   "latestVersion": "2.1.2",
+   "versions": [
+    "2.0.0",
+    "2.1.2"
+   ],
+   "orientation": "1",
+   "loai": [
+    "C"
+   ]
+  },
+  "105": {
+   "displayCode": "BC01/AC",
+   "latestVersion": "2.1.2",
+   "versions": [
+    "2.0.0",
+    "2.1.2"
+   ],
+   "orientation": "1",
+   "loai": [
+    "C"
+   ]
+  },
+  "107": {
+   "displayCode": "TB03/AC",
+   "latestVersion": "2.1.0",
+   "versions": [
+    "2.0.0",
+    "2.1.0"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "131": {
+   "displayCode": "BC26/AC",
+   "latestVersion": "2.0.8",
+   "versions": [
+    "2.0.0",
+    "2.0.1",
+    "2.0.8"
+   ],
+   "orientation": "1",
+   "loai": [
+    "C"
+   ]
+  },
+  "129": {
+   "displayCode": "TB04/AC",
+   "latestVersion": "2.0.0",
+   "versions": [
+    "2.0.0"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "116": {
+   "displayCode": "BC08/AC",
+   "latestVersion": "2.0.4",
+   "versions": [
+    "2.0.0",
+    "2.0.4"
+   ],
+   "orientation": "1",
+   "loai": [
+    "C"
+   ]
+  },
+  "264": {
+   "displayCode": "02/TNDN-VSP",
+   "latestVersion": "2.2.3",
+   "versions": [
+    "2.0.0",
+    "2.2.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "265": {
+   "displayCode": "02/TAIN-VSP",
+   "latestVersion": "2.2.3",
+   "versions": [
+    "2.0.0",
+    "2.2.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "266": {
+   "displayCode": "02/PTHU-VSP",
+   "latestVersion": "2.2.3",
+   "versions": [
+    "2.0.0",
+    "2.2.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "267": {
+   "displayCode": "01/TNDN-VSP",
+   "latestVersion": "2.0.0",
+   "versions": [
+    "2.0.0"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "268": {
+   "displayCode": "01/TAIN-VSP",
+   "latestVersion": "2.0.0",
+   "versions": [
+    "2.0.0"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "269": {
+   "displayCode": "01/PTHU-VSP",
+   "latestVersion": "2.0.0",
+   "versions": [
+    "2.0.0"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "270": {
+   "displayCode": "01/ĐCĐB-VSP",
+   "latestVersion": "2.2.3",
+   "versions": [
+    "2.0.0",
+    "2.2.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "271": {
+   "displayCode": "01-2/TNDN-VSP",
+   "latestVersion": "2.0.0",
+   "versions": [
+    "2.0.0"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "272": {
+   "displayCode": "01-2/PTHU-VSP",
+   "latestVersion": "2.0.0",
+   "versions": [
+    "2.0.0"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "273": {
+   "displayCode": "02/TAIN-DK ",
+   "latestVersion": "2.2.3",
+   "versions": [
+    "2.0.0",
+    "2.2.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "274": {
+   "displayCode": "01-1/PTHU-VSP",
+   "latestVersion": "2.2.3",
+   "versions": [
+    "2.0.0",
+    "2.2.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "66": {
+   "displayCode": "01/HKNN",
+   "latestVersion": "2.0.1",
+   "versions": [
+    "2.0.0",
+    "2.0.1"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "67": {
+   "displayCode": "01/VTNN",
+   "latestVersion": "2.0.1",
+   "versions": [
+    "2.0.0",
+    "2.0.1"
+   ],
+   "orientation": "1",
+   "loai": [
+    "C"
+   ]
+  },
+  "41": {
+   "displayCode": "01/NTNN",
+   "latestVersion": "2.1.4",
+   "versions": [
+    "2.0.0",
+    "2.0.1",
+    "2.0.2",
+    "2.0.4",
+    "2.0.7",
+    "2.1.4"
+   ],
+   "orientation": "1",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "73": {
+   "displayCode": "03/NTNN",
+   "latestVersion": "2.0.4",
+   "versions": [
+    "2.0.0",
+    "2.0.1",
+    "2.0.2",
+    "2.0.4"
+   ],
+   "orientation": "1",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "68": {
+   "displayCode": "01/TBH",
+   "latestVersion": "2.0.1",
+   "versions": [
+    "2.0.0",
+    "2.0.1"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "69": {
+   "displayCode": "01/TBH-TB",
+   "latestVersion": "2.0.0",
+   "versions": [
+    "2.0.0"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "70": {
+   "displayCode": "02/TBH-TB",
+   "latestVersion": "2.0.0",
+   "versions": [
+    "2.0.0"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "49": {
+   "displayCode": "B-01/DN",
+   "latestVersion": "2.2.6",
+   "versions": [
+    "2.0.0",
+    "2.2.6"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "51": {
+   "displayCode": "B-01/TCTD",
+   "latestVersion": "2.2.6",
+   "versions": [
+    "2.0.0",
+    "2.2.6"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "50": {
+   "displayCode": "B-01/DNN",
+   "latestVersion": "2.2.6",
+   "versions": [
+    "2.0.0",
+    "2.1.0",
+    "2.2.6"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "285": {
+   "displayCode": "B01-CTCK",
+   "latestVersion": "2.2.6",
+   "versions": [
+    "2.0.0",
+    "2.2.6"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "673": {
+   "displayCode": "B02a/TCTD",
+   "latestVersion": "2.2.6",
+   "versions": [
+    "2.2.6"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "677": {
+   "displayCode": "B02a/TCTD",
+   "latestVersion": "2.2.6",
+   "versions": [
+    "2.2.6"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "55": {
+   "displayCode": "01/MBAI",
+   "latestVersion": "2.1.3",
+   "versions": [
+    "2.0.0",
+    "2.1.2",
+    "2.1.3"
+   ],
+   "orientation": "1",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "59": {
+   "displayCode": "01/BVMT",
+   "latestVersion": "2.0.4",
+   "versions": [
+    "2.0.0",
+    "2.0.2",
+    "2.0.4"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "61": {
+   "displayCode": "01/PHLP",
+   "latestVersion": "2.0.4",
+   "versions": [
+    "2.0.0",
+    "2.0.1",
+    "2.0.2",
+    "2.0.4"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "128": {
+   "displayCode": "01/TBVMT",
+   "latestVersion": "2.6.2",
+   "versions": [
+    "2.0.0",
+    "2.0.1",
+    "2.0.2",
+    "2.0.4",
+    "2.6.2"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "71": {
+   "displayCode": "02/TNDN",
+   "latestVersion": "2.5.0",
+   "versions": [
+    "2.0.0",
+    "2.0.1",
+    "2.0.2",
+    "2.0.7",
+    "2.1.4",
+    "2.3.9",
+    "2.5.0"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "13": {
+   "displayCode": "04/TNDN",
+   "latestVersion": "2.5.0",
+   "versions": [
+    "2.0.1",
+    "2.0.8",
+    "2.3.9",
+    "2.5.0"
+   ],
+   "orientation": "1",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "102": {
+   "displayCode": "BC26/AC",
+   "latestVersion": "2.0.8",
+   "versions": [
+    "2.0.0",
+    "2.0.1",
+    "2.0.8"
+   ],
+   "orientation": "1",
+   "loai": [
+    "C"
+   ]
+  },
+  "60": {
+   "displayCode": "02/BVMT",
+   "latestVersion": "2.0.5",
+   "versions": [
+    "2.0.0",
+    "2.0.3",
+    "2.0.5"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "08": {
+   "displayCode": "02/TAIN",
+   "latestVersion": "2.0.5",
+   "versions": [
+    "2.0.0",
+    "2.0.1",
+    "2.0.3",
+    "2.0.5"
+   ],
+   "orientation": "1",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "44": {
+   "displayCode": "02/KK-XS",
+   "latestVersion": "2.0.5",
+   "versions": [
+    "2.0.0",
+    "2.0.1",
+    "2.0.3",
+    "2.0.5"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "43": {
+   "displayCode": "02/KK-BH",
+   "latestVersion": "2.0.5",
+   "versions": [
+    "2.0.0",
+    "2.0.1",
+    "2.0.3",
+    "2.0.5"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "42": {
+   "displayCode": "05/KK-TNCN",
+   "latestVersion": "2.0.8",
+   "versions": [
+    "2.0.0",
+    "2.0.1",
+    "2.0.3",
+    "2.0.5",
+    "2.0.8"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "103": {
+   "displayCode": "06/KK-TNCN",
+   "latestVersion": "2.0.5",
+   "versions": [
+    "2.0.0",
+    "2.0.1",
+    "2.0.3",
+    "2.0.5"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "62": {
+   "displayCode": "02/PHLP",
+   "latestVersion": "2.0.5",
+   "versions": [
+    "2.0.0",
+    "2.0.1",
+    "2.0.3",
+    "2.0.5"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "74": {
+   "displayCode": "02/NTNN",
+   "latestVersion": "2.0.5",
+   "versions": [
+    "1.4",
+    "2.0.0",
+    "2.0.1",
+    "2.0.3",
+    "2.0.5"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "72": {
+   "displayCode": "04/NTNN",
+   "latestVersion": "2.0.5",
+   "versions": [
+    "2.0.0",
+    "2.0.3",
+    "2.0.5"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "03": {
+   "displayCode": "03/TNDN",
+   "latestVersion": "2.6.2",
+   "versions": [
+    "2.0.7",
+    "2.2.3",
+    "2.2.8",
+    "2.3.1",
+    "2.3.3",
+    "2.3.9",
+    "2.4.5",
+    "2.6.2"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "300": {
+   "displayCode": "BC26/AC",
+   "latestVersion": "2.0.1",
+   "versions": [
+    "2.0.0",
+    "2.0.1"
+   ],
+   "orientation": "1",
+   "loai": [
+    "C"
+   ]
+  },
+  "301": {
+   "displayCode": "BK01/AC",
+   "latestVersion": "2.0.1",
+   "versions": [
+    "2.0.0",
+    "2.0.1"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "88": {
+   "displayCode": "02/TAIN-DK",
+   "latestVersion": "2.0.5",
+   "versions": [
+    "2.0.5"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "86": {
+   "displayCode": "02/TNDN-DK",
+   "latestVersion": "2.0.5",
+   "versions": [
+    "2.0.5"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "84": {
+   "displayCode": "03A/TĐ-TAIN",
+   "latestVersion": "2.6.2",
+   "versions": [
+    "2.0.5",
+    "2.2.8",
+    "2.6.2"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "15": {
+   "displayCode": "08B/KK-TNCN",
+   "latestVersion": "2.0.5",
+   "versions": [
+    "2.0.5"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "20": {
+   "displayCode": "13/KK-TNCN",
+   "latestVersion": "2.0.5",
+   "versions": [
+    "2.0.5"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "16": {
+   "displayCode": "09/KK-TNCN",
+   "latestVersion": "2.0.5",
+   "versions": [
+    "2.0.5"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "302": {
+   "displayCode": null,
+   "latestVersion": "2.0.6",
+   "versions": [
+    "2.0.6"
+   ],
+   "orientation": "1",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "304": {
+   "displayCode": "06/TNDN",
+   "latestVersion": "2.0.7",
+   "versions": [
+    "2.0.7"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "360": {
+   "displayCode": "03/LNCL-XSĐT",
+   "latestVersion": "2.2.8",
+   "versions": [
+    "2.0.9",
+    "2.1.0",
+    "2.2.8"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "373": {
+   "displayCode": null,
+   "latestVersion": "2.1.3",
+   "versions": [
+    "2.1.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "384": {
+   "displayCode": "01/ĐNHT",
+   "latestVersion": "2.8.6",
+   "versions": [
+    "2.1.5",
+    "2.2.2",
+    "2.4.4",
+    "2.5.2",
+    "2.8.3",
+    "2.8.6"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "389": {
+   "displayCode": "01/XSBHĐC",
+   "latestVersion": "2.8.3",
+   "versions": [
+    "2.1.6",
+    "2.5.0",
+    "2.8.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "395": {
+   "displayCode": "05/QTT-TNCN ",
+   "latestVersion": "2.4.2",
+   "versions": [
+    "2.1.6",
+    "2.4.2"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "391": {
+   "displayCode": "02/KK-TNCN",
+   "latestVersion": "2.8.3",
+   "versions": [
+    "2.1.6",
+    "2.8.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "392": {
+   "displayCode": "02/QTT-TNCN",
+   "latestVersion": "2.8.3",
+   "versions": [
+    "2.1.6",
+    "2.5.4",
+    "2.8.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "390": {
+   "displayCode": "02/ĐK-NPT-TNCN",
+   "latestVersion": "2.1.6",
+   "versions": [
+    "2.1.6"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "394": {
+   "displayCode": "05/KK-TNCN",
+   "latestVersion": "2.1.6",
+   "versions": [
+    "2.1.6"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "393": {
+   "displayCode": "05/DS-TNCN",
+   "latestVersion": "2.1.6",
+   "versions": [
+    "2.1.6"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "396": {
+   "displayCode": "06/TNCN ",
+   "latestVersion": "2.8.3",
+   "versions": [
+    "2.1.6",
+    "2.8.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "401": {
+   "displayCode": "01/TTĐB",
+   "latestVersion": "2.6.2",
+   "versions": [
+    "2.0.7",
+    "2.1.7",
+    "2.2.8",
+    "2.3.3",
+    "2.6.1",
+    "2.6.2"
+   ],
+   "orientation": "1",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "402": {
+   "displayCode": "B 01 – DN",
+   "latestVersion": "2.2.6",
+   "versions": [
+    "2.1.8",
+    "2.2.6"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "465": {
+   "displayCode": "B 01 – DN",
+   "latestVersion": "2.4.3",
+   "versions": [
+    "2.2.6",
+    "2.4.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "671": {
+   "displayCode": "B 01a – DN",
+   "latestVersion": "2.2.6",
+   "versions": [
+    "2.2.6"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "675": {
+   "displayCode": "B 01a – DN",
+   "latestVersion": "2.2.6",
+   "versions": [
+    "2.2.6"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "672": {
+   "displayCode": "B 01b– DN",
+   "latestVersion": "2.2.6",
+   "versions": [
+    "2.2.6"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "676": {
+   "displayCode": "B 01b– DN",
+   "latestVersion": "2.2.6",
+   "versions": [
+    "2.2.6"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "466": {
+   "displayCode": "B02/TCTD",
+   "latestVersion": "2.2.6",
+   "versions": [
+    "2.2.6"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "467": {
+   "displayCode": "B02/TCTD",
+   "latestVersion": "2.2.6",
+   "versions": [
+    "2.2.6"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "674": {
+   "displayCode": "B02b/TCTD",
+   "latestVersion": "2.2.6",
+   "versions": [
+    "2.2.6"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "678": {
+   "displayCode": "B02b/TCTD",
+   "latestVersion": "2.2.6",
+   "versions": [
+    "2.2.6"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "437": {
+   "displayCode": "02",
+   "latestVersion": "2.2.3",
+   "versions": [
+    "2.2.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "438": {
+   "displayCode": "03",
+   "latestVersion": "2.2.3",
+   "versions": [
+    "2.2.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "439": {
+   "displayCode": "06",
+   "latestVersion": "2.2.3",
+   "versions": [
+    "2.2.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "374": {
+   "displayCode": "01A/TNS",
+   "latestVersion": "2.2.3",
+   "versions": [
+    "2.2.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "375": {
+   "displayCode": "01B/TNS",
+   "latestVersion": "2.2.3",
+   "versions": [
+    "2.2.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "376": {
+   "displayCode": "01C/TNS",
+   "latestVersion": "2.2.3",
+   "versions": [
+    "2.2.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "380": {
+   "displayCode": "03A/TNS",
+   "latestVersion": "2.2.3",
+   "versions": [
+    "2.2.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "381": {
+   "displayCode": "03B/TNS",
+   "latestVersion": "2.2.3",
+   "versions": [
+    "2.2.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "440": {
+   "displayCode": "01/TK-VSP",
+   "latestVersion": "2.2.3",
+   "versions": [
+    "2.2.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "441": {
+   "displayCode": "01/ĐCXK-VSP",
+   "latestVersion": "2.2.3",
+   "versions": [
+    "2.2.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "443": {
+   "displayCode": "01/TNDN-DK",
+   "latestVersion": "2.2.4",
+   "versions": [
+    "2.2.4"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "444": {
+   "displayCode": "01/TAIN-DK",
+   "latestVersion": "2.2.4",
+   "versions": [
+    "2.2.4"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "446": {
+   "displayCode": "02/TAIN-DK",
+   "latestVersion": "2.2.4",
+   "versions": [
+    "2.2.4"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "447": {
+   "displayCode": "02/TNDN-DK",
+   "latestVersion": "2.2.4",
+   "versions": [
+    "2.2.4"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "442": {
+   "displayCode": "03/TNDN-DK",
+   "latestVersion": "2.2.4",
+   "versions": [
+    "2.2.4"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "445": {
+   "displayCode": "01/BCTL-DK",
+   "latestVersion": "2.2.4",
+   "versions": [
+    "2.2.4"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "468": {
+   "displayCode": "01/CTLNĐC",
+   "latestVersion": "2.2.7",
+   "versions": [
+    "2.2.7"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "469": {
+   "displayCode": "01/QT-LNCL",
+   "latestVersion": "2.2.7",
+   "versions": [
+    "2.2.7"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "464": {
+   "displayCode": "01/MBAI",
+   "latestVersion": "2.2.5",
+   "versions": [
+    "2.2.5"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "680": {
+   "displayCode": "05-ĐK-TH-TCT",
+   "latestVersion": "2.3.0",
+   "versions": [
+    "1.0.0",
+    "2.3.0"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "683": {
+   "displayCode": "B01a - DNN",
+   "latestVersion": "2.3.2",
+   "versions": [
+    "2.3.2"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "684": {
+   "displayCode": "B 01b – DNN",
+   "latestVersion": "2.3.2",
+   "versions": [
+    "2.3.2"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "685": {
+   "displayCode": "B01 - DNNKLT",
+   "latestVersion": "2.3.2",
+   "versions": [
+    "2.3.2"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "686": {
+   "displayCode": "B01 - DNSN",
+   "latestVersion": "2.3.2",
+   "versions": [
+    "2.3.2"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "679": {
+   "displayCode": "02/TK-SDDPNN",
+   "latestVersion": "2.2.9",
+   "versions": [
+    "2.2.9"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "687": {
+   "displayCode": "05/TNDN",
+   "latestVersion": "2.3.3",
+   "versions": [
+    "2.3.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "848": {
+   "displayCode": "01/MTCN",
+   "latestVersion": "2.5.0",
+   "versions": [
+    "2.5.0"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "371": {
+   "displayCode": "TB01/AC",
+   "latestVersion": "2.1.3",
+   "versions": [
+    "2.1.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "372": {
+   "displayCode": null,
+   "latestVersion": "2.1.3",
+   "versions": [
+    "2.1.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "600": {
+   "displayCode": null,
+   "latestVersion": "2.2.8",
+   "versions": [
+    "2.2.8"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B"
+   ]
+  },
+  "688": {
+   "displayCode": "TB01/AC",
+   "latestVersion": "2.3.4",
+   "versions": [
+    "2.3.4"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "689": {
+   "displayCode": "TB01/AC",
+   "latestVersion": "2.3.4",
+   "versions": [
+    "2.3.4"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "691": {
+   "displayCode": "B01 - CTCK",
+   "latestVersion": "2.3.4",
+   "versions": [
+    "2.3.4"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "692": {
+   "displayCode": "B01 - CTCK/HN",
+   "latestVersion": "2.3.4",
+   "versions": [
+    "2.3.4"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "693": {
+   "displayCode": "B01 - CTCK",
+   "latestVersion": "2.3.4",
+   "versions": [
+    "2.3.4"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "690": {
+   "displayCode": "PHỤ LỤC 02",
+   "latestVersion": "2.3.4",
+   "versions": [
+    "2.3.4"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "101": {
+   "displayCode": null,
+   "latestVersion": "2.1.3",
+   "versions": [
+    "2.1.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "701": {
+   "displayCode": "B01/BCTC",
+   "latestVersion": "2.3.5",
+   "versions": [
+    "2.3.5"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "702": {
+   "displayCode": "B05/BCTC",
+   "latestVersion": "2.3.5",
+   "versions": [
+    "2.3.5"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "698": {
+   "displayCode": "B01 - HTX",
+   "latestVersion": "2.3.5",
+   "versions": [
+    "2.3.5"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "699": {
+   "displayCode": "B01a - DNN",
+   "latestVersion": "2.3.5",
+   "versions": [
+    "2.3.5"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "700": {
+   "displayCode": "B 01b – DNN",
+   "latestVersion": "2.3.5",
+   "versions": [
+    "2.3.5"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "713": {
+   "displayCode": null,
+   "latestVersion": "2.3.7",
+   "versions": [
+    "2.3.7"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "716": {
+   "displayCode": null,
+   "latestVersion": "2.4.6",
+   "versions": [
+    "2.4.6"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "714": {
+   "displayCode": null,
+   "latestVersion": "2.3.8",
+   "versions": [
+    "2.3.8"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "385": {
+   "displayCode": "01/BC-SDHĐ-CNKD",
+   "latestVersion": "2.5.0",
+   "versions": [
+    "2.1.6",
+    "2.5.0"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "387": {
+   "displayCode": "01/TKN-XSBHĐC",
+   "latestVersion": "2.8.3",
+   "versions": [
+    "2.1.6",
+    "2.5.0",
+    "2.8.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "386": {
+   "displayCode": "01/CNKD",
+   "latestVersion": "2.8.3",
+   "versions": [
+    "2.1.6",
+    "2.5.0",
+    "2.8.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "388": {
+   "displayCode": "01/TTS",
+   "latestVersion": "2.8.3",
+   "versions": [
+    "2.1.6",
+    "2.5.0",
+    "2.8.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "03/DL-HĐĐT": {
+   "displayCode": null,
+   "latestVersion": "3.0.0",
+   "versions": [
+    "3.0.0"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "718": {
+   "displayCode": null,
+   "latestVersion": "2.4.8",
+   "versions": [
+    "2.4.8"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "471": {
+   "displayCode": "01/XSBHĐC",
+   "latestVersion": "2.4.9",
+   "versions": [
+    "2.4.9"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "472": {
+   "displayCode": "01/TKN-CNKD",
+   "latestVersion": "2.8.3",
+   "versions": [
+    "2.4.9",
+    "2.8.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "470": {
+   "displayCode": "01/TTS",
+   "latestVersion": "2.8.3",
+   "versions": [
+    "2.4.9",
+    "2.5.3",
+    "2.6.8",
+    "2.7.4",
+    "2.8.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "473": {
+   "displayCode": "01/CNKD",
+   "latestVersion": "2.8.3",
+   "versions": [
+    "2.4.9",
+    "2.5.1",
+    "2.5.3",
+    "2.6.8",
+    "2.7.4",
+    "2.8.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "907": {
+   "displayCode": "20-ĐK-TCT",
+   "latestVersion": "1.0.1",
+   "versions": [
+    "1.0.1"
+   ],
+   "orientation": "1",
+   "loai": [
+    "C"
+   ]
+  },
+  "902": {
+   "displayCode": null,
+   "latestVersion": "1.0.1",
+   "versions": [
+    "1.0.1"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "905": {
+   "displayCode": null,
+   "latestVersion": "1.0.1",
+   "versions": [
+    "1.0.1"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "827": {
+   "displayCode": null,
+   "latestVersion": "1.0.1",
+   "versions": [
+    "1.0.1"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "913": {
+   "displayCode": "05-ĐK-TH-TCT",
+   "latestVersion": "1.0.1",
+   "versions": [
+    "1.0.1"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "845": {
+   "displayCode": null,
+   "latestVersion": "2.8.3",
+   "versions": [
+    "1.0.1",
+    "1.0.2",
+    "2.8.1",
+    "2.8.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "909": {
+   "displayCode": null,
+   "latestVersion": "2.8.3",
+   "versions": [
+    "1.0.1",
+    "2.8.1",
+    "2.8.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "910": {
+   "displayCode": null,
+   "latestVersion": "2.8.3",
+   "versions": [
+    "1.0.1",
+    "2.7.7",
+    "2.8.1",
+    "2.8.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "911": {
+   "displayCode": null,
+   "latestVersion": "2.8.3",
+   "versions": [
+    "1.0.1",
+    "2.8.1",
+    "2.8.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "900": {
+   "displayCode": null,
+   "latestVersion": "1.0.1",
+   "versions": [
+    "1.0.1"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "901": {
+   "displayCode": null,
+   "latestVersion": "1.0.1",
+   "versions": [
+    "1.0.1"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "903": {
+   "displayCode": null,
+   "latestVersion": "3.0.8",
+   "versions": [
+    "1.0.1",
+    "2.8.1",
+    "2.8.3",
+    "3.0.8"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "906": {
+   "displayCode": null,
+   "latestVersion": "2.8.3",
+   "versions": [
+    "1.0.1",
+    "2.8.1",
+    "2.8.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "904": {
+   "displayCode": null,
+   "latestVersion": "1.0.1",
+   "versions": [
+    "1.0.1"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "826": {
+   "displayCode": null,
+   "latestVersion": "3.0.8",
+   "versions": [
+    "1.0.1",
+    "2.7.7",
+    "2.8.1",
+    "3.0.8"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "912": {
+   "displayCode": "20-ĐK-TH-TCT",
+   "latestVersion": "1.0.1",
+   "versions": [
+    "1.0.1"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "850": {
+   "displayCode": "05/GTGT",
+   "latestVersion": "2.8.3",
+   "versions": [
+    "2.5.1",
+    "2.8.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "847": {
+   "displayCode": "04/GTGT",
+   "latestVersion": "2.7.4",
+   "versions": [
+    "2.5.1",
+    "2.6.8",
+    "2.7.4"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "869": {
+   "displayCode": "01-1/TNDN-VSP ",
+   "latestVersion": "2.8.4",
+   "versions": [
+    "2.5.1",
+    "2.8.4"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "854": {
+   "displayCode": "03/TNDN-DK",
+   "latestVersion": "2.8.4",
+   "versions": [
+    "2.5.1",
+    "2.8.4"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "855": {
+   "displayCode": "01/LNCN-PSC",
+   "latestVersion": "2.8.4",
+   "versions": [
+    "2.5.1",
+    "2.8.4"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "873": {
+   "displayCode": "01/TNS-DK",
+   "latestVersion": "2.8.4",
+   "versions": [
+    "2.5.1",
+    "2.8.4"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "868": {
+   "displayCode": "01/TAIN-DK",
+   "latestVersion": "2.8.4",
+   "versions": [
+    "2.5.1",
+    "2.8.4"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "870": {
+   "displayCode": "01/TNDN-DK",
+   "latestVersion": "2.8.4",
+   "versions": [
+    "2.5.1",
+    "2.8.4"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "857": {
+   "displayCode": "01/TK-VSP",
+   "latestVersion": "2.8.4",
+   "versions": [
+    "2.5.1",
+    "2.8.4"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "858": {
+   "displayCode": "01-1/PTHU-VSP",
+   "latestVersion": "2.8.4",
+   "versions": [
+    "2.5.1",
+    "2.8.4"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "856": {
+   "displayCode": "01/LNCN-VSP",
+   "latestVersion": "2.8.4",
+   "versions": [
+    "2.5.1",
+    "2.8.4"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "878": {
+   "displayCode": "01/PBVMT",
+   "latestVersion": "2.5.1",
+   "versions": [
+    "2.5.1"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "824": {
+   "displayCode": "01/LPMB",
+   "latestVersion": "2.8.3",
+   "versions": [
+    "2.5.1",
+    "2.7.2",
+    "2.8.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "825": {
+   "displayCode": "02/TK-SDDPNN",
+   "latestVersion": "2.8.3",
+   "versions": [
+    "2.5.1",
+    "2.8.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "837": {
+   "displayCode": "02/TNDN",
+   "latestVersion": "2.5.1",
+   "versions": [
+    "2.5.1"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "833": {
+   "displayCode": "04/TNDN",
+   "latestVersion": "2.6.9",
+   "versions": [
+    "2.5.1",
+    "2.6.9"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "828": {
+   "displayCode": "05/TNDN",
+   "latestVersion": "2.5.1",
+   "versions": [
+    "2.5.1"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "829": {
+   "displayCode": "06/TNDN",
+   "latestVersion": "3.0.8",
+   "versions": [
+    "2.5.1",
+    "3.0.8"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "838": {
+   "displayCode": "01/NTNN",
+   "latestVersion": "2.5.1",
+   "versions": [
+    "2.5.1"
+   ],
+   "orientation": "1",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "840": {
+   "displayCode": "03/NTNN",
+   "latestVersion": "3.0.8",
+   "versions": [
+    "2.5.1",
+    "3.0.8"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "922": {
+   "displayCode": "04/NTNN",
+   "latestVersion": "3.0.8",
+   "versions": [
+    "2.5.1",
+    "3.0.8"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "832": {
+   "displayCode": "01/TAIN",
+   "latestVersion": "2.8.3",
+   "versions": [
+    "2.5.1",
+    "2.8.3"
+   ],
+   "orientation": "1",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "830": {
+   "displayCode": "01/TTĐB",
+   "latestVersion": "2.8.3",
+   "versions": [
+    "2.5.1",
+    "2.6.1",
+    "2.8.3"
+   ],
+   "orientation": "1",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "831": {
+   "displayCode": "02/TTĐB",
+   "latestVersion": "2.5.1",
+   "versions": [
+    "2.5.1"
+   ],
+   "orientation": "1",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "860": {
+   "displayCode": "04/CNV-TNCN",
+   "latestVersion": "2.8.3",
+   "versions": [
+    "2.5.1",
+    "2.8.3"
+   ],
+   "orientation": "1",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "861": {
+   "displayCode": "04/DTV-TNCN",
+   "latestVersion": "2.8.3",
+   "versions": [
+    "2.5.1",
+    "2.8.3"
+   ],
+   "orientation": "1",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "862": {
+   "displayCode": "04/TKQT-TNCN",
+   "latestVersion": "2.8.3",
+   "versions": [
+    "2.5.1",
+    "2.8.3"
+   ],
+   "orientation": "1",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "863": {
+   "displayCode": "04/NNG-TNCN",
+   "latestVersion": "2.8.3",
+   "versions": [
+    "2.5.1",
+    "2.8.3"
+   ],
+   "orientation": "1",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "872": {
+   "displayCode": "01/CTLNĐC",
+   "latestVersion": "3.0.8",
+   "versions": [
+    "2.5.1",
+    "2.8.3",
+    "3.0.8"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "880": {
+   "displayCode": "01/LP",
+   "latestVersion": "3.0.8",
+   "versions": [
+    "2.5.1",
+    "2.7.5",
+    "3.0.8"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "879": {
+   "displayCode": "01/PH",
+   "latestVersion": "2.7.5",
+   "versions": [
+    "2.5.1",
+    "2.7.5"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "851": {
+   "displayCode": "01/PHLPNG",
+   "latestVersion": "3.0.8",
+   "versions": [
+    "2.5.1",
+    "3.0.8"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "871": {
+   "displayCode": "01/BCTL-DK",
+   "latestVersion": "2.8.4",
+   "versions": [
+    "2.5.1",
+    "2.8.4"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "846": {
+   "displayCode": "03/GTGT",
+   "latestVersion": "2.5.1",
+   "versions": [
+    "2.5.1"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "852": {
+   "displayCode": "01/KTTSBĐ",
+   "latestVersion": "2.8.4",
+   "versions": [
+    "2.5.1",
+    "2.8.4"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "844": {
+   "displayCode": "02/GTGT",
+   "latestVersion": "2.5.1",
+   "versions": [
+    "2.5.1"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "853": {
+   "displayCode": "01/PTHU-DK",
+   "latestVersion": "2.8.4",
+   "versions": [
+    "2.5.1",
+    "2.8.4"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "834": {
+   "displayCode": "01/SDDNN",
+   "latestVersion": "2.5.1",
+   "versions": [
+    "2.5.1"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "835": {
+   "displayCode": "03/SDDNN",
+   "latestVersion": "2.8.3",
+   "versions": [
+    "2.5.1",
+    "2.8.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "836": {
+   "displayCode": "01/TMĐN",
+   "latestVersion": "2.8.3",
+   "versions": [
+    "2.5.1",
+    "2.8.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "841": {
+   "displayCode": "01/HKNN",
+   "latestVersion": "3.0.8",
+   "versions": [
+    "2.5.1",
+    "2.6.5",
+    "3.0.8"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "843": {
+   "displayCode": "01/TBH",
+   "latestVersion": "2.5.1",
+   "versions": [
+    "2.5.1"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "914": {
+   "displayCode": "01/TBVMT",
+   "latestVersion": "2.8.3",
+   "versions": [
+    "2.5.1",
+    "2.8.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "859": {
+   "displayCode": "02/KK-TNCN",
+   "latestVersion": "2.8.3",
+   "versions": [
+    "2.5.1",
+    "2.8.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "865": {
+   "displayCode": "06/TNCN ",
+   "latestVersion": "2.8.3",
+   "versions": [
+    "2.5.1",
+    "2.8.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "864": {
+   "displayCode": "05/KK-TNCN",
+   "latestVersion": "2.9.3",
+   "versions": [
+    "2.5.1",
+    "2.8.3",
+    "2.9.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "842": {
+   "displayCode": "01/GTGT",
+   "latestVersion": "2.8.3",
+   "versions": [
+    "2.5.1",
+    "2.6.8",
+    "2.7.4",
+    "2.8.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "1401": {
+   "displayCode": "03/NCCNN",
+   "latestVersion": "2.5.1",
+   "versions": [
+    "2.5.1"
+   ],
+   "orientation": "1",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "1501": {
+   "displayCode": "04/NCCNN",
+   "latestVersion": "2.5.1",
+   "versions": [
+    "2.5.1"
+   ],
+   "orientation": "1",
+   "loai": [
+    "C"
+   ]
+  },
+  "885": {
+   "displayCode": "02/LNCN-PSC",
+   "latestVersion": "2.8.4",
+   "versions": [
+    "2.5.1",
+    "2.8.4"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "886": {
+   "displayCode": "02/LNCN-VSP",
+   "latestVersion": "2.8.4",
+   "versions": [
+    "2.5.1",
+    "2.8.4"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "888": {
+   "displayCode": "01/ĐCĐB-VSP",
+   "latestVersion": "2.8.4",
+   "versions": [
+    "2.5.1",
+    "2.8.4"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "887": {
+   "displayCode": "02/TAIN-VSP",
+   "latestVersion": "2.8.4",
+   "versions": [
+    "2.5.1",
+    "2.8.4"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "889": {
+   "displayCode": "02/PTHU-VSP",
+   "latestVersion": "2.8.4",
+   "versions": [
+    "2.5.1",
+    "2.8.4"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "893": {
+   "displayCode": "02/PBVMT",
+   "latestVersion": "2.6.9",
+   "versions": [
+    "2.5.1",
+    "2.6.9"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "891": {
+   "displayCode": "01/QT-LNCL",
+   "latestVersion": "2.8.3",
+   "versions": [
+    "2.5.1",
+    "2.8.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "920": {
+   "displayCode": "02/PH",
+   "latestVersion": "2.7.5",
+   "versions": [
+    "2.5.1",
+    "2.6.9",
+    "2.7.5"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "950": {
+   "displayCode": "02/PHLPNG",
+   "latestVersion": "3.0.8",
+   "versions": [
+    "2.5.1",
+    "3.0.8"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "923": {
+   "displayCode": "01/VTNN",
+   "latestVersion": "3.0.8",
+   "versions": [
+    "2.5.1",
+    "3.0.8"
+   ],
+   "orientation": "1",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "881": {
+   "displayCode": "02/TNDN-VSP",
+   "latestVersion": "2.8.4",
+   "versions": [
+    "2.5.1",
+    "2.8.4"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "921": {
+   "displayCode": "02/NTNN",
+   "latestVersion": "2.5.1",
+   "versions": [
+    "2.5.1"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "884": {
+   "displayCode": "02/TAIN-DK",
+   "latestVersion": "2.8.4",
+   "versions": [
+    "2.5.1",
+    "2.8.4"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "890": {
+   "displayCode": "02/TNDN-DK",
+   "latestVersion": "2.9.4",
+   "versions": [
+    "2.5.1",
+    "2.7.6",
+    "2.9.4"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "953": {
+   "displayCode": "05/QTT-TNCN",
+   "latestVersion": "2.9.3",
+   "versions": [
+    "2.5.1",
+    "2.5.2",
+    "2.7.9",
+    "2.8.3",
+    "2.8.4",
+    "2.8.5",
+    "2.9.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "952": {
+   "displayCode": "02/QTT-TNCN",
+   "latestVersion": "2.8.3",
+   "versions": [
+    "2.5.1",
+    "2.5.2",
+    "2.7.3",
+    "2.8.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "892": {
+   "displayCode": "03/TNDN",
+   "latestVersion": "2.9.4",
+   "versions": [
+    "2.5.1",
+    "2.8.3",
+    "2.9.2",
+    "2.9.4"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "924": {
+   "displayCode": "02/TAIN",
+   "latestVersion": "2.8.3",
+   "versions": [
+    "2.5.1",
+    "2.8.3"
+   ],
+   "orientation": "1",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "882": {
+   "displayCode": "02/PTHU-DK",
+   "latestVersion": "2.8.4",
+   "versions": [
+    "2.5.1",
+    "2.8.4"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "883": {
+   "displayCode": "03/PTHU-DK",
+   "latestVersion": "2.8.4",
+   "versions": [
+    "2.5.1",
+    "2.8.4"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "915": {
+   "displayCode": "01/ĐNHUY",
+   "latestVersion": "2.9.2",
+   "versions": [
+    "2.5.2",
+    "2.9.2"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "916": {
+   "displayCode": "01/DNXLNT",
+   "latestVersion": "2.9.1",
+   "versions": [
+    "2.5.2",
+    "2.6.4",
+    "2.8.3",
+    "2.8.6",
+    "2.9.1"
+   ],
+   "orientation": "1",
+   "loai": [
+    "C"
+   ]
+  },
+  "717": {
+   "displayCode": "01/DS-TK",
+   "latestVersion": "2.1.6",
+   "versions": [
+    "2.1.6"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "956": {
+   "displayCode": null,
+   "latestVersion": "2.5.6",
+   "versions": [
+    "2.5.5",
+    "2.5.6"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "958": {
+   "displayCode": "01/TEM",
+   "latestVersion": "3.0.3",
+   "versions": [
+    "2.5.7",
+    "2.8.3",
+    "3.0.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "959": {
+   "displayCode": "03/TEM",
+   "latestVersion": "2.8.3",
+   "versions": [
+    "2.5.7",
+    "2.8.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "963": {
+   "displayCode": "02/TEM",
+   "latestVersion": "2.8.3",
+   "versions": [
+    "2.5.8",
+    "2.8.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "964": {
+   "displayCode": "04/TEM",
+   "latestVersion": "2.8.3",
+   "versions": [
+    "2.5.8",
+    "2.8.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "965": {
+   "displayCode": "05/TEM",
+   "latestVersion": "2.8.3",
+   "versions": [
+    "2.5.8",
+    "2.8.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "966": {
+   "displayCode": "06/TEM",
+   "latestVersion": "2.8.3",
+   "versions": [
+    "2.5.8",
+    "2.8.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "967": {
+   "displayCode": "07/TEM",
+   "latestVersion": "2.8.3",
+   "versions": [
+    "2.5.8",
+    "2.8.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "995": {
+   "displayCode": "01/CCTT-TMĐT",
+   "latestVersion": "2.6.0",
+   "versions": [
+    "2.6.0"
+   ],
+   "orientation": "1",
+   "loai": [
+    "B",
+    "C",
+    "T"
+   ]
+  },
+  "962": {
+   "displayCode": null,
+   "latestVersion": "2.8.3",
+   "versions": [
+    "1.0.2",
+    "2.8.1",
+    "2.8.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "969": {
+   "displayCode": "CTT24/TEM",
+   "latestVersion": "2.6.1",
+   "versions": [
+    "2.6.1"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "961": {
+   "displayCode": "CTT24/TEM",
+   "latestVersion": "3.0.2",
+   "versions": [
+    "2.5.7",
+    "2.8.9",
+    "3.0.2"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "1032": {
+   "displayCode": "Mẫu 2.10",
+   "latestVersion": "2.6.3",
+   "versions": [
+    "2.6.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C",
+    "CD",
+    "DK",
+    "TD"
+   ]
+  },
+  "1109": {
+   "displayCode": null,
+   "latestVersion": "2.6.6",
+   "versions": [
+    "2.6.6"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "1111": {
+   "displayCode": null,
+   "latestVersion": "2.6.7",
+   "versions": [
+    "2.6.7"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1110": {
+   "displayCode": "01a/ĐNHT",
+   "latestVersion": "2.8.3",
+   "versions": [
+    "2.6.7",
+    "2.8.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1117": {
+   "displayCode": "01/CPH",
+   "latestVersion": "2.7.1",
+   "versions": [
+    "2.7.1"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "1118": {
+   "displayCode": "02/QT-CPH",
+   "latestVersion": "2.7.1",
+   "versions": [
+    "2.7.1"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "1113": {
+   "displayCode": "01/CNV",
+   "latestVersion": "2.7.1",
+   "versions": [
+    "2.7.1"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "1114": {
+   "displayCode": "02/QT-CNV",
+   "latestVersion": "2.7.1",
+   "versions": [
+    "2.7.1"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "1115": {
+   "displayCode": "02/QT-SXCDK",
+   "latestVersion": "2.7.1",
+   "versions": [
+    "2.7.1"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "1116": {
+   "displayCode": "01CLVCSH-VDL",
+   "latestVersion": "2.7.1",
+   "versions": [
+    "2.7.1"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "1120": {
+   "displayCode": "05-ĐK-TH-TCT",
+   "latestVersion": "1.0.1",
+   "versions": [
+    "1.0.1"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "997": {
+   "displayCode": "01/ĐK-TĐKTT",
+   "latestVersion": "3.0.8",
+   "versions": [
+    "2.7.2",
+    "2.8.3",
+    "3.0.8"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1121": {
+   "displayCode": null,
+   "latestVersion": "2.6.6",
+   "versions": [
+    "2.6.6"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "1130": {
+   "displayCode": null,
+   "latestVersion": "2.8.3",
+   "versions": [
+    "2.7.7",
+    "2.8.1",
+    "2.8.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1131": {
+   "displayCode": null,
+   "latestVersion": "2.8.3",
+   "versions": [
+    "2.7.7",
+    "2.8.1",
+    "2.8.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1133": {
+   "displayCode": null,
+   "latestVersion": "2.8.3",
+   "versions": [
+    "2.7.7",
+    "2.8.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1135": {
+   "displayCode": "05-ĐK-TH-TCT",
+   "latestVersion": "3.0.8",
+   "versions": [
+    "2.7.7",
+    "2.8.3",
+    "3.0.8"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1137": {
+   "displayCode": "20-ĐK-TH-TCT",
+   "latestVersion": "2.8.3",
+   "versions": [
+    "2.7.7",
+    "2.8.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1136": {
+   "displayCode": "20-ĐK-TCT",
+   "latestVersion": "2.8.3",
+   "versions": [
+    "2.7.7",
+    "2.8.3"
+   ],
+   "orientation": "1",
+   "loai": [
+    "C"
+   ]
+  },
+  "1132": {
+   "displayCode": null,
+   "latestVersion": "2.8.3",
+   "versions": [
+    "2.7.7",
+    "2.8.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1134": {
+   "displayCode": null,
+   "latestVersion": "3.0.8",
+   "versions": [
+    "2.7.7",
+    "2.8.3",
+    "3.0.8"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1200": {
+   "displayCode": "01/DS-TK",
+   "latestVersion": "2.7.8",
+   "versions": [
+    "2.7.8"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1000": {
+   "displayCode": "02/QTT-TNCN",
+   "latestVersion": "2.8.0",
+   "versions": [
+    "2.8.0"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "1126": {
+   "displayCode": null,
+   "latestVersion": "2.6.6",
+   "versions": [
+    "2.6.6"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "06/ĐN-PSĐT": {
+   "displayCode": null,
+   "latestVersion": "2.1.0",
+   "versions": [
+    "2.1.0"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "01/ĐKTĐ-HĐĐT": {
+   "displayCode": null,
+   "latestVersion": "2.1.0",
+   "versions": [
+    "2.1.0"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "01/ĐKTĐ–HĐĐT": {
+   "displayCode": null,
+   "latestVersion": "2.1.0",
+   "versions": [
+    "2.1.0"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "01/ÐKTÐ-HÐÐT": {
+   "displayCode": null,
+   "latestVersion": "2.1.0",
+   "versions": [
+    "2.1.0"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "01/ĐKTĐ-CTĐT": {
+   "displayCode": null,
+   "latestVersion": "2.1.0",
+   "versions": [
+    "2.1.0"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "04/SS-HĐĐT": {
+   "displayCode": null,
+   "latestVersion": "3.0.8",
+   "versions": [
+    "2.1.0",
+    "3.0.8"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "BC26/BLĐT": {
+   "displayCode": null,
+   "latestVersion": "2.1.0",
+   "versions": [
+    "2.1.0"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "04/SS-CTĐT": {
+   "displayCode": null,
+   "latestVersion": "3.0.8",
+   "versions": [
+    "2.1.0",
+    "3.0.8"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1144": {
+   "displayCode": "01/CNKD-TMĐT",
+   "latestVersion": "2.8.2",
+   "versions": [
+    "2.8.2"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "1140": {
+   "displayCode": "01/CNKD-TMĐT",
+   "latestVersion": "2.8.2",
+   "versions": [
+    "2.8.2"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "1142": {
+   "displayCode": "02/CNKD-TMĐT",
+   "latestVersion": "2.8.2",
+   "versions": [
+    "2.8.2"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "1143": {
+   "displayCode": "03/CNNN-TMĐT",
+   "latestVersion": "2.8.2",
+   "versions": [
+    "2.8.2"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "1141": {
+   "displayCode": "01/BKNT-TMĐT",
+   "latestVersion": "2.8.2",
+   "versions": [
+    "2.8.2"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1158": {
+   "displayCode": null,
+   "latestVersion": "2.8.3",
+   "versions": [
+    "2.8.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1175": {
+   "displayCode": "30/ĐK-TCT",
+   "latestVersion": "2.8.7",
+   "versions": [
+    "2.8.7"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1176": {
+   "displayCode": "31/ĐK-TCT",
+   "latestVersion": "2.8.7",
+   "versions": [
+    "2.8.7"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1174": {
+   "displayCode": "01/APA-ĐN",
+   "latestVersion": "2.8.7",
+   "versions": [
+    "2.8.7"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1187": {
+   "displayCode": "01/TK_SDDPNN",
+   "latestVersion": "2.9.3",
+   "versions": [
+    "2.8.6",
+    "2.8.7",
+    "2.9.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1186": {
+   "displayCode": "04/TK_SDDPNN",
+   "latestVersion": "2.8.7",
+   "versions": [
+    "2.8.6",
+    "2.8.7"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1185": {
+   "displayCode": "03/BĐS_TNCN",
+   "latestVersion": "2.8.7",
+   "versions": [
+    "2.8.6",
+    "2.8.7"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "CTT50": {
+   "displayCode": null,
+   "latestVersion": "2.1.0",
+   "versions": [
+    "2.1.0"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1195": {
+   "displayCode": "Mẫu 2.10",
+   "latestVersion": "2.8.7",
+   "versions": [
+    "2.8.7"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1194": {
+   "displayCode": "Mẫu 2.10",
+   "latestVersion": "2.8.7",
+   "versions": [
+    "2.8.7"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1191": {
+   "displayCode": "01/KNNT-TĐT",
+   "latestVersion": "2.8.7",
+   "versions": [
+    "2.8.7"
+   ],
+   "orientation": "1",
+   "loai": [
+    "C"
+   ]
+  },
+  "1188": {
+   "displayCode": "01/DSMT-LHQ",
+   "latestVersion": "2.8.7",
+   "versions": [
+    "2.8.7"
+   ],
+   "orientation": "1",
+   "loai": [
+    "C"
+   ]
+  },
+  "1189": {
+   "displayCode": "02/TĐDSMT-LHQ",
+   "latestVersion": "2.8.7",
+   "versions": [
+    "2.8.7"
+   ],
+   "orientation": "1",
+   "loai": [
+    "C"
+   ]
+  },
+  "1163": {
+   "displayCode": "05",
+   "latestVersion": "2.8.7",
+   "versions": [
+    "2.8.7"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1190": {
+   "displayCode": "01/XNCG - ĐNMT",
+   "latestVersion": "2.8.7",
+   "versions": [
+    "2.8.7"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1159": {
+   "displayCode": "01/GHAN",
+   "latestVersion": "2.8.7",
+   "versions": [
+    "2.8.7"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1160": {
+   "displayCode": "01/NDAN",
+   "latestVersion": "2.8.7",
+   "versions": [
+    "2.8.7"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1161": {
+   "displayCode": "01/KTCN",
+   "latestVersion": "2.8.7",
+   "versions": [
+    "2.8.7"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1162": {
+   "displayCode": "03/KTCN",
+   "latestVersion": "2.8.7",
+   "versions": [
+    "2.8.7"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1164": {
+   "displayCode": "01/TB-ĐVHT",
+   "latestVersion": "2.8.7",
+   "versions": [
+    "2.8.7"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "1165": {
+   "displayCode": "01-ĐKTD-ĐVHT",
+   "latestVersion": "2.8.7",
+   "versions": [
+    "2.8.7"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "1192": {
+   "displayCode": "01/ĐNKHT",
+   "latestVersion": "2.8.7",
+   "versions": [
+    "2.8.7"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1249": {
+   "displayCode": "01/MGTH",
+   "latestVersion": "2.8.7",
+   "versions": [
+    "2.8.7"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1157": {
+   "displayCode": "06/MGTH",
+   "latestVersion": "2.8.7",
+   "versions": [
+    "2.8.7"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1227": {
+   "displayCode": "01/DTA-MAP",
+   "latestVersion": "2.8.5",
+   "versions": [
+    "2.8.5"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1173": {
+   "displayCode": "06/HTQT",
+   "latestVersion": "3.0.8",
+   "versions": [
+    "2.8.5",
+    "3.0.8"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1151": {
+   "displayCode": "03/HTQT",
+   "latestVersion": "2.8.5",
+   "versions": [
+    "2.8.5"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "954": {
+   "displayCode": "02/HT",
+   "latestVersion": "2.8.5",
+   "versions": [
+    "2.8.5"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1147": {
+   "displayCode": "01/HTQT",
+   "latestVersion": "2.8.5",
+   "versions": [
+    "2.8.5"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1148": {
+   "displayCode": "01/TBH-TB",
+   "latestVersion": "2.8.5",
+   "versions": [
+    "2.8.5"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1149": {
+   "displayCode": "01/TBH-TB",
+   "latestVersion": "2.8.5",
+   "versions": [
+    "2.8.5"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1150": {
+   "displayCode": "02/HTQT",
+   "latestVersion": "2.8.5",
+   "versions": [
+    "2.8.5"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1239": {
+   "displayCode": "01/TTĐB",
+   "latestVersion": "2.8.9",
+   "versions": [
+    "2.8.9"
+   ],
+   "orientation": "1",
+   "loai": [
+    "C"
+   ]
+  },
+  "1244": {
+   "displayCode": "02/CNKD-TNCN-QTT",
+   "latestVersion": "2.8.9",
+   "versions": [
+    "2.8.9"
+   ],
+   "orientation": "1",
+   "loai": [
+    "C"
+   ]
+  },
+  "1238": {
+   "displayCode": "01/BVMT",
+   "latestVersion": "2.8.9",
+   "versions": [
+    "2.8.9"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1242": {
+   "displayCode": "01/TAIN",
+   "latestVersion": "2.8.9",
+   "versions": [
+    "2.8.9"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1243": {
+   "displayCode": "01/HKD-ĐNH",
+   "latestVersion": "2.8.9",
+   "versions": [
+    "2.8.9"
+   ],
+   "orientation": "1",
+   "loai": [
+    "C"
+   ]
+  },
+  "1245": {
+   "displayCode": "01/TKN-CNKD",
+   "latestVersion": "2.8.9",
+   "versions": [
+    "2.8.9"
+   ],
+   "orientation": "1",
+   "loai": [
+    "C"
+   ]
+  },
+  "1240": {
+   "displayCode": "01/CNKD",
+   "latestVersion": "2.8.9",
+   "versions": [
+    "2.8.9"
+   ],
+   "orientation": "1",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "1265": {
+   "displayCode": "01/BK-STK",
+   "latestVersion": "2.8.9",
+   "versions": [
+    "2.8.9"
+   ],
+   "orientation": "1",
+   "loai": [
+    "C"
+   ]
+  },
+  "1255": {
+   "displayCode": "01/BĐS",
+   "latestVersion": "2.8.9",
+   "versions": [
+    "2.8.9"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "1229": {
+   "displayCode": "01/TB-ĐĐKD",
+   "latestVersion": "2.8.9",
+   "versions": [
+    "2.8.9"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1232": {
+   "displayCode": "01/TCKT",
+   "latestVersion": "2.8.9",
+   "versions": [
+    "2.8.9"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1193": {
+   "displayCode": "1",
+   "latestVersion": "2.8.7",
+   "versions": [
+    "2.8.7"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "01/CCTT-ĐK": {
+   "displayCode": null,
+   "latestVersion": "2.1.0",
+   "versions": [
+    "2.1.0"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1224": {
+   "displayCode": "02/TEM",
+   "latestVersion": "3.0.3",
+   "versions": [
+    "2.8.8",
+    "3.0.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1225": {
+   "displayCode": "04/TEM",
+   "latestVersion": "2.8.8",
+   "versions": [
+    "2.8.8"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1226": {
+   "displayCode": "07/TEM",
+   "latestVersion": "2.8.8",
+   "versions": [
+    "2.8.8"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1166": {
+   "displayCode": "01/TKTT-QDMTT",
+   "latestVersion": "2.8.8",
+   "versions": [
+    "2.8.8"
+   ],
+   "orientation": "1",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "1167": {
+   "displayCode": "03/TB-ĐVHT",
+   "latestVersion": "2.8.8",
+   "versions": [
+    "2.8.8"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1228": {
+   "displayCode": "01/MTCN",
+   "latestVersion": "2.8.8",
+   "versions": [
+    "2.8.8"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1248": {
+   "displayCode": "03/CNKD-TMĐT",
+   "latestVersion": "2.8.9",
+   "versions": [
+    "2.8.9"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "1124": {
+   "displayCode": null,
+   "latestVersion": "2.8.9",
+   "versions": [
+    "2.8.9"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1168": {
+   "displayCode": "01/TKTT-IIR",
+   "latestVersion": "2.8.8",
+   "versions": [
+    "2.8.8"
+   ],
+   "orientation": "1",
+   "loai": [
+    "C"
+   ]
+  },
+  "1247": {
+   "displayCode": "01/TCKT",
+   "latestVersion": "2.9.8",
+   "versions": [
+    "2.8.9",
+    "2.9.8"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "1246": {
+   "displayCode": "01/XSBHĐC",
+   "latestVersion": "2.8.9",
+   "versions": [
+    "2.8.9"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "1260": {
+   "displayCode": "01/GHAN",
+   "latestVersion": "2.9.3",
+   "versions": [
+    "2.9.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1259": {
+   "displayCode": "01/TTĐB",
+   "latestVersion": "2.9.3",
+   "versions": [
+    "2.9.3"
+   ],
+   "orientation": "1",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "1256": {
+   "displayCode": "01/LNCN-DK",
+   "latestVersion": "2.9.3",
+   "versions": [
+    "2.9.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "1264": {
+   "displayCode": "01/TK-DK",
+   "latestVersion": "2.9.3",
+   "versions": [
+    "2.9.3"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "1261": {
+   "displayCode": "01/TBH",
+   "latestVersion": "3.0.8",
+   "versions": [
+    "2.9.3",
+    "3.0.8"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "1250": {
+   "displayCode": "Mẫu số B01 – CTQ",
+   "latestVersion": "2.9.0",
+   "versions": [
+    "2.9.0"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1251": {
+   "displayCode": "Mẫu số B01 – CTQ",
+   "latestVersion": "2.9.0",
+   "versions": [
+    "2.9.0"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1253": {
+   "displayCode": "B01 - CTCK",
+   "latestVersion": "2.9.0",
+   "versions": [
+    "2.9.0"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1252": {
+   "displayCode": "B01 – CTQ",
+   "latestVersion": "2.9.0",
+   "versions": [
+    "2.9.0"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1254": {
+   "displayCode": "B01/BCTC",
+   "latestVersion": "2.9.0",
+   "versions": [
+    "2.9.0"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1267": {
+   "displayCode": "02/TNDN",
+   "latestVersion": "2.9.5",
+   "versions": [
+    "2.9.5"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "1268": {
+   "displayCode": "05/TNDN",
+   "latestVersion": "2.9.5",
+   "versions": [
+    "2.9.5"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "1269": {
+   "displayCode": "01/BĐS",
+   "latestVersion": "2.9.8",
+   "versions": [
+    "2.9.8"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "1266": {
+   "displayCode": "01/CNKD",
+   "latestVersion": "2.9.8",
+   "versions": [
+    "2.9.8"
+   ],
+   "orientation": "1",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "1272": {
+   "displayCode": "B01 - HTX",
+   "latestVersion": "2.9.7",
+   "versions": [
+    "2.9.7"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1273": {
+   "displayCode": "B01 - DNSS",
+   "latestVersion": "2.9.7",
+   "versions": [
+    "2.9.7"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1277": {
+   "displayCode": "02/HUY-HĐBLG",
+   "latestVersion": "3.0.8",
+   "versions": [
+    "3.0.3",
+    "3.0.8"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1278": {
+   "displayCode": null,
+   "latestVersion": "3.0.4",
+   "versions": [
+    "3.0.4"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "1276": {
+   "displayCode": "01/TSMH",
+   "latestVersion": "3.0.0",
+   "versions": [
+    "3.0.0"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "1270": {
+   "displayCode": null,
+   "latestVersion": "2.9.8",
+   "versions": [
+    "2.9.8"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "1271": {
+   "displayCode": "02/CNKD-TNCN-QTT",
+   "latestVersion": "2.9.8",
+   "versions": [
+    "2.9.8"
+   ],
+   "orientation": "1",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "1301": {
+   "displayCode": null,
+   "latestVersion": "3.0.6",
+   "versions": [
+    "3.0.6"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1303": {
+   "displayCode": null,
+   "latestVersion": "3.0.9",
+   "versions": [
+    "3.0.6",
+    "3.0.9"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1284": {
+   "displayCode": "B01 - DNSS",
+   "latestVersion": "3.0.5",
+   "versions": [
+    "3.0.5"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1282": {
+   "displayCode": "Mẫu số B01a - DN",
+   "latestVersion": "3.0.5",
+   "versions": [
+    "3.0.5"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1280": {
+   "displayCode": "B01 - DNSS",
+   "latestVersion": "3.0.5",
+   "versions": [
+    "3.0.5"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1283": {
+   "displayCode": "B 01b– DN",
+   "latestVersion": "3.0.5",
+   "versions": [
+    "3.0.5"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1281": {
+   "displayCode": "Mẫu số B01 - DN",
+   "latestVersion": "3.0.5",
+   "versions": [
+    "3.0.5"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1302": {
+   "displayCode": "01/TNS-DK",
+   "latestVersion": "3.0.7",
+   "versions": [
+    "3.0.7"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "1279": {
+   "displayCode": "01/CCTT-DLVC",
+   "latestVersion": "3.0.5",
+   "versions": [
+    "3.0.5"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "2002": {
+   "displayCode": "04/TNDN",
+   "latestVersion": "3.0.9",
+   "versions": [
+    "3.0.9"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "2006": {
+   "displayCode": "06/TNCN",
+   "latestVersion": "3.0.9",
+   "versions": [
+    "3.0.9"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "2000": {
+   "displayCode": "01/XSBHDCMG-CNKD",
+   "latestVersion": "3.0.9",
+   "versions": [
+    "3.0.9"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "2007": {
+   "displayCode": "01/TCKT",
+   "latestVersion": "3.0.9",
+   "versions": [
+    "3.0.9"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "2003": {
+   "displayCode": "02/TNDN",
+   "latestVersion": "3.0.9",
+   "versions": [
+    "3.0.9"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "2013": {
+   "displayCode": "02/NTNN",
+   "latestVersion": "3.0.9",
+   "versions": [
+    "3.0.9"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "2012": {
+   "displayCode": "01/NTNN, NCCNN",
+   "latestVersion": "3.0.9",
+   "versions": [
+    "3.0.9"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "2004": {
+   "displayCode": "05/TNDN",
+   "latestVersion": "3.0.9",
+   "versions": [
+    "3.0.9"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "2005": {
+   "displayCode": "07/TNDN",
+   "latestVersion": "3.0.9",
+   "versions": [
+    "3.0.9"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "2022": {
+   "displayCode": "01/BKNT-KTNT",
+   "latestVersion": "3.0.9",
+   "versions": [
+    "3.0.9"
+   ],
+   "orientation": "0",
+   "loai": [
+    "B",
+    "C"
+   ]
+  },
+  "1304": {
+   "displayCode": null,
+   "latestVersion": "3.0.9",
+   "versions": [
+    "3.0.9"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1305": {
+   "displayCode": "20-ĐKT",
+   "latestVersion": "3.0.9",
+   "versions": [
+    "3.0.9"
+   ],
+   "orientation": "1",
+   "loai": [
+    "C"
+   ]
+  },
+  "1310": {
+   "displayCode": null,
+   "latestVersion": "3.0.9",
+   "versions": [
+    "3.0.9"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "2110": {
+   "displayCode": null,
+   "latestVersion": "3.0.9",
+   "versions": [
+    "3.0.9"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "2108": {
+   "displayCode": null,
+   "latestVersion": "3.0.9",
+   "versions": [
+    "3.0.9"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1311": {
+   "displayCode": "BK04.1-ĐKT",
+   "latestVersion": "3.0.9",
+   "versions": [
+    "3.0.9"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1312": {
+   "displayCode": null,
+   "latestVersion": "3.0.9",
+   "versions": [
+    "3.0.9"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1313": {
+   "displayCode": null,
+   "latestVersion": "3.0.9",
+   "versions": [
+    "3.0.9"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "1314": {
+   "displayCode": null,
+   "latestVersion": "3.0.9",
+   "versions": [
+    "3.0.9"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "2116": {
+   "displayCode": "30/ĐKT",
+   "latestVersion": "3.0.9",
+   "versions": [
+    "3.0.9"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  },
+  "2117": {
+   "displayCode": "31/ĐKT",
+   "latestVersion": "3.0.9",
+   "versions": [
+    "3.0.9"
+   ],
+   "orientation": "0",
+   "loai": [
+    "C"
+   ]
+  }
+ },
+ "categories": {
+  "declaration": [
+   "HSoThueDTu"
+  ],
+  "notice": [
+   "TBaoThueDTu",
+   "THONGBAO",
+   "TBAO_TKHOAN_NH",
+   "TBAO_TKHOAN_NT",
+   "TBAO_NGUNG",
+   "THONG_BAO"
+  ],
+  "payment": [
+   "CHUNGTU"
+  ],
+  "registration": [
+   "DKyThueDTu"
+  ],
+  "catalog": [
+   "DanhMucDTu"
+  ],
+  "customs": [
+   "TOKHAI_OBJ",
+   "TOKHAISUA_OBJ"
+  ],
+  "invoice": [
+   "TKhai",
+   "DNghi",
+   "TBao",
+   "BCTHSDBLai",
+   "BLai"
+  ]
+ }
+}

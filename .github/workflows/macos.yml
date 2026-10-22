@@ -1,0 +1,39 @@
+name: macOS build and tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-14
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Toolchain
+        run: |
+          xcodebuild -version
+          swift --version
+
+      - name: Unit tests
+        working-directory: iTaxViewerMac
+        run: swift test
+
+      - name: Field-mapping harness
+        run: python3 iTaxViewerMac/scripts/validate_fixtures.py
+
+      - name: Build universal .app
+        working-directory: iTaxViewerMac
+        run: |
+          chmod +x scripts/build_app.sh
+          scripts/build_app.sh --universal
+
+      - name: Upload app bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: iTaxViewerMac-unsigned
+          path: iTaxViewerMac/build/iTaxViewerMac.app
+          if-no-files-found: error

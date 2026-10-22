@@ -1,0 +1,106 @@
+import Foundation
+
+public enum VietnameseFormat {
+
+    /// Faithful port of the `ihtkk:formatNumber` JavaScript used by the shipped
+    /// templates (msxsl:script in common.xsl):
+    ///  * rounds to an integer using Math.floor(x*100 + 0.5)/100 then floor;
+    ///  * groups thousands with '.';
+    ///  * keeps an explicit fractional part after ',';
+    ///  * renders negative values in parentheses.
+    public static func number(_ raw: String?) -> String {
+        guard var value = raw?.trimmingCharacters(in: .whitespacesAndNewlines), !value.isEmpty else {
+            return ""
+        }
+        if value == "true" || value == "false" { return value }
+        var negative = false
+        if value.hasPrefix("-") {
+            negative = true
+            value.removeFirst()
+        } else if value.hasPrefix("(") && value.hasSuffix(")") {
+            negative = true
+            value = String(value.dropFirst().dropLast())
+        }
+        var integerPart = value
+        var fraction = ""
+        if let dot = value.firstIndex(of: ".") {
+            integerPart = String(value[..<dot])
+            fraction = String(value[value.index(after: dot)...])
+        }
+        guard let numeric = Double(integerPart + (fraction.isEmpty ? "" : "." + fraction)) else {
+            return raw?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        }
+        let roundedHundredths = floor(numeric * 100 + 0.50000000001)
+        let roundedInteger = floor(roundedHundredths / 100)
+        var digits = String(format: "%.0f", roundedInteger)
+        if digits == "-0" { digits = "0" }
+        var grouped = ""
+        for (index, ch) in digits.enumerated() {
+            if index > 0 && (digits.count - index) % 3 == 0 { grouped.append(".") }
+            grouped.append(ch)
+        }
+        if !fraction.isEmpty { grouped += "," + fraction }
+        if negative && grouped != "0" { grouped = "(\(grouped))" }
+        return grouped
+    }
+
+    public static func date(_ raw: String?) -> String {
+        guard let raw = raw?.trimmingCharacters(in: .whitespacesAndNewlines), !raw.isEmpty else { return "" }
+        let formats = ["yyyy-MM-dd'T'HH:mm:ss", "yyyy-MM-dd", "dd/MM/yyyy", "dd-MM-yyyy", "yyyyMMdd"]
+        for format in formats {
+            let f = DateFormatter()
+            f.locale = Locale(identifier: "en_US_POSIX")
+            f.timeZone = TimeZone(secondsFromGMT: 0)
+            f.dateFormat = format
+            if let date = f.date(from: raw) {
+                let out = DateFormatter()
+                out.locale = Locale(identifier: "vi_VN")
+                out.dateFormat = "dd/MM/yyyy"
+                return out.string(from: date)
+            }
+        }
+        return raw
+    }
+
+    public static func period(type: String?, period: String?, from: String?, to: String?) -> String {
+        if type != "Y", let from, !from.isEmpty, let to, !to.isEmpty {
+            return "Từ ngày \(date(from)) đến ngày \(date(to))"
+        }
+        guard let period, !period.isEmpty else { return "" }
+        switch type {
+        case "M":
+            let parts = period.split(separator: "/")
+            if parts.count == 2 { return "Tháng \(parts[0]) năm \(parts[1])" }
+            return period
+        case "Q":
+            let parts = period.split(separator: "/")
+            if parts.count == 2 { return "Quý \(parts[0]) năm \(parts[1])" }
+            return period
+        case "Y":
+            if let from, !from.isEmpty, let to, !to.isEmpty {
+                return "Năm \(period) Từ \(date(from)) đến \(date(to))"
+            }
+            return "Năm \(period)"
+        default:
+            return period
+        }
+    }
+
+    public static func filingTypeLabel(_ type: String?, supplement: String?) -> String {
+        switch type {
+        case "C": return "Lần đầu: [X]    Bổ sung lần thứ: [ ]"
+        case "B": return "Lần đầu: [ ]    Bổ sung lần thứ: [\(supplement ?? "")]"
+        default: return ""
+        }
+    }
+
+    public static func htmlEscape(_ value: String) -> String {
+        var s = value
+        s = s.replacingOccurrences(of: "&", with: "&amp;")
+        s = s.replacingOccurrences(of: "<", with: "&lt;")
+        s = s.replacingOccurrences(of: ">", with: "&gt;")
+        s = s.replacingOccurrences(of: "\"", with: "&quot;")
+        s = s.replacingOccurrences(of: "'", with: "&#39;")
+        return s
+    }
+}

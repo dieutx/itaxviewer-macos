@@ -1,0 +1,16 @@
+﻿# macOS / Xcode
+.DS_Store
+build/
+DerivedData/
+*.xcuserstate
+
+# Swift Package Manager
+.build/
+.swiftpm/
+
+# Analysis workspace (decompiled vendor code / extracted assets)
+_re/
+
+# Python
+__pycache__/
+*.pyc

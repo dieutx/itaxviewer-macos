@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HSoThueDTu [
+  <!ENTITY xxe SYSTEM "file:///C:/Windows/win.ini">
+]>
+<HSoThueDTu xmlns="http://kekhaithue.gdt.gov.vn/TKhaiThue">
+  <HSoKhaiThue><TTinChung><TTinTKhaiThue><TKhaiThue>
+    <maTKhai>842</maTKhai><tenTKhai>&xxe;</tenTKhai><pbanTKhaiXML>2.8.3</pbanTKhaiXML><loaiTKhai>C</loaiTKhai>
+  </TKhaiThue></TTinTKhaiThue></TTinChung><CTieuTKhaiChinh><ct22>0</ct22></CTieuTKhaiChinh></HSoKhaiThue>
+</HSoThueDTu>
