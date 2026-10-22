@@ -124,8 +124,11 @@ as an appendix. The child tag name is the `plucID` (prefix stripped). Each appen
 own XSLT and orientation. `HSoThueViewer` renders the main form first, then every appendix,
 and `printFile` emits one PDF per appendix before merging.
 
-**macOS:** the full data of every `PLuc` child is rendered (page break before, one table per
-appendix). Official appendix layouts are not yet reproduced.
+**macOS:** every `PLuc` child is rendered on a new page. `PL_NQ43_GTGT`, `PL_NQ101_GTGT` and
+`PL_NQ142_GTGT` have independently recreated official layouts (identity block, purchase and
+sale tables, totals and the NQ142 difference `[09]`). Other `plucID` values fall back to a
+path/value table. The remaining layouts are listed in
+`docs/PROMPTS/WINDOWS_APPENDIX_RE.md`.
 
 ## 6. Namespace normalisation before transformation
 

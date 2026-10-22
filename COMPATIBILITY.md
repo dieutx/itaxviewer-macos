@@ -14,7 +14,7 @@ Status legend:
 * **NOT VERIFIED** — deliberately not claimed (cryptographic signatures)
 
 > **Executed on macOS 15 (Intel) on 2026-10-22** with Xcode 16.1 / Swift 6.0.2.
-> `swift test` ran 42 tests (41 passed, 1 skipped because `ITAX_FIXTURE_DIR` was not set),
+> `swift test` ran 45 tests (44 passed, 1 skipped because `ITAX_FIXTURE_DIR` was not set),
 > `scripts/build_app.sh` produced a launchable ad-hoc-signed `.app`, and the HTML/CSS
 > renderer was exercised for all four priority forms. The Windows reference screenshots
 > below were captured from the live Windows application. Items that still require a manual
@@ -111,6 +111,12 @@ Screenshots captured from `iTaxViewer.exe` rendering the same fixtures
   `<BaoCaoTaiChinh>` and reproducibly crashes the Windows app; the reference screenshot was
   taken after removing that unmapped appendix. The macOS app renders appendix data instead
   and never crashes.
+* 01/GTGT appendices under NQ 43/2022, NQ 101/2023 and NQ 142/2024 now use a recreated
+  official layout: identity `[01]`–`[04]`, section I (purchases), section II (sales),
+  section III difference `[09] = [08] - [06]`, with all rows and totals. Covered by
+  `gtgt_842_nq142.xml` and unit tests.
+* `PL01_KHBS`, `PL01_1_KHBS`, `BaoCaoTaiChinh` and appendices of other forms still use the
+  generic path/value table. The Windows RE prompt lists them for dedicated layout specs.
 
 ## 4. Known differences (not hidden)
 
@@ -118,7 +124,7 @@ Screenshots captured from `iTaxViewer.exe` rendering the same fixtures
 |---|---|---|---|
 | 01/GTGT `[11a]–[11c]` | one row, three columns | three stacked rows | cosmetic |
 | Footer page numbers | PD4ML `page/total` | not emitted | cosmetic; all pages print |
-| Appendix layout | dedicated XSLT per `plucID` | data table with full values | **layout pending** |
+| Appendix layout | dedicated XSLT per `plucID` | **structured layout for `PL_NQ43_GTGT`, `PL_NQ101_GTGT`, `PL_NQ142_GTGT`** (I/II/III, totals `[05]`–`[09]`); other IDs use a path/value table | **partially implemented**; see [`docs/PROMPTS/WINDOWS_APPENDIX_RE.md`](docs/PROMPTS/WINDOWS_APPENDIX_RE.md) for the remaining IDs |
 | Notices | prose paragraphs per template | structured field table | **content layout pending** |
 | Other 406 form codes | official XSLT | structured field table | **layout pending** |
 | Title diacritics | XSLT `translate()` bug | correct Unicode | improvement |
@@ -134,8 +140,9 @@ Screenshots captured from `iTaxViewer.exe` rendering the same fixtures
 | `scripts/validate_fixtures.py` (classification, indicator mapping, formatting) | **PASS** (executed 2026-10-22) |
 | Registry integrity (1,150 entries / 410 codes / 4 specs) | **PASS** |
 | XXE rejection, UTF-16 parsing, malformed XML, oversized/hidden-DTD inputs | **PASS** (Swift XCTest) |
-| Swift XCTest suite (`swift test`) | **PASS** — 42 tests executed, 41 passed, 1 skipped (`ExternalFixturesTests` without `ITAX_FIXTURE_DIR`) |
+| Swift XCTest suite (`swift test`) | **PASS** — 45 tests executed, 44 passed, 1 skipped (`ExternalFixturesTests` without `ITAX_FIXTURE_DIR`) |
 | External fixture run (`ITAX_FIXTURE_DIR=../test-data`) | **PASS** — all 9 XML files classified; test now walks subdirectories recursively |
+| Appendix layout tests | **PASS** — NQ142 sections/totals/difference, 150-row no-truncation, NQ43 flat layout |
 | macOS app build (`scripts/build_app.sh`) | **PASS** — `.app` built and launched on macOS 15 / x86_64 |
 | App file-open, drag-and-drop | File-open path covered by tests and app launch; drag-and-drop not automated |
 | Print / PDF export | CSS pagination **PASS** (headless Chromium, A4 594×841 pt, 2/2/2/4+appendix pages); **native WKWebView print panel pending** (no UI automation permission in this environment) |

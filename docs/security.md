@@ -79,7 +79,7 @@ Notarize with `notarytool` and staple. The development build produced by
 |---|---|---|
 | Memory exhaustion under 64 MB | limits + bounded traversal | A 64 MB deeply repetitive file can still allocate significant memory; acceptable for a desktop viewer |
 | Malicious CSS in data? | data is escaped; no templates from files | none known |
-| Huge number of appendix children | leaves limited to 400 per appendix | data beyond limit not displayed |
+| Huge number of appendix children | structured appendices cap at 20,000 rows per table and show an explicit truncation row; the generic fallback caps at 10,000 leaves | data beyond the cap is not displayed, but the limit is visible in the document |
 | Print/PDF engine bugs | system WebKit | inherited from macOS |
 | Certificate store absence | trust status labelled explicitly | user may misinterpret “untrusted”; UI explains |
 | Path disclosure in recent list | local only | expected desktop behaviour |

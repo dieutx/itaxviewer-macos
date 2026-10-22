@@ -25,6 +25,7 @@ built from black-box reverse engineering of the official Windows **iTax Viewer**
 | **05/KK-TNCN** – PIT withholding | `394` (legacy `42`, `864`) | 2.1.6 | Full (16 rows) |
 | **05/QTT-TNCN** – PIT finalisation | `953` (legacy `395`) | 2.5.x – 2.9.3 | Full (26 rows) |
 | **03/TNDN** – CIT finalisation | `892` (legacy `03`) | 2.5.1 – 2.9.4 | Full (74 rows) |
+| **01/GTGT VAT-reduction appendices** | `PL_NQ43_GTGT`, `PL_NQ101_GTGT`, `PL_NQ142_GTGT` | any | Full appendix layout (I/II/III + totals) |
 | Notices (`TBaoThueDTu`, `THONGBAO`, …) | — | any | Structured data view |
 | Payment vouchers (`CHUNGTU`) | `MA_CTU` | any | Structured data view |
 | Registration, catalogs, customs, e-invoice | — | any | Structured data view |
@@ -105,7 +106,7 @@ This mirrors the Swift registry lookup and XPath field mapping and asserts the e
 official indicator values for every fixture. It passes for all four priority forms, the
 payment voucher and the notice fixture.
 
-The Swift suite was executed on macOS 15 (Xcode 16.1 / Swift 6.0.2): **42 tests, 41 passed,
+The Swift suite was executed on macOS 15 (Xcode 16.1 / Swift 6.0.2): **45 tests, 44 passed,
 1 skipped** (the optional external-fixture test). See
 [`COMPATIBILITY.md`](COMPATIBILITY.md) for the executed UI/print results.
 

@@ -136,6 +136,66 @@ final class RendererTests: XCTestCase {
         XCTAssertTrue(rendered.html.contains("<th colspan=\"2\">Thuế giá trị gia tăng</th>"))
     }
 
+    func testVATReductionAppendixUsesOfficialLayout() throws {
+        let (_, _, rendered) = try render("gtgt_842_nq142")
+        let html = rendered.html
+        XCTAssertTrue(html.contains("GIẢM THUẾ GIÁ TRỊ GIA TĂNG<br/>THEO NGHỊ QUYẾT SỐ 142/2024/QH15"))
+        XCTAssertTrue(html.contains("I. Hàng hóa, dịch vụ mua vào trong kỳ"))
+        XCTAssertTrue(html.contains("II. Hàng hóa, dịch vụ bán ra trong kỳ"))
+        XCTAssertTrue(html.contains("III. Chênh lệch thuế GTGT"))
+        XCTAssertTrue(html.contains("Hàng hóa mẫu A"))
+        XCTAssertTrue(html.contains("Dịch vụ mẫu C"))
+        XCTAssertTrue(html.contains("[05]"))
+        XCTAssertTrue(html.contains("[09]"))
+        XCTAssertTrue(html.contains("(10.000.000)"))
+        XCTAssertFalse(html.contains("PL_NQ142_GTGT/BangKeTenHHDV/tenHHDV"))
+        // The recreated layout replaces the generic appendix warning.
+        XCTAssertFalse(rendered.warnings.contains { $0.contains("bố cục in chính thức") })
+    }
+
+    func testAppendixIsNotTruncatedAtOldLeafLimit() throws {
+        let source = try String(contentsOf: try Fixtures.url("gtgt_842_return"), encoding: .utf8)
+        var rows = ""
+        for index in 1...150 {
+            rows += "<BangKeTenHHDV><tenHHDVMuaVao>Hàng hóa \(index)</tenHHDVMuaVao>"
+            rows += "<giaTriHHDVMuaVao>1000</giaTriHHDVMuaVao><thueGTGTHHDV>80</thueGTGTHHDV></BangKeTenHHDV>"
+        }
+        let appendix = """
+        <PLuc><PL_NQ142_GTGT><HH_DV_MuaVaoTrongKy>
+        \(rows)
+        <tongCongGiaTriHHDVMuaVao>150000</tongCongGiaTriHHDVMuaVao>
+        <tongCongThueGTGTHHDV>12000</tongCongThueGTGTHHDV>
+        </HH_DV_MuaVaoTrongKy></PL_NQ142_GTGT></PLuc>
+        """
+        let xml = source.replacingOccurrences(of: "  </HSoKhaiThue>", with: appendix + "\n  </HSoKhaiThue>")
+        let doc = try TaxDocument.load(data: Data(xml.utf8), sourceName: "appendix.xml")
+        let registry = try FormRegistry.bundled()
+        let classification = try DocumentClassifier.classify(doc, registry: registry)
+        let rendered = HTMLRenderer(registry: registry).render(document: doc, classification: classification)
+        XCTAssertTrue(rendered.html.contains("Hàng hóa 150"))
+    }
+
+    func testFlatVATReductionAppendixLayout() throws {
+        let source = try String(contentsOf: try Fixtures.url("gtgt_842_return"), encoding: .utf8)
+        let appendix = """
+        <PLuc><PL_NQ43_GTGT>
+        <BangKeTenHHDV><tenHHDV>Dịch vụ 43</tenHHDV><giaTriHHDV>2000</giaTriHHDV>
+        <thueSuatTheoQuyDinh>10</thueSuatTheoQuyDinh><thueSuatSauGiam>8</thueSuatSauGiam>
+        <thueGTGTDuocGiam>40</thueGTGTDuocGiam></BangKeTenHHDV>
+        <tongCongGiaTriHHDV>2000</tongCongGiaTriHHDV>
+        <tongCongThueGTGTDuocGiam>40</tongCongThueGTGTDuocGiam>
+        </PL_NQ43_GTGT></PLuc>
+        """
+        let xml = source.replacingOccurrences(of: "  </HSoKhaiThue>", with: appendix + "\n  </HSoKhaiThue>")
+        let doc = try TaxDocument.load(data: Data(xml.utf8), sourceName: "appendix43.xml")
+        let registry = try FormRegistry.bundled()
+        let classification = try DocumentClassifier.classify(doc, registry: registry)
+        let rendered = HTMLRenderer(registry: registry).render(document: doc, classification: classification)
+        XCTAssertTrue(rendered.html.contains("THEO NGHỊ QUYẾT SỐ 43/2022/QH15"))
+        XCTAssertTrue(rendered.html.contains("Dịch vụ 43"))
+        XCTAssertTrue(rendered.html.contains("[07]"))
+    }
+
     func testGenericVoucherPreservesSourceFields() throws {
         let (_, classification, rendered) = try render("gnt_chungtu")
         if case .generic = classification.support {} else { XCTFail("Expected generic") }
