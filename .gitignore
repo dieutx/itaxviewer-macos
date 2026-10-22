@@ -14,3 +14,9 @@ _re/
 # Python
 __pycache__/
 *.pyc
+
+# Local real taxpayer samples — never commit these
+samples/
+external-fixtures/
+itax-samples/
+*.local.xml

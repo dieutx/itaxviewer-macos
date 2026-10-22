@@ -81,6 +81,31 @@ name and that `Bundle.module` resolves from `Contents/Resources`.
 7. `⌘S` → export PDF; verify all values and no clipped pages.
 8. `⌘I` → document info; `⇧⌘Y` → signature sheet (must say “Chưa xác minh”).
 
+## 4b. Testing with a folder of real/local tax files
+
+Do **not** commit real taxpayer XML. Keep the folder outside the repo, for example
+`~/itax-samples/`, and run:
+
+```bash
+cd iTaxViewerMac
+
+# classification report for every file in the folder (no taxpayer values printed)
+python3 scripts/validate_directory.py ~/itax-samples
+
+# optional machine-readable report
+python3 scripts/validate_directory.py ~/itax-samples --json ~/itax-report.json
+
+# integration test through the real Swift core
+ITAX_FIXTURE_DIR=~/itax-samples swift test --filter ExternalFixturesTests
+```
+
+Then open files from that folder directly in the app (`⌘O` or drag-and-drop).
+If a file fails, add only an **anonymised** minimal reproduction to
+`Tests/iTaxViewerCoreTests/Fixtures/` (MST `0000000000`, fictitious names, signature removed)
+and reference it in `COMPATIBILITY.md`.
+
+The directory scanner skips any file containing `DOCTYPE`/`ENTITY` (same policy as the app).
+
 ## 5. Visual comparison against the original
 
 Reference captures (Windows iTax Viewer, same fixtures):

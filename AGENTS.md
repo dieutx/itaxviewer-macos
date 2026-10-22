@@ -72,6 +72,18 @@ scripts/build_app.sh --universal
 open build/iTaxViewerMac.app
 ```
 
+### Testing with real/local samples (never commit them)
+
+Keep real taxpayer XML outside the repository, e.g. `~/itax-samples/`, and run:
+
+```bash
+python3 scripts/validate_directory.py ~/itax-samples
+ITAX_FIXTURE_DIR=~/itax-samples swift test --filter ExternalFixturesTests
+```
+
+The directory scanner prints only file names, form codes and field counts — never taxpayer
+values. `samples/`, `external-fixtures/`, `itax-samples/` and `*.local.xml` are gitignored.
+
 ## Priorities after the build is green
 
 | Priority | Task |

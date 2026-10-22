@@ -107,6 +107,18 @@ payment voucher and the notice fixture. On this (Windows) analysis host the Swif
 is unavailable, so `swift test` is marked **pending** in
 [`COMPATIBILITY.md`](COMPATIBILITY.md); the Python harness is the executed evidence.
 
+### Testing a whole folder of real files without uploading them
+
+```bash
+# keep real samples outside the repo, e.g. ~/itax-samples
+python3 iTaxViewerMac/scripts/validate_directory.py ~/itax-samples
+ITAX_FIXTURE_DIR=~/itax-samples swift test --filter ExternalFixturesTests
+```
+
+Only file names, form codes and field counts are printed — never taxpayer names, tax codes,
+addresses or values. Real samples must never be committed; `samples/`, `itax-samples/` and
+`*.local.xml` are gitignored.
+
 ## Using the app
 
 | Action | Shortcut |
