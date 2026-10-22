@@ -1,0 +1,129 @@
+{
+  "id": "CT-01",
+  "kind": "paymentVoucher",
+  "root": "CHUNGTU",
+  "detect": {
+    "root": "CHUNGTU",
+    "maCTu": "01",
+    "versions": ["1.0.0", "3.0.0", "4.0.0", "4.0.1", "4.0.2"],
+    "registry": "data/DMucCTu.xml",
+    "templateByVersion": {
+      "1.0.0": "data/xslt/CTu/GNT.xsl",
+      "3.0.0": "data/xslt/CTu/GNT_3_0_0.xsl",
+      "4.0.0": "data/xslt/CTu/GNT_4_0_0.xsl",
+      "4.0.1": "data/xslt/CTu/GNT_4_0_1.xsl",
+      "4.0.2": "data/xslt/CTu/GNT_4_0_2.xsl"
+    },
+    "requiredTags": ["MA_CTU", "PBAN_TLIEU_XML"],
+    "fallbackVersion": "1.0 when PBAN_TLIEU_XML is absent (GNTNSNN.java:30)"
+  },
+  "title": "GIẤY NỘP TIỀN VÀO NGÂN SÁCH NHÀ NƯỚC",
+  "formNumber": "C1-02/NS",
+  "legalReference": "ban hành kèm theo Thông tư số 84/2016/TT-BTC của Bộ Tài chính",
+  "orientation": "portrait",
+  "page": { "size": "A4", "widthPt": 595, "heightPt": 842, "marginsMm": { "top": 20, "right": 20, "bottom": 10, "left": 20 } },
+  "repeat": {
+    "recordPath": "CHUNGTU/NDUNG_CTU_NH/NDUNG_CTU",
+    "note": "Each NDUNG_CTU repeats the whole voucher body (header block + detail table + KBNN block)."
+  },
+  "headerFields": [
+    { "label": "Mã hiệu", "source": "CHUNGTU/NDUNG_CTU_NH/MAHIEU_CTU", "format": "text", "emptyText": "............" },
+    { "label": "Số", "source": "CHUNGTU/NDUNG_CTU_NH/SO_CTU", "format": "text", "emptyText": "...............", "emptyWhen": ["", "null"] },
+    { "label": "Số tham chiếu", "source": "CHUNGTU/NDUNG_CTU_NH/NDUNG_CTU/CHUNGTU_HDR/MA_THAMCHIEU", "format": "text" },
+    { "label": "Tiền mặt / Chuyển khoản", "format": "literal", "value": "Tiền mặt [ ] Chuyển khoản [X]", "note": "Hard-coded in GNT_4_0_1.xsl; HTHUC_NOP is not used." },
+    { "label": "Loại tiền", "format": "checkboxGroup", "source": "CHUNGTU/NDUNG_CTU_NH/NDUNG_CTU/CHUNGTU_HDR/MA_NGUYENTE", "options": ["VND", "USD", "Khác"], "rules": { "empty": "VND checked", "VND": "VND checked", "USD": "USD checked", "other": "none checked" } }
+  ],
+  "sections": [
+    {
+      "id": "payer",
+      "kind": "fields",
+      "recordPath": "CHUNGTU/NDUNG_CTU_NH/NDUNG_CTU/CHUNGTU_HDR",
+      "fields": [
+        { "label": "Người nộp thuế", "source": "TEN_NNOP" },
+        { "label": "Mã số thuế", "source": "MST_NNOP" },
+        { "label": "Địa chỉ", "source": "DIACHI_NNOP" },
+        { "label": "Quận/Huyện", "source": "TEN_HUYEN_NNOP" },
+        { "label": "Tỉnh, TP", "source": "TEN_TINH_NNOP" },
+        { "label": "Người nộp thay", "source": "TEN_NTHAY" },
+        { "label": "Mã số thuế (nộp thay)", "source": "MST_NTHAY" },
+        { "label": "Địa chỉ (nộp thay)", "source": "DIACHI_NTHAY" },
+        { "label": "Quận/Huyện (nộp thay)", "source": "TEN_HUYEN_NTHAY" },
+        { "label": "Tỉnh, TP (nộp thay)", "source": "TEN_TINH_NTHAY" },
+        { "label": "Đề nghị NH (KBNN)", "source": "TEN_NHANG_NOP" },
+        { "label": "trích TK số", "source": "STK_NHANG_NOP" },
+        { "label": "Vào tài khoản của KBNN", "source": "TEN_KBAC" },
+        { "label": "Tỉnh, TP (KBNN)", "source": "TEN_TINH_KBAC" },
+        { "label": "Mở tại NHTM ủy nhiệm thu", "source": "TEN_NHANG_UNT" },
+        { "label": "Tại cơ quan quản lý thu", "source": "TEN_CQTHU" },
+        { "label": "Mã CQ thu", "source": "MA_CQTHU" }
+      ],
+      "checkboxes": [
+        { "label": "Nộp vào cho NSNN", "checkedWhen": { "STK_THU": "7111" } },
+        { "label": "TK tạm thu", "checkedWhen": { "always": false } },
+        { "label": "TK thu hồi hoàn thuế GTGT", "checkedWhen": { "STK_THU": ["8991", "3121", "8993", "3397"] } },
+        { "label": "Kiểm toán nhà nước", "checkedWhen": { "ID_TK_KNGHI": "01" } },
+        { "label": "Thanh tra tài chính", "checkedWhen": { "ID_TK_KNGHI": "02" } },
+        { "label": "Thanh tra Chính phủ", "checkedWhen": { "ID_TK_KNGHI": "03" } },
+        { "label": "Cơ quan có thẩm quyền khác", "checkedWhen": { "ID_TK_KNGHI": "04" } }
+      ]
+    },
+    {
+      "id": "detail",
+      "kind": "table",
+      "title": "Phần dành cho NNT ghi khi nộp tiền vào NSNN",
+      "recordPath": "CHUNGTU/NDUNG_CTU_NH/NDUNG_CTU/CHUNGTU_CTIET/ROW_CTIET",
+      "columns": [
+        { "label": "STT", "format": "index", "align": "center", "width": 40 },
+        { "label": "Số tờ khai/ Số quyết định / Số thông báo", "source": "SO_TK_TB_QD", "format": "text", "align": "left", "width": 80 },
+        { "label": "Kỳ thuế/ Ngày quyết định/ Ngày thông báo", "source": "KY_THUE", "format": "text", "align": "left", "width": 80 },
+        { "label": "Nội dung các khoản nộp NSNN", "source": "NDUNG_NOP", "format": "text", "align": "left", "width": 164, "suffix": { "when": "GHI_CHU != ''", "text": ";Ghi chú : {GHI_CHU}" }, "suffixElse": ";" },
+        { "label": "Số nguyên tệ", "source": "TIEN_PNOP", "format": "decimal2", "align": "right", "width": 80, "visibleWhen": { "MA_NGUYENTE": "USD" } },
+        { "label": "Số tiền VND", "source": "TIEN_PNOP", "format": "number", "align": "right", "width": 80, "visibleWhen": { "MA_NGUYENTE": ["VND", "(empty)"] } },
+        { "label": "Mã chương", "source": "MA_CHUONG", "format": "text", "align": "center", "width": 75 },
+        { "label": "Mã tiểu Mục", "source": "MA_NDKT", "format": "text", "align": "center", "width": 75 }
+      ],
+      "columnGroups": [
+        { "label": "Phần dành cho NNT ghi khi nộp tiền vào NSNN", "span": 6 },
+        { "label": "Phần dành cho NH ủy nhiệm thu/ NH phối hợp thu/KBNN ghi", "span": 2 }
+      ],
+      "totals": [
+        { "label": "Tổng tiền", "source": "CHUNGTU/NDUNG_CTU_NH/NDUNG_CTU/CHUNGTU_HDR/TONG_TIEN", "format": "number", "align": "right", "showLabelWhen": { "MA_CTU": "01" } }
+      ],
+      "emptyBehaviour": "An empty ROW_CTIET list still prints the header and the totals row."
+    },
+    {
+      "id": "amountInWords",
+      "kind": "note",
+      "label": "Tổng số tiền ghi bằng chữ:",
+      "source": "CHUNGTU/NDUNG_CTU_NH/NDUNG_CTU/CHUNGTU_HDR/TONG_TIEN",
+      "format": "currencyWords",
+      "currency": "VND",
+      "suffix": " đồng",
+      "note": "VND/absent uses DocTienBangChu + ' đồng'; USD uses toEnglishCashUSD + ' Dollar (USD)'."
+    },
+    {
+      "id": "kbac",
+      "kind": "fields",
+      "title": "PHẦN KBNN GHI",
+      "fields": [
+        { "label": "Mã CQ thu", "source": null },
+        { "label": "Nợ TK", "source": null },
+        { "label": "Mã ĐBHC", "source": null },
+        { "label": "Có TK", "source": null },
+        { "label": "Mã nguồn NSNN", "source": null, "span": 2, "when": { "MA_CTU": "01" } },
+        { "label": "Tỷ giá hạch toán", "source": null, "when": { "MA_CTU": "02" } }
+      ],
+      "note": "Always empty in the template; it is the KBNN's handwriting area."
+    },
+    {
+      "id": "signature",
+      "kind": "note",
+      "note": "A horizontal rule plus an empty signature placeholder (div id=sigDiv); GNTNSNN.java does not populate signature images."
+    }
+  ],
+  "appendices": { "mode": "none" },
+  "unknowns": [
+    "GNT_4_0_2.xsl was not captured; layout is assumed identical to 4.0.1 until a 4.0.2 sample is rendered.",
+    "The printed output of the original app for MA_CTU=02 was not captured; only MA_CTU=01 is registered in this install."
+  ]
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TBao xmlns="http://kekhaithue.gdt.gov.vn/TBaoThue">
+  <MSo>01/TB-BSTT</MSo>
+  <PBan>2.1.0</PBan>
+  <STBao>
+    <So>123/TB-BSTT</So>
+    <NTBao>2026-10-20</NTBao>
+  </STBao>
+  <DLTBao>
+    <TNNT>CÔNG TY TNHH DỮ LIỆU MẪU</TNNT>
+    <MST>0100000001</MST>
+    <DCNNT>Số 1 Đường Mẫu, Phường Mẫu, Thành phố Hà Nội</DCNNT>
+    <TCQTCTren>BỘ TÀI CHÍNH</TCQTCTren>
+    <TCQT>CỤC THUẾ THÀNH PHỐ HÀ NỘI</TCQT>
+    <DTCQT>024 0000 0000</DTCQT>
+    <DCCQT>Số 2 Đường Mẫu, Thành phố Hà Nội</DCCQT>
+    <NPTich>2026-10-15</NPTich>
+    <THGTBSung>2026-11-15</THGTBSung>
+    <LGTrinh>1</LGTrinh>
+  </DLTBao>
+</TBao>

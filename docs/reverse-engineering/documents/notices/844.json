@@ -1,0 +1,89 @@
+{
+  "id": "844",
+  "kind": "notice",
+  "root": "TBaoThueDTu",
+  "detect": {
+    "root": "TBaoThueDTu",
+    "maTBao": "844",
+    "versions": ["2.4.9"],
+    "registry": "data/DMucTBao.xml",
+    "template": "data/xslt/XSLT 2.4.9/TBaoThue/xslt/TBao_01_2_TT19_KeKhai.xslt",
+    "namespaceRule": "Same as 843: unprefixed root required; default namespace is stripped before XSLT."
+  },
+  "title": "THÔNG BÁO V/v: Chấp nhận việc nộp hồ sơ khai thuế điện tử",
+  "formNumber": "01-2/TB-TĐT",
+  "legalReference": "Ban hành kèm theo Thông tư số 19/2021/TT-BTC ngày 18/3/2021 của Bộ trưởng Bộ Tài chính",
+  "orientation": "portrait",
+  "page": { "size": "A4", "widthPt": 595, "heightPt": 842, "marginsMm": { "top": 20, "right": 20, "bottom": 10, "left": 20 } },
+  "headerFields": [
+    { "label": "Mẫu số", "value": "01-2/TB-TĐT", "format": "literal" },
+    { "label": "Cơ quan ban hành", "value": "BỘ TÀI CHÍNH / TỔNG CỤC THUẾ", "format": "literal" },
+    { "label": "Số", "source": "TBaoThueDTu/TBaoThue/TTinChung/TTinTBaoThue/soTBao", "suffix": "/TB-TĐT" },
+    { "label": "Ngày ban hành", "source": "TBaoThueDTu/TBaoThue/TTinChung/TTinTBaoThue/ngayTBao", "format": "date", "pattern": "'Hà Nội, ngày' dd 'tháng' MM 'năm' yyyy" },
+    { "label": "Trích yếu", "source": "TBaoThueDTu/TBaoThue/NDungTBao/trangThai", "rules": { "Y": "V/v: Chấp nhận việc nộp hồ sơ khai thuế điện tử", "N": "V/v: Không chấp nhận việc nộp hồ sơ khai thuế điện tử" } }
+  ],
+  "sections": [
+    {
+      "id": "basis",
+      "kind": "prose",
+      "paragraphs": [
+        { "text": "Căn cứ quy định tại Luật Quản lý thuế ngày 13/6/2019;" },
+        { "text": "Căn cứ quy định tại Thông tư số 19/2021/TT-BTC ngày 18/3/2021 của Bộ trưởng Bộ Tài chính hướng dẫn giao dịch điện tử trong lĩnh vực thuế." }
+      ]
+    },
+    {
+      "id": "accepted",
+      "kind": "prose",
+      "when": { "trangThai": ["Y"] },
+      "paragraphs": [
+        { "text": "Căn cứ hồ sơ khai thuế/BCTC/BCAC của {tenNNhan} gửi tới cơ quan thuế {tenCQT} đã được cổng thông tin điện tử của CỤC THUẾ thông báo tiếp nhận vào lúc {ngayNopThucTe} mã giao dịch điện tử {maGiaoDichDTu}. Cơ quan thuế thông báo về việc chấp nhận hồ sơ khai thuế/BCTC/BCAC của {tenNNhan} gửi tới cơ quan thuế {tenCQT}, cụ thể như sau:" },
+        { "text": "- Tên tờ khai/Phụ lục: {tokhai-phuluc}", "source": "TBaoThueDTu/TBaoThue/NDungTBao/HoSoThue/CTietHoSoThue/tokhai-phuluc" },
+        { "text": "- Loại tờ khai: {loaiToKhai}", "source": "TBaoThueDTu/TBaoThue/NDungTBao/HoSoThue/CTietHoSoThue/loaiToKhai" },
+        { "text": "- Kỳ tính thuế: {kyTinhThue}", "source": "TBaoThueDTu/TBaoThue/NDungTBao/HoSoThue/CTietHoSoThue/kyTinhThue" },
+        { "text": "- Lần nộp hoặc lần bổ sung: {lanNop}", "source": "TBaoThueDTu/TBaoThue/NDungTBao/HoSoThue/CTietHoSoThue/lanNop" },
+        { "text": "Hồ sơ khai thuế (HSKT) của người nộp thuế được cơ quan thuế chấp nhận vào lúc {ngayHoanThanh}. Ngày hoàn thành việc nộp HSKT điện tử của NNT là ngày {ngayChapNhan}." },
+        { "text": "Trường hợp hồ sơ cần giải trình, bổ sung thông tin, tài liệu, cơ quan thuế sẽ có thông báo gửi người nộp thuế. Cơ quan thuế sẽ thực hiện trả kết quả giải quyết hồ sơ cho người nộp thuế qua {duongDan}", "source": "TBaoThueDTu/TBaoThue/NDungTBao/duongDan" }
+      ],
+      "table": {
+        "title": "- Thông tin mã định danh khoản phải nộp:",
+        "when": { "IDKhoanNop/CTietIDKhoanNop/maDinhDanh": "not empty" },
+        "recordPath": "TBaoThueDTu/TBaoThue/NDungTBao/IDKhoanNop/CTietIDKhoanNop",
+        "columns": [
+          { "label": "STT", "format": "index", "align": "center" },
+          { "label": "Mã định danh khoản phải nộp (ID)", "source": "maDinhDanh", "align": "left" },
+          { "label": "Số tiền thuế phải nộp", "source": "soTienPNop", "format": "number", "align": "center" },
+          { "label": "Loại tiền", "source": "tenLoaiTien", "align": "center" },
+          { "label": "Ghi chú", "align": "center", "source": null, "rules": { "loaiToKhai=Bổ sung & soTienPNop>0": "Số thuế phải nộp tăng thêm do khai bổ sung", "loaiToKhai=Bổ sung & soTienPNop<0": "Số thuế phải nộp được điều chỉnh giảm do khai bổ sung", "else": "" } }
+        ]
+      }
+    },
+    {
+      "id": "rejected",
+      "kind": "prose",
+      "when": { "trangThai": ["N"] },
+      "table": {
+        "recordPath": "TBaoThueDTu/TBaoThue/NDungTBao/LyDo/CTietLyDo",
+        "columns": ["STT (index)", "Thông tin có sai sót (tenNhomLoi + ' (' + tenLoi + ')')", "Hướng dẫn xử lý (huongDanXuLy)", "Ghi chú (ghiChu)"]
+      },
+      "footerParagraph": "Đề nghị {tenNNhan} điều chỉnh và gửi lại hồ sơ khai thuế/BCTC/BCAC theo hướng dẫn nêu trên để được ghi nhận nghĩa vụ nộp hồ sơ thuế/giải quyết hồ sơ thuế theo quy định (trừ hồ sơ đăng ký thuế)."
+    },
+    {
+      "id": "closing",
+      "kind": "prose",
+      "paragraphs": [
+        { "text": "Trường hợp cần biết thêm thông tin chi tiết, NNT vui lòng liên hệ với Cơ quan thuế quản lý trực tiếp để được hỗ trợ." },
+        { "text": "Cơ quan thuế thông báo để NNT biết và thực hiện./." }
+      ]
+    },
+    {
+      "id": "signature",
+      "kind": "note",
+      "note": "Empty div id=sigDiv; no signature block text in the template."
+    }
+  ],
+  "appendices": { "mode": "none" },
+  "unknowns": [
+    "Only version 2.4.9 is registered and captured.",
+    "The negative-amount note is verified from the template only (no captured PDF with a negative value)."
+  ]
+}

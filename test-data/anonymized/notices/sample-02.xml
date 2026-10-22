@@ -1,72 +1,72 @@
-<?xml version='1.0' encoding='utf-8'?>
-<ns0:TBaoThueDTu xmlns:ns0="http://kekhaithue.gdt.gov.vn/TBaoThue" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <ns0:TBaoThue id="_NODE_TO_SIGN">
-    <ns0:TTinChung>
-      <ns0:CQT>
-        <ns0:maCQT>00000</ns0:maCQT>
-        <ns0:tenCQT>CƠ QUAN THUẾ MẪU</ns0:tenCQT>
-        <ns0:DVu>
-          <ns0:maDVu>ETAX</ns0:maDVu>
-          <ns0:tenDVu>ETAX 1.0</ns0:tenDVu>
-          <ns0:pbanDVu>1.0</ns0:pbanDVu>
-        </ns0:DVu>
-      </ns0:CQT>
-      <ns0:NNhanTBaoThue>
-        <ns0:maNNhan>0000000000</ns0:maNNhan>
-        <ns0:tenNNhan>CÔNG TY MẪU</ns0:tenNNhan>
-        <ns0:diaChiNNhan>Số 1 Đường Mẫu, Phường Mẫu</ns0:diaChiNNhan>
-      </ns0:NNhanTBaoThue>
-      <ns0:DaiLyThue>
-        <ns0:maDLT xsi:nil="true" />
-        <ns0:tenDLT xsi:nil="true" />
-      </ns0:DaiLyThue>
-      <ns0:TTinTBaoThue>
-        <ns0:maTBao>844</ns0:maTBao>
-        <ns0:tenTBao>V/v: Xác nhận nộp hồ sơ thuế điện tử TT19</ns0:tenTBao>
-        <ns0:pbanTBao>2.4.9</ns0:pbanTBao>
-        <ns0:soTBao>MAU-000001</ns0:soTBao>
-        <ns0:ngayTBao>2025-06-21</ns0:ngayTBao>
-      </ns0:TTinTBaoThue>
-    </ns0:TTinChung>
-    <ns0:NDungTBao>
-      <ns0:trangThai>Y</ns0:trangThai>
-      <ns0:ngayNopThucTe>2025-06-20T14:14:42.480+07:00</ns0:ngayNopThucTe>
-      <ns0:HoSoThue>
-        <ns0:CTietHoSoThue id="1">
-          <ns0:tokhai-phuluc>TỜ KHAI THUẾ GIÁ TRỊ GIA TĂNG (TT80/2021)-01/GTGT(00-Hoạt động sản xuất kinh doanh thông thường)</ns0:tokhai-phuluc>
-          <ns0:loaiToKhai>Chính thức</ns0:loaiToKhai>
-          <ns0:kyTinhThue>05/2025</ns0:kyTinhThue>
-          <ns0:lanNop>1</ns0:lanNop>
-        </ns0:CTietHoSoThue>
-      </ns0:HoSoThue>
-      <ns0:IDKhoanNop>
-        <ns0:CTietIDKhoanNop id="1">
-          <ns0:maDinhDanh />
-          <ns0:soTienPNop>1000000</ns0:soTienPNop>
-          <ns0:maLoaiTien />
-          <ns0:tenLoaiTien />
-          <ns0:ghiChu />
-        </ns0:CTietIDKhoanNop>
-      </ns0:IDKhoanNop>
-      <ns0:maGiaoDichDTu>MAU-000002</ns0:maGiaoDichDTu>
-      <ns0:ngayChapNhan>2025-06-20T14:14:42+07:00</ns0:ngayChapNhan>
-      <ns0:ngayHoanThanh>2025-06-20T16:31:02+07:00</ns0:ngayHoanThanh>
-      <ns0:thoiGianHenTra xsi:nil="true" />
-      <ns0:LyDo>
-        <ns0:CTietLyDo id="1">
-          <ns0:maNhomLoi />
-          <ns0:tenNhomLoi />
-          <ns0:maLoi />
-          <ns0:tenLoi />
-          <ns0:ttinLoiTrenTKhai />
-          <ns0:huongDanXuLy />
-          <ns0:ghiChu />
-        </ns0:CTietLyDo>
-      </ns0:LyDo>
-      <ns0:duongDan>https://example.invalid</ns0:duongDan>
-      <ns0:hotline />
-      <ns0:email xsi:nil="true" />
-    </ns0:NDungTBao>
-  </ns0:TBaoThue>
-  <ns0:CKyDTu />
-</ns0:TBaoThueDTu>
+﻿<?xml version='1.0' encoding='utf-8'?>
+<TBaoThueDTu xmlns="http://kekhaithue.gdt.gov.vn/TBaoThue" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TBaoThue id="_NODE_TO_SIGN">
+    <TTinChung>
+      <CQT>
+        <maCQT>00000</maCQT>
+        <tenCQT>CƠ QUAN THUẾ MẪU</tenCQT>
+        <DVu>
+          <maDVu>ETAX</maDVu>
+          <tenDVu>ETAX 1.0</tenDVu>
+          <pbanDVu>1.0</pbanDVu>
+        </DVu>
+      </CQT>
+      <NNhanTBaoThue>
+        <maNNhan>0000000000</maNNhan>
+        <tenNNhan>CÔNG TY MẪU</tenNNhan>
+        <diaChiNNhan>Số 1 Đường Mẫu, Phường Mẫu</diaChiNNhan>
+      </NNhanTBaoThue>
+      <DaiLyThue>
+        <maDLT xsi:nil="true" />
+        <tenDLT xsi:nil="true" />
+      </DaiLyThue>
+      <TTinTBaoThue>
+        <maTBao>844</maTBao>
+        <tenTBao>V/v: Xác nhận nộp hồ sơ thuế điện tử TT19</tenTBao>
+        <pbanTBao>2.4.9</pbanTBao>
+        <soTBao>MAU-000001</soTBao>
+        <ngayTBao>2025-06-21</ngayTBao>
+      </TTinTBaoThue>
+    </TTinChung>
+    <NDungTBao>
+      <trangThai>Y</trangThai>
+      <ngayNopThucTe>2025-06-20T14:14:42.480+07:00</ngayNopThucTe>
+      <HoSoThue>
+        <CTietHoSoThue id="1">
+          <tokhai-phuluc>TỜ KHAI THUẾ GIÁ TRỊ GIA TĂNG (TT80/2021)-01/GTGT(00-Hoạt động sản xuất kinh doanh thông thường)</tokhai-phuluc>
+          <loaiToKhai>Chính thức</loaiToKhai>
+          <kyTinhThue>05/2025</kyTinhThue>
+          <lanNop>1</lanNop>
+        </CTietHoSoThue>
+      </HoSoThue>
+      <IDKhoanNop>
+        <CTietIDKhoanNop id="1">
+          <maDinhDanh />
+          <soTienPNop>1000000</soTienPNop>
+          <maLoaiTien />
+          <tenLoaiTien />
+          <ghiChu />
+        </CTietIDKhoanNop>
+      </IDKhoanNop>
+      <maGiaoDichDTu>MAU-000002</maGiaoDichDTu>
+      <ngayChapNhan>2025-06-20T14:14:42+07:00</ngayChapNhan>
+      <ngayHoanThanh>2025-06-20T16:31:02+07:00</ngayHoanThanh>
+      <thoiGianHenTra xsi:nil="true" />
+      <LyDo>
+        <CTietLyDo id="1">
+          <maNhomLoi />
+          <tenNhomLoi />
+          <maLoi />
+          <tenLoi />
+          <ttinLoiTrenTKhai />
+          <huongDanXuLy />
+          <ghiChu />
+        </CTietLyDo>
+      </LyDo>
+      <duongDan>https://example.invalid</duongDan>
+      <hotline />
+      <email xsi:nil="true" />
+    </NDungTBao>
+  </TBaoThue>
+  <CKyDTu />
+</TBaoThueDTu>

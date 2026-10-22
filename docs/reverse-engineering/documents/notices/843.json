@@ -1,0 +1,89 @@
+{
+  "id": "843",
+  "kind": "notice",
+  "root": "TBaoThueDTu",
+  "detect": {
+    "root": "TBaoThueDTu",
+    "maTBao": "843",
+    "versions": ["2.4.9", "2.5.4", "2.5.6", "2.5.8", "2.5.9", "3.0.0", "3.0.1"],
+    "registry": "data/DMucTBao.xml",
+    "template": "data/xslt/XSLT 2.5.6/TBaoThue/xslt/TBao_01_1_TT19_KeKhai.xslt",
+    "templateForCapturedVersion": "2.5.6",
+    "namespaceRule": "Accept only when the root element name is TBaoThueDTu. A prefixed root (ns0:TBaoThueDTu) is rejected as 'Tệp hồ sơ không đúng định dạng' (verified). Before XSLT the default xmlns is stripped from a temp copy (TBaoThue.createTemFileForView)."
+  },
+  "title": "THÔNG BÁO V/v: Tiếp nhận hồ sơ khai thuế điện tử",
+  "formNumber": "01-01/TB-TĐT",
+  "legalReference": "Ban hành kèm theo Thông tư số 19/2021/TT-BTC ngày 18/3/2021 của Bộ trưởng Bộ Tài chính",
+  "orientation": "portrait",
+  "page": { "size": "A4", "widthPt": 595, "heightPt": 842, "marginsMm": { "top": 20, "right": 20, "bottom": 10, "left": 20 } },
+  "headerFields": [
+    { "label": "Mẫu số", "value": "01-01/TB-TĐT", "format": "literal" },
+    { "label": "Cơ quan ban hành", "value": "BỘ TÀI CHÍNH / TỔNG CỤC THUẾ", "format": "literal" },
+    { "label": "Số", "source": "TBaoThueDTu/TBaoThue/TTinChung/TTinTBaoThue/soTBao", "suffix": "/TB-TĐT" },
+    { "label": "Ngày ban hành", "source": "TBaoThueDTu/TBaoThue/TTinChung/TTinTBaoThue/ngayTBao", "format": "date", "pattern": "'Hà Nội, ngày' dd 'tháng' MM 'năm' yyyy" },
+    { "label": "Tiêu đề", "value": "THÔNG BÁO", "format": "literal" },
+    { "label": "Trích yếu", "value": "V/v: Tiếp nhận hồ sơ khai thuế điện tử", "format": "literal", "note": "Hard-coded; tenTBao in the file is not printed by this template." }
+  ],
+  "sections": [
+    {
+      "id": "basis",
+      "kind": "prose",
+      "paragraphs": [
+        { "text": "Căn cứ quy định tại Luật Quản lý thuế ngày 13/6/2019;" },
+        { "text": "Căn cứ quy định tại Thông tư số 19/2021/TT-BTC ngày 18/3/2021 của Bộ trưởng Bộ Tài chính hướng dẫn giao dịch điện tử trong lĩnh vực thuế." }
+      ]
+    },
+    {
+      "id": "received",
+      "kind": "prose",
+      "when": { "trangThai": ["Y", "0"] },
+      "source": "TBaoThueDTu/TBaoThue/NDungTBao",
+      "paragraphs": [
+        { "text": "Căn cứ hồ sơ khai thuế/BCTC/BCAC của {tenNNhan}", "source": "TBaoThueDTu/TBaoThue/TTinChung/NNhanTBaoThue/tenNNhan", "optional": "do {tenDLT} when TBaoThueDTu/TBaoThue/TTinChung/DaiLyThue/tenDLT is not empty" },
+        { "text": "gửi tới cơ quan thuế lúc {hh} giờ {mi} phút ngày {dd} tháng {mm} năm {yyyy}, cụ thể như sau:", "source": "TBaoThueDTu/TBaoThue/NDungTBao/ngayHoSo", "format": "datetimeParts" },
+        { "text": "- Tên tờ khai/Phụ lục: {tokhai-phuluc}", "source": "TBaoThueDTu/TBaoThue/NDungTBao/HoSoThue/CTietHoSoThue/tokhai-phuluc" },
+        { "text": "- Loại tờ khai: {loaiToKhai}", "source": "TBaoThueDTu/TBaoThue/NDungTBao/HoSoThue/CTietHoSoThue/loaiToKhai" },
+        { "text": "- Kỳ tính thuế: {kyTinhThue}", "source": "TBaoThueDTu/TBaoThue/NDungTBao/HoSoThue/CTietHoSoThue/kyTinhThue" },
+        { "text": "- Lần nộp hoặc lần bổ sung: {lanNop}", "source": "TBaoThueDTu/TBaoThue/NDungTBao/HoSoThue/CTietHoSoThue/lanNop" },
+        { "text": "- Mã giao dịch điện tử: {maGiaoDichDTu}", "source": "TBaoThueDTu/TBaoThue/NDungTBao/maGiaoDichDTu" },
+        { "text": "Hồ sơ khai thuế của người nộp thuế đã được cơ quan thuế tiếp nhận vào lúc {ngayHoSo}" },
+        { "text": "Hồ sơ khai thuế sẽ được cơ quan thuế tiếp tục kiểm tra và trả Thông báo chấp nhận hoặc không chấp nhận hồ sơ trong thời gian 01 (một) ngày làm việc kể từ ngày cơ quan thuế tiếp nhận hồ sơ của người nộp thuế ghi trên Thông báo này." }
+      ]
+    },
+    {
+      "id": "rejected",
+      "kind": "prose",
+      "when": { "trangThai": ["N"] },
+      "source": "TBaoThueDTu/TBaoThue/NDungTBao",
+      "paragraphs": [
+        { "text": "Căn cứ hồ sơ khai thuế/BCTC/BCAC của {tenNNhan} ... Cơ quan thuế thông báo về việc không tiếp nhận hồ sơ khai thuế/BCTC/BCAC của người nộp thuế, cụ thể như sau:" },
+        { "text": "- Tên tờ khai/Phụ lục: {tokhai-phuluc} (same four field lines as the received branch)" },
+        { "text": "- Lý do không tiếp nhận:" }
+      ],
+      "table": {
+        "recordPath": "TBaoThueDTu/TBaoThue/NDungTBao/LyDo/CTietLyDo",
+        "columns": ["STT (index)", "Mô tả lỗi (tenNhomLoi + ' - ' + tenLoi)", "Hướng dẫn xử lý (huongDanXuLy)", "Ghi chú (ghiChu)"]
+      },
+      "footerParagraph": "Đề nghị {tenNNhan} điều chỉnh và gửi lại hồ sơ khai thuế/BCTC/BCAC theo hướng dẫn nêu trên để được ghi nhận nghĩa vụ nộp hồ sơ khai thuế theo quy định."
+    },
+    {
+      "id": "closing",
+      "kind": "prose",
+      "paragraphs": [
+        { "text": "Nếu có vướng mắc, xin vui lòng truy cập theo đường dẫn https://thuedientu.gdt.gov.vn hoặc liên hệ với cơ quan thuế nơi nộp hồ sơ để được hỗ trợ." },
+        { "text": "Cơ quan thuế thông báo để {tenNNhan} biết và thực hiện./." },
+        { "text": "Mã hồ sơ tra cứu trên Cổng dịch vụ công quốc gia: {maDVC}", "source": "TBaoThueDTu/TBaoThue/NDungTBao/maDVC" }
+      ]
+    },
+    {
+      "id": "signature",
+      "kind": "note",
+      "note": "Empty div id=sigDiv followed by a rule; the signature status text is injected by the app, never rendered from XML HTML."
+    }
+  ],
+  "appendices": { "mode": "none" },
+  "unknowns": [
+    "Layouts for 843 versions 2.4.9/2.5.4/3.0.0/3.0.1/2.5.8/2.5.9 were not captured; only the registry mapping is verified.",
+    "The printed footer page number is produced by PD4ML ('$[page]/$[total]'); the exact rendered footer was not OCR-verified."
+  ]
+}

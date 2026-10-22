@@ -1,0 +1,392 @@
+﻿{
+    "generatedAt":  "2026-10-22",
+    "environment":  {
+                        "os":  "Microsoft Windows 11 Pro N",
+                        "osVersion":  "10.0.22631",
+                        "appPath":  "C:\\Program Files (x86)\\iTax Viewer",
+                        "appPublisher":  "Tong cuc thue",
+                        "appInstallDate":  "20261021",
+                        "appVersion":  "unknown (uninstall entry has no DisplayVersion; update/latest.xml pkgver=2.8.4)",
+                        "jarSha256":  "5AC31CBA3990221004376883D9B90D5A55339F49BF6BC97C56542ED27BFA9F4E",
+                        "exeSha256":  "B579E63B0D598F1228408FCA36E20F51C3D0CAD6451691F58FF553458D386B5F",
+                        "jre":  "1.8.0_112 (bundled, jre\\bin\\java.exe -version, verified 2026-10-22)",
+                        "swt":  "org.eclipse.swt.win32.win32.x86_64-4.3.jar (SWT 4.3 -\u003e MSHTML/ActiveX XSLT)",
+                        "printer":  "PD4ML 524500 bytes + pdfbox-app-1.8.8 (merge), A4, margins 20/20/20/10 mm",
+                        "decompiler":  "CFR 0.152 (see _re/src, analysis workspace, not committed)"
+                    },
+    "rootKinds":  [
+                      {
+                          "registry":  "DMucTKhai.xml",
+                          "kind":  "declaration",
+                          "handler":  "taxreturn.TKhaiThue",
+                          "root":  "HSoThueDTu",
+                          "entries":  1150,
+                          "uniqueIds":  410,
+                          "uniqueVersions":  104,
+                          "uniqueTemplates":  568,
+                          "note":  "Tờ khai + phụ lục (PLuc)"
+                      },
+                      {
+                          "registry":  "DMucTbao.xml",
+                          "kind":  "notice",
+                          "handler":  "taxMessage.TBaoThue",
+                          "root":  "TBaoThueDTu",
+                          "entries":  128,
+                          "uniqueIds":  106,
+                          "uniqueVersions":  32,
+                          "uniqueTemplates":  111,
+                          "note":  "Thông báo thuế điện tử"
+                      },
+                      {
+                          "registry":  "DMucTbao_InCDoi.xml",
+                          "kind":  "notice",
+                          "handler":  "taxMessage.TBaoThue",
+                          "root":  "TBaoThueDTu",
+                          "entries":  10,
+                          "uniqueIds":  10,
+                          "uniqueVersions":  1,
+                          "uniqueTemplates":  10,
+                          "note":  "Bản in thay đổi (vbanCDoi)"
+                      },
+                      {
+                          "registry":  "DMucTBaoNtdt.xml",
+                          "kind":  "notice",
+                          "handler":  "taxMessageNtdt.TBaoThueNtdt",
+                          "root":  "THONGBAO...",
+                          "entries":  46,
+                          "uniqueIds":  21,
+                          "uniqueVersions":  8,
+                          "uniqueTemplates":  28,
+                          "note":  "Thông báo nộp thuế điện tử"
+                      },
+                      {
+                          "registry":  "DMucTBaoNtdt22.xml",
+                          "kind":  "notice",
+                          "handler":  "taxMessageNtdt.TBaoThueNtdt",
+                          "root":  "THONGBAO...",
+                          "entries":  27,
+                          "uniqueIds":  11,
+                          "uniqueVersions":  3,
+                          "uniqueTemplates":  11,
+                          "note":  "Bản 22 (không được ConfigInfo nạp)"
+                      },
+                      {
+                          "registry":  "DMucTBaoKDTT.xml",
+                          "kind":  "notice",
+                          "handler":  "taxmessagekdtt.TBaoKDTT",
+                          "root":  "THONGBAO",
+                          "entries":  2,
+                          "uniqueIds":  2,
+                          "uniqueVersions":  1,
+                          "uniqueTemplates":  2,
+                          "note":  "Thông báo khoản nộp/KDTT"
+                      },
+                      {
+                          "registry":  "DMucCTu.xml",
+                          "kind":  "paymentVoucher",
+                          "handler":  "taxvoucher.GNTNSNN",
+                          "root":  "CHUNGTU",
+                          "entries":  5,
+                          "uniqueIds":  1,
+                          "uniqueVersions":  5,
+                          "uniqueTemplates":  5,
+                          "note":  "Giấy nộp tiền/chứng từ"
+                      },
+                      {
+                          "registry":  "DMucHSoDky.xml",
+                          "kind":  "registration",
+                          "handler":  "taxRegistration.DKyThue",
+                          "root":  "DKyThueDTu",
+                          "entries":  11,
+                          "uniqueIds":  10,
+                          "uniqueVersions":  1,
+                          "uniqueTemplates":  10,
+                          "note":  "Đăng ký thuế"
+                      },
+                      {
+                          "registry":  "DMucDMuc.xml",
+                          "kind":  "catalog",
+                          "handler":  "taxCatalog.DMuc",
+                          "root":  "DanhMucDTu",
+                          "entries":  1,
+                          "uniqueIds":  1,
+                          "uniqueVersions":  1,
+                          "uniqueTemplates":  1,
+                          "note":  "Danh mục"
+                      },
+                      {
+                          "registry":  "DMucHquan.xml",
+                          "kind":  "customs",
+                          "handler":  "hquanform.HquanForm",
+                          "root":  "TOKHAI_OBJ",
+                          "entries":  173,
+                          "uniqueIds":  172,
+                          "uniqueVersions":  1,
+                          "uniqueTemplates":  3,
+                          "note":  "Hải quan (cũ)"
+                      },
+                      {
+                          "registry":  "DMucHquan1.xml",
+                          "kind":  "customs",
+                          "handler":  "hquanform1.HquanForm1",
+                          "root":  "TOKHAISUA_OBJ",
+                          "entries":  170,
+                          "uniqueIds":  170,
+                          "uniqueVersions":  1,
+                          "uniqueTemplates":  1,
+                          "note":  "Hải quan (sửa)"
+                      },
+                      {
+                          "registry":  "DMucHquanNew.xml",
+                          "kind":  "customs",
+                          "handler":  "hquanformnew.HquanFormNew",
+                          "root":  "*:Envelope",
+                          "entries":  174,
+                          "uniqueIds":  173,
+                          "uniqueVersions":  1,
+                          "uniqueTemplates":  4,
+                          "note":  "Hải quan (mới)"
+                      },
+                      {
+                          "registry":  "DmucTSoatNtdt.xml",
+                          "kind":  "notice",
+                          "handler":  "taxMessageNtdt.TSoatNtdt",
+                          "root":  "TRASOAT_THUE",
+                          "entries":  3,
+                          "uniqueIds":  1,
+                          "uniqueVersions":  3,
+                          "uniqueTemplates":  3,
+                          "note":  "Tra soát thuế"
+                      },
+                      {
+                          "registry":  "DmucBtruNtdt.xml",
+                          "kind":  "notice",
+                          "handler":  "taxMessageNtdt.BuTruNtdt",
+                          "root":  "XULY_NTHUA",
+                          "entries":  1,
+                          "uniqueIds":  1,
+                          "uniqueVersions":  1,
+                          "uniqueTemplates":  1,
+                          "note":  "Xử lý nộp thừa"
+                      },
+                      {
+                          "registry":  "DMucXNhanCTuNtdt.xml",
+                          "kind":  "notice",
+                          "handler":  "taxMessageNtdt.XNhanCTuNtdt",
+                          "root":  "XACNHAN_*",
+                          "entries":  4,
+                          "uniqueIds":  1,
+                          "uniqueVersions":  4,
+                          "uniqueTemplates":  4,
+                          "note":  "Xác nhận chứng từ"
+                      },
+                      {
+                          "registry":  "DMucBKeKDTT.xml",
+                          "kind":  "notice",
+                          "handler":  "taxmessagekdtt.BKeKDTT",
+                          "root":  "BKE_TBAO",
+                          "entries":  5,
+                          "uniqueIds":  5,
+                          "uniqueVersions":  1,
+                          "uniqueTemplates":  3,
+                          "note":  "Bảng kê thông báo"
+                      }
+                  ],
+    "totals":  {
+                   "registries":  16,
+                   "registryEntries":  1512,
+                   "corpusFiles":  19
+               },
+    "corpus":  [
+                   {
+                       "sample":  "test-data/anonymized/gnt/sample-01.xml",
+                       "root":  "CHUNGTU",
+                       "kind":  "paymentVoucher",
+                       "code":  "01",
+                       "version":  "4.0.1",
+                       "elements":  62,
+                       "plucs":  "",
+                       "signature":  "no"
+                   },
+                   {
+                       "sample":  "test-data/anonymized/gnt/sample-02.xml",
+                       "root":  "CHUNGTU",
+                       "kind":  "paymentVoucher",
+                       "code":  "01",
+                       "version":  "4.0.1",
+                       "elements":  62,
+                       "plucs":  "",
+                       "signature":  "no"
+                   },
+                   {
+                       "sample":  "test-data/anonymized/gnt/sample-03.xml",
+                       "root":  "CHUNGTU",
+                       "kind":  "paymentVoucher",
+                       "code":  "01",
+                       "version":  "4.0.1",
+                       "elements":  62,
+                       "plucs":  "",
+                       "signature":  "no"
+                   },
+                   {
+                       "sample":  "test-data/anonymized/notices/sample-01.xml",
+                       "root":  "TBaoThueDTu",
+                       "kind":  "notice",
+                       "code":  "843",
+                       "version":  "2.5.6",
+                       "elements":  47,
+                       "plucs":  "",
+                       "signature":  "no"
+                   },
+                   {
+                       "sample":  "test-data/anonymized/notices/sample-02.xml",
+                       "root":  "TBaoThueDTu",
+                       "kind":  "notice",
+                       "code":  "844",
+                       "version":  "2.4.9",
+                       "elements":  56,
+                       "plucs":  "",
+                       "signature":  "no"
+                   },
+                   {
+                       "sample":  "test-data/declarations/gtgt_842_return.xml",
+                       "root":  "HSoThueDTu",
+                       "kind":  "declaration",
+                       "code":  "842",
+                       "version":  "2.8.3",
+                       "elements":  67,
+                       "plucs":  "",
+                       "signature":  "no"
+                   },
+                   {
+                       "sample":  "test-data/declarations/tncn_394_05kk_tt92.xml",
+                       "root":  "HSoThueDTu",
+                       "kind":  "declaration",
+                       "code":  "394",
+                       "version":  "2.1.6",
+                       "elements":  36,
+                       "plucs":  "",
+                       "signature":  "no"
+                   },
+                   {
+                       "sample":  "test-data/declarations/tncn_953_05qtt.xml",
+                       "root":  "HSoThueDTu",
+                       "kind":  "declaration",
+                       "code":  "953",
+                       "version":  "2.9.3",
+                       "elements":  53,
+                       "plucs":  "",
+                       "signature":  "no"
+                   },
+                   {
+                       "sample":  "test-data/declarations/tndn_892_03tndn_v2.9.4.xml",
+                       "root":  "HSoThueDTu",
+                       "kind":  "declaration",
+                       "code":  "892",
+                       "version":  "2.9.4",
+                       "elements":  100,
+                       "plucs":  "",
+                       "signature":  "no"
+                   },
+                   {
+                       "sample":  "iTaxViewerMac/Tests/iTaxViewerCoreTests/Fixtures/gnt_chungtu.xml",
+                       "root":  "CHUNGTU",
+                       "kind":  "paymentVoucher",
+                       "code":  "01",
+                       "version":  "4.0.1",
+                       "elements":  13,
+                       "plucs":  "",
+                       "signature":  "no"
+                   },
+                   {
+                       "sample":  "iTaxViewerMac/Tests/iTaxViewerCoreTests/Fixtures/gtgt_842_nq142.xml",
+                       "root":  "HSoThueDTu",
+                       "kind":  "declaration",
+                       "code":  "842",
+                       "version":  "2.8.3",
+                       "elements":  91,
+                       "plucs":  "",
+                       "signature":  "no"
+                   },
+                   {
+                       "sample":  "iTaxViewerMac/Tests/iTaxViewerCoreTests/Fixtures/gtgt_842_return.xml",
+                       "root":  "HSoThueDTu",
+                       "kind":  "declaration",
+                       "code":  "842",
+                       "version":  "2.8.3",
+                       "elements":  67,
+                       "plucs":  "",
+                       "signature":  "no"
+                   },
+                   {
+                       "sample":  "iTaxViewerMac/Tests/iTaxViewerCoreTests/Fixtures/gtgt_842_return_utf16.xml",
+                       "root":  "HSoThueDTu",
+                       "kind":  "declaration",
+                       "code":  "842",
+                       "version":  "2.8.3",
+                       "elements":  67,
+                       "plucs":  "",
+                       "signature":  "no"
+                   },
+                   {
+                       "sample":  "iTaxViewerMac/Tests/iTaxViewerCoreTests/Fixtures/signed_demo.xml",
+                       "root":  "HSoThueDTu",
+                       "kind":  "declaration",
+                       "code":  "842",
+                       "version":  "2.8.3",
+                       "elements":  33,
+                       "plucs":  "",
+                       "signature":  "yes"
+                   },
+                   {
+                       "sample":  "iTaxViewerMac/Tests/iTaxViewerCoreTests/Fixtures/tbao_107_bstt.xml",
+                       "root":  "TBaoThueDTu",
+                       "kind":  "notice",
+                       "code":  "107",
+                       "version":  "3.0.7",
+                       "elements":  16,
+                       "plucs":  "",
+                       "signature":  "no"
+                   },
+                   {
+                       "sample":  "iTaxViewerMac/Tests/iTaxViewerCoreTests/Fixtures/tncn_394_05kk_tt92.xml",
+                       "root":  "HSoThueDTu",
+                       "kind":  "declaration",
+                       "code":  "394",
+                       "version":  "2.1.6",
+                       "elements":  36,
+                       "plucs":  "",
+                       "signature":  "no"
+                   },
+                   {
+                       "sample":  "iTaxViewerMac/Tests/iTaxViewerCoreTests/Fixtures/tncn_953_05qtt.xml",
+                       "root":  "HSoThueDTu",
+                       "kind":  "declaration",
+                       "code":  "953",
+                       "version":  "2.9.3",
+                       "elements":  53,
+                       "plucs":  "",
+                       "signature":  "no"
+                   },
+                   {
+                       "sample":  "iTaxViewerMac/Tests/iTaxViewerCoreTests/Fixtures/tndn_892_03tndn_v2.9.4.xml",
+                       "root":  "HSoThueDTu",
+                       "kind":  "declaration",
+                       "code":  "892",
+                       "version":  "2.9.4",
+                       "elements":  100,
+                       "plucs":  "",
+                       "signature":  "no"
+                   },
+                   {
+                       "sample":  "iTaxViewerMac/Tests/iTaxViewerCoreTests/Fixtures/xxe_attack.xml",
+                       "root":  "HSoThueDTu",
+                       "kind":  "declaration",
+                       "code":  "842",
+                       "version":  "2.8.3",
+                       "elements":  11,
+                       "plucs":  "",
+                       "signature":  "no"
+                   }
+               ]
+}

@@ -1,0 +1,83 @@
+{
+  "id": "01-TB-BSTT",
+  "kind": "notice",
+  "root": "TBao",
+  "detect": {
+    "root": "TBao",
+    "MSoRegex": "^(01/TB-SSĐT|01/TB-ĐKĐT|01/TB-TNĐT|01/TB-BSTT-NNT|01/TB-NSD|01/TB-BSTT|01/CCTT-TB)$",
+    "registry": "data/DMucTBao.xml",
+    "registryKey": { "maTBao": "01/TB-BSTT", "pbanTBao": "2.1.0" },
+    "lookupOn": { "maTBao": "MSo element", "pbanTBao": "PBan element" },
+    "template": "data/xslt/XSLT 2.8.1/TBaoThue/xslt/TBao_107_TB_BSTT.xslt",
+    "handler": "taxMessage.TBaoHDDT (HSoThueFactory: root TBao + MSo regex)",
+    "rejectedVariant": "root TBaoThueDTu with maTBao=107 / pbanTBao=3.0.7 -> 'Mã Thông báo (107) hoặc phiên bản thông báo (3.0.7) không đúng' (verified 2026-10-22)"
+  },
+  "title": "THÔNG BÁO (Lần {LGTrinh}) Về việc giải trình, bổ sung thông tin, tài liệu",
+  "formNumber": "01/TB-BSTT-NNT",
+  "legalReference": "Ban hành kèm theo Nghị định 70/2025/NĐ-CP ngày 20 tháng 3 năm 2025 của Bộ trưởng Bộ Tài chính",
+  "orientation": "portrait",
+  "page": { "size": "A4", "widthPt": 595, "heightPt": 842, "marginsMm": { "top": 20, "right": 20, "bottom": 10, "left": 20 } },
+  "notes": [
+    "The template prints the form number 01/TB-BSTT-NNT even for the 01/TB-BSTT entry (hard-coded in tbaoheader.xsl, tbaoHeader_107_TB_BSTT).",
+    "The header takes the number/date from TBao/STBao, not from the soTBao/ngayTBao parameters passed by the caller."
+  ],
+  "headerFields": [
+    { "label": "Mẫu số", "value": "01/TB-BSTT-NNT", "format": "literal" },
+    { "label": "Cơ quan ban hành (dòng 1)", "source": "TBao/DLTBao/TCQTCTren", "format": "bold" },
+    { "label": "Cơ quan ban hành (dòng 2)", "source": "TBao/DLTBao/TCQT", "format": "bold" },
+    { "label": "Số", "source": "TBao/STBao/So" },
+    { "label": "Ngày ban hành", "source": "TBao/STBao/NTBao", "format": "date", "pattern": "'Hà Nội, ngày' dd 'tháng' MM 'năm' yyyy" },
+    { "label": "Tiêu đề", "source": "TBao/DLTBao/LGTrinh", "pattern": "THÔNG BÁO (Lần {LGTrinh})" }
+  ],
+  "sections": [
+    {
+      "id": "recipient",
+      "kind": "fields",
+      "recordPath": "TBao/DLTBao",
+      "fields": [
+        { "label": "Kính gửi", "source": "TNNT" },
+        { "label": "Mã số thuế", "source": "MST" },
+        { "label": "Địa chỉ nhận thông báo", "source": "DCNNT" }
+      ]
+    },
+    {
+      "id": "body",
+      "kind": "prose",
+      "paragraphs": [
+        { "text": "Căn cứ quy định của pháp luật thuế hiện hành về trách nhiệm của người nộp thuế trong việc cung cấp thông tin theo yêu cầu của cơ quan quản lý thuế;" },
+        { "text": "Để làm rõ các nội dung: {TNNT} thuộc diện rủi ro rất cao theo mức độ rủi ro người nộp thuế tại ngày phân tích {NPTich:dd/mm/yyyy}." },
+        { "text": "{TCQT} đề nghị {TNNT} giải trình và bổ sung thông tin, tài liệu theo Phụ lục đính kèm." },
+        { "text": "Văn bản giải trình, thông tin, tài liệu bổ sung gửi về cơ quan quản lý thuế {TCQT} trước ngày {THGTBSung:dd} tháng {THGTBSung:MM} năm {THGTBSung:yyyy}." },
+        { "text": "Nếu có vướng mắc, đề nghị người nộp thuế liên hệ với cơ quan quản lý thuế {TCQT} theo số điện thoại: {DTCQT} địa chỉ: {DCCQT}." },
+        { "text": "{TCQT} thông báo để {TNNT} được biết và thực hiện./." }
+      ]
+    },
+    {
+      "id": "note",
+      "kind": "prose",
+      "title": "Ghi chú",
+      "paragraphs": [
+        { "text": "NNT vui lòng truy cập cổng dịch vụ công: https://dichvucong.gdt.gov.vn/tthc/ để thực hiện giải trình bổ sung thông tin." },
+        { "text": "Trong trường hợp người nộp thuế cần giải trình bổ sung thông tin trực tiếp. Người nộp thuế vui lòng liên hệ cơ quan Thuế và đến trực tiếp tại cơ quan thuế quản lý để thực hiện giải trình bổ sung thông tin" }
+      ]
+    },
+    {
+      "id": "signature",
+      "kind": "note",
+      "fields": [
+        { "label": "Nơi nhận", "value": "- Như trên;\n- Lưu VT;" },
+        { "label": "Ký", "value": "THỦ TRƯỞNG CƠ QUAN QUẢN LÝ THUẾ / BAN HÀNH THÔNG BÁO / (Ký, ghi rõ họ tên, đóng dấu)" }
+      ],
+      "note": "div id=sigDiv is empty; no logo or seal image is copied."
+    }
+  ],
+  "appendices": {
+    "mode": "external",
+    "known": ["TBao_107_TB_BSTT_PL.xslt"],
+    "status": "not captured"
+  },
+  "unknowns": [
+    "The Phụ lục (PL) form was not rendered; only the main notice was captured (1 page, A4 portrait).",
+    "Notice codes 01/TB-BSTT-NNT, 01/TB-SSĐT, 01/TB-ĐKĐT, 01/TB-TNĐT, 01/TB-NSD, 01/CCTT-TB share this classifier but were not captured."
+  ]
+}

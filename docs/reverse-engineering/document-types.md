@@ -29,6 +29,11 @@ each referenced XSLT.
 | E-invoice | `TKhai`, `DNghi`, `TBao`, `BCTHSDBLai`, `BLai` | invoice classes |
 | Refund / audit / confirmation | `XULY_NTHUA`, `TRASOAT_THUE`, `XACNHAN_THUE`, `XACNHAN_NVTHUE` | NTDT classes |
 
+Namespace rule (verified by running the original): classification compares the raw
+`getTagName()` against these literals, so a **prefixed** root (`ns0:TBaoThueDTu`) is rejected as
+"Tệp hồ sơ không đúng định dạng". A default namespace is accepted; the notice/voucher handlers
+write a temp copy with `xmlns="…"` stripped before running XSLT.
+
 ## 3. Priority forms — verified mappings
 
 | Display code | `maTKhai` | Verified versions | Template (example) | Orientation | Renderer in macOS app |
@@ -39,8 +44,14 @@ each referenced XSLT.
 | **03/TNDN** | `892` (legacy `03`) | 2.5.1, 2.8.3, 2.9.2, **2.9.4** | `data/xslt/XSLT 2.9.2/TKhaiThue/xslt/TNDN/TKhai_TNDN_03_TT80.xslt` | portrait | **Full** (74 rows, 66 mapped indicators) |
 | Financial statement B01/BCTC | `701` (and `1254`) | up to 2.9.0 | `TKhai_BCTC41_Nam.xslt` (v2.9.0 set) | portrait | Structured data view |
 | Financial statement B05/BCTC | `702` | 2.3.5 | B05 template | portrait | Structured data view |
-| Notice 01/TB-BSTT | `107` (notice registry) | 3.0.7 | `TBao_107_TB_BSTT.xslt` | portrait | Structured data view |
-| Payment voucher | `CHUNGTU`, `MA_CTU=01` | `PBAN_TLIEU_XML` e.g. 4.0.1 | `data/xslt/CTu/...` | portrait | Structured data view |
+| Notice 01/TB-BSTT | `01/TB-BSTT` (notice registry key) | 2.1.0 | `data/xslt/XSLT 2.8.1/TBaoThue/xslt/TBao_107_TB_BSTT.xslt` | portrait | Structured data view |
+| Payment voucher | `CHUNGTU`, `MA_CTU=01` | `PBAN_TLIEU_XML` e.g. 4.0.1 | `data/xslt/CTu/GNT_4_0_1.xsl` | portrait | Structured data view |
+
+Verified notice/voucher rows (2026-10-22): `843` (2.5.6, `TBao_01_1_TT19_KeKhai.xslt`), `844`
+(2.4.9, `TBao_01_2_TT19_KeKhai.xslt`) and `01/TB-BSTT` (2.1.0). For `01/TB-BSTT` the root element
+is **`TBao`** (handled by `TBaoHDDT`) and the registry key is `MSo`; the numeric `107` is a
+declaration code (financial statements), not a notice code. A file with `root=TBaoThueDTu`,
+`maTBao=107`, `pbanTBao=3.0.7` is rejected by the original.
 
 Version semantics: a document's `pbanTKhaiXML` is matched exactly. When a file declares a
 version whose registry row is absent, the original raises “Mã hồ sơ … không đúng”. The macOS
