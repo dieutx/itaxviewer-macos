@@ -69,8 +69,8 @@
 
 ## 9. Unknown / blocker
 
-- Nhánh `trangThai=N` chưa capture.
 - 6 version còn lại chưa capture.
+- Nhánh `N` đã capture nhưng chưa có mẫu thật (dùng fixture synthetic).
 
 ## 10. Ghi chú
 

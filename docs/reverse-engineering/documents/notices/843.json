@@ -84,6 +84,7 @@
   "appendices": { "mode": "none" },
   "unknowns": [
     "Layouts for 843 versions 2.4.9/2.5.4/3.0.0/3.0.1/2.5.8/2.5.9 were not captured; only the registry mapping is verified.",
-    "The printed footer page number is produced by PD4ML ('$[page]/$[total]'); the exact rendered footer was not OCR-verified."
+    "The printed footer page number is produced by PD4ML ('$[page]/$[total]'); the exact rendered footer was not OCR-verified.",
+    "The rejected branch (trangThai=N) was captured with a synthetic LyDo; no real rejection file was available."
   ]
 }

@@ -78,3 +78,4 @@ Bằng chứng: `docs/reverse-engineering/evidence/documents/<kind>/<id>/` (ản
 |---|---|---|
 | 2026-10-22 | Tạo tracker; ghi nhận 4 form full + NQ43/101/142; xác định phần còn thiếu | agent |
 | 2026-10-22 | Inventory 16 registry (1.512 dòng id+version); capture CT-01, 843, 844, 01/TB-BSTT; thêm spec/fixture/evidence; sửa namespace fixture thông báo; phát hiện sai khoá `maTBao=107` | agent |
+| 2026-10-22 | Mở lại 4 fixture tờ khai bằng bản gốc: 842 = 2 trang, 394 = **1 trang** (clone đang 2), 953 = 2 trang, 892 = NPE/blocked; capture nhánh `trangThai=N` của 843; thử capture phụ lục NQ142 = blocked | agent |

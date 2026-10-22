@@ -105,6 +105,16 @@ struct DocumentDetailView: View {
                 .disabled(model.selectedDocument == nil)
 
                 Button {
+                    revealSelectedInFinder()
+                } label: {
+                    Label("Hiện trong Finder", systemImage: "folder.badge.questionmark")
+                }
+                .disabled(model.selectedDocument?.url == nil)
+                .help("Hiện tệp trong Finder")
+
+                Divider()
+
+                Button {
                     model.requestExport()
                 } label: {
                     Label("Xuất PDF", systemImage: "square.and.arrow.down")
@@ -119,6 +129,14 @@ struct DocumentDetailView: View {
                 }
                 .disabled(model.selectedDocument == nil)
                 .help("In hồ sơ (⌘P)")
+
+                Button {
+                    if let doc = model.selectedDocument { model.close(doc) }
+                } label: {
+                    Label("Đóng", systemImage: "xmark.circle")
+                }
+                .disabled(model.selectedDocument == nil)
+                .help("Đóng tài liệu đang mở")
             }
         }
         .onDrop(of: [.fileURL], isTargeted: $isDropTarget) { providers in
@@ -129,6 +147,11 @@ struct DocumentDetailView: View {
     private var signatureIcon: String {
         guard let doc = model.selectedDocument else { return "signature" }
         return doc.document.signatures.isEmpty ? "signature" : "checkmark.seal"
+    }
+
+    private func revealSelectedInFinder() {
+        guard let url = model.selectedDocument?.url else { return }
+        NSWorkspace.shared.activateFileViewerSelecting([url])
     }
 
     private func handleDrop(_ providers: [NSItemProvider]) -> Bool {
@@ -159,24 +182,27 @@ private struct DocumentSummaryBar: View {
 
     var body: some View {
         HStack(spacing: 14) {
-            VStack(alignment: .leading, spacing: 2) {
+            DocumentKindBadge(symbol: document.kindSymbol, tint: document.kindTint, size: 38)
+
+            VStack(alignment: .leading, spacing: 4) {
                 Text(document.displayTitle)
                     .font(.headline)
                     .lineLimit(1)
-                HStack(spacing: 8) {
-                    Label(document.formLabel, systemImage: "doc.text")
+
+                HStack(spacing: 6) {
+                    MetaChip(text: document.formLabel, symbol: "number", tint: document.kindTint)
                     if let version = document.document.metadata.formVersion {
-                        Text("phiên bản \(version)")
+                        MetaChip(text: "phiên bản \(version)")
                     }
                     if let period = document.document.metadata.period {
-                        Text("kỳ \(period)")
+                        MetaChip(text: "kỳ \(period)", symbol: "calendar")
                     }
-                    Text(document.classification.support.label)
+                    MetaChip(text: document.shortKindLabel, symbol: "tag")
                 }
-                .font(.caption)
-                .foregroundStyle(.secondary)
             }
-            Spacer()
+
+            Spacer(minLength: 8)
+
             if document.document.signatures.isEmpty {
                 Label("Không có chữ ký", systemImage: "signature")
                     .font(.caption)
@@ -184,12 +210,13 @@ private struct DocumentSummaryBar: View {
             } else {
                 Button(action: onSignatures) {
                     Label("\(document.document.signatures.count) chữ ký — Chưa xác minh",
-                          systemImage: "exclamationmark.shield")
+                          systemImage: "exclamationmark.shield.fill")
                         .font(.caption.weight(.medium))
                 }
                 .buttonStyle(.bordered)
                 .tint(.orange)
             }
+
             Button(action: onInfo) {
                 Label("Thông tin", systemImage: "info.circle")
                     .font(.caption)
@@ -197,7 +224,7 @@ private struct DocumentSummaryBar: View {
             .buttonStyle(.borderless)
         }
         .padding(.horizontal, 16)
-        .padding(.vertical, 8)
+        .padding(.vertical, 10)
         .background(.bar)
     }
 }
@@ -227,22 +254,100 @@ private struct ZoomControls: View {
 }
 
 private struct EmptyDropView: View {
+    @EnvironmentObject private var model: AppModel
     let isTargeted: Bool
 
+    private struct SupportedKind: Identifiable {
+        let id: String
+        let symbol: String
+    }
+
+    private let supportedKinds: [SupportedKind] = [
+        SupportedKind(id: "Tờ khai", symbol: "doc.text.fill"),
+        SupportedKind(id: "Thông báo", symbol: "bell.badge.fill"),
+        SupportedKind(id: "Chứng từ", symbol: "banknote.fill"),
+        SupportedKind(id: "Đăng ký thuế", symbol: "person.text.rectangle.fill"),
+        SupportedKind(id: "Hải quan", symbol: "shippingbox.fill"),
+        SupportedKind(id: "Hóa đơn", symbol: "doc.richtext.fill")
+    ]
+
     var body: some View {
-        VStack(spacing: 16) {
-            Image(systemName: "doc.text.magnifyingglass")
-                .font(.system(size: 56, weight: .light))
-                .foregroundStyle(isTargeted ? Color.accentColor : Color.secondary)
-            Text("Mở hồ sơ thuế XML")
-                .font(.title2.weight(.semibold))
-            Text("Kéo tệp XML vào đây, hoặc nhấn ⌘O để chọn tệp.\nHỗ trợ tờ khai 01/GTGT, 05/KK-TNCN, 05/QTT-TNCN, 03/TNDN và các hồ sơ khác ở dạng dữ liệu có cấu trúc.")
-                .multilineTextAlignment(.center)
-                .foregroundStyle(.secondary)
-                .frame(maxWidth: 460)
-            Text("Tài liệu được xử lý hoàn toàn trên máy. Không tải lên máy chủ.")
-                .font(.caption)
-                .foregroundStyle(.tertiary)
+        ScrollView {
+            VStack(spacing: 18) {
+                Image(systemName: isTargeted ? "arrow.down.doc.fill" : "doc.text.magnifyingglass")
+                    .font(.system(size: 60, weight: .light))
+                    .foregroundStyle(isTargeted ? Color.accentColor : Color.secondary)
+                    .symbolRenderingMode(.hierarchical)
+
+                VStack(spacing: 6) {
+                    Text("Mở hồ sơ thuế XML")
+                        .font(.title2.weight(.semibold))
+                    Text("Kéo tệp XML vào đây, hoặc chọn tệp từ máy.\nTài liệu được xử lý hoàn toàn trên máy — không tải lên máy chủ.")
+                        .multilineTextAlignment(.center)
+                        .foregroundStyle(.secondary)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+
+                HStack(spacing: 10) {
+                    Button {
+                        model.showOpenPanel()
+                    } label: {
+                        Label("Mở tệp hồ sơ…", systemImage: "folder.badge.plus")
+                    }
+                    .buttonStyle(.borderedProminent)
+                    .keyboardShortcut("o", modifiers: .command)
+                }
+
+                HStack(spacing: 6) {
+                    ForEach(supportedKinds) { kind in
+                        MetaChip(text: kind.id, symbol: kind.symbol, tint: .secondary)
+                    }
+                }
+
+                if !model.recent.isEmpty {
+                    VStack(alignment: .leading, spacing: 8) {
+                        HStack(spacing: 6) {
+                            Label("Mở gần đây", systemImage: "clock.arrow.circlepath")
+                                .font(.caption.weight(.semibold))
+                                .foregroundStyle(.secondary)
+                            Spacer()
+                        }
+                        ForEach(model.recent.prefix(3)) { item in
+                            Button {
+                                model.openRecent(item)
+                            } label: {
+                                HStack(spacing: 10) {
+                                    Image(systemName: "doc.text.fill")
+                                        .foregroundStyle(.tint)
+                                    VStack(alignment: .leading, spacing: 2) {
+                                        Text(item.name)
+                                            .font(.callout)
+                                            .lineLimit(1)
+                                        Text([item.form, item.kind].compactMap { $0 }.joined(separator: " · "))
+                                            .font(.caption2)
+                                            .foregroundStyle(.secondary)
+                                            .lineLimit(1)
+                                    }
+                                    Spacer()
+                                    Image(systemName: "chevron.right")
+                                        .font(.caption2)
+                                        .foregroundStyle(.tertiary)
+                                }
+                                .padding(10)
+                                .background(Color(nsColor: .controlBackgroundColor),
+                                            in: RoundedRectangle(cornerRadius: 9))
+                                .overlay(RoundedRectangle(cornerRadius: 9).strokeBorder(.separator))
+                            }
+                            .buttonStyle(.plain)
+                        }
+                    }
+                    .frame(maxWidth: 460)
+                }
+
+                Spacer(minLength: 0)
+            }
+            .padding(36)
+            .frame(maxWidth: .infinity)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(isTargeted ? Color.accentColor.opacity(0.08) : Color.clear)

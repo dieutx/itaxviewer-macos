@@ -10,9 +10,18 @@ struct DocumentInfoView: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            HStack {
-                Text("Thông tin tài liệu")
-                    .font(.title3.weight(.semibold))
+            HStack(spacing: 12) {
+                DocumentKindBadge(symbol: document.kindSymbol,
+                                  tint: document.kindTint,
+                                  size: 40)
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("Thông tin tài liệu")
+                        .font(.title3.weight(.semibold))
+                    HStack(spacing: 6) {
+                        MetaChip(text: document.formLabel, symbol: "number", tint: document.kindTint)
+                        MetaChip(text: document.shortKindLabel, symbol: "tag")
+                    }
+                }
                 Spacer()
                 Button("Đóng") { dismiss() }
                     .keyboardShortcut(.cancelAction)
@@ -64,9 +73,11 @@ struct DocumentInfoView: View {
                     .font(.caption)
                     .foregroundStyle(.secondary)
                 Spacer()
-                Button("Sao chép đường dẫn") {
+                Button {
                     NSPasteboard.general.clearContents()
                     NSPasteboard.general.setString(document.url?.path ?? "", forType: .string)
+                } label: {
+                    Label("Sao chép đường dẫn", systemImage: "doc.on.doc")
                 }
                 .disabled(document.url == nil)
             }

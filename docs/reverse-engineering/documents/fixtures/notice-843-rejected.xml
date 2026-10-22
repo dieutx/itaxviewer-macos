@@ -1,0 +1,61 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<TBaoThueDTu xmlns="http://kekhaithue.gdt.gov.vn/TBaoThue" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TBaoThue id="_NODE_TO_SIGN">
+    <TTinChung>
+      <CQT>
+        <maCQT>00000</maCQT>
+        <tenCQT>CƠ QUAN THUẾ MẪU</tenCQT>
+        <DVu>
+          <maDVu>ETAX</maDVu>
+          <tenDVu>ETAX 1.0</tenDVu>
+          <pbanDVu>1.0</pbanDVu>
+        </DVu>
+      </CQT>
+      <NNhanTBaoThue>
+        <maNNhan>0000000000</maNNhan>
+        <tenNNhan>CÔNG TY MẪU</tenNNhan>
+        <diaChiNNhan>Số 1 Đường Mẫu, Phường Mẫu</diaChiNNhan>
+      </NNhanTBaoThue>
+      <DaiLyThue>
+        <maDLT xsi:nil="true" />
+        <tenDLT xsi:nil="true" />
+      </DaiLyThue>
+      <TTinTBaoThue>
+        <maTBao>843</maTBao>
+        <tenTBao>V/v: Tiếp nhận hồ sơ thuế điện tử TT19</tenTBao>
+        <pbanTBao>2.5.6</pbanTBao>
+        <soTBao>MAU-000001</soTBao>
+        <ngayTBao>2025-06-20</ngayTBao>
+      </TTinTBaoThue>
+    </TTinChung>
+    <NDungTBao>
+      <trangThai>N</trangThai>
+      <ngayHoSo>2025-06-20T14:14:42.158+07:00</ngayHoSo>
+      <HoSoThue>
+        <CTietHoSoThue id="">
+          <tokhai-phuluc>01/GTGT - TỜ KHAI THUẾ GIÁ TRỊ GIA TĂNG (Mẫu số 01/GTGT)</tokhai-phuluc>
+          <loaiToKhai>Chính thức</loaiToKhai>
+          <kyTinhThue>05/2025</kyTinhThue>
+          <lanNop>1</lanNop>
+        </CTietHoSoThue>
+      </HoSoThue>
+      <maGiaoDichDTu>MAU-000002</maGiaoDichDTu>
+      <LyDo>
+        <CTietLyDo id="">
+          <maNhomLoi>NL01</maNhomLoi>
+          <tenNhomLoi>Thông tin tờ khai</tenNhomLoi>
+          <maLoi>L01</maLoi>
+          <tenLoi>Mã số thuế không đúng định dạng</tenLoi>
+          <ttinLoiTrenTKhai />
+          <huongDanXuLy>Kiểm tra lại mã số thuế trên tờ khai</huongDanXuLy>
+          <ghiChu />
+        </CTietLyDo>
+      </LyDo>
+      <duongDan>https://example.invalid</duongDan>
+      <hotline />
+      <email xsi:nil="true" />
+      <maDVC>MAU-000003</maDVC>
+    </NDungTBao>
+  </TBaoThue>
+  <CKyDTu />
+</TBaoThueDTu>

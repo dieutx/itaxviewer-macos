@@ -25,12 +25,12 @@ Status legend:
 | Document | Internal code / version | Fixture | Classification | Data accuracy | Renderer | Print/PDF | Signatures | Overall |
 |---|---|---|---|---|---|---|---|---|
 | **01/GTGT** | `842` / 2.8.3 | `gtgt_842_return.xml` | **PASS** | **PASS** (21 indicators) | **PASS** (27 rows) | **PASS** (CSS pagination, 2 A4 pages) · native print pending | NOT VERIFIED | **PASS (render/pagination)** |
-| **05/KK-TNCN** | `394` / 2.1.6 | `tncn_394_05kk_tt92.xml` | **PASS** | **PASS** (16 indicators) | **PASS** (16 rows) | **PASS** (CSS pagination, 2 A4 pages) · native print pending | NOT VERIFIED | **PASS (render/pagination)** |
+| **05/KK-TNCN** | `394` / 2.1.6 | `tncn_394_05kk_tt92.xml` | **PASS** | **PASS** (16 indicators) | **PASS** (16 rows) | **PARTIAL** — Windows prints **1** A4 page, cloned output reported 2 · native print pending | NOT VERIFIED | **PARTIAL (pagination gap)** |
 | **05/QTT-TNCN** | `953` / 2.9.3 | `tncn_953_05qtt.xml` | **PASS** | **PASS** (26 indicators incl. `NVuQToanThay`) | **PASS** (26 rows, authorisation section renumbered 1–6) | **PASS** (CSS pagination, 2 A4 pages) · native print pending | NOT VERIFIED | **PASS (render/pagination)** |
 | **03/TNDN** | `892` / 2.9.4 | `tndn_892_03tndn_v2.9.4.xml` | **PASS** | **PASS** (66 indicators) | **PASS** (74 rows) | **PASS** (CSS pagination, 4 A4 pages + appendix) · native print pending | NOT VERIFIED | **PASS (render/pagination) / visual diff pending** |
 | Financial statements | `B01/BCTC` = `701`/`1254`, `B05` = `702` | — | PASS (code mapping) | structured view | Structured only | IMPLEMENTED | NOT VERIFIED | **PARTIAL** |
-| Tax-authority notice | `107` / `01/TB-BSTT` | `tbao_107_bstt.xml` | **PASS** | PASS (all leaf fields) | Structured only | IMPLEMENTED | NOT VERIFIED | **PARTIAL** |
-| Payment voucher | `CHUNGTU` / `MA_CTU=01` | `gnt_chungtu.xml` | **PASS** | PASS | Structured only | IMPLEMENTED | NOT VERIFIED | **PARTIAL** |
+| Tax-authority notice | `843` / 2.5.6 (`01-01/TB-TĐT`), `844` / 2.4.9 (`01-2/TB-TĐT`), `01/TB-BSTT` / 2.1.0 | `notice-843-minimal.xml`, `notice-844-minimal.xml`, `notice-01-TB-BSTT-minimal.xml` | Windows **PASS** (opens and renders 1 page each) | Windows PASS | macOS structured only; specs in `documents/notices/` | Windows PDF **PASS** (1 page each) | NOT VERIFIED | **PARTIAL (Windows spec done)** |
+| Payment voucher | `CHUNGTU` / `MA_CTU=01` | `gnt_chungtu.xml`, `voucher-CT-01-vnd-multi.xml` | Windows **PASS** (4.0.1) | Windows PASS | macOS structured only; spec `documents/paymentVouchers/CT-01.json` | Windows PDF **PASS** (1 page) | NOT VERIFIED | **PARTIAL (Windows spec done)** |
 | Other 406 declaration codes | various | — | PASS (display code from registry) | structured view | Structured only | IMPLEMENTED | NOT VERIFIED | **PARTIAL** |
 
 ### Known coverage gaps (different indicator numbering)
@@ -85,6 +85,33 @@ Screenshots captured from `iTaxViewer.exe` rendering the same fixtures
 | 05/QTT-TNCN | `reference-tncn-05qtt.png` | `I. NGHĨA VỤ KHẤU TRỪ…`; `1.500.000.000`; header `[01]…[15]`; parent rows bold |
 | 03/TNDN | `reference-tndn-03.png` | **Invalid capture:** the file currently shows the Windows splash screen, not the rendered form. The claim `(1.000)`, `250` is therefore **not visually verified**; only the data-level fixture check passes. |
 
+### Windows re-capture 2026-10-22 (declarations, notices, vouchers)
+
+Fresh captures from the live app (screenshots via `PrintWindow`, PDF via the app's own
+Ctrl+P → PD4ML path). Files live under
+`docs/reverse-engineering/evidence/documents/<kind>/<id>/`.
+
+| Document | Windows result | Pages | Notes |
+|---|---|---:|---|
+| 01/GTGT (`842`/2.8.3) | opens | **2** | matches the cloned pagination |
+| 05/KK-TNCN (`394`/2.1.6) | opens | **1** | clone pagination differs (2) |
+| 05/QTT-TNCN (`953`/2.9.3) | opens | **2** | matches |
+| 03/TNDN (`892`/2.9.4) | **NPE, no window** | — | reproducible on the bundled `<BaoCaoTaiChinh>` appendix; see the NPE note below |
+| Notice `843` (2.5.6) | opens, received + rejected branches | 1 | rejected branch captured with a synthetic `LyDo` |
+| Notice `844` (2.4.9) | opens, accepted branch | 1 | IDKhoanNop table renders `1.000.000` |
+| Notice `01/TB-BSTT` (2.1.0) | opens | 1 | root must be **`TBao`**, registry key `MSo=01/TB-BSTT`, `PBan=2.1.0` |
+| Voucher `CT-01` (4.0.1) | opens | 1 | `MA_NGUYENTE=00000` leaves amounts blank; VND prints `1.234.580.235` + words |
+
+Corrections established by running the original:
+
+* A **prefixed** root (`ns0:TBaoThueDTu`) is rejected; a default namespace is accepted and
+  stripped before XSLT. The anonymised notice fixtures were fixed accordingly.
+* The notice registry key is `maTBao` as a **string** (`843`, `844`, `01/TB-BSTT`), not the
+  numeric declaration code. The old `tbao_107_bstt.xml` fixture (`107`/`3.0.7`, root
+  `TBaoThueDTu`) is rejected by the original and must be replaced during macOS integration.
+* Appendix capture for `PL_NQ142_GTGT` was attempted twice by clicking the status-bar link;
+  the view did not change. Marked **blocked/pending**, not claimed.
+
 ### Verified behaviour from the live app
 
 * Number formatting is exactly `1.000.000.000`, `(1.000)`, decimal comma (`10,5`).
@@ -129,7 +156,7 @@ Screenshots captured from `iTaxViewer.exe` rendering the same fixtures
 | Other 406 form codes | official XSLT | structured field table | **layout pending** |
 | Title diacritics | XSLT `translate()` bug | correct Unicode | improvement |
 | Unmapped appendix | crash (NPE) | renders data | improvement |
-| Table pagination | table breaks disabled; long table forced onto one page | breaks between rows, header repeats on each page | improvement; verified as 2/2/2/4 A4 pages for the four fixtures |
+| Table pagination | table breaks disabled; long table forced onto one page | breaks between rows, header repeats on each page | improvement; Windows prints 2 (842) / 1 (394) / 2 (953) pages; the cloned 394 output still produces 2 pages — parity gap |
 | Signature | full XMLDSig + OCSP | metadata only | **NOT VERIFIED (by design)** |
 | Dark mode | not supported (Windows) | native chrome + white paper | improvement |
 

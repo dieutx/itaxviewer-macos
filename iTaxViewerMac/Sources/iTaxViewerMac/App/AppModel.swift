@@ -153,6 +153,11 @@ final class AppModel: ObservableObject {
         persistRecent()
     }
 
+    func removeRecent(_ item: RecentFile) {
+        recent.removeAll { $0.path == item.path }
+        persistRecent()
+    }
+
     // MARK: - Zoom / actions
 
     func zoomIn() { zoom = min(3.0, zoom + 0.1) }

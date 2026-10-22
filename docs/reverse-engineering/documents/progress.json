@@ -84,9 +84,11 @@
         "pdfPages": 2,
         "orientation": "portrait",
         "rows": 27,
-        "reference": "docs/reverse-engineering/evidence/reference-gtgt.png"
+        "reference": "docs/reverse-engineering/evidence/reference-gtgt.png",
+        "windowsPdfPages": 2,
+        "windowsEvidence": "docs/reverse-engineering/evidence/documents/declarations/842/"
       },
-      "notes": "Header [01b] fixed to Tháng 06 năm 2025; appendix NQ142 structured"
+      "notes": "Header [01b] fixed to Tháng 06 năm 2025; appendix NQ142 structured. Windows original re-captured 2026-10-22 (2 pages)."
     },
     "declaration-394": {
       "kind": "declaration",
@@ -102,8 +104,8 @@
         "handoff": "done",
         "verification": "partial"
       },
-      "results": {"pdfPages": 2, "orientation": "portrait", "rows": 16},
-      "notes": "Parent rows bold; header numbering verified against reference"
+      "results": {"pdfPages": 1, "orientation": "portrait", "rows": 16, "windowsPdfPages": 1, "note": "Windows original prints 1 page; the cloned PDF previously reported 2 pages"},
+      "notes": "Parent rows bold; header numbering verified against reference; Windows re-captured 2026-10-22"
     },
     "declaration-953": {
       "kind": "declaration",

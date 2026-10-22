@@ -48,6 +48,9 @@ for res in "$BIN_PATH"/*.resources; do
 done
 
 cp "$ROOT/scripts/Info.plist" "$APP/Contents/Info.plist"
+if [[ -f "$ROOT/scripts/AppIcon.icns" ]]; then
+  cp "$ROOT/scripts/AppIcon.icns" "$APP/Contents/Resources/AppIcon.icns"
+fi
 printf 'APPL????' > "$APP/Contents/PkgInfo"
 
 if [[ -n "$SIGN_IDENTITY" ]]; then
