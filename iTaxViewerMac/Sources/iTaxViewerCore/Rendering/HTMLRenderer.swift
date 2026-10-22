@@ -39,8 +39,8 @@ public final class HTMLRenderer {
         }
 
         if let appendix = renderAppendices(document: document) {
-            body += appendix
-            warnings.append("Tệp có phụ lục. Dữ liệu phụ lục được hiển thị đầy đủ nhưng bố cục in chính thức của từng phụ lục chưa được tái tạo.")
+            body += appendix.html
+            warnings.append(contentsOf: appendix.warnings)
         }
 
         let html = page(body: body,
@@ -422,23 +422,166 @@ public final class HTMLRenderer {
         return s
     }
 
-    private func renderAppendices(document: TaxDocument) -> String? {
+    private func renderAppendices(document: TaxDocument) -> (html: String, warnings: [String])? {
         guard let pluc = document.root.firstDescendant(named: "PLuc"), !pluc.children.isEmpty else {
             return nil
         }
         var s = "<div class=\"appendix\" style=\"page-break-before: always;\">"
-        s += "<h2>PHỤ LỤC</h2>"
+        var warnings: [String] = []
         for child in pluc.children {
-            s += "<h3>\(esc(child.localName))</h3>"
-            s += "<table class=\"data-table\"><tbody>"
-            for leaf in child.leaves(limit: 400) {
-                let value = leaf.trimmedValue
-                if value.isEmpty { continue }
-                s += "<tr><td class=\"path\">\(esc(pathString(for: leaf, relativeTo: child)) )</td><td>\(esc(value))</td></tr>"
+            if let known = renderKnownAppendix(child, document: document) {
+                s += known
+            } else {
+                warnings.append("Phụ lục \(child.localName) chưa có bố cục in chuyên biệt; dữ liệu được hiển thị dạng bảng đường dẫn/giá trị.")
+                s += renderRawAppendix(child)
             }
+        }
+        s += "</div>"
+        return (s, warnings)
+    }
+
+    /// Appendices that have an independently recreated official layout.
+    /// Data mapped here uses only factual field tags and official Vietnamese
+    /// column labels; no vendor XSLT/CSS is copied.
+    private func renderKnownAppendix(_ node: XMLNode, document: TaxDocument) -> String? {
+        switch node.localName {
+        case "PL_NQ142_GTGT", "PL_NQ101_GTGT", "PL_NQ43_GTGT":
+            return renderVATReductionAppendix(node, document: document)
+        default:
+            return nil
+        }
+    }
+
+    private func renderVATReductionAppendix(_ node: XMLNode, document: TaxDocument) -> String {
+        let id = node.localName
+        let citation: String
+        switch id {
+        case "PL_NQ142_GTGT": citation = "142/2024/QH15"
+        case "PL_NQ101_GTGT": citation = "101/2023/QH15"
+        case "PL_NQ43_GTGT": citation = "43/2022/QH15"
+        default: citation = id
+        }
+
+        var s = "<div class=\"appendix-block\">"
+        s += "<h2>GIẢM THUẾ GIÁ TRỊ GIA TĂNG<br/>THEO NGHỊ QUYẾT SỐ \(esc(citation))</h2>"
+        s += "<div class=\"appendix-note\">(Kèm theo Tờ khai thuế GTGT – Kỳ tính thuế: "
+        s += "\(esc(VietnameseFormat.period(type: document.metadata.periodType, period: document.metadata.period, from: document.metadata.periodFrom, to: document.metadata.periodTo))))</div>"
+        s += renderAppendixIdentity(document: document)
+
+        if let purchases = node.firstChild(named: "HH_DV_MuaVaoTrongKy") {
+            s += "<h3>I. Hàng hóa, dịch vụ mua vào trong kỳ được áp dụng mức thuế suất thuế giá trị gia tăng 8% "
+            s += "<span class=\"appendix-qualifier\">(áp dụng cho người nộp thuế kê khai theo phương pháp khấu trừ thuế)</span></h3>"
+            s += renderPurchaseAppendixTable(purchases)
+        }
+        if let sales = node.firstChild(named: "HH_DV_BanRaTrongKy") {
+            s += "<h3>II. Hàng hóa, dịch vụ bán ra trong kỳ</h3>"
+            s += renderSaleAppendixTable(sales)
+        }
+        // PL_NQ43/PL_NQ101 carry the repeating rows directly under the appendix.
+        if node.firstChild(named: "HH_DV_MuaVaoTrongKy") == nil,
+           node.firstChild(named: "HH_DV_BanRaTrongKy") == nil {
+            s += "<h3>Bảng kê hàng hóa, dịch vụ được giảm thuế giá trị gia tăng</h3>"
+            s += renderSaleAppendixTable(node)
+        }
+        if let difference = node.firstChild(named: "ChenhLech") {
+            s += "<h3>III. Chênh lệch thuế GTGT của hàng hoá, dịch vụ bán ra và mua vào trong kỳ được áp dụng mức thuế suất thuế giá trị gia tăng 8%</h3>"
+            s += "<table class=\"tax-table appendix-table appendix-difference\"><tbody>"
+            s += "<tr><td class=\"c code\">[09]</td>"
+            s += "<td>Chênh lệch thuế GTGT được giảm ([09] = [08] - [06])</td>"
+            s += "<td class=\"r\">\(esc(format(difference.firstChild(named: "ct9")?.trimmedValue ?? "")))</td></tr>"
             s += "</tbody></table>"
         }
         s += "</div>"
+        return s
+    }
+
+    private func renderAppendixIdentity(document: TaxDocument) -> String {
+        let meta = document.metadata
+        var s = "<table class=\"taxpayer appendix-taxpayer\">"
+        s += "<tr><td class=\"hcode\"><b>[01]</b></td><td><b>Tên người nộp thuế:</b> \(esc(meta.taxpayerName ?? ""))</td></tr>"
+        s += "<tr><td class=\"hcode\"><b>[02]</b></td><td><b>Mã số thuế:</b> \(esc(meta.taxpayerTaxCode ?? ""))</td></tr>"
+        s += "<tr><td class=\"hcode\"><b>[03]</b></td><td><b>Tên đại lý thuế (nếu có):</b> \(esc(meta.agentName ?? ""))</td></tr>"
+        s += "<tr><td class=\"hcode\"><b>[04]</b></td><td><b>Mã số thuế:</b> \(esc(meta.agentTaxCode ?? ""))</td></tr>"
+        s += "</table>"
+        s += "<div class=\"currency-note\">Đơn vị tiền: Đồng Việt Nam</div>"
+        return s
+    }
+
+    private func renderPurchaseAppendixTable(_ section: XMLNode) -> String {
+        let allRecords = section.children(named: "BangKeTenHHDV")
+        let records = Array(allRecords.prefix(20_000))
+        var s = "<table class=\"tax-table appendix-table\">"
+        s += "<colgroup><col style=\"width:6%\"><col><col style=\"width:26%\"><col style=\"width:20%\"></colgroup>"
+        s += "<thead><tr><th>STT</th><th>Tên hàng hóa, dịch vụ</th>"
+        s += "<th>Giá trị hàng hóa, dịch vụ mua vào chưa có thuế GTGT được khấu trừ trong kỳ</th>"
+        s += "<th>Thuế GTGT của hàng hóa, dịch vụ mua vào được khấu trừ trong kỳ</th></tr></thead><tbody>"
+        if records.isEmpty {
+            s += "<tr><td colspan=\"4\" class=\"c\">Không có phát sinh.</td></tr>"
+        }
+        for (index, record) in records.enumerated() {
+            s += "<tr><td class=\"c\">\(index + 1)</td>"
+            s += "<td>\(esc(record.firstChild(named: "tenHHDVMuaVao")?.trimmedValue ?? ""))</td>"
+            s += "<td class=\"r\">\(esc(format(record.firstChild(named: "giaTriHHDVMuaVao")?.trimmedValue ?? "")))</td>"
+            s += "<td class=\"r\">\(esc(format(record.firstChild(named: "thueGTGTHHDV")?.trimmedValue ?? "")))</td></tr>"
+        }
+        if allRecords.count > records.count {
+            s += "<tr><td colspan=\"4\" class=\"c\"><i>Đã lược bớt \(allRecords.count - records.count) dòng vượt giới hạn hiển thị.</i></td></tr>"
+        }
+        s += "<tr class=\"summary\"><td class=\"c code\">[05]</td><td>Tổng cộng giá trị hàng hóa, dịch vụ mua vào chưa có thuế GTGT</td>"
+        s += "<td class=\"r\">\(esc(format(section.firstChild(named: "tongCongGiaTriHHDVMuaVao")?.trimmedValue ?? "")))</td><td></td></tr>"
+        s += "<tr class=\"summary\"><td class=\"c code\">[06]</td><td>Tổng cộng thuế GTGT của hàng hóa, dịch vụ mua vào được khấu trừ</td>"
+        s += "<td></td><td class=\"r\">\(esc(format(section.firstChild(named: "tongCongThueGTGTHHDV")?.trimmedValue ?? "")))</td></tr>"
+        s += "</tbody></table>"
+        return s
+    }
+
+    private func renderSaleAppendixTable(_ section: XMLNode) -> String {
+        let allRecords = section.children(named: "BangKeTenHHDV")
+        let records = Array(allRecords.prefix(20_000))
+        var s = "<table class=\"tax-table appendix-table\">"
+        s += "<colgroup><col style=\"width:5%\"><col><col style=\"width:19%\">"
+        s += "<col style=\"width:11%\"><col style=\"width:11%\"><col style=\"width:18%\"></colgroup>"
+        s += "<thead><tr><th>STT</th><th>Tên hàng hóa, dịch vụ</th>"
+        s += "<th>Giá trị hàng hóa, dịch vụ chưa có thuế GTGT/Doanh thu hàng hoá, dịch vụ chịu thuế</th>"
+        s += "<th>Thuế suất/Tỷ lệ tính thuế GTGT theo quy định</th>"
+        s += "<th>Thuế suất/Tỷ lệ tính thuế GTGT sau giảm</th>"
+        s += "<th>Thuế GTGT của hàng hóa, dịch vụ bán ra được giảm</th></tr></thead><tbody>"
+        if records.isEmpty {
+            s += "<tr><td colspan=\"6\" class=\"c\">Không có phát sinh.</td></tr>"
+        }
+        for (index, record) in records.enumerated() {
+            s += "<tr><td class=\"c\">\(index + 1)</td>"
+            s += "<td>\(esc(record.firstChild(named: "tenHHDV")?.trimmedValue ?? ""))</td>"
+            s += "<td class=\"r\">\(esc(format(record.firstChild(named: "giaTriHHDV")?.trimmedValue ?? "")))</td>"
+            s += "<td class=\"r\">\(esc(format(record.firstChild(named: "thueSuatTheoQuyDinh")?.trimmedValue ?? "")))</td>"
+            s += "<td class=\"r\">\(esc(format(record.firstChild(named: "thueSuatSauGiam")?.trimmedValue ?? "")))</td>"
+            s += "<td class=\"r\">\(esc(format(record.firstChild(named: "thueGTGTDuocGiam")?.trimmedValue ?? "")))</td></tr>"
+        }
+        if allRecords.count > records.count {
+            s += "<tr><td colspan=\"6\" class=\"c\"><i>Đã lược bớt \(allRecords.count - records.count) dòng vượt giới hạn hiển thị.</i></td></tr>"
+        }
+        s += "<tr class=\"summary\"><td class=\"c code\">[07]</td><td>Tổng cộng giá trị hàng hóa, dịch vụ chưa có thuế GTGT</td>"
+        s += "<td class=\"r\">\(esc(format(section.firstChild(named: "tongCongGiaTriHHDV")?.trimmedValue ?? "")))</td>"
+        s += "<td></td><td></td><td></td></tr>"
+        s += "<tr class=\"summary\"><td class=\"c code\">[08]</td><td>Tổng cộng thuế GTGT của hàng hóa, dịch vụ bán ra được giảm</td>"
+        s += "<td></td><td></td><td></td>"
+        s += "<td class=\"r\">\(esc(format(section.firstChild(named: "tongCongThueGTGTDuocGiam")?.trimmedValue ?? "")))</td></tr>"
+        s += "</tbody></table>"
+        return s
+    }
+
+    /// Fallback for appendices without a dedicated layout: preserve all values,
+    /// but present them as path/value rows under the appendix ID.
+    private func renderRawAppendix(_ node: XMLNode) -> String {
+        var s = "<h3>\(esc(node.localName))</h3>"
+        s += "<table class=\"data-table\"><thead><tr><th>Đường dẫn dữ liệu</th><th>Giá trị</th></tr></thead><tbody>"
+        let leaves = node.leaves(limit: 10_000)
+        for leaf in leaves {
+            let value = leaf.trimmedValue
+            if value.isEmpty { continue }
+            s += "<tr><td class=\"path\">\(esc(pathString(for: leaf, relativeTo: node)))</td><td>\(esc(value))</td></tr>"
+        }
+        s += "</tbody></table>"
         return s
     }
 
@@ -623,6 +766,13 @@ public final class HTMLRenderer {
         .sig-warning { color: #8a4b00; }
         h2 { font-size: 14pt; text-align: center; margin: 18px 0 8px 0; }
         h3 { font-size: 11.5pt; margin: 14px 0 4px 0; }
+        .appendix-note { text-align: center; font-size: 9.5pt; font-style: italic; margin: 0 auto 8px auto; }
+        .appendix-qualifier { font-weight: normal; font-style: italic; }
+        .appendix-taxpayer { margin-bottom: 6px; }
+        .appendix-table { margin-top: 2px; }
+        .appendix-table th, .appendix-table td { font-size: 9.5pt; }
+        .appendix-difference td { font-size: 10.5pt; }
+        .appendix-block + .appendix-block { page-break-before: always; }
         .data-table .path { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 9pt; color: #333; }
         .data-table td { font-size: 10pt; }
         @page { size: A4 \(landscape ? "landscape" : "portrait"); margin: 20mm 20mm 10mm 20mm; }
