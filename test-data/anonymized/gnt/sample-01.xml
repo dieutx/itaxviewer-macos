@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='utf-8'?>
+<CHUNGTU>
+  <NDUNG_CTU_NH>
+    <MAHIEU_CTU>MAU-000001</MAHIEU_CTU>
+    <SO_CTU>MAU-000002</SO_CTU>
+    <NDUNG_CTU>
+      <CHUNGTU_HDR>
+        <PBAN_TLIEU_XML>4.0.1</PBAN_TLIEU_XML>
+        <ID_CTU>MAU-000003</ID_CTU>
+        <SO_GNT>MAU-000004</SO_GNT>
+        <MA_CTU>01</MA_CTU>
+        <HTHUC_NOP>CK</HTHUC_NOP>
+        <MST_NNOP>0000000000</MST_NNOP>
+        <TEN_NNOP>CÔNG TY MẪU</TEN_NNOP>
+        <DIACHI_NNOP>Số 1 Đường Mẫu, Phường Mẫu</DIACHI_NNOP>
+        <MA_CQT>00000</MA_CQT>
+        <TEN_CQT>CƠ QUAN THUẾ MẪU</TEN_CQT>
+        <MA_XA_NNOP>00000</MA_XA_NNOP>
+        <TEN_XA_NNOP>PHƯỜNG MẪU</TEN_XA_NNOP>
+        <MA_HUYEN_NNOP />
+        <TEN_HUYEN_NNOP />
+        <MA_TINH_NNOP>00000</MA_TINH_NNOP>
+        <TEN_TINH_NNOP>TỈNH MẪU</TEN_TINH_NNOP>
+        <MST_NTHAY>0000000000</MST_NTHAY>
+        <TEN_NTHAY>CÔNG TY MẪU</TEN_NTHAY>
+        <DIACHI_NTHAY>Số 1 Đường Mẫu, Phường Mẫu</DIACHI_NTHAY>
+        <TEN_HUYEN_NTHAY />
+        <TEN_TINH_NTHAY>TỈNH MẪU</TEN_TINH_NTHAY>
+        <MA_NHANG_NOP>BIDV</MA_NHANG_NOP>
+        <TEN_NHANG_NOP>NGÂN HÀNG MẪU</TEN_NHANG_NOP>
+        <STK_NHANG_NOP>0000000000</STK_NHANG_NOP>
+        <MA_HIEU_KBAC>MAU-000005</MA_HIEU_KBAC>
+        <TEN_KBAC>KHO BẠC MẪU</TEN_KBAC>
+        <MA_TINH_KBAC>00000</MA_TINH_KBAC>
+        <TEN_TINH_KBAC>TỈNH MẪU</TEN_TINH_KBAC>
+        <LOAI_TK_THU />
+        <TEN_TK_THU />
+        <STK_THU>0000000000</STK_THU>
+        <ID_TK_KNGHI />
+        <TK_KNGHI />
+        <MA_CQTHU>00000</MA_CQTHU>
+        <TEN_CQTHU>CƠ QUAN THUẾ MẪU</TEN_CQTHU>
+        <NGAY_LAP>18/09/2026</NGAY_LAP>
+        <TONG_TIEN>1000000</TONG_TIEN>
+        <VAN_ID>MAU-000006</VAN_ID>
+        <MA_DBHC_THU>00000</MA_DBHC_THU>
+        <TEN_DBHC_THU>ĐỊA BÀN MẪU</TEN_DBHC_THU>
+        <MA_LOAI_THUE>00000</MA_LOAI_THUE>
+        <MA_NGUYENTE>00000</MA_NGUYENTE>
+        <MA_NHANG_UNT>79202007</MA_NHANG_UNT>
+        <TEN_NHANG_UNT>NGÂN HÀNG MẪU</TEN_NHANG_UNT>
+        <MA_THAMCHIEU>MAU-000007</MA_THAMCHIEU>
+      </CHUNGTU_HDR>
+      <CHUNGTU_CTIET>
+        <ROW_CTIET>
+          <ID_CTU_CTIET>MAU-000008</ID_CTU_CTIET>
+          <ID_CTU>MAU-000009</ID_CTU>
+          <SO_TK_TB_QD />
+          <NDUNG_NOP>Thuế giá trị gia tăng hàng sản xuất, kinh doanh trong nước (gồm cả dịch vụ trong lĩnh vực dầu khí)</NDUNG_NOP>
+          <MA_NDKT>00000</MA_NDKT>
+          <MA_CHUONG>00000</MA_CHUONG>
+          <KY_THUE>00/08/2026</KY_THUE>
+          <TIEN_PNOP>1000000</TIEN_PNOP>
+          <GHI_CHU />
+        </ROW_CTIET>
+      </CHUNGTU_CTIET>
+    </NDUNG_CTU>
+  </NDUNG_CTU_NH>
+</CHUNGTU>

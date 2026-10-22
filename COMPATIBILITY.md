@@ -45,6 +45,20 @@ Status legend:
 These are never presented as “fully rendered”; the classifier still reports the correct
 display code and all source values remain visible.
 
+### Bundled anonymised real-structure samples
+
+`test-data/anonymized/` contains **3 payment vouchers** and **2 tax-authority notices**
+derived from real files with all identity, tax codes, accounts, IDs, amounts, contact data
+and signatures removed. They exercise the real element structure (including nested
+`ROW_CTIET` rows and notice bodies) without exposing taxpayer data. See
+`test-data/README.md`. Windows reference comparison for these anonymised copies is **PENDING**
+because they are derived, not the originals.
+
+```bash
+python3 iTaxViewerMac/scripts/validate_directory.py test-data
+ITAX_FIXTURE_DIR=test-data swift test --filter ExternalFixturesTests
+```
+
 ## 2. Fixture identity
 
 | Fixture | Bytes | SHA-256 (16 hex) | Origin |

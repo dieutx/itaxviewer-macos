@@ -1,0 +1,36 @@
+[
+ {
+  "output": "sample-01.xml",
+  "root": "TBaoThueDTu",
+  "signaturesRemoved": 1,
+  "redactedTags": [
+   "diaChiNNhan",
+   "duongDan",
+   "maCQT",
+   "maDVC",
+   "maGiaoDichDTu",
+   "maNNhan",
+   "soTBao",
+   "tenCQT",
+   "tenNNhan"
+  ],
+  "sourceSizeBytes": 6597
+ },
+ {
+  "output": "sample-02.xml",
+  "root": "TBaoThueDTu",
+  "signaturesRemoved": 1,
+  "redactedTags": [
+   "diaChiNNhan",
+   "duongDan",
+   "maCQT",
+   "maGiaoDichDTu",
+   "maNNhan",
+   "soTBao",
+   "soTienPNop",
+   "tenCQT",
+   "tenNNhan"
+  ],
+  "sourceSizeBytes": 7096
+ }
+]

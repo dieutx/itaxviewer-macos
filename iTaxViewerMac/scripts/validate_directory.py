@@ -88,10 +88,13 @@ def classify(root):
     if tag in ("TBaoThueDTu", "THONGBAO", "THONG_BAO", "TBAO_TKHOAN_NH", "TBAO_TKHOAN_NT", "TBAO_NGUNG"):
         mso = descendant(root, "MSo")
         code = descendant(root, "maTBao")
-        return ("Thông báo / văn bản của cơ quan thuế",
-                mso.text.strip() if mso is not None and mso.text else None,
-                code.text.strip() if code is not None and code.text else None,
-                None, "structured data view")
+        code_text = code.text.strip() if code is not None and code.text else None
+        display = mso.text.strip() if mso is not None and mso.text else (
+            f"TB-{code_text}" if code_text else None)
+        version = descendant(root, "pbanTBao")
+        return ("Thông báo / văn bản của cơ quan thuế", display, code_text,
+                version.text.strip() if version is not None and version.text else None,
+                "structured data view")
     if tag == "DKyThueDTu":
         return "Đăng ký thuế", None, text(root, "maHSo"), None, "structured data view"
     if tag == "DanhMucDTu":

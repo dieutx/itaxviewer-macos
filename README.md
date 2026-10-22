@@ -107,6 +107,22 @@ payment voucher and the notice fixture. On this (Windows) analysis host the Swif
 is unavailable, so `swift test` is marked **pending** in
 [`COMPATIBILITY.md`](COMPATIBILITY.md); the Python harness is the executed evidence.
 
+### Bundled test data
+
+`test-data/` contains:
+
+* four synthetic declarations (01/GTGT, 05/KK-TNCN, 05/QTT-TNCN, 03/TNDN);
+* three **anonymised** real-structure payment vouchers;
+* two **anonymised** real-structure tax-authority notices.
+
+See [`test-data/README.md`](test-data/README.md) for exactly what was redacted. The source
+files were never committed.
+
+```bash
+python3 iTaxViewerMac/scripts/validate_directory.py test-data
+ITAX_FIXTURE_DIR=test-data swift test --filter ExternalFixturesTests
+```
+
 ### Testing a whole folder of real files without uploading them
 
 ```bash

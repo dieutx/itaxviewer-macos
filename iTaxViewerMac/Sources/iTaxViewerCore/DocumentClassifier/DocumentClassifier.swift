@@ -115,7 +115,9 @@ public enum DocumentClassifier {
                                   warnings: ["Chứng từ được hiển thị dạng bảng dữ liệu; mẫu in chính thức của từng loại chứng từ chưa được tái tạo đầy đủ."])
         case _ where noticeRoots.contains(root):
             return Classification(kind: .notice,
-                                  displayCode: meta.noticeCode.flatMap { registry.codeInfo($0)?.displayCode } ?? meta.formDescription,
+                                  displayCode: meta.noticeCode.flatMap { registry.codeInfo($0)?.displayCode }
+                                      ?? meta.formDescription
+                                      ?? meta.noticeCode.map { "TB-\($0)" },
                                   registryCode: meta.noticeCode,
                                   formVersion: meta.noticeVersion,
                                   orientation: .portrait,

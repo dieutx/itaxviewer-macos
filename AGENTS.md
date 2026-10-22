@@ -72,6 +72,16 @@ scripts/build_app.sh --universal
 open build/iTaxViewerMac.app
 ```
 
+### Bundled samples
+
+`test-data/` already contains 4 synthetic declarations, 3 anonymised payment vouchers and
+2 anonymised notices. Use it first:
+
+```bash
+python3 scripts/validate_directory.py ../test-data
+ITAX_FIXTURE_DIR=../test-data swift test --filter ExternalFixturesTests
+```
+
 ### Testing with real/local samples (never commit them)
 
 Keep real taxpayer XML outside the repository, e.g. `~/itax-samples/`, and run:
