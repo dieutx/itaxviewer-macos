@@ -1,0 +1,273 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-10-22",
+  "source": "docs/PROMPTS/document-re",
+  "statusValues": [
+    "not-started",
+    "in-progress",
+    "blocked",
+    "captured",
+    "spec-done",
+    "fixture-done",
+    "handoff-done",
+    "implemented-macos",
+    "verified",
+    "generic-only",
+    "n/a"
+  ],
+  "documentTypes": {
+    "declarations": {
+      "root": "HSoThueDTu",
+      "status": "in-progress",
+      "note": "4 form full; 406 remaining codes use structured view",
+      "priority": "P1"
+    },
+    "appendices": {
+      "root": "PLuc",
+      "status": "in-progress",
+      "note": "PL_NQ43/101/142 implemented; PL01_KHBS, PL01_1_KHBS, BaoCaoTaiChinh pending",
+      "priority": "P0"
+    },
+    "notices": {
+      "root": ["TBaoThueDTu", "THONGBAO", "THONG_BAO", "TBAO_TKHOAN_NH", "TBAO_TKHOAN_NT", "TBAO_NGUNG", "BKE_TBAO"],
+      "status": "generic-only",
+      "note": "structured path/value table only",
+      "priority": "P0"
+    },
+    "paymentVouchers": {
+      "root": "CHUNGTU",
+      "status": "generic-only",
+      "note": "CT-01 fixture only; MA_CTU variants not inventoried",
+      "priority": "P0"
+    },
+    "registration": {
+      "root": "DKyThueDTu",
+      "status": "generic-only",
+      "note": "no capture",
+      "priority": "P2"
+    },
+    "catalogs": {
+      "root": "DanhMucDTu",
+      "status": "generic-only",
+      "note": "no capture",
+      "priority": "P2"
+    },
+    "eInvoices": {
+      "root": ["TKhai", "DNghi", "TBao", "BCTHSDBLai", "BLai"],
+      "status": "generic-only",
+      "note": "no capture",
+      "priority": "P2"
+    },
+    "customs": {
+      "root": ["TOKHAI_OBJ", "TOKHAISUA_OBJ", "*:Envelope"],
+      "status": "generic-only",
+      "note": "no capture",
+      "priority": "P3"
+    }
+  },
+  "documents": {
+    "declaration-842": {
+      "kind": "declaration",
+      "displayCode": "01/GTGT",
+      "formCode": "842",
+      "version": "2.8.3",
+      "renderer": "full",
+      "stages": {
+        "inventory": "done",
+        "capture": "partial",
+        "spec": "done",
+        "fixtures": "done",
+        "handoff": "done",
+        "verification": "partial"
+      },
+      "results": {
+        "pdfPages": 2,
+        "orientation": "portrait",
+        "rows": 27,
+        "reference": "docs/reverse-engineering/evidence/reference-gtgt.png"
+      },
+      "notes": "Header [01b] fixed to Tháng 06 năm 2025; appendix NQ142 structured"
+    },
+    "declaration-394": {
+      "kind": "declaration",
+      "displayCode": "05/KK-TNCN",
+      "formCode": "394",
+      "version": "2.1.6",
+      "renderer": "full",
+      "stages": {
+        "inventory": "done",
+        "capture": "partial",
+        "spec": "done",
+        "fixtures": "done",
+        "handoff": "done",
+        "verification": "partial"
+      },
+      "results": {"pdfPages": 2, "orientation": "portrait", "rows": 16},
+      "notes": "Parent rows bold; header numbering verified against reference"
+    },
+    "declaration-953": {
+      "kind": "declaration",
+      "displayCode": "05/QTT-TNCN",
+      "formCode": "953",
+      "version": "2.9.3",
+      "renderer": "full",
+      "stages": {
+        "inventory": "done",
+        "capture": "partial",
+        "spec": "done",
+        "fixtures": "done",
+        "handoff": "done",
+        "verification": "partial"
+      },
+      "results": {"pdfPages": 2, "orientation": "portrait", "rows": 26},
+      "notes": "Authorisation rows renumbered 1-6"
+    },
+    "declaration-892": {
+      "kind": "declaration",
+      "displayCode": "03/TNDN",
+      "formCode": "892",
+      "version": "2.9.4",
+      "renderer": "full",
+      "stages": {
+        "inventory": "done",
+        "capture": "blocked",
+        "spec": "done",
+        "fixtures": "done",
+        "handoff": "done",
+        "verification": "blocked"
+      },
+      "results": {"pdfPages": 5, "orientation": "portrait", "rows": 74},
+      "notes": "reference-tndn-03.png is the Windows splash screen, not the form"
+    },
+    "notice-107": {
+      "kind": "notice",
+      "displayCode": "01/TB-BSTT",
+      "formCode": "107",
+      "renderer": "generic",
+      "stages": {
+        "inventory": "partial",
+        "capture": "not-started",
+        "spec": "not-started",
+        "fixtures": "done",
+        "handoff": "not-started",
+        "verification": "not-started"
+      },
+      "results": {"pdfPages": 1, "orientation": "portrait"},
+      "notes": "Only a synthetic minimal fixture; real notice layout unknown"
+    },
+    "voucher-01": {
+      "kind": "paymentVoucher",
+      "displayCode": "CT-01",
+      "formCode": "01",
+      "version": "4.0.1",
+      "renderer": "generic",
+      "stages": {
+        "inventory": "partial",
+        "capture": "not-started",
+        "spec": "not-started",
+        "fixtures": "done",
+        "handoff": "not-started",
+        "verification": "not-started"
+      },
+      "results": {"pdfPages": 2, "orientation": "portrait"},
+      "notes": "Synthetic header-only fixture; real NDUNG_CTU layout unknown"
+    }
+  },
+  "appendices": {
+    "PL_NQ142_GTGT": {
+      "parentForms": ["842"],
+      "renderer": "structured",
+      "stages": {
+        "inventory": "done",
+        "capture": "not-started",
+        "spec": "done",
+        "fixtures": "done",
+        "handoff": "done",
+        "verification": "not-started"
+      },
+      "results": {
+        "sections": ["I", "II", "III"],
+        "totals": ["[05]", "[06]", "[07]", "[08]", "[09]"],
+        "orientation": "portrait"
+      },
+      "notes": "Implemented from official NQ 142/2024 layout; Windows screenshot pending"
+    },
+    "PL_NQ43_GTGT": {
+      "parentForms": ["842"],
+      "renderer": "structured",
+      "stages": {
+        "inventory": "done",
+        "capture": "not-started",
+        "spec": "done",
+        "fixtures": "partial",
+        "handoff": "done",
+        "verification": "not-started"
+      },
+      "results": {"sections": ["flat"], "totals": ["[07]", "[08]"], "orientation": "portrait"},
+      "notes": "In-memory test only"
+    },
+    "PL_NQ101_GTGT": {
+      "parentForms": ["842"],
+      "renderer": "structured",
+      "stages": {
+        "inventory": "done",
+        "capture": "not-started",
+        "spec": "done",
+        "fixtures": "not-started",
+        "handoff": "done",
+        "verification": "not-started"
+      },
+      "results": {"sections": ["flat"], "totals": ["[07]", "[08]"], "orientation": "portrait"},
+      "notes": "Same structure as PL_NQ43_GTGT"
+    },
+    "PL01_KHBS": {
+      "parentForms": ["842", "01"],
+      "renderer": "generic",
+      "stages": {
+        "inventory": "done",
+        "capture": "not-started",
+        "spec": "not-started",
+        "fixtures": "not-started",
+        "handoff": "not-started",
+        "verification": "not-started"
+      },
+      "results": {},
+      "notes": "Priority P0; structure observed but labels/columns unknown"
+    },
+    "PL01_1_KHBS": {
+      "parentForms": ["842", "01"],
+      "renderer": "generic",
+      "stages": {
+        "inventory": "done",
+        "capture": "not-started",
+        "spec": "not-started",
+        "fixtures": "not-started",
+        "handoff": "not-started",
+        "verification": "not-started"
+      },
+      "results": {},
+      "notes": "Priority P0; structure observed but labels/columns unknown"
+    },
+    "BaoCaoTaiChinh": {
+      "parentForms": ["892", "03"],
+      "renderer": "generic",
+      "stages": {
+        "inventory": "partial",
+        "capture": "blocked",
+        "spec": "not-started",
+        "fixtures": "partial",
+        "handoff": "not-started",
+        "verification": "blocked"
+      },
+      "results": {},
+      "notes": "Windows app reportedly crashes on unmapped appendix; needs alternative capture path"
+    }
+  },
+  "nextActions": [
+    "Run document-re/01-STAGE-INVENTORY.md on the Windows corpus",
+    "Capture PL01_KHBS and PL01_1_KHBS (P0)",
+    "Capture common notice and payment-voucher layouts (P0)",
+    "Capture BaoCaoTaiChinh (P1)",
+    "Update results/*.md and this file after each stage"
+  ]
+}

@@ -124,7 +124,7 @@ Screenshots captured from `iTaxViewer.exe` rendering the same fixtures
 |---|---|---|---|
 | 01/GTGT `[11a]–[11c]` | one row, three columns | three stacked rows | cosmetic |
 | Footer page numbers | PD4ML `page/total` | not emitted | cosmetic; all pages print |
-| Appendix layout | dedicated XSLT per `plucID` | **structured layout for `PL_NQ43_GTGT`, `PL_NQ101_GTGT`, `PL_NQ142_GTGT`** (I/II/III, totals `[05]`–`[09]`); other IDs use a path/value table | **partially implemented**; see [`docs/PROMPTS/WINDOWS_APPENDIX_RE.md`](docs/PROMPTS/WINDOWS_APPENDIX_RE.md) for the remaining IDs |
+| Appendix layout | dedicated XSLT per `plucID` | **structured layout for `PL_NQ43_GTGT`, `PL_NQ101_GTGT`, `PL_NQ142_GTGT`** (I/II/III, totals `[05]`–`[09]`); other IDs use a path/value table | **partially implemented**; see [`docs/PROMPTS/WINDOWS_DOCUMENT_RE.md`](docs/PROMPTS/WINDOWS_DOCUMENT_RE.md) and [`documents/PROGRESS.md`](docs/reverse-engineering/documents/PROGRESS.md) for the remaining ID/types |
 | Notices | prose paragraphs per template | structured field table | **content layout pending** |
 | Other 406 form codes | official XSLT | structured field table | **layout pending** |
 | Title diacritics | XSLT `translate()` bug | correct Unicode | improvement |
@@ -134,6 +134,11 @@ Screenshots captured from `iTaxViewer.exe` rendering the same fixtures
 | Dark mode | not supported (Windows) | native chrome + white paper | improvement |
 
 ## 5. Test status
+
+> RE progress by document type is tracked in
+> [`docs/reverse-engineering/documents/PROGRESS.md`](docs/reverse-engineering/documents/PROGRESS.md)
+> and `progress.json` (declarations, appendices, notices, vouchers, registration, catalogs,
+> e-invoices, customs).
 
 | Suite | Status |
 |---|---|
