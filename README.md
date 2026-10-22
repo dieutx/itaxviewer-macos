@@ -138,6 +138,18 @@ Only file names, form codes and field counts are printed — never taxpayer name
 addresses or values. Real samples must never be committed; `samples/`, `itax-samples/` and
 `*.local.xml` are gitignored.
 
+### Reverse-engineering other document types
+
+The remaining layouts (notices, payment vouchers, registration, catalogs, e-invoices,
+customs and the rest of the declarations/appendices) have a staged Windows RE plan:
+
+- prompt index: [`docs/PROMPTS/WINDOWS_DOCUMENT_RE.md`](docs/PROMPTS/WINDOWS_DOCUMENT_RE.md)
+- stages/types: [`docs/PROMPTS/document-re/`](docs/PROMPTS/document-re/)
+- appendices sub-kit: [`docs/PROMPTS/appendix-re/`](docs/PROMPTS/appendix-re/)
+- live progress/results:
+  [`docs/reverse-engineering/documents/PROGRESS.md`](docs/reverse-engineering/documents/PROGRESS.md)
+  and `progress.json`
+
 ## Using the app
 
 | Action | Shortcut |
