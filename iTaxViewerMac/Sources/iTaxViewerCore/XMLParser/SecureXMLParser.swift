@@ -6,6 +6,7 @@ public enum XMLInspectionError: Error, LocalizedError, Equatable {
     case doctypeForbidden
     case malformed(String)
     case nestingTooDeep
+    case tooManyNodes(limit: Int)
 
     public var errorDescription: String? {
         switch self {
@@ -13,6 +14,8 @@ public enum XMLInspectionError: Error, LocalizedError, Equatable {
             return "Tệp rỗng hoặc không có nội dung XML."
         case .documentTooLarge(let limit):
             return "Tệp quá lớn (giới hạn \(limit / 1_048_576) MB)."
+        case .tooManyNodes(let limit):
+            return "Tệp có quá nhiều phần tử XML (giới hạn \(limit))."
         case .doctypeForbidden:
             return "Tệp chứa DOCTYPE/ENTITY. Vì lý do an toàn, tài liệu có DTD không được mở."
         case .malformed(let detail):
@@ -79,20 +82,41 @@ public enum SecureXMLParser {
         return try parse(data: data, limits: limits)
     }
 
-    /// Looks for DTD markers in both UTF-8 and UTF-16 representations.
+    /// Rejects any DTD/ENTITY marker regardless of its position in the file.
+    ///
+    /// Scanning only the first megabyte was bypassable with a large comment or
+    /// processing instruction before the DOCTYPE (both are legal before the
+    /// root element). The raw-byte search covers UTF-8 and UTF-16LE/BE without
+    /// allocating a copy of a 64 MB document.
     static func rejectDoctype(in data: Data) throws {
-        let probe = data.prefix(1_048_576)
-        var candidates: [String] = []
-        if let s = String(data: probe, encoding: .utf8) { candidates.append(s) }
-        if let s = String(data: probe, encoding: .utf16) { candidates.append(s) }
-        if let s = String(data: probe, encoding: .utf16LittleEndian) { candidates.append(s) }
-        if let s = String(data: probe, encoding: .utf16BigEndian) { candidates.append(s) }
-        for candidate in candidates {
-            let upper = candidate.uppercased()
-            if upper.contains("<!DOCTYPE") || upper.contains("<!ENTITY") {
-                throw XMLInspectionError.doctypeForbidden
+        let markers = ["<!DOCTYPE", "<!ENTITY"]
+        for marker in markers {
+            for bytes in encodings(of: marker) {
+                if data.range(of: Data(bytes)) != nil {
+                    throw XMLInspectionError.doctypeForbidden
+                }
             }
         }
+    }
+
+    /// ASCII, UTF-16LE and UTF-16BE byte patterns for a marker, in both cases.
+    private static func encodings(of marker: String) -> [[UInt8]] {
+        var result: [[UInt8]] = []
+        for variant in [marker, marker.lowercased()] {
+            let ascii = Array(variant.utf8)
+            result.append(ascii)
+            var le: [UInt8] = []
+            var be: [UInt8] = []
+            for byte in ascii {
+                le.append(byte)
+                le.append(0)
+                be.append(0)
+                be.append(byte)
+            }
+            result.append(le)
+            result.append(be)
+        }
+        return result
     }
 }
 
@@ -115,7 +139,7 @@ private final class TreeBuilderDelegate: NSObject, XMLParserDelegate {
         guard failure == nil else { return }
         nodeCount += 1
         if nodeCount > limits.maxNodes {
-            failure = .documentTooLarge(limit: limits.maxBytes)
+            failure = .tooManyNodes(limit: limits.maxNodes)
             parser.abortParsing()
             return
         }

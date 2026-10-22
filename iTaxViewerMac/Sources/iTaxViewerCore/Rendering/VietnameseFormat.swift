@@ -62,28 +62,35 @@ public enum VietnameseFormat {
         return raw
     }
 
+    /// Mirrors the `ihtkk:kyTinhThue` helper used by the official templates.
+    ///
+    /// Monthly, quarterly and yearly declarations always print their period as
+    /// text ("Tháng 06 năm 2025"), even when `kyKKhaiTuNgay`/`kyKKhaiDenNgay`
+    /// are present. The explicit date range is only used when the registry does
+    /// not provide a recognised `kieuKy`. This matches the Windows reference
+    /// rendering for 01/GTGT (`[01b] Tháng 06 năm 2025`) and 03/TNDN
+    /// (`[01] Năm 2024`).
     public static func period(type: String?, period: String?, from: String?, to: String?) -> String {
-        if type != "Y", let from, !from.isEmpty, let to, !to.isEmpty {
+        if let period, !period.isEmpty {
+            switch type {
+            case "M":
+                let parts = period.split(separator: "/")
+                if parts.count == 2 { return "Tháng \(parts[0]) năm \(parts[1])" }
+                return period
+            case "Q":
+                let parts = period.split(separator: "/")
+                if parts.count == 2 { return "Quý \(parts[0]) năm \(parts[1])" }
+                return period
+            case "Y":
+                return "Năm \(period)"
+            default:
+                break
+            }
+        }
+        if let from, !from.isEmpty, let to, !to.isEmpty {
             return "Từ ngày \(date(from)) đến ngày \(date(to))"
         }
-        guard let period, !period.isEmpty else { return "" }
-        switch type {
-        case "M":
-            let parts = period.split(separator: "/")
-            if parts.count == 2 { return "Tháng \(parts[0]) năm \(parts[1])" }
-            return period
-        case "Q":
-            let parts = period.split(separator: "/")
-            if parts.count == 2 { return "Quý \(parts[0]) năm \(parts[1])" }
-            return period
-        case "Y":
-            if let from, !from.isEmpty, let to, !to.isEmpty {
-                return "Năm \(period) Từ \(date(from)) đến \(date(to))"
-            }
-            return "Năm \(period)"
-        default:
-            return period
-        }
+        return period ?? ""
     }
 
     public static func filingTypeLabel(_ type: String?, supplement: String?) -> String {

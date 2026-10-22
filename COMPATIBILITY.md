@@ -13,21 +13,21 @@ Status legend:
 * **PENDING** — not verified yet
 * **NOT VERIFIED** — deliberately not claimed (cryptographic signatures)
 
-> **Host limitation:** the analysis environment is Windows and has no Swift/Xcode toolchain.
-> Therefore the Swift sources and XCTest suite could not be compiled here. Data-level
-> behaviour was validated with the executable Python harness
-> (`iTaxViewerMac/scripts/validate_fixtures.py`), and the reference screenshots below were
-> captured from the live Windows application. The macOS build/test is explicitly marked
-> **pending** rather than claimed.
+> **Executed on macOS 15 (Intel) on 2026-10-22** with Xcode 16.1 / Swift 6.0.2.
+> `swift test` ran 42 tests (41 passed, 1 skipped because `ITAX_FIXTURE_DIR` was not set),
+> `scripts/build_app.sh` produced a launchable ad-hoc-signed `.app`, and the HTML/CSS
+> renderer was exercised for all four priority forms. The Windows reference screenshots
+> below were captured from the live Windows application. Items that still require a manual
+> native-print run are marked **pending**, not claimed as passed.
 
 ## 1. Document matrix
 
 | Document | Internal code / version | Fixture | Classification | Data accuracy | Renderer | Print/PDF | Signatures | Overall |
 |---|---|---|---|---|---|---|---|---|
-| **01/GTGT** | `842` / 2.8.3 | `gtgt_842_return.xml` | **PASS** | **PASS** (21 indicators) | **IMPLEMENTED** (27 rows) | IMPLEMENTED · PENDING run | NOT VERIFIED | **PASS (data) / pending UI run** |
-| **05/KK-TNCN** | `394` / 2.1.6 | `tncn_394_05kk_tt92.xml` | **PASS** | **PASS** (16 indicators) | **IMPLEMENTED** (16 rows) | IMPLEMENTED · PENDING run | NOT VERIFIED | **PASS (data) / pending UI run** |
-| **05/QTT-TNCN** | `953` / 2.9.3 | `tncn_953_05qtt.xml` | **PASS** | **PASS** (26 indicators incl. `NVuQToanThay`) | **IMPLEMENTED** (26 rows) | IMPLEMENTED · PENDING run | NOT VERIFIED | **PASS (data) / pending UI run** |
-| **03/TNDN** | `892` / 2.9.4 | `tndn_892_03tndn_v2.9.4.xml` | **PASS** | **PASS** (66 indicators) | **IMPLEMENTED** (74 rows) | IMPLEMENTED · PENDING run | NOT VERIFIED | **PASS (data) / pending UI run** |
+| **01/GTGT** | `842` / 2.8.3 | `gtgt_842_return.xml` | **PASS** | **PASS** (21 indicators) | **PASS** (27 rows) | **PASS** (CSS pagination, 2 A4 pages) · native print pending | NOT VERIFIED | **PASS (render/pagination)** |
+| **05/KK-TNCN** | `394` / 2.1.6 | `tncn_394_05kk_tt92.xml` | **PASS** | **PASS** (16 indicators) | **PASS** (16 rows) | **PASS** (CSS pagination, 2 A4 pages) · native print pending | NOT VERIFIED | **PASS (render/pagination)** |
+| **05/QTT-TNCN** | `953` / 2.9.3 | `tncn_953_05qtt.xml` | **PASS** | **PASS** (26 indicators incl. `NVuQToanThay`) | **PASS** (26 rows, authorisation section renumbered 1–6) | **PASS** (CSS pagination, 2 A4 pages) · native print pending | NOT VERIFIED | **PASS (render/pagination)** |
+| **03/TNDN** | `892` / 2.9.4 | `tndn_892_03tndn_v2.9.4.xml` | **PASS** | **PASS** (66 indicators) | **PASS** (74 rows) | **PASS** (CSS pagination, 4 A4 pages + appendix) · native print pending | NOT VERIFIED | **PASS (render/pagination) / visual diff pending** |
 | Financial statements | `B01/BCTC` = `701`/`1254`, `B05` = `702` | — | PASS (code mapping) | structured view | Structured only | IMPLEMENTED | NOT VERIFIED | **PARTIAL** |
 | Tax-authority notice | `107` / `01/TB-BSTT` | `tbao_107_bstt.xml` | **PASS** | PASS (all leaf fields) | Structured only | IMPLEMENTED | NOT VERIFIED | **PARTIAL** |
 | Payment voucher | `CHUNGTU` / `MA_CTU=01` | `gnt_chungtu.xml` | **PASS** | PASS | Structured only | IMPLEMENTED | NOT VERIFIED | **PARTIAL** |
@@ -80,16 +80,20 @@ Screenshots captured from `iTaxViewer.exe` rendering the same fixtures
 
 | Fixture | Reference image | Observed |
 |---|---|---|
-| 01/GTGT | `reference-gtgt.png` | A4 portrait; 6-column indicator table; values `1.000.000.000`, `80.000.000`; header `[01a]…[11c]` |
-| 05/KK-TNCN | `reference-tncn-05kk.png` | 5-column table; `1.200.000`, `5.000`; header `[01]…[20]` |
-| 05/QTT-TNCN | `reference-tncn-05qtt.png` | `I. NGHĨA VỤ KHẤU TRỪ…`; `1.500.000.000`; header `[01]…[15]` |
-| 03/TNDN | `reference-tndn-03.png` | 4-column table with `(1)(2)(3)(4)`; `(1.000)`, `250`; header `[01]…[10]` |
+| 01/GTGT | `reference-gtgt.png` | A4 portrait; 6-column indicator table; values `1.000.000.000`, `80.000.000`; header `[01a]…[11c]`; `[01b] Tháng 06 năm 2025` |
+| 05/KK-TNCN | `reference-tncn-05kk.png` | 5-column table; `1.200.000`, `5.000`; header `[01]…[20]`; parent rows bold |
+| 05/QTT-TNCN | `reference-tncn-05qtt.png` | `I. NGHĨA VỤ KHẤU TRỪ…`; `1.500.000.000`; header `[01]…[15]`; parent rows bold |
+| 03/TNDN | `reference-tndn-03.png` | **Invalid capture:** the file currently shows the Windows splash screen, not the rendered form. The claim `(1.000)`, `250` is therefore **not visually verified**; only the data-level fixture check passes. |
 
 ### Verified behaviour from the live app
 
 * Number formatting is exactly `1.000.000.000`, `(1.000)`, decimal comma (`10,5`).
 * 01/GTGT single-amount rows print the indicator and value in the **right-hand pair** of
   columns; two-amount rows use both pairs. Implemented.
+* Period text uses `kieuKy`: monthly/quarterly/yearly declarations print
+  “Tháng 06 năm 2025”, “Quý 2 năm 2025”, “Năm 2024” even when
+  `kyKKhaiTuNgay`/`kyKKhaiDenNgay` are present. The explicit date range is only a fallback
+  when `kieuKy` is missing/unknown.
 * Header numbering is **form-specific**:
   * 01/GTGT: `[06]–[08]` tax agent, `[09]–[11c]` dependent units.
   * 05/KK: `[06]` address, `[07]` district, `[08]` province, `[09]–[11]` contact,
@@ -119,6 +123,7 @@ Screenshots captured from `iTaxViewer.exe` rendering the same fixtures
 | Other 406 form codes | official XSLT | structured field table | **layout pending** |
 | Title diacritics | XSLT `translate()` bug | correct Unicode | improvement |
 | Unmapped appendix | crash (NPE) | renders data | improvement |
+| Table pagination | table breaks disabled; long table forced onto one page | breaks between rows, header repeats on each page | improvement; verified as 2/2/2/4 A4 pages for the four fixtures |
 | Signature | full XMLDSig + OCSP | metadata only | **NOT VERIFIED (by design)** |
 | Dark mode | not supported (Windows) | native chrome + white paper | improvement |
 
@@ -128,11 +133,13 @@ Screenshots captured from `iTaxViewer.exe` rendering the same fixtures
 |---|---|
 | `scripts/validate_fixtures.py` (classification, indicator mapping, formatting) | **PASS** (executed 2026-10-22) |
 | Registry integrity (1,150 entries / 410 codes / 4 specs) | **PASS** |
-| XXE rejection, UTF-16 parsing, malformed XML (Python mirror + Swift tests) | PASS (Python) / PENDING (Swift run) |
-| Swift XCTest suite (`swift test`, 30+ assertions) | **PENDING — requires macOS/Xcode** |
-| macOS app build (`scripts/build_app.sh`) | **PENDING — requires macOS/Xcode** |
-| Print / PDF export on macOS | **PENDING** |
-| Visual diff of macOS renderer vs reference screenshots | **PENDING** (HTML preview reviewed manually; see `_re/preview` in the analysis workspace) |
+| XXE rejection, UTF-16 parsing, malformed XML, oversized/hidden-DTD inputs | **PASS** (Swift XCTest) |
+| Swift XCTest suite (`swift test`) | **PASS** — 42 tests executed, 41 passed, 1 skipped (`ExternalFixturesTests` without `ITAX_FIXTURE_DIR`) |
+| External fixture run (`ITAX_FIXTURE_DIR=../test-data`) | **PASS** — all 9 XML files classified; test now walks subdirectories recursively |
+| macOS app build (`scripts/build_app.sh`) | **PASS** — `.app` built and launched on macOS 15 / x86_64 |
+| App file-open, drag-and-drop | File-open path covered by tests and app launch; drag-and-drop not automated |
+| Print / PDF export | CSS pagination **PASS** (headless Chromium, A4 594×841 pt, 2/2/2/4+appendix pages); **native WKWebView print panel pending** (no UI automation permission in this environment) |
+| Visual diff of macOS renderer vs reference screenshots | **PARTIAL** — 01/GTGT, 05/KK-TNCN and 05/QTT-TNCN headers/tables match the captured reference; 03/TNDN reference capture is invalid (splash screen), so it remains pending |
 
 ## 6. Reproduction commands
 

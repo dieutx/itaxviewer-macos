@@ -103,9 +103,11 @@ python3 iTaxViewerMac/scripts/validate_fixtures.py
 
 This mirrors the Swift registry lookup and XPath field mapping and asserts the exact
 official indicator values for every fixture. It passes for all four priority forms, the
-payment voucher and the notice fixture. On this (Windows) analysis host the Swift compiler
-is unavailable, so `swift test` is marked **pending** in
-[`COMPATIBILITY.md`](COMPATIBILITY.md); the Python harness is the executed evidence.
+payment voucher and the notice fixture.
+
+The Swift suite was executed on macOS 15 (Xcode 16.1 / Swift 6.0.2): **42 tests, 41 passed,
+1 skipped** (the optional external-fixture test). See
+[`COMPATIBILITY.md`](COMPATIBILITY.md) for the executed UI/print results.
 
 ### Bundled test data
 
