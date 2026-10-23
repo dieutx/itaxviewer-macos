@@ -76,6 +76,9 @@ public struct TaxDocument {
     }
 
     public static func load(url: URL, limits: XMLSecurityLimits = .init()) throws -> TaxDocument {
+        guard url.isFileURL, url.host == nil || url.host == "" || url.host == "localhost" else {
+            throw DocumentError.invalidStructure("Chỉ mở tệp XML trên máy; không tải hồ sơ qua mạng.")
+        }
         let data = try Data(contentsOf: url, options: [.mappedIfSafe])
         let root = try SecureXMLParser.parse(data: data, limits: limits)
         let metadata = MetadataExtractor.extract(from: root)

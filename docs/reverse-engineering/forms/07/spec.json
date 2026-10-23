@@ -156,7 +156,7 @@
                                         "root":  "tkchinh"
                                     }
                                 ],
-                     "label":  "Tổng doanh thu [32]=[21]+[30]",
+                     "label":  "Tổng doanh thu [32]=[21]+[30]:",
                      "indicator":  "32",
                      "kind":  "summary"
                  },
@@ -176,7 +176,7 @@
                                         "root":  "tkchinh"
                                     }
                                 ],
-                     "label":  "Tổng số thuế giá trị gia tăng phải nộp [33]=[31]",
+                     "label":  "Tổng số thuế giá trị gia tăng phải nộp [33]=[31]:",
                      "indicator":  "33",
                      "kind":  "summary"
                  }

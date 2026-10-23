@@ -65,6 +65,7 @@ public final class HTMLRenderer {
                             spec: FormSpec) -> String {
         var html = renderHeader(document: document, classification: classification, spec: spec)
         html += "<div class=\"form-body\">"
+        if let title = spec.bodyTitle, !title.isEmpty { html += "<h3>\(esc(title))</h3>" }
         if spec.displayCode == "05/QTT-TNCN" {
             html += "<div class=\"form-section-title\">I. NGHĨA VỤ KHẤU TRỪ THUẾ CỦA TỔ CHỨC, CÁ NHÂN TRẢ THU NHẬP</div>"
         }
@@ -191,7 +192,8 @@ public final class HTMLRenderer {
         let context = CTieuTKhaiChinh(root: document.root)
         var s = "<table class=\"tax-table iv\">"
         s += "<colgroup><col style=\"width:7%\"><col><col style=\"width:12%\"><col style=\"width:26%\"></colgroup>"
-        s += "<thead><tr><th>STT</th><th>Chỉ tiêu</th><th>Mã chỉ tiêu</th><th>Số tiền</th></tr></thead><tbody>"
+        let headings = spec.columns?.count == 4 ? spec.columns! : ["STT", "Chỉ tiêu", "Mã chỉ tiêu", "Số tiền"]
+        s += "<thead><tr>" + headings.map { "<th>\(esc($0))</th>" }.joined() + "</tr></thead><tbody>"
         if spec.displayCode == "03/TNDN" {
             s += "<tr class=\"colnum\"><td class=\"c\"><i>(1)</i></td><td class=\"c\"><i>(2)</i></td><td class=\"c\"><i>(3)</i></td><td class=\"c\"><i>(4)</i></td></tr>"
         }
@@ -212,6 +214,8 @@ public final class HTMLRenderer {
             s += "<td class=\"c code\">\(esc(row.indicator))</td>"
             s += "<td class=\"r\">\(esc(format(value)))</td>"
             s += "</tr>"
+            s += renderRepeatedTables(document: document, spec: spec,
+                                      afterIndicator: row.indicator, inlineColumnCount: 4)
         }
         s += "</tbody></table>"
         return s
@@ -230,9 +234,9 @@ public final class HTMLRenderer {
             if let span = item.colspan { attributes += " colspan=\"\(span)\"" }
             var text = item.text
             if let value = item.value {
-                text += format(resolve(value, context: context))
+                text += formatted(resolve(value, context: context), as: value.format ?? "number")
                 represented.insert(key(value))
-                attributes += " class=\"r\""
+                if value.format != "text" { attributes += " class=\"r\"" }
             }
             for choice in item.choices ?? [] {
                 let raw = context.tkchinh?.node(atLocalPath: choice.path)?.trimmedValue ?? ""
@@ -251,7 +255,7 @@ public final class HTMLRenderer {
         for row in spec.rows where !row.values.isEmpty && row.values.contains(where: { !represented.contains(key($0)) }) {
             html += "<p><b>\(esc(row.label))</b> "
             for (index, value) in row.values.enumerated() where !represented.contains(key(value)) {
-                let code = index < row.codes.count ? "[\(row.codes[index])] " : ""
+                let code = index < row.codes.count && !row.label.contains("[\(row.codes[index])]") ? "[\(row.codes[index])] " : ""
                 html += esc(code + format(resolve(value, context: context))) + " "
             }
             html += "</p>"
@@ -259,31 +263,58 @@ public final class HTMLRenderer {
         return html
     }
 
-    private func renderRepeatedTables(document: TaxDocument, spec: FormSpec) -> String {
+    private func formatted(_ raw: String, as kind: String) -> String {
+        switch kind {
+        case "number": return format(raw)
+        case "date": return VietnameseFormat.date(raw)
+        case "checkbox": return ["true", "1", "x"].contains(raw.lowercased()) ? "☒" : "☐"
+        default: return raw
+        }
+    }
+
+    private func renderRepeatedTables(document: TaxDocument, spec: FormSpec,
+                                      afterIndicator: String? = nil, afterHeaderCode: String? = nil,
+                                      inlineColumnCount: Int? = nil) -> String {
         guard let base = document.root.firstDescendant(named: "CTieuTKhaiChinh") else { return "" }
         var html = ""
         for table in spec.repeatedTables ?? [] {
+            if let afterIndicator {
+                guard table.insertAfterIndicator == afterIndicator else { continue }
+            } else if let afterHeaderCode {
+                guard table.insertAfterHeaderCode == afterHeaderCode else { continue }
+            } else if table.insertAfterIndicator != nil || table.insertAfterHeaderCode != nil { continue }
             let parts = table.recordPath.split(separator: "/").map(String.init)
             guard let recordName = parts.last else { continue }
             let parentPath = parts.dropLast().joined(separator: "/")
             let records = (parentPath.isEmpty ? base : base.node(atLocalPath: parentPath))?.children(named: recordName) ?? []
-            html += "<h3>\(esc(table.title))</h3><table class=\"tax-table\"><thead><tr>"
-            html += table.columns.map { "<th>\(esc($0.label))</th>" }.joined()
-            html += "</tr></thead><tbody>"
-            for record in records {
+            let inline = table.inlineRows == true && inlineColumnCount != nil
+            if inline {
+                if !table.title.isEmpty { html += "<tr class=\"section\"><td colspan=\"\(inlineColumnCount!)\">\(esc(table.title))</td></tr>" }
+            } else {
+                if let count = inlineColumnCount { html += "<tr><td colspan=\"\(count)\">" }
+                if !table.title.isEmpty { html += "<h3>\(esc(table.title))</h3>" }
+                html += "<table class=\"tax-table\"><thead><tr>"
+                html += table.columns.map { "<th>\(esc($0.label))</th>" }.joined()
+                html += "</tr></thead><tbody>"
+            }
+            for (index, record) in records.enumerated() {
                 html += "<tr>"
                 for column in table.columns {
-                    let raw = record.node(atLocalPath: column.source)?.trimmedValue ?? ""
-                    let value = column.format == "number" ? format(raw) : raw
+                    var raw = column.source == "@position" ? String(index + 1)
+                        : record.node(atLocalPath: column.source)?.trimmedValue ?? ""
+                    if raw.isEmpty, let prefix = column.fallbackPositionPrefix { raw = "\(prefix)\(index + 1)" }
+                    let value = formatted(raw, as: column.format)
                     html += "<td>\(esc(value))</td>"
                 }
                 html += "</tr>"
             }
-            html += "</tbody></table>"
-            for total in table.totals {
+            if !inline { html += "</tbody></table>" }
+            for total in table.totals ?? [] {
                 let raw = base.node(atLocalPath: total.source)?.trimmedValue ?? ""
-                html += "<p><b>\(esc(total.label)):</b> \(esc(total.format == "number" ? format(raw) : raw))</p>"
+                let content = "<b>\(esc(total.label)):</b> \(esc(formatted(raw, as: total.format)))"
+                html += inline ? "<tr><td colspan=\"\(inlineColumnCount!)\">\(content)</td></tr>" : "<p>\(content)</p>"
             }
+            if !inline, inlineColumnCount != nil { html += "</td></tr>" }
         }
         return html
     }
@@ -295,7 +326,7 @@ public final class HTMLRenderer {
                               spec: FormSpec?) -> String {
         let meta = document.metadata
         let displayCode = classification.displayCode ?? meta.formCode ?? ""
-        let description = meta.formDescription
+        let description = meta.formDescription ?? spec?.legalReference
             ?? meta.formCode.flatMap { registry.resolve(code: $0, version: meta.formVersion, filingType: meta.filingType)?.title }
             ?? spec?.displayCode ?? ""
         let title = (meta.title ?? "TỜ KHAI THUẾ").uppercased(with: Locale(identifier: "vi_VN"))
@@ -318,10 +349,19 @@ public final class HTMLRenderer {
             let context = CTieuTKhaiChinh(root: document.root)
             let period = VietnameseFormat.period(type: meta.periodType, period: meta.period, from: meta.periodFrom, to: meta.periodTo)
             let filing = VietnameseFormat.filingTypeLabel(meta.filingType, supplement: meta.supplementNumber)
-            headerRows = [HeaderRow(code: "01", label: "Kỳ tính thuế:", value: period),
-                          HeaderRow(code: "02/03", label: "", value: filing)] + fields.map { field in
+            let standard = spec?.usesStandardPeriodHeader == false ? [] : [
+                HeaderRow(code: "01", label: "Kỳ tính thuế:", value: period),
+                HeaderRow(code: "02/03", label: "", value: filing)]
+            headerRows = standard + fields.map { field in
                 let base = context.context(field.root)
                 var value = base?.node(atLocalPath: field.path)?.trimmedValue ?? ""
+                if field.format == "period" { value = period }
+                else if field.format == "filing" { value = filing }
+                else if let kind = field.format { value = formatted(value, as: kind) }
+                for part in field.parts ?? [] {
+                    let raw = context.context(part.root ?? field.root)?.node(atLocalPath: part.path)?.trimmedValue ?? ""
+                    if !raw.isEmpty { value += (part.prefix ?? " ") + formatted(raw, as: part.format ?? "text") }
+                }
                 if let suffix = field.suffixPath {
                     let raw = base?.node(atLocalPath: suffix)?.trimmedValue ?? ""
                     value += "  Ngày: " + (field.suffixFormat == "date" ? VietnameseFormat.date(raw) : raw)
@@ -368,6 +408,10 @@ public final class HTMLRenderer {
                 s += "<td><b>\(esc(row.label))</b> \(esc(row.value))</td>"
             }
             s += "</tr>"
+            if let spec {
+                s += renderRepeatedTables(document: document, spec: spec,
+                                          afterHeaderCode: row.code, inlineColumnCount: 2)
+            }
         }
         s += "</table></div>"
         return s

@@ -4,6 +4,7 @@ public struct FormSpec: Codable, Identifiable {
     public struct Value: Codable {
         public let root: String?
         public let path: String
+        public let format: String?
     }
 
     public struct Row: Codable {
@@ -20,12 +21,20 @@ public struct FormSpec: Codable, Identifiable {
     }
 
     public struct HeaderField: Codable {
+        public struct Part: Codable {
+            public let root: String?
+            public let path: String
+            public let prefix: String?
+            public let format: String?
+        }
         public let code: String
         public let label: String
         public let root: String?
         public let path: String
         public let suffixPath: String?
         public let suffixFormat: String?
+        public let parts: [Part]?
+        public let format: String?
     }
 
     public struct ExtraField: Codable {
@@ -40,11 +49,15 @@ public struct FormSpec: Codable, Identifiable {
             public let label: String
             public let source: String
             public let format: String
+            public let fallbackPositionPrefix: String?
         }
         public let title: String
         public let recordPath: String
         public let columns: [Column]
-        public let totals: [Column]
+        public let totals: [Column]?
+        public let insertAfterIndicator: String?
+        public let insertAfterHeaderCode: String?
+        public let inlineRows: Bool?
     }
 
     public struct TableCell: Codable {
@@ -77,6 +90,9 @@ public struct FormSpec: Codable, Identifiable {
     public let verificationStatus: String?
     public let tableHeaders: [TableCell]?
     public let tableRows: [TableRow]?
+    public let legalReference: String?
+    public let bodyTitle: String?
+    public let usesStandardPeriodHeader: Bool?
 
     public var id: String { maTKhai }
 }

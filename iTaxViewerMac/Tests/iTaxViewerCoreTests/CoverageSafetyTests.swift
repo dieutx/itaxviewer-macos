@@ -2,6 +2,15 @@ import XCTest
 @testable import iTaxViewerCore
 
 final class CoverageSafetyTests: XCTestCase {
+    func testDocumentLoaderRejectsRemoteURLsBeforeReadingData() {
+        for address in ["https://example.invalid/document.xml", "http://example.invalid/document.xml",
+                        "data:text/xml,%3CDanhMucDTu/%3E", "file://remote-host/share/document.xml"] {
+            XCTAssertThrowsError(try TaxDocument.load(url: URL(string: address)!)) { error in
+                XCTAssertEqual(error as? DocumentError,
+                               .invalidStructure("Chỉ mở tệp XML trên máy; không tải hồ sơ qua mạng."))
+            }
+        }
+    }
     func testWithholdingHeaderKeepsReferenceContactGroupsAndLegalCitation() throws {
         let document = try Fixtures.document("tncn_394_05kk_tt92")
         let registry = try FormRegistry.bundled()

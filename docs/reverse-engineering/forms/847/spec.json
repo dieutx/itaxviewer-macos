@@ -156,7 +156,7 @@
                                         "root":  "tkchinh"
                                     }
                                 ],
-                     "label":  "Tổng doanh thu [32]=[21]+[30]",
+                     "label":  "Tổng doanh thu ([32] =[21]+[30]):",
                      "indicator":  "32",
                      "kind":  "summary"
                  }

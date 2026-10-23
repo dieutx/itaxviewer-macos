@@ -18,6 +18,7 @@ from __future__ import annotations
 
 import argparse
 import html
+import hashlib
 import json
 import re
 import sys
@@ -28,6 +29,8 @@ from pathlib import Path
 XSL = "http://www.w3.org/1999/XSL/Transform"
 VERSION_DIR = re.compile(r"^XSLT\s+(\d+(?:\.\d+)*)$", re.IGNORECASE)
 INDICATOR = re.compile(r"^\[\s*(\d{1,3}(?:\.\d{1,3})?[a-zA-Z]?)\s*\]$")
+INLINE_INDICATOR = re.compile(r"\[\s*([A-Za-z]?\d{1,3}(?:\.\d{1,3})?[a-zA-Z]?)\s*\]")
+FORMULA_CELL = re.compile(r"^\[[^]]+\]\s*=")
 # hang tieu de cot chi tieu kieu "(3)", "(4)": khong phai dong du lieu
 INDICATOR_HEADER = re.compile(r"^\(\s*\d{1,3}(?:\.\d{1,3})?[a-zA-Z]?\s*\)$")
 STT = re.compile(r"^(?:[A-Za-z]{1,3}|[IVX]{1,4}|\d{1,2}(?:\.\d{1,2})?[a-z]?)$")
@@ -108,6 +111,11 @@ def selects_of(element: ET.Element) -> list[tuple[str, str]]:
         if local(node.tag) != "value-of":
             continue
         select = (node.get("select") or "").strip()
+        # Keep the selected field inside the known numeric formatter. Do not
+        # infer paths from sum(), predicates or arbitrary function expressions.
+        numeric = re.fullmatch(r"(?:[\w.-]+:)?formatNumber\(\s*([^(),]+)\s*\)", select)
+        if numeric:
+            select = numeric.group(1).strip()
         if select.startswith("$") and "/" in select:
             root, _, path = select[1:].partition("/")
             root, path = root.strip(), path.strip().strip("/")
@@ -120,6 +128,24 @@ def selects_of(element: ET.Element) -> list[tuple[str, str]]:
 
 def has_branch(element: ET.Element) -> bool:
     return any(local(n.tag) in ("if", "choose", "when") for n in element.iter())
+
+
+def label_prefix(element: ET.Element) -> str:
+    """Literal label before a value/conditional, excluding placeholder branches."""
+    parts = []
+    def walk(node):
+        if node.tag.startswith("{" + XSL + "}"):
+            return False
+        if node.text:
+            parts.append(node.text)
+        for child in node:
+            if not walk(child):
+                return False
+            if child.tail:
+                parts.append(child.tail)
+        return True
+    walk(element)
+    return SPACE.sub(" ", "".join(parts)).strip()
 
 
 def display_codes(root: ET.Element) -> list[str]:
@@ -154,6 +180,7 @@ def inside_for_each(tr: ET.Element, parents: dict) -> bool:
 def extract(path: Path) -> dict:
     root = parse(path)
     parents = {id(child): parent for parent in root.iter() for child in parent}
+    source_order = {id(node): index for index, node in enumerate(root.iter())}
     columns: list[str] = []
     spec_tables: set[int] = set()
     indicator_column: int | None = None
@@ -197,6 +224,11 @@ def extract(path: Path) -> dict:
             if match:
                 indicator = match.group(1)
                 break
+        if not indicator:
+            for text in texts:
+                if FORMULA_CELL.match(text):
+                    indicator = INLINE_INDICATOR.match(text).group(1)
+                    break
         values: list[dict] = []
         for cell in cells:
             for root_name, value_path in selects_of(cell):
@@ -224,7 +256,11 @@ def extract(path: Path) -> dict:
             for cell, text in zip(cells, texts)
             if text and "align-l" in (cell.get("class") or "")
         ]
-        for text in [t for t in aligned if t] + left_cells:
+        candidates = [t for t in aligned if t] + left_cells
+        # A formula printed in a code cell is not the row's descriptive label.
+        # In particular, it must not replace the official label "Tổng".
+        descriptive = [t for t in candidates if not FORMULA_CELL.match(t)]
+        for text in descriptive or candidates:
             if len(text) > len(label):
                 label = text
         if not (indicator or label or values or stt):
@@ -243,8 +279,26 @@ def extract(path: Path) -> dict:
                 "codes": [indicator] if indicator else [],
                 "values": values,
                 "kind": kind,
+                "sourceOrder": source_order[id(tr)],
             }
         )
+    # Official totals can sit in div/p elements after the table (04/GTGT).
+    # Extract only the innermost standalone blocks, never enclosing whole forms
+    # or fields already represented by a table row.
+    for block in root.iter():
+        if local(block.tag) not in ("div", "p") or table_of(block, parents):
+            continue
+        if any(node is not block and local(node.tag) in ("div", "p", "table") for node in block.iter()):
+            continue
+        label = label_prefix(block)
+        match = INLINE_INDICATOR.search(label)
+        values = [{"root": name, "path": value_path} for name, value_path in selects_of(block)]
+        if match is None or not values:
+            continue
+        rows.append({"stt": "", "label": label, "indicator": match.group(1),
+                     "codes": [match.group(1)], "values": values, "kind": "row",
+                     "origin": "outside-table", "sourceOrder": source_order[id(block)]})
+    rows.sort(key=lambda row: row["sourceOrder"])
     title = ""
     for node in root.iter():
         if local(node.tag) != "variable" or (node.get("name") or "") != "moTaBieuMau":
@@ -310,7 +364,7 @@ def merge_by_code(extracted: list[dict]) -> dict:
     return grouped
 
 
-def verify(extracted: list[dict], spec_path: Path) -> int:
+def verify(extracted: list[dict], spec_path: Path, xslt_root: Path | None = None) -> int:
     specs = json.loads(spec_path.read_text(encoding="utf-8"))
     by_template: dict[str, list[dict]] = {}
     for entry in extracted:
@@ -319,6 +373,22 @@ def verify(extracted: list[dict], spec_path: Path) -> int:
     for spec in specs:
         template = spec.get("sourceTemplate")
         candidates = by_template.get(template) or []
+        evidence = spec.get("sourceEvidence") or {}
+        if xslt_root is not None and evidence.get("path"):
+            relative = evidence["path"].replace("\\", "/")
+            if relative.lower().startswith("data/xslt/"):
+                relative = relative[len("data/xslt/"):]
+            source = (xslt_root / relative).resolve()
+            if not source.is_relative_to(xslt_root.resolve()) or not source.is_file():
+                print(f"MISS  {spec['maTKhai']}: exact source evidence path unavailable")
+                failures += 1
+                continue
+            digest = hashlib.sha256(source.read_bytes()).hexdigest()
+            if evidence.get("sha256", "").lower() != digest:
+                print(f"DIFF  {spec['maTKhai']}: source evidence SHA-256 mismatch")
+                failures += 1
+                continue
+            candidates = [extract(source)]
         if not candidates:
             print(f"MISS  {spec['displayCode']:<12} {template}: khong tim thay XSLT")
             failures += 1
@@ -394,6 +464,7 @@ def main() -> int:
                 "sourceVersion": item["version"],
                 "sourceVersions": sorted(v for v in item["versions"] if v),
                 "sourcePath": str(item["path"]),
+                "sourceSHA256": hashlib.sha256(item["path"].read_bytes()).hexdigest(),
                 "displayCodes": data["displayCodes"],
                 "title": data["title"],
                 "columns": data["columns"],
@@ -455,7 +526,7 @@ def main() -> int:
 
     failures = 0
     if args.verify:
-        failures = verify(extracted, args.verify)
+        failures = verify(extracted, args.verify, args.xslt_root)
     return 1 if failures else 0
 
 
