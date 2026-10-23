@@ -254,6 +254,27 @@ final class RendererTests: XCTestCase {
         XCTAssertTrue(rendered.html.contains("Hàng hóa 150"))
     }
 
+    func testUnknownAppendixFallsBackToReadableTree() throws {
+        let source = try String(contentsOf: try Fixtures.url("gtgt_842_return"), encoding: .utf8)
+        let appendix = """
+        <PLuc><PL01_KHBS>
+        <Header><maTKhai>842</maTKhai><kyKKhai>12/2022</kyKKhai></Header>
+        <Muc_A><Muc_II><ChiTiet><ct2_ma>01</ct2_ma><ct3>1000</ct3></ChiTiet></Muc_II></Muc_A>
+        <Muc_B><Muc_I><ct_1>500</ct_1></Muc_I></Muc_B>
+        </PL01_KHBS></PLuc>
+        """
+        let xml = source.replacingOccurrences(of: "  </HSoKhaiThue>", with: appendix + "\n  </HSoKhaiThue>")
+        let doc = try TaxDocument.load(data: Data(xml.utf8), sourceName: "appendix-khbs.xml")
+        let registry = try FormRegistry.bundled()
+        let classification = try DocumentClassifier.classify(doc, registry: registry)
+        let rendered = HTMLRenderer(registry: registry).render(document: doc, classification: classification)
+        XCTAssertTrue(rendered.html.contains("PHỤ LỤC 01/KHBS"))
+        XCTAssertTrue(rendered.html.contains("Chưa có bố cục in chính thức"))
+        XCTAssertTrue(rendered.html.contains("class=\"appendix-tree\""))
+        XCTAssertTrue(rendered.html.contains("ct_1"))
+        XCTAssertTrue(rendered.html.contains("1000"))
+    }
+
     func testFlatVATReductionAppendixLayout() throws {
         let source = try String(contentsOf: try Fixtures.url("gtgt_842_return"), encoding: .utf8)
         let appendix = """

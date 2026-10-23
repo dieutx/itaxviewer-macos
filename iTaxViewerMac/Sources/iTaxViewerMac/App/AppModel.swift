@@ -60,11 +60,26 @@ final class AppModel: ObservableObject {
     @Published var lastError: String? = nil
     @Published var zoom: Double = 1.0
 
+    // MARK: - Update check
+    @Published private(set) var availableUpdate: AppRelease? = nil
+    @Published private(set) var isCheckingForUpdates = false
+    @Published var updateNotice: String? = nil
+    @Published var automaticUpdateCheck: Bool {
+        didSet {
+            UserDefaults.standard.set(automaticUpdateCheck, forKey: "itax.updateCheck.auto")
+        }
+    }
+
     let registry: FormRegistry
     private let renderer: HTMLRenderer
     private let recentKey = "itax.recentFiles.v1"
+    private let lastUpdateCheckKey = "itax.updateCheck.last"
+    private let dismissedUpdateKey = "itax.updateCheck.dismissed"
+    private let updateCheckDisabledKey = "itax.updateCheck.auto"
+    private let releaseClient = GitHubReleaseClient()
 
     private init() {
+        automaticUpdateCheck = UserDefaults.standard.object(forKey: "itax.updateCheck.auto") as? Bool ?? true
         do {
             let registry = try FormRegistry.bundled()
             self.registry = registry
@@ -80,6 +95,7 @@ final class AppModel: ObservableObject {
             self.lastError = "Không nạp được danh mục biểu mẫu: \(error.localizedDescription)"
         }
         loadRecent()
+        autoCheckForUpdates()
     }
 
     var selectedDocument: OpenDocument? {
@@ -168,6 +184,61 @@ final class AppModel: ObservableObject {
     func requestExport() { NotificationCenter.default.post(name: .itaxExportPDF, object: nil) }
     func requestInfo() { NotificationCenter.default.post(name: .itaxShowInfo, object: nil) }
     func requestSignatures() { NotificationCenter.default.post(name: .itaxShowSignatures, object: nil) }
+
+    // MARK: - Updates
+
+    var currentAppVersion: String {
+        Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "0.0.0"
+    }
+
+    /// Checks at most once per day, silently. The user can turn this off from
+    /// the app menu.
+    func autoCheckForUpdates() {
+        guard automaticUpdateCheck else { return }
+        if let last = UserDefaults.standard.object(forKey: lastUpdateCheckKey) as? Date,
+           Date().timeIntervalSince(last) < 24 * 60 * 60 {
+            return
+        }
+        Task { await performUpdateCheck(manual: false) }
+    }
+
+    func checkForUpdates() {
+        Task { await performUpdateCheck(manual: true) }
+    }
+
+    private func performUpdateCheck(manual: Bool) async {
+        guard !isCheckingForUpdates else { return }
+        isCheckingForUpdates = true
+        defer { isCheckingForUpdates = false }
+        do {
+            let release = try await releaseClient.latestRelease(currentVersion: currentAppVersion)
+            UserDefaults.standard.set(Date(), forKey: lastUpdateCheckKey)
+            if let release,
+               UserDefaults.standard.string(forKey: dismissedUpdateKey) != release.version {
+                availableUpdate = release
+                updateNotice = nil
+            } else if manual {
+                availableUpdate = nil
+                updateNotice = "Bạn đang dùng phiên bản mới nhất (\(currentAppVersion))."
+            }
+        } catch {
+            if manual {
+                updateNotice = "Không kiểm tra được bản cập nhật: \(error.localizedDescription)"
+            }
+        }
+    }
+
+    func openUpdatePage() {
+        guard let availableUpdate else { return }
+        NSWorkspace.shared.open(availableUpdate.pageURL)
+    }
+
+    func dismissAvailableUpdate() {
+        if let version = availableUpdate?.version {
+            UserDefaults.standard.set(version, forKey: dismissedUpdateKey)
+        }
+        availableUpdate = nil
+    }
 
     // MARK: - Recent files
 

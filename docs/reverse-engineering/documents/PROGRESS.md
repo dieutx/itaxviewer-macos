@@ -84,3 +84,4 @@ số tiền bằng chữ). Đã chạy XCTest; đối chiếu ảnh/PDF Windows 
 | 2026-10-22 | Inventory 16 registry (1.512 dòng id+version); capture CT-01, 843, 844, 01/TB-BSTT; thêm spec/fixture/evidence; sửa namespace fixture thông báo; phát hiện sai khoá `maTBao=107` | agent |
 | 2026-10-22 | Mở lại 4 fixture tờ khai bằng bản gốc: 842 = 2 trang, 394 = **1 trang** (clone đang 2), 953 = 2 trang, 892 = NPE/blocked; capture nhánh `trangThai=N` của 843; thử capture phụ lục NQ142 = blocked | agent |
 | 2026-10-23 | Map legacy `maTKhai=01` (XML 2.1.2–2.6.2) sang layout 01/GTGT; implement layout 843/844/01-TB-BSTT + CT-01; sửa classifier root `TBao`; thêm 7 test; chạy 12 file thật (9 full, 3 × 04/GTGT structured) | agent |
+| 2026-10-23 | Sửa sidebar bị cắt (bỏ NavigationSplitView bị lỗi layout); phụ lục chưa có spec (PL01_KHBS, PL01_1_KHBS…) hiển thị dạng cây cấu trúc thay vì bảng path; thêm tự động báo bản phát hành mới (GitHub Releases, 1 lần/ngày, không gửi dữ liệu hồ sơ) | agent |

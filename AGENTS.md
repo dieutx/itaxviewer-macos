@@ -36,8 +36,10 @@ supported tax XML and getting the correct form, print and PDF.
   official field identifiers/labels only.
 - **Do not invent field mappings.** Every indicator/label must be traceable to
   `form-specs.json` and `docs/reverse-engineering/document-types.md`.
-- **Offline only.** No document upload, telemetry, analytics or network fetch. Do not add a
-  network entitlement.
+- **Offline by default.** No document upload, telemetry, analytics or cloud processing. The
+  only network call allowed is the user-visible update check against the public GitHub
+  releases API (no document data, no identifiers; can be disabled from the app menu). It
+  must never send file contents. Do not add any other network entitlement.
 - **Security is non-negotiable:** keep DOCTYPE/ENTITY rejection, external entity disabling,
   size/depth limits, JavaScript disabled in WKWebView, CSP `default-src 'none'`, navigation
   blocking and non-persistent data store.

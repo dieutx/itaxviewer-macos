@@ -173,7 +173,8 @@ Corrections established by running the original:
 | `scripts/validate_fixtures.py` (classification, indicator mapping, formatting) | **PASS** (executed 2026-10-22) |
 | Registry integrity (1,150 entries / 410 codes / 4 specs) | **PASS** |
 | XXE rejection, UTF-16 parsing, malformed XML, oversized/hidden-DTD inputs | **PASS** (Swift XCTest) |
-| Swift XCTest suite (`swift test`) | **PASS** — 54 tests executed, 53 passed, 1 skipped (`ExternalFixturesTests` without `ITAX_FIXTURE_DIR`) |
+| Swift XCTest suite (`swift test`) | **PASS** — 58 tests executed, 57 passed, 1 skipped (`ExternalFixturesTests` without `ITAX_FIXTURE_DIR`) |
+| Update check (`AppVersion` comparison + GitHub releases client) | **PASS** — 3 XCTest cases; manual check executed against the public repo (no release published yet → "newest") |
 | External fixture run (`ITAX_FIXTURE_DIR=../test-data`) | **PASS** — all 9 XML files classified and rendered; test walks subdirectories recursively |
 | Real-file run (`ITAX_FIXTURE_DIR="../realdata to test"`, local only) | **PASS** — 12 files parsed and rendered; 9 × 01/GTGT full renderer (incl. legacy 2.1.2 / 2.5.0), 3 × 04/GTGT structured view (no captured layout) |
 | Notice/voucher renderer tests | **PASS** — 843 accepted + rejected, 844 accepted, 01/TB-BSTT, CT-01 layout and amount-in-words |

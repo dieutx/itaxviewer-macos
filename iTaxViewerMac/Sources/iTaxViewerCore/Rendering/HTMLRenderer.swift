@@ -438,7 +438,7 @@ public final class HTMLRenderer {
             if let known = renderKnownAppendix(child, document: document) {
                 s += known
             } else {
-                warnings.append("Phụ lục \(child.localName) chưa có bố cục in chuyên biệt; dữ liệu được hiển thị dạng bảng đường dẫn/giá trị.")
+                warnings.append("Phụ lục \(child.localName) chưa có bố cục in chuyên biệt; dữ liệu được hiển thị theo cấu trúc XML.")
                 s += renderRawAppendix(child)
             }
         }
@@ -579,15 +579,37 @@ public final class HTMLRenderer {
     /// Fallback for appendices without a dedicated layout: preserve all values,
     /// but present them as path/value rows under the appendix ID.
     private func renderRawAppendix(_ node: XMLNode) -> String {
-        var s = "<h3>\(esc(node.localName))</h3>"
-        s += "<table class=\"data-table\"><thead><tr><th>Đường dẫn dữ liệu</th><th>Giá trị</th></tr></thead><tbody>"
-        let leaves = node.leaves(limit: 10_000)
-        for leaf in leaves {
-            let value = leaf.trimmedValue
-            if value.isEmpty { continue }
-            s += "<tr><td class=\"path\">\(esc(pathString(for: leaf, relativeTo: node)))</td><td>\(esc(value))</td></tr>"
+        let title: String
+        switch node.localName {
+        case "PL01_KHBS": title = "PHỤ LỤC 01/KHBS"
+        case "PL01_1_KHBS": title = "PHỤ LỤC 01-1/KHBS"
+        default: title = node.localName
         }
-        s += "</tbody></table>"
+        var s = "<div class=\"appendix-block\">"
+        s += "<h3>\(esc(title))</h3>"
+        s += "<div class=\"appendix-note\">Chưa có bố cục in chính thức cho phụ lục này. "
+        s += "Dữ liệu bên dưới giữ nguyên cấu trúc XML để không thất lạc thông tin.</div>"
+        s += "<table class=\"appendix-tree\"><tbody>"
+        for child in node.children {
+            s += appendixTreeRows(child, depth: 0)
+        }
+        s += "</tbody></table></div>"
+        return s
+    }
+
+    private func appendixTreeRows(_ node: XMLNode, depth: Int) -> String {
+        let indent = 12 * depth
+        if node.children.isEmpty {
+            let value = node.trimmedValue
+            guard !value.isEmpty else { return "" }
+            return "<tr><td class=\"node\" style=\"padding-left:\(indent + 6)px\">\(esc(node.localName))</td>"
+                + "<td>\(esc(value))</td></tr>"
+        }
+        var s = "<tr class=\"group\"><td class=\"node\" style=\"padding-left:\(indent + 6)px\" colspan=\"2\">"
+            + "\(esc(node.localName))</td></tr>"
+        for child in node.children {
+            s += appendixTreeRows(child, depth: depth + 1)
+        }
         return s
     }
 
@@ -779,6 +801,11 @@ public final class HTMLRenderer {
         .appendix-table th, .appendix-table td { font-size: 9.5pt; }
         .appendix-difference td { font-size: 10.5pt; }
         .appendix-block + .appendix-block { page-break-before: always; }
+        table.appendix-tree { width: 100%; border-collapse: collapse; margin-top: 4px; }
+        table.appendix-tree td { border: 1px solid #bbb; padding: 3px 6px; font-size: 9.5pt; vertical-align: top; }
+        table.appendix-tree td.node { width: 46%; font-family: ui-monospace, "SF Mono", Menlo, monospace;
+            color: #333; white-space: nowrap; }
+        table.appendix-tree tr.group td { background: #f2f2f2; font-weight: bold; }
         .data-table .path { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 9pt; color: #333; }
         .data-table td { font-size: 10pt; }
         .notice-header { margin-bottom: 8px; }

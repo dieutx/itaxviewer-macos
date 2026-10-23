@@ -9,7 +9,9 @@ built from black-box reverse engineering of the official Windows **iTax Viewer**
 * Prints with the native macOS print panel and exports multi-page PDF
 * Shows digital-signature and certificate metadata without ever claiming an unverified
   document is valid
-* Fully offline; no login, telemetry or cloud processing
+* Notifies you when a newer release is published (checks once a day; no document data is
+  ever sent) and opens the release page
+* Fully offline for document processing; no login, telemetry or cloud processing
 
 > This is **not** an official product of the Vietnamese tax authority (Tổng cục Thuế /
 > GDT). It is an independent interoperability project. No assets from the original
@@ -83,6 +85,22 @@ xcrun stapler staple build/iTaxViewerMac.app
 ```
 
 The default build is unsigned/ad-hoc and will show Gatekeeper warnings.
+
+### Publishing a release (enables the in-app update notice)
+
+The app checks `https://api.github.com/repos/dieutx/itaxviewer-macos/releases/latest`
+once per day and shows a banner when the published tag is newer than
+`CFBundleShortVersionString` in `scripts/Info.plist`. Only the app version is sent
+(`User-Agent`); no document data or identifiers leave the machine. Users can disable the
+check under the application menu.
+
+For the notice to appear, publish a **GitHub Release** (a plain tag is not enough):
+
+1. Bump `CFBundleShortVersionString`/`CFBundleVersion` in `iTaxViewerMac/scripts/Info.plist`.
+2. Build and sign the app.
+3. Create a release with a semver tag such as `v1.0.1` and attach the DMG.
+
+The banner opens the release page; it never downloads or executes code automatically.
 
 ## Tests
 
