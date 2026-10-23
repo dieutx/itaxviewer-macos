@@ -72,7 +72,8 @@ public final class HTMLRenderer {
         for field in spec.extraFields ?? [] {
             let raw = document.root.firstDescendant(named: "CTieuTKhaiChinh")?.node(atLocalPath: field.path)?.trimmedValue ?? ""
             let value = field.format == "checkbox" ? (["true", "1", "x"].contains(raw.lowercased()) ? "☒" : "☐") : raw
-            html += "<p>[\(esc(field.code))] \(esc(field.label)) \(esc(value))</p>"
+            let indicator = field.code.isEmpty ? "" : "[\(esc(field.code))] "
+            html += "<p>\(indicator)\(esc(field.label)) \(esc(value))</p>"
         }
 
         if spec.tableRows != nil {
@@ -908,6 +909,9 @@ public final class HTMLRenderer {
         .form-section-title { font-weight: bold; font-size: 11.5pt; margin: 10px 0 2px 0; }
         tr.colnum td { font-size: 9.5pt; color: #333; }
         table.tax-table, table.data-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+        /* Literal cell/span forms use natural column sizing, as observed in
+           the installed 04/GTGT tables. Equal fixed columns crushed labels. */
+        table.tax-table.specified { table-layout: auto; }
         table.tax-table th, table.tax-table td, table.data-table th, table.data-table td {
             border: 1px solid #000; padding: 3px 4px; vertical-align: middle; font-size: 10.5pt; line-height: 1.25;
         }
