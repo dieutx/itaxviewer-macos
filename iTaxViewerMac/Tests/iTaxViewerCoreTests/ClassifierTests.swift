@@ -8,7 +8,8 @@ final class RegistryTests: XCTestCase {
         XCTAssertEqual(registry.source.application, "iTax Viewer")
         XCTAssertEqual(registry.source.entries, 1150)
         XCTAssertEqual(registry.source.formCodes, 410)
-        XCTAssertEqual(registry.supported.count, 4)
+        XCTAssertEqual(Set(registry.supported.map(\.maTKhai)),
+                       Set(["842", "394", "953", "892", "864", "395", "07", "847"]))
     }
 
     func testKnownDisplayCodes() throws {

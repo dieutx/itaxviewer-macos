@@ -19,6 +19,9 @@ import sys
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
+
 ROOT = Path(__file__).resolve().parents[1]
 RES = ROOT / "Sources" / "iTaxViewerCore" / "Resources"
 REGISTRY = json.loads((RES / "form-registry.json").read_text(encoding="utf-8"))

@@ -17,6 +17,9 @@ import sys
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
+
 ROOT = Path(__file__).resolve().parents[1]
 RES = ROOT / "Sources" / "iTaxViewerCore" / "Resources"
 FIX = ROOT / "Tests" / "iTaxViewerCoreTests" / "Fixtures"
@@ -172,7 +175,18 @@ EXPECTED = {
 }
 
 REGISTRY = json.loads((RES / "form-registry.json").read_text(encoding="utf-8"))
-SPECS = {s["displayCode"]: s for s in json.loads((RES / "form-specs.json").read_text(encoding="utf-8"))}
+SPECS = {s["maTKhai"]: s for s in json.loads((RES / "form-specs.json").read_text(encoding="utf-8"))}
+
+for _code, _indicators in {
+    "864": {"16": "1", "21": "1000006", "25.1": "1000011", "32": "1000018"},
+    "395": {"21": "1", "28": "1000008", "34": "1000014", "46": "1000026"},
+    "07": {"21": "1000001", "32": "1000012", "33": "1000013"},
+    "847": {"21": "1000001", "31": "1000011"},
+}.items():
+    EXPECTED[f"declaration_{_code}_static"] = {
+        "kind": "Tờ khai thuế", "display": SPECS[_code]["displayCode"], "code": _code,
+        "indicators": _indicators,
+    }
 
 
 def classify(fixture: Fixture) -> tuple[str, str | None, str | None]:
@@ -183,7 +197,8 @@ def classify(fixture: Fixture) -> tuple[str, str | None, str | None]:
             raise AssertionError("missing TKhaiThue")
         code = fixture.text("HSoKhaiThue/TTinChung/TTinTKhaiThue/TKhaiThue/maTKhai")
         info = REGISTRY["codes"].get(code or "")
-        return "Tờ khai thuế", (info or {}).get("displayCode"), code
+        display = (info or {}).get("displayCode")
+        return "Tờ khai thuế", display.strip() if display else None, code
     if root == "CHUNGTU":
         return "Giấy nộp tiền / chứng từ", "CT-01", "01"
     if root in ("TBaoThueDTu", "THONGBAO", "THONG_BAO", "TBao"):
@@ -214,7 +229,7 @@ def main() -> int:
         print(f"{name:<30}{str(display):<14}{kind:<40}{'PASS' if ok else 'FAIL'}")
 
         if "indicators" in expected:
-            spec = SPECS[display]
+            spec = SPECS["842" if code == "01" else code]
             found: dict[str, list[str]] = {}
             for row in spec["rows"]:
                 if not row["values"]:
@@ -228,15 +243,15 @@ def main() -> int:
             for indicator, want in expected["indicators"].items():
                 got = found.get(indicator)
                 if got != want:
-                    failures.append(f"{name}: [{indicator}] = {got!r}, expected {want!r}")
+                    failures.append(f"{name}: [{indicator}] mapping mismatch")
             for indicator, want in expected.get("formatted", {}).items():
                 got = format_number(found.get(indicator))
                 if got != want:
-                    failures.append(f"{name}: format([{indicator}]) = {got!r}, expected {want!r}")
+                    failures.append(f"{name}: format([{indicator}]) mismatch")
 
     # Spec coverage: every supported form must have a spec with rows.
     for form in REGISTRY["supported"]:
-        spec = SPECS.get(form["spec"])
+        spec = SPECS.get(form["maTKhai"])
         if not spec or not spec["rows"]:
             failures.append(f"missing spec for {form['displayCode']}")
         else:

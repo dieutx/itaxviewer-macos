@@ -154,7 +154,8 @@ private final class TreeBuilderDelegate: NSObject, XMLParserDelegate {
             let local = key.split(separator: ":").last.map(String.init) ?? key
             attributes[local] = value
         }
-        let prefix = qName?.split(separator: ":").first.map(String.init)
+        let qualifiedParts = (qName ?? elementName).split(separator: ":", maxSplits: 1)
+        let prefix = qualifiedParts.count == 2 ? String(qualifiedParts[0]) : nil
         let localName = elementName.split(separator: ":").last.map(String.init) ?? elementName
         let node = XMLNode(name: qName ?? elementName,
                            localName: localName,
