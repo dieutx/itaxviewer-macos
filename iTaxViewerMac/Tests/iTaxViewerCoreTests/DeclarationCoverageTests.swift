@@ -22,7 +22,7 @@ final class DeclarationCoverageTests: XCTestCase {
             let main = try XCTUnwrap(document.root.firstDescendant(named: "CTieuTKhaiChinh"))
             for row in spec.rows {
                 for value in row.values {
-                    let base: XMLNode?
+                    let base: iTaxViewerCore.XMLNode?
                     switch value.root {
                     case "ktru": base = main.firstChild(named: "NVuKhauTruThue")
                     case "qtoan": base = main.firstChild(named: "NVuQToanThay")
