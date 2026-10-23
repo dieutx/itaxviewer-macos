@@ -1,6 +1,6 @@
 # Tiến độ RE tài liệu — iTax Viewer Windows
 
-Cập nhật lần cuối: **2026-10-22** (phiên 2: inventory toàn bộ + capture P0).
+Cập nhật lần cuối: **2026-10-23** (phiên 3: legacy 01/GTGT + renderer thông báo/chứng từ).
 
 > File này là bản người đọc. Bản máy đọc: `progress.json`. Kết quả chi tiết:
 > `results/<kind>-<id>.md`. Inventory: `document-inventory.md` / `.json` / `document-registry.csv`.
@@ -40,6 +40,10 @@ Ký hiệu: ✅ xong · 🟡 một phần · ⬜ chưa làm.
 
 Bằng chứng: `docs/reverse-engineering/evidence/documents/<kind>/<id>/` (ảnh `PrintWindow`, PDF do app tự xuất qua Ctrl+P, `capture-notes.md`).
 
+**Renderer macOS (2026-10-23):** `843` (nhánh Y/N), `844` (Y/N) và `01/TB-BSTT` dùng layout
+công văn chính thức; `CT-01` dùng layout C1-02/NS (bảng chi tiết, cột VND/USD, tổng tiền,
+số tiền bằng chữ). Đã chạy XCTest; đối chiếu ảnh/PDF Windows vẫn **pending**.
+
 ### Phát hiện quan trọng
 
 1. **Root thông báo phải không có prefix.** `ns0:TBaoThueDTu` → "Tệp hồ sơ không đúng định dạng".
@@ -65,9 +69,9 @@ Bằng chứng: `docs/reverse-engineering/evidence/documents/<kind>/<id>/` (ản
 
 ## 5. Việc tiếp theo (đề xuất)
 
-1. Sửa fixture/classifier thông báo trong app macOS theo `notices/*.json` (root `TBao`, khoá `MSo`/`PBan`).
-2. Viết renderer + test cho CT-01 và 3 mẫu thông báo từ spec JSON.
-3. Capture nhánh `trangThai=N` của 843/844 và trường hợp số tiền âm.
+1. Capture layout `04/GTGT` (mã 07) — 3 file thật đang chỉ hiện bảng dữ liệu.
+2. Capture nhánh `trangThai=N` của 844 và trường hợp số tiền âm của CT-01.
+3. Đối chiếu trực quan layout 843/844/01-TB-BSTT/CT-01 với PDF Windows rồi nâng verification.
 4. Ưu tiên P1: `PL01_KHBS`, `PL01_1_KHBS`, `BaoCaoTaiChinh`.
 5. Cập nhật `progress.json` + `results/*.md` sau mỗi bước.
 6. Chỉ chuyển trạng thái `verified` khi có ảnh/PDF đối chiếu **và** renderer macOS đã chạy.
@@ -79,3 +83,4 @@ Bằng chứng: `docs/reverse-engineering/evidence/documents/<kind>/<id>/` (ản
 | 2026-10-22 | Tạo tracker; ghi nhận 4 form full + NQ43/101/142; xác định phần còn thiếu | agent |
 | 2026-10-22 | Inventory 16 registry (1.512 dòng id+version); capture CT-01, 843, 844, 01/TB-BSTT; thêm spec/fixture/evidence; sửa namespace fixture thông báo; phát hiện sai khoá `maTBao=107` | agent |
 | 2026-10-22 | Mở lại 4 fixture tờ khai bằng bản gốc: 842 = 2 trang, 394 = **1 trang** (clone đang 2), 953 = 2 trang, 892 = NPE/blocked; capture nhánh `trangThai=N` của 843; thử capture phụ lục NQ142 = blocked | agent |
+| 2026-10-23 | Map legacy `maTKhai=01` (XML 2.1.2–2.6.2) sang layout 01/GTGT; implement layout 843/844/01-TB-BSTT + CT-01; sửa classifier root `TBao`; thêm 7 test; chạy 12 file thật (9 full, 3 × 04/GTGT structured) | agent |

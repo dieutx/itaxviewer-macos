@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-22",
+  "updatedAt": "2026-10-23",
   "source": "docs/PROMPTS/document-re",
   "statusValues": [
     "not-started",
@@ -146,68 +146,68 @@
       "displayCode": "01-01/TB-TĐT",
       "formCode": "843",
       "version": "2.5.6",
-      "renderer": "generic",
+      "renderer": "official-layout",
       "stages": {
         "inventory": "done",
         "capture": "captured",
         "spec": "spec-done",
         "fixtures": "fixture-done",
-        "handoff": "in-progress",
+        "handoff": "done",
         "verification": "partial"
       },
       "results": {"pdfPages": 1, "orientation": "portrait", "rows": 0},
-      "notes": "Root must be unprefixed TBaoThueDTu; received branch captured; template TBao_01_1_TT19_KeKhai.xslt"
+      "notes": "Root must be unprefixed TBaoThueDTu; received branch captured; template TBao_01_1_TT19_KeKhai.xslt; macOS official layout implemented + XCTest 2026-10-23 (Windows visual diff pending)"
     },
     "notice-844": {
       "kind": "notice",
       "displayCode": "01-2/TB-TĐT",
       "formCode": "844",
       "version": "2.4.9",
-      "renderer": "generic",
+      "renderer": "official-layout",
       "stages": {
         "inventory": "done",
         "capture": "captured",
         "spec": "spec-done",
         "fixtures": "fixture-done",
-        "handoff": "in-progress",
+        "handoff": "done",
         "verification": "partial"
       },
       "results": {"pdfPages": 1, "orientation": "portrait", "rows": 1},
-      "notes": "Accepted branch + IDKhoanNop table; rejection branch not captured"
+      "notes": "Accepted branch + IDKhoanNop table; rejection branch not captured; macOS official layout implemented + XCTest 2026-10-23 (Windows visual diff pending)"
     },
     "notice-01-TB-BSTT": {
       "kind": "notice",
       "displayCode": "01/TB-BSTT",
       "formCode": "01/TB-BSTT",
       "version": "2.1.0",
-      "renderer": "generic",
+      "renderer": "official-layout",
       "stages": {
         "inventory": "done",
         "capture": "captured",
         "spec": "spec-done",
         "fixtures": "fixture-done",
-        "handoff": "in-progress",
+        "handoff": "done",
         "verification": "partial"
       },
       "results": {"pdfPages": 1, "orientation": "portrait"},
-      "notes": "Root is TBao (TBaoHDDT), not TBaoThueDTu; maTBao=107/pbanTBao=3.0.7 is rejected by the original; appendix not captured"
+      "notes": "Root is TBao (TBaoHDDT), not TBaoThueDTu; maTBao=107/pbanTBao=3.0.7 is rejected by the original; appendix not captured; macOS official layout implemented + XCTest 2026-10-23 (Windows visual diff pending)"
     },
     "voucher-01": {
       "kind": "paymentVoucher",
       "displayCode": "CT-01",
       "formCode": "01",
       "version": "4.0.1",
-      "renderer": "generic",
+      "renderer": "official-layout",
       "stages": {
         "inventory": "done",
         "capture": "captured",
         "spec": "spec-done",
         "fixtures": "fixture-done",
-        "handoff": "in-progress",
+        "handoff": "done",
         "verification": "partial"
       },
       "results": {"pdfPages": 1, "orientation": "portrait", "rows": 3},
-      "notes": "C1-02/NS; 4.0.1 captured with MA_NGUYENTE=00000 and VND multi-row; 4.0.2 and MA_CTU=02 not available"
+      "notes": "C1-02/NS; 4.0.1 captured with MA_NGUYENTE=00000 and VND multi-row; 4.0.2 and MA_CTU=02 not available; macOS official layout implemented + XCTest 2026-10-23 (Windows visual diff pending)"
     }
   },
   "appendices": {
@@ -301,9 +301,9 @@
     }
   },
   "nextActions": [
-    "Fix the macOS notice fixture: root TBao + MSo=01/TB-BSTT + PBan=2.1.0 (the current tbao_107_bstt.xml is rejected by the original)",
-    "Add macOS renderers/tests for notice 843/844/01-TB-BSTT and voucher CT-01 from documents/*.json",
-    "Capture notice trangThai=N branches and negative amounts",
+    "Capture the 04/GTGT layout for form code 07 (3 real files currently use the structured view)",
+    "Capture notice trangThai=N branch for 844 and negative voucher amounts",
+    "Visually diff the new macOS notice/voucher layouts against the Windows PDFs and promote verification to verified",
     "Capture PL01_KHBS and PL01_1_KHBS (P1)",
     "Capture BaoCaoTaiChinh (P1)",
     "Update results/*.md and this file after each stage"

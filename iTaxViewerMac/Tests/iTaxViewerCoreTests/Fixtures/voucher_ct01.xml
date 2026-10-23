@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CHUNGTU>
+  <NDUNG_CTU_NH>
+    <MAHIEU_CTU>GNT-2026-0001</MAHIEU_CTU>
+    <SO_CTU>0000123</SO_CTU>
+    <NDUNG_CTU>
+      <CHUNGTU_HDR>
+        <PBAN_TLIEU_XML>4.0.1</PBAN_TLIEU_XML>
+        <ID_CTU>CT-0001</ID_CTU>
+        <SO_GNT>0000123</SO_GNT>
+        <MA_CTU>01</MA_CTU>
+        <HTHUC_NOP>CK</HTHUC_NOP>
+        <MST_NNOP>0100000001</MST_NNOP>
+        <TEN_NNOP>CÔNG TY TNHH DỮ LIỆU MẪU</TEN_NNOP>
+        <DIACHI_NNOP>Số 1 Đường Mẫu, Phường Mẫu, Quận Mẫu</DIACHI_NNOP>
+        <MA_CQT>10100</MA_CQT>
+        <TEN_CQT>CỤC THUẾ THÀNH PHỐ HÀ NỘI</TEN_CQT>
+        <MA_XA_NNOP>00001</MA_XA_NNOP>
+        <TEN_XA_NNOP>PHƯỜNG MẪU</TEN_XA_NNOP>
+        <MA_HUYEN_NNOP>001</MA_HUYEN_NNOP>
+        <TEN_HUYEN_NNOP>QUẬN MẪU</TEN_HUYEN_NNOP>
+        <MA_TINH_NNOP>01</MA_TINH_NNOP>
+        <TEN_TINH_NNOP>THÀNH PHỐ HÀ NỘI</TEN_TINH_NNOP>
+        <MST_NTHAY>0100000002</MST_NTHAY>
+        <TEN_NTHAY>CÔNG TY TNHH ĐẠI LÝ THUẾ MẪU</TEN_NTHAY>
+        <DIACHI_NTHAY>Số 2 Đường Mẫu, Phường Mẫu</DIACHI_NTHAY>
+        <TEN_HUYEN_NTHAY>QUẬN MẪU</TEN_HUYEN_NTHAY>
+        <TEN_TINH_NTHAY>THÀNH PHỐ HÀ NỘI</TEN_TINH_NTHAY>
+        <MA_NHANG_NOP>BIDV</MA_NHANG_NOP>
+        <TEN_NHANG_NOP>NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM</TEN_NHANG_NOP>
+        <STK_NHANG_NOP>1234567890</STK_NHANG_NOP>
+        <MA_HIEU_KBAC>KBNN-HN</MA_HIEU_KBAC>
+        <TEN_KBAC>KHO BẠC NHÀ NƯỚC THÀNH PHỐ HÀ NỘI</TEN_KBAC>
+        <MA_TINH_KBAC>01</MA_TINH_KBAC>
+        <TEN_TINH_KBAC>THÀNH PHỐ HÀ NỘI</TEN_TINH_KBAC>
+        <LOAI_TK_THU>7111</LOAI_TK_THU>
+        <TEN_TK_THU>NỘP VÀO NSNN</TEN_TK_THU>
+        <STK_THU>7111</STK_THU>
+        <ID_TK_KNGHI>01</ID_TK_KNGHI>
+        <MA_CQTHU>10100</MA_CQTHU>
+        <TEN_CQTHU>CỤC THUẾ THÀNH PHỐ HÀ NỘI</TEN_CQTHU>
+        <NGAY_LAP>22/10/2026</NGAY_LAP>
+        <TONG_TIEN>1234580235</TONG_TIEN>
+        <VAN_ID>VAN-0001</VAN_ID>
+        <MA_DBHC_THU>00001</MA_DBHC_THU>
+        <TEN_DBHC_THU>PHƯỜNG MẪU</TEN_DBHC_THU>
+        <MA_LOAI_THUE>00000</MA_LOAI_THUE>
+        <MA_NGUYENTE>VND</MA_NGUYENTE>
+        <MA_NHANG_UNT>BIDV</MA_NHANG_UNT>
+        <TEN_NHANG_UNT>NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM</TEN_NHANG_UNT>
+        <MA_THAMCHIEU>TC-0001</MA_THAMCHIEU>
+      </CHUNGTU_HDR>
+      <CHUNGTU_CTIET>
+        <ROW_CTIET>
+          <ID_CTU_CTIET>CT-0001-1</ID_CTU_CTIET>
+          <ID_CTU>CT-0001</ID_CTU>
+          <SO_TK_TB_QD>01/GTGT</SO_TK_TB_QD>
+          <NDUNG_NOP>Thuế giá trị gia tăng hàng sản xuất, kinh doanh trong nước</NDUNG_NOP>
+          <MA_NDKT>1701</MA_NDKT>
+          <MA_CHUONG>101</MA_CHUONG>
+          <KY_THUE>09/2026</KY_THUE>
+          <TIEN_PNOP>1000000000</TIEN_PNOP>
+          <GHI_CHU>Nộp thay</GHI_CHU>
+        </ROW_CTIET>
+        <ROW_CTIET>
+          <ID_CTU_CTIET>CT-0001-2</ID_CTU_CTIET>
+          <ID_CTU>CT-0001</ID_CTU>
+          <SO_TK_TB_QD>01/GTGT</SO_TK_TB_QD>
+          <NDUNG_NOP>Thuế giá trị gia tăng hàng nhập khẩu</NDUNG_NOP>
+          <MA_NDKT>1702</MA_NDKT>
+          <MA_CHUONG>101</MA_CHUONG>
+          <KY_THUE>09/2026</KY_THUE>
+          <TIEN_PNOP>234567890</TIEN_PNOP>
+          <GHI_CHU></GHI_CHU>
+        </ROW_CTIET>
+        <ROW_CTIET>
+          <ID_CTU_CTIET>CT-0001-3</ID_CTU_CTIET>
+          <ID_CTU>CT-0001</ID_CTU>
+          <SO_TK_TB_QD></SO_TK_TB_QD>
+          <NDUNG_NOP>Tiền chậm nộp</NDUNG_NOP>
+          <MA_NDKT>4917</MA_NDKT>
+          <MA_CHUONG>101</MA_CHUONG>
+          <KY_THUE></KY_THUE>
+          <TIEN_PNOP>12345</TIEN_PNOP>
+          <GHI_CHU></GHI_CHU>
+        </ROW_CTIET>
+      </CHUNGTU_CTIET>
+    </NDUNG_CTU>
+  </NDUNG_CTU_NH>
+</CHUNGTU>

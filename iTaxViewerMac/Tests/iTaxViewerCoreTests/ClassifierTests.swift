@@ -57,6 +57,24 @@ final class ClassifierTests: XCTestCase {
         XCTAssertTrue(c.support.isFull)
     }
 
+    func testLegacyGTGTCodeUsesFullRenderer() throws {
+        let (_, c) = try classify("gtgt_01_legacy_212")
+        XCTAssertEqual(c.kind, .declaration)
+        XCTAssertEqual(c.displayCode, "01/GTGT")
+        XCTAssertEqual(c.registryCode, "01")
+        XCTAssertTrue(c.support.isFull)
+        // The layout is reused, but the exact legacy version was not captured
+        // on Windows, so the user must still see a warning.
+        XCTAssertTrue(c.warnings.contains { $0.contains("2.1.2") })
+    }
+
+    func testLegacyGTGTResolutionDoesNotAffectKnownCodes() throws {
+        let registry = try FormRegistry.bundled()
+        XCTAssertEqual(registry.resolve(code: "01", version: "2.1.2", filingType: "C")?.maTKhai, "842")
+        XCTAssertEqual(registry.resolve(code: "842", version: "2.8.3", filingType: "C")?.maTKhai, "842")
+        XCTAssertNil(registry.resolve(code: "9999", version: "1.0.0", filingType: "C"))
+    }
+
     func testTNCNKhaiThay() throws {
         let (_, c) = try classify("tncn_394_05kk_tt92")
         XCTAssertEqual(c.displayCode, "05/KK-TNCN")

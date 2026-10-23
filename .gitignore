@@ -20,3 +20,6 @@ samples/
 external-fixtures/
 itax-samples/
 *.local.xml
+
+# Real taxpayer data used locally for testing — never commit
+realdata to test/

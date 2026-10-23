@@ -54,7 +54,8 @@
 ## 7. Test
 
 - Fixture: `documents/fixtures/notice-843-minimal.xml`
-- Test name: chưa có
+- Test name: `testNotice843UsesOfficialLayout`, `testNotice843RejectedBranchShowsReasonTable`
+- Kết quả macOS: PASS (layout công văn, cả nhánh Y và N)
 - Kết quả: bản gốc render OK
 - Ngày chạy: 2026-10-22
 

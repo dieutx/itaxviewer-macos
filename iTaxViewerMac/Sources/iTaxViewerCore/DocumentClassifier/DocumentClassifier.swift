@@ -78,9 +78,9 @@ public enum DocumentClassifier {
     private static let declarationRoot = "HSoThueDTu"
     private static let noticeRoots: Set<String> = [
         "TBaoThueDTu", "THONGBAO", "THONG_BAO", "TBAO_TKHOAN_NH",
-        "TBAO_TKHOAN_NT", "TBAO_NGUNG", "BKE_TBAO"
+        "TBAO_TKHOAN_NT", "TBAO_NGUNG", "BKE_TBAO", "TBao"
     ]
-    private static let invoiceRoots: Set<String> = ["TKhai", "DNghi", "TBao", "BCTHSDBLai", "BLai"]
+    private static let invoiceRoots: Set<String> = ["TKhai", "DNghi", "BCTHSDBLai", "BLai"]
     private static let registrationRoots: Set<String> = ["DKyThueDTu"]
     private static let catalogRoots: Set<String> = ["DanhMucDTu"]
     private static let customsRoots: Set<String> = ["TOKHAI_OBJ", "TOKHAISUA_OBJ"]

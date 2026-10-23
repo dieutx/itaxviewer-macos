@@ -1,0 +1,72 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<TBaoThueDTu xmlns="http://kekhaithue.gdt.gov.vn/TBaoThue" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TBaoThue id="_NODE_TO_SIGN">
+    <TTinChung>
+      <CQT>
+        <maCQT>00000</maCQT>
+        <tenCQT>CƠ QUAN THUẾ MẪU</tenCQT>
+        <DVu>
+          <maDVu>ETAX</maDVu>
+          <tenDVu>ETAX 1.0</tenDVu>
+          <pbanDVu>1.0</pbanDVu>
+        </DVu>
+      </CQT>
+      <NNhanTBaoThue>
+        <maNNhan>0000000000</maNNhan>
+        <tenNNhan>CÔNG TY MẪU</tenNNhan>
+        <diaChiNNhan>Số 1 Đường Mẫu, Phường Mẫu</diaChiNNhan>
+      </NNhanTBaoThue>
+      <DaiLyThue>
+        <maDLT xsi:nil="true" />
+        <tenDLT xsi:nil="true" />
+      </DaiLyThue>
+      <TTinTBaoThue>
+        <maTBao>844</maTBao>
+        <tenTBao>V/v: Xác nhận nộp hồ sơ thuế điện tử TT19</tenTBao>
+        <pbanTBao>2.4.9</pbanTBao>
+        <soTBao>MAU-000001</soTBao>
+        <ngayTBao>2025-06-21</ngayTBao>
+      </TTinTBaoThue>
+    </TTinChung>
+    <NDungTBao>
+      <trangThai>Y</trangThai>
+      <ngayNopThucTe>2025-06-20T14:14:42.480+07:00</ngayNopThucTe>
+      <HoSoThue>
+        <CTietHoSoThue id="1">
+          <tokhai-phuluc>TỜ KHAI THUẾ GIÁ TRỊ GIA TĂNG (TT80/2021)-01/GTGT(00-Hoạt động sản xuất kinh doanh thông thường)</tokhai-phuluc>
+          <loaiToKhai>Chính thức</loaiToKhai>
+          <kyTinhThue>05/2025</kyTinhThue>
+          <lanNop>1</lanNop>
+        </CTietHoSoThue>
+      </HoSoThue>
+      <IDKhoanNop>
+        <CTietIDKhoanNop id="1">
+          <maDinhDanh />
+          <soTienPNop>1000000</soTienPNop>
+          <maLoaiTien />
+          <tenLoaiTien />
+          <ghiChu />
+        </CTietIDKhoanNop>
+      </IDKhoanNop>
+      <maGiaoDichDTu>MAU-000002</maGiaoDichDTu>
+      <ngayChapNhan>2025-06-20T14:14:42+07:00</ngayChapNhan>
+      <ngayHoanThanh>2025-06-20T16:31:02+07:00</ngayHoanThanh>
+      <thoiGianHenTra xsi:nil="true" />
+      <LyDo>
+        <CTietLyDo id="1">
+          <maNhomLoi />
+          <tenNhomLoi />
+          <maLoi />
+          <tenLoi />
+          <ttinLoiTrenTKhai />
+          <huongDanXuLy />
+          <ghiChu />
+        </CTietLyDo>
+      </LyDo>
+      <duongDan>https://example.invalid</duongDan>
+      <hotline />
+      <email xsi:nil="true" />
+    </NDungTBao>
+  </TBaoThue>
+  <CKyDTu />
+</TBaoThueDTu>

@@ -24,13 +24,13 @@ Status legend:
 
 | Document | Internal code / version | Fixture | Classification | Data accuracy | Renderer | Print/PDF | Signatures | Overall |
 |---|---|---|---|---|---|---|---|---|
-| **01/GTGT** | `842` / 2.8.3 | `gtgt_842_return.xml` | **PASS** | **PASS** (21 indicators) | **PASS** (27 rows) | **PASS** (CSS pagination, 2 A4 pages) · native print pending | NOT VERIFIED | **PASS (render/pagination)** |
+| **01/GTGT** | `842` / 2.8.3 · legacy `01` / 2.1.2–2.6.2 | `gtgt_842_return.xml`, `gtgt_01_legacy_212.xml` | **PASS** | **PASS** (21 indicators) | **PASS** (27 rows; legacy versions reuse the same laid-out tags) | **PASS** (CSS pagination, 2 A4 pages) · native print pending | NOT VERIFIED | **PASS (render/pagination)** |
 | **05/KK-TNCN** | `394` / 2.1.6 | `tncn_394_05kk_tt92.xml` | **PASS** | **PASS** (16 indicators) | **PASS** (16 rows) | **PARTIAL** — Windows prints **1** A4 page, cloned output reported 2 · native print pending | NOT VERIFIED | **PARTIAL (pagination gap)** |
 | **05/QTT-TNCN** | `953` / 2.9.3 | `tncn_953_05qtt.xml` | **PASS** | **PASS** (26 indicators incl. `NVuQToanThay`) | **PASS** (26 rows, authorisation section renumbered 1–6) | **PASS** (CSS pagination, 2 A4 pages) · native print pending | NOT VERIFIED | **PASS (render/pagination)** |
 | **03/TNDN** | `892` / 2.9.4 | `tndn_892_03tndn_v2.9.4.xml` | **PASS** | **PASS** (66 indicators) | **PASS** (74 rows) | **PASS** (CSS pagination, 4 A4 pages + appendix) · native print pending | NOT VERIFIED | **PASS (render/pagination) / visual diff pending** |
 | Financial statements | `B01/BCTC` = `701`/`1254`, `B05` = `702` | — | PASS (code mapping) | structured view | Structured only | IMPLEMENTED | NOT VERIFIED | **PARTIAL** |
-| Tax-authority notice | `843` / 2.5.6 (`01-01/TB-TĐT`), `844` / 2.4.9 (`01-2/TB-TĐT`), `01/TB-BSTT` / 2.1.0 | `notice-843-minimal.xml`, `notice-844-minimal.xml`, `notice-01-TB-BSTT-minimal.xml` | Windows **PASS** (opens and renders 1 page each) | Windows PASS | macOS structured only; specs in `documents/notices/` | Windows PDF **PASS** (1 page each) | NOT VERIFIED | **PARTIAL (Windows spec done)** |
-| Payment voucher | `CHUNGTU` / `MA_CTU=01` | `gnt_chungtu.xml`, `voucher-CT-01-vnd-multi.xml` | Windows **PASS** (4.0.1) | Windows PASS | macOS structured only; spec `documents/paymentVouchers/CT-01.json` | Windows PDF **PASS** (1 page) | NOT VERIFIED | **PARTIAL (Windows spec done)** |
+| Tax-authority notice | `843` / 2.5.6 (`01-01/TB-TĐT`), `844` / 2.4.9 (`01-2/TB-TĐT`), `01/TB-BSTT` / 2.1.0 | `notice_843.xml`, `notice_843_rejected.xml`, `notice_844.xml`, `notice_01_tb_bstt.xml` | **PASS** (macOS, root `TBao` now classified as a notice) | **PASS** (paths from `documents/notices/*.json`) | **IMPLEMENTED** — official prose/table layout for 843 (both branches), 844 (accepted/rejected) and 01/TB-BSTT | Windows PDF **PASS** (1 page each); macOS print pending | NOT VERIFIED | **PARTIAL (renderer implemented, visual diff pending)** |
+| Payment voucher | `CHUNGTU` / `MA_CTU=01` (4.0.1) | `gnt_chungtu.xml`, `voucher_ct01.xml` | **PASS** | **PASS** (paths from `documents/paymentVouchers/CT-01.json`) | **IMPLEMENTED** — C1-02/NS layout with detail table, VND/USD columns, totals and amount in words | Windows PDF **PASS** (1 page); macOS print pending | NOT VERIFIED | **PARTIAL (renderer implemented, visual diff pending)** |
 | Other 406 declaration codes | various | — | PASS (display code from registry) | structured view | Structured only | IMPLEMENTED | NOT VERIFIED | **PARTIAL** |
 
 ### Known coverage gaps (different indicator numbering)
@@ -41,6 +41,7 @@ Status legend:
 | 05/QTT-TNCN legacy | `395` / 2.1.6, 2.4.2 | pre-TT80 layout | structured view + warning |
 | CIT under TT 89/2025 | `2002`, `2003`, `2004` | new 2025 layouts | structured view + warning |
 | BCTC B01/B05 | `701`, `1254`, `702` | multi-table financial statements | structured view + warning |
+| 04/GTGT | `07` / 2.0.x–2.1.2 (also `847`) | no captured Windows layout/spec for the gold-silver-gemstone form | structured view + warning |
 
 These are never presented as “fully rendered”; the classifier still reports the correct
 display code and all source values remain visible.
@@ -172,8 +173,10 @@ Corrections established by running the original:
 | `scripts/validate_fixtures.py` (classification, indicator mapping, formatting) | **PASS** (executed 2026-10-22) |
 | Registry integrity (1,150 entries / 410 codes / 4 specs) | **PASS** |
 | XXE rejection, UTF-16 parsing, malformed XML, oversized/hidden-DTD inputs | **PASS** (Swift XCTest) |
-| Swift XCTest suite (`swift test`) | **PASS** — 45 tests executed, 44 passed, 1 skipped (`ExternalFixturesTests` without `ITAX_FIXTURE_DIR`) |
-| External fixture run (`ITAX_FIXTURE_DIR=../test-data`) | **PASS** — all 9 XML files classified; test now walks subdirectories recursively |
+| Swift XCTest suite (`swift test`) | **PASS** — 54 tests executed, 53 passed, 1 skipped (`ExternalFixturesTests` without `ITAX_FIXTURE_DIR`) |
+| External fixture run (`ITAX_FIXTURE_DIR=../test-data`) | **PASS** — all 9 XML files classified and rendered; test walks subdirectories recursively |
+| Real-file run (`ITAX_FIXTURE_DIR="../realdata to test"`, local only) | **PASS** — 12 files parsed and rendered; 9 × 01/GTGT full renderer (incl. legacy 2.1.2 / 2.5.0), 3 × 04/GTGT structured view (no captured layout) |
+| Notice/voucher renderer tests | **PASS** — 843 accepted + rejected, 844 accepted, 01/TB-BSTT, CT-01 layout and amount-in-words |
 | Appendix layout tests | **PASS** — NQ142 sections/totals/difference, 150-row no-truncation, NQ43 flat layout |
 | macOS app build (`scripts/build_app.sh`) | **PASS** — `.app` built and launched on macOS 15 / x86_64 |
 | App file-open, drag-and-drop | File-open path covered by tests and app launch; drag-and-drop not automated |

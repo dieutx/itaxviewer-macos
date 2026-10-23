@@ -153,7 +153,22 @@ EXPECTED = {
         "formatted": {"A1": "(1.000)", "B1": "250", "E": "10,5"},
     },
     "gnt_chungtu": {"kind": "Giấy nộp tiền / chứng từ", "display": "CT-01", "code": "01"},
+    "voucher_ct01": {"kind": "Giấy nộp tiền / chứng từ", "display": "CT-01", "code": "01"},
     "tbao_107_bstt": {"kind": "Thông báo / văn bản của cơ quan thuế", "display": "01/TB-BSTT", "code": "107"},
+    "notice_843": {"kind": "Thông báo / văn bản của cơ quan thuế", "display": None, "code": "843"},
+    "notice_843_rejected": {"kind": "Thông báo / văn bản của cơ quan thuế", "display": None, "code": "843"},
+    "notice_844": {"kind": "Thông báo / văn bản của cơ quan thuế", "display": None, "code": "844"},
+    "notice_01_tb_bstt": {"kind": "Thông báo / văn bản của cơ quan thuế", "display": "01/TB-BSTT", "code": None},
+    "gtgt_01_legacy_212": {
+        "kind": "Tờ khai thuế",
+        "display": "01/GTGT",
+        "code": "01",
+        "indicators": {
+            "22": "5000000", "23": "1000000000", "24": "80000000",
+            "25": "80000000", "36": "-115000000", "41": "115000000", "43": "115000000",
+        },
+        "formatted": {"23": "1.000.000.000", "36": "(115.000.000)"},
+    },
 }
 
 REGISTRY = json.loads((RES / "form-registry.json").read_text(encoding="utf-8"))
@@ -171,7 +186,7 @@ def classify(fixture: Fixture) -> tuple[str, str | None, str | None]:
         return "Tờ khai thuế", (info or {}).get("displayCode"), code
     if root == "CHUNGTU":
         return "Giấy nộp tiền / chứng từ", "CT-01", "01"
-    if root in ("TBaoThueDTu", "THONGBAO", "THONG_BAO"):
+    if root in ("TBaoThueDTu", "THONGBAO", "THONG_BAO", "TBao"):
         mso = next(descendants(fixture.root, "MSo"), None)
         code = next(descendants(fixture.root, "maTBao"), None)
         return ("Thông báo / văn bản của cơ quan thuế",

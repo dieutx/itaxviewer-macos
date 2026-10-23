@@ -54,7 +54,8 @@
 ## 7. Test
 
 - Fixture: `documents/fixtures/notice-844-minimal.xml`
-- Test name: chưa có
+- Test name: `testNotice844AcceptedBranch`
+- Kết quả macOS: PASS (nhánh Y; nhánh N dùng cùng bảng lý do như 843)
 - Kết quả: bản gốc render OK
 - Ngày chạy: 2026-10-22
 

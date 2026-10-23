@@ -57,7 +57,8 @@
 ## 7. Test
 
 - Fixture: `documents/fixtures/notice-01-TB-BSTT-minimal.xml`
-- Test name: chưa có
+- Test name: `testTBao0101BSTTUsesOfficialNoticeLayout`
+- Kết quả macOS: PASS (root `TBao` được phân loại là thông báo)
 - Kết quả: bản gốc render OK; fixture cũ `tbao_107_bstt.xml` bị từ chối
 - Ngày chạy: 2026-10-22
 

@@ -33,7 +33,13 @@ public final class HTMLRenderer {
         case .full(let spec):
             body = renderFull(document: document, classification: classification, spec: spec)
         case .generic:
-            body = renderGeneric(document: document, classification: classification)
+            if let voucher = VoucherRenderer(document: document).render() {
+                body = voucher
+            } else if let notice = NoticeRenderer(document: document).render() {
+                body = notice
+            } else {
+                body = renderGeneric(document: document, classification: classification)
+            }
         case .none:
             body = "<p>Không hỗ trợ hiển thị tài liệu này.</p>"
         }
@@ -775,6 +781,37 @@ public final class HTMLRenderer {
         .appendix-block + .appendix-block { page-break-before: always; }
         .data-table .path { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 9pt; color: #333; }
         .data-table td { font-size: 10pt; }
+        .notice-header { margin-bottom: 8px; }
+        .notice-masthead { width: 100%; border-collapse: collapse; }
+        .notice-masthead td { vertical-align: top; border: none; padding: 0; }
+        .notice-agency { width: 44%; text-align: center; font-size: 10.5pt; line-height: 1.3; }
+        .notice-form { width: 56%; text-align: center; font-size: 10.5pt; line-height: 1.45; }
+        .notice-number { margin-top: 2px; }
+        .notice-date { font-style: italic; }
+        .notice-body p { margin: 5px 0; text-align: justify; line-height: 1.45; }
+        .notice-fields p { margin: 2px 0; text-indent: 12px; }
+        table.notice-table { width: 100%; border-collapse: collapse; margin: 6px 0 8px 0; }
+        table.notice-table th, table.notice-table td { border: 1px solid #000; padding: 3px 5px;
+            font-size: 10.5pt; vertical-align: top; }
+        table.notice-table th { text-align: center; font-weight: bold; }
+        .notice-signature { margin-top: 26px; page-break-inside: avoid; }
+        .voucher-form { text-align: right; font-size: 10.5pt; }
+        .voucher-meta { width: 100%; border-collapse: collapse; margin: 6px 0; }
+        .voucher-meta td { border: none; padding: 2px 4px; font-size: 10.5pt; }
+        table.voucher-fields { width: 100%; border-collapse: collapse; margin: 6px 0; }
+        table.voucher-fields td { border: none; padding: 2px 4px; font-size: 10.5pt; vertical-align: top; }
+        table.voucher-fields .vlabel { width: 20%; font-weight: bold; }
+        .voucher-account-line { font-size: 10.5pt; }
+        .voucher-section-title { font-weight: bold; text-align: center; margin: 8px 0 3px 0; }
+        table.voucher-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+        table.voucher-table th, table.voucher-table td { border: 1px solid #000; padding: 3px 4px;
+            font-size: 9.5pt; vertical-align: middle; }
+        table.voucher-table th { text-align: center; font-weight: bold; }
+        table.voucher-table tfoot td { font-weight: bold; }
+        .voucher-words { margin: 6px 0; font-size: 10.5pt; }
+        table.voucher-kbac { width: 100%; border-collapse: collapse; margin: 4px 0 8px 0; }
+        table.voucher-kbac td { border: none; padding: 3px 4px; font-size: 10.5pt; }
+        .voucher-signature { margin-top: 10px; }
         @page { size: A4 \(landscape ? "landscape" : "portrait"); margin: 20mm 20mm 10mm 20mm; }
         @media print {
           html, body { background: #fff !important; }

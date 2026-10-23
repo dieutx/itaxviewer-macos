@@ -106,14 +106,30 @@ public struct FormRegistry: Decodable {
 
     public func codeInfo(_ code: String) -> CodeInfo? { codes[code] }
 
+    /// Legacy `maTKhai` values that were renumbered to a new code without any
+    /// change to the printed form. The 01/GTGT declaration moved from `01`
+    /// (TT 156/2013, XML 2.0.6–2.6.2) to `842` (TT 80/2021, 2.5.1+); the
+    /// indicator tags are identical, verified against real 2.1.2 and 2.5.0
+    /// files. Only map codes whose structure has actually been checked.
+    private static let legacyCodeAliases: [String: String] = [
+        "01": "842"
+    ]
+
     /// Mirrors the original lookup: exact code, then version-insensitive match,
-    /// and the historical version rewrite for forms 42/43/44/103.
+    /// then a verified legacy-code alias, and the historical version rewrite
+    /// for forms 42/43/44/103.
     public func resolve(code: String, version: String?, filingType: String?) -> SupportedForm? {
         let effectiveVersion = normalizedVersion(code: code, version: version)
         if let exact = supported.first(where: { $0.maTKhai == code && $0.versions.contains(effectiveVersion ?? "") }) {
             return exact
         }
-        return supported.first { $0.maTKhai == code }
+        if let direct = supported.first(where: { $0.maTKhai == code }) {
+            return direct
+        }
+        if let alias = Self.legacyCodeAliases[code] {
+            return supported.first { $0.maTKhai == alias }
+        }
+        return nil
     }
 
     public func normalizedVersion(code: String, version: String?) -> String? {

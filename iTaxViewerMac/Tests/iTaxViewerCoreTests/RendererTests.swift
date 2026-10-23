@@ -82,6 +82,85 @@ final class RendererTests: XCTestCase {
         XCTAssertEqual(rendered.orientation, .portrait)
     }
 
+    func testLegacyGTGTVersionRendersOfficialLayout() throws {
+        let (_, classification, rendered) = try render("gtgt_01_legacy_212")
+        XCTAssertTrue(classification.support.isFull)
+        let html = rendered.html
+        XCTAssertTrue(html.contains("TỜ KHAI THUẾ GIÁ TRỊ GIA TĂNG"))
+        XCTAssertTrue(html.contains("[22]"))
+        XCTAssertTrue(html.contains("[43]"))
+        XCTAssertTrue(html.contains("1.000.000.000"))
+        XCTAssertTrue(html.contains("(115.000.000)"))
+        XCTAssertTrue(html.contains("@page { size: A4 portrait"))
+    }
+
+    func testNotice843UsesOfficialLayout() throws {
+        let (_, classification, rendered) = try render("notice_843")
+        XCTAssertEqual(classification.kind, .notice)
+        let html = rendered.html
+        XCTAssertTrue(html.contains("Mẫu số: <b>01-01/TB-TĐT</b>"))
+        XCTAssertTrue(html.contains("V/v: Tiếp nhận hồ sơ khai thuế điện tử"))
+        XCTAssertTrue(html.contains("CÔNG TY MẪU"))
+        XCTAssertTrue(html.contains("14 giờ 14 phút ngày 20 tháng 06 năm 2025"))
+        XCTAssertTrue(html.contains("01/GTGT - TỜ KHAI THUẾ GIÁ TRỊ GIA TĂNG"))
+        XCTAssertTrue(html.contains("Mã hồ sơ tra cứu trên Cổng dịch vụ công quốc gia"))
+        // The notice layout replaces the raw path/value dump.
+        XCTAssertFalse(html.contains("class=\"path\""))
+    }
+
+    func testNotice843RejectedBranchShowsReasonTable() throws {
+        let (_, _, rendered) = try render("notice_843_rejected")
+        let html = rendered.html
+        XCTAssertTrue(html.contains("Lý do không tiếp nhận"))
+        XCTAssertTrue(html.contains("class=\"notice-table\""))
+        XCTAssertTrue(html.contains("Đề nghị"))
+    }
+
+    func testNotice844AcceptedBranch() throws {
+        let (_, _, rendered) = try render("notice_844")
+        let html = rendered.html
+        XCTAssertTrue(html.contains("Mẫu số: <b>01-2/TB-TĐT</b>"))
+        XCTAssertTrue(html.contains("V/v: Chấp nhận việc nộp hồ sơ khai thuế điện tử"))
+        XCTAssertTrue(html.contains("CƠ QUAN THUẾ MẪU"))
+        XCTAssertTrue(html.contains("ngày 20/06/2025"))
+        XCTAssertFalse(html.contains("class=\"path\""))
+    }
+
+    func testTBao0101BSTTUsesOfficialNoticeLayout() throws {
+        let (_, classification, rendered) = try render("notice_01_tb_bstt")
+        XCTAssertEqual(classification.kind, .notice)
+        XCTAssertEqual(classification.displayCode, "01/TB-BSTT")
+        let html = rendered.html
+        XCTAssertTrue(html.contains("Mẫu số: <b>01/TB-BSTT-NNT</b>"))
+        XCTAssertTrue(html.contains("THÔNG BÁO (Lần 1)"))
+        XCTAssertTrue(html.contains("CÔNG TY TNHH DỮ LIỆU MẪU"))
+        XCTAssertTrue(html.contains("CỤC THUẾ THÀNH PHỐ HÀ NỘI"))
+        XCTAssertTrue(html.contains("15 tháng 11 năm 2026"))
+        XCTAssertFalse(html.contains("class=\"path\""))
+    }
+
+    func testVoucherCT01UsesOfficialLayout() throws {
+        let (_, classification, rendered) = try render("voucher_ct01")
+        XCTAssertEqual(classification.kind, .paymentVoucher)
+        let html = rendered.html
+        XCTAssertTrue(html.contains("GIẤY NỘP TIỀN VÀO NGÂN SÁCH NHÀ NƯỚC"))
+        XCTAssertTrue(html.contains("Mẫu số: <b>C1-02/NS</b>"))
+        XCTAssertTrue(html.contains("Chuyển khoản [X]"))
+        XCTAssertTrue(html.contains("VND [X]"))
+        XCTAssertTrue(html.contains("1.234.580.235"))
+        XCTAssertTrue(html.contains("Một tỷ hai trăm ba mươi bốn triệu năm trăm tám mươi nghìn hai trăm ba mươi lăm đồng"))
+        XCTAssertTrue(html.contains("PHẦN KBNN GHI"))
+        XCTAssertFalse(html.contains("class=\"path\""))
+    }
+
+    func testAmountInWordsHandlesZeroAndSmallValues() {
+        let doc = try? Fixtures.document("voucher_ct01")
+        let renderer = VoucherRenderer(document: doc!)
+        XCTAssertEqual(renderer.amountInWords("0"), "Không đồng")
+        XCTAssertEqual(renderer.amountInWords("15"), "Mười lăm đồng")
+        XCTAssertEqual(renderer.amountInWords("1005"), "Một nghìn không trăm lẻ năm đồng")
+    }
+
     func testTNDNRendersParenthesisedNegativeValue() throws {
         let (_, _, rendered) = try render("tndn_892_03tndn_v2.9.4")
         XCTAssertTrue(rendered.html.contains("(1.000)"))
@@ -199,8 +278,11 @@ final class RendererTests: XCTestCase {
     func testGenericVoucherPreservesSourceFields() throws {
         let (_, classification, rendered) = try render("gnt_chungtu")
         if case .generic = classification.support {} else { XCTFail("Expected generic") }
-        XCTAssertTrue(rendered.html.contains("SO_GNT"))
-        XCTAssertTrue(rendered.html.contains("000000107467693-01309202600000001"))
+        // CT-01 now uses the captured C1-02/NS layout instead of the raw
+        // path/value dump; all values are still present in the rendered form.
+        XCTAssertTrue(rendered.html.contains("GIẤY NỘP TIỀN VÀO NGÂN SÁCH NHÀ NƯỚC"))
+        XCTAssertTrue(rendered.html.contains("Tổng số tiền ghi bằng chữ"))
+        XCTAssertFalse(rendered.html.contains("class=\"path\""))
     }
 
     func testNoticeShowsIssuer() throws {

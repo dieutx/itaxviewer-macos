@@ -64,9 +64,13 @@ def classify(root):
         if code is None or version is None:
             return "Tờ khai thuế", display, code, version, "invalid: missing maTKhai/pbanTKhaiXML"
         supported = (code, display) in SUPPORTED
-        if supported and version not in next(
-            (f["versions"] for f in REGISTRY["supported"] if f["maTKhai"] == code), []
-        ):
+        # Verified legacy alias: 01/GTGT moved from maTKhai 01 to 842 with the
+        # same indicator tags (checked against real 2.1.2 / 2.5.0 files).
+        matched = next((f for f in REGISTRY["supported"] if f["maTKhai"] == code), None)
+        if not supported and code == "01" and (("842", "01/GTGT") in SUPPORTED):
+            supported = True
+            matched = next(f for f in REGISTRY["supported"] if f["maTKhai"] == "842")
+        if supported and version not in (matched or {}).get("versions", []):
             note = f"supported layout, unverified version {version}"
         elif supported:
             note = "full renderer"

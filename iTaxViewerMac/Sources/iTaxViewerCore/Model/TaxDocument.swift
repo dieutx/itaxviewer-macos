@@ -177,6 +177,11 @@ enum MetadataExtractor {
             meta.taxpayerName = meta.taxpayerName ?? value(tbao, "tenNNT")
             meta.taxpayerTaxCode = meta.taxpayerTaxCode ?? value(tbao, "mst")
             meta.formDescription = meta.formDescription ?? value(tbao, "MSo")
+        } else if let info = root.firstDescendant(named: "TTinTBaoThue") {
+            // TBaoThueDTu family: maTBao/pbanTBao/tenTBao live in TTinTBaoThue.
+            meta.noticeCode = value(info, "maTBao") ?? value(root, "maTBao")
+            meta.noticeVersion = value(info, "pbanTBao") ?? value(root, "pbanTBao")
+            meta.title = meta.title ?? value(info, "tenTBao")
         }
 
         if root.localName == "CHUNGTU" {

@@ -56,7 +56,8 @@
 ## 7. Test
 
 - Fixture: `documents/fixtures/voucher-CT-01-vnd-multi.xml`
-- Test name: chưa có (macOS renderer chưa cập nhật)
+- Test name: `testVoucherCT01UsesOfficialLayout`, `testAmountInWordsHandlesZeroAndSmallValues`
+- Kết quả macOS: PASS (layout C1-02/NS + số tiền bằng chữ)
 - Kết quả: bản gốc mở và render OK (ảnh/PDF ở trên)
 - Ngày chạy: 2026-10-22
 

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HSoThueDTu xmlns="http://kekhaithue.gdt.gov.vn/TKhaiThue">
+  <HSoKhaiThue>
+    <TTinChung>
+      <TTinDVu>
+        <maDVu>HTKK</maDVu>
+        <tenDVu>HỖ TRỢ KÊ KHAI THUẾ</tenDVu>
+        <pbanDVu>4.5.1</pbanDVu>
+      </TTinDVu>
+      <TTinTKhaiThue>
+        <TKhaiThue>
+          <maTKhai>01</maTKhai>
+          <tenTKhai>Tờ khai thuế giá trị gia tăng (GTGT)</tenTKhai>
+          <pbanTKhaiXML>2.1.2</pbanTKhaiXML>
+          <loaiTKhai>C</loaiTKhai>
+          <KyKKhaiThue>
+            <kieuKy>Y</kieuKy>
+            <kyKKhai>2019</kyKKhai>
+          </KyKKhaiThue>
+          <ngayLapTKhai>2020-01-20</ngayLapTKhai>
+        </TKhaiThue>
+        <NNT>
+          <mst>0000000000</mst>
+          <tenNNT>CÔNG TY TNHH MẪU TỔNG HỢP</tenNNT>
+          <dchiNNT>số 1 Đường Mẫu, Phường Mẫu</dchiNNT>
+        </NNT>
+      </TTinTKhaiThue>
+    </TTinChung>
+    <CTieuTKhaiChinh>
+      <tieuMucHachToan>1701</tieuMucHachToan>
+      <ct21>false</ct21>
+      <ct22>5000000</ct22>
+      <GiaTriVaThueGTGTHHDVMuaVao>
+        <ct23>1000000000</ct23>
+        <ct24>80000000</ct24>
+      </GiaTriVaThueGTGTHHDVMuaVao>
+      <ct25>80000000</ct25>
+      <ct26>0</ct26>
+      <HHDVBRaChiuThueGTGT>
+        <ct27>2000000000</ct27>
+        <ct28>160000000</ct28>
+      </HHDVBRaChiuThueGTGT>
+      <ct29>0</ct29>
+      <HHDVBRaChiuTSuat5>
+        <ct30>0</ct30>
+        <ct31>0</ct31>
+      </HHDVBRaChiuTSuat5>
+      <HHDVBRaChiuTSuat10>
+        <ct32>2000000000</ct32>
+        <ct33>160000000</ct33>
+      </HHDVBRaChiuTSuat10>
+      <TongDThuVaThueGTGTHHDVBRa>
+        <ct34>2000000000</ct34>
+        <ct35>160000000</ct35>
+      </TongDThuVaThueGTGTHHDVBRa>
+      <ct36>-115000000</ct36>
+      <ct37>0</ct37>
+      <ct38>0</ct38>
+      <ct39>0</ct39>
+      <ct40a>0</ct40a>
+      <ct40b>0</ct40b>
+      <ct40>0</ct40>
+      <ct41>115000000</ct41>
+      <ct42>0</ct42>
+      <ct43>115000000</ct43>
+    </CTieuTKhaiChinh>
+  </HSoKhaiThue>
+</HSoThueDTu>

@@ -31,15 +31,20 @@ final class ExternalFixturesTests: XCTestCase {
         XCTAssertFalse(files.isEmpty, "No .xml files in \(directory.path)")
 
         let registry = try FormRegistry.bundled()
+        let renderer = HTMLRenderer(registry: registry)
         var failures: [String] = []
 
         for file in files {
             do {
                 let document = try TaxDocument.load(url: file)
                 let classification = try DocumentClassifier.classify(document, registry: registry)
+                let rendered = renderer.render(document: document, classification: classification)
+                XCTAssertFalse(rendered.html.isEmpty)
                 let fields = document.root.leaves().count
                 print("OK \(file.lastPathComponent) | \(classification.displayCode ?? "—") | "
-                      + "\(classification.kind.rawValue) | fields=\(fields)")
+                      + "\(classification.kind.rawValue) | fields=\(fields) | "
+                      + "\(classification.support.isFull ? "full" : "generic") | "
+                      + "html=\(rendered.html.count) bytes")
             } catch {
                 failures.append("\(file.lastPathComponent): \(error.localizedDescription)")
             }
