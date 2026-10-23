@@ -79,7 +79,7 @@ final class AppModel: ObservableObject {
     private let releaseClient = GitHubReleaseClient()
 
     private init() {
-        automaticUpdateCheck = UserDefaults.standard.object(forKey: "itax.updateCheck.auto") as? Bool ?? true
+        automaticUpdateCheck = false
         do {
             let registry = try FormRegistry.bundled()
             self.registry = registry
@@ -95,7 +95,6 @@ final class AppModel: ObservableObject {
             self.lastError = "Không nạp được danh mục biểu mẫu: \(error.localizedDescription)"
         }
         loadRecent()
-        autoCheckForUpdates()
     }
 
     var selectedDocument: OpenDocument? {

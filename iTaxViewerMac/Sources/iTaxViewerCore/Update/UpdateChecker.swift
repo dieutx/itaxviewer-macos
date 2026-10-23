@@ -16,11 +16,14 @@ public struct AppRelease: Equatable, Sendable {
 }
 
 public enum UpdateError: Error, LocalizedError {
+    case offlineMode
     case badResponse(Int)
     case invalidPayload
 
     public var errorDescription: String? {
         switch self {
+        case .offlineMode:
+            return "Bản dựng này hoạt động ngoại tuyến; kiểm tra cập nhật qua mạng đã tắt."
         case .badResponse(let code):
             return "Máy chủ cập nhật trả về mã \(code)."
         case .invalidPayload:
@@ -29,13 +32,8 @@ public enum UpdateError: Error, LocalizedError {
     }
 }
 
-/// Minimal, privacy-preserving release check against the public GitHub
-/// releases API.
-///
-/// Only the application version is sent in the user agent. No document
-/// content, taxpayer data, identifiers or telemetry are transmitted, and the
-/// response is never cached to disk. This is the only network request the app
-/// makes; it can be disabled in Settings/UserDefaults (`itax.updateCheck.disabled`).
+/// Compatibility surface retained for version parsing. This offline build
+/// rejects release checks before constructing a request or contacting a host.
 public struct GitHubReleaseClient: Sendable {
     public let owner: String
     public let repository: String
@@ -50,34 +48,7 @@ public struct GitHubReleaseClient: Sendable {
     }
 
     public func latestRelease(currentVersion: String) async throws -> AppRelease? {
-        var request = URLRequest(url: URL(string: "https://api.github.com/repos/\(owner)/\(repository)/releases/latest")!)
-        request.httpMethod = "GET"
-        request.timeoutInterval = 12
-        request.cachePolicy = .reloadIgnoringLocalAndRemoteCacheData
-        request.setValue("application/vnd.github+json", forHTTPHeaderField: "Accept")
-        request.setValue("iTaxViewerMac/\(currentVersion)", forHTTPHeaderField: "User-Agent")
-
-        let (data, response) = try await session.data(for: request)
-        guard let http = response as? HTTPURLResponse else {
-            throw UpdateError.invalidPayload
-        }
-        if http.statusCode == 404 { return nil }
-        guard http.statusCode == 200 else {
-            throw UpdateError.badResponse(http.statusCode)
-        }
-        guard let object = try JSONSerialization.jsonObject(with: data) as? [String: Any],
-              let tag = object["tag_name"] as? String,
-              let urlString = object["html_url"] as? String,
-              let pageURL = URL(string: urlString) else {
-            throw UpdateError.invalidPayload
-        }
-        let version = Self.normalizedVersion(tag)
-        guard AppVersion.isNewer(version, than: currentVersion) else { return nil }
-        let publishedAt = (object["published_at"] as? String).flatMap(Self.isoDate)
-        return AppRelease(version: version,
-                          pageURL: pageURL,
-                          notes: object["body"] as? String,
-                          publishedAt: publishedAt)
+        throw UpdateError.offlineMode
     }
 
     static func normalizedVersion(_ raw: String) -> String {

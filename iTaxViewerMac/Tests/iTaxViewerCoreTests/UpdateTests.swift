@@ -3,6 +3,17 @@ import XCTest
 
 final class AppVersionTests: XCTestCase {
 
+    func testOfflineBuildRefusesReleaseFetch() async {
+        do {
+            _ = try await GitHubReleaseClient().latestRelease(currentVersion: "1.0.0")
+            XCTFail("Offline build must not fetch a release")
+        } catch UpdateError.offlineMode {
+            // Expected: no URLRequest is constructed by the client.
+        } catch {
+            XCTFail("Expected deterministic offline refusal")
+        }
+    }
+
     func testNewerPatchAndMinor() {
         XCTAssertTrue(AppVersion.isNewer("1.0.1", than: "1.0.0"))
         XCTAssertTrue(AppVersion.isNewer("1.2.0", than: "1.1.9"))

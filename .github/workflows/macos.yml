@@ -73,7 +73,7 @@ jobs:
 
       - name: Native WebKit print and PDF smoke checks
         working-directory: iTaxViewerMac
-        run: swift run iTaxViewerQA
+        run: perl -e 'alarm 240; exec @ARGV' swift run iTaxViewerQA
 
       - name: Upload native QA evidence
         if: always()

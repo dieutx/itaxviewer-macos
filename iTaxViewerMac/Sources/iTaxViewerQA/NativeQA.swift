@@ -8,6 +8,7 @@ import iTaxViewerCore
 @main
 enum NativeQA {
     @MainActor static func main() {
+        setbuf(stdout, nil)
         let application = NSApplication.shared
         application.setActivationPolicy(.accessory)
         Task { @MainActor in
@@ -55,6 +56,7 @@ private final class FixtureRunner {
         var results: [FixtureResult] = []
         for input in inputs {
             let fixture = input.lastPathComponent
+            print("CHECK \(fixture)")
             do {
                 if fixture == "xxe_attack.xml" {
                     do {
@@ -102,6 +104,7 @@ private final class FixtureRunner {
         window.orderFront(nil)
         defer { web.navigationDelegate = nil; window.orderOut(nil); window.contentView = nil }
         try await navigation.load(rendered.html, in: web)
+        print("STAGE \(fixture) loaded")
         // Allow the native view's layout/display cycle to settle after didFinish.
         try await Task.sleep(nanoseconds: 250_000_000)
         let base = output.appendingPathComponent((fixture as NSString).deletingPathExtension)
@@ -127,7 +130,16 @@ private final class FixtureRunner {
         let operation = web.printOperation(with: info)
         operation.showsPrintPanel = false
         operation.showsProgressPanel = false
-        guard operation.run() else { throw QAError(stage: "native-print") }
+        print("STAGE \(fixture) native-print")
+        // Suspend the Swift task before entering AppKit's nested print loop.
+        // WebKit may schedule main-actor work while preparing print pages.
+        let printed = await withCheckedContinuation { continuation in
+            DispatchQueue.main.async {
+                continuation.resume(returning: operation.run())
+            }
+        }
+        guard printed else { throw QAError(stage: "native-print") }
+        print("STAGE \(fixture) pdf-check")
         guard let pdf = PDFDocument(url: pdfURL), pdf.pageCount > 0 else { throw QAError(stage: "pdf-read") }
         var text = ""
         for index in 0..<pdf.pageCount {

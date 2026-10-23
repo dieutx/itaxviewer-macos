@@ -14,12 +14,6 @@ struct iTaxViewerMacApp: App {
         }
         .windowToolbarStyle(.unified(showsTitle: true))
         .commands {
-            CommandGroup(after: .appInfo) {
-                Button("Kiểm tra cập nhật…") { model.checkForUpdates() }
-                    .disabled(model.isCheckingForUpdates)
-                Toggle("Tự động kiểm tra cập nhật", isOn: $model.automaticUpdateCheck)
-                Divider()
-            }
             CommandGroup(replacing: .newItem) {
                 Button("Mở tệp hồ sơ…") { model.showOpenPanel() }
                     .keyboardShortcut("o", modifiers: .command)

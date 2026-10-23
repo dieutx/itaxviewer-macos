@@ -64,6 +64,22 @@ scripts/build_app.sh --universal --dmg
 
 The bundle is produced at `iTaxViewerMac/build/iTaxViewerMac.app`.
 
+From Windows, use the committed code on a macOS GitHub Actions runner:
+
+```powershell
+powershell -File iTaxViewerMac/scripts/Build-MacOS.ps1 -Ref main
+```
+
+This downloads a universal ZIP, DMG and SHA-256 manifest into `iTaxViewerMac/build/downloads`.
+The helper uploads no local XML. Windows cannot compile AppKit/SwiftUI for macOS locally.
+The viewer itself has no network entitlement and does not check for updates.
+
+The new version-bound layouts are `864` (2.9.3), `395` (2.4.2), `07` (2.4.1/2.5.0)
+and `847` (2.5.1/2.6.8/2.7.4). Standard TT80 `01/KHBS` and `01-1/KHBS` appendices
+also have dedicated layouts for the exact parent versions in the bundled mapping.
+These are independently recreated from traceable field facts; Windows visual and
+pagination comparison remains pending. Unmapped versions retain the structured view.
+
 Open it with:
 
 ```bash
