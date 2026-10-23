@@ -155,6 +155,18 @@ private final class FixtureRunner {
                 throw QAError(stage: "pdf-empty-page")
             }
             text += pageText
+            // Render actual PDF pages, not only the screen viewport, for
+            // visual review of pagination, clipping and the final page.
+            let thumbnail = page.thumbnail(of: NSSize(width: expectedWidth * 1.5,
+                                                      height: expectedHeight * 1.5), for: .mediaBox)
+            if let tiff = thumbnail.tiffRepresentation,
+               let bitmap = NSBitmapImageRep(data: tiff),
+               let png = bitmap.representation(using: .png, properties: [:]) {
+                let name = (fixture as NSString).deletingPathExtension + "-page-\(index + 1).png"
+                try png.write(to: output.appendingPathComponent(name), options: .atomic)
+            } else {
+                throw QAError(stage: "pdf-page-image")
+            }
         }
         let normalized = compact(text)
         // Compare each distinct numeric table-cell value in the HTML to native
