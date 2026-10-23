@@ -36,10 +36,16 @@ struct DocumentWebView: NSViewRepresentable {
     }
 
     func updateNSView(_ webView: WKWebView, context: Context) {
+        let sourceChanged = context.coordinator.sourceName != sourceName
         context.coordinator.sourceName = sourceName
         if context.coordinator.lastHTML != html {
+            context.coordinator.finishedCurrentHTML = false
             context.coordinator.lastHTML = html
             webView.loadHTMLString(html, baseURL: nil)
+        } else if sourceChanged && context.coordinator.finishedCurrentHTML {
+            // E.g. UTF-8 and UTF-16 fixtures can produce identical HTML. The
+            // selected document is already displayed; WebKit need not reload.
+            LocalQAReport.record(file: sourceName, stage: "webview-loaded")
         }
         if abs(webView.pageZoom - zoom) > 0.001 {
             webView.pageZoom = zoom
@@ -50,16 +56,20 @@ struct DocumentWebView: NSViewRepresentable {
     final class Coordinator: NSObject, WKNavigationDelegate {
         var lastHTML: String?
         var sourceName = ""
+        var finishedCurrentHTML = false
 
         func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+            finishedCurrentHTML = true
             LocalQAReport.record(file: sourceName, stage: "webview-loaded")
         }
 
         func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+            finishedCurrentHTML = false
             LocalQAReport.record(file: sourceName, stage: "webview-failed")
         }
 
         func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+            finishedCurrentHTML = false
             LocalQAReport.record(file: sourceName, stage: "webview-failed")
         }
 

@@ -71,8 +71,12 @@ jobs:
           [[ -n "$APP_PID" ]] || { echo "App process did not launch" >&2; exit 1; }
           sleep 3
           kill -0 "$APP_PID"
-          open -a "$APP" "$PWD/Tests/iTaxViewerCoreTests/Fixtures/gtgt_842_return.xml"
-          python3 scripts/check_app_open.py "$OPEN_REPORT" gtgt_842_return.xml
+          for fixture in "$PWD"/Tests/iTaxViewerCoreTests/Fixtures/*.xml; do
+            name="$(basename "$fixture")"
+            [[ "$name" == "xxe_attack.xml" ]] && continue
+            open -a "$APP" "$fixture"
+            python3 scripts/check_app_open.py "$OPEN_REPORT" "$name"
+          done
           echo "Native app bundle launched and loaded the file; Finder gestures and drag/drop remain manual checks."
 
       - name: Native WebKit print and PDF smoke checks
