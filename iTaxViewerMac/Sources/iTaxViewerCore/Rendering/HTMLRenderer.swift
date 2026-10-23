@@ -90,7 +90,7 @@ public final class HTMLRenderer {
 
         html += "</div>"
         html += renderFooter(document: document)
-        return html
+        return spec.maTKhai == "394" ? "<div class=\"withholding-tt92\">\(html)</div>" : html
     }
 
     private func renderGTGTTable(document: TaxDocument, spec: FormSpec) -> String {
@@ -149,7 +149,13 @@ public final class HTMLRenderer {
         let context = CTieuTKhaiChinh(root: document.root)
         var insertedQuartersHeading = false
         var s = "<table class=\"tax-table five\">"
-        s += "<colgroup><col style=\"width:7%\"><col><col style=\"width:10%\"><col style=\"width:12%\"><col style=\"width:22%\"></colgroup>"
+        if spec.maTKhai == "394" {
+            // Relative widths measured from reference-tncn-05kk.png. The label
+            // column occupies about two thirds of the table in the original.
+            s += "<colgroup><col style=\"width:5%\"><col><col style=\"width:8%\"><col style=\"width:8%\"><col style=\"width:12%\"></colgroup>"
+        } else {
+            s += "<colgroup><col style=\"width:7%\"><col><col style=\"width:10%\"><col style=\"width:12%\"><col style=\"width:22%\"></colgroup>"
+        }
         s += "<thead><tr><th>STT</th><th>Chỉ tiêu</th><th>Mã chỉ tiêu</th><th>Đơn vị tính</th><th>Số người / Số tiền</th></tr></thead><tbody>"
 
         for row in spec.rows {
@@ -970,6 +976,11 @@ public final class HTMLRenderer {
           .paper { width: auto !important; max-width: none !important; margin: 0 !important; padding: 0 !important;
                    box-shadow: none !important; }
           .no-print { display: none !important; }
+          .withholding-tt92 .taxpayer td { font-size: 10pt; padding: 1px 4px; }
+          .withholding-tt92 .tax-table td, .withholding-tt92 .tax-table th {
+            font-size: 9.5pt; padding: 2px 3px; line-height: 1.15;
+          }
+          .withholding-tt92 .doc-footer { margin-top: 10px; }
           /* Keep individual rows intact, but let the table body break between
              rows. Avoid on tbody/thead pushes the whole table to a new page
              and leaves page 1 nearly blank. */
