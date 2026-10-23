@@ -534,6 +534,11 @@ public final class HTMLRenderer {
         var s = "<div class=\"appendix\" style=\"page-break-before: always;\">"
         var warnings: [String] = []
         for child in pluc.children {
+            if let correction = AppendixCorrectionRenderer(document: document).render(child) {
+                s += correction
+                warnings.append("Phụ lục \(child.localName) được dựng từ đường dẫn và nhãn biểu mẫu TT80; đối chiếu ảnh và phân trang Windows đang chờ kiểm chứng.")
+                continue
+            }
             if let known = renderKnownAppendix(child, document: document) {
                 s += known
             } else {

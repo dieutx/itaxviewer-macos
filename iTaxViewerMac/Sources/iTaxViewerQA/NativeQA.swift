@@ -105,6 +105,9 @@ private final class FixtureRunner {
         // Allow the native view's layout/display cycle to settle after didFinish.
         try await Task.sleep(nanoseconds: 250_000_000)
         let base = output.appendingPathComponent((fixture as NSString).deletingPathExtension)
+        // Synthetic fixtures only: retain the independently authored HTML so
+        // Windows can compare cell text with a local MSXML oracle output.
+        try rendered.html.write(to: base.appendingPathExtension("html"), atomically: true, encoding: .utf8)
         let pdfURL = base.appendingPathExtension("pdf")
         if files.fileExists(atPath: pdfURL.path) { try files.removeItem(at: pdfURL) }
         let info = NSPrintInfo(dictionary: [:])
@@ -196,6 +199,7 @@ private final class FixtureRunner {
 
     // Independent fixed expectations from the bundled, anonymised fixtures.
     private let markers: [String: [String]] = [
+        "correction_tt80.xml": ["(1.234.567)", "2.345.678", "901.234", "Tài liệu bổ sung mẫu"],
         "gtgt_842_return.xml": ["1.000.000.000", "80.000.000", "160.000.000"],
         "gtgt_842_return_utf16.xml": ["1.000.000.000", "80.000.000"],
         "gtgt_01_legacy_212.xml": ["1.000.000.000", "(115.000.000)"],

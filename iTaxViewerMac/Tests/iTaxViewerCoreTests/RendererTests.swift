@@ -20,6 +20,8 @@ final class FormatterTests: XCTestCase {
 
     func testFractionalValuesUseComma() {
         XCTAssertEqual(VietnameseFormat.number("1234.56"), "1.234,56")
+        XCTAssertEqual(VietnameseFormat.number("1234.999"), "1.234,999")
+        XCTAssertEqual(VietnameseFormat.number("-1234.999"), "(1.234,999)")
     }
 
     func testDateNormalisation() {

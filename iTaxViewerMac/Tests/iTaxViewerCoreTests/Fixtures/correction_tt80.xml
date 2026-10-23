@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HSoThueDTu><HSoKhaiThue><TTinChung><TTinTKhaiThue>
+<TKhaiThue><maTKhai>842</maTKhai><pbanTKhaiXML>2.5.1</pbanTKhaiXML><tenTKhai>Tờ khai thuế GTGT tổng hợp mẫu</tenTKhai><loaiTKhai>B</loaiTKhai><soLan>1</soLan><KyKKhaiThue><kieuKy>M</kieuKy><kyKKhai>06/2025</kyKKhai></KyKKhaiThue></TKhaiThue>
+<NNT><mst>0000000000</mst><tenNNT>CÔNG TY DỮ LIỆU MẪU</tenNNT></NNT>
+</TTinTKhaiThue></TTinChung><CTieuTKhaiChinh><ct21>false</ct21><ct43>0</ct43></CTieuTKhaiChinh>
+<PLuc><PL01_KHBS><Header><maTKhai>842</maTKhai><tenTKhai>01/GTGT</tenTKhai><maGiaoDich>SYNTHETIC-KHBS</maGiaoDich><soLan>1</soLan></Header>
+<Muc_A><Muc_I><Muc_1><ChiTiet><ct2_ma>1701</ct2_ma><ct2_ten>Tiểu mục mẫu</ct2_ten><ct3>-1234567</ct3></ChiTiet><tongCong_ct10>-1234567</tongCong_ct10></Muc_1>
+<Muc_2><DSachPLuc><BKePLuc><ten_PLuc>Phân bổ mẫu</ten_PLuc><CTietPLuc><ChiTiet><ct2_ma>00</ct2_ma><ct2_ten>Đơn vị mẫu</ct2_ten><ct3_ma>0000000000</ct3_ma><ct04_ten>Huyện mẫu</ct04_ten><ct05_ten>Tỉnh mẫu</ct05_ten><ct06_ten>Cơ quan thuế mẫu</ct06_ten><ct7>2345678</ct7></ChiTiet></CTietPLuc></BKePLuc><tongCong_ct11>2345678</tongCong_ct11></DSachPLuc></Muc_2>
+<Muc_3><ct3a_1>2025-07-01</ct3a_1><ct3a_2>10</ct3a_2><ct3b>345678</ct3b></Muc_3></Muc_I>
+<Muc_II><ChiTiet><ct2_ma>1701</ct2_ma><ct2_ten>Khấu trừ mẫu</ct2_ten><ct3>456789</ct3></ChiTiet><tongCong_ct12>456789</tongCong_ct12></Muc_II>
+<Muc_III><ChiTiet><ct2_ma>1701</ct2_ma><ct2_ten>Hoàn mẫu</ct2_ten><ct3>567890</ct3></ChiTiet><tongCong_ct13>567890</tongCong_ct13></Muc_III></Muc_A>
+<Muc_B><Muc_I><ct_1>678901</ct_1><ct_2_so>QD-MAU</ct_2_so><ct_2_ngay>2025-06-01</ct_2_ngay><ct_2_CQT_ten>Cơ quan thuế mẫu</ct_2_CQT_ten><ct_3_so>LH-MAU</ct_3_so><ct_3_ngay>2025-06-02</ct_3_ngay></Muc_I><Muc_II><ct_1>9</ct_1><ct_2>789012</ct_2></Muc_II></Muc_B>
+<FutureField>EXTRA-MARKER &lt;b&gt;escaped&lt;/b&gt;</FutureField></PL01_KHBS>
+<PL01_1_KHBS><Header><maTKhai>842</maTKhai><tenTKhai>01/GTGT</tenTKhai><maGiaoDich>SYNTHETIC-EXPLANATION</maGiaoDich><soLan>1</soLan></Header>
+<Muc_A><DSachHSo><BKeHSo><ten_HSo>Tờ khai mẫu</ten_HSo><CTietHSo><ChiTiet><ct2_ten>Chỉ tiêu mẫu</ct2_ten><ct3_ma>22</ct3_ma><ct3_ten>Giải thích mẫu</ct3_ten><ct3_1_ten>Nhánh một</ct3_1_ten><ct3_2_ten>Nhánh hai</ct3_2_ten><ct04>01/06/2025</ct04><ct05>02/06/2025</ct05><ct06>-890123</ct06><ct7>901234</ct7><ct8>Lý do tổng hợp mẫu</ct8></ChiTiet></CTietHSo></BKeHSo><TongCong><tongCong_7>901234</tongCong_7><tongCong_8>123450</tongCong_8><tongCong_9>-234560</tongCong_9></TongCong></DSachHSo></Muc_A>
+<Muc_B><CTietTaiLieu><ten_TLieu>Tài liệu bổ sung mẫu</ten_TLieu></CTietTaiLieu></Muc_B></PL01_1_KHBS>
+</PLuc></HSoKhaiThue></HSoThueDTu>

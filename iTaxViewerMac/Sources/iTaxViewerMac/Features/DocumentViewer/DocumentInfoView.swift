@@ -2,6 +2,7 @@ import SwiftUI
 import AppKit
 import iTaxViewerCore
 
+@MainActor
 struct DocumentInfoView: View {
     let document: OpenDocument
     @Environment(\.dismiss) private var dismiss

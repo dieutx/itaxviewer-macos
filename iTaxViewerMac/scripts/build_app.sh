@@ -52,7 +52,7 @@ mkdir -p "$APP/Contents/MacOS" "$APP/Contents/Resources"
 cp "$BIN_PATH/iTaxViewerMac" "$APP/Contents/MacOS/iTaxViewerMac"
 chmod +x "$APP/Contents/MacOS/iTaxViewerMac"
 if [[ "$UNIVERSAL" == "1" ]]; then
-  lipo -verify_arch arm64 x86_64 "$APP/Contents/MacOS/iTaxViewerMac"
+  lipo "$APP/Contents/MacOS/iTaxViewerMac" -verify_arch arm64 x86_64
 fi
 
 # SwiftPM resource bundle(s)

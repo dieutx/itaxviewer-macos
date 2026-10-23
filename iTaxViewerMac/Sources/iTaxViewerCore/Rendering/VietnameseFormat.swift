@@ -27,7 +27,10 @@ public enum VietnameseFormat {
             integerPart = String(value[..<dot])
             fraction = String(value[value.index(after: dot)...])
         }
-        guard let numeric = Double(integerPart + (fraction.isEmpty ? "" : "." + fraction)) else {
+        // run.html's .number pass splits the fraction BEFORE the integer
+        // rounding step. Including the fraction here incorrectly turns
+        // 1234.999 into 1.235,999 instead of the observed 1.234,999.
+        guard let numeric = Double(integerPart), numeric.isFinite else {
             return raw?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
         }
         let roundedHundredths = floor(numeric * 100 + 0.50000000001)

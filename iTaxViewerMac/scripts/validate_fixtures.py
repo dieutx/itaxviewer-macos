@@ -38,7 +38,7 @@ def format_number(raw: str | None) -> str:
         value = value[1:]
     integer_part, _, fraction = value.partition(".")
     try:
-        numeric = float(value)
+        numeric = float(integer_part)
     except ValueError:
         return raw.strip()
     rounded_hundredths = math.floor(numeric * 100 + 0.50000000001)
@@ -109,6 +109,7 @@ def resolve(fixture: Fixture, row: dict) -> str:
 
 
 EXPECTED = {
+    "correction_tt80": {"kind": "Tờ khai thuế", "display": "01/GTGT", "code": "842"},
     "gtgt_842_return": {
         "kind": "Tờ khai thuế",
         "display": "01/GTGT",
