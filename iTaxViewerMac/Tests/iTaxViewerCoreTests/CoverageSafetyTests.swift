@@ -2,6 +2,17 @@ import XCTest
 @testable import iTaxViewerCore
 
 final class CoverageSafetyTests: XCTestCase {
+    func testWithholdingHeaderKeepsReferenceContactGroupsAndLegalCitation() throws {
+        let document = try Fixtures.document("tncn_394_05kk_tt92")
+        let registry = try FormRegistry.bundled()
+        let classification = try DocumentClassifier.classify(document, registry: registry)
+        let html = HTMLRenderer(registry: registry).render(document: document, classification: classification).html
+        let rows = html.components(separatedBy: "</tr>")
+        XCTAssertTrue(rows.contains { $0.contains("[07]") && $0.contains("[08]") })
+        XCTAssertTrue(rows.contains { $0.contains("[09]") && $0.contains("[10]") && $0.contains("[11]") })
+        XCTAssertTrue(rows.contains { $0.contains("[17]") && $0.contains("[18]") && $0.contains("[19]") })
+        XCTAssertTrue(html.contains("92/2015/TT-BTC"))
+    }
     private func load(_ xml: String) throws -> TaxDocument {
         try TaxDocument.load(data: Data(xml.utf8), sourceName: "synthetic.xml")
     }

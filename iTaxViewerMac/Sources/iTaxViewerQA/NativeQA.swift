@@ -138,6 +138,9 @@ private final class FixtureRunner {
         guard printed else { throw QAError(stage: "native-print") }
         print("STAGE \(fixture) pdf-check")
         guard let pdf = PDFDocument(url: pdfURL), pdf.pageCount > 0 else { throw QAError(stage: "pdf-read") }
+        if fixture == "tncn_394_05kk_tt92.xml", pdf.pageCount != 1 {
+            throw QAError(stage: "pdf-withholding-page-count")
+        }
         var text = ""
         for index in 0..<pdf.pageCount {
             guard let page = pdf.page(at: index) else { throw QAError(stage: "pdf-page") }

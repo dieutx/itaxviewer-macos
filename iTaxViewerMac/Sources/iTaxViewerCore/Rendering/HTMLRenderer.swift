@@ -288,7 +288,9 @@ public final class HTMLRenderer {
                               spec: FormSpec?) -> String {
         let meta = document.metadata
         let displayCode = classification.displayCode ?? meta.formCode ?? ""
-        let description = meta.formDescription ?? spec?.displayCode ?? ""
+        let description = meta.formDescription
+            ?? meta.formCode.flatMap { registry.resolve(code: $0, version: meta.formVersion, filingType: meta.filingType)?.title }
+            ?? spec?.displayCode ?? ""
         let title = (meta.title ?? "TỜ KHAI THUẾ").uppercased(with: Locale(identifier: "vi_VN"))
 
         var s = "<div class=\"doc-header\">"
@@ -323,7 +325,24 @@ public final class HTMLRenderer {
             headerRows = headerFields(document: document, displayCode: displayCode)
         }
         s += "<table class=\"taxpayer\">"
+        // Windows reference-tncn-05kk.png places district/province and the
+        // contact fields on shared rows. Stacking them added six extra lines
+        // and pushed the one-page withholding form onto a second page.
+        let inlineGroups = classification.registryCode == "394"
+            ? [["07", "08"], ["09", "10", "11"], ["15", "16"], ["17", "18", "19"]] : []
+        let groupedCodes = Set(inlineGroups.flatMap { $0 })
         for row in headerRows {
+            if groupedCodes.contains(row.code) {
+                guard let group = inlineGroups.first(where: { $0.first == row.code }) else { continue }
+                s += "<tr><td colspan=\"2\"><div class=\"header-inline\">"
+                for code in group {
+                    if let field = headerRows.first(where: { $0.code == code }) {
+                        s += "<span><b>[\(esc(code))] \(esc(field.label))</b> \(esc(field.value))</span>"
+                    }
+                }
+                s += "</div></td></tr>"
+                continue
+            }
             s += "<tr>"
             if row.code == "02/03" {
                 let parts = row.value.components(separatedBy: "Bổ sung")
@@ -876,6 +895,8 @@ public final class HTMLRenderer {
         .taxpayer { width: 100%; border-collapse: collapse; margin-bottom: 8px; }
         .taxpayer td { border: none; padding: 2px 4px; vertical-align: top; font-size: 11pt; }
         .taxpayer .hcode { width: 52px; white-space: nowrap; }
+        .header-inline { display: flex; gap: 18px; }
+        .header-inline > span { flex: 1; min-width: 0; overflow-wrap: anywhere; }
         .glabel { width: 32%; font-weight: bold; }
         .currency-note { text-align: right; font-size: 10pt; margin: 4px 2px 4px 0; }
         .form-section-title { font-weight: bold; font-size: 11.5pt; margin: 10px 0 2px 0; }
