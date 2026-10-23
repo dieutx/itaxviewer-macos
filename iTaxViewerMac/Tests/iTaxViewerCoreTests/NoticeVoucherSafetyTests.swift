@@ -3,6 +3,12 @@ import XCTest
 @testable import iTaxViewerCore
 
 final class NoticeVoucherSafetyTests: XCTestCase {
+    func testNoticeDoesNotDropAnAmountWhenItsIdentifierIsBlank() throws {
+        let document = try Fixtures.document("notice_844")
+        let html = try XCTUnwrap(NoticeRenderer(document: document).render())
+        XCTAssertTrue(html.contains("Dữ liệu bổ sung từ XML"))
+        XCTAssertTrue(html.contains("1.000.000"))
+    }
     private func document(_ xml: String) throws -> TaxDocument {
         try TaxDocument.load(data: Data(xml.utf8), sourceName: "synthetic.xml")
     }

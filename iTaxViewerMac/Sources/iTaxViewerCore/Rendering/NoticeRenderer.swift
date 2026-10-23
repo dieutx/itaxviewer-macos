@@ -269,13 +269,17 @@ final class NoticeRenderer {
 
     private func idTable(_ content: XMLNode?) -> String {
         let rows = content?.node(atLocalPath: "IDKhoanNop")?.children(named: "CTietIDKhoanNop") ?? []
-        let filled = rows.filter { !(value($0, "maDinhDanh") ?? "").isEmpty }
-        guard !filled.isEmpty else { return "" }
-        var s = "<p><b>- Thông tin mã định danh khoản phải nộp:</b></p>"
+        guard rows.contains(where: { !$0.trimmedValue.isEmpty }) else { return "" }
+        let hasIdentifier = rows.contains { !(value($0, "maDinhDanh") ?? "").isEmpty }
+        // The original hides the whole table when every identifier is blank.
+        // Preserve other populated fields as explicitly supplementary XML data.
+        var s = hasIdentifier
+            ? "<p><b>- Thông tin mã định danh khoản phải nộp:</b></p>"
+            : "<p><b>Dữ liệu bổ sung từ XML: khoản nộp chưa có mã định danh</b></p>"
         s += "<table class=\"notice-table\"><thead><tr>"
         s += "<th>STT</th><th>Mã định danh khoản phải nộp (ID)</th><th>Số tiền thuế phải nộp</th><th>Loại tiền</th><th>Ghi chú</th>"
         s += "</tr></thead><tbody>"
-        for (index, row) in filled.enumerated() {
+        for (index, row) in rows.enumerated() {
             s += "<tr><td class=\"c\">\(index + 1)</td>"
             s += "<td>\(esc(value(row, "maDinhDanh") ?? ""))</td>"
             s += "<td class=\"r\">\(esc(VietnameseFormat.number(value(row, "soTienPNop"))))</td>"
