@@ -137,11 +137,13 @@ final class AppModel: ObservableObject {
                     self.isLoading = false
                     self.zoom = 1.0
                     self.remember(url: url, document: document, classification: classification)
+                    LocalQAReport.record(file: document.sourceName, stage: "opened")
                 }
             } catch {
                 await MainActor.run {
                     self.isLoading = false
                     self.lastError = error.localizedDescription
+                    LocalQAReport.record(file: url.lastPathComponent, stage: "open-failed")
                 }
             }
         }

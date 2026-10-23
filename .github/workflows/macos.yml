@@ -55,7 +55,9 @@ jobs:
           APP="$PWD/build/iTaxViewerMac.app"
           APP_PID=""
           trap 'if [[ -n "$APP_PID" ]]; then kill "$APP_PID" 2>/dev/null || true; fi' EXIT
-          open -n "$APP"
+          mkdir -p "$PWD/build/native-qa"
+          OPEN_REPORT="$PWD/build/native-qa/app-open-report.json"
+          open -n "$APP" --args --qa-open-report "$OPEN_REPORT"
           for attempt in {1..10}; do
             for candidate in $(pgrep -x iTaxViewerMac || true); do
               if [[ "$(ps -p "$candidate" -o comm=)" == "$APP/Contents/MacOS/iTaxViewerMac" ]]; then
@@ -69,7 +71,9 @@ jobs:
           [[ -n "$APP_PID" ]] || { echo "App process did not launch" >&2; exit 1; }
           sleep 3
           kill -0 "$APP_PID"
-          echo "Native app bundle launched and remained running; interactive file-open/drag-drop remain manual checks."
+          open -a "$APP" "$PWD/Tests/iTaxViewerCoreTests/Fixtures/gtgt_842_return.xml"
+          python3 scripts/check_app_open.py "$OPEN_REPORT" gtgt_842_return.xml
+          echo "Native app bundle launched and loaded the file; Finder gestures and drag/drop remain manual checks."
 
       - name: Native WebKit print and PDF smoke checks
         working-directory: iTaxViewerMac

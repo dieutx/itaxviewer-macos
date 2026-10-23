@@ -13,6 +13,7 @@ final class WebViewStore: ObservableObject {
 struct DocumentWebView: NSViewRepresentable {
     let html: String
     let zoom: Double
+    let sourceName: String
 
     func makeCoordinator() -> Coordinator { Coordinator() }
 
@@ -28,12 +29,14 @@ struct DocumentWebView: NSViewRepresentable {
         webView.allowsBackForwardNavigationGestures = false
 
         context.coordinator.lastHTML = html
+        context.coordinator.sourceName = sourceName
         webView.loadHTMLString(html, baseURL: nil)
         WebViewStore.shared.webView = webView
         return webView
     }
 
     func updateNSView(_ webView: WKWebView, context: Context) {
+        context.coordinator.sourceName = sourceName
         if context.coordinator.lastHTML != html {
             context.coordinator.lastHTML = html
             webView.loadHTMLString(html, baseURL: nil)
@@ -46,6 +49,19 @@ struct DocumentWebView: NSViewRepresentable {
 
     final class Coordinator: NSObject, WKNavigationDelegate {
         var lastHTML: String?
+        var sourceName = ""
+
+        func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+            LocalQAReport.record(file: sourceName, stage: "webview-loaded")
+        }
+
+        func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+            LocalQAReport.record(file: sourceName, stage: "webview-failed")
+        }
+
+        func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+            LocalQAReport.record(file: sourceName, stage: "webview-failed")
+        }
 
         func webView(_ webView: WKWebView,
                      decidePolicyFor navigationAction: WKNavigationAction,

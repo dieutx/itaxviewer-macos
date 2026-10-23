@@ -19,7 +19,8 @@ struct DocumentDetailView: View {
                                        onSignatures: { showSignatures = true })
                     Divider()
                     ZStack(alignment: .bottomTrailing) {
-                        DocumentWebView(html: doc.rendered.html, zoom: model.zoom)
+                        DocumentWebView(html: doc.rendered.html, zoom: model.zoom,
+                                        sourceName: doc.document.sourceName)
                         ZoomControls()
                             .padding(14)
                     }
