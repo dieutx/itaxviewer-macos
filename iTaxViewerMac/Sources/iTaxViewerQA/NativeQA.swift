@@ -133,11 +133,7 @@ private final class FixtureRunner {
         print("STAGE \(fixture) native-print")
         // Suspend the Swift task before entering AppKit's nested print loop.
         // WebKit may schedule main-actor work while preparing print pages.
-        let printed = await withCheckedContinuation { continuation in
-            DispatchQueue.main.async {
-                continuation.resume(returning: operation.run())
-            }
-        }
+        let printed = await NativePrintJob.run(operation, for: window)
         guard printed else { throw QAError(stage: "native-print") }
         print("STAGE \(fixture) pdf-check")
         guard let pdf = PDFDocument(url: pdfURL), pdf.pageCount > 0 else { throw QAError(stage: "pdf-read") }

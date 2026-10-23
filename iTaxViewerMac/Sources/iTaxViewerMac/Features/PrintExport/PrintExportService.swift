@@ -7,18 +7,18 @@ import iTaxViewerCore
 enum PrintExportService {
 
     static func print(orientation: PageOrientation) {
-        guard let webView = WebViewStore.shared.webView else { return }
+        guard let webView = WebViewStore.shared.webView, let window = webView.window else { return }
         let info = (NSPrintInfo.shared.copy() as? NSPrintInfo) ?? NSPrintInfo.shared
         configure(info, orientation: orientation)
         let operation = webView.printOperation(with: info)
         operation.showsPrintPanel = true
         operation.showsProgressPanel = true
-        operation.run()
+        Task { _ = await NativePrintJob.run(operation, for: window) }
     }
 
     /// Exports the whole document through the native print pipeline (all pages).
     static func exportPDF(suggestedName: String, orientation: PageOrientation) {
-        guard let webView = WebViewStore.shared.webView else { return }
+        guard let webView = WebViewStore.shared.webView, let window = webView.window else { return }
 
         let panel = NSSavePanel()
         panel.title = "Xuất tài liệu ra PDF"
@@ -36,12 +36,12 @@ enum PrintExportService {
         let operation = webView.printOperation(with: info)
         operation.showsPrintPanel = false
         operation.showsProgressPanel = false
-        if !operation.run() {
+        Task { if !(await NativePrintJob.run(operation, for: window)) {
             let alert = NSAlert()
             alert.messageText = "Không xuất được PDF"
             alert.informativeText = "Không thể ghi tệp PDF vào vị trí đã chọn."
             alert.runModal()
-        }
+        } }
     }
 
     private static func configure(_ info: NSPrintInfo, orientation: PageOrientation) {
