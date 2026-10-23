@@ -1,0 +1,48 @@
+{
+  "generatedFrom": "docs/reverse-engineering/documents/document-registry.csv",
+  "declarations": {
+    "codes": 410,
+    "displayCodes": 237,
+    "full": 5,
+    "structuredOnly": 405,
+    "byWave": {
+      "P1": 58,
+      "done": 5,
+      "P3": 57,
+      "P2": 276,
+      "P0": 14
+    }
+  },
+  "notices": {
+    "uniqueIds": 122,
+    "registryRows": 158,
+    "captured": 3,
+    "structuredOnly": 155,
+    "byWave": {
+      "P2": 51,
+      "P1": 90,
+      "P0": 14,
+      "done": 3
+    }
+  },
+  "appendices": {
+    "uniqueIds": 210,
+    "implemented": 3,
+    "structuredOnly": 207,
+    "byWave": {
+      "P1": 134,
+      "P2": 71,
+      "P0": 2,
+      "done": 3
+    }
+  },
+  "vouchers": {
+    "rows": 5,
+    "implemented": 1
+  },
+  "registrationCatalog": 11,
+  "customs": {
+    "rows": 515,
+    "uniqueIds": 181
+  }
+}

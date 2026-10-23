@@ -1,0 +1,6 @@
+maCTu,version,root,template,status,wave,prompt
+01,1.0.0,CHUNGTU,data\XSLT\CTu\GNT.xsl,structured-only,P0,04-VOUCHERS.md
+01,3.0.0,CHUNGTU,data\XSLT\CTu\GNT_3_0_0.xsl,structured-only,P0,04-VOUCHERS.md
+01,4.0.0,CHUNGTU,data\XSLT\CTu\GNT_4_0_0.xsl,structured-only,P0,04-VOUCHERS.md
+01,4.0.1,CHUNGTU,data\XSLT\CTu\GNT_4_0_1.xsl,implemented,done,04-VOUCHERS.md
+01,4.0.2,CHUNGTU,data\XSLT\CTu\GNT_4_0_2.xsl,structured-only,P0,04-VOUCHERS.md

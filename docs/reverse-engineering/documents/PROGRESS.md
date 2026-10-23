@@ -4,6 +4,10 @@ Cập nhật lần cuối: **2026-10-23** (phiên 3: legacy 01/GTGT + renderer t
 
 > File này là bản người đọc. Bản máy đọc: `progress.json`. Kết quả chi tiết:
 > `results/<kind>-<id>.md`. Inventory: `document-inventory.md` / `.json` / `document-registry.csv`.
+>
+> **Review độ phủ & khoảng trống (2026-10-23):** [`../COVERAGE-REVIEW.md`](../COVERAGE-REVIEW.md) —
+> tổng hợp 410 mã tờ khai, 122 mã thông báo, 210 phụ lục, chứng từ, chữ ký số và prompt
+> reverse trên Windows: [`../../PROMPTS/windows-re/`](../../PROMPTS/windows-re/README.md).
 
 ## 1. Tổng quan theo loại tài liệu
 
@@ -67,13 +71,19 @@ số tiền bằng chữ). Đã chạy XCTest; đối chiếu ảnh/PDF Windows 
 | `BaoCaoTaiChinh` | generic-only | ⬜ | ⬜ | 🟡 fixture tối giản | ⬜ |
 | khác | generic-only | ⬜ | ⬜ | ⬜ | ⬜ |
 
-## 5. Việc tiếp theo (đề xuất)
+## 5. Việc tiếp theo
 
-1. Capture layout `04/GTGT` (mã 07) — 3 file thật đang chỉ hiện bảng dữ liệu.
-2. Capture nhánh `trangThai=N` của 844 và trường hợp số tiền âm của CT-01.
-3. Đối chiếu trực quan layout 843/844/01-TB-BSTT/CT-01 với PDF Windows rồi nâng verification.
-4. Ưu tiên P1: `PL01_KHBS`, `PL01_1_KHBS`, `BaoCaoTaiChinh`.
-5. Cập nhật `progress.json` + `results/*.md` sau mỗi bước.
+Thực hiện theo **wave** trong [`../COVERAGE-REVIEW.md`](../COVERAGE-REVIEW.md) và prompt
+tương ứng trong [`../../PROMPTS/windows-re/`](../../PROMPTS/windows-re/README.md):
+
+1. **Wave 0 (Windows):** 04/GTGT (`07`,`847`), 05/KK-TNCN TT80 (`864`), 05/QTT cũ (`395`),
+   02/03/04/05/TNDN TT89 (`2002`–`2004`), 01/CNKD (`386`,`473`,`1240`,`1266`),
+   BCTC (`701`,`702`,`1254`), `PL01_KHBS`, `PL01_1_KHBS`, 6 mẫu `01/TB-*`, chữ ký số.
+2. **Wave 1:** 58 mã tờ khai P1, 90 thông báo P1, 134 phụ lục P1.
+3. **Wave 2:** quét theo template XSLT cho 276 mã P2, 51 thông báo P2, 71 phụ lục P2.
+4. **Wave 3:** hải quan, hóa đơn điện tử, danh mục, mẫu nội bộ.
+5. Sau mỗi batch: cập nhật `results/*.md`, `progress.json`, rồi implement macOS + test +
+   so ảnh/PDF.
 6. Chỉ chuyển trạng thái `verified` khi có ảnh/PDF đối chiếu **và** renderer macOS đã chạy.
 
 ## 6. Nhật ký thay đổi
@@ -85,3 +95,4 @@ số tiền bằng chữ). Đã chạy XCTest; đối chiếu ảnh/PDF Windows 
 | 2026-10-22 | Mở lại 4 fixture tờ khai bằng bản gốc: 842 = 2 trang, 394 = **1 trang** (clone đang 2), 953 = 2 trang, 892 = NPE/blocked; capture nhánh `trangThai=N` của 843; thử capture phụ lục NQ142 = blocked | agent |
 | 2026-10-23 | Map legacy `maTKhai=01` (XML 2.1.2–2.6.2) sang layout 01/GTGT; implement layout 843/844/01-TB-BSTT + CT-01; sửa classifier root `TBao`; thêm 7 test; chạy 12 file thật (9 full, 3 × 04/GTGT structured) | agent |
 | 2026-10-23 | Sửa sidebar bị cắt (bỏ NavigationSplitView bị lỗi layout); phụ lục chưa có spec (PL01_KHBS, PL01_1_KHBS…) hiển thị dạng cây cấu trúc thay vì bảng path; thêm tự động báo bản phát hành mới (GitHub Releases, 1 lần/ngày, không gửi dữ liệu hồ sơ) | agent |
+| 2026-10-23 | Review độ phủ toàn bộ: 410 mã tờ khai / 122 mã thông báo / 210 phụ lục / 5 chứng từ; sinh inventory CSV; viết bộ prompt Windows RE (gồm chữ ký số) để đạt 90–100% | agent |

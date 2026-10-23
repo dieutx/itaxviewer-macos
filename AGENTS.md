@@ -98,6 +98,10 @@ values. `samples/`, `external-fixtures/`, `itax-samples/` and `*.local.xml` are 
 
 ## Priorities after the build is green
 
+Before starting a new form, read `docs/reverse-engineering/COVERAGE-REVIEW.md` and the
+matching Windows RE prompt in `docs/PROMPTS/windows-re/`. A form is only implemented when
+its spec is traceable to captured evidence (or to an official public form with a note).
+
 | Priority | Task |
 |---|---|
 | P0 | Compile + all XCTest green; app bundle launches; file-open and drag-drop work |

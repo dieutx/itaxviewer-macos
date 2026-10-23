@@ -1,0 +1,12 @@
+kind,id,version,root,template,status,wave,prompt
+registration,219,2.0.9,DKyThueDTu,data\xslt\XSLT 2.0.9\TBaoThue\xslt\04-DK_T-VAN.xslt,structured-only,P2,06-OTHER-KINDS.md
+registration,220,2.0.9,DKyThueDTu,data\xslt\XSLT 2.0.9\TBaoThue\xslt\05-DK_T-VAN.xslt,structured-only,P2,06-OTHER-KINDS.md
+registration,218,2.0.9,DKyThueDTu,data\xslt\XSLT 2.0.9\TBaoThue\xslt\03-DK_T-VAN.xslt,structured-only,P2,06-OTHER-KINDS.md
+registration,217,2.0.9,DKyThueDTu,data\xslt\XSLT 2.0.9\TBaoThue\xslt\02-DK_T-VAN.xslt,structured-only,P2,06-OTHER-KINDS.md
+registration,221,2.0.9,DKyThueDTu,data\xslt\XSLT 2.0.9\TBaoThue\xslt\01_DK_T_VAN-DLT.xslt,structured-only,P2,06-OTHER-KINDS.md
+registration,222,2.0.9,DKyThueDTu,data\xslt\XSLT 2.0.9\TBaoThue\xslt\02-DK_T-VAN-DLT.xslt,structured-only,P2,06-OTHER-KINDS.md
+registration,223,2.0.9,DKyThueDTu,data\xslt\XSLT 2.0.9\TBaoThue\xslt\03-DK_T-VAN.xslt,structured-only,P2,06-OTHER-KINDS.md
+registration,216,2.0.9,DKyThueDTu,data\xslt\XSLT 2.0.9\TBaoThue\xslt\01_DK_T_VAN.xslt,structured-only,P2,06-OTHER-KINDS.md
+registration,350,2.0.9,DKyThueDTu,data\xslt\XSLT 2.0.9\TBaoThue\xslt\DKyKhaiThueDTu_NNT.xslt,structured-only,P2,06-OTHER-KINDS.md
+registration,351,2.0.9,DKyThueDTu,data\xslt\XSLT 2.0.9\TBaoThue\xslt\DKyKhaiThueDTu_DLT.xslt,structured-only,P2,06-OTHER-KINDS.md
+catalog,01,2.0.0,DanhMucDTu,XSLTmaDanhMuc,structured-only,P2,06-OTHER-KINDS.md

@@ -301,11 +301,11 @@
     }
   },
   "nextActions": [
-    "Capture the 04/GTGT layout for form code 07 (3 real files currently use the structured view)",
-    "Capture notice trangThai=N branch for 844 and negative voucher amounts",
-    "Visually diff the new macOS notice/voucher layouts against the Windows PDFs and promote verification to verified",
-    "Capture PL01_KHBS and PL01_1_KHBS (P1)",
-    "Capture BaoCaoTaiChinh (P1)",
-    "Update results/*.md and this file after each stage"
+    "Run Windows RE Wave 0 using docs/PROMPTS/windows-re/ (declarations P0, PL01_KHBS/PL01_1_KHBS, 01/TB notices, signatures)",
+    "Capture the 04/GTGT layout for codes 07 and 847 (3 real files currently use the structured view)",
+    "Capture PL01_KHBS and PL01_1_KHBS with full section/branch evidence",
+    "Capture signature verification behaviour and test vectors (see 05-SIGNATURES.md)",
+    "Visually diff the macOS notice/voucher layouts against the Windows PDFs and promote verification to verified",
+    "Update results/*.md, COVERAGE-REVIEW.md and this file after each batch"
   ]
 }
