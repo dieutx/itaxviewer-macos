@@ -1,0 +1,156 @@
+{
+ "xsltFilesScanned": 3110,
+ "filesWithMsxslScript": 178,
+ "distinctFunctionNames": 37,
+ "distinctBodies": 79,
+ "functions": {
+  "DocSo3ChuSo": {
+   "arity": 1,
+   "variants": 1
+  },
+  "DocTienBangChu": {
+   "arity": 1,
+   "variants": 3
+  },
+  "breakWord": {
+   "arity": 1,
+   "variants": 1
+  },
+  "convertKyBaoCao": {
+   "arity": 1,
+   "variants": 1
+  },
+  "docblock": {
+   "arity": 2,
+   "variants": 2
+  },
+  "dochangchuc": {
+   "arity": 2,
+   "variants": 3
+  },
+  "dochangtrieu": {
+   "arity": 2,
+   "variants": 2
+  },
+  "docso": {
+   "arity": 1,
+   "variants": 1
+  },
+  "formatNumber": {
+   "arity": 1,
+   "variants": 3
+  },
+  "formatNumberUSD": {
+   "arity": 1,
+   "variants": 2
+  },
+  "formatNumberUSD1": {
+   "arity": 1,
+   "variants": 1
+  },
+  "formatVar": {
+   "arity": 1,
+   "variants": 1
+  },
+  "getHuyen": {
+   "arity": 1,
+   "variants": 2
+  },
+  "getKHBM": {
+   "arity": 1,
+   "variants": 1
+  },
+  "getMaCTcapTren": {
+   "arity": 1,
+   "variants": 1
+  },
+  "getMonthFromString": {
+   "arity": 1,
+   "variants": 1
+  },
+  "getTTThayDoi": {
+   "arity": 1,
+   "variants": 2
+  },
+  "getTenBVMT": {
+   "arity": 1,
+   "variants": 5
+  },
+  "getTenCT": {
+   "arity": 1,
+   "variants": 13
+  },
+  "getTenGhiChuBC26": {
+   "arity": 1,
+   "variants": 1
+  },
+  "getTenNganCT": {
+   "arity": 1,
+   "variants": 1
+  },
+  "getTenPLP": {
+   "arity": 1,
+   "variants": 4
+  },
+  "getTenTN": {
+   "arity": 1,
+   "variants": 1
+  },
+  "getTenUpperCT": {
+   "arity": 1,
+   "variants": 1
+  },
+  "getTinh": {
+   "arity": 1,
+   "variants": 1
+  },
+  "kyTinhThue": {
+   "arity": 4,
+   "variants": 3
+  },
+  "kyTinhThueTruMot": {
+   "arity": 4,
+   "variants": 1
+  },
+  "kyTinhThue_hddt": {
+   "arity": 4,
+   "variants": 1
+  },
+  "stringDatetime": {
+   "arity": 2,
+   "variants": 7
+  },
+  "stringDatetimeTEM": {
+   "arity": 2,
+   "variants": 1
+  },
+  "sumNumber": {
+   "arity": 1,
+   "variants": 1
+  },
+  "timeToString": {
+   "arity": 2,
+   "variants": 1
+  },
+  "toEnglishCash": {
+   "arity": 1,
+   "variants": 2
+  },
+  "toEnglishCashUSD": {
+   "arity": 1,
+   "variants": 2
+  },
+  "toFormatDecimal": {
+   "arity": 1,
+   "variants": 3
+  },
+  "toFormatDecimal1": {
+   "arity": 1,
+   "variants": 1
+  },
+  "toFormatDecimall": {
+   "arity": 1,
+   "variants": 2
+  }
+ }
+}

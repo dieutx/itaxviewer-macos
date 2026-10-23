@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HSoThueDTu>
+  <HSoKhaiThue>
+    <TTinChung>
+      <TTinTKhaiThue>
+        <TKhaiThue>
+          <maTKhai>07</maTKhai>
+          <pbanTKhaiXML>2.4.1</pbanTKhaiXML>
+          <tenTKhai>Tờ khai mẫu 04/GTGT</tenTKhai>
+          <moTaBMau>Thông tư 156/2013/TT-BTC</moTaBMau>
+          <loaiTKhai>C</loaiTKhai>
+          <soLan>0</soLan>
+          <KyKKhaiThue>
+            <kieuKy>Q</kieuKy>
+            <kyKKhai>1/2026</kyKKhai>
+          </KyKKhaiThue>
+        </TKhaiThue>
+        <NNT>
+          <mst>0000000000</mst>
+          <tenNNT>CÔNG TY DỮ LIỆU TỔNG HỢP MẪU</tenNNT>
+          <dchiNNT>Số 1 Đường Mẫu</dchiNNT>
+          <tenXaNNT>Phường Mẫu</tenXaNNT>
+          <tenHuyenNNT>Quận Mẫu</tenHuyenNNT>
+          <tenTinhNNT>Tỉnh Mẫu</tenTinhNNT>
+        </NNT>
+      </TTinTKhaiThue>
+    </TTinChung>
+    <CTieuTKhaiChinh>
+      <ct21>0</ct21>
+      <PPhoiCCapHHoa>
+        <ct22>0</ct22>
+        <ct23>0</ct23>
+      </PPhoiCCapHHoa>
+      <DVuXDungKoBaoThauNVL>
+        <ct24>0</ct24>
+        <ct25>0</ct25>
+      </DVuXDungKoBaoThauNVL>
+      <HHoaXDungCoBaoThauNVL>
+        <ct26>0</ct26>
+        <ct27>0</ct27>
+      </HHoaXDungCoBaoThauNVL>
+      <HDongKDoanhKhac>
+        <ct28>0</ct28>
+        <ct29>0</ct29>
+      </HDongKDoanhKhac>
+      <TongCong>
+        <ct30>0</ct30>
+        <ct31>0</ct31>
+      </TongCong>
+      <ct32>0</ct32>
+      <ct33>0</ct33>
+      <hoatDongThuHo>false</hoatDongThuHo>
+    </CTieuTKhaiChinh>
+  </HSoKhaiThue>
+</HSoThueDTu>

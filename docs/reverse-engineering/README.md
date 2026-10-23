@@ -14,6 +14,12 @@ Target: official Vietnamese **iTax Viewer** for Windows
 | [template-engine.md](template-engine.md) | MSXML/XSLT pipeline, layout constants, independent renderer design |
 | [signature-verification.md](signature-verification.md) | XMLDSig + PKIX + OCSP behaviour; what macOS implements and what it does not |
 | [evidence/](evidence/) | Live reference screenshots from the Windows application |
+| [xslt-specs/](xslt-specs/README.md) | Máy trích cấu trúc từ 2.163 XSLT: cột, nhãn, mã chỉ tiêu, thứ tự khối |
+| [render-semantics/](render-semantics/README.md) | Quy tắc render gốc: định dạng số, đọc tiền, kỳ thuế, khung host, cấu hình in/PDF |
+| [registry-tables/](registry-tables/README.md) | Dump lossless 1.917 entry registry + đối chiếu với CSV cũ (1.512) |
+| [install-inventory.md](install-inventory.md) | Kiểm kê bản cài: 4.188 tệp, hash, JRE, certstore, launcher Launch4j |
+| [GAP-REGISTER.md](GAP-REGISTER.md) | Hạng mục chưa đủ cơ sở, cần capture/tìm sau để render |
+| [java/](java/README.md) | Decompile `itaxviewer.jar` (CFR 0.152): bảng dispatch root tag, render XSLT trong browser nhúng, chữ ký |
 | [../security.md](../security.md) | Threat model and hardening of the macOS app |
 
 ## Method (reproducible)
@@ -50,6 +56,19 @@ Target: official Vietnamese **iTax Viewer** for Windows
 | Intermediate/trusted certificates | 124 |
 | A4 HTML widths | 892 px portrait / 1262 px landscape |
 | PDF margins | 20/20/20/10 mm |
+
+Đo lại 2026-10-23 bằng lệnh đếm cụ thể (để tránh lệch cách hiểu):
+
+| Fact | Value | Cách đếm |
+|---|---:|---|
+| `data/xslt` tổng số tệp | 3.149 | `find data/xslt -type f` |
+| Template `*.xslt` | 2.163 | khớp số cũ |
+| Tệp include `*.xsl` | 783 | `find -name "*.xsl"` |
+| Thư mục con (version + loại) | 103 | `find -maxdepth 1 -type d` |
+| Class trong `itaxviewer.jar` | 94 | `unzip -l` |
+| File `.java` sau CFR | 68 | CFR gộp lớp lồng vào lớp ngoài |
+| Mã biểu mẫu đọc từ `mauTKhai` | 447 | pipeline `xslt-specs` |
+| Dòng / mã chỉ tiêu trích được | 14.432 / 2.786 | pipeline `xslt-specs` |
 
 ## Boundaries
 

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HSoThueDTu>
+  <HSoKhaiThue>
+    <TTinChung>
+      <TTinTKhaiThue>
+        <TKhaiThue>
+          <maTKhai>847</maTKhai>
+          <pbanTKhaiXML>2.5.1</pbanTKhaiXML>
+          <tenTKhai>Tờ khai mẫu 04/GTGT</tenTKhai>
+          <moTaBMau>Thông tư 80/2021/TT-BTC</moTaBMau>
+          <loaiTKhai>C</loaiTKhai>
+          <soLan>0</soLan>
+          <KyKKhaiThue>
+            <kieuKy>Q</kieuKy>
+            <kyKKhai>1/2026</kyKKhai>
+          </KyKKhaiThue>
+        </TKhaiThue>
+        <NNT>
+          <mst>0000000000</mst>
+          <tenNNT>CÔNG TY DỮ LIỆU TỔNG HỢP MẪU</tenNNT>
+          <dchiNNT>Số 1 Đường Mẫu</dchiNNT>
+          <tenXaNNT>Phường Mẫu</tenXaNNT>
+          <tenHuyenNNT>Quận Mẫu</tenHuyenNNT>
+          <tenTinhNNT>Tỉnh Mẫu</tenTinhNNT>
+        </NNT>
+      </TTinTKhaiThue>
+    </TTinChung>
+    <CTieuTKhaiChinh>
+      <KhaiThueTPPTTTDT>
+        <ct21>-1000001</ct21>
+        <PPhoiCCapHHoa>
+          <ct22>-1000002</ct22>
+          <ct23>-1000003</ct23>
+        </PPhoiCCapHHoa>
+        <DVuXDungKoBaoThauNVL>
+          <ct24>-1000004</ct24>
+          <ct25>-1000005</ct25>
+        </DVuXDungKoBaoThauNVL>
+        <HHoaXDungCoBaoThauNVL>
+          <ct26>-1000006</ct26>
+          <ct27>-1000007</ct27>
+        </HHoaXDungCoBaoThauNVL>
+        <HDongKDoanhKhac>
+          <ct28>-1000008</ct28>
+          <ct29>-1000009</ct29>
+        </HDongKDoanhKhac>
+        <DoanhThuVaSoThuePNop>
+          <ct30>-1000010</ct30>
+          <ct31>-1000011</ct31>
+        </DoanhThuVaSoThuePNop>
+        <ct32>-1000012</ct32>
+      </KhaiThueTPPTTTDT>
+      <KhaiRiengDoiVoiKhoanThuHo>
+        <KhoanThuHoCTGTGT>
+          <khoanThuHoChiuThueGTGT>Khoản thu hộ mẫu</khoanThuHoChiuThueGTGT>
+          <ct33>1200000</ct33>
+          <ct34>10</ct34>
+          <ct35>120000</ct35>
+        </KhoanThuHoCTGTGT>
+        <DoanhThuVaSoThuePhaiNop>
+          <ct36>1200000</ct36>
+          <ct37>120000</ct37>
+        </DoanhThuVaSoThuePhaiNop>
+      </KhaiRiengDoiVoiKhoanThuHo>
+    </CTieuTKhaiChinh>
+  </HSoKhaiThue>
+</HSoThueDTu>

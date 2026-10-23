@@ -1,0 +1,588 @@
+{
+    "displayCode":  "04/GTGT",
+    "maTKhai":  "847",
+    "versions":  [
+                     "2.5.1",
+                     "2.6.8",
+                     "2.7.4"
+                 ],
+    "sourceTemplate":  "TKhai_GTGT_04_TT80.xslt",
+    "columns":  [
+                    "STT",
+                    "Nhóm ngành",
+                    "Doanh thu hàng hoá, dịch vụ chịu thuế suất 0% và không chịu thuế",
+                    "Doanh thu chịu thuế giá trị gia tăng (trừ thuế suất 0%)",
+                    "Thuế giá trị gia tăng phải nộp"
+                ],
+    "rows":  [
+                 {
+                     "stt":  "1",
+                     "label":  "Phân phối, cung cấp hàng hoá ([23]=[22]x1%)",
+                     "indicator":  "21",
+                     "codes":  [
+                                   "21",
+                                   "22",
+                                   "23"
+                               ],
+                     "values":  [
+                                    {
+                                        "path":  "KhaiThueTPPTTTDT/ct21",
+                                        "root":  "tkchinh"
+                                    },
+                                    {
+                                        "path":  "KhaiThueTPPTTTDT/PPhoiCCapHHoa/ct22",
+                                        "root":  "tkchinh"
+                                    },
+                                    {
+                                        "path":  "KhaiThueTPPTTTDT/PPhoiCCapHHoa/ct23",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "summary",
+                     "source":  {
+                                    "template":  "TKhai_GTGT_04_TT80.xslt",
+                                    "line":  41
+                                }
+                 },
+                 {
+                     "stt":  "2",
+                     "label":  "Dịch vụ, xây dựng không bao thầu nguyên vật liệu ([25]=[24]x5%)",
+                     "indicator":  "24",
+                     "codes":  [
+                                   "24",
+                                   "25"
+                               ],
+                     "values":  [
+                                    {
+                                        "path":  "KhaiThueTPPTTTDT/DVuXDungKoBaoThauNVL/ct24",
+                                        "root":  "tkchinh"
+                                    },
+                                    {
+                                        "path":  "KhaiThueTPPTTTDT/DVuXDungKoBaoThauNVL/ct25",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "summary",
+                     "source":  {
+                                    "template":  "TKhai_GTGT_04_TT80.xslt",
+                                    "line":  53
+                                }
+                 },
+                 {
+                     "stt":  "3",
+                     "label":  "Sản xuất, vận tải, dịch vụ có gắn với hàng hoá, xây dựng có bao thầu nguyên vật liệu ([27]=[26]x3%)",
+                     "indicator":  "26",
+                     "codes":  [
+                                   "26",
+                                   "27"
+                               ],
+                     "values":  [
+                                    {
+                                        "path":  "KhaiThueTPPTTTDT/HHoaXDungCoBaoThauNVL/ct26",
+                                        "root":  "tkchinh"
+                                    },
+                                    {
+                                        "path":  "KhaiThueTPPTTTDT/HHoaXDungCoBaoThauNVL/ct27",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "summary",
+                     "source":  {
+                                    "template":  "TKhai_GTGT_04_TT80.xslt",
+                                    "line":  61
+                                }
+                 },
+                 {
+                     "stt":  "4",
+                     "label":  "Hoạt động kinh doanh khác ([29]=[28]x2%)",
+                     "indicator":  "28",
+                     "codes":  [
+                                   "28",
+                                   "29"
+                               ],
+                     "values":  [
+                                    {
+                                        "path":  "KhaiThueTPPTTTDT/HDongKDoanhKhac/ct28",
+                                        "root":  "tkchinh"
+                                    },
+                                    {
+                                        "path":  "KhaiThueTPPTTTDT/HDongKDoanhKhac/ct29",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "summary",
+                     "source":  {
+                                    "template":  "TKhai_GTGT_04_TT80.xslt",
+                                    "line":  69
+                                }
+                 },
+                 {
+                     "stt":  "5",
+                     "label":  "Doanh thu và số thuế phải nộp ([30]=[22]+[24]+[26]+[28]; [31]=[23]+[25]+[27]+[29])",
+                     "indicator":  "30",
+                     "codes":  [
+                                   "30",
+                                   "31"
+                               ],
+                     "values":  [
+                                    {
+                                        "path":  "KhaiThueTPPTTTDT/DoanhThuVaSoThuePNop/ct30",
+                                        "root":  "tkchinh"
+                                    },
+                                    {
+                                        "path":  "KhaiThueTPPTTTDT/DoanhThuVaSoThuePNop/ct31",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "summary",
+                     "source":  {
+                                    "template":  "TKhai_GTGT_04_TT80.xslt",
+                                    "line":  79
+                                }
+                 },
+                 {
+                     "unit":  "VNĐ",
+                     "stt":  "",
+                     "source":  {
+                                    "template":  "TKhai_GTGT_04_TT80.xslt",
+                                    "line":  86
+                                },
+                     "codes":  [
+                                   "32"
+                               ],
+                     "values":  [
+                                    {
+                                        "path":  "KhaiThueTPPTTTDT/ct32",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "label":  "Tổng doanh thu [32]=[21]+[30]",
+                     "indicator":  "32",
+                     "kind":  "summary"
+                 }
+             ],
+    "headerTemplate":  "tkhaiHeader_04_GTGT_TT80",
+    "headerFacts":  [
+                        {
+                            "label":  "Kỳ tính thuế: Lần phát sinh",
+                            "code":  "01",
+                            "expressions":  [
+                                                "ihtkk:kyTinhThue($kyKKhai,$kieuKy,$ttkthue/TKhaiThue/KyKKhaiThue/kyKKhaiTuNgay,$ttkthue/TKhaiThue/KyKKhaiThue/kyKKhaiDenNgay)"
+                                            ]
+                        },
+                        {
+                            "label":  "Lần đầu: [X] [03] Bổ sung lần thứ: [ ] [02] Lần đầu: [ ] [03] Bổ sung lần thứ: []",
+                            "code":  "02",
+                            "expressions":  [
+                                                "$ttkthue/TKhaiThue/soLan"
+                                            ]
+                        },
+                        {
+                            "label":  "Tên người nộp thuế:",
+                            "code":  "04",
+                            "expressions":  [
+                                                "$ttkthue/NNT/tenNNT"
+                                            ]
+                        },
+                        {
+                            "label":  "Mã số thuế:",
+                            "code":  "05",
+                            "expressions":  [
+                                                "$ttkthue/NNT/mst"
+                                            ]
+                        },
+                        {
+                            "label":  "Tên đại lý thuế (nếu có):",
+                            "code":  "06",
+                            "expressions":  [
+                                                "$ttkthue/DLyThue/tenDLyThue"
+                                            ]
+                        },
+                        {
+                            "label":  "Mã số thuế:",
+                            "code":  "07",
+                            "expressions":  [
+                                                "$ttkthue/DLyThue/mstDLyThue"
+                                            ]
+                        },
+                        {
+                            "label":  "Hợp đồng đại lý thuế: Số",
+                            "code":  "08",
+                            "expressions":  [
+                                                "$ttkthue/DLyThue/soHDongDLyThue"
+                                            ]
+                        },
+                        {
+                            "label":  "Tên đơn vị phụ thuộc/địa điểm kinh doanh của hoạt động sản xuất kinh doanh khác tỉnh nơi đóng trụ sở chính:",
+                            "code":  "09",
+                            "expressions":  [
+                                                "$tkchinh/Header/ct09"
+                                            ]
+                        },
+                        {
+                            "label":  "Mã số thuế đơn vị phụ thuộc/Mã số địa điểm kinh doanh:",
+                            "code":  "10",
+                            "expressions":  [
+                                                "$tkchinh/Header/ct10"
+                                            ]
+                        },
+                        {
+                            "label":  "Địa chỉ nơi có hoạt động sản xuất kinh doanh khác tỉnh nơi đóng trụ sở chính:",
+                            "code":  "11",
+                            "expressions":  [
+                                                "$tkchinh/Header/ct11"
+                                            ]
+                        },
+                        {
+                            "label":  "Phường/xã:",
+                            "code":  "11a",
+                            "expressions":  [
+                                                "$tkchinh/Header/ct11a_ten"
+                                            ]
+                        },
+                        {
+                            "label":  "Quận/Huyện:",
+                            "code":  "11b",
+                            "expressions":  [
+                                                "$tkchinh/Header/ct11b_ten"
+                                            ]
+                        },
+                        {
+                            "label":  "Tỉnh/Thành phố:",
+                            "code":  "11c",
+                            "expressions":  [
+                                                "$tkchinh/Header/ct11c_ten"
+                                            ]
+                        }
+                    ],
+    "sourceEvidence":  {
+                           "path":  "data/xslt/XSLT 2.5.2/TKhaiThue/xslt/GTGT/TKhai_GTGT_04_TT80.xslt",
+                           "sha256":  "daa619cc1772e47958c3ed8015770bf0d13c12ab1a9a69d9b68202987ad0d6af",
+                           "inspectedDate":  "2026-10-23",
+                           "kind":  "static-template-inspection"
+                       },
+    "verificationStatus":  "Static mapping only; Windows visual/PDF and native macOS execution pending",
+    "unknowns":  [
+                     "Windows screenshot comparison pending",
+                     "Windows print/PDF pagination pending",
+                     "Native macOS display and print/export pending"
+                 ],
+    "repeatedTables":  [
+                           {
+                               "source":  {
+                                              "template":  "TKhai_GTGT_04_TT80.xslt",
+                                              "line":  116
+                                          },
+                               "title":  "B. Khai riêng đối với khoản thu hộ do cơ quan nhà nước có thẩm quyền giao:",
+                               "recordPath":  "KhaiRiengDoiVoiKhoanThuHo/KhoanThuHoCTGTGT",
+                               "columns":  [
+                                               {
+                                                   "label":  "Khoản thu hộ",
+                                                   "format":  "text",
+                                                   "source":  "khoanThuHoChiuThueGTGT"
+                                               },
+                                               {
+                                                   "label":  "Doanh thu chưa có thuế giá trị gia tăng [33]",
+                                                   "format":  "number",
+                                                   "source":  "ct33"
+                                               },
+                                               {
+                                                   "label":  "Thuế suất [34]",
+                                                   "format":  "number",
+                                                   "source":  "ct34"
+                                               },
+                                               {
+                                                   "label":  "Thuế giá trị gia tăng phải nộp [35]=[33]x[34]",
+                                                   "format":  "number",
+                                                   "source":  "ct35"
+                                               }
+                                           ],
+                               "totals":  [
+                                              {
+                                                  "label":  "Doanh thu [36]",
+                                                  "format":  "number",
+                                                  "source":  "KhaiRiengDoiVoiKhoanThuHo/DoanhThuVaSoThuePhaiNop/ct36"
+                                              },
+                                              {
+                                                  "label":  "Số thuế phải nộp [37]",
+                                                  "format":  "number",
+                                                  "source":  "KhaiRiengDoiVoiKhoanThuHo/DoanhThuVaSoThuePhaiNop/ct37"
+                                              }
+                                          ]
+                           }
+                       ],
+    "headerFields":  [
+                         {
+                             "label":  "Tên người nộp thuế:",
+                             "root":  "ttkthue",
+                             "code":  "04",
+                             "path":  "NNT/tenNNT",
+                             "sourceLine":  12568
+                         },
+                         {
+                             "label":  "Mã số thuế:",
+                             "root":  "ttkthue",
+                             "code":  "05",
+                             "path":  "NNT/mst",
+                             "sourceLine":  12574
+                         },
+                         {
+                             "label":  "Tên đại lý thuế (nếu có):",
+                             "root":  "ttkthue",
+                             "code":  "06",
+                             "path":  "DLyThue/tenDLyThue",
+                             "sourceLine":  12607
+                         },
+                         {
+                             "label":  "Mã số thuế:",
+                             "root":  "ttkthue",
+                             "code":  "07",
+                             "path":  "DLyThue/mstDLyThue",
+                             "sourceLine":  12613
+                         },
+                         {
+                             "label":  "Hợp đồng đại lý thuế: Số",
+                             "root":  "ttkthue",
+                             "code":  "08",
+                             "path":  "DLyThue/soHDongDLyThue",
+                             "suffixPath":  "DLyThue/ngayKyHDDLyThue",
+                             "suffixFormat":  "date",
+                             "sourceLine":  12642
+                         },
+                         {
+                             "label":  "Tên đơn vị phụ thuộc/địa điểm kinh doanh của hoạt động sản xuất kinh doanh khác tỉnh nơi đóng trụ sở chính:",
+                             "root":  "tkchinh",
+                             "code":  "09",
+                             "path":  "Header/ct09",
+                             "sourceLine":  12695
+                         },
+                         {
+                             "label":  "Mã số thuế đơn vị phụ thuộc/Mã số địa điểm kinh doanh:",
+                             "root":  "tkchinh",
+                             "code":  "10",
+                             "path":  "Header/ct10",
+                             "sourceLine":  12701
+                         },
+                         {
+                             "label":  "Địa chỉ nơi có hoạt động sản xuất kinh doanh khác tỉnh nơi đóng trụ sở chính:",
+                             "root":  "tkchinh",
+                             "code":  "11",
+                             "path":  "Header/ct11",
+                             "sourceLine":  12707
+                         },
+                         {
+                             "label":  "Phường/xã:",
+                             "root":  "tkchinh",
+                             "code":  "11a",
+                             "path":  "Header/ct11a_ten",
+                             "sourceLine":  12713
+                         },
+                         {
+                             "label":  "Quận/Huyện:",
+                             "root":  "tkchinh",
+                             "code":  "11b",
+                             "path":  "Header/ct11b_ten",
+                             "sourceLine":  12717
+                         },
+                         {
+                             "label":  "Tỉnh/Thành phố:",
+                             "root":  "tkchinh",
+                             "code":  "11c",
+                             "path":  "Header/ct11c_ten",
+                             "sourceLine":  12720
+                         }
+                     ],
+    "tableHeaders":  [
+                         {
+                             "text":  "STT",
+                             "bold":  true
+                         },
+                         {
+                             "text":  "Nhóm ngành",
+                             "bold":  true
+                         },
+                         {
+                             "text":  "Doanh thu hàng hoá, dịch vụ chịu thuế suất 0% và không chịu thuế",
+                             "colspan":  2,
+                             "bold":  true
+                         },
+                         {
+                             "text":  "Doanh thu chịu thuế giá trị gia tăng (trừ thuế suất 0%)",
+                             "colspan":  2,
+                             "bold":  true
+                         },
+                         {
+                             "text":  "Thuế giá trị gia tăng phải nộp",
+                             "colspan":  2,
+                             "bold":  true
+                         }
+                     ],
+    "tableRows":  [
+                      {
+                          "cells":  [
+                                        {
+                                            "text":  "1"
+                                        },
+                                        {
+                                            "text":  "Phân phối, cung cấp hàng hoá ([23]=[22]x1%)"
+                                        },
+                                        {
+                                            "text":  "[21]",
+                                            "rowspan":  5
+                                        },
+                                        {
+                                            "text":  "",
+                                            "rowspan":  5,
+                                            "value":  {
+                                                          "path":  "KhaiThueTPPTTTDT/ct21",
+                                                          "root":  "tkchinh"
+                                                      }
+                                        },
+                                        {
+                                            "text":  "[22]"
+                                        },
+                                        {
+                                            "text":  "",
+                                            "value":  {
+                                                          "path":  "KhaiThueTPPTTTDT/PPhoiCCapHHoa/ct22",
+                                                          "root":  "tkchinh"
+                                                      }
+                                        },
+                                        {
+                                            "text":  "[23]"
+                                        },
+                                        {
+                                            "text":  "",
+                                            "value":  {
+                                                          "path":  "KhaiThueTPPTTTDT/PPhoiCCapHHoa/ct23",
+                                                          "root":  "tkchinh"
+                                                      }
+                                        }
+                                    ]
+                      },
+                      {
+                          "cells":  [
+                                        {
+                                            "text":  "2"
+                                        },
+                                        {
+                                            "text":  "Dịch vụ, xây dựng không bao thầu nguyên vật liệu ([25]=[24]x5%)"
+                                        },
+                                        {
+                                            "text":  "[24]"
+                                        },
+                                        {
+                                            "text":  "",
+                                            "value":  {
+                                                          "path":  "KhaiThueTPPTTTDT/DVuXDungKoBaoThauNVL/ct24",
+                                                          "root":  "tkchinh"
+                                                      }
+                                        },
+                                        {
+                                            "text":  "[25]"
+                                        },
+                                        {
+                                            "text":  "",
+                                            "value":  {
+                                                          "path":  "KhaiThueTPPTTTDT/DVuXDungKoBaoThauNVL/ct25",
+                                                          "root":  "tkchinh"
+                                                      }
+                                        }
+                                    ]
+                      },
+                      {
+                          "cells":  [
+                                        {
+                                            "text":  "3"
+                                        },
+                                        {
+                                            "text":  "Sản xuất, vận tải, dịch vụ có gắn với hàng hoá, xây dựng có bao thầu nguyên vật liệu ([27]=[26]x3%)"
+                                        },
+                                        {
+                                            "text":  "[26]"
+                                        },
+                                        {
+                                            "text":  "",
+                                            "value":  {
+                                                          "path":  "KhaiThueTPPTTTDT/HHoaXDungCoBaoThauNVL/ct26",
+                                                          "root":  "tkchinh"
+                                                      }
+                                        },
+                                        {
+                                            "text":  "[27]"
+                                        },
+                                        {
+                                            "text":  "",
+                                            "value":  {
+                                                          "path":  "KhaiThueTPPTTTDT/HHoaXDungCoBaoThauNVL/ct27",
+                                                          "root":  "tkchinh"
+                                                      }
+                                        }
+                                    ]
+                      },
+                      {
+                          "cells":  [
+                                        {
+                                            "text":  "4"
+                                        },
+                                        {
+                                            "text":  "Hoạt động kinh doanh khác ([29]=[28]x2%)"
+                                        },
+                                        {
+                                            "text":  "[28]"
+                                        },
+                                        {
+                                            "text":  "",
+                                            "value":  {
+                                                          "path":  "KhaiThueTPPTTTDT/HDongKDoanhKhac/ct28",
+                                                          "root":  "tkchinh"
+                                                      }
+                                        },
+                                        {
+                                            "text":  "[29]"
+                                        },
+                                        {
+                                            "text":  "",
+                                            "value":  {
+                                                          "path":  "KhaiThueTPPTTTDT/HDongKDoanhKhac/ct29",
+                                                          "root":  "tkchinh"
+                                                      }
+                                        }
+                                    ]
+                      },
+                      {
+                          "cells":  [
+                                        {
+                                            "text":  "5"
+                                        },
+                                        {
+                                            "text":  "Doanh thu và số thuế phải nộp ([30]=[22]+[24]+[26]+[28]; [31]=[23]+[25]+[27]+[29])"
+                                        },
+                                        {
+                                            "text":  "[30]"
+                                        },
+                                        {
+                                            "text":  "",
+                                            "value":  {
+                                                          "path":  "KhaiThueTPPTTTDT/DoanhThuVaSoThuePNop/ct30",
+                                                          "root":  "tkchinh"
+                                                      }
+                                        },
+                                        {
+                                            "text":  "[31]"
+                                        },
+                                        {
+                                            "text":  "",
+                                            "value":  {
+                                                          "path":  "KhaiThueTPPTTTDT/DoanhThuVaSoThuePNop/ct31",
+                                                          "root":  "tkchinh"
+                                                      }
+                                        }
+                                    ]
+                      }
+                  ],
+    "headerSourceEvidence":  {
+                                 "sha256":  "c5c72d5519c8f4edf8775fcb746a02bcdfa2b407394fa2bef871cab1fbfaad85",
+                                 "path":  "data\\xslt\\XSLT 2.5.2\\TKhaiThue\\include\\TKhaiHeader.xsl"
+                             }
+}

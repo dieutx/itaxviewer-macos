@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HSoThueDTu>
+  <HSoKhaiThue>
+    <TTinChung>
+      <TTinTKhaiThue>
+        <TKhaiThue>
+          <maTKhai>395</maTKhai>
+          <pbanTKhaiXML>2.4.2</pbanTKhaiXML>
+          <tenTKhai>Tờ khai mẫu 05/QTT-TNCN</tenTKhai>
+          <moTaBMau>Thông tư 92/2015/TT-BTC</moTaBMau>
+          <loaiTKhai>C</loaiTKhai>
+          <soLan>0</soLan>
+          <KyKKhaiThue>
+            <kieuKy>Y</kieuKy>
+            <kyKKhai>2025</kyKKhai>
+          </KyKKhaiThue>
+        </TKhaiThue>
+        <NNT>
+          <mst>0000000000</mst>
+          <tenNNT>CÔNG TY DỮ LIỆU TỔNG HỢP MẪU</tenNNT>
+          <dchiNNT>Số 1 Đường Mẫu</dchiNNT>
+          <tenXaNNT>Phường Mẫu</tenXaNNT>
+          <tenHuyenNNT>Quận Mẫu</tenHuyenNNT>
+          <tenTinhNNT>Tỉnh Mẫu</tenTinhNNT>
+        </NNT>
+      </TTinTKhaiThue>
+    </TTinChung>
+    <CTieuTKhaiChinh>
+      <NVuKhauTruThue>
+        <ct21>0</ct21>
+        <ct22>0</ct22>
+        <ct23>0</ct23>
+        <ct24>0</ct24>
+        <ct25>0</ct25>
+        <ct26>0</ct26>
+        <ct27>0</ct27>
+        <ct28>0</ct28>
+        <ct29>0</ct29>
+        <ct30>0</ct30>
+        <ct31>0</ct31>
+        <ct32>0</ct32>
+        <ct33>0</ct33>
+        <ct34>0</ct34>
+        <ct35>0</ct35>
+        <ct36>0</ct36>
+        <ct37>0</ct37>
+        <ct38>0</ct38>
+        <ct39>0</ct39>
+        <ct40>0</ct40>
+        <ct41>0</ct41>
+      </NVuKhauTruThue>
+      <NVuQToanThay>
+        <ct42>0</ct42>
+        <ct43>0</ct43>
+        <ct44>0</ct44>
+        <ct45>0</ct45>
+        <ct46>0</ct46>
+      </NVuQToanThay>
+      <dnCDoiLHinhHoacHNhat>true</dnCDoiLHinhHoacHNhat>
+      <lyDo>Chuyển đổi dữ liệu mẫu</lyDo>
+    </CTieuTKhaiChinh>
+  </HSoKhaiThue>
+</HSoThueDTu>

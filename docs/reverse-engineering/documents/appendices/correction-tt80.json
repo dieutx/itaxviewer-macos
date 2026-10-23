@@ -1,0 +1,52 @@
+{
+  "ids": ["PL01_KHBS", "PL01_1_KHBS"],
+  "evidenceType": "static installed XSLT and registry inspection; no runtime capture",
+  "legalReference": "Ban hành kèm theo Thông tư số 80/2021/TT-BTC ngày 29 tháng 9 năm 2021 của Bộ trưởng Bộ Tài chính",
+  "sources": [
+    {"path": "data/xslt/XSLT 2.5.2/TKhaiThue/xslt/KHBS/PLuc_01KHBS_TT80.xslt", "sha256": "1C07E563F6409B36655AAE1E0321325D1F683CFCA6988B2C625BE99D8AF4FA13"},
+    {"path": "data/xslt/XSLT 2.5.2/TKhaiThue/xslt/KHBS/PLuc_01_1_KHBS_TT80.xslt", "sha256": "7E51BDB76CACA16BCC4AD7D586F4A188CD0819A62344DACF949EFE7242A1D87E"},
+    {"path": "data/xslt/XSLT 2.5.2/TKhaiThue/include/TKhaiHeader.xsl", "sha256": "C5C72D5519C8F4EDF8775FCB746A02BCDFA2B407394FA2BEF871CAB1FBFAAD85", "lines": [14997, 15100, 17306, 17386]},
+    {"path": "data/DMucTKhai.xml", "sha256": "B9EADE63C42463F916F79BE895F0E5B184F60745C262C74AA111BFE74473E403"}
+  ],
+  "detect": {
+    "rule": "Exact appendix ID and parent declaration code/version whose registry PLucXSLT equals one of these two canonical paths. Do not infer support for TT40, PHLP, PNN, NTNN, TNDN or legacy KHBS_01 variants.",
+    "parentMappings": "iTaxViewerMac/Sources/iTaxViewerCore/Resources/appendix-correction-versions.json",
+    "headerCodeBranch": "PL01_KHBS/Header/maTKhai=914 joins ct3_ma and ct3_ten in allocation tax-code column; other codes use ct3_ma only"
+  },
+  "page": {"orientation": "portrait (registry plucOrientation=0)", "size": "A4 by app policy", "pageCount": "pending", "nativePrint": "pending"},
+  "forms": {
+    "PL01_KHBS": {"title": "TỜ KHAI BỔ SUNG", "formNumber": "01/KHBS"},
+    "PL01_1_KHBS": {"title": "BẢN GIẢI TRÌNH KHAI BỔ SUNG", "formNumber": "01-1/KHBS", "subtitle": "(Kèm theo Tờ khai bổ sung mẫu số 01/KHBS)"}
+  },
+  "header": [
+    {"label": "[01] Mẫu tờ khai:", "source": "Header/tenTKhai"},
+    {"label": "[02] Mã giao dịch điện tử:", "source": "Header/maGiaoDich"},
+    {"label": "[03] Kỳ tính thuế:", "source": "parent TTinChung/TKhaiThue/KyKKhaiThue", "format": "period"},
+    {"label": "[04] Bổ sung lần thứ:", "source": "Header/soLan"},
+    {"label": "[05] Tên người nộp thuế:", "source": "parent TTinChung/NNT/tenNNT"},
+    {"label": "[06] Mã số thuế:", "source": "parent TTinChung/NNT/mst"},
+    {"label": "[07] Tên đại lý thuế (nếu có):", "source": "parent TTinChung/DLyThue/tenDLyThue", "only": "PL01_KHBS"},
+    {"label": "[08] Mã số thuế:", "source": "parent TTinChung/DLyThue/mstDLyThue", "only": "PL01_KHBS"},
+    {"label": "[09] Hợp đồng đại lý thuế: Số", "source": "parent TTinChung/DLyThue/soHDongDLyThue", "only": "PL01_KHBS"},
+    {"label": "Ngày:", "source": "parent TTinChung/DLyThue/ngayKyHDDLyThue", "format": "date", "only": "PL01_KHBS"}
+  ],
+  "correctionSections": [
+    {"title": "A. Xác định tăng/giảm số thuế phải nộp và tiền chậm nộp, tăng/giảm số thuế được khấu trừ, tăng/giảm số thuế đề nghị hoàn:"},
+    {"title": "I. Xác định tăng/giảm số thuế phải nộp và tiền chậm nộp:"},
+    {"title": "1. Số thuế phải nộp trên tờ khai điều chỉnh tăng/giảm:", "recordPath": "Muc_A/Muc_I/Muc_1/ChiTiet", "columns": [{"label":"STT","format":"index"},{"label":"Tên Tiểu mục","source":["ct2_ma","ct2_ten"],"join":" - "},{"label":"Tăng/giảm số thuế phải nộp (tăng ghi (+), giảm ghi (-))","source":"ct3","format":"number"}], "total": {"label":"Tổng cộng: [10]","source":"Muc_A/Muc_I/Muc_1/tongCong_ct10"}},
+    {"title":"2. Số thuế phải nộp trên Phụ lục phân bổ điều chỉnh tăng/giảm:", "groupPath":"Muc_A/Muc_I/Muc_2/DSachPLuc/BKePLuc", "groupLabel":"ten_PLuc", "recordPath":"CTietPLuc/ChiTiet", "columns":[{"label":"STT","format":"group index"},{"label":"Tên (đơn vị phụ thuộc, địa điểm kinh doanh/tên mặt hàng/tỉnh nơi không có đơn vị phụ thuộc/địa điểm kinh doanh/đơn vị tiêu thụ/cơ sở khai thác)","source":["ct2_ma","ct2_ten"]},{"label":"Mã số thuế/mã số địa điểm kinh doanh (nếu có)","source":"ct3_ma","branch":"Header/maTKhai=914 adds ct3_ten"},{"label":"Huyện","source":"ct04_ten"},{"label":"Tỉnh","source":"ct05_ten"},{"label":"Cơ quan thuế quản lý địa bàn nhận phân bổ","source":"ct06_ten"},{"label":"Số tiền thuế phải nộp điều chỉnh tăng/giảm (tăng ghi (+), giảm ghi (-))","source":"ct7","format":"number"}], "total":{"label":"Tổng cộng: [11]","source":"Muc_A/Muc_I/Muc_2/DSachPLuc/tongCong_ct11"}},
+    {"title":"3. Xác định số tiền chậm nộp điều chỉnh tăng/giảm (tăng ghi (+), giảm ghi (-)):", "fields":[{"label":"a) Số ngày chậm nộp tính đến ngày","source":["Muc_A/Muc_I/Muc_3/ct3a_1","Muc_A/Muc_I/Muc_3/ct3a_2"],"format":["date","text"]},{"label":"b) Số tiền chậm nộp tăng/giảm:","source":"Muc_A/Muc_I/Muc_3/ct3b","format":"number"}]},
+    {"title":"II. Số thuế được khấu trừ điều chỉnh tăng/giảm:","recordPath":"Muc_A/Muc_II/ChiTiet","columns":[{"label":"STT","format":"index"},{"label":"Tên Tiểu mục","source":["ct2_ma","ct2_ten"]},{"label":"Tăng/giảm số thuế khấu trừ (tăng ghi (+), giảm ghi (-))","source":"ct3","format":"number"}],"total":{"label":"Tổng cộng: [12]","source":"Muc_A/Muc_II/tongCong_ct12"}},
+    {"title":"III. Số thuế đề nghị hoàn điều chỉnh tăng/giảm:","recordPath":"Muc_A/Muc_III/ChiTiet","columns":[{"label":"STT","format":"index"},{"label":"Tên Tiểu mục","source":["ct2_ma","ct2_ten"]},{"label":"Tăng/giảm số thuế đề nghị hoàn (tăng ghi (+), giảm ghi (-))","source":"ct3","format":"number"}],"total":{"label":"Tổng cộng: [13]","source":"Muc_A/Muc_III/tongCong_ct13"}},
+    {"title":"B. Số thuế thu hồi hoàn và tiền chậm nộp (nếu có):"},
+    {"title":"I. Số thuế thu hồi hoàn:","fields":[{"label":"1. Số tiền thu hồi hoàn:","source":"Muc_B/Muc_I/ct_1","format":"number","suffix":"Đồng Việt Nam."},{"label":"2. Quyết định hoàn thuế: Số","source":["Muc_B/Muc_I/ct_2_so","Muc_B/Muc_I/ct_2_ngay","Muc_B/Muc_I/ct_2_CQT_ten"],"connectors":["ngày","cơ quan thuế ban hành quyết định"]},{"label":"3. Lệnh hoàn thuế: Số","source":["Muc_B/Muc_I/ct_3_so","Muc_B/Muc_I/ct_3_ngay"],"connector":"ngày"}]},
+    {"title":"II. Tiền chậm nộp:","fields":[{"label":"1. Số ngày nhận được tiền hoàn thuế:","source":"Muc_B/Muc_II/ct_1"},{"label":"2. Số tiền chậm nộp (= số tiền đã được hoàn phải nộp trả NSNN x số ngày nhận được tiền hoàn thuế x mức chậm nộp):","source":"Muc_B/Muc_II/ct_2","format":"number"}]}
+  ],
+  "explanationSections": [
+    {"title":"A. Thông tin khai bổ sung:","groupPath":"Muc_A/DSachHSo/BKeHSo","groupLabel":"ten_HSo","recordPath":"CTietHSo/ChiTiet","columns":[{"label":"STT","format":"group index"},{"label":"Tên chỉ tiêu điều chỉnh/ Tên hàng hóa, dịch vụ","source":"ct2_ten; fallback ct3_ten when empty; append nonempty ct3_1_ten and ct3_2_ten separated by -"},{"label":"Mã số chỉ tiêu","source":"ct3_ma; append ct3_ten when ct2_ten is nonempty"},{"label":"Số đã kê khai","source":"ct04","format":"text"},{"label":"Số điều chỉnh","source":"ct05","format":"text"},{"label":"Chênh lệch/thay đổi giữa số điều chỉnh với số đã kê khai","source":"ct06","format":"number","formulaLabel":"(6)=(5)-(4); display source value without recomputing"},{"label":"Điều chỉnh tăng/giảm nghĩa vụ thuế","source":"ct7","format":"number"},{"label":"Lý do","source":"ct8","format":"text"}],"totals":[{"label":"Tổng cộng (tăng +, giảm -) phải nộp:","indicator":"07","source":"Muc_A/DSachHSo/TongCong/tongCong_7"},{"label":"Tổng cộng (tăng +, giảm -) khấu trừ:","indicator":"08","source":"Muc_A/DSachHSo/TongCong/tongCong_8"},{"label":"Tổng cộng (tăng +, giảm -) đề nghị hoàn:","indicator":"09","source":"Muc_A/DSachHSo/TongCong/tongCong_9"}]},
+    {"title":"B. Tài liệu kèm theo (nếu có):","recordPath":"Muc_B/CTietTaiLieu","columns":[{"label":"STT","format":"index"},{"label":"Tên chỉ tiêu điều chỉnh/ Tên hàng hóa, dịch vụ","source":"ten_TLieu"}]}
+  ],
+  "emptyBehaviour": "Keep headings, table headers and source totals even with no records. No totals calculated by the viewer.",
+  "unmappedFields": "Append explicitly labelled XML path/value rows after the layout, excluding Signature subtrees; never infer labels for unknown tags.",
+  "unknowns": ["Windows capture and PDF page count are pending", "macOS native visual, print and PDF verification pending", "Do not extend these mappings to similarly named variant templates without inspecting them"]
+}

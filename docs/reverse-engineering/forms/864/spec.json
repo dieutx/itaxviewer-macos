@@ -1,0 +1,576 @@
+{
+    "displayCode":  "05/KK-TNCN",
+    "maTKhai":  "864",
+    "versions":  [
+                     "2.9.3"
+                 ],
+    "sourceTemplate":  "TKhai_05_KK_TNCN_TT80.xslt",
+    "columns":  [
+                    "STT",
+                    "Chỉ tiêu",
+                    "Mã chỉ tiêu",
+                    "Đơn vị tính",
+                    "Số người/Số tiền"
+                ],
+    "rows":  [
+                 {
+                     "stt":  "1",
+                     "label":  "Tổng số người lao động:",
+                     "indicator":  "16",
+                     "codes":  [
+                                   "16"
+                               ],
+                     "values":  [
+                                    {
+                                        "path":  "ct16",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "summary",
+                     "source":  {
+                                    "template":  "TKhai_05_KK_TNCN_TT80.xslt",
+                                    "line":  35
+                                },
+                     "unit":  "Người"
+                 },
+                 {
+                     "stt":  "",
+                     "label":  "Trong đó: Cá nhân cư trú có hợp đồng lao động",
+                     "indicator":  "17",
+                     "codes":  [
+                                   "17"
+                               ],
+                     "values":  [
+                                    {
+                                        "path":  "ct17",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "row",
+                     "source":  {
+                                    "template":  "TKhai_05_KK_TNCN_TT80.xslt",
+                                    "line":  42
+                                },
+                     "unit":  "Người"
+                 },
+                 {
+                     "stt":  "2",
+                     "label":  "Tổng số cá nhân đã khấu trừ thuế [18]=[19]+[20]",
+                     "indicator":  "18",
+                     "codes":  [
+                                   "18"
+                               ],
+                     "values":  [
+                                    {
+                                        "path":  "ct18",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "summary",
+                     "source":  {
+                                    "template":  "TKhai_05_KK_TNCN_TT80.xslt",
+                                    "line":  50
+                                },
+                     "unit":  "Người"
+                 },
+                 {
+                     "stt":  "2.1",
+                     "label":  "Cá nhân cư trú",
+                     "indicator":  "19",
+                     "codes":  [
+                                   "19"
+                               ],
+                     "values":  [
+                                    {
+                                        "path":  "ct19",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "row",
+                     "source":  {
+                                    "template":  "TKhai_05_KK_TNCN_TT80.xslt",
+                                    "line":  58
+                                },
+                     "unit":  "Người"
+                 },
+                 {
+                     "stt":  "2.2",
+                     "label":  "Cá nhân không cư trú",
+                     "indicator":  "20",
+                     "codes":  [
+                                   "20"
+                               ],
+                     "values":  [
+                                    {
+                                        "path":  "ct20",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "row",
+                     "source":  {
+                                    "template":  "TKhai_05_KK_TNCN_TT80.xslt",
+                                    "line":  66
+                                },
+                     "unit":  "Người"
+                 },
+                 {
+                     "stt":  "3",
+                     "label":  "Tổng thu nhập chịu thuế (TNCT) trả cho cá nhân [21]=[22]+[23]",
+                     "indicator":  "21",
+                     "codes":  [
+                                   "21"
+                               ],
+                     "values":  [
+                                    {
+                                        "path":  "ct21",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "summary",
+                     "source":  {
+                                    "template":  "TKhai_05_KK_TNCN_TT80.xslt",
+                                    "line":  74
+                                },
+                     "unit":  "VNĐ"
+                 },
+                 {
+                     "stt":  "3.1",
+                     "label":  "Cá nhân cư trú",
+                     "indicator":  "22",
+                     "codes":  [
+                                   "22"
+                               ],
+                     "values":  [
+                                    {
+                                        "path":  "ct22",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "row",
+                     "source":  {
+                                    "template":  "TKhai_05_KK_TNCN_TT80.xslt",
+                                    "line":  82
+                                },
+                     "unit":  "VNĐ"
+                 },
+                 {
+                     "stt":  "3.2",
+                     "label":  "Cá nhân không cư trú",
+                     "indicator":  "23",
+                     "codes":  [
+                                   "23"
+                               ],
+                     "values":  [
+                                    {
+                                        "path":  "ct23",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "row",
+                     "source":  {
+                                    "template":  "TKhai_05_KK_TNCN_TT80.xslt",
+                                    "line":  90
+                                },
+                     "unit":  "VNĐ"
+                 },
+                 {
+                     "stt":  "3.3",
+                     "label":  "Trong đó: Tổng thu nhập chịu thuế từ tiền phí mua bảo hiểm nhân thọ, bảo hiểm không bắt buộc khác của doanh nghiệp bảo hiểm không thành lập tại Việt Nam cho người lao động",
+                     "indicator":  "24",
+                     "codes":  [
+                                   "24"
+                               ],
+                     "values":  [
+                                    {
+                                        "path":  "ct24",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "row",
+                     "source":  {
+                                    "template":  "TKhai_05_KK_TNCN_TT80.xslt",
+                                    "line":  97
+                                },
+                     "unit":  "VNĐ"
+                 },
+                 {
+                     "stt":  "4",
+                     "label":  "Trong đó tổng thu nhập chịu thuế được miễn theo quy định của Hợp đồng dầu khí",
+                     "indicator":  "25",
+                     "codes":  [
+                                   "25"
+                               ],
+                     "values":  [
+                                    {
+                                        "path":  "ct25",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "summary",
+                     "source":  {
+                                    "template":  "TKhai_05_KK_TNCN_TT80.xslt",
+                                    "line":  104
+                                },
+                     "unit":  "VNĐ"
+                 },
+                 {
+                     "stt":  "4.1",
+                     "label":  "Thu nhập miễn thuế, thu nhập cá nhân theo nghị quyết",
+                     "indicator":  "25.1",
+                     "codes":  [
+                                   "25.1"
+                               ],
+                     "values":  [
+                                    {
+                                        "path":  "ct25_1",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "row",
+                     "source":  {
+                                    "template":  "TKhai_05_KK_TNCN_TT80.xslt",
+                                    "line":  111
+                                },
+                     "unit":  "VNĐ"
+                 },
+                 {
+                     "stt":  "5",
+                     "label":  "Tổng thu nhập chịu thuế trả cho cá nhân thuộc diện phải khấu trừ thuế [26]=[27]+[28]",
+                     "indicator":  "26",
+                     "codes":  [
+                                   "26"
+                               ],
+                     "values":  [
+                                    {
+                                        "path":  "ct26",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "summary",
+                     "source":  {
+                                    "template":  "TKhai_05_KK_TNCN_TT80.xslt",
+                                    "line":  118
+                                },
+                     "unit":  "VNĐ"
+                 },
+                 {
+                     "stt":  "5.1",
+                     "label":  "Cá nhân cư trú",
+                     "indicator":  "27",
+                     "codes":  [
+                                   "27"
+                               ],
+                     "values":  [
+                                    {
+                                        "path":  "ct27",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "row",
+                     "source":  {
+                                    "template":  "TKhai_05_KK_TNCN_TT80.xslt",
+                                    "line":  125
+                                },
+                     "unit":  "VNĐ"
+                 },
+                 {
+                     "stt":  "5.2",
+                     "label":  "Cá nhân không cư trú",
+                     "indicator":  "28",
+                     "codes":  [
+                                   "28"
+                               ],
+                     "values":  [
+                                    {
+                                        "path":  "ct28",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "row",
+                     "source":  {
+                                    "template":  "TKhai_05_KK_TNCN_TT80.xslt",
+                                    "line":  132
+                                },
+                     "unit":  "VNĐ"
+                 },
+                 {
+                     "stt":  "6",
+                     "label":  "Tổng số thuế thu nhập cá nhân đã khấu trừ [29]=[30]+[31]",
+                     "indicator":  "29",
+                     "codes":  [
+                                   "29"
+                               ],
+                     "values":  [
+                                    {
+                                        "path":  "ct29",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "summary",
+                     "source":  {
+                                    "template":  "TKhai_05_KK_TNCN_TT80.xslt",
+                                    "line":  139
+                                },
+                     "unit":  "VNĐ"
+                 },
+                 {
+                     "stt":  "6.1",
+                     "label":  "Cá nhân cư trú",
+                     "indicator":  "30",
+                     "codes":  [
+                                   "30"
+                               ],
+                     "values":  [
+                                    {
+                                        "path":  "ct30",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "row",
+                     "source":  {
+                                    "template":  "TKhai_05_KK_TNCN_TT80.xslt",
+                                    "line":  146
+                                },
+                     "unit":  "VNĐ"
+                 },
+                 {
+                     "stt":  "6.2",
+                     "label":  "Cá nhân không cư trú",
+                     "indicator":  "31",
+                     "codes":  [
+                                   "31"
+                               ],
+                     "values":  [
+                                    {
+                                        "path":  "ct31",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "row",
+                     "source":  {
+                                    "template":  "TKhai_05_KK_TNCN_TT80.xslt",
+                                    "line":  154
+                                },
+                     "unit":  "VNĐ"
+                 },
+                 {
+                     "stt":  "6.3",
+                     "label":  "Trong đó: Tổng số thuế thu nhập cá nhân đã khấu trừ trên tiền phí mua bảo hiểm nhân thọ, bảo hiểm không bắt buộc khác của doanh nghiệp bảo hiểm không thành lập tại Việt Nam cho người lao động",
+                     "indicator":  "32",
+                     "codes":  [
+                                   "32"
+                               ],
+                     "values":  [
+                                    {
+                                        "path":  "ct32",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "row",
+                     "source":  {
+                                    "template":  "TKhai_05_KK_TNCN_TT80.xslt",
+                                    "line":  161
+                                },
+                     "unit":  "VNĐ"
+                 }
+             ],
+    "headerTemplate":  "tkhaiHeader_05_KK_TNCN_TT80_283",
+    "headerFacts":  [
+                        {
+                            "label":  "Kỳ tính thuế:",
+                            "code":  "01",
+                            "expressions":  [
+                                                "ihtkk:kyTinhThue($kyKKhai,$kieuKy,$ttkthue/TKhaiThue/KyKKhaiThue/kyKKhaiTuNgay,$ttkthue/TKhaiThue/KyKKhaiThue/kyKKhaiDenNgay)"
+                                            ]
+                        },
+                        {
+                            "label":  "Lần đầu: [X] [03] Bổ sung lần thứ: [ ] [02] Lần đầu: [ ] [03] Bổ sung lần thứ: []",
+                            "code":  "02",
+                            "expressions":  [
+                                                "$ttkthue/TKhaiThue/soLan"
+                                            ]
+                        },
+                        {
+                            "label":  "Tên người nộp thuế:",
+                            "code":  "04",
+                            "expressions":  [
+                                                "$ttkthue/NNT/tenNNT"
+                                            ]
+                        },
+                        {
+                            "label":  "Mã số thuế:",
+                            "code":  "05",
+                            "expressions":  [
+                                                "$ttkthue/NNT/mst"
+                                            ]
+                        },
+                        {
+                            "label":  "Địa chỉ:",
+                            "code":  "06",
+                            "expressions":  [
+                                                "$ttkthue/NNT/dchiNNT"
+                                            ]
+                        },
+                        {
+                            "label":  "Xã/phường/đặc khu:",
+                            "code":  "07",
+                            "expressions":  [
+                                                "$ttkthue/NNT/tenXaNNT"
+                                            ]
+                        },
+                        {
+                            "label":  "Tỉnh/Thành phố:",
+                            "code":  "08",
+                            "expressions":  [
+                                                "$ttkthue/NNT/tenTinhNNT"
+                                            ]
+                        },
+                        {
+                            "label":  "Điện thoại:",
+                            "code":  "09",
+                            "expressions":  [
+                                                "$ttkthue/NNT/dthoaiNNT"
+                                            ]
+                        },
+                        {
+                            "label":  "Fax:",
+                            "code":  "10",
+                            "expressions":  [
+                                                "$ttkthue/NNT/faxNNT"
+                                            ]
+                        },
+                        {
+                            "label":  "E-mail:",
+                            "code":  "11",
+                            "expressions":  [
+                                                "$ttkthue/NNT/emailNNT"
+                                            ]
+                        },
+                        {
+                            "label":  "Tên đại lý thuế (nếu có):",
+                            "code":  "12",
+                            "expressions":  [
+                                                "$ttkthue/DLyThue/tenDLyThue"
+                                            ]
+                        },
+                        {
+                            "label":  "Mã số thuế:",
+                            "code":  "13",
+                            "expressions":  [
+                                                "$ttkthue/DLyThue/mstDLyThue"
+                                            ]
+                        },
+                        {
+                            "label":  "Hợp đồng đại lý thuế: Số",
+                            "code":  "14",
+                            "expressions":  [
+                                                "$ttkthue/DLyThue/soHDongDLyThue"
+                                            ]
+                        }
+                    ],
+    "sourceEvidence":  {
+                           "path":  "data/xslt/XSLT 2.9.3/TKhaiThue/xslt/TNCN/TKhai_05_KK_TNCN_TT80.xslt",
+                           "sha256":  "488c31162347f5b117c26eb45d55838e9b97a0b55548ca3d9dfed8a2c2f5cee3",
+                           "inspectedDate":  "2026-10-23",
+                           "kind":  "static-template-inspection"
+                       },
+    "verificationStatus":  "Static mapping only; Windows visual/PDF and native macOS execution pending",
+    "unknowns":  [
+                     "Windows screenshot comparison pending",
+                     "Windows print/PDF pagination pending",
+                     "Native macOS display and print/export pending"
+                 ],
+    "headerFields":  [
+                         {
+                             "label":  "Tên người nộp thuế:",
+                             "root":  "ttkthue",
+                             "code":  "04",
+                             "path":  "NNT/tenNNT",
+                             "sourceLine":  14145
+                         },
+                         {
+                             "label":  "Mã số thuế:",
+                             "root":  "ttkthue",
+                             "code":  "05",
+                             "path":  "NNT/mst",
+                             "sourceLine":  14151
+                         },
+                         {
+                             "label":  "Địa chỉ:",
+                             "root":  "ttkthue",
+                             "code":  "06",
+                             "path":  "NNT/dchiNNT",
+                             "sourceLine":  14156
+                         },
+                         {
+                             "label":  "Xã/phường/đặc khu:",
+                             "root":  "ttkthue",
+                             "code":  "07",
+                             "path":  "NNT/tenXaNNT",
+                             "sourceLine":  14161
+                         },
+                         {
+                             "label":  "Tỉnh/Thành phố:",
+                             "root":  "ttkthue",
+                             "code":  "08",
+                             "path":  "NNT/tenTinhNNT",
+                             "sourceLine":  14167
+                         },
+                         {
+                             "label":  "Điện thoại:",
+                             "root":  "ttkthue",
+                             "code":  "09",
+                             "path":  "NNT/dthoaiNNT",
+                             "sourceLine":  14172
+                         },
+                         {
+                             "label":  "Fax:",
+                             "root":  "ttkthue",
+                             "code":  "10",
+                             "path":  "NNT/faxNNT",
+                             "sourceLine":  14175
+                         },
+                         {
+                             "label":  "E-mail:",
+                             "root":  "ttkthue",
+                             "code":  "11",
+                             "path":  "NNT/emailNNT",
+                             "sourceLine":  14178
+                         },
+                         {
+                             "label":  "Tên đại lý thuế (nếu có):",
+                             "root":  "ttkthue",
+                             "code":  "12",
+                             "path":  "DLyThue/tenDLyThue",
+                             "sourceLine":  14185
+                         },
+                         {
+                             "label":  "Mã số thuế:",
+                             "root":  "ttkthue",
+                             "code":  "13",
+                             "path":  "DLyThue/mstDLyThue",
+                             "sourceLine":  14191
+                         },
+                         {
+                             "label":  "Hợp đồng đại lý thuế: Số",
+                             "root":  "ttkthue",
+                             "code":  "14",
+                             "path":  "DLyThue/soHDongDLyThue",
+                             "suffixPath":  "DLyThue/ngayKyHDDLyThue",
+                             "suffixFormat":  "date",
+                             "sourceLine":  14196
+                         }
+                     ],
+    "extraFields":  [
+                        {
+                            "label":  "Phân bổ thuế do có đơn vị hạch toán phụ thuộc tại địa bàn cấp tỉnh khác nơi có trụ sở chính",
+                            "path":  "ct15",
+                            "code":  "15",
+                            "format":  "checkbox"
+                        }
+                    ],
+    "headerSourceEvidence":  {
+                                 "sha256":  "2d3ab2c76acf27f41293285d2d0c42b8605194c65c39e18f71f99c752261bb00",
+                                 "path":  "data\\xslt\\XSLT 2.9.3\\TKhaiThue\\include\\TKhaiHeader.xsl"
+                             }
+}

@@ -265,9 +265,39 @@ Hiện tại app chỉ hiển thị **metadata** chữ ký và luôn trả trạ
 Sau mỗi batch RE: cập nhật `documents/progress.json`, `PROGRESS.md`, `results/*.md`, rồi
 giao lại để implement macOS + viết test + so ảnh/PDF.
 
+## 11b. Nguồn dữ kiện mới: trích trực tiếp từ XSLT (2026-10-23)
+
+Ngoài capture tay, toàn bộ `data/xslt` của bản Windows đã được trích tự động thành dữ kiện
+máy đọc — xem [`xslt-specs/`](xslt-specs/README.md) và
+[`tools/extract_xslt_specs.py`](tools/extract_xslt_specs.py).
+
+| Số liệu | Giá trị |
+|---|---:|
+| Template sau khử trùng lặp (3.149 file / 103 thư mục) | 1.035 |
+| Template khai báo mã biểu mẫu | 774 |
+| Mã biểu mẫu phân biệt | 447 |
+| Dòng trích được | 15.201 (có 784 dòng bảng danh sách) |
+| Mã chỉ tiêu trích được | 2.786 |
+| Template không trích được dòng nào | 46 (23 có mã biểu mẫu) |
+| Template vendor viết sai XML (không parse được) | 7 |
+
+Ý nghĩa với mục tiêu 90–100%: phần **nhãn + mã chỉ tiêu + cột + thứ tự khối** không còn phải
+suy đoán cho 447 mã, tức là trục “Nhãn & chỉ tiêu” và phần lớn trục “Bố cục” đã có nguồn thay
+thế capture chụp màn hình. Vẫn còn thiếu, và **chưa được tính là đã đạt**:
+
+- dòng chỉ tiêu nằm ngoài `<table>` (ví dụ “Tổng doanh thu” của 04/GTGT);
+- công thức (`[27]=[29]+[30]+…`) mới chỉ nằm trong nhãn, chưa tách thành biểu thức;
+- điều kiện ẩn/hiện và CSS (`data/css/ihtkk.css`) — không copy asset vendor;
+- số trang/ngắt trang: phải so PDF với app gốc chạy trên Windows.
+
+Kiểm chứng pipeline: 6/8 spec viết tay khớp hoàn toàn; 2 mục 04/GTGT lệch vì spec tay có dòng
+lấy ngoài bảng. Chi tiết trong [`xslt-specs/README.md`](xslt-specs/README.md).
+
 ## 12. Rủi ro / giới hạn
 
 - Không có bản Windows ⇒ không thể xác nhận nhãn, công thức, số trang. **Không suy đoán.**
+  (Cập nhật 2026-10-23: bản Windows **có** trên máy này; nhãn/mã chỉ tiêu đã trích được —
+  xem mục 11b. Công thức và bố cục in vẫn cần capture.)
 - Một số mẫu có nhiều version khác layout (04/GTGT, 01/CNKD, TT89/2025); phải capture
   từng version lớn.
 - Phụ lục có thể phụ thuộc tờ khai cha; cùng tên nhưng khác layout giữa các version.
