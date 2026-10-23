@@ -8,7 +8,8 @@ python3 docs/reverse-engineering/tools/generate_coverage.py
 
 | File | Nội dung | Cách dùng |
 |---|---|---|
-| `declarations.csv` | 410 mã `maTKhai`, version, template, orientation | lọc `wave` để chia batch |
+| `declarations.csv` | 410 mã `maTKhai`, version, template, orientation, họ | lọc `wave`/`family` để chia batch |
+| `declaration-families.csv` | 17 họ tờ khai + số mã/version/template | chọn batch theo họ |
 | `notices.csv` | 158 dòng registry × 122 mã thông báo | lọc `wave` + `registry` |
 | `appendices.csv` | 210 phụ lục, số tờ khai cha | lọc `wave`, ưu tiên `parentCount` lớn |
 | `vouchers.csv` | 5 dòng chứng từ CT-01 | capture theo version |

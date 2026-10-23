@@ -57,6 +57,48 @@ def write_csv(path: Path, fields: list[str], rows: list[dict]) -> None:
         writer.writerows(rows)
 
 
+
+def declaration_family(display: str | None) -> str:
+    """Group the 237 display codes into reviewable tax families."""
+    if not display:
+        return "Không mã hiển thị / nội bộ"
+    d = display.upper().strip()
+    if "GTGT" in d:
+        return "GTGT"
+    if "TNCN" in d:
+        return "TNCN"
+    if "TNDN" in d:
+        return "TNDN"
+    if "TTĐB" in d or "TTS" in d:
+        return "TTĐB / TTS"
+    if "BVMT" in d or "PBVMT" in d:
+        return "Bảo vệ môi trường"
+    if "TAIN" in d:
+        return "Tài nguyên"
+    if "NTNN" in d or "NCCNN" in d:
+        return "Nhà thầu nước ngoài"
+    if "CNKD" in d or "HKD" in d:
+        return "Hộ kinh doanh"
+    if any(k in d for k in ("XSBH", "KK-XS", "KK-BH", "LNCL-XS")):
+        return "Xổ số / Bảo hiểm"
+    if (d.startswith("B0") or d.startswith("B 0") or d.startswith("B-0")
+            or d.startswith("MẪU SỐ B0") or "BCTC" in d or d.startswith("BC")
+            or d.startswith("TB0") or d.startswith("BK0") or "CTCK" in d
+            or "DNNKLT" in d or "DNSN" in d or "DNSS" in d or "HTX" in d
+            or "CTQ" in d or "TCTD" in d or "DNN" in d):
+        return "BCTC & thuyết minh"
+    if "TEM" in d or "CTT24" in d:
+        return "Tem điện tử"
+    if any(k in d for k in ("PHLP", "PHLPNG")) or d in ("01/PH", "02/PH", "01/LP"):
+        return "Phí / lệ phí"
+    if "MBAI" in d or "LPMB" in d:
+        return "Thuế môn bài"
+    if "VTNN" in d:
+        return "Vận tải"
+    if "HTQT" in d:
+        return "Hiệp định thuế / HTQT"
+    return "Đăng ký, khai lần đầu & chuyên ngành"
+
 def declaration_wave(code: str, display: str | None) -> str:
     if code in FULL_DECLARATIONS:
         return "done"
@@ -118,13 +160,35 @@ def main() -> None:
             "orientation": entries[0]["orientation"],
             "template": entries[0]["xslt"],
             "status": "full" if code in FULL_DECLARATIONS else "structured-only",
+            "family": declaration_family(display),
             "wave": declaration_wave(code, display),
             "prompt": "01-DECLARATIONS.md",
         })
     write_csv(OUT / "declarations.csv",
-              ["maTKhai", "displayCode", "versions", "versionCount", "orientation",
+              ["maTKhai", "displayCode", "family", "versions", "versionCount", "orientation",
                "template", "status", "wave", "prompt"],
               decl_rows)
+
+    # ---- declaration families (navigation aid) ----
+    families = defaultdict(lambda: {"displays": set(), "codes": set(),
+                                    "versions": 0, "templates": set()})
+    for row in decl_rows:
+        family = families[row["family"]]
+        family["displays"].add(row["displayCode"] or "(không mã)")
+        family["codes"].add(row["maTKhai"])
+        family["versions"] += int(row["versionCount"])
+        family["templates"].add(row["template"])
+    family_rows = [{
+        "family": name,
+        "displayCodes": len(value["displays"]),
+        "maTKhaiCodes": len(value["codes"]),
+        "versions": value["versions"],
+        "templates": len(value["templates"]),
+    } for name, value in sorted(families.items(),
+                                key=lambda kv: -len(kv[1]["displays"]))]
+    write_csv(OUT / "declaration-families.csv",
+              ["family", "displayCodes", "maTKhaiCodes", "versions", "templates"],
+              family_rows)
 
     # ---- notices, one row per (registry, id) ----
     notices = defaultdict(list)
@@ -209,6 +273,7 @@ def main() -> None:
             "full": sum(1 for r in decl_rows if r["status"] == "full"),
             "structuredOnly": sum(1 for r in decl_rows if r["status"] != "full"),
             "byWave": dict(Counter(r["wave"] for r in decl_rows)),
+            "families": len(family_rows),
         },
         "notices": {
             "uniqueIds": len({r["id"] for r in notice_rows}),

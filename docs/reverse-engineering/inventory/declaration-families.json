@@ -1,0 +1,189 @@
+[
+  {
+    "family": "Đăng ký, khai lần đầu & chuyên ngành",
+    "displayCodes": 91,
+    "maTKhaiCodes": 119,
+    "versions": 169,
+    "templates": 118,
+    "waves": {
+      "P2": 113,
+      "P1": 6
+    }
+  },
+  {
+    "family": "BCTC & thuyết minh",
+    "displayCodes": 36,
+    "maTKhaiCodes": 61,
+    "versions": 82,
+    "templates": 60,
+    "waves": {
+      "P2": 58,
+      "P0": 3
+    }
+  },
+  {
+    "family": "TNCN",
+    "displayCodes": 24,
+    "maTKhaiCodes": 32,
+    "versions": 66,
+    "templates": 32,
+    "waves": {
+      "P1": 8,
+      "P2": 20,
+      "done": 2,
+      "P0": 2
+    }
+  },
+  {
+    "family": "TNDN",
+    "displayCodes": 17,
+    "maTKhaiCodes": 33,
+    "versions": 76,
+    "templates": 32,
+    "waves": {
+      "P1": 6,
+      "P2": 23,
+      "P0": 3,
+      "done": 1
+    }
+  },
+  {
+    "family": "Tài nguyên",
+    "displayCodes": 9,
+    "maTKhaiCodes": 17,
+    "versions": 39,
+    "templates": 17,
+    "waves": {
+      "P1": 9,
+      "P2": 8
+    }
+  },
+  {
+    "family": "Hộ kinh doanh",
+    "displayCodes": 8,
+    "maTKhaiCodes": 13,
+    "versions": 22,
+    "templates": 12,
+    "waves": {
+      "P2": 9,
+      "P0": 4
+    }
+  },
+  {
+    "family": "Tem điện tử",
+    "displayCodes": 8,
+    "maTKhaiCodes": 12,
+    "versions": 23,
+    "templates": 12,
+    "waves": {
+      "P2": 12
+    }
+  },
+  {
+    "family": "Xổ số / Bảo hiểm",
+    "displayCodes": 7,
+    "maTKhaiCodes": 10,
+    "versions": 24,
+    "templates": 9,
+    "waves": {
+      "P1": 5,
+      "P2": 5
+    }
+  },
+  {
+    "family": "Nhà thầu nước ngoài",
+    "displayCodes": 7,
+    "maTKhaiCodes": 12,
+    "versions": 28,
+    "templates": 12,
+    "waves": {
+      "P2": 3,
+      "P1": 9
+    }
+  },
+  {
+    "family": "Phí / lệ phí",
+    "displayCodes": 7,
+    "maTKhaiCodes": 7,
+    "versions": 20,
+    "templates": 7,
+    "waves": {
+      "P2": 7
+    }
+  },
+  {
+    "family": "GTGT",
+    "displayCodes": 6,
+    "maTKhaiCodes": 11,
+    "versions": 56,
+    "templates": 11,
+    "waves": {
+      "done": 2,
+      "P1": 7,
+      "P0": 2
+    }
+  },
+  {
+    "family": "TTĐB / TTS",
+    "displayCodes": 5,
+    "maTKhaiCodes": 10,
+    "versions": 30,
+    "templates": 10,
+    "waves": {
+      "P2": 8,
+      "P1": 2
+    }
+  },
+  {
+    "family": "Bảo vệ môi trường",
+    "displayCodes": 5,
+    "maTKhaiCodes": 7,
+    "versions": 17,
+    "templates": 7,
+    "waves": {
+      "P2": 5,
+      "P1": 2
+    }
+  },
+  {
+    "family": "Hiệp định thuế / HTQT",
+    "displayCodes": 4,
+    "maTKhaiCodes": 4,
+    "versions": 5,
+    "templates": 4,
+    "waves": {
+      "P2": 4
+    }
+  },
+  {
+    "family": "Thuế môn bài",
+    "displayCodes": 2,
+    "maTKhaiCodes": 3,
+    "versions": 7,
+    "templates": 3,
+    "waves": {
+      "P1": 2,
+      "P2": 1
+    }
+  },
+  {
+    "family": "Không mã hiển thị / nội bộ",
+    "displayCodes": 1,
+    "maTKhaiCodes": 57,
+    "versions": 89,
+    "templates": 52,
+    "waves": {
+      "P3": 57
+    }
+  },
+  {
+    "family": "Vận tải",
+    "displayCodes": 1,
+    "maTKhaiCodes": 2,
+    "versions": 4,
+    "templates": 2,
+    "waves": {
+      "P1": 2
+    }
+  }
+]

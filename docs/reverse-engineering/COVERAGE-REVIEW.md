@@ -43,7 +43,8 @@ Inventory máy đọc (dùng để chia batch khi RE):
 
 | File | Nội dung |
 |---|---|
-| [`inventory/declarations.csv`](inventory/declarations.csv) | 410 mã tờ khai, version, template, trạng thái, wave |
+| [`inventory/declarations.csv`](inventory/declarations.csv) | 410 mã tờ khai, family, version, template, trạng thái, wave |
+| [`inventory/declaration-families.csv`](inventory/declaration-families.csv) | 17 họ tờ khai: số mã hiển thị, mã `maTKhai`, version, template |
 | [`inventory/notices.csv`](inventory/notices.csv) | 158 dòng registry × 122 mã thông báo |
 | [`inventory/appendices.csv`](inventory/appendices.csv) | 210 phụ lục, số tờ khai cha, trạng thái, wave |
 | [`inventory/vouchers.csv`](inventory/vouchers.csv) | 5 dòng chứng từ |
@@ -93,14 +94,33 @@ so với cảm nhận người dùng, vì mỗi tờ khai thường kèm 1–11 
 Lý do ưu tiên: đây là các mẫu phổ biến, có trong registry, và 04/GTGT đã xuất hiện trong
 corpus thật của người dùng (3/12 file).
 
-### 4.3 Wave P1 — 58 mã, gom theo họ
+### 4.3 Wave P1 — các họ tờ khai còn lại (không chỉ GTGT)
 
-- **GTGT**: 02/GTGT (`02`,`844`), 03/GTGT (`04`,`846`), 05/GTGT (`53`,`850`), 01/TĐ-GTGT (`132`).
-- **TNCN**: 02/KK-TNCN (`47`,`391`,`859`), 02/QTT-TNCN (`392`,`952`,`1000`),
-  06/TNCN (`396`,`865`,`2006`), 04/NNG-TNCN (`863`).
-- **TNDN**: 02/TNDN (`71`,`837`,`1267`), 04/TNDN (`13`,`833`).
-- **Khác**: 01/TTS, 01/TAIN (+ĐK), 02/TAIN, 03/TĐ-TAIN, 01–04/NTNN, 01/TBVMT,
-  01/HKNN, 01/TBH, 01/XSBHĐC, 02/KK-XS, 02/KK-BH, 01/ĐNHT, 01/MBAI, 01/VTNN.
+Ngoài GTGT, toàn bộ 237 mã hiển thị được chia thành 17 họ để review/capture (bảng đầy đủ
+trong `inventory/declaration-families.csv`):
+
+| Họ | Mã hiển thị | Ghi chú |
+|---|---:|---|
+| Đăng ký, khai lần đầu & chuyên ngành | 91 | `*-DK`, `*-VSP`, `ĐK-TCT`, khai lần đầu |
+| BCTC & thuyết minh | 36 | B01/B02/B05, CTCK/NH/HTX, thuyết minh |
+| TNCN | 24 | Khấu trừ, quyết toán, thu nhập khác, chuyển nhượng, BĐS |
+| TNDN | 17 | Gồm TT89/2025, dầu khí |
+| Tài nguyên | 9 | Khai thác, dầu khí, tài nguyên |
+| Hộ kinh doanh | 8 | CNKD/HKD, TMĐT, xổ số |
+| Tem điện tử | 8 | Tem thuốc lá/rượu |
+| Xổ số / Bảo hiểm | 7 | Xổ số, bảo hiểm |
+| Nhà thầu nước ngoài | 7 | NTNN/NCCNN |
+| Phí / lệ phí | 7 | Phí, lệ phí, phí BVMT |
+| GTGT | 6 | Đã có 01/GTGT; còn 02/03/04/05 |
+| TTĐB / TTS | 5 | Tiêu thụ đặc biệt/TTS |
+| Bảo vệ môi trường | 5 | BVMT, túi nilon |
+| Hiệp định thuế / HTQT | 4 | HTQT |
+| Thuế môn bài | 2 | Môn bài |
+| Vận tải | 1 | VTNN |
+| Không mã hiển thị / nội bộ | 1 (57 mã) | P3 |
+
+Prompt `01-DECLARATIONS.md` có batch card chi tiết cho **từng họ** ở trên, kèm mã, version,
+template và câu hỏi capture. Các họ P1/P2 không bị bỏ qua; thứ tự chỉ là ưu tiên.
 
 ### 4.4 Wave P2/P3 — 333 mã
 

@@ -8,7 +8,7 @@ thu thập bằng chứng + spec để clone giao diện/in của bản gốc, k
 1. Mở `00-MASTER.md`, copy toàn bộ làm prompt mở đầu cho agent Windows.
 2. Chọn batch theo thứ tự wave trong `../reverse-engineering/COVERAGE-REVIEW.md`.
 3. Gửi kèm file chuyên biệt:
-   - Tờ khai: `01-DECLARATIONS.md`
+   - Tờ khai: `01-DECLARATIONS.md` (bao gồm **toàn bộ 17 họ**, không chỉ GTGT)
    - Thông báo: `02-NOTICES.md`
    - Phụ lục: `03-APPENDICES.md`
    - Chứng từ: `04-VOUCHERS.md`

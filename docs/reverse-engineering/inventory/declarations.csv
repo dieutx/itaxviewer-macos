@@ -1,411 +1,411 @@
-maTKhai,displayCode,versions,versionCount,orientation,template,status,wave,prompt
-,02/TNDN,2.0.0;3.0.9,2,0,data\XSLT\TKhaiThue\xslt\TNDN\TKhai_TNDN_02.xslt,structured-only,P1,01-DECLARATIONS.md
-01,01/GTGT,2.0.0;2.0.1;2.0.2;2.0.4;2.0.6;2.0.7;2.1.2;2.2.8;2.3.3;2.4.0;2.5.0;2.6.2,12,0,data\xslt\TKhaiThue\xslt\GTGT\TKhai_GTGT_01.xslt,full,done,01-DECLARATIONS.md
-01/CCTT-ĐK,,2.1.0,1,0,data\xslt\XSLT 2.8.1\TKhaiThue\xslt\HDDT\TKhai_01_CCTT_DK.xslt,structured-only,P3,01-DECLARATIONS.md
-01/ÐKTÐ-HÐÐT,,2.1.0,1,0,data\xslt\XSLT 2.8.1\TKhaiThue\xslt\HDDT\TKhai_01_DKTD_HDDT.xslt,structured-only,P3,01-DECLARATIONS.md
-01/ĐKTĐ-CTĐT,,2.1.0,1,0,data\xslt\XSLT 2.8.1\TKhaiThue\xslt\HDDT\TKhai_01_DKTD_CTDT.xslt,structured-only,P3,01-DECLARATIONS.md
-01/ĐKTĐ-HĐĐT,,2.1.0,1,0,data\xslt\XSLT 2.8.1\TKhaiThue\xslt\HDDT\TKhai_01_DKTD_HDDT.xslt,structured-only,P3,01-DECLARATIONS.md
-01/ĐKTĐ–HĐĐT,,2.1.0,1,0,data\xslt\XSLT 2.8.1\TKhaiThue\xslt\HDDT\TKhai_01_DKTD_HDDT.xslt,structured-only,P3,01-DECLARATIONS.md
-02,02/GTGT,2.0.0;2.0.1;2.0.2;2.0.4;2.0.6;2.1.2;2.4.1;2.4.5;2.7.0,9,0,data\XSLT\TKhaiThue\xslt\GTGT\TKhai_GTGT_02.xslt,structured-only,P1,01-DECLARATIONS.md
-03,03/TNDN,2.0.0;2.0.1;2.0.3;2.0.5;2.0.7;2.2.3;2.2.8;2.3.1;2.3.3;2.3.9;2.4.5;2.6.2,12,0,data\XSLT\TKhaiThue\xslt\TNDN\TKhai_TNDN_03_TT28.xslt,structured-only,P2,01-DECLARATIONS.md
-03/DL-HĐĐT,,3.0.0,1,0,data\xslt\XSLT 2.5.1\TKhaiThue\xslt\HDDT\TKhai_03_DL_HDDT.xslt,structured-only,P3,01-DECLARATIONS.md
-04,03/GTGT,2.0.0;2.0.1;2.0.2;2.0.4;2.0.6,5,0,data\XSLT\TKhaiThue\xslt\GTGT\TKhai_GTGT_03.xslt,structured-only,P1,01-DECLARATIONS.md
-04/SS-CTĐT,,2.1.0;3.0.8,2,0,data\xslt\XSLT 2.8.1\TKhaiThue\xslt\HDDT\TKhai_04_SS_CTDT.xslt,structured-only,P3,01-DECLARATIONS.md
-04/SS-HĐĐT,,2.1.0;3.0.8,2,0,data\xslt\XSLT 2.8.1\TKhaiThue\xslt\HDDT\TKhai_04_SS_HDDT.xslt,structured-only,P3,01-DECLARATIONS.md
-05,01/TTĐB,2.0.0;2.0.1;2.0.2;2.0.7;2.1.2;2.2.8;2.3.3,7,1,data\XSLT\TKhaiThue\xslt\TTDB\TKhai_TTDB_01.xslt,structured-only,P2,01-DECLARATIONS.md
-06,01/TAIN,2.0.0;2.0.1;2.0.2;2.0.4,4,1,data\XSLT\TKhaiThue\xslt\TAIN\TKhai_TAIN_01.xslt,structured-only,P1,01-DECLARATIONS.md
-06/ĐN-PSĐT,,2.1.0,1,0,data\xslt\XSLT 2.8.1\TKhaiThue\xslt\HDDT\TKhai_06_DN_PSDT.xslt,structured-only,P3,01-DECLARATIONS.md
-07,04/GTGT,2.0.0;2.0.1;2.0.2;2.0.4;2.0.6;2.1.0;2.1.2;2.4.1;2.5.0,9,0,data\XSLT\TKhaiThue\xslt\GTGT\TKhai_GTGT_04.xslt,structured-only,P0,01-DECLARATIONS.md
-08,02/TAIN,2.0.0;2.0.1;2.0.3;2.0.5,4,1,data\XSLT\TKhaiThue\xslt\TAIN\TKhai_TAIN_02_TT28.xslt,structured-only,P1,01-DECLARATIONS.md
-1000,02/QTT-TNCN,2.8.0,1,0,data\xslt\XSLT 2.8.0\TKhaiThue\xslt\02_QTT_TT80_GOI_Y\TKhai_02QTT_TNCN_TT80.xslt,structured-only,P1,01-DECLARATIONS.md
-101,,2.1.3,1,0,data\xslt\XSLT 2.1.2\TKhaiThue\xslt\BCHD\TKhai_BCHD_TT37_2010.xslt,structured-only,P3,01-DECLARATIONS.md
-102,BC26/AC,2.0.0;2.0.1;2.0.8,3,1,data\XSLT\TKhaiThue\xslt\BCHD\TKhai_BCHD_BC26.xslt,structured-only,P2,01-DECLARATIONS.md
-103,06/KK-TNCN,;2.0.0;2.0.1;2.0.3;2.0.5,5,0,data\XSLT\TKhaiThue\xslt\TNCN\TKhai_TNCN_06KK_TT28.xslt,structured-only,P2,01-DECLARATIONS.md
-1032,Mẫu 2.10,2.6.3,1,0,data\xslt\XSLT 2.6.3\TKhaiThue\xslt\TTDLT\TKhai_02_10.xslt,structured-only,P2,01-DECLARATIONS.md
-104,BC21/AC,2.0.0;2.1.0,2,0,data\xslt\XSLT 2.1.0\TKhaiThue\xslt\BCHD\TKhai_BCHD_BC21.xslt,structured-only,P2,01-DECLARATIONS.md
-105,BC01/AC,2.0.0;2.1.2,2,1,data\XSLT\TKhaiThue\xslt\BCHD\TKhai_BCHD_BC01.xslt,structured-only,P2,01-DECLARATIONS.md
-106,TB01/AC,2.0.0;2.1.2,2,1,data\XSLT\TKhaiThue\xslt\BCHD\TKhai_BCHD_TB01.xslt,structured-only,P2,01-DECLARATIONS.md
-107,TB03/AC,2.0.0;2.1.0,2,0,data\XSLT\TKhaiThue\xslt\BCHD\TKhai_BCHD_TB03.xslt,structured-only,P2,01-DECLARATIONS.md
-11,01A/TNDN,2.0.0;2.0.2;2.0.7,3,0,data\XSLT\TKhaiThue\xslt\TNDN\TKhai_TNDN_01A.xslt,structured-only,P2,01-DECLARATIONS.md
-1109,,2.6.6,1,0,data\xslt\XSLT 2.6.6\TKhaiThue\xslt\Gia Han\TKhai_Gia_Han_ND12.xslt,structured-only,P3,01-DECLARATIONS.md
-1110,01a/ĐNHT,2.6.7;2.8.3,2,0,data\xslt\XSLT 2.6.7\TKhaiThue\xslt\DNHT_TTDB\TKhai_01a_DNHT.xslt,structured-only,P2,01-DECLARATIONS.md
-1111,,2.6.7,1,0,data\xslt\XSLT 2.6.7\TKhaiThue\xslt\TB_chuyen_LN_ra NN\TKhai_TB_chuyen_LN_ra_NN.xslt,structured-only,P3,01-DECLARATIONS.md
-1113,01/CNV,2.7.1,1,0,data\xslt\XSLT 2.7.1\TKhaiThue\xslt\CDSH_CNV\TKhai_01_CNV.xslt,structured-only,P2,01-DECLARATIONS.md
-1114,02/QT-CNV,2.7.1,1,0,data\xslt\XSLT 2.7.1\TKhaiThue\xslt\CDSH_CNV\TKhai_02_QT_CNV.xslt,structured-only,P2,01-DECLARATIONS.md
-1115,02/QT-SXCDK,2.7.1,1,0,data\xslt\XSLT 2.7.1\TKhaiThue\xslt\CDSH_CNV\TKhai_02QT_SXCDK.xslt,structured-only,P2,01-DECLARATIONS.md
-1116,01CLVCSH-VDL,2.7.1,1,0,data\xslt\XSLT 2.7.1\TKhaiThue\xslt\CDSH_CNV\TKhai_01CLVCSH_VDL.xslt,structured-only,P2,01-DECLARATIONS.md
-1117,01/CPH,2.7.1,1,0,data\xslt\XSLT 2.7.1\TKhaiThue\xslt\CDSH_CNV\TKhai_01_CPH.xslt,structured-only,P2,01-DECLARATIONS.md
-1118,02/QT-CPH,2.7.1,1,0,data\xslt\XSLT 2.7.1\TKhaiThue\xslt\CDSH_CNV\TKhai_02_QT_CPH.xslt,structured-only,P2,01-DECLARATIONS.md
-1120,05-ĐK-TH-TCT,1.0.1,1,0,data\xslt\XSLT 2.7.0\TKhaiThue\xslt\DangKyThue\TKhai_05_DK_TH_TCT_105.xslt,structured-only,P2,01-DECLARATIONS.md
-1121,,2.6.6,1,0,data\xslt\XSLT 2.6.6\TKhaiThue\xslt\Gia Han\TKhai_Gia_Han_ND12.xslt,structured-only,P3,01-DECLARATIONS.md
-1124,,2.8.9,1,0,data\xslt\XSLT 2.8.3\TKhaiThue\xslt\DangKyThue\TKhai_03_DK_TCT_TT86.xslt,structured-only,P3,01-DECLARATIONS.md
-1126,,2.6.6,1,0,data\xslt\XSLT 2.6.6\TKhaiThue\xslt\Gia Han\TKhai_Gia_Han_ND12.xslt,structured-only,P3,01-DECLARATIONS.md
-1130,,2.7.7;2.8.1;2.8.3,3,0,data\xslt\XSLT 2.7.7\TKhaiThue\xslt\DangKyThue\TKhai_01_DK_TCT_TT86.xslt,structured-only,P3,01-DECLARATIONS.md
-1131,,2.7.7;2.8.1;2.8.3,3,0,data\xslt\XSLT 2.7.7\TKhaiThue\xslt\DangKyThue\TKhai_02_DK_TCT_TT86.xslt,structured-only,P3,01-DECLARATIONS.md
-1132,,2.7.7;2.8.3,2,0,data\xslt\XSLT 2.7.7\TKhaiThue\xslt\DangKyThue\TKhai_03_DK_TCT_TT86.xslt,structured-only,P3,01-DECLARATIONS.md
-1133,,2.7.7;2.8.3,2,0,data\xslt\XSLT 2.7.7\TKhaiThue\xslt\DangKyThue\TKhai_04.1_DK_TCT_TT86.xslt,structured-only,P3,01-DECLARATIONS.md
-1134,,2.7.7;2.8.3;3.0.8,3,0,data\xslt\XSLT 2.7.7\TKhaiThue\xslt\DangKyThue\TKhai_05_DK_TCT_TT86.xslt,structured-only,P3,01-DECLARATIONS.md
-1135,05-ĐK-TH-TCT,2.7.7;2.8.3;3.0.8,3,0,data\xslt\XSLT 2.7.7\TKhaiThue\xslt\DangKyThue\TKhai_05_DK_TH_TCT_TT86.xslt,structured-only,P2,01-DECLARATIONS.md
-1136,20-ĐK-TCT,2.7.7;2.8.3,2,1,data\xslt\XSLT 2.7.7\TKhaiThue\xslt\DangKyThue\TKhai_20_DK_TCT_TT86.xslt,structured-only,P2,01-DECLARATIONS.md
-1137,20-ĐK-TH-TCT,2.7.7;2.8.3,2,0,data\xslt\XSLT 2.7.7\TKhaiThue\xslt\DangKyThue\TKhai_20_DK_TH_TCT_TT86.xslt,structured-only,P2,01-DECLARATIONS.md
-1140,01/CNKD-TMĐT,2.8.2,1,0,data\xslt\XSLT 2.8.2\TKhaiThue\xslt\TMDT\TKhai_01_CNKD_TMDT.xslt,structured-only,P2,01-DECLARATIONS.md
-1141,01/BKNT-TMĐT,2.8.2,1,0,data\xslt\XSLT 2.8.2\TKhaiThue\xslt\DS_CTIET_TNCN_TMDT\TKhai_DS_CTIET_TNCN_TMDT.xslt,structured-only,P2,01-DECLARATIONS.md
-1142,02/CNKD-TMĐT,2.8.2,1,0,data\xslt\XSLT 2.8.2\TKhaiThue\xslt\TMDT\TKhai_02_CNKD_TMDT.xslt,structured-only,P2,01-DECLARATIONS.md
-1143,03/CNNN-TMĐT,2.8.2,1,0,data\xslt\XSLT 2.8.2\TKhaiThue\xslt\TMDT\TKhai_03_CNNN_TMDT.xslt,structured-only,P2,01-DECLARATIONS.md
-1144,01/CNKD-TMĐT,2.8.2,1,0,data\xslt\XSLT 2.8.2\TKhaiThue\xslt\TMDT\TKhai_01_CNKD_TMDT.xslt,structured-only,P2,01-DECLARATIONS.md
-1147,01/HTQT,2.8.5,1,0,data\xslt\XSLT 2.8.5\TKhaiThue\xslt\DNHT\TKhai_01_HTTQ_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
-1148,01/TBH-TB,2.8.5,1,0,data\xslt\XSLT 2.8.5\TKhaiThue\xslt\DNHT\TKhai_01_TBH_TB_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
-1149,01/TBH-TB,2.8.5,1,0,data\xslt\XSLT 2.8.5\TKhaiThue\xslt\DNHT\TKhai_02_TBH_TB_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
-1150,02/HTQT,2.8.5,1,0,data\xslt\XSLT 2.8.5\TKhaiThue\xslt\DNHT\TKhai_02_HTTQ_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
-1151,03/HTQT,2.8.5,1,0,data\xslt\XSLT 2.8.5\TKhaiThue\xslt\DNHT\TKhai_03_HTQT.xslt,structured-only,P2,01-DECLARATIONS.md
-1157,06/MGTH,2.8.7,1,0,data\xslt\XSLT 2.8.7\TKhaiThue\xslt\MGTH\TKhai_06_MGTH.xslt,structured-only,P2,01-DECLARATIONS.md
-1158,,2.8.3,1,0,data\xslt\XSLT 2.8.3\TKhaiThue\xslt\DangKyThue\TKhai_24_1_DK_TCT_TT86.xslt,structured-only,P3,01-DECLARATIONS.md
-1159,01/GHAN,2.8.7,1,0,data\xslt\XSLT 2.8.7\TKhaiThue\xslt\GiaHan\TKhai_01_GHAN.xslt,structured-only,P2,01-DECLARATIONS.md
-116,BC08/AC,2.0.0;2.0.4,2,1,data\XSLT\TKhaiThue\xslt\BCHD\TKhai_BCHD_BC08.xslt,structured-only,P2,01-DECLARATIONS.md
-1160,01/NDAN,2.8.7,1,0,data\xslt\XSLT 2.8.7\TKhaiThue\xslt\GiaHan\TKhai_01_NDAN.xslt,structured-only,P2,01-DECLARATIONS.md
-1161,01/KTCN,2.8.7,1,0,data\xslt\XSLT 2.8.7\TKhaiThue\xslt\GiaHan\TKhai_01_KTCN.xslt,structured-only,P2,01-DECLARATIONS.md
-1162,03/KTCN,2.8.7,1,0,data\xslt\XSLT 2.8.7\TKhaiThue\xslt\GiaHan\TKhai_03_KTCN.xslt,structured-only,P2,01-DECLARATIONS.md
-1163,05,2.8.7,1,0,data\xslt\XSLT 2.8.7\TKhaiThue\xslt\05TT179\TKhai_05_TT179.xslt,structured-only,P2,01-DECLARATIONS.md
-1164,01/TB-ĐVHT,2.8.7,1,0,data\xslt\XSLT 2.8.7\TKhaiThue\xslt\ThueToanCau\TKhai_01_TB_DVHT.xslt,structured-only,P2,01-DECLARATIONS.md
-1165,01-ĐKTD-ĐVHT,2.8.7,1,0,data\xslt\XSLT 2.8.7\TKhaiThue\xslt\ThueToanCau\TKhai_01_DKTD_DVHT.xslt,structured-only,P2,01-DECLARATIONS.md
-1166,01/TKTT-QDMTT,2.8.8,1,1,data\xslt\XSLT 2.8.8\TKhaiThue\xslt\ThueToanCau\TKhai_01_TKTT_QDMTT.xslt,structured-only,P2,01-DECLARATIONS.md
-1167,03/TB-ĐVHT,2.8.8,1,0,data\xslt\XSLT 2.8.8\TKhaiThue\xslt\ThueToanCau\TKhai_03_TB_DVHT.xslt,structured-only,P2,01-DECLARATIONS.md
-1168,01/TKTT-IIR,2.8.8,1,1,data\xslt\XSLT 2.8.8\TKhaiThue\xslt\ThueToanCau\TKhai_01_TKTT_IIR.xslt,structured-only,P2,01-DECLARATIONS.md
-1173,06/HTQT,2.8.5;3.0.8,2,0,data\xslt\XSLT 2.8.5\TKhaiThue\xslt\DNHT\TKhai_06_HTQT.xslt,structured-only,P2,01-DECLARATIONS.md
-1174,01/APA-ĐN,2.8.7,1,0,data\xslt\XSLT 2.8.7\TKhaiThue\xslt\APA\01_APA-ĐN.xslt,structured-only,P2,01-DECLARATIONS.md
-1175,30/ĐK-TCT,2.8.7,1,0,data\xslt\XSLT 2.8.7\TKhaiThue\xslt\DangKyThue\TKhai_30_DK_TCT_TT86.xslt,structured-only,P2,01-DECLARATIONS.md
-1176,31/ĐK-TCT,2.8.7,1,0,data\xslt\XSLT 2.8.7\TKhaiThue\xslt\DangKyThue\TKhai_31_DK_TCT_TT86.xslt,structured-only,P2,01-DECLARATIONS.md
-1185,03/BĐS_TNCN,2.8.6;2.8.7,2,0,data\xslt\XSLT 2.8.6\TKhaiThue\xslt\DatDai\TKhai_03_BDS_TNCN.xslt,structured-only,P2,01-DECLARATIONS.md
-1186,04/TK_SDDPNN,2.8.6;2.8.7,2,0,data\xslt\XSLT 2.8.6\TKhaiThue\xslt\DatDai\TKhai_04_TK_SDDPNN.xslt,structured-only,P2,01-DECLARATIONS.md
-1187,01/TK_SDDPNN,2.8.6;2.8.7;2.9.3,3,0,data\xslt\XSLT 2.8.6\TKhaiThue\xslt\DatDai\TKhai_01_TK_SDDPNN.xslt,structured-only,P2,01-DECLARATIONS.md
-1188,01/DSMT-LHQ,2.8.7,1,1,data\xslt\XSLT 2.8.7\TKhaiThue\xslt\LHQ\TKhai_01_DSMT_LHQ.xslt,structured-only,P2,01-DECLARATIONS.md
-1189,02/TĐDSMT-LHQ,2.8.7,1,1,data\xslt\XSLT 2.8.7\TKhaiThue\xslt\LHQ\TKhai_02_TDDSMT_LHQ.xslt,structured-only,P2,01-DECLARATIONS.md
-1190,01/XNCG - ĐNMT,2.8.7,1,0,data\xslt\XSLT 2.8.7\TKhaiThue\xslt\XNCG\TKhai_01_XNCG_DNMT.xslt,structured-only,P2,01-DECLARATIONS.md
-1191,01/KNNT-TĐT,2.8.7,1,1,data\xslt\XSLT 2.8.7\TKhaiThue\xslt\DeNghiKetNoi\TKhai_01_KNNT_TDT.xslt,structured-only,P2,01-DECLARATIONS.md
-1192,01/ĐNKHT,2.8.7,1,0,data\xslt\XSLT 2.8.7\TKhaiThue\xslt\DeNghiKetNoi\TKhai_01_DNKHT.xslt,structured-only,P2,01-DECLARATIONS.md
-1193,1,2.8.7,1,0,data\xslt\XSLT 2.8.7\TKhaiThue\xslt\CV_DNMT\TKhai_CV_DNMT.xslt,structured-only,P2,01-DECLARATIONS.md
-1194,Mẫu 2.10,2.8.7,1,0,data\xslt\XSLT 2.8.7\TKhaiThue\xslt\BHhoanthueGTGT\TKhai_01_dieuchinhbanhang.xslt,structured-only,P2,01-DECLARATIONS.md
-1195,Mẫu 2.10,2.8.7,1,0,data\xslt\XSLT 2.8.7\TKhaiThue\xslt\BHhoanthueGTGT\TKhai_01_dangkybanhang.xslt,structured-only,P2,01-DECLARATIONS.md
-12,01B/TNDN,2.0.0;2.0.2;2.0.7,3,0,data\XSLT\TKhaiThue\xslt\TNDN\TKhai_TNDN_01B.xslt,structured-only,P2,01-DECLARATIONS.md
-1200,01/DS-TK,2.7.8,1,0,data\xslt\XSLT 2.7.8\TKhaiThue\xslt\DS_CTIET_TNCN\TKhai_DS_CTIET_TNCN.xslt,structured-only,P2,01-DECLARATIONS.md
-1224,02/TEM,2.8.8;3.0.3,2,0,data\xslt\XSLT 2.8.8\TKhaiThue\xslt\Tem dien tu\TKhai_02_TEM_TT31.xslt,structured-only,P2,01-DECLARATIONS.md
-1225,04/TEM,2.8.8,1,0,data\xslt\XSLT 2.8.8\TKhaiThue\xslt\Tem dien tu\TKhai_04_TEM_TT31.xslt,structured-only,P2,01-DECLARATIONS.md
-1226,07/TEM,2.8.8,1,0,data\xslt\XSLT 2.8.8\TKhaiThue\xslt\Tem dien tu\TKhai_07_TEM_TT31.xslt,structured-only,P2,01-DECLARATIONS.md
-1227,01/DTA-MAP,2.8.5,1,0,data\xslt\XSLT 2.8.5\TKhaiThue\xslt\DNHT\TKhai_01_DTA-MAP.xslt,structured-only,P2,01-DECLARATIONS.md
-1228,01/MTCN,2.8.8,1,0,data\xslt\XSLT 2.8.8\TKhaiThue\xslt\MTCN\01_MTCN.xslt,structured-only,P2,01-DECLARATIONS.md
-1229,01/TB-ĐĐKD,2.8.9,1,0,data\xslt\XSLT 2.8.9\TKhaiThue\xslt\DangKyThue\TKhai_dangkythue_HKD.xslt,structured-only,P2,01-DECLARATIONS.md
-1232,01/TCKT,2.8.9,1,0,data\xslt\XSLT 2.8.9\TKhaiThue\xslt\HoKinhDoanh\TKhai_01_CNKD_TCKT.xslt,structured-only,P2,01-DECLARATIONS.md
-1238,01/BVMT,2.8.9,1,0,data\xslt\XSLT 2.8.9\TKhaiThue\xslt\HoKinhDoanh\TKhai_01_BVMT_HKD.xslt,structured-only,P2,01-DECLARATIONS.md
-1239,01/TTĐB,2.8.9,1,1,data\xslt\XSLT 2.8.9\TKhaiThue\xslt\HoKinhDoanh\TKhai_01_TTDB_HKD.xslt,structured-only,P2,01-DECLARATIONS.md
-1240,01/CNKD,2.8.9,1,1,data\xslt\XSLT 2.8.9\TKhaiThue\xslt\HoKinhDoanh\TKhai_01_CNKD.xslt,structured-only,P0,01-DECLARATIONS.md
-1242,01/TAIN,2.8.9,1,0,data\xslt\XSLT 2.8.9\TKhaiThue\xslt\HoKinhDoanh\TKhai_01_TAIN_HKD.xslt,structured-only,P1,01-DECLARATIONS.md
-1243,01/HKD-ĐNH,2.8.9,1,1,data\xslt\XSLT 2.8.9\TKhaiThue\xslt\HoKinhDoanh\TKhai_01_HT_HKD.xslt,structured-only,P2,01-DECLARATIONS.md
-1244,02/CNKD-TNCN-QTT,2.8.9,1,1,data\xslt\XSLT 2.8.9\TKhaiThue\xslt\HoKinhDoanh\TKhai_02_CNKD_HKD.xslt,structured-only,P2,01-DECLARATIONS.md
-1245,01/TKN-CNKD,2.8.9,1,1,data\xslt\XSLT 2.8.9\TKhaiThue\xslt\HoKinhDoanh\TKhai_01_TKN_CNKD_HKD.xslt,structured-only,P2,01-DECLARATIONS.md
-1246,01/XSBHĐC,2.8.9,1,0,data\xslt\XSLT 2.8.9\TKhaiThue\xslt\HoKinhDoanh\TKhai_01_XSBHDC_HKD.xslt,structured-only,P1,01-DECLARATIONS.md
-1247,01/TCKT,2.8.9;2.9.8,2,0,data\xslt\XSLT 2.8.9\TKhaiThue\xslt\HoKinhDoanh\TKhai_01_CNKD_TCKT.xslt,structured-only,P2,01-DECLARATIONS.md
-1248,03/CNKD-TMĐT,2.8.9,1,0,data\xslt\XSLT 2.8.9\TKhaiThue\xslt\HoanThueTMDT\TKhai_03_CNKD_TMDT.xslt,structured-only,P2,01-DECLARATIONS.md
-1249,01/MGTH,2.8.7,1,0,data\xslt\XSLT 2.8.7\TKhaiThue\xslt\MGTH\TKhai_01_MGTH.xslt,structured-only,P2,01-DECLARATIONS.md
-1250,Mẫu số B01 – CTQ,2.9.0,1,0,data\XSLT\XSLT 2.9.0\TKhaiThue\xslt\BCTC\TKhai_BCTC209_Nam.xslt,structured-only,P2,01-DECLARATIONS.md
-1251,Mẫu số B01 – CTQ,2.9.0,1,0,data\XSLT\XSLT 2.9.0\TKhaiThue\xslt\BCTC\TKhai_BCTC209_GND.xslt,structured-only,P2,01-DECLARATIONS.md
-1252,B01 – CTQ,2.9.0,1,0,data\XSLT\XSLT 2.9.0\TKhaiThue\xslt\BCTC\TKhai_BCTC125_Nam.xslt,structured-only,P2,01-DECLARATIONS.md
-1253,B01 - CTCK,2.9.0,1,0,data\xslt\XSLT 2.9.0\TKhaiThue\xslt\BCTC\TKhai_BCTC125_GiuaNienDo.xslt,structured-only,P2,01-DECLARATIONS.md
-1254,B01/BCTC,2.9.0,1,0,data\xslt\XSLT 2.9.0\TKhaiThue\xslt\BCTC\TKhai_BCTC24_2024_Nam.xslt,structured-only,P0,01-DECLARATIONS.md
-1255,01/BĐS,2.8.9,1,0,data\xslt\XSLT 2.8.9\TKhaiThue\xslt\HoKinhDoanh\TKhai_01_BDS.xslt,structured-only,P2,01-DECLARATIONS.md
-1256,01/LNCN-DK,2.9.3,1,0,data\xslt\XSLT 2.9.3\TKhaiThue\xslt\ND373\TKhai_01_LNCN_DK_ND373.xslt,structured-only,P2,01-DECLARATIONS.md
-1259,01/TTĐB,2.9.3,1,1,data\xslt\XSLT 2.9.3\TKhaiThue\xslt\ND373\TKhai_01_TTDB_ND373.xslt,structured-only,P2,01-DECLARATIONS.md
-1260,01/GHAN,2.9.3,1,0,data\xslt\XSLT 2.9.3\TKhaiThue\xslt\GiaHan\TKhai_01_GHAN.xslt,structured-only,P2,01-DECLARATIONS.md
-1261,01/TBH,2.9.3;3.0.8,2,0,data\xslt\XSLT 2.9.3\TKhaiThue\xslt\ND373\TKhai_TBH_ND373.xslt,structured-only,P1,01-DECLARATIONS.md
-1264,01/TK-DK,2.9.3,1,0,data\xslt\XSLT 2.9.3\TKhaiThue\xslt\DauKhi\TKhai_DK_01TAIN_ND373.xslt,structured-only,P2,01-DECLARATIONS.md
-1265,01/BK-STK,2.8.9,1,1,data\xslt\XSLT 2.8.9\TKhaiThue\xslt\HoKinhDoanh\TKhai_01BK_STK.xslt,structured-only,P2,01-DECLARATIONS.md
-1266,01/CNKD,2.9.8,1,1,data\xslt\XSLT 2.9.8\TKhaiThue\xslt\HoKinhDoanh\TKhai_01_CNKD.xslt,structured-only,P0,01-DECLARATIONS.md
-1267,02/TNDN,2.9.5,1,0,data\xslt\XSLT 2.9.5\TKhaiThue\xslt\TNDN\TKhai_TNDN_02_TT21.xslt,structured-only,P1,01-DECLARATIONS.md
-1268,05/TNDN,2.9.5,1,0,data\xslt\XSLT 2.9.5\TKhaiThue\xslt\TNDN\TKhai_TNDN_05_TT21.xslt,structured-only,P2,01-DECLARATIONS.md
-1269,01/BĐS,2.9.8,1,0,data\xslt\XSLT 2.9.8\TKhaiThue\xslt\HoKinhDoanh\TKhai_01_BDS.xslt,structured-only,P2,01-DECLARATIONS.md
-1270,,2.9.8,1,0,data\xslt\XSLT 2.9.8\TKhaiThue\xslt\HoKinhDoanh\TKhai_01_TKN_CNKD.xslt,structured-only,P3,01-DECLARATIONS.md
-1271,02/CNKD-TNCN-QTT,2.9.8,1,1,data\xslt\XSLT 2.9.8\TKhaiThue\xslt\HoKinhDoanh\TKhai_02_CNKD_TNCN_QTT.xslt,structured-only,P2,01-DECLARATIONS.md
-1272,B01 - HTX,2.9.7,1,0,data\xslt\XSLT 2.9.7\TKhaiThue\xslt\BCTC\TKhai_BCTC171_Nam.xslt,structured-only,P2,01-DECLARATIONS.md
-1273,B01 - DNSS,2.9.7,1,0,data\xslt\XSLT 2.9.7\TKhaiThue\xslt\BCTC\TKhai_BCTC132_Nam.xslt,structured-only,P2,01-DECLARATIONS.md
-1276,01/TSMH,3.0.0,1,0,data\xslt\XSLT 3.0.0\TKhaiThue\xslt\taisanmahoa\TKhai_01_TSMH.xslt,structured-only,P2,01-DECLARATIONS.md
-1277,02/HUY-HĐBLG,3.0.3;3.0.8,2,0,data\xslt\XSLT 3.0.3\TKhaiThue\xslt\HDGBLG\TKhai_02_HUY_HDGBLG.xslt,structured-only,P2,01-DECLARATIONS.md
-1278,,3.0.4,1,0,data\xslt\XSLT 3.0.4\TKhaiThue\xslt\Gia Han\TKhai_Gia_Han_ND245.xslt,structured-only,P3,01-DECLARATIONS.md
-1279,01/CCTT-DLVC,3.0.5,1,0,data\xslt\XSLT 3.0.5\TKhaiThue\xslt\DLVC\TKhai_01_CCTT_DLVC.xslt,structured-only,P2,01-DECLARATIONS.md
-128,01/TBVMT,2.0.0;2.0.1;2.0.2;2.0.4;2.6.2,5,0,data\XSLT\TKhaiThue\xslt\TBVMT\TKhai_TBVMT_01.xslt,structured-only,P1,01-DECLARATIONS.md
-1280,B01 - DNSS,3.0.5,1,0,data\xslt\XSLT 3.0.5\TKhaiThue\xslt\BCTC\TKhai_BCTC58_Nam.xslt,structured-only,P2,01-DECLARATIONS.md
-1281,Mẫu số B01 - DN,3.0.5,1,0,data\XSLT\XSLT 3.0.5\TKhaiThue\xslt\BCTC\TKhai_BCTC99_2025_Nam.xslt,structured-only,P2,01-DECLARATIONS.md
-1282,Mẫu số B01a - DN,3.0.5,1,0,data\xslt\XSLT 3.0.5\TKhaiThue\xslt\BCTC\TKhai_BCTC99_2025_DD.xslt,structured-only,P2,01-DECLARATIONS.md
-1283,B 01b– DN,3.0.5,1,0,data\xslt\XSLT 3.0.5\TKhaiThue\xslt\BCTC\TKhai_BCTC99_Giua_nien_do_tom_luoc.xslt,structured-only,P2,01-DECLARATIONS.md
-1284,B01 - DNSS,3.0.5,1,0,data\xslt\XSLT 3.0.5\TKhaiThue\xslt\BCTC\TKhai_BCTC41_Nam.xslt,structured-only,P2,01-DECLARATIONS.md
-129,TB04/AC,2.0.0,1,0,data\xslt\XSLT 2.1.0\TKhaiThue\xslt\BCHD\TKhai_BCHD_TB04.xslt,structured-only,P2,01-DECLARATIONS.md
-13,04/TNDN,2.0.1;2.0.8;2.3.9;2.5.0,4,1,data\XSLT\TKhaiThue\xslt\TNDN\TKhai_TNDN_04.xslt,structured-only,P1,01-DECLARATIONS.md
-1301,,3.0.6,1,0,data\xslt\XSLT 3.0.6\TKhaiThue\xslt\DangKyThue\TKhai_01_DKT_TT90.xslt,structured-only,P3,01-DECLARATIONS.md
-1302,01/TNS-DK,3.0.7,1,0,data\xslt\XSLT 3.0.7\TKhaiThue\xslt\DAU KHI\TKhai_DK_01_TNS_TT89.xslt,structured-only,P2,01-DECLARATIONS.md
-1303,,3.0.6;3.0.9,2,0,data\xslt\XSLT 3.0.6\TKhaiThue\xslt\DangKyThue\TKhai_08_MST_TT90.xslt,structured-only,P3,01-DECLARATIONS.md
-1304,,3.0.9,1,0,data\xslt\XSLT 3.0.9\TKhaiThue\xslt\DangKyThue\TKhai_03_DKT_TT90.xslt,structured-only,P3,01-DECLARATIONS.md
-1305,20-ĐKT,3.0.9,1,1,data\xslt\XSLT 3.0.9\TKhaiThue\xslt\DangKyThue\TKhai_20_DKT_TT90.xslt,structured-only,P2,01-DECLARATIONS.md
-131,BC26/AC,2.0.0;2.0.1;2.0.8,3,1,data\XSLT\TKhaiThue\xslt\BCHD\TKhai_BCHD_BC26.xslt,structured-only,P2,01-DECLARATIONS.md
-1310,,3.0.9,1,0,data\xslt\XSLT 3.0.9\TKhaiThue\xslt\DangKyThue\TKhai_04.1_DKT_TT90.xslt,structured-only,P3,01-DECLARATIONS.md
-1311,BK04.1-ĐKT,3.0.9,1,0,data\xslt\XSLT 3.0.9\TKhaiThue\xslt\DangKyThue\TKhai_04_1_DKT_ThayDoi_TT90.xslt,structured-only,P2,01-DECLARATIONS.md
-1312,,3.0.9,1,0,data\xslt\XSLT 3.0.9\TKhaiThue\xslt\DangKyThue\TKhai_23_DKT_TT90.xslt,structured-only,P3,01-DECLARATIONS.md
-1313,,3.0.9,1,0,data\xslt\XSLT 3.0.9\TKhaiThue\xslt\DangKyThue\TKhai_24_DKT_TT90.xslt,structured-only,P3,01-DECLARATIONS.md
-1314,,3.0.9,1,0,data\xslt\XSLT 3.0.9\TKhaiThue\xslt\DangKyThue\TKhai_25_DKT_TT90.xslt,structured-only,P3,01-DECLARATIONS.md
-132,01/TĐ-GTGT,2.0.0;2.0.1;2.0.2;2.0.4;2.2.8;2.6.2,6,0,data\XSLT\TKhaiThue\xslt\THUYDIEN\TKhai_TD_01GTGT.xslt,structured-only,P1,01-DECLARATIONS.md
-133,03/TĐ-TAIN,2.0.0;2.0.2;2.0.4;2.2.8;2.6.2,5,0,data\XSLT\TKhaiThue\xslt\THUYDIEN\TKhai_TD_03TAIN.xslt,structured-only,P1,01-DECLARATIONS.md
-135,01/TAIN-DK,2.0.0;2.0.2;2.0.3;2.0.4,4,0,data\XSLT\TKhaiThue\xslt\DauKhi\TKhai_DK_01TAIN.xslt,structured-only,P1,01-DECLARATIONS.md
-136,08/KK-TNCN,2.0.0;2.0.1,2,0,data\XSLT\TKhaiThue\xslt\TNCN\TKhai_TNCN_08KK.xslt,structured-only,P2,01-DECLARATIONS.md
-139,01/KK-BHĐC,2.0.0,1,0,data\XSLT\TKhaiThue\xslt\TNCN\TKhai_TNCN_01KK-BHDC.xslt,structured-only,P2,01-DECLARATIONS.md
-1401,03/NCCNN,2.5.1,1,1,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\NCCNN\TKhai_03_NCCNN.xslt,structured-only,P2,01-DECLARATIONS.md
-144,19/KK-TNCN,2.0.0,1,,data\XSLT\TKhaiThue\xslt\TNCN\TKhai_TNCN_19KK.xslt,structured-only,P2,01-DECLARATIONS.md
-147,07/KK-TNCN,2.0.0,1,0,data\XSLT\TKhaiThue\xslt\TNCN\TKhai_TNCN_07KK.xslt,structured-only,P2,01-DECLARATIONS.md
-149,01A/TNDN-DK,2.0.0;2.0.2;2.0.3;2.0.4,4,0,data\XSLT\TKhaiThue\xslt\DauKhi\TKhai_DK_01ATNDN.xslt,structured-only,P2,01-DECLARATIONS.md
-15,08B/KK-TNCN,2.0.5,1,0,data\xslt\XSLT 2.0.5\TKhaiThue\xslt\TNCN\TKhai_TNCN_08BKK.xslt,structured-only,P2,01-DECLARATIONS.md
-1501,04/NCCNN,2.5.1,1,1,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\NCCNN\TKhai_04_NCCNN.xslt,structured-only,P2,01-DECLARATIONS.md
-151,08A/KK-TNCN,2.0.0;2.0.1,2,1,data\XSLT\TKhaiThue\xslt\TNCN\TKhai_TNCN_08AKK.xslt,structured-only,P2,01-DECLARATIONS.md
-16,09/KK-TNCN,2.0.5,1,0,data\xslt\XSLT 2.0.5\TKhaiThue\xslt\TNCN\TKhai_TNCN_09KK.xslt,structured-only,P2,01-DECLARATIONS.md
-20,13/KK-TNCN,2.0.5,1,0,data\xslt\XSLT 2.0.5\TKhaiThue\xslt\TNCN\TKhai_TNCN_13KK.xslt,structured-only,P2,01-DECLARATIONS.md
-2000,01/XSBHDCMG-CNKD,3.0.9,1,0,data\xslt\XSLT 3.0.9\TKhaiThue\xslt\TNCN\01XSBHDCMG-CNKD\TKhai_01_XSBHDCMG_CNKD_TT89.xslt,structured-only,P2,01-DECLARATIONS.md
-2002,04/TNDN,3.0.9,1,0,data\xslt\XSLT 3.0.9\TKhaiThue\xslt\TNDN\TKhai_TNDN_04_TT89.xslt,structured-only,P0,01-DECLARATIONS.md
-2003,02/TNDN,3.0.9,1,0,data\xslt\XSLT 3.0.9\TKhaiThue\xslt\TNDN\TKhai_TNDN_02_TT89.xslt,structured-only,P0,01-DECLARATIONS.md
-2004,05/TNDN,3.0.9,1,0,data\xslt\XSLT 3.0.9\TKhaiThue\xslt\TNDN\TKhai_TNDN_05_TT89.xslt,structured-only,P0,01-DECLARATIONS.md
-2005,07/TNDN,3.0.9,1,0,data\xslt\XSLT 3.0.9\TKhaiThue\xslt\TNDN\TKhai_TNDN_07_TT89.xslt,structured-only,P2,01-DECLARATIONS.md
-2006,06/TNCN,3.0.9,1,0,data\xslt\XSLT 3.0.9\TKhaiThue\xslt\TNCN\06TNCN\TKhai_06_TNCN_TT89.xslt,structured-only,P1,01-DECLARATIONS.md
-2007,01/TCKT,3.0.9,1,0,data\xslt\XSLT 3.0.9\TKhaiThue\xslt\TNCN\01TCKT\TKhai_01_CNKD_TCKT_TT89.xslt,structured-only,P2,01-DECLARATIONS.md
-2012,"01/NTNN, NCCNN",3.0.9,1,0,data\xslt\XSLT 3.0.9\TKhaiThue\xslt\NTNN\TKhai_01_NTNN_NCCNN_TT89.xslt,structured-only,P2,01-DECLARATIONS.md
-2013,02/NTNN,3.0.9,1,0,data\xslt\XSLT 3.0.9\TKhaiThue\xslt\NTNN\TKhai_NTNN_02_TT89.xslt,structured-only,P1,01-DECLARATIONS.md
-2022,01/BKNT-KTNT,3.0.9,1,0,data\xslt\XSLT 3.0.9\TKhaiThue\xslt\TNDN\TKhai_01_BKNT_KTNT_TT89.xslt,structured-only,P2,01-DECLARATIONS.md
-2108,,3.0.9,1,0,data\xslt\XSLT 3.0.9\TKhaiThue\xslt\DangKyThue\TKhai_06_DKT_TT90.xslt,structured-only,P3,01-DECLARATIONS.md
-2110,,3.0.9,1,0,data\xslt\XSLT 3.0.9\TKhaiThue\xslt\DangKyThue\TKhai_02_DKT_TT90.xslt,structured-only,P3,01-DECLARATIONS.md
-2116,30/ĐKT,3.0.9,1,0,data\xslt\XSLT 3.0.9\TKhaiThue\xslt\DangKyThue\TKhai_30_DKT_TT90.xslt,structured-only,P2,01-DECLARATIONS.md
-2117,31/ĐKT,3.0.9,1,0,data\xslt\XSLT 3.0.9\TKhaiThue\xslt\DangKyThue\TKhai_31_DKT_TT90.xslt,structured-only,P2,01-DECLARATIONS.md
-252,01/KK-TTS,2.0.0,1,1,data\XSLT\TKhaiThue\xslt\TTS\TKhai_TTS_01.xslt,structured-only,P2,01-DECLARATIONS.md
-260,TB01/AC,2.0.0,1,1,data\XSLT\TKhaiThue\xslt\BienLaiPLP\TKhai_TB01_AC.xslt,structured-only,P2,01-DECLARATIONS.md
-261,BC01/AC,2.0.0,1,1,data\XSLT\TKhaiThue\xslt\BienLaiPLP\TKhai_BC01_AC.xslt,structured-only,P2,01-DECLARATIONS.md
-262,BC21/AC,2.0.0;2.1.0,2,0,data\XSLT\TKhaiThue\xslt\BienLaiPLP\TKhai_BC21_AC.xslt,structured-only,P2,01-DECLARATIONS.md
-263,TB03/AC,2.0.0;2.1.0,2,0,data\XSLT\TKhaiThue\xslt\BienLaiPLP\TKhai_TB03_AC.xslt,structured-only,P2,01-DECLARATIONS.md
-264,02/TNDN-VSP,2.0.0;2.2.3,2,0,data\XSLT\TKhaiThue\xslt\Vietsovpetro\TKhai_02_TNDN_VSP.xslt,structured-only,P2,01-DECLARATIONS.md
-265,02/TAIN-VSP,2.0.0;2.2.3,2,0,data\XSLT\TKhaiThue\xslt\Vietsovpetro\TKhai_02TAIN_VSP.xslt,structured-only,P2,01-DECLARATIONS.md
-266,02/PTHU-VSP,2.0.0;2.2.3,2,0,data\XSLT\TKhaiThue\xslt\Vietsovpetro\TKhai_02PTHU_VSP.xslt,structured-only,P2,01-DECLARATIONS.md
-267,01/TNDN-VSP,2.0.0,1,0,data\XSLT\TKhaiThue\xslt\Vietsovpetro\TKhai_01TNDN_VSP.xslt,structured-only,P2,01-DECLARATIONS.md
-268,01/TAIN-VSP,2.0.0,1,0,data\XSLT\TKhaiThue\xslt\Vietsovpetro\TKhai_01TAIN_VSP.xslt,structured-only,P2,01-DECLARATIONS.md
-269,01/PTHU-VSP,2.0.0,1,0,data\XSLT\TKhaiThue\xslt\Vietsovpetro\TKhai_01PTHU_VSP.xslt,structured-only,P2,01-DECLARATIONS.md
-270,01/ĐCĐB-VSP,2.0.0;2.2.3,2,0,data\XSLT\TKhaiThue\xslt\Vietsovpetro\TKhai_01_DB_VSP.xslt,structured-only,P2,01-DECLARATIONS.md
-271,01-2/TNDN-VSP,2.0.0,1,0,data\XSLT\TKhaiThue\xslt\Vietsovpetro\TKhai_01_2_TNDN_VSP.xslt,structured-only,P2,01-DECLARATIONS.md
-272,01-2/PTHU-VSP,2.0.0,1,0,data\XSLT\TKhaiThue\xslt\Vietsovpetro\TKhai_01_2_PTHU_VSP.xslt,structured-only,P2,01-DECLARATIONS.md
-273,02/TAIN-DK ,2.0.0;2.2.3,2,0,data\XSLT\TKhaiThue\xslt\Vietsovpetro\TKhai_01_1_TNDN_VSP.xslt,structured-only,P2,01-DECLARATIONS.md
-274,01-1/PTHU-VSP,2.0.0;2.2.3,2,0,data\XSLT\TKhaiThue\xslt\Vietsovpetro\TKhai_01_1_PTHU_VSP.xslt,structured-only,P2,01-DECLARATIONS.md
-275,BC7/AC,2.0.0,1,1,data\XSLT\TKhaiThue\xslt\BienLaiPLP\TKhai_BC7_AC.xslt,structured-only,P2,01-DECLARATIONS.md
-285,B01-CTCK,2.0.0;2.2.6,2,0,data\XSLT\TKhaiThue\xslt\BCTC\TKhai_BCTC_TT95.xslt,structured-only,P2,01-DECLARATIONS.md
-300,BC26/AC,2.0.0;2.0.1,2,1,data\XSLT\TKhaiThue\xslt\BCHD\TKHAI_BCHD_BC26_SL.xslt,structured-only,P2,01-DECLARATIONS.md
-301,BK01/AC,2.0.0;2.0.1,2,0,data\XSLT\TKhaiThue\xslt\BCHD\TKHAI_BK01_AC.xslt,structured-only,P2,01-DECLARATIONS.md
-302,,2.0.6,1,1,data\xslt\XSLT 2.0.6\TKhaiThue\xslt\TNCN\TKhai_Cap_MST_NPT.xslt,structured-only,P3,01-DECLARATIONS.md
-304,06/TNDN,2.0.7,1,0,data\xslt\XSLT 2.0.7\TKhaiThue\xslt\TNDN\TKhai_TNDN_06.xslt,structured-only,P2,01-DECLARATIONS.md
-360,03/LNCL-XSĐT,2.0.9;2.1.0;2.2.8,3,0,data\XSLT\XSLT 2.0.9\TKhaiThue\xslt\XSDT\TKhai_XSDT_03_LNCL.xslt,structured-only,P2,01-DECLARATIONS.md
-371,TB01/AC,2.1.3,1,0,data\xslt\XSLT 2.1.3\TKhaiThue\xslt\BCHD\TKhai_HDDT_TB01.xslt,structured-only,P2,01-DECLARATIONS.md
-372,,2.1.3,1,0,data\xslt\XSLT 2.1.3\TKhaiThue\xslt\BCHD\TKhai_HDDT_QDAD.xslt,structured-only,P3,01-DECLARATIONS.md
-373,,2.1.3,1,0,data\xslt\XSLT 2.1.2\TKhaiThue\xslt\BCHD\TKhai_BCHD_TT37_2010.xslt,structured-only,P3,01-DECLARATIONS.md
-374,01A/TNS,2.2.3,1,0,data\xslt\XSLT 2.2.3\TKhaiThue\xslt\DAU LAI\TKhai_TNS_01A.xslt,structured-only,P2,01-DECLARATIONS.md
-375,01B/TNS,2.2.3,1,0,data\xslt\XSLT 2.2.3\TKhaiThue\xslt\DAU LAI\TKhai_TNS_01B.xslt,structured-only,P2,01-DECLARATIONS.md
-376,01C/TNS,2.2.3,1,0,data\xslt\XSLT 2.2.3\TKhaiThue\xslt\DAU LAI\TKhai_TNS_01C.xslt,structured-only,P2,01-DECLARATIONS.md
-380,03A/TNS,2.2.3,1,0,data\xslt\XSLT 2.2.3\TKhaiThue\xslt\DAU LAI\TKhai_TNS_03A.xslt,structured-only,P2,01-DECLARATIONS.md
-381,03B/TNS,2.2.3,1,0,data\xslt\XSLT 2.2.3\TKhaiThue\xslt\DAU LAI\TKhai_TNS_03B.xslt,structured-only,P2,01-DECLARATIONS.md
-384,01/ĐNHT,2.1.5;2.2.2;2.4.4;2.5.2;2.8.3;2.8.6,6,0,data\xslt\XSLT 2.1.5\TKhaiThue\xslt\HoanThue\TKhai_01_DNHT.xslt,structured-only,P1,01-DECLARATIONS.md
-385,01/BC-SDHĐ-CNKD,2.1.6;2.5.0,2,0,data\xslt\XSLT 2.1.6\TKhaiThue\xslt\CNKK\CNKK_01BC_SDHD.xslt,structured-only,P2,01-DECLARATIONS.md
-386,01/CNKD,2.1.6;2.5.0;2.8.3,3,0,data\xslt\XSLT 2.1.6\TKhaiThue\xslt\CNKK\CNKK_01_CNKD.xslt,structured-only,P0,01-DECLARATIONS.md
-387,01/TKN-XSBHĐC,2.1.6;2.5.0;2.8.3,3,0,data\xslt\XSLT 2.1.6\TKhaiThue\xslt\CNKK\TKhai_01_TKN_XSHBDC.xslt,structured-only,P2,01-DECLARATIONS.md
-388,01/TTS,2.1.6;2.5.0;2.8.3,3,0,data\xslt\XSLT 2.1.6\TKhaiThue\xslt\CNKK\TKhai_01_TTS.xslt,structured-only,P1,01-DECLARATIONS.md
-389,01/XSBHĐC,2.1.6;2.5.0;2.8.3,3,0,data\xslt\XSLT 2.1.6\TKhaiThue\xslt\CNKK\TKhai_01_XSBHDC.xslt,structured-only,P1,01-DECLARATIONS.md
-390,02/ĐK-NPT-TNCN,2.1.6,1,0,data\xslt\XSLT 2.1.6\TKhaiThue\xslt\CNKK\TKhai_02DK-NPT-TNCN.xslt,structured-only,P2,01-DECLARATIONS.md
-391,02/KK-TNCN,2.1.6;2.8.3,2,0,data\xslt\XSLT 2.1.6\TKhaiThue\xslt\CNKK\TKhai_02KK_TNCN.xslt,structured-only,P1,01-DECLARATIONS.md
-392,02/QTT-TNCN,2.1.6;2.5.4;2.8.3,3,0,data\xslt\XSLT 2.1.6\TKhaiThue\xslt\CNKK\TKhai_02QTT-TNCN.xslt,structured-only,P1,01-DECLARATIONS.md
-393,05/DS-TNCN,2.1.6,1,0,data\xslt\XSLT 2.1.6\TKhaiThue\xslt\CNKK\TKhai_05DS-TNCN.xslt,structured-only,P2,01-DECLARATIONS.md
-394,05/KK-TNCN,2.1.6,1,0,data\xslt\XSLT 2.1.6\TKhaiThue\xslt\CNKK\TKhai_05KK_TNCN.xslt,full,done,01-DECLARATIONS.md
-395,05/QTT-TNCN ,2.1.6;2.4.2,2,0,data\xslt\XSLT 2.1.6\TKhaiThue\xslt\CNKK\TKhai_05QTT_TNCN.xslt,structured-only,P0,01-DECLARATIONS.md
-396,06/TNCN ,2.1.6;2.8.3,2,0,data\xslt\XSLT 2.1.6\TKhaiThue\xslt\CNKK\TKhai_06TNCN.xslt,structured-only,P2,01-DECLARATIONS.md
-401,01/TTĐB,2.0.7;2.1.7;2.2.8;2.3.3;2.6.1;2.6.2,6,1,data\XSLT\XSLT 2.1.7\TKhaiThue\xslt\TTDB\TKhai_01_TTDB.xslt,structured-only,P2,01-DECLARATIONS.md
-402,B 01 – DN,2.1.8;2.2.6,2,0,data\XSLT\XSLT 2.1.8\TKhaiThue\xslt\BCTC\TKhai_BCTC_TT200.xslt,structured-only,P2,01-DECLARATIONS.md
-41,01/NTNN,2.0.0;2.0.1;2.0.2;2.0.4;2.0.7;2.1.4,6,1,data\XSLT\TKhaiThue\xslt\NTNN\TKhai_NTNN_01.xslt,structured-only,P1,01-DECLARATIONS.md
-42,05/KK-TNCN,;2.0.0;2.0.1;2.0.3;2.0.5;2.0.8,6,0,data\XSLT\TKhaiThue\xslt\TNCN\TKhai_TNCN_05KK_TT28.xslt,structured-only,P2,01-DECLARATIONS.md
-43,02/KK-BH,;2.0.0;2.0.1;2.0.3;2.0.5,5,0,data\XSLT\TKhaiThue\xslt\TNCN\TKhai_TNCN_02KK-BH_TT28.xslt,structured-only,P1,01-DECLARATIONS.md
-437,02,2.2.3,1,0,data\xslt\XSLT 2.2.3\TKhaiThue\xslt\TemRuou\TKhai_TemRuou_02.xslt,structured-only,P2,01-DECLARATIONS.md
-438,03,2.2.3,1,0,data\xslt\XSLT 2.2.3\TKhaiThue\xslt\TemRuou\TKhai_TemRuou_03.xslt,structured-only,P2,01-DECLARATIONS.md
-439,06,2.2.3,1,0,data\xslt\XSLT 2.2.3\TKhaiThue\xslt\TemRuou\TKhai_TemRuou_06.xslt,structured-only,P2,01-DECLARATIONS.md
-44,02/KK-XS,;2.0.0;2.0.1;2.0.3;2.0.5,5,0,data\XSLT\TKhaiThue\xslt\TNCN\TKhai_TNCN_02KK-XS_TT28.xslt,structured-only,P1,01-DECLARATIONS.md
-440,01/TK-VSP,2.2.3,1,0,data\xslt\XSLT 2.2.3\TKhaiThue\xslt\Vietsovpevtro\TKhai_VSP_01_TK.xslt,structured-only,P2,01-DECLARATIONS.md
-441,01/ĐCXK-VSP,2.2.3,1,0,data\xslt\XSLT 2.2.3\TKhaiThue\xslt\Vietsovpevtro\TKhai_VSP_01_DCXK.xslt,structured-only,P2,01-DECLARATIONS.md
-442,03/TNDN-DK,2.2.4,1,0,data\xslt\XSLT 2.2.4\TKhaiThue\xslt\DAU KHI\TKhai_DK_03TNDN.xslt,structured-only,P2,01-DECLARATIONS.md
-443,01/TNDN-DK,2.2.4,1,0,data\xslt\XSLT 2.2.4\TKhaiThue\xslt\DAU KHI\TKhai_DK_01TNDN.xslt,structured-only,P2,01-DECLARATIONS.md
-444,01/TAIN-DK,2.2.4,1,0,data\xslt\XSLT 2.2.4\TKhaiThue\xslt\DAU KHI\TKhai_DK_01TAIN.xslt,structured-only,P1,01-DECLARATIONS.md
-445,01/BCTL-DK,2.2.4,1,0,data\xslt\XSLT 2.2.4\TKhaiThue\xslt\DAU KHI\TKhai_DK_01BCTL.xslt,structured-only,P2,01-DECLARATIONS.md
-446,02/TAIN-DK,2.2.4,1,0,data\xslt\XSLT 2.2.4\TKhaiThue\xslt\DAU KHI\TKhai_DK_02TAIN.xslt,structured-only,P2,01-DECLARATIONS.md
-447,02/TNDN-DK,2.2.4,1,0,data\xslt\XSLT 2.2.4\TKhaiThue\xslt\DAU KHI\TKhai_DK_02TNDN.xslt,structured-only,P2,01-DECLARATIONS.md
-46,01/KK-XS,2.0.0,1,0,data\XSLT\TKhaiThue\xslt\TNCN\TKhai_TNCN_01KK-XS.xslt,structured-only,P2,01-DECLARATIONS.md
-464,01/MBAI,2.2.5,1,0,data\xslt\XSLT 2.2.5\TKhaiThue\xslt\MBAI\TKhai_MBAI_01.xslt,structured-only,P1,01-DECLARATIONS.md
-465,B 01 – DN,2.2.6;2.4.3,2,0,data\XSLT\XSLT 2.2.6\TKhaiThue\xslt\BCTC\TKhai_BCTC200_HN.xslt,structured-only,P2,01-DECLARATIONS.md
-466,B02/TCTD,2.2.6,1,0,data\XSLT\XSLT 2.2.6\TKhaiThue\xslt\BCTC\TKhai_BCTC49_Nam.xslt,structured-only,P2,01-DECLARATIONS.md
-467,B02/TCTD,2.2.6,1,0,data\XSLT\XSLT 2.2.6\TKhaiThue\xslt\BCTC\TKhai_BCTC49_HN.xslt,structured-only,P2,01-DECLARATIONS.md
-468,01/CTLNĐC,2.2.7,1,0,data\xslt\XSLT 2.2.9\TKhaiThue\xslt\CoTucLoiNhuan\TKhai_CTLNDC_01.xslt,structured-only,P2,01-DECLARATIONS.md
-469,01/QT-LNCL,2.2.7,1,0,data\xslt\XSLT 2.2.9\TKhaiThue\xslt\CoTucLoiNhuan\TKhai_QTLNCL_01.xslt,structured-only,P2,01-DECLARATIONS.md
-47,02/KK-TNCN,2.0.0,1,0,data\XSLT\TKhaiThue\xslt\TNCN\TKhai_TNCN_02.xslt,structured-only,P1,01-DECLARATIONS.md
-470,01/TTS,2.4.9;2.5.3;2.6.8;2.7.4;2.8.3,5,0,data\xslt\XSLT 2.4.9\TKhaiThue\xslt\01_TTS\TKhai_01_TTS_TT40.xslt,structured-only,P1,01-DECLARATIONS.md
-471,01/XSBHĐC,2.4.9,1,0,data\xslt\XSLT 2.4.9\TKhaiThue\xslt\01_XSBHDC\TKhai_01_XSBHDC_TT40.xslt,structured-only,P1,01-DECLARATIONS.md
-472,01/TKN-CNKD,2.4.9;2.8.3,2,0,data\xslt\XSLT 2.4.9\TKhaiThue\xslt\01_TKN_CNKD\TKhai_01_TKN_CNKD_TT40.xslt,structured-only,P2,01-DECLARATIONS.md
-473,01/CNKD,2.4.9;2.5.1;2.5.3;2.6.8;2.7.4;2.8.3,6,0,data\xslt\XSLT 2.4.9\TKhaiThue\xslt\01_CNKD\TKhai_01_CNKD_TT40.xslt,structured-only,P0,01-DECLARATIONS.md
-48,03/KK-TNCN,2.0.0,1,0,data\XSLT\TKhaiThue\xslt\TNCN\TKhai_TNCN_03KK.xslt,structured-only,P2,01-DECLARATIONS.md
-49,B-01/DN,2.0.0;2.2.6,2,0,data\XSLT\TKhaiThue\xslt\BCTC\TKhai_BCTC_QD15.xslt,structured-only,P2,01-DECLARATIONS.md
-50,B-01/DNN,2.0.0;2.1.0;2.2.6,3,0,data\XSLT\TKhaiThue\xslt\BCTC\TKhai_BCTC_QD48.xslt,structured-only,P2,01-DECLARATIONS.md
-51,B-01/TCTD,2.0.0;2.2.6,2,0,data\XSLT\TKhaiThue\xslt\BCTC\TKhai_BCTC_QD16.xslt,structured-only,P2,01-DECLARATIONS.md
-53,05/GTGT,2.0.0;2.0.2;2.0.4;2.6.2,4,0,data\XSLT\TKhaiThue\xslt\GTGT\TKhai_GTGT_05.xslt,structured-only,P1,01-DECLARATIONS.md
-55,01/MBAI,2.0.0;2.1.2;2.1.3,3,0,data\XSLT\TKhaiThue\xslt\MBAI\TKhai_MBAI_01.xslt,structured-only,P1,01-DECLARATIONS.md
-59,01/BVMT,2.0.0;2.0.2;2.0.4,3,0,data\XSLT\TKhaiThue\xslt\PLP\TKhai_BVMT_01.xslt,structured-only,P2,01-DECLARATIONS.md
-60,02/BVMT,2.0.0;2.0.3;2.0.5,3,0,data\XSLT\TKhaiThue\xslt\PLP\TKHAI_BVMT_02_TT28.xslt,structured-only,P2,01-DECLARATIONS.md
-600,,2.2.8,1,0,data\XSLT\XSLT 2.10.11\TKhaiThue\xslt\DAU KHI\TKhai_DK_01TAIN.xslt,structured-only,P3,01-DECLARATIONS.md
-61,01/PHLP,2.0.0;2.0.1;2.0.2;2.0.4,4,0,data\XSLT\TKhaiThue\xslt\PLP\TKhai_PHLP_01.xslt,structured-only,P2,01-DECLARATIONS.md
-62,02/PHLP,2.0.0;2.0.1;2.0.3;2.0.5,4,0,data\XSLT\TKhaiThue\xslt\PLP\TKhai_PHLP_02_TT28.xslt,structured-only,P2,01-DECLARATIONS.md
-66,01/HKNN,2.0.0;2.0.1,2,0,data\XSLT\TKhaiThue\xslt\NTNN\TKhai_HKNN_01.xslt,structured-only,P1,01-DECLARATIONS.md
-67,01/VTNN,2.0.0;2.0.1,2,1,data\XSLT\TKhaiThue\xslt\NTNN\TKhai_VTNN_01.xslt,structured-only,P1,01-DECLARATIONS.md
-671,B 01a – DN,2.2.6,1,0,data\XSLT\XSLT 2.2.6\TKhaiThue\xslt\BCTC\TKhai_BCTC200_Giua_nien_do_day_du.xslt,structured-only,P2,01-DECLARATIONS.md
-672,B 01b– DN,2.2.6,1,0,data\xslt\XSLT 2.2.6\TKhaiThue\xslt\BCTC\TKhai_BCTC200_Giua_nien_do_tom_luoc.xslt,structured-only,P2,01-DECLARATIONS.md
-673,B02a/TCTD,2.2.6,1,0,data\xslt\XSLT 2.2.6\TKhaiThue\xslt\BCTC\TKhai_BCTC49_Giua_nien_do_day_du.xslt,structured-only,P2,01-DECLARATIONS.md
-674,B02b/TCTD,2.2.6,1,0,data\XSLT\XSLT 2.2.6\TKhaiThue\xslt\BCTC\TKhai_BCTC49_Giua_nien_do_tom_luoc.xslt,structured-only,P2,01-DECLARATIONS.md
-675,B 01a – DN,2.2.6,1,0,data\XSLT\XSLT 2.2.6\TKhaiThue\xslt\BCTC\TKhai_BCTC200_Giua_nien_do_day_du_HN.xslt,structured-only,P2,01-DECLARATIONS.md
-676,B 01b– DN,2.2.6,1,0,data\xslt\XSLT 2.2.6\TKhaiThue\xslt\BCTC\TKhai_BCTC200_Giua_nien_do_tom_luoc_HN.xslt,structured-only,P2,01-DECLARATIONS.md
-677,B02a/TCTD,2.2.6,1,0,data\xslt\XSLT 2.2.6\TKhaiThue\xslt\BCTC\TKhai_BCTC49_Giua_nien_do_day_du_HN.xslt,structured-only,P2,01-DECLARATIONS.md
-678,B02b/TCTD,2.2.6,1,0,data\XSLT\XSLT 2.2.6\TKhaiThue\xslt\BCTC\TKhai_BCTC49_Giua_nien_do_tom_luoc_HN.xslt,structured-only,P2,01-DECLARATIONS.md
-679,02/TK-SDDPNN,2.2.9,1,0,data\xslt\XSLT 2.2.9\TKhaiThue\xslt\DatDai\TKhai_02_TK_SDDPNN.xslt,structured-only,P2,01-DECLARATIONS.md
-68,01/TBH,2.0.0;2.0.1,2,0,data\XSLT\TKhaiThue\xslt\NTNN\TKhai_TBH_01.xslt,structured-only,P1,01-DECLARATIONS.md
-680,05-ĐK-TH-TCT,1.0.0;2.3.0,2,0,data\xslt\XSLT 2.3.0\TKhaiThue\xslt\DangKyThue\TKhai_05_DK_TH_TCT.xslt,structured-only,P2,01-DECLARATIONS.md
-683,B01a - DNN,2.3.2,1,0,data\xslt\XSLT 2.3.2\TKhaiThue\xslt\BCTC\TKhai_BCTC_133_B01a.xslt,structured-only,P2,01-DECLARATIONS.md
-684,B 01b – DNN,2.3.2,1,0,data\xslt\XSLT 2.3.2\TKhaiThue\xslt\BCTC\TKhai_BCTC_133_B01b.xslt,structured-only,P2,01-DECLARATIONS.md
-685,B01 - DNNKLT,2.3.2,1,0,data\xslt\XSLT 2.3.2\TKhaiThue\xslt\BCTC\TKhai_BCTC_133_KLT.xslt,structured-only,P2,01-DECLARATIONS.md
-686,B01 - DNSN,2.3.2,1,0,data\xslt\XSLT 2.3.2\TKhaiThue\xslt\BCTC\TKhai_BCTC_133_SieuNho.xslt,structured-only,P2,01-DECLARATIONS.md
-687,05/TNDN,2.3.3,1,0,data\xslt\XSLT 2.3.3\TKhaiThue\xslt\TNDN\TKhai_TNDN_05.xslt,structured-only,P2,01-DECLARATIONS.md
-688,TB01/AC,2.3.4,1,0,data\XSLT\XSLT 2.3.4\TKhaiThue\xslt\Bien lai PLP\TKhai_BCHD_BKe chuyen dia diem.xslt,structured-only,P2,01-DECLARATIONS.md
-689,TB01/AC,2.3.4,1,0,data\XSLT\XSLT 2.3.4\TKhaiThue\xslt\Bien lai PLP\TKhai_BCHD_Thay doi thong tin.xslt,structured-only,P2,01-DECLARATIONS.md
-69,01/TBH-TB,2.0.0,1,0,data\XSLT\TKhaiThue\xslt\NTNN\TB_TBH_01.xslt,structured-only,P2,01-DECLARATIONS.md
-690,PHỤ LỤC 02,2.3.4,1,0,data\xslt\XSLT 2.3.4\TKhaiThue\xslt\BCTC\TKhai_BCTC107.xslt,structured-only,P2,01-DECLARATIONS.md
-691,B01 - CTCK,2.3.4,1,0,data\xslt\XSLT 2.3.4\TKhaiThue\xslt\BCTC\TKhai_BCTC334_Nam.xslt,structured-only,P2,01-DECLARATIONS.md
-692,B01 - CTCK/HN,2.3.4,1,0,data\xslt\XSLT 2.3.4\TKhaiThue\xslt\BCTC\TKhai_BCTC334_HopNhat.xslt,structured-only,P2,01-DECLARATIONS.md
-693,B01 - CTCK,2.3.4,1,0,data\xslt\XSLT 2.3.4\TKhaiThue\xslt\BCTC\TKhai_BCTC334_GiuaNienDo.xslt,structured-only,P2,01-DECLARATIONS.md
-698,B01 - HTX,2.3.5,1,0,data\xslt\XSLT 2.3.5\TKhaiThue\xslt\BCTC\TKhai_BCTC_TT24_nam.xslt,structured-only,P2,01-DECLARATIONS.md
-699,B01a - DNN,2.3.5,1,0,data\xslt\XSLT 2.3.5\TKhaiThue\xslt\BCTC\TKhai_BCTC_TT24_B01a.xslt,structured-only,P2,01-DECLARATIONS.md
-70,02/TBH-TB,2.0.0,1,0,data\XSLT\TKhaiThue\xslt\NTNN\TB_TBH_02.xslt,structured-only,P2,01-DECLARATIONS.md
-700,B 01b – DNN,2.3.5,1,0,data\xslt\XSLT 2.3.5\TKhaiThue\xslt\BCTC\TKhai_BCTC_TT24_B01b.xslt,structured-only,P2,01-DECLARATIONS.md
-701,B01/BCTC,2.3.5,1,0,data\xslt\XSLT 2.3.5\TKhaiThue\xslt\BCTC\TKhai_BCTC_107_DD.xslt,structured-only,P0,01-DECLARATIONS.md
-702,B05/BCTC,2.3.5,1,0,data\xslt\XSLT 2.3.5\TKhaiThue\xslt\BCTC\TKhai_BCTC_107_DG.xslt,structured-only,P0,01-DECLARATIONS.md
-71,02/TNDN,2.0.0;2.0.1;2.0.2;2.0.7;2.1.4;2.3.9;2.5.0,7,0,data\XSLT\TKhaiThue\xslt\TNDN\TKhai_TNDN_02.xslt,structured-only,P1,01-DECLARATIONS.md
-713,,2.3.7,1,0,data\xslt\XSLT 2.3.7\TKhaiThue\xslt\Gia Han\TKhai_Gia_Han_NTVTTD.xslt,structured-only,P3,01-DECLARATIONS.md
-714,,2.3.8,1,0,data\xslt\XSLT 2.3.8\TKhaiThue\xslt\Gia Han\TKhai_Gia_Han_TTDB.xslt,structured-only,P3,01-DECLARATIONS.md
-716,,2.4.6,1,0,data\xslt\XSLT 2.4.6\TKhaiThue\xslt\Gia Han\TKhai_Gia_Han_NTVTTD.xslt,structured-only,P3,01-DECLARATIONS.md
-717,01/DS-TK,2.1.6,1,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\01_DS_TK\TKhai_01_DS_TK.xslt,structured-only,P2,01-DECLARATIONS.md
-718,,2.4.8,1,0,data\xslt\XSLT 2.5.1\TBaoThue\xslt\TB_GIA_HANG.xslt,structured-only,P3,01-DECLARATIONS.md
-72,04/NTNN,2.0.0;2.0.3;2.0.5,3,0,data\XSLT\TKhaiThue\xslt\NTNN\TKhai_NTNN_04_TT28.xslt,structured-only,P1,01-DECLARATIONS.md
-73,03/NTNN,2.0.0;2.0.1;2.0.2;2.0.4,4,1,data\XSLT\TKhaiThue\xslt\NTNN\TKhai_NTNN_03.xslt,structured-only,P1,01-DECLARATIONS.md
-74,02/NTNN,1.4;2.0.0;2.0.1;2.0.3;2.0.5,5,0,data\XSLT\TKhaiThue\xslt\NTNN\TKhai_NTNN_02_TT28.xslt,structured-only,P1,01-DECLARATIONS.md
-824,01/LPMB,2.5.1;2.7.2;2.8.3,3,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\MBAI\TKhai_MBAI_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
-825,02/TK-SDDPNN,2.5.1;2.8.3,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\PNN\TKhai_02_TK_SDDPNN_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
-826,,1.0.1;2.7.7;2.8.1;3.0.8,4,0,data\xslt\XSLT 1.0.1\TKhaiThue\xslt\DangKyThue\TKhai_04.4_DK_TCT.xslt,structured-only,P3,01-DECLARATIONS.md
-827,,1.0.1,1,0,data\xslt\XSLT 1.0.1\TKhaiThue\xslt\DangKyThue\TKhai_32_DK_TCT.xslt,structured-only,P3,01-DECLARATIONS.md
-828,05/TNDN,2.5.1,1,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\TNDN\TKhai_TNDN_05_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
-829,06/TNDN,2.5.1;3.0.8,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\TNDN\TKhai_TNDN_06_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
-830,01/TTĐB,2.5.1;2.6.1;2.8.3,3,1,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\TTDB\TKhai_01_TTDB_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
-831,02/TTĐB,2.5.1,1,1,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\TTDB\TKhai_02_TTDB_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
-832,01/TAIN,2.5.1;2.8.3,2,1,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\TAIN\TKhai_TAIN_01_TT80.xslt,structured-only,P1,01-DECLARATIONS.md
-833,04/TNDN,2.5.1;2.6.9,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\TNDN\TKhai_TNDN_04_TT80.xslt,structured-only,P1,01-DECLARATIONS.md
-834,01/SDDNN,2.5.1,1,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\SDDNN\TKhai_01_TK_SDDNN.xslt,structured-only,P2,01-DECLARATIONS.md
-835,03/SDDNN,2.5.1;2.8.3,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\SDDNN\TKhai_03_TK_SDDNN.xslt,structured-only,P2,01-DECLARATIONS.md
-836,01/TMĐN,2.5.1;2.8.3,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\SDDNN\TKhai_TMDN_01_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
-837,02/TNDN,2.5.1,1,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\TNDN\TKhai_TNDN_02_TT80.xslt,structured-only,P1,01-DECLARATIONS.md
-838,01/NTNN,2.5.1,1,1,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\NTNN\TKhai_NTNN_01_TT80.xslt,structured-only,P1,01-DECLARATIONS.md
-84,03A/TĐ-TAIN,2.0.5;2.2.8;2.6.2,3,0,data\xslt\XSLT 2.0.5\TKhaiThue\xslt\THUYDIEN\TKhai_TD_03A_TAIN.xslt,structured-only,P2,01-DECLARATIONS.md
-840,03/NTNN,2.5.1;3.0.8,2,1,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\NTNN\TKhai_NTNN_03_TT80.xslt,structured-only,P1,01-DECLARATIONS.md
-841,01/HKNN,2.5.1;2.6.5;3.0.8,3,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\NTNN\TKhai_HKNN_TT80.xslt,structured-only,P1,01-DECLARATIONS.md
-842,01/GTGT,2.5.1;2.6.8;2.7.4;2.8.3,4,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\GTGT\TKhai_GTGT_01_TT80.xslt,full,done,01-DECLARATIONS.md
-843,01/TBH,2.5.1,1,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\NTNN\TKhai_TBH_TT80.xslt,structured-only,P1,01-DECLARATIONS.md
-844,02/GTGT,2.5.1,1,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\GTGT\TKhai_GTGT_02_TT80.xslt,structured-only,P1,01-DECLARATIONS.md
-845,,1.0.1;1.0.2;2.8.1;2.8.3,4,0,data\xslt\XSLT 1.0.1\TKhaiThue\xslt\DangKyThue\TKhai_13_MST.xslt,structured-only,P3,01-DECLARATIONS.md
-846,03/GTGT,2.5.1,1,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\GTGT\TKhai_GTGT_03_TT80.xslt,structured-only,P1,01-DECLARATIONS.md
-847,04/GTGT,2.5.1;2.6.8;2.7.4,3,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\GTGT\TKhai_GTGT_04_TT80.xslt,structured-only,P0,01-DECLARATIONS.md
-848,01/MTCN,2.5.0,1,0,data\xslt\XSLT 2.5.0\TKhaiThue\xslt\MTCN\MTCN_THUE.xslt,structured-only,P2,01-DECLARATIONS.md
-85,01B/TNDN-DK,2.0.0;2.0.2;2.0.3;2.0.4,4,0,data\XSLT\TKhaiThue\xslt\DauKhi\TKhai_DK_01BTNDN.xslt,structured-only,P2,01-DECLARATIONS.md
-850,05/GTGT,2.5.1;2.8.3,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\GTGT\TKhai_GTGT_05_TT80.xslt,structured-only,P1,01-DECLARATIONS.md
-851,01/PHLPNG,2.5.1;3.0.8,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\PLP\TKhai_PLPNG_01_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
-852,01/KTTSBĐ,2.5.1;2.8.4,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\TSBD\TKhai_01_KTTSBD_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
-853,01/PTHU-DK,2.5.1;2.8.4,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\DAU KHI\TKhai_01_PTHU_DK_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
-854,03/TNDN-DK,2.5.1;2.8.4,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\DAU KHI\TKhai_DK_03TNDN_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
-855,01/LNCN-PSC,2.5.1;2.8.4,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\DAU KHI\TKhai_PSC_01_LNCL_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
-856,01/LNCN-VSP,2.5.1;2.8.4,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\Vietsovpevtro\TKhai_VSP_01_LNCL_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
-857,01/TK-VSP,2.5.1;2.8.4,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\Vietsovpevtro\TKhai_VSP_01TK_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
-858,01-1/PTHU-VSP,2.5.1;2.8.4,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\Vietsovpevtro\TKhai_VSP_01_1_PTHU_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
-859,02/KK-TNCN,2.5.1;2.8.3,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\TNCN\TKhai_02_KK_TNCN_TT80.xslt,structured-only,P1,01-DECLARATIONS.md
-86,02/TNDN-DK,2.0.5,1,0,data\xslt\XSLT 2.0.5\TKhaiThue\xslt\DauKhi\TKhai_DK_02TNDN.xslt,structured-only,P2,01-DECLARATIONS.md
-860,04/CNV-TNCN,2.5.1;2.8.3,2,1,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\TNCN\TKhai_04_CNV_TNCN.xslt,structured-only,P2,01-DECLARATIONS.md
-861,04/DTV-TNCN,2.5.1;2.8.3,2,1,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\TNCN\TKhai_04_DTV_TNCN.xslt,structured-only,P2,01-DECLARATIONS.md
-862,04/TKQT-TNCN,2.5.1;2.8.3,2,1,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\TNCN\TKhai_04_TKQT_TNCN.xslt,structured-only,P2,01-DECLARATIONS.md
-863,04/NNG-TNCN,2.5.1;2.8.3,2,1,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\TNCN\TKhai_04_NNG_TNCN.xslt,structured-only,P1,01-DECLARATIONS.md
-864,05/KK-TNCN,2.5.1;2.8.3;2.9.3,3,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\TNCN\TKhai_05_KK_TNCN_TT80.xslt,structured-only,P0,01-DECLARATIONS.md
-865,06/TNCN ,2.5.1;2.8.3,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\TNCN\TKhai_06_TNCN_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
-868,01/TAIN-DK,2.5.1;2.8.4,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\DAU KHI\TKhai_DK_01TAIN_TT80.xslt,structured-only,P1,01-DECLARATIONS.md
-869,01-1/TNDN-VSP ,2.5.1;2.8.4,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\Vietsovpevtro\TKhai_VSP_01_1_TNDN_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
-87,01/BCTL-DK,2.0.0;2.0.3,2,0,data\XSLT\TKhaiThue\xslt\DauKhi\TKhai_DK_01BCTL.xslt,structured-only,P2,01-DECLARATIONS.md
-870,01/TNDN-DK,2.5.1;2.8.4,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\DAU KHI\TKhai_DK_01TNDN_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
-871,01/BCTL-DK,2.5.1;2.8.4,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\DAU KHI\TKhai_DK_01BCTL_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
-872,01/CTLNĐC,2.5.1;2.8.3;3.0.8,3,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\CTLNDC\TKhai_CTLNDC_01_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
-873,01/TNS-DK,2.5.1;2.8.4,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\DAU KHI\TKhai_DK_01_TNS_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
-878,01/PBVMT,2.5.1,1,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\PBVMT\TKhai_PBVMT_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
-879,01/PH,2.5.1;2.7.5,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\PLP\TKhai_PH_01_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
-88,02/TAIN-DK,2.0.5,1,0,data\xslt\XSLT 2.0.5\TKhaiThue\xslt\DauKhi\TKhai_DK_02TAIN.xslt,structured-only,P2,01-DECLARATIONS.md
-880,01/LP,2.5.1;2.7.5;3.0.8,3,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\PLP\TKhai_LP_01_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
-881,02/TNDN-VSP,2.5.1;2.8.4,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\DAU KHI\TKhai_DK_02TNDN_VSP_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
-882,02/PTHU-DK,2.5.1;2.8.4,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\DAUKHI\TKhai_DK_02_PTHU_DK_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
-883,03/PTHU-DK,2.5.1;2.8.4,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\DAU KHI\TKhai_DK_03_PTHU_DK_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
-884,02/TAIN-DK,2.5.1;2.8.4,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\DAU KHI\TKhai_DK_02TAIN_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
-885,02/LNCN-PSC,2.5.1;2.8.4,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\DAU KHI\TKhai_PSC_02_LNCN_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
-886,02/LNCN-VSP,2.5.1;2.8.4,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\Vietsovpevtro\TKhai_VSP_02_LNCN_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
-887,02/TAIN-VSP,2.5.1;2.8.4,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\QT DAU KHI\TKhai_VSP_02TAIN_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
-888,01/ĐCĐB-VSP,2.5.1;2.8.4,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\QT DAU KHI\TKhai_VSP_01_DCDB_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
-889,02/PTHU-VSP,2.5.1;2.8.4,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\QT DAU KHI\TKhai_VSP_02_PTHU_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
-890,02/TNDN-DK,2.5.1;2.7.6;2.9.4,3,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\DAU KHI\TKhai_DK_02TNDN_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
-891,01/QT-LNCL,2.5.1;2.8.3,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\CTLNDC\TKhai_QT_LNDC_01_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
-892,03/TNDN,2.5.1;2.8.3;2.9.2;2.9.4,4,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\TNDN\TKhai_TNDN_03_TT80.xslt,full,done,01-DECLARATIONS.md
-893,02/PBVMT,2.5.1;2.6.9,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\PBVMT\TKhai_02_PBVMT_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
-9,01/KK-BHĐC,2.0.0,1,0,data\XSLT\TKhaiThue\xslt\TNCN\TKhai_TNCN_01KK-BHDC.xslt,structured-only,P2,01-DECLARATIONS.md
-900,,1.0.1,1,0,data\xslt\XSLT 1.0.1\TKhaiThue\xslt\DangKyThue\TKhai_01_DK_TCT.xslt,structured-only,P3,01-DECLARATIONS.md
-901,,1.0.1,1,0,data\xslt\XSLT 1.0.1\TKhaiThue\xslt\DangKyThue\TKhai_02_DK_TCT.xslt,structured-only,P3,01-DECLARATIONS.md
-902,,1.0.1,1,0,data\xslt\XSLT 1.0.1\TKhaiThue\xslt\DangKyThue\TKhai_03_DK_TCT.xslt,structured-only,P3,01-DECLARATIONS.md
-903,,1.0.1;2.8.1;2.8.3;3.0.8,4,0,data\xslt\XSLT 1.0.1\TKhaiThue\xslt\DangKyThue\TKhai_04_DK_TCT.xslt,structured-only,P3,01-DECLARATIONS.md
-904,,1.0.1,1,0,data\xslt\XSLT 1.0.1\TKhaiThue\xslt\DangKyThue\TKhai_04.1_DK_TCT.xslt,structured-only,P3,01-DECLARATIONS.md
-905,,1.0.1,1,0,data\xslt\XSLT 1.0.1\TKhaiThue\xslt\DangKyThue\TKhai_05_DK_TCT.xslt,structured-only,P3,01-DECLARATIONS.md
-906,,1.0.1;2.8.1;2.8.3,3,0,data\xslt\XSLT 1.0.1\TKhaiThue\xslt\DangKyThue\TKhai_06_DK_TCT.xslt,structured-only,P3,01-DECLARATIONS.md
-907,20-ĐK-TCT,1.0.1,1,1,data\xslt\XSLT 1.0.1\TKhaiThue\xslt\DangKyThue\TKhai_20_DK_TCT.xslt,structured-only,P2,01-DECLARATIONS.md
-909,,1.0.1;2.8.1;2.8.3,3,0,data\xslt\XSLT 1.0.1\TKhaiThue\xslt\DangKyThue\TKhai_23_DK_TCT.xslt,structured-only,P3,01-DECLARATIONS.md
-910,,1.0.1;2.7.7;2.8.1;2.8.3,4,0,data\xslt\XSLT 1.0.1\TKhaiThue\xslt\DangKyThue\TKhai_24_DK_TCT.xslt,structured-only,P3,01-DECLARATIONS.md
-911,,1.0.1;2.8.1;2.8.3,3,0,data\xslt\XSLT 1.0.1\TKhaiThue\xslt\DangKyThue\TKhai_25_DK_TCT.xslt,structured-only,P3,01-DECLARATIONS.md
-912,20-ĐK-TH-TCT,1.0.1,1,0,data\xslt\XSLT 1.0.1\TKhaiThue\xslt\DangKyThue\TKhai_20_DK_TH_TCT.xslt,structured-only,P2,01-DECLARATIONS.md
-913,05-ĐK-TH-TCT,1.0.1,1,0,data\xslt\XSLT 1.0.1\TKhaiThue\xslt\DangKyThue\TKhai_05_DK_TH_TCT.xslt,structured-only,P2,01-DECLARATIONS.md
-914,01/TBVMT,2.5.1;2.8.3,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\TBVMT\TKhai_TBVMT_TT80.xslt,structured-only,P1,01-DECLARATIONS.md
-915,01/ĐNHUY,2.5.2;2.9.2,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\DNHT\TKhai_01_DNHUY.xslt,structured-only,P2,01-DECLARATIONS.md
-916,01/DNXLNT,2.5.2;2.6.4;2.8.3;2.8.6;2.9.1,5,1,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\DNHT\TKhai_01_DNXLHT.xslt,structured-only,P2,01-DECLARATIONS.md
-920,02/PH,2.5.1;2.6.9;2.7.5,3,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\PLP\TKhai_PH_02_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
-921,02/NTNN,2.5.1,1,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\NTNN\TKhai_NTNN_02_TT80.xslt,structured-only,P1,01-DECLARATIONS.md
-922,04/NTNN,2.5.1;3.0.8,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\NTNN\TKhai_NTNN_04_TT80.xslt,structured-only,P1,01-DECLARATIONS.md
-923,01/VTNN,2.5.1;3.0.8,2,1,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\NTNN\TKhai_VTNN_01_TT80.xslt,structured-only,P1,01-DECLARATIONS.md
-924,02/TAIN,2.5.1;2.8.3,2,1,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\TAIN\TKhai_TAIN_02_TT80.xslt,structured-only,P1,01-DECLARATIONS.md
-950,02/PHLPNG,2.5.1;3.0.8,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\PLP\TKhai_PLPNG_02_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
-952,02/QTT-TNCN,2.5.1;2.5.2;2.7.3;2.8.3,4,0,data\xslt\XSLT 2.1.6\TKhaiThue\xslt\CNKK\TKhai_02QTT_TNCN_TT80.xslt,structured-only,P1,01-DECLARATIONS.md
-953,05/QTT-TNCN,2.5.1;2.5.2;2.7.9;2.8.3;2.8.4;2.8.5;2.9.3,7,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\TNCN\TKhai_05QTT_TNCN_TT80.xslt,full,done,01-DECLARATIONS.md
-954,02/HT,2.8.5,1,0,data\xslt\XSLT 2.8.5\TKhaiThue\xslt\DNHT\TKhai_02_DNHT.xslt,structured-only,P2,01-DECLARATIONS.md
-956,,2.5.5;2.5.6,2,0,data\xslt\XSLT 2.5.4\TKhaiThue\xslt\Gia Han\TKhai_Gia_Han_NTVTTD.xslt,structured-only,P3,01-DECLARATIONS.md
-958,01/TEM,2.5.7;2.8.3;3.0.3,3,0,data\xslt\XSLT 2.5.6\TKhaiThue\xslt\Tem dien tu\TKhai_01_TEM_TT23.xslt,structured-only,P2,01-DECLARATIONS.md
-959,03/TEM,2.5.7;2.8.3,2,0,data\xslt\XSLT 2.5.6\TKhaiThue\xslt\Tem dien tu\TKhai_03_TEM_TT23.xslt,structured-only,P2,01-DECLARATIONS.md
-961,CTT24/TEM,2.5.7;2.8.9;3.0.2,3,0,data\xslt\XSLT 2.5.7\TKhaiThue\xslt\Tem dien tu\Pxuat_TDT_ThuocLa.xslt,structured-only,P2,01-DECLARATIONS.md
-962,,1.0.2;2.8.1;2.8.3,3,0,data\xslt\XSLT 1.0.2\TKhaiThue\xslt\DangKyThue\TKhai_08_MST.xslt,structured-only,P3,01-DECLARATIONS.md
-963,02/TEM,2.5.8;2.8.3,2,0,data\xslt\XSLT 2.5.7\TKhaiThue\xslt\Tem dien tu\TKhai_02_TEM_TT23.xslt,structured-only,P2,01-DECLARATIONS.md
-964,04/TEM,2.5.8;2.8.3,2,0,data\xslt\XSLT 2.5.7\TKhaiThue\xslt\Tem dien tu\TKhai_04_TEM_TT23.xslt,structured-only,P2,01-DECLARATIONS.md
-965,05/TEM,2.5.8;2.8.3,2,0,data\xslt\XSLT 2.5.7\TKhaiThue\xslt\Tem dien tu\TKhai_05_TEM_TT23.xslt,structured-only,P2,01-DECLARATIONS.md
-966,06/TEM,2.5.8;2.8.3,2,0,data\xslt\XSLT 2.5.7\TKhaiThue\xslt\Tem dien tu\TKhai_06_TEM_TT23.xslt,structured-only,P2,01-DECLARATIONS.md
-967,07/TEM,2.5.8;2.8.3,2,0,data\xslt\XSLT 2.5.7\TKhaiThue\xslt\Tem dien tu\TKhai_07_TEM_TT23.xslt,structured-only,P2,01-DECLARATIONS.md
-969,CTT24/TEM,2.6.1,1,0,data\xslt\XSLT 2.6.1\TKhaiThue\xslt\Tem dien tu\Pxuat_TDT_NhaIn.xslt,structured-only,P2,01-DECLARATIONS.md
-995,01/CCTT-TMĐT,2.6.0,1,1,data\xslt\XSLT 2.6.0\TKhaiThue\xslt\TMDT\TKhai_01_CCTT.xslt,structured-only,P2,01-DECLARATIONS.md
-997,01/ĐK-TĐKTT,2.7.2;2.8.3;3.0.8,3,0,data\xslt\XSLT 2.7.2\TKhaiThue\xslt\TDKTT\TKhai_01_DK_TDKTT.xslt,structured-only,P2,01-DECLARATIONS.md
-BC26/BLĐT,,2.1.0,1,0,data\xslt\XSLT 2.8.1\TKhaiThue\xslt\HDDT\TKhai_BC26BLDT.xslt,structured-only,P3,01-DECLARATIONS.md
-CTT50,,2.1.0,1,0,data\xslt\XSLT 2.8.1\TKhaiThue\xslt\HDDT\TKhai_CTT50.xslt,structured-only,P3,01-DECLARATIONS.md
+maTKhai,displayCode,family,versions,versionCount,orientation,template,status,wave,prompt
+,02/TNDN,TNDN,2.0.0;3.0.9,2,0,data\XSLT\TKhaiThue\xslt\TNDN\TKhai_TNDN_02.xslt,structured-only,P1,01-DECLARATIONS.md
+01,01/GTGT,GTGT,2.0.0;2.0.1;2.0.2;2.0.4;2.0.6;2.0.7;2.1.2;2.2.8;2.3.3;2.4.0;2.5.0;2.6.2,12,0,data\xslt\TKhaiThue\xslt\GTGT\TKhai_GTGT_01.xslt,full,done,01-DECLARATIONS.md
+01/CCTT-ĐK,,Không mã hiển thị / nội bộ,2.1.0,1,0,data\xslt\XSLT 2.8.1\TKhaiThue\xslt\HDDT\TKhai_01_CCTT_DK.xslt,structured-only,P3,01-DECLARATIONS.md
+01/ÐKTÐ-HÐÐT,,Không mã hiển thị / nội bộ,2.1.0,1,0,data\xslt\XSLT 2.8.1\TKhaiThue\xslt\HDDT\TKhai_01_DKTD_HDDT.xslt,structured-only,P3,01-DECLARATIONS.md
+01/ĐKTĐ-CTĐT,,Không mã hiển thị / nội bộ,2.1.0,1,0,data\xslt\XSLT 2.8.1\TKhaiThue\xslt\HDDT\TKhai_01_DKTD_CTDT.xslt,structured-only,P3,01-DECLARATIONS.md
+01/ĐKTĐ-HĐĐT,,Không mã hiển thị / nội bộ,2.1.0,1,0,data\xslt\XSLT 2.8.1\TKhaiThue\xslt\HDDT\TKhai_01_DKTD_HDDT.xslt,structured-only,P3,01-DECLARATIONS.md
+01/ĐKTĐ–HĐĐT,,Không mã hiển thị / nội bộ,2.1.0,1,0,data\xslt\XSLT 2.8.1\TKhaiThue\xslt\HDDT\TKhai_01_DKTD_HDDT.xslt,structured-only,P3,01-DECLARATIONS.md
+02,02/GTGT,GTGT,2.0.0;2.0.1;2.0.2;2.0.4;2.0.6;2.1.2;2.4.1;2.4.5;2.7.0,9,0,data\XSLT\TKhaiThue\xslt\GTGT\TKhai_GTGT_02.xslt,structured-only,P1,01-DECLARATIONS.md
+03,03/TNDN,TNDN,2.0.0;2.0.1;2.0.3;2.0.5;2.0.7;2.2.3;2.2.8;2.3.1;2.3.3;2.3.9;2.4.5;2.6.2,12,0,data\XSLT\TKhaiThue\xslt\TNDN\TKhai_TNDN_03_TT28.xslt,structured-only,P2,01-DECLARATIONS.md
+03/DL-HĐĐT,,Không mã hiển thị / nội bộ,3.0.0,1,0,data\xslt\XSLT 2.5.1\TKhaiThue\xslt\HDDT\TKhai_03_DL_HDDT.xslt,structured-only,P3,01-DECLARATIONS.md
+04,03/GTGT,GTGT,2.0.0;2.0.1;2.0.2;2.0.4;2.0.6,5,0,data\XSLT\TKhaiThue\xslt\GTGT\TKhai_GTGT_03.xslt,structured-only,P1,01-DECLARATIONS.md
+04/SS-CTĐT,,Không mã hiển thị / nội bộ,2.1.0;3.0.8,2,0,data\xslt\XSLT 2.8.1\TKhaiThue\xslt\HDDT\TKhai_04_SS_CTDT.xslt,structured-only,P3,01-DECLARATIONS.md
+04/SS-HĐĐT,,Không mã hiển thị / nội bộ,2.1.0;3.0.8,2,0,data\xslt\XSLT 2.8.1\TKhaiThue\xslt\HDDT\TKhai_04_SS_HDDT.xslt,structured-only,P3,01-DECLARATIONS.md
+05,01/TTĐB,TTĐB / TTS,2.0.0;2.0.1;2.0.2;2.0.7;2.1.2;2.2.8;2.3.3,7,1,data\XSLT\TKhaiThue\xslt\TTDB\TKhai_TTDB_01.xslt,structured-only,P2,01-DECLARATIONS.md
+06,01/TAIN,Tài nguyên,2.0.0;2.0.1;2.0.2;2.0.4,4,1,data\XSLT\TKhaiThue\xslt\TAIN\TKhai_TAIN_01.xslt,structured-only,P1,01-DECLARATIONS.md
+06/ĐN-PSĐT,,Không mã hiển thị / nội bộ,2.1.0,1,0,data\xslt\XSLT 2.8.1\TKhaiThue\xslt\HDDT\TKhai_06_DN_PSDT.xslt,structured-only,P3,01-DECLARATIONS.md
+07,04/GTGT,GTGT,2.0.0;2.0.1;2.0.2;2.0.4;2.0.6;2.1.0;2.1.2;2.4.1;2.5.0,9,0,data\XSLT\TKhaiThue\xslt\GTGT\TKhai_GTGT_04.xslt,structured-only,P0,01-DECLARATIONS.md
+08,02/TAIN,Tài nguyên,2.0.0;2.0.1;2.0.3;2.0.5,4,1,data\XSLT\TKhaiThue\xslt\TAIN\TKhai_TAIN_02_TT28.xslt,structured-only,P1,01-DECLARATIONS.md
+1000,02/QTT-TNCN,TNCN,2.8.0,1,0,data\xslt\XSLT 2.8.0\TKhaiThue\xslt\02_QTT_TT80_GOI_Y\TKhai_02QTT_TNCN_TT80.xslt,structured-only,P1,01-DECLARATIONS.md
+101,,Không mã hiển thị / nội bộ,2.1.3,1,0,data\xslt\XSLT 2.1.2\TKhaiThue\xslt\BCHD\TKhai_BCHD_TT37_2010.xslt,structured-only,P3,01-DECLARATIONS.md
+102,BC26/AC,BCTC & thuyết minh,2.0.0;2.0.1;2.0.8,3,1,data\XSLT\TKhaiThue\xslt\BCHD\TKhai_BCHD_BC26.xslt,structured-only,P2,01-DECLARATIONS.md
+103,06/KK-TNCN,TNCN,;2.0.0;2.0.1;2.0.3;2.0.5,5,0,data\XSLT\TKhaiThue\xslt\TNCN\TKhai_TNCN_06KK_TT28.xslt,structured-only,P2,01-DECLARATIONS.md
+1032,Mẫu 2.10,"Đăng ký, khai lần đầu & chuyên ngành",2.6.3,1,0,data\xslt\XSLT 2.6.3\TKhaiThue\xslt\TTDLT\TKhai_02_10.xslt,structured-only,P2,01-DECLARATIONS.md
+104,BC21/AC,BCTC & thuyết minh,2.0.0;2.1.0,2,0,data\xslt\XSLT 2.1.0\TKhaiThue\xslt\BCHD\TKhai_BCHD_BC21.xslt,structured-only,P2,01-DECLARATIONS.md
+105,BC01/AC,BCTC & thuyết minh,2.0.0;2.1.2,2,1,data\XSLT\TKhaiThue\xslt\BCHD\TKhai_BCHD_BC01.xslt,structured-only,P2,01-DECLARATIONS.md
+106,TB01/AC,BCTC & thuyết minh,2.0.0;2.1.2,2,1,data\XSLT\TKhaiThue\xslt\BCHD\TKhai_BCHD_TB01.xslt,structured-only,P2,01-DECLARATIONS.md
+107,TB03/AC,BCTC & thuyết minh,2.0.0;2.1.0,2,0,data\XSLT\TKhaiThue\xslt\BCHD\TKhai_BCHD_TB03.xslt,structured-only,P2,01-DECLARATIONS.md
+11,01A/TNDN,TNDN,2.0.0;2.0.2;2.0.7,3,0,data\XSLT\TKhaiThue\xslt\TNDN\TKhai_TNDN_01A.xslt,structured-only,P2,01-DECLARATIONS.md
+1109,,Không mã hiển thị / nội bộ,2.6.6,1,0,data\xslt\XSLT 2.6.6\TKhaiThue\xslt\Gia Han\TKhai_Gia_Han_ND12.xslt,structured-only,P3,01-DECLARATIONS.md
+1110,01a/ĐNHT,"Đăng ký, khai lần đầu & chuyên ngành",2.6.7;2.8.3,2,0,data\xslt\XSLT 2.6.7\TKhaiThue\xslt\DNHT_TTDB\TKhai_01a_DNHT.xslt,structured-only,P2,01-DECLARATIONS.md
+1111,,Không mã hiển thị / nội bộ,2.6.7,1,0,data\xslt\XSLT 2.6.7\TKhaiThue\xslt\TB_chuyen_LN_ra NN\TKhai_TB_chuyen_LN_ra_NN.xslt,structured-only,P3,01-DECLARATIONS.md
+1113,01/CNV,"Đăng ký, khai lần đầu & chuyên ngành",2.7.1,1,0,data\xslt\XSLT 2.7.1\TKhaiThue\xslt\CDSH_CNV\TKhai_01_CNV.xslt,structured-only,P2,01-DECLARATIONS.md
+1114,02/QT-CNV,"Đăng ký, khai lần đầu & chuyên ngành",2.7.1,1,0,data\xslt\XSLT 2.7.1\TKhaiThue\xslt\CDSH_CNV\TKhai_02_QT_CNV.xslt,structured-only,P2,01-DECLARATIONS.md
+1115,02/QT-SXCDK,"Đăng ký, khai lần đầu & chuyên ngành",2.7.1,1,0,data\xslt\XSLT 2.7.1\TKhaiThue\xslt\CDSH_CNV\TKhai_02QT_SXCDK.xslt,structured-only,P2,01-DECLARATIONS.md
+1116,01CLVCSH-VDL,"Đăng ký, khai lần đầu & chuyên ngành",2.7.1,1,0,data\xslt\XSLT 2.7.1\TKhaiThue\xslt\CDSH_CNV\TKhai_01CLVCSH_VDL.xslt,structured-only,P2,01-DECLARATIONS.md
+1117,01/CPH,"Đăng ký, khai lần đầu & chuyên ngành",2.7.1,1,0,data\xslt\XSLT 2.7.1\TKhaiThue\xslt\CDSH_CNV\TKhai_01_CPH.xslt,structured-only,P2,01-DECLARATIONS.md
+1118,02/QT-CPH,"Đăng ký, khai lần đầu & chuyên ngành",2.7.1,1,0,data\xslt\XSLT 2.7.1\TKhaiThue\xslt\CDSH_CNV\TKhai_02_QT_CPH.xslt,structured-only,P2,01-DECLARATIONS.md
+1120,05-ĐK-TH-TCT,"Đăng ký, khai lần đầu & chuyên ngành",1.0.1,1,0,data\xslt\XSLT 2.7.0\TKhaiThue\xslt\DangKyThue\TKhai_05_DK_TH_TCT_105.xslt,structured-only,P2,01-DECLARATIONS.md
+1121,,Không mã hiển thị / nội bộ,2.6.6,1,0,data\xslt\XSLT 2.6.6\TKhaiThue\xslt\Gia Han\TKhai_Gia_Han_ND12.xslt,structured-only,P3,01-DECLARATIONS.md
+1124,,Không mã hiển thị / nội bộ,2.8.9,1,0,data\xslt\XSLT 2.8.3\TKhaiThue\xslt\DangKyThue\TKhai_03_DK_TCT_TT86.xslt,structured-only,P3,01-DECLARATIONS.md
+1126,,Không mã hiển thị / nội bộ,2.6.6,1,0,data\xslt\XSLT 2.6.6\TKhaiThue\xslt\Gia Han\TKhai_Gia_Han_ND12.xslt,structured-only,P3,01-DECLARATIONS.md
+1130,,Không mã hiển thị / nội bộ,2.7.7;2.8.1;2.8.3,3,0,data\xslt\XSLT 2.7.7\TKhaiThue\xslt\DangKyThue\TKhai_01_DK_TCT_TT86.xslt,structured-only,P3,01-DECLARATIONS.md
+1131,,Không mã hiển thị / nội bộ,2.7.7;2.8.1;2.8.3,3,0,data\xslt\XSLT 2.7.7\TKhaiThue\xslt\DangKyThue\TKhai_02_DK_TCT_TT86.xslt,structured-only,P3,01-DECLARATIONS.md
+1132,,Không mã hiển thị / nội bộ,2.7.7;2.8.3,2,0,data\xslt\XSLT 2.7.7\TKhaiThue\xslt\DangKyThue\TKhai_03_DK_TCT_TT86.xslt,structured-only,P3,01-DECLARATIONS.md
+1133,,Không mã hiển thị / nội bộ,2.7.7;2.8.3,2,0,data\xslt\XSLT 2.7.7\TKhaiThue\xslt\DangKyThue\TKhai_04.1_DK_TCT_TT86.xslt,structured-only,P3,01-DECLARATIONS.md
+1134,,Không mã hiển thị / nội bộ,2.7.7;2.8.3;3.0.8,3,0,data\xslt\XSLT 2.7.7\TKhaiThue\xslt\DangKyThue\TKhai_05_DK_TCT_TT86.xslt,structured-only,P3,01-DECLARATIONS.md
+1135,05-ĐK-TH-TCT,"Đăng ký, khai lần đầu & chuyên ngành",2.7.7;2.8.3;3.0.8,3,0,data\xslt\XSLT 2.7.7\TKhaiThue\xslt\DangKyThue\TKhai_05_DK_TH_TCT_TT86.xslt,structured-only,P2,01-DECLARATIONS.md
+1136,20-ĐK-TCT,"Đăng ký, khai lần đầu & chuyên ngành",2.7.7;2.8.3,2,1,data\xslt\XSLT 2.7.7\TKhaiThue\xslt\DangKyThue\TKhai_20_DK_TCT_TT86.xslt,structured-only,P2,01-DECLARATIONS.md
+1137,20-ĐK-TH-TCT,"Đăng ký, khai lần đầu & chuyên ngành",2.7.7;2.8.3,2,0,data\xslt\XSLT 2.7.7\TKhaiThue\xslt\DangKyThue\TKhai_20_DK_TH_TCT_TT86.xslt,structured-only,P2,01-DECLARATIONS.md
+1140,01/CNKD-TMĐT,Hộ kinh doanh,2.8.2,1,0,data\xslt\XSLT 2.8.2\TKhaiThue\xslt\TMDT\TKhai_01_CNKD_TMDT.xslt,structured-only,P2,01-DECLARATIONS.md
+1141,01/BKNT-TMĐT,"Đăng ký, khai lần đầu & chuyên ngành",2.8.2,1,0,data\xslt\XSLT 2.8.2\TKhaiThue\xslt\DS_CTIET_TNCN_TMDT\TKhai_DS_CTIET_TNCN_TMDT.xslt,structured-only,P2,01-DECLARATIONS.md
+1142,02/CNKD-TMĐT,Hộ kinh doanh,2.8.2,1,0,data\xslt\XSLT 2.8.2\TKhaiThue\xslt\TMDT\TKhai_02_CNKD_TMDT.xslt,structured-only,P2,01-DECLARATIONS.md
+1143,03/CNNN-TMĐT,"Đăng ký, khai lần đầu & chuyên ngành",2.8.2,1,0,data\xslt\XSLT 2.8.2\TKhaiThue\xslt\TMDT\TKhai_03_CNNN_TMDT.xslt,structured-only,P2,01-DECLARATIONS.md
+1144,01/CNKD-TMĐT,Hộ kinh doanh,2.8.2,1,0,data\xslt\XSLT 2.8.2\TKhaiThue\xslt\TMDT\TKhai_01_CNKD_TMDT.xslt,structured-only,P2,01-DECLARATIONS.md
+1147,01/HTQT,Hiệp định thuế / HTQT,2.8.5,1,0,data\xslt\XSLT 2.8.5\TKhaiThue\xslt\DNHT\TKhai_01_HTTQ_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
+1148,01/TBH-TB,"Đăng ký, khai lần đầu & chuyên ngành",2.8.5,1,0,data\xslt\XSLT 2.8.5\TKhaiThue\xslt\DNHT\TKhai_01_TBH_TB_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
+1149,01/TBH-TB,"Đăng ký, khai lần đầu & chuyên ngành",2.8.5,1,0,data\xslt\XSLT 2.8.5\TKhaiThue\xslt\DNHT\TKhai_02_TBH_TB_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
+1150,02/HTQT,Hiệp định thuế / HTQT,2.8.5,1,0,data\xslt\XSLT 2.8.5\TKhaiThue\xslt\DNHT\TKhai_02_HTTQ_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
+1151,03/HTQT,Hiệp định thuế / HTQT,2.8.5,1,0,data\xslt\XSLT 2.8.5\TKhaiThue\xslt\DNHT\TKhai_03_HTQT.xslt,structured-only,P2,01-DECLARATIONS.md
+1157,06/MGTH,"Đăng ký, khai lần đầu & chuyên ngành",2.8.7,1,0,data\xslt\XSLT 2.8.7\TKhaiThue\xslt\MGTH\TKhai_06_MGTH.xslt,structured-only,P2,01-DECLARATIONS.md
+1158,,Không mã hiển thị / nội bộ,2.8.3,1,0,data\xslt\XSLT 2.8.3\TKhaiThue\xslt\DangKyThue\TKhai_24_1_DK_TCT_TT86.xslt,structured-only,P3,01-DECLARATIONS.md
+1159,01/GHAN,"Đăng ký, khai lần đầu & chuyên ngành",2.8.7,1,0,data\xslt\XSLT 2.8.7\TKhaiThue\xslt\GiaHan\TKhai_01_GHAN.xslt,structured-only,P2,01-DECLARATIONS.md
+116,BC08/AC,BCTC & thuyết minh,2.0.0;2.0.4,2,1,data\XSLT\TKhaiThue\xslt\BCHD\TKhai_BCHD_BC08.xslt,structured-only,P2,01-DECLARATIONS.md
+1160,01/NDAN,"Đăng ký, khai lần đầu & chuyên ngành",2.8.7,1,0,data\xslt\XSLT 2.8.7\TKhaiThue\xslt\GiaHan\TKhai_01_NDAN.xslt,structured-only,P2,01-DECLARATIONS.md
+1161,01/KTCN,"Đăng ký, khai lần đầu & chuyên ngành",2.8.7,1,0,data\xslt\XSLT 2.8.7\TKhaiThue\xslt\GiaHan\TKhai_01_KTCN.xslt,structured-only,P2,01-DECLARATIONS.md
+1162,03/KTCN,"Đăng ký, khai lần đầu & chuyên ngành",2.8.7,1,0,data\xslt\XSLT 2.8.7\TKhaiThue\xslt\GiaHan\TKhai_03_KTCN.xslt,structured-only,P2,01-DECLARATIONS.md
+1163,05,"Đăng ký, khai lần đầu & chuyên ngành",2.8.7,1,0,data\xslt\XSLT 2.8.7\TKhaiThue\xslt\05TT179\TKhai_05_TT179.xslt,structured-only,P2,01-DECLARATIONS.md
+1164,01/TB-ĐVHT,"Đăng ký, khai lần đầu & chuyên ngành",2.8.7,1,0,data\xslt\XSLT 2.8.7\TKhaiThue\xslt\ThueToanCau\TKhai_01_TB_DVHT.xslt,structured-only,P2,01-DECLARATIONS.md
+1165,01-ĐKTD-ĐVHT,"Đăng ký, khai lần đầu & chuyên ngành",2.8.7,1,0,data\xslt\XSLT 2.8.7\TKhaiThue\xslt\ThueToanCau\TKhai_01_DKTD_DVHT.xslt,structured-only,P2,01-DECLARATIONS.md
+1166,01/TKTT-QDMTT,"Đăng ký, khai lần đầu & chuyên ngành",2.8.8,1,1,data\xslt\XSLT 2.8.8\TKhaiThue\xslt\ThueToanCau\TKhai_01_TKTT_QDMTT.xslt,structured-only,P2,01-DECLARATIONS.md
+1167,03/TB-ĐVHT,"Đăng ký, khai lần đầu & chuyên ngành",2.8.8,1,0,data\xslt\XSLT 2.8.8\TKhaiThue\xslt\ThueToanCau\TKhai_03_TB_DVHT.xslt,structured-only,P2,01-DECLARATIONS.md
+1168,01/TKTT-IIR,"Đăng ký, khai lần đầu & chuyên ngành",2.8.8,1,1,data\xslt\XSLT 2.8.8\TKhaiThue\xslt\ThueToanCau\TKhai_01_TKTT_IIR.xslt,structured-only,P2,01-DECLARATIONS.md
+1173,06/HTQT,Hiệp định thuế / HTQT,2.8.5;3.0.8,2,0,data\xslt\XSLT 2.8.5\TKhaiThue\xslt\DNHT\TKhai_06_HTQT.xslt,structured-only,P2,01-DECLARATIONS.md
+1174,01/APA-ĐN,"Đăng ký, khai lần đầu & chuyên ngành",2.8.7,1,0,data\xslt\XSLT 2.8.7\TKhaiThue\xslt\APA\01_APA-ĐN.xslt,structured-only,P2,01-DECLARATIONS.md
+1175,30/ĐK-TCT,"Đăng ký, khai lần đầu & chuyên ngành",2.8.7,1,0,data\xslt\XSLT 2.8.7\TKhaiThue\xslt\DangKyThue\TKhai_30_DK_TCT_TT86.xslt,structured-only,P2,01-DECLARATIONS.md
+1176,31/ĐK-TCT,"Đăng ký, khai lần đầu & chuyên ngành",2.8.7,1,0,data\xslt\XSLT 2.8.7\TKhaiThue\xslt\DangKyThue\TKhai_31_DK_TCT_TT86.xslt,structured-only,P2,01-DECLARATIONS.md
+1185,03/BĐS_TNCN,TNCN,2.8.6;2.8.7,2,0,data\xslt\XSLT 2.8.6\TKhaiThue\xslt\DatDai\TKhai_03_BDS_TNCN.xslt,structured-only,P2,01-DECLARATIONS.md
+1186,04/TK_SDDPNN,"Đăng ký, khai lần đầu & chuyên ngành",2.8.6;2.8.7,2,0,data\xslt\XSLT 2.8.6\TKhaiThue\xslt\DatDai\TKhai_04_TK_SDDPNN.xslt,structured-only,P2,01-DECLARATIONS.md
+1187,01/TK_SDDPNN,"Đăng ký, khai lần đầu & chuyên ngành",2.8.6;2.8.7;2.9.3,3,0,data\xslt\XSLT 2.8.6\TKhaiThue\xslt\DatDai\TKhai_01_TK_SDDPNN.xslt,structured-only,P2,01-DECLARATIONS.md
+1188,01/DSMT-LHQ,"Đăng ký, khai lần đầu & chuyên ngành",2.8.7,1,1,data\xslt\XSLT 2.8.7\TKhaiThue\xslt\LHQ\TKhai_01_DSMT_LHQ.xslt,structured-only,P2,01-DECLARATIONS.md
+1189,02/TĐDSMT-LHQ,"Đăng ký, khai lần đầu & chuyên ngành",2.8.7,1,1,data\xslt\XSLT 2.8.7\TKhaiThue\xslt\LHQ\TKhai_02_TDDSMT_LHQ.xslt,structured-only,P2,01-DECLARATIONS.md
+1190,01/XNCG - ĐNMT,"Đăng ký, khai lần đầu & chuyên ngành",2.8.7,1,0,data\xslt\XSLT 2.8.7\TKhaiThue\xslt\XNCG\TKhai_01_XNCG_DNMT.xslt,structured-only,P2,01-DECLARATIONS.md
+1191,01/KNNT-TĐT,"Đăng ký, khai lần đầu & chuyên ngành",2.8.7,1,1,data\xslt\XSLT 2.8.7\TKhaiThue\xslt\DeNghiKetNoi\TKhai_01_KNNT_TDT.xslt,structured-only,P2,01-DECLARATIONS.md
+1192,01/ĐNKHT,"Đăng ký, khai lần đầu & chuyên ngành",2.8.7,1,0,data\xslt\XSLT 2.8.7\TKhaiThue\xslt\DeNghiKetNoi\TKhai_01_DNKHT.xslt,structured-only,P2,01-DECLARATIONS.md
+1193,1,"Đăng ký, khai lần đầu & chuyên ngành",2.8.7,1,0,data\xslt\XSLT 2.8.7\TKhaiThue\xslt\CV_DNMT\TKhai_CV_DNMT.xslt,structured-only,P2,01-DECLARATIONS.md
+1194,Mẫu 2.10,"Đăng ký, khai lần đầu & chuyên ngành",2.8.7,1,0,data\xslt\XSLT 2.8.7\TKhaiThue\xslt\BHhoanthueGTGT\TKhai_01_dieuchinhbanhang.xslt,structured-only,P2,01-DECLARATIONS.md
+1195,Mẫu 2.10,"Đăng ký, khai lần đầu & chuyên ngành",2.8.7,1,0,data\xslt\XSLT 2.8.7\TKhaiThue\xslt\BHhoanthueGTGT\TKhai_01_dangkybanhang.xslt,structured-only,P2,01-DECLARATIONS.md
+12,01B/TNDN,TNDN,2.0.0;2.0.2;2.0.7,3,0,data\XSLT\TKhaiThue\xslt\TNDN\TKhai_TNDN_01B.xslt,structured-only,P2,01-DECLARATIONS.md
+1200,01/DS-TK,"Đăng ký, khai lần đầu & chuyên ngành",2.7.8,1,0,data\xslt\XSLT 2.7.8\TKhaiThue\xslt\DS_CTIET_TNCN\TKhai_DS_CTIET_TNCN.xslt,structured-only,P2,01-DECLARATIONS.md
+1224,02/TEM,Tem điện tử,2.8.8;3.0.3,2,0,data\xslt\XSLT 2.8.8\TKhaiThue\xslt\Tem dien tu\TKhai_02_TEM_TT31.xslt,structured-only,P2,01-DECLARATIONS.md
+1225,04/TEM,Tem điện tử,2.8.8,1,0,data\xslt\XSLT 2.8.8\TKhaiThue\xslt\Tem dien tu\TKhai_04_TEM_TT31.xslt,structured-only,P2,01-DECLARATIONS.md
+1226,07/TEM,Tem điện tử,2.8.8,1,0,data\xslt\XSLT 2.8.8\TKhaiThue\xslt\Tem dien tu\TKhai_07_TEM_TT31.xslt,structured-only,P2,01-DECLARATIONS.md
+1227,01/DTA-MAP,"Đăng ký, khai lần đầu & chuyên ngành",2.8.5,1,0,data\xslt\XSLT 2.8.5\TKhaiThue\xslt\DNHT\TKhai_01_DTA-MAP.xslt,structured-only,P2,01-DECLARATIONS.md
+1228,01/MTCN,"Đăng ký, khai lần đầu & chuyên ngành",2.8.8,1,0,data\xslt\XSLT 2.8.8\TKhaiThue\xslt\MTCN\01_MTCN.xslt,structured-only,P2,01-DECLARATIONS.md
+1229,01/TB-ĐĐKD,"Đăng ký, khai lần đầu & chuyên ngành",2.8.9,1,0,data\xslt\XSLT 2.8.9\TKhaiThue\xslt\DangKyThue\TKhai_dangkythue_HKD.xslt,structured-only,P2,01-DECLARATIONS.md
+1232,01/TCKT,"Đăng ký, khai lần đầu & chuyên ngành",2.8.9,1,0,data\xslt\XSLT 2.8.9\TKhaiThue\xslt\HoKinhDoanh\TKhai_01_CNKD_TCKT.xslt,structured-only,P2,01-DECLARATIONS.md
+1238,01/BVMT,Bảo vệ môi trường,2.8.9,1,0,data\xslt\XSLT 2.8.9\TKhaiThue\xslt\HoKinhDoanh\TKhai_01_BVMT_HKD.xslt,structured-only,P2,01-DECLARATIONS.md
+1239,01/TTĐB,TTĐB / TTS,2.8.9,1,1,data\xslt\XSLT 2.8.9\TKhaiThue\xslt\HoKinhDoanh\TKhai_01_TTDB_HKD.xslt,structured-only,P2,01-DECLARATIONS.md
+1240,01/CNKD,Hộ kinh doanh,2.8.9,1,1,data\xslt\XSLT 2.8.9\TKhaiThue\xslt\HoKinhDoanh\TKhai_01_CNKD.xslt,structured-only,P0,01-DECLARATIONS.md
+1242,01/TAIN,Tài nguyên,2.8.9,1,0,data\xslt\XSLT 2.8.9\TKhaiThue\xslt\HoKinhDoanh\TKhai_01_TAIN_HKD.xslt,structured-only,P1,01-DECLARATIONS.md
+1243,01/HKD-ĐNH,Hộ kinh doanh,2.8.9,1,1,data\xslt\XSLT 2.8.9\TKhaiThue\xslt\HoKinhDoanh\TKhai_01_HT_HKD.xslt,structured-only,P2,01-DECLARATIONS.md
+1244,02/CNKD-TNCN-QTT,TNCN,2.8.9,1,1,data\xslt\XSLT 2.8.9\TKhaiThue\xslt\HoKinhDoanh\TKhai_02_CNKD_HKD.xslt,structured-only,P2,01-DECLARATIONS.md
+1245,01/TKN-CNKD,Hộ kinh doanh,2.8.9,1,1,data\xslt\XSLT 2.8.9\TKhaiThue\xslt\HoKinhDoanh\TKhai_01_TKN_CNKD_HKD.xslt,structured-only,P2,01-DECLARATIONS.md
+1246,01/XSBHĐC,Xổ số / Bảo hiểm,2.8.9,1,0,data\xslt\XSLT 2.8.9\TKhaiThue\xslt\HoKinhDoanh\TKhai_01_XSBHDC_HKD.xslt,structured-only,P1,01-DECLARATIONS.md
+1247,01/TCKT,"Đăng ký, khai lần đầu & chuyên ngành",2.8.9;2.9.8,2,0,data\xslt\XSLT 2.8.9\TKhaiThue\xslt\HoKinhDoanh\TKhai_01_CNKD_TCKT.xslt,structured-only,P2,01-DECLARATIONS.md
+1248,03/CNKD-TMĐT,Hộ kinh doanh,2.8.9,1,0,data\xslt\XSLT 2.8.9\TKhaiThue\xslt\HoanThueTMDT\TKhai_03_CNKD_TMDT.xslt,structured-only,P2,01-DECLARATIONS.md
+1249,01/MGTH,"Đăng ký, khai lần đầu & chuyên ngành",2.8.7,1,0,data\xslt\XSLT 2.8.7\TKhaiThue\xslt\MGTH\TKhai_01_MGTH.xslt,structured-only,P2,01-DECLARATIONS.md
+1250,Mẫu số B01 – CTQ,BCTC & thuyết minh,2.9.0,1,0,data\XSLT\XSLT 2.9.0\TKhaiThue\xslt\BCTC\TKhai_BCTC209_Nam.xslt,structured-only,P2,01-DECLARATIONS.md
+1251,Mẫu số B01 – CTQ,BCTC & thuyết minh,2.9.0,1,0,data\XSLT\XSLT 2.9.0\TKhaiThue\xslt\BCTC\TKhai_BCTC209_GND.xslt,structured-only,P2,01-DECLARATIONS.md
+1252,B01 – CTQ,BCTC & thuyết minh,2.9.0,1,0,data\XSLT\XSLT 2.9.0\TKhaiThue\xslt\BCTC\TKhai_BCTC125_Nam.xslt,structured-only,P2,01-DECLARATIONS.md
+1253,B01 - CTCK,BCTC & thuyết minh,2.9.0,1,0,data\xslt\XSLT 2.9.0\TKhaiThue\xslt\BCTC\TKhai_BCTC125_GiuaNienDo.xslt,structured-only,P2,01-DECLARATIONS.md
+1254,B01/BCTC,BCTC & thuyết minh,2.9.0,1,0,data\xslt\XSLT 2.9.0\TKhaiThue\xslt\BCTC\TKhai_BCTC24_2024_Nam.xslt,structured-only,P0,01-DECLARATIONS.md
+1255,01/BĐS,"Đăng ký, khai lần đầu & chuyên ngành",2.8.9,1,0,data\xslt\XSLT 2.8.9\TKhaiThue\xslt\HoKinhDoanh\TKhai_01_BDS.xslt,structured-only,P2,01-DECLARATIONS.md
+1256,01/LNCN-DK,"Đăng ký, khai lần đầu & chuyên ngành",2.9.3,1,0,data\xslt\XSLT 2.9.3\TKhaiThue\xslt\ND373\TKhai_01_LNCN_DK_ND373.xslt,structured-only,P2,01-DECLARATIONS.md
+1259,01/TTĐB,TTĐB / TTS,2.9.3,1,1,data\xslt\XSLT 2.9.3\TKhaiThue\xslt\ND373\TKhai_01_TTDB_ND373.xslt,structured-only,P2,01-DECLARATIONS.md
+1260,01/GHAN,"Đăng ký, khai lần đầu & chuyên ngành",2.9.3,1,0,data\xslt\XSLT 2.9.3\TKhaiThue\xslt\GiaHan\TKhai_01_GHAN.xslt,structured-only,P2,01-DECLARATIONS.md
+1261,01/TBH,"Đăng ký, khai lần đầu & chuyên ngành",2.9.3;3.0.8,2,0,data\xslt\XSLT 2.9.3\TKhaiThue\xslt\ND373\TKhai_TBH_ND373.xslt,structured-only,P1,01-DECLARATIONS.md
+1264,01/TK-DK,"Đăng ký, khai lần đầu & chuyên ngành",2.9.3,1,0,data\xslt\XSLT 2.9.3\TKhaiThue\xslt\DauKhi\TKhai_DK_01TAIN_ND373.xslt,structured-only,P2,01-DECLARATIONS.md
+1265,01/BK-STK,"Đăng ký, khai lần đầu & chuyên ngành",2.8.9,1,1,data\xslt\XSLT 2.8.9\TKhaiThue\xslt\HoKinhDoanh\TKhai_01BK_STK.xslt,structured-only,P2,01-DECLARATIONS.md
+1266,01/CNKD,Hộ kinh doanh,2.9.8,1,1,data\xslt\XSLT 2.9.8\TKhaiThue\xslt\HoKinhDoanh\TKhai_01_CNKD.xslt,structured-only,P0,01-DECLARATIONS.md
+1267,02/TNDN,TNDN,2.9.5,1,0,data\xslt\XSLT 2.9.5\TKhaiThue\xslt\TNDN\TKhai_TNDN_02_TT21.xslt,structured-only,P1,01-DECLARATIONS.md
+1268,05/TNDN,TNDN,2.9.5,1,0,data\xslt\XSLT 2.9.5\TKhaiThue\xslt\TNDN\TKhai_TNDN_05_TT21.xslt,structured-only,P2,01-DECLARATIONS.md
+1269,01/BĐS,"Đăng ký, khai lần đầu & chuyên ngành",2.9.8,1,0,data\xslt\XSLT 2.9.8\TKhaiThue\xslt\HoKinhDoanh\TKhai_01_BDS.xslt,structured-only,P2,01-DECLARATIONS.md
+1270,,Không mã hiển thị / nội bộ,2.9.8,1,0,data\xslt\XSLT 2.9.8\TKhaiThue\xslt\HoKinhDoanh\TKhai_01_TKN_CNKD.xslt,structured-only,P3,01-DECLARATIONS.md
+1271,02/CNKD-TNCN-QTT,TNCN,2.9.8,1,1,data\xslt\XSLT 2.9.8\TKhaiThue\xslt\HoKinhDoanh\TKhai_02_CNKD_TNCN_QTT.xslt,structured-only,P2,01-DECLARATIONS.md
+1272,B01 - HTX,BCTC & thuyết minh,2.9.7,1,0,data\xslt\XSLT 2.9.7\TKhaiThue\xslt\BCTC\TKhai_BCTC171_Nam.xslt,structured-only,P2,01-DECLARATIONS.md
+1273,B01 - DNSS,BCTC & thuyết minh,2.9.7,1,0,data\xslt\XSLT 2.9.7\TKhaiThue\xslt\BCTC\TKhai_BCTC132_Nam.xslt,structured-only,P2,01-DECLARATIONS.md
+1276,01/TSMH,"Đăng ký, khai lần đầu & chuyên ngành",3.0.0,1,0,data\xslt\XSLT 3.0.0\TKhaiThue\xslt\taisanmahoa\TKhai_01_TSMH.xslt,structured-only,P2,01-DECLARATIONS.md
+1277,02/HUY-HĐBLG,"Đăng ký, khai lần đầu & chuyên ngành",3.0.3;3.0.8,2,0,data\xslt\XSLT 3.0.3\TKhaiThue\xslt\HDGBLG\TKhai_02_HUY_HDGBLG.xslt,structured-only,P2,01-DECLARATIONS.md
+1278,,Không mã hiển thị / nội bộ,3.0.4,1,0,data\xslt\XSLT 3.0.4\TKhaiThue\xslt\Gia Han\TKhai_Gia_Han_ND245.xslt,structured-only,P3,01-DECLARATIONS.md
+1279,01/CCTT-DLVC,"Đăng ký, khai lần đầu & chuyên ngành",3.0.5,1,0,data\xslt\XSLT 3.0.5\TKhaiThue\xslt\DLVC\TKhai_01_CCTT_DLVC.xslt,structured-only,P2,01-DECLARATIONS.md
+128,01/TBVMT,Bảo vệ môi trường,2.0.0;2.0.1;2.0.2;2.0.4;2.6.2,5,0,data\XSLT\TKhaiThue\xslt\TBVMT\TKhai_TBVMT_01.xslt,structured-only,P1,01-DECLARATIONS.md
+1280,B01 - DNSS,BCTC & thuyết minh,3.0.5,1,0,data\xslt\XSLT 3.0.5\TKhaiThue\xslt\BCTC\TKhai_BCTC58_Nam.xslt,structured-only,P2,01-DECLARATIONS.md
+1281,Mẫu số B01 - DN,BCTC & thuyết minh,3.0.5,1,0,data\XSLT\XSLT 3.0.5\TKhaiThue\xslt\BCTC\TKhai_BCTC99_2025_Nam.xslt,structured-only,P2,01-DECLARATIONS.md
+1282,Mẫu số B01a - DN,BCTC & thuyết minh,3.0.5,1,0,data\xslt\XSLT 3.0.5\TKhaiThue\xslt\BCTC\TKhai_BCTC99_2025_DD.xslt,structured-only,P2,01-DECLARATIONS.md
+1283,B 01b– DN,BCTC & thuyết minh,3.0.5,1,0,data\xslt\XSLT 3.0.5\TKhaiThue\xslt\BCTC\TKhai_BCTC99_Giua_nien_do_tom_luoc.xslt,structured-only,P2,01-DECLARATIONS.md
+1284,B01 - DNSS,BCTC & thuyết minh,3.0.5,1,0,data\xslt\XSLT 3.0.5\TKhaiThue\xslt\BCTC\TKhai_BCTC41_Nam.xslt,structured-only,P2,01-DECLARATIONS.md
+129,TB04/AC,BCTC & thuyết minh,2.0.0,1,0,data\xslt\XSLT 2.1.0\TKhaiThue\xslt\BCHD\TKhai_BCHD_TB04.xslt,structured-only,P2,01-DECLARATIONS.md
+13,04/TNDN,TNDN,2.0.1;2.0.8;2.3.9;2.5.0,4,1,data\XSLT\TKhaiThue\xslt\TNDN\TKhai_TNDN_04.xslt,structured-only,P1,01-DECLARATIONS.md
+1301,,Không mã hiển thị / nội bộ,3.0.6,1,0,data\xslt\XSLT 3.0.6\TKhaiThue\xslt\DangKyThue\TKhai_01_DKT_TT90.xslt,structured-only,P3,01-DECLARATIONS.md
+1302,01/TNS-DK,"Đăng ký, khai lần đầu & chuyên ngành",3.0.7,1,0,data\xslt\XSLT 3.0.7\TKhaiThue\xslt\DAU KHI\TKhai_DK_01_TNS_TT89.xslt,structured-only,P2,01-DECLARATIONS.md
+1303,,Không mã hiển thị / nội bộ,3.0.6;3.0.9,2,0,data\xslt\XSLT 3.0.6\TKhaiThue\xslt\DangKyThue\TKhai_08_MST_TT90.xslt,structured-only,P3,01-DECLARATIONS.md
+1304,,Không mã hiển thị / nội bộ,3.0.9,1,0,data\xslt\XSLT 3.0.9\TKhaiThue\xslt\DangKyThue\TKhai_03_DKT_TT90.xslt,structured-only,P3,01-DECLARATIONS.md
+1305,20-ĐKT,"Đăng ký, khai lần đầu & chuyên ngành",3.0.9,1,1,data\xslt\XSLT 3.0.9\TKhaiThue\xslt\DangKyThue\TKhai_20_DKT_TT90.xslt,structured-only,P2,01-DECLARATIONS.md
+131,BC26/AC,BCTC & thuyết minh,2.0.0;2.0.1;2.0.8,3,1,data\XSLT\TKhaiThue\xslt\BCHD\TKhai_BCHD_BC26.xslt,structured-only,P2,01-DECLARATIONS.md
+1310,,Không mã hiển thị / nội bộ,3.0.9,1,0,data\xslt\XSLT 3.0.9\TKhaiThue\xslt\DangKyThue\TKhai_04.1_DKT_TT90.xslt,structured-only,P3,01-DECLARATIONS.md
+1311,BK04.1-ĐKT,BCTC & thuyết minh,3.0.9,1,0,data\xslt\XSLT 3.0.9\TKhaiThue\xslt\DangKyThue\TKhai_04_1_DKT_ThayDoi_TT90.xslt,structured-only,P2,01-DECLARATIONS.md
+1312,,Không mã hiển thị / nội bộ,3.0.9,1,0,data\xslt\XSLT 3.0.9\TKhaiThue\xslt\DangKyThue\TKhai_23_DKT_TT90.xslt,structured-only,P3,01-DECLARATIONS.md
+1313,,Không mã hiển thị / nội bộ,3.0.9,1,0,data\xslt\XSLT 3.0.9\TKhaiThue\xslt\DangKyThue\TKhai_24_DKT_TT90.xslt,structured-only,P3,01-DECLARATIONS.md
+1314,,Không mã hiển thị / nội bộ,3.0.9,1,0,data\xslt\XSLT 3.0.9\TKhaiThue\xslt\DangKyThue\TKhai_25_DKT_TT90.xslt,structured-only,P3,01-DECLARATIONS.md
+132,01/TĐ-GTGT,GTGT,2.0.0;2.0.1;2.0.2;2.0.4;2.2.8;2.6.2,6,0,data\XSLT\TKhaiThue\xslt\THUYDIEN\TKhai_TD_01GTGT.xslt,structured-only,P1,01-DECLARATIONS.md
+133,03/TĐ-TAIN,Tài nguyên,2.0.0;2.0.2;2.0.4;2.2.8;2.6.2,5,0,data\XSLT\TKhaiThue\xslt\THUYDIEN\TKhai_TD_03TAIN.xslt,structured-only,P1,01-DECLARATIONS.md
+135,01/TAIN-DK,Tài nguyên,2.0.0;2.0.2;2.0.3;2.0.4,4,0,data\XSLT\TKhaiThue\xslt\DauKhi\TKhai_DK_01TAIN.xslt,structured-only,P1,01-DECLARATIONS.md
+136,08/KK-TNCN,TNCN,2.0.0;2.0.1,2,0,data\XSLT\TKhaiThue\xslt\TNCN\TKhai_TNCN_08KK.xslt,structured-only,P2,01-DECLARATIONS.md
+139,01/KK-BHĐC,Xổ số / Bảo hiểm,2.0.0,1,0,data\XSLT\TKhaiThue\xslt\TNCN\TKhai_TNCN_01KK-BHDC.xslt,structured-only,P2,01-DECLARATIONS.md
+1401,03/NCCNN,Nhà thầu nước ngoài,2.5.1,1,1,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\NCCNN\TKhai_03_NCCNN.xslt,structured-only,P2,01-DECLARATIONS.md
+144,19/KK-TNCN,TNCN,2.0.0,1,,data\XSLT\TKhaiThue\xslt\TNCN\TKhai_TNCN_19KK.xslt,structured-only,P2,01-DECLARATIONS.md
+147,07/KK-TNCN,TNCN,2.0.0,1,0,data\XSLT\TKhaiThue\xslt\TNCN\TKhai_TNCN_07KK.xslt,structured-only,P2,01-DECLARATIONS.md
+149,01A/TNDN-DK,TNDN,2.0.0;2.0.2;2.0.3;2.0.4,4,0,data\XSLT\TKhaiThue\xslt\DauKhi\TKhai_DK_01ATNDN.xslt,structured-only,P2,01-DECLARATIONS.md
+15,08B/KK-TNCN,TNCN,2.0.5,1,0,data\xslt\XSLT 2.0.5\TKhaiThue\xslt\TNCN\TKhai_TNCN_08BKK.xslt,structured-only,P2,01-DECLARATIONS.md
+1501,04/NCCNN,Nhà thầu nước ngoài,2.5.1,1,1,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\NCCNN\TKhai_04_NCCNN.xslt,structured-only,P2,01-DECLARATIONS.md
+151,08A/KK-TNCN,TNCN,2.0.0;2.0.1,2,1,data\XSLT\TKhaiThue\xslt\TNCN\TKhai_TNCN_08AKK.xslt,structured-only,P2,01-DECLARATIONS.md
+16,09/KK-TNCN,TNCN,2.0.5,1,0,data\xslt\XSLT 2.0.5\TKhaiThue\xslt\TNCN\TKhai_TNCN_09KK.xslt,structured-only,P2,01-DECLARATIONS.md
+20,13/KK-TNCN,TNCN,2.0.5,1,0,data\xslt\XSLT 2.0.5\TKhaiThue\xslt\TNCN\TKhai_TNCN_13KK.xslt,structured-only,P2,01-DECLARATIONS.md
+2000,01/XSBHDCMG-CNKD,Hộ kinh doanh,3.0.9,1,0,data\xslt\XSLT 3.0.9\TKhaiThue\xslt\TNCN\01XSBHDCMG-CNKD\TKhai_01_XSBHDCMG_CNKD_TT89.xslt,structured-only,P2,01-DECLARATIONS.md
+2002,04/TNDN,TNDN,3.0.9,1,0,data\xslt\XSLT 3.0.9\TKhaiThue\xslt\TNDN\TKhai_TNDN_04_TT89.xslt,structured-only,P0,01-DECLARATIONS.md
+2003,02/TNDN,TNDN,3.0.9,1,0,data\xslt\XSLT 3.0.9\TKhaiThue\xslt\TNDN\TKhai_TNDN_02_TT89.xslt,structured-only,P0,01-DECLARATIONS.md
+2004,05/TNDN,TNDN,3.0.9,1,0,data\xslt\XSLT 3.0.9\TKhaiThue\xslt\TNDN\TKhai_TNDN_05_TT89.xslt,structured-only,P0,01-DECLARATIONS.md
+2005,07/TNDN,TNDN,3.0.9,1,0,data\xslt\XSLT 3.0.9\TKhaiThue\xslt\TNDN\TKhai_TNDN_07_TT89.xslt,structured-only,P2,01-DECLARATIONS.md
+2006,06/TNCN,TNCN,3.0.9,1,0,data\xslt\XSLT 3.0.9\TKhaiThue\xslt\TNCN\06TNCN\TKhai_06_TNCN_TT89.xslt,structured-only,P1,01-DECLARATIONS.md
+2007,01/TCKT,"Đăng ký, khai lần đầu & chuyên ngành",3.0.9,1,0,data\xslt\XSLT 3.0.9\TKhaiThue\xslt\TNCN\01TCKT\TKhai_01_CNKD_TCKT_TT89.xslt,structured-only,P2,01-DECLARATIONS.md
+2012,"01/NTNN, NCCNN",Nhà thầu nước ngoài,3.0.9,1,0,data\xslt\XSLT 3.0.9\TKhaiThue\xslt\NTNN\TKhai_01_NTNN_NCCNN_TT89.xslt,structured-only,P2,01-DECLARATIONS.md
+2013,02/NTNN,Nhà thầu nước ngoài,3.0.9,1,0,data\xslt\XSLT 3.0.9\TKhaiThue\xslt\NTNN\TKhai_NTNN_02_TT89.xslt,structured-only,P1,01-DECLARATIONS.md
+2022,01/BKNT-KTNT,"Đăng ký, khai lần đầu & chuyên ngành",3.0.9,1,0,data\xslt\XSLT 3.0.9\TKhaiThue\xslt\TNDN\TKhai_01_BKNT_KTNT_TT89.xslt,structured-only,P2,01-DECLARATIONS.md
+2108,,Không mã hiển thị / nội bộ,3.0.9,1,0,data\xslt\XSLT 3.0.9\TKhaiThue\xslt\DangKyThue\TKhai_06_DKT_TT90.xslt,structured-only,P3,01-DECLARATIONS.md
+2110,,Không mã hiển thị / nội bộ,3.0.9,1,0,data\xslt\XSLT 3.0.9\TKhaiThue\xslt\DangKyThue\TKhai_02_DKT_TT90.xslt,structured-only,P3,01-DECLARATIONS.md
+2116,30/ĐKT,"Đăng ký, khai lần đầu & chuyên ngành",3.0.9,1,0,data\xslt\XSLT 3.0.9\TKhaiThue\xslt\DangKyThue\TKhai_30_DKT_TT90.xslt,structured-only,P2,01-DECLARATIONS.md
+2117,31/ĐKT,"Đăng ký, khai lần đầu & chuyên ngành",3.0.9,1,0,data\xslt\XSLT 3.0.9\TKhaiThue\xslt\DangKyThue\TKhai_31_DKT_TT90.xslt,structured-only,P2,01-DECLARATIONS.md
+252,01/KK-TTS,TTĐB / TTS,2.0.0,1,1,data\XSLT\TKhaiThue\xslt\TTS\TKhai_TTS_01.xslt,structured-only,P2,01-DECLARATIONS.md
+260,TB01/AC,BCTC & thuyết minh,2.0.0,1,1,data\XSLT\TKhaiThue\xslt\BienLaiPLP\TKhai_TB01_AC.xslt,structured-only,P2,01-DECLARATIONS.md
+261,BC01/AC,BCTC & thuyết minh,2.0.0,1,1,data\XSLT\TKhaiThue\xslt\BienLaiPLP\TKhai_BC01_AC.xslt,structured-only,P2,01-DECLARATIONS.md
+262,BC21/AC,BCTC & thuyết minh,2.0.0;2.1.0,2,0,data\XSLT\TKhaiThue\xslt\BienLaiPLP\TKhai_BC21_AC.xslt,structured-only,P2,01-DECLARATIONS.md
+263,TB03/AC,BCTC & thuyết minh,2.0.0;2.1.0,2,0,data\XSLT\TKhaiThue\xslt\BienLaiPLP\TKhai_TB03_AC.xslt,structured-only,P2,01-DECLARATIONS.md
+264,02/TNDN-VSP,TNDN,2.0.0;2.2.3,2,0,data\XSLT\TKhaiThue\xslt\Vietsovpetro\TKhai_02_TNDN_VSP.xslt,structured-only,P2,01-DECLARATIONS.md
+265,02/TAIN-VSP,Tài nguyên,2.0.0;2.2.3,2,0,data\XSLT\TKhaiThue\xslt\Vietsovpetro\TKhai_02TAIN_VSP.xslt,structured-only,P2,01-DECLARATIONS.md
+266,02/PTHU-VSP,"Đăng ký, khai lần đầu & chuyên ngành",2.0.0;2.2.3,2,0,data\XSLT\TKhaiThue\xslt\Vietsovpetro\TKhai_02PTHU_VSP.xslt,structured-only,P2,01-DECLARATIONS.md
+267,01/TNDN-VSP,TNDN,2.0.0,1,0,data\XSLT\TKhaiThue\xslt\Vietsovpetro\TKhai_01TNDN_VSP.xslt,structured-only,P2,01-DECLARATIONS.md
+268,01/TAIN-VSP,Tài nguyên,2.0.0,1,0,data\XSLT\TKhaiThue\xslt\Vietsovpetro\TKhai_01TAIN_VSP.xslt,structured-only,P2,01-DECLARATIONS.md
+269,01/PTHU-VSP,"Đăng ký, khai lần đầu & chuyên ngành",2.0.0,1,0,data\XSLT\TKhaiThue\xslt\Vietsovpetro\TKhai_01PTHU_VSP.xslt,structured-only,P2,01-DECLARATIONS.md
+270,01/ĐCĐB-VSP,"Đăng ký, khai lần đầu & chuyên ngành",2.0.0;2.2.3,2,0,data\XSLT\TKhaiThue\xslt\Vietsovpetro\TKhai_01_DB_VSP.xslt,structured-only,P2,01-DECLARATIONS.md
+271,01-2/TNDN-VSP,TNDN,2.0.0,1,0,data\XSLT\TKhaiThue\xslt\Vietsovpetro\TKhai_01_2_TNDN_VSP.xslt,structured-only,P2,01-DECLARATIONS.md
+272,01-2/PTHU-VSP,"Đăng ký, khai lần đầu & chuyên ngành",2.0.0,1,0,data\XSLT\TKhaiThue\xslt\Vietsovpetro\TKhai_01_2_PTHU_VSP.xslt,structured-only,P2,01-DECLARATIONS.md
+273,02/TAIN-DK ,Tài nguyên,2.0.0;2.2.3,2,0,data\XSLT\TKhaiThue\xslt\Vietsovpetro\TKhai_01_1_TNDN_VSP.xslt,structured-only,P2,01-DECLARATIONS.md
+274,01-1/PTHU-VSP,"Đăng ký, khai lần đầu & chuyên ngành",2.0.0;2.2.3,2,0,data\XSLT\TKhaiThue\xslt\Vietsovpetro\TKhai_01_1_PTHU_VSP.xslt,structured-only,P2,01-DECLARATIONS.md
+275,BC7/AC,BCTC & thuyết minh,2.0.0,1,1,data\XSLT\TKhaiThue\xslt\BienLaiPLP\TKhai_BC7_AC.xslt,structured-only,P2,01-DECLARATIONS.md
+285,B01-CTCK,BCTC & thuyết minh,2.0.0;2.2.6,2,0,data\XSLT\TKhaiThue\xslt\BCTC\TKhai_BCTC_TT95.xslt,structured-only,P2,01-DECLARATIONS.md
+300,BC26/AC,BCTC & thuyết minh,2.0.0;2.0.1,2,1,data\XSLT\TKhaiThue\xslt\BCHD\TKHAI_BCHD_BC26_SL.xslt,structured-only,P2,01-DECLARATIONS.md
+301,BK01/AC,BCTC & thuyết minh,2.0.0;2.0.1,2,0,data\XSLT\TKhaiThue\xslt\BCHD\TKHAI_BK01_AC.xslt,structured-only,P2,01-DECLARATIONS.md
+302,,Không mã hiển thị / nội bộ,2.0.6,1,1,data\xslt\XSLT 2.0.6\TKhaiThue\xslt\TNCN\TKhai_Cap_MST_NPT.xslt,structured-only,P3,01-DECLARATIONS.md
+304,06/TNDN,TNDN,2.0.7,1,0,data\xslt\XSLT 2.0.7\TKhaiThue\xslt\TNDN\TKhai_TNDN_06.xslt,structured-only,P2,01-DECLARATIONS.md
+360,03/LNCL-XSĐT,Xổ số / Bảo hiểm,2.0.9;2.1.0;2.2.8,3,0,data\XSLT\XSLT 2.0.9\TKhaiThue\xslt\XSDT\TKhai_XSDT_03_LNCL.xslt,structured-only,P2,01-DECLARATIONS.md
+371,TB01/AC,BCTC & thuyết minh,2.1.3,1,0,data\xslt\XSLT 2.1.3\TKhaiThue\xslt\BCHD\TKhai_HDDT_TB01.xslt,structured-only,P2,01-DECLARATIONS.md
+372,,Không mã hiển thị / nội bộ,2.1.3,1,0,data\xslt\XSLT 2.1.3\TKhaiThue\xslt\BCHD\TKhai_HDDT_QDAD.xslt,structured-only,P3,01-DECLARATIONS.md
+373,,Không mã hiển thị / nội bộ,2.1.3,1,0,data\xslt\XSLT 2.1.2\TKhaiThue\xslt\BCHD\TKhai_BCHD_TT37_2010.xslt,structured-only,P3,01-DECLARATIONS.md
+374,01A/TNS,"Đăng ký, khai lần đầu & chuyên ngành",2.2.3,1,0,data\xslt\XSLT 2.2.3\TKhaiThue\xslt\DAU LAI\TKhai_TNS_01A.xslt,structured-only,P2,01-DECLARATIONS.md
+375,01B/TNS,"Đăng ký, khai lần đầu & chuyên ngành",2.2.3,1,0,data\xslt\XSLT 2.2.3\TKhaiThue\xslt\DAU LAI\TKhai_TNS_01B.xslt,structured-only,P2,01-DECLARATIONS.md
+376,01C/TNS,"Đăng ký, khai lần đầu & chuyên ngành",2.2.3,1,0,data\xslt\XSLT 2.2.3\TKhaiThue\xslt\DAU LAI\TKhai_TNS_01C.xslt,structured-only,P2,01-DECLARATIONS.md
+380,03A/TNS,"Đăng ký, khai lần đầu & chuyên ngành",2.2.3,1,0,data\xslt\XSLT 2.2.3\TKhaiThue\xslt\DAU LAI\TKhai_TNS_03A.xslt,structured-only,P2,01-DECLARATIONS.md
+381,03B/TNS,"Đăng ký, khai lần đầu & chuyên ngành",2.2.3,1,0,data\xslt\XSLT 2.2.3\TKhaiThue\xslt\DAU LAI\TKhai_TNS_03B.xslt,structured-only,P2,01-DECLARATIONS.md
+384,01/ĐNHT,"Đăng ký, khai lần đầu & chuyên ngành",2.1.5;2.2.2;2.4.4;2.5.2;2.8.3;2.8.6,6,0,data\xslt\XSLT 2.1.5\TKhaiThue\xslt\HoanThue\TKhai_01_DNHT.xslt,structured-only,P1,01-DECLARATIONS.md
+385,01/BC-SDHĐ-CNKD,Hộ kinh doanh,2.1.6;2.5.0,2,0,data\xslt\XSLT 2.1.6\TKhaiThue\xslt\CNKK\CNKK_01BC_SDHD.xslt,structured-only,P2,01-DECLARATIONS.md
+386,01/CNKD,Hộ kinh doanh,2.1.6;2.5.0;2.8.3,3,0,data\xslt\XSLT 2.1.6\TKhaiThue\xslt\CNKK\CNKK_01_CNKD.xslt,structured-only,P0,01-DECLARATIONS.md
+387,01/TKN-XSBHĐC,Xổ số / Bảo hiểm,2.1.6;2.5.0;2.8.3,3,0,data\xslt\XSLT 2.1.6\TKhaiThue\xslt\CNKK\TKhai_01_TKN_XSHBDC.xslt,structured-only,P2,01-DECLARATIONS.md
+388,01/TTS,TTĐB / TTS,2.1.6;2.5.0;2.8.3,3,0,data\xslt\XSLT 2.1.6\TKhaiThue\xslt\CNKK\TKhai_01_TTS.xslt,structured-only,P1,01-DECLARATIONS.md
+389,01/XSBHĐC,Xổ số / Bảo hiểm,2.1.6;2.5.0;2.8.3,3,0,data\xslt\XSLT 2.1.6\TKhaiThue\xslt\CNKK\TKhai_01_XSBHDC.xslt,structured-only,P1,01-DECLARATIONS.md
+390,02/ĐK-NPT-TNCN,TNCN,2.1.6,1,0,data\xslt\XSLT 2.1.6\TKhaiThue\xslt\CNKK\TKhai_02DK-NPT-TNCN.xslt,structured-only,P2,01-DECLARATIONS.md
+391,02/KK-TNCN,TNCN,2.1.6;2.8.3,2,0,data\xslt\XSLT 2.1.6\TKhaiThue\xslt\CNKK\TKhai_02KK_TNCN.xslt,structured-only,P1,01-DECLARATIONS.md
+392,02/QTT-TNCN,TNCN,2.1.6;2.5.4;2.8.3,3,0,data\xslt\XSLT 2.1.6\TKhaiThue\xslt\CNKK\TKhai_02QTT-TNCN.xslt,structured-only,P1,01-DECLARATIONS.md
+393,05/DS-TNCN,TNCN,2.1.6,1,0,data\xslt\XSLT 2.1.6\TKhaiThue\xslt\CNKK\TKhai_05DS-TNCN.xslt,structured-only,P2,01-DECLARATIONS.md
+394,05/KK-TNCN,TNCN,2.1.6,1,0,data\xslt\XSLT 2.1.6\TKhaiThue\xslt\CNKK\TKhai_05KK_TNCN.xslt,full,done,01-DECLARATIONS.md
+395,05/QTT-TNCN ,TNCN,2.1.6;2.4.2,2,0,data\xslt\XSLT 2.1.6\TKhaiThue\xslt\CNKK\TKhai_05QTT_TNCN.xslt,structured-only,P0,01-DECLARATIONS.md
+396,06/TNCN ,TNCN,2.1.6;2.8.3,2,0,data\xslt\XSLT 2.1.6\TKhaiThue\xslt\CNKK\TKhai_06TNCN.xslt,structured-only,P2,01-DECLARATIONS.md
+401,01/TTĐB,TTĐB / TTS,2.0.7;2.1.7;2.2.8;2.3.3;2.6.1;2.6.2,6,1,data\XSLT\XSLT 2.1.7\TKhaiThue\xslt\TTDB\TKhai_01_TTDB.xslt,structured-only,P2,01-DECLARATIONS.md
+402,B 01 – DN,BCTC & thuyết minh,2.1.8;2.2.6,2,0,data\XSLT\XSLT 2.1.8\TKhaiThue\xslt\BCTC\TKhai_BCTC_TT200.xslt,structured-only,P2,01-DECLARATIONS.md
+41,01/NTNN,Nhà thầu nước ngoài,2.0.0;2.0.1;2.0.2;2.0.4;2.0.7;2.1.4,6,1,data\XSLT\TKhaiThue\xslt\NTNN\TKhai_NTNN_01.xslt,structured-only,P1,01-DECLARATIONS.md
+42,05/KK-TNCN,TNCN,;2.0.0;2.0.1;2.0.3;2.0.5;2.0.8,6,0,data\XSLT\TKhaiThue\xslt\TNCN\TKhai_TNCN_05KK_TT28.xslt,structured-only,P2,01-DECLARATIONS.md
+43,02/KK-BH,Xổ số / Bảo hiểm,;2.0.0;2.0.1;2.0.3;2.0.5,5,0,data\XSLT\TKhaiThue\xslt\TNCN\TKhai_TNCN_02KK-BH_TT28.xslt,structured-only,P1,01-DECLARATIONS.md
+437,02,"Đăng ký, khai lần đầu & chuyên ngành",2.2.3,1,0,data\xslt\XSLT 2.2.3\TKhaiThue\xslt\TemRuou\TKhai_TemRuou_02.xslt,structured-only,P2,01-DECLARATIONS.md
+438,03,"Đăng ký, khai lần đầu & chuyên ngành",2.2.3,1,0,data\xslt\XSLT 2.2.3\TKhaiThue\xslt\TemRuou\TKhai_TemRuou_03.xslt,structured-only,P2,01-DECLARATIONS.md
+439,06,"Đăng ký, khai lần đầu & chuyên ngành",2.2.3,1,0,data\xslt\XSLT 2.2.3\TKhaiThue\xslt\TemRuou\TKhai_TemRuou_06.xslt,structured-only,P2,01-DECLARATIONS.md
+44,02/KK-XS,Xổ số / Bảo hiểm,;2.0.0;2.0.1;2.0.3;2.0.5,5,0,data\XSLT\TKhaiThue\xslt\TNCN\TKhai_TNCN_02KK-XS_TT28.xslt,structured-only,P1,01-DECLARATIONS.md
+440,01/TK-VSP,"Đăng ký, khai lần đầu & chuyên ngành",2.2.3,1,0,data\xslt\XSLT 2.2.3\TKhaiThue\xslt\Vietsovpevtro\TKhai_VSP_01_TK.xslt,structured-only,P2,01-DECLARATIONS.md
+441,01/ĐCXK-VSP,"Đăng ký, khai lần đầu & chuyên ngành",2.2.3,1,0,data\xslt\XSLT 2.2.3\TKhaiThue\xslt\Vietsovpevtro\TKhai_VSP_01_DCXK.xslt,structured-only,P2,01-DECLARATIONS.md
+442,03/TNDN-DK,TNDN,2.2.4,1,0,data\xslt\XSLT 2.2.4\TKhaiThue\xslt\DAU KHI\TKhai_DK_03TNDN.xslt,structured-only,P2,01-DECLARATIONS.md
+443,01/TNDN-DK,TNDN,2.2.4,1,0,data\xslt\XSLT 2.2.4\TKhaiThue\xslt\DAU KHI\TKhai_DK_01TNDN.xslt,structured-only,P2,01-DECLARATIONS.md
+444,01/TAIN-DK,Tài nguyên,2.2.4,1,0,data\xslt\XSLT 2.2.4\TKhaiThue\xslt\DAU KHI\TKhai_DK_01TAIN.xslt,structured-only,P1,01-DECLARATIONS.md
+445,01/BCTL-DK,"Đăng ký, khai lần đầu & chuyên ngành",2.2.4,1,0,data\xslt\XSLT 2.2.4\TKhaiThue\xslt\DAU KHI\TKhai_DK_01BCTL.xslt,structured-only,P2,01-DECLARATIONS.md
+446,02/TAIN-DK,Tài nguyên,2.2.4,1,0,data\xslt\XSLT 2.2.4\TKhaiThue\xslt\DAU KHI\TKhai_DK_02TAIN.xslt,structured-only,P2,01-DECLARATIONS.md
+447,02/TNDN-DK,TNDN,2.2.4,1,0,data\xslt\XSLT 2.2.4\TKhaiThue\xslt\DAU KHI\TKhai_DK_02TNDN.xslt,structured-only,P2,01-DECLARATIONS.md
+46,01/KK-XS,Xổ số / Bảo hiểm,2.0.0,1,0,data\XSLT\TKhaiThue\xslt\TNCN\TKhai_TNCN_01KK-XS.xslt,structured-only,P2,01-DECLARATIONS.md
+464,01/MBAI,Thuế môn bài,2.2.5,1,0,data\xslt\XSLT 2.2.5\TKhaiThue\xslt\MBAI\TKhai_MBAI_01.xslt,structured-only,P1,01-DECLARATIONS.md
+465,B 01 – DN,BCTC & thuyết minh,2.2.6;2.4.3,2,0,data\XSLT\XSLT 2.2.6\TKhaiThue\xslt\BCTC\TKhai_BCTC200_HN.xslt,structured-only,P2,01-DECLARATIONS.md
+466,B02/TCTD,BCTC & thuyết minh,2.2.6,1,0,data\XSLT\XSLT 2.2.6\TKhaiThue\xslt\BCTC\TKhai_BCTC49_Nam.xslt,structured-only,P2,01-DECLARATIONS.md
+467,B02/TCTD,BCTC & thuyết minh,2.2.6,1,0,data\XSLT\XSLT 2.2.6\TKhaiThue\xslt\BCTC\TKhai_BCTC49_HN.xslt,structured-only,P2,01-DECLARATIONS.md
+468,01/CTLNĐC,"Đăng ký, khai lần đầu & chuyên ngành",2.2.7,1,0,data\xslt\XSLT 2.2.9\TKhaiThue\xslt\CoTucLoiNhuan\TKhai_CTLNDC_01.xslt,structured-only,P2,01-DECLARATIONS.md
+469,01/QT-LNCL,"Đăng ký, khai lần đầu & chuyên ngành",2.2.7,1,0,data\xslt\XSLT 2.2.9\TKhaiThue\xslt\CoTucLoiNhuan\TKhai_QTLNCL_01.xslt,structured-only,P2,01-DECLARATIONS.md
+47,02/KK-TNCN,TNCN,2.0.0,1,0,data\XSLT\TKhaiThue\xslt\TNCN\TKhai_TNCN_02.xslt,structured-only,P1,01-DECLARATIONS.md
+470,01/TTS,TTĐB / TTS,2.4.9;2.5.3;2.6.8;2.7.4;2.8.3,5,0,data\xslt\XSLT 2.4.9\TKhaiThue\xslt\01_TTS\TKhai_01_TTS_TT40.xslt,structured-only,P1,01-DECLARATIONS.md
+471,01/XSBHĐC,Xổ số / Bảo hiểm,2.4.9,1,0,data\xslt\XSLT 2.4.9\TKhaiThue\xslt\01_XSBHDC\TKhai_01_XSBHDC_TT40.xslt,structured-only,P1,01-DECLARATIONS.md
+472,01/TKN-CNKD,Hộ kinh doanh,2.4.9;2.8.3,2,0,data\xslt\XSLT 2.4.9\TKhaiThue\xslt\01_TKN_CNKD\TKhai_01_TKN_CNKD_TT40.xslt,structured-only,P2,01-DECLARATIONS.md
+473,01/CNKD,Hộ kinh doanh,2.4.9;2.5.1;2.5.3;2.6.8;2.7.4;2.8.3,6,0,data\xslt\XSLT 2.4.9\TKhaiThue\xslt\01_CNKD\TKhai_01_CNKD_TT40.xslt,structured-only,P0,01-DECLARATIONS.md
+48,03/KK-TNCN,TNCN,2.0.0,1,0,data\XSLT\TKhaiThue\xslt\TNCN\TKhai_TNCN_03KK.xslt,structured-only,P2,01-DECLARATIONS.md
+49,B-01/DN,BCTC & thuyết minh,2.0.0;2.2.6,2,0,data\XSLT\TKhaiThue\xslt\BCTC\TKhai_BCTC_QD15.xslt,structured-only,P2,01-DECLARATIONS.md
+50,B-01/DNN,BCTC & thuyết minh,2.0.0;2.1.0;2.2.6,3,0,data\XSLT\TKhaiThue\xslt\BCTC\TKhai_BCTC_QD48.xslt,structured-only,P2,01-DECLARATIONS.md
+51,B-01/TCTD,BCTC & thuyết minh,2.0.0;2.2.6,2,0,data\XSLT\TKhaiThue\xslt\BCTC\TKhai_BCTC_QD16.xslt,structured-only,P2,01-DECLARATIONS.md
+53,05/GTGT,GTGT,2.0.0;2.0.2;2.0.4;2.6.2,4,0,data\XSLT\TKhaiThue\xslt\GTGT\TKhai_GTGT_05.xslt,structured-only,P1,01-DECLARATIONS.md
+55,01/MBAI,Thuế môn bài,2.0.0;2.1.2;2.1.3,3,0,data\XSLT\TKhaiThue\xslt\MBAI\TKhai_MBAI_01.xslt,structured-only,P1,01-DECLARATIONS.md
+59,01/BVMT,Bảo vệ môi trường,2.0.0;2.0.2;2.0.4,3,0,data\XSLT\TKhaiThue\xslt\PLP\TKhai_BVMT_01.xslt,structured-only,P2,01-DECLARATIONS.md
+60,02/BVMT,Bảo vệ môi trường,2.0.0;2.0.3;2.0.5,3,0,data\XSLT\TKhaiThue\xslt\PLP\TKHAI_BVMT_02_TT28.xslt,structured-only,P2,01-DECLARATIONS.md
+600,,Không mã hiển thị / nội bộ,2.2.8,1,0,data\XSLT\XSLT 2.10.11\TKhaiThue\xslt\DAU KHI\TKhai_DK_01TAIN.xslt,structured-only,P3,01-DECLARATIONS.md
+61,01/PHLP,Phí / lệ phí,2.0.0;2.0.1;2.0.2;2.0.4,4,0,data\XSLT\TKhaiThue\xslt\PLP\TKhai_PHLP_01.xslt,structured-only,P2,01-DECLARATIONS.md
+62,02/PHLP,Phí / lệ phí,2.0.0;2.0.1;2.0.3;2.0.5,4,0,data\XSLT\TKhaiThue\xslt\PLP\TKhai_PHLP_02_TT28.xslt,structured-only,P2,01-DECLARATIONS.md
+66,01/HKNN,"Đăng ký, khai lần đầu & chuyên ngành",2.0.0;2.0.1,2,0,data\XSLT\TKhaiThue\xslt\NTNN\TKhai_HKNN_01.xslt,structured-only,P1,01-DECLARATIONS.md
+67,01/VTNN,Vận tải,2.0.0;2.0.1,2,1,data\XSLT\TKhaiThue\xslt\NTNN\TKhai_VTNN_01.xslt,structured-only,P1,01-DECLARATIONS.md
+671,B 01a – DN,BCTC & thuyết minh,2.2.6,1,0,data\XSLT\XSLT 2.2.6\TKhaiThue\xslt\BCTC\TKhai_BCTC200_Giua_nien_do_day_du.xslt,structured-only,P2,01-DECLARATIONS.md
+672,B 01b– DN,BCTC & thuyết minh,2.2.6,1,0,data\xslt\XSLT 2.2.6\TKhaiThue\xslt\BCTC\TKhai_BCTC200_Giua_nien_do_tom_luoc.xslt,structured-only,P2,01-DECLARATIONS.md
+673,B02a/TCTD,BCTC & thuyết minh,2.2.6,1,0,data\xslt\XSLT 2.2.6\TKhaiThue\xslt\BCTC\TKhai_BCTC49_Giua_nien_do_day_du.xslt,structured-only,P2,01-DECLARATIONS.md
+674,B02b/TCTD,BCTC & thuyết minh,2.2.6,1,0,data\XSLT\XSLT 2.2.6\TKhaiThue\xslt\BCTC\TKhai_BCTC49_Giua_nien_do_tom_luoc.xslt,structured-only,P2,01-DECLARATIONS.md
+675,B 01a – DN,BCTC & thuyết minh,2.2.6,1,0,data\XSLT\XSLT 2.2.6\TKhaiThue\xslt\BCTC\TKhai_BCTC200_Giua_nien_do_day_du_HN.xslt,structured-only,P2,01-DECLARATIONS.md
+676,B 01b– DN,BCTC & thuyết minh,2.2.6,1,0,data\xslt\XSLT 2.2.6\TKhaiThue\xslt\BCTC\TKhai_BCTC200_Giua_nien_do_tom_luoc_HN.xslt,structured-only,P2,01-DECLARATIONS.md
+677,B02a/TCTD,BCTC & thuyết minh,2.2.6,1,0,data\xslt\XSLT 2.2.6\TKhaiThue\xslt\BCTC\TKhai_BCTC49_Giua_nien_do_day_du_HN.xslt,structured-only,P2,01-DECLARATIONS.md
+678,B02b/TCTD,BCTC & thuyết minh,2.2.6,1,0,data\XSLT\XSLT 2.2.6\TKhaiThue\xslt\BCTC\TKhai_BCTC49_Giua_nien_do_tom_luoc_HN.xslt,structured-only,P2,01-DECLARATIONS.md
+679,02/TK-SDDPNN,"Đăng ký, khai lần đầu & chuyên ngành",2.2.9,1,0,data\xslt\XSLT 2.2.9\TKhaiThue\xslt\DatDai\TKhai_02_TK_SDDPNN.xslt,structured-only,P2,01-DECLARATIONS.md
+68,01/TBH,"Đăng ký, khai lần đầu & chuyên ngành",2.0.0;2.0.1,2,0,data\XSLT\TKhaiThue\xslt\NTNN\TKhai_TBH_01.xslt,structured-only,P1,01-DECLARATIONS.md
+680,05-ĐK-TH-TCT,"Đăng ký, khai lần đầu & chuyên ngành",1.0.0;2.3.0,2,0,data\xslt\XSLT 2.3.0\TKhaiThue\xslt\DangKyThue\TKhai_05_DK_TH_TCT.xslt,structured-only,P2,01-DECLARATIONS.md
+683,B01a - DNN,BCTC & thuyết minh,2.3.2,1,0,data\xslt\XSLT 2.3.2\TKhaiThue\xslt\BCTC\TKhai_BCTC_133_B01a.xslt,structured-only,P2,01-DECLARATIONS.md
+684,B 01b – DNN,BCTC & thuyết minh,2.3.2,1,0,data\xslt\XSLT 2.3.2\TKhaiThue\xslt\BCTC\TKhai_BCTC_133_B01b.xslt,structured-only,P2,01-DECLARATIONS.md
+685,B01 - DNNKLT,BCTC & thuyết minh,2.3.2,1,0,data\xslt\XSLT 2.3.2\TKhaiThue\xslt\BCTC\TKhai_BCTC_133_KLT.xslt,structured-only,P2,01-DECLARATIONS.md
+686,B01 - DNSN,BCTC & thuyết minh,2.3.2,1,0,data\xslt\XSLT 2.3.2\TKhaiThue\xslt\BCTC\TKhai_BCTC_133_SieuNho.xslt,structured-only,P2,01-DECLARATIONS.md
+687,05/TNDN,TNDN,2.3.3,1,0,data\xslt\XSLT 2.3.3\TKhaiThue\xslt\TNDN\TKhai_TNDN_05.xslt,structured-only,P2,01-DECLARATIONS.md
+688,TB01/AC,BCTC & thuyết minh,2.3.4,1,0,data\XSLT\XSLT 2.3.4\TKhaiThue\xslt\Bien lai PLP\TKhai_BCHD_BKe chuyen dia diem.xslt,structured-only,P2,01-DECLARATIONS.md
+689,TB01/AC,BCTC & thuyết minh,2.3.4,1,0,data\XSLT\XSLT 2.3.4\TKhaiThue\xslt\Bien lai PLP\TKhai_BCHD_Thay doi thong tin.xslt,structured-only,P2,01-DECLARATIONS.md
+69,01/TBH-TB,"Đăng ký, khai lần đầu & chuyên ngành",2.0.0,1,0,data\XSLT\TKhaiThue\xslt\NTNN\TB_TBH_01.xslt,structured-only,P2,01-DECLARATIONS.md
+690,PHỤ LỤC 02,"Đăng ký, khai lần đầu & chuyên ngành",2.3.4,1,0,data\xslt\XSLT 2.3.4\TKhaiThue\xslt\BCTC\TKhai_BCTC107.xslt,structured-only,P2,01-DECLARATIONS.md
+691,B01 - CTCK,BCTC & thuyết minh,2.3.4,1,0,data\xslt\XSLT 2.3.4\TKhaiThue\xslt\BCTC\TKhai_BCTC334_Nam.xslt,structured-only,P2,01-DECLARATIONS.md
+692,B01 - CTCK/HN,BCTC & thuyết minh,2.3.4,1,0,data\xslt\XSLT 2.3.4\TKhaiThue\xslt\BCTC\TKhai_BCTC334_HopNhat.xslt,structured-only,P2,01-DECLARATIONS.md
+693,B01 - CTCK,BCTC & thuyết minh,2.3.4,1,0,data\xslt\XSLT 2.3.4\TKhaiThue\xslt\BCTC\TKhai_BCTC334_GiuaNienDo.xslt,structured-only,P2,01-DECLARATIONS.md
+698,B01 - HTX,BCTC & thuyết minh,2.3.5,1,0,data\xslt\XSLT 2.3.5\TKhaiThue\xslt\BCTC\TKhai_BCTC_TT24_nam.xslt,structured-only,P2,01-DECLARATIONS.md
+699,B01a - DNN,BCTC & thuyết minh,2.3.5,1,0,data\xslt\XSLT 2.3.5\TKhaiThue\xslt\BCTC\TKhai_BCTC_TT24_B01a.xslt,structured-only,P2,01-DECLARATIONS.md
+70,02/TBH-TB,"Đăng ký, khai lần đầu & chuyên ngành",2.0.0,1,0,data\XSLT\TKhaiThue\xslt\NTNN\TB_TBH_02.xslt,structured-only,P2,01-DECLARATIONS.md
+700,B 01b – DNN,BCTC & thuyết minh,2.3.5,1,0,data\xslt\XSLT 2.3.5\TKhaiThue\xslt\BCTC\TKhai_BCTC_TT24_B01b.xslt,structured-only,P2,01-DECLARATIONS.md
+701,B01/BCTC,BCTC & thuyết minh,2.3.5,1,0,data\xslt\XSLT 2.3.5\TKhaiThue\xslt\BCTC\TKhai_BCTC_107_DD.xslt,structured-only,P0,01-DECLARATIONS.md
+702,B05/BCTC,BCTC & thuyết minh,2.3.5,1,0,data\xslt\XSLT 2.3.5\TKhaiThue\xslt\BCTC\TKhai_BCTC_107_DG.xslt,structured-only,P0,01-DECLARATIONS.md
+71,02/TNDN,TNDN,2.0.0;2.0.1;2.0.2;2.0.7;2.1.4;2.3.9;2.5.0,7,0,data\XSLT\TKhaiThue\xslt\TNDN\TKhai_TNDN_02.xslt,structured-only,P1,01-DECLARATIONS.md
+713,,Không mã hiển thị / nội bộ,2.3.7,1,0,data\xslt\XSLT 2.3.7\TKhaiThue\xslt\Gia Han\TKhai_Gia_Han_NTVTTD.xslt,structured-only,P3,01-DECLARATIONS.md
+714,,Không mã hiển thị / nội bộ,2.3.8,1,0,data\xslt\XSLT 2.3.8\TKhaiThue\xslt\Gia Han\TKhai_Gia_Han_TTDB.xslt,structured-only,P3,01-DECLARATIONS.md
+716,,Không mã hiển thị / nội bộ,2.4.6,1,0,data\xslt\XSLT 2.4.6\TKhaiThue\xslt\Gia Han\TKhai_Gia_Han_NTVTTD.xslt,structured-only,P3,01-DECLARATIONS.md
+717,01/DS-TK,"Đăng ký, khai lần đầu & chuyên ngành",2.1.6,1,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\01_DS_TK\TKhai_01_DS_TK.xslt,structured-only,P2,01-DECLARATIONS.md
+718,,Không mã hiển thị / nội bộ,2.4.8,1,0,data\xslt\XSLT 2.5.1\TBaoThue\xslt\TB_GIA_HANG.xslt,structured-only,P3,01-DECLARATIONS.md
+72,04/NTNN,Nhà thầu nước ngoài,2.0.0;2.0.3;2.0.5,3,0,data\XSLT\TKhaiThue\xslt\NTNN\TKhai_NTNN_04_TT28.xslt,structured-only,P1,01-DECLARATIONS.md
+73,03/NTNN,Nhà thầu nước ngoài,2.0.0;2.0.1;2.0.2;2.0.4,4,1,data\XSLT\TKhaiThue\xslt\NTNN\TKhai_NTNN_03.xslt,structured-only,P1,01-DECLARATIONS.md
+74,02/NTNN,Nhà thầu nước ngoài,1.4;2.0.0;2.0.1;2.0.3;2.0.5,5,0,data\XSLT\TKhaiThue\xslt\NTNN\TKhai_NTNN_02_TT28.xslt,structured-only,P1,01-DECLARATIONS.md
+824,01/LPMB,Thuế môn bài,2.5.1;2.7.2;2.8.3,3,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\MBAI\TKhai_MBAI_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
+825,02/TK-SDDPNN,"Đăng ký, khai lần đầu & chuyên ngành",2.5.1;2.8.3,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\PNN\TKhai_02_TK_SDDPNN_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
+826,,Không mã hiển thị / nội bộ,1.0.1;2.7.7;2.8.1;3.0.8,4,0,data\xslt\XSLT 1.0.1\TKhaiThue\xslt\DangKyThue\TKhai_04.4_DK_TCT.xslt,structured-only,P3,01-DECLARATIONS.md
+827,,Không mã hiển thị / nội bộ,1.0.1,1,0,data\xslt\XSLT 1.0.1\TKhaiThue\xslt\DangKyThue\TKhai_32_DK_TCT.xslt,structured-only,P3,01-DECLARATIONS.md
+828,05/TNDN,TNDN,2.5.1,1,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\TNDN\TKhai_TNDN_05_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
+829,06/TNDN,TNDN,2.5.1;3.0.8,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\TNDN\TKhai_TNDN_06_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
+830,01/TTĐB,TTĐB / TTS,2.5.1;2.6.1;2.8.3,3,1,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\TTDB\TKhai_01_TTDB_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
+831,02/TTĐB,TTĐB / TTS,2.5.1,1,1,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\TTDB\TKhai_02_TTDB_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
+832,01/TAIN,Tài nguyên,2.5.1;2.8.3,2,1,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\TAIN\TKhai_TAIN_01_TT80.xslt,structured-only,P1,01-DECLARATIONS.md
+833,04/TNDN,TNDN,2.5.1;2.6.9,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\TNDN\TKhai_TNDN_04_TT80.xslt,structured-only,P1,01-DECLARATIONS.md
+834,01/SDDNN,BCTC & thuyết minh,2.5.1,1,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\SDDNN\TKhai_01_TK_SDDNN.xslt,structured-only,P2,01-DECLARATIONS.md
+835,03/SDDNN,BCTC & thuyết minh,2.5.1;2.8.3,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\SDDNN\TKhai_03_TK_SDDNN.xslt,structured-only,P2,01-DECLARATIONS.md
+836,01/TMĐN,"Đăng ký, khai lần đầu & chuyên ngành",2.5.1;2.8.3,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\SDDNN\TKhai_TMDN_01_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
+837,02/TNDN,TNDN,2.5.1,1,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\TNDN\TKhai_TNDN_02_TT80.xslt,structured-only,P1,01-DECLARATIONS.md
+838,01/NTNN,Nhà thầu nước ngoài,2.5.1,1,1,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\NTNN\TKhai_NTNN_01_TT80.xslt,structured-only,P1,01-DECLARATIONS.md
+84,03A/TĐ-TAIN,Tài nguyên,2.0.5;2.2.8;2.6.2,3,0,data\xslt\XSLT 2.0.5\TKhaiThue\xslt\THUYDIEN\TKhai_TD_03A_TAIN.xslt,structured-only,P2,01-DECLARATIONS.md
+840,03/NTNN,Nhà thầu nước ngoài,2.5.1;3.0.8,2,1,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\NTNN\TKhai_NTNN_03_TT80.xslt,structured-only,P1,01-DECLARATIONS.md
+841,01/HKNN,"Đăng ký, khai lần đầu & chuyên ngành",2.5.1;2.6.5;3.0.8,3,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\NTNN\TKhai_HKNN_TT80.xslt,structured-only,P1,01-DECLARATIONS.md
+842,01/GTGT,GTGT,2.5.1;2.6.8;2.7.4;2.8.3,4,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\GTGT\TKhai_GTGT_01_TT80.xslt,full,done,01-DECLARATIONS.md
+843,01/TBH,"Đăng ký, khai lần đầu & chuyên ngành",2.5.1,1,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\NTNN\TKhai_TBH_TT80.xslt,structured-only,P1,01-DECLARATIONS.md
+844,02/GTGT,GTGT,2.5.1,1,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\GTGT\TKhai_GTGT_02_TT80.xslt,structured-only,P1,01-DECLARATIONS.md
+845,,Không mã hiển thị / nội bộ,1.0.1;1.0.2;2.8.1;2.8.3,4,0,data\xslt\XSLT 1.0.1\TKhaiThue\xslt\DangKyThue\TKhai_13_MST.xslt,structured-only,P3,01-DECLARATIONS.md
+846,03/GTGT,GTGT,2.5.1,1,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\GTGT\TKhai_GTGT_03_TT80.xslt,structured-only,P1,01-DECLARATIONS.md
+847,04/GTGT,GTGT,2.5.1;2.6.8;2.7.4,3,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\GTGT\TKhai_GTGT_04_TT80.xslt,structured-only,P0,01-DECLARATIONS.md
+848,01/MTCN,"Đăng ký, khai lần đầu & chuyên ngành",2.5.0,1,0,data\xslt\XSLT 2.5.0\TKhaiThue\xslt\MTCN\MTCN_THUE.xslt,structured-only,P2,01-DECLARATIONS.md
+85,01B/TNDN-DK,TNDN,2.0.0;2.0.2;2.0.3;2.0.4,4,0,data\XSLT\TKhaiThue\xslt\DauKhi\TKhai_DK_01BTNDN.xslt,structured-only,P2,01-DECLARATIONS.md
+850,05/GTGT,GTGT,2.5.1;2.8.3,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\GTGT\TKhai_GTGT_05_TT80.xslt,structured-only,P1,01-DECLARATIONS.md
+851,01/PHLPNG,Phí / lệ phí,2.5.1;3.0.8,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\PLP\TKhai_PLPNG_01_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
+852,01/KTTSBĐ,TTĐB / TTS,2.5.1;2.8.4,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\TSBD\TKhai_01_KTTSBD_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
+853,01/PTHU-DK,"Đăng ký, khai lần đầu & chuyên ngành",2.5.1;2.8.4,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\DAU KHI\TKhai_01_PTHU_DK_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
+854,03/TNDN-DK,TNDN,2.5.1;2.8.4,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\DAU KHI\TKhai_DK_03TNDN_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
+855,01/LNCN-PSC,"Đăng ký, khai lần đầu & chuyên ngành",2.5.1;2.8.4,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\DAU KHI\TKhai_PSC_01_LNCL_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
+856,01/LNCN-VSP,"Đăng ký, khai lần đầu & chuyên ngành",2.5.1;2.8.4,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\Vietsovpevtro\TKhai_VSP_01_LNCL_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
+857,01/TK-VSP,"Đăng ký, khai lần đầu & chuyên ngành",2.5.1;2.8.4,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\Vietsovpevtro\TKhai_VSP_01TK_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
+858,01-1/PTHU-VSP,"Đăng ký, khai lần đầu & chuyên ngành",2.5.1;2.8.4,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\Vietsovpevtro\TKhai_VSP_01_1_PTHU_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
+859,02/KK-TNCN,TNCN,2.5.1;2.8.3,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\TNCN\TKhai_02_KK_TNCN_TT80.xslt,structured-only,P1,01-DECLARATIONS.md
+86,02/TNDN-DK,TNDN,2.0.5,1,0,data\xslt\XSLT 2.0.5\TKhaiThue\xslt\DauKhi\TKhai_DK_02TNDN.xslt,structured-only,P2,01-DECLARATIONS.md
+860,04/CNV-TNCN,TNCN,2.5.1;2.8.3,2,1,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\TNCN\TKhai_04_CNV_TNCN.xslt,structured-only,P2,01-DECLARATIONS.md
+861,04/DTV-TNCN,TNCN,2.5.1;2.8.3,2,1,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\TNCN\TKhai_04_DTV_TNCN.xslt,structured-only,P2,01-DECLARATIONS.md
+862,04/TKQT-TNCN,TNCN,2.5.1;2.8.3,2,1,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\TNCN\TKhai_04_TKQT_TNCN.xslt,structured-only,P2,01-DECLARATIONS.md
+863,04/NNG-TNCN,TNCN,2.5.1;2.8.3,2,1,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\TNCN\TKhai_04_NNG_TNCN.xslt,structured-only,P1,01-DECLARATIONS.md
+864,05/KK-TNCN,TNCN,2.5.1;2.8.3;2.9.3,3,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\TNCN\TKhai_05_KK_TNCN_TT80.xslt,structured-only,P0,01-DECLARATIONS.md
+865,06/TNCN ,TNCN,2.5.1;2.8.3,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\TNCN\TKhai_06_TNCN_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
+868,01/TAIN-DK,Tài nguyên,2.5.1;2.8.4,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\DAU KHI\TKhai_DK_01TAIN_TT80.xslt,structured-only,P1,01-DECLARATIONS.md
+869,01-1/TNDN-VSP ,TNDN,2.5.1;2.8.4,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\Vietsovpevtro\TKhai_VSP_01_1_TNDN_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
+87,01/BCTL-DK,"Đăng ký, khai lần đầu & chuyên ngành",2.0.0;2.0.3,2,0,data\XSLT\TKhaiThue\xslt\DauKhi\TKhai_DK_01BCTL.xslt,structured-only,P2,01-DECLARATIONS.md
+870,01/TNDN-DK,TNDN,2.5.1;2.8.4,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\DAU KHI\TKhai_DK_01TNDN_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
+871,01/BCTL-DK,"Đăng ký, khai lần đầu & chuyên ngành",2.5.1;2.8.4,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\DAU KHI\TKhai_DK_01BCTL_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
+872,01/CTLNĐC,"Đăng ký, khai lần đầu & chuyên ngành",2.5.1;2.8.3;3.0.8,3,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\CTLNDC\TKhai_CTLNDC_01_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
+873,01/TNS-DK,"Đăng ký, khai lần đầu & chuyên ngành",2.5.1;2.8.4,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\DAU KHI\TKhai_DK_01_TNS_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
+878,01/PBVMT,Bảo vệ môi trường,2.5.1,1,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\PBVMT\TKhai_PBVMT_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
+879,01/PH,Phí / lệ phí,2.5.1;2.7.5,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\PLP\TKhai_PH_01_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
+88,02/TAIN-DK,Tài nguyên,2.0.5,1,0,data\xslt\XSLT 2.0.5\TKhaiThue\xslt\DauKhi\TKhai_DK_02TAIN.xslt,structured-only,P2,01-DECLARATIONS.md
+880,01/LP,Phí / lệ phí,2.5.1;2.7.5;3.0.8,3,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\PLP\TKhai_LP_01_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
+881,02/TNDN-VSP,TNDN,2.5.1;2.8.4,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\DAU KHI\TKhai_DK_02TNDN_VSP_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
+882,02/PTHU-DK,"Đăng ký, khai lần đầu & chuyên ngành",2.5.1;2.8.4,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\DAUKHI\TKhai_DK_02_PTHU_DK_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
+883,03/PTHU-DK,"Đăng ký, khai lần đầu & chuyên ngành",2.5.1;2.8.4,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\DAU KHI\TKhai_DK_03_PTHU_DK_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
+884,02/TAIN-DK,Tài nguyên,2.5.1;2.8.4,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\DAU KHI\TKhai_DK_02TAIN_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
+885,02/LNCN-PSC,"Đăng ký, khai lần đầu & chuyên ngành",2.5.1;2.8.4,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\DAU KHI\TKhai_PSC_02_LNCN_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
+886,02/LNCN-VSP,"Đăng ký, khai lần đầu & chuyên ngành",2.5.1;2.8.4,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\Vietsovpevtro\TKhai_VSP_02_LNCN_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
+887,02/TAIN-VSP,Tài nguyên,2.5.1;2.8.4,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\QT DAU KHI\TKhai_VSP_02TAIN_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
+888,01/ĐCĐB-VSP,"Đăng ký, khai lần đầu & chuyên ngành",2.5.1;2.8.4,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\QT DAU KHI\TKhai_VSP_01_DCDB_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
+889,02/PTHU-VSP,"Đăng ký, khai lần đầu & chuyên ngành",2.5.1;2.8.4,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\QT DAU KHI\TKhai_VSP_02_PTHU_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
+890,02/TNDN-DK,TNDN,2.5.1;2.7.6;2.9.4,3,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\DAU KHI\TKhai_DK_02TNDN_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
+891,01/QT-LNCL,"Đăng ký, khai lần đầu & chuyên ngành",2.5.1;2.8.3,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\CTLNDC\TKhai_QT_LNDC_01_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
+892,03/TNDN,TNDN,2.5.1;2.8.3;2.9.2;2.9.4,4,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\TNDN\TKhai_TNDN_03_TT80.xslt,full,done,01-DECLARATIONS.md
+893,02/PBVMT,Bảo vệ môi trường,2.5.1;2.6.9,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\PBVMT\TKhai_02_PBVMT_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
+9,01/KK-BHĐC,Xổ số / Bảo hiểm,2.0.0,1,0,data\XSLT\TKhaiThue\xslt\TNCN\TKhai_TNCN_01KK-BHDC.xslt,structured-only,P2,01-DECLARATIONS.md
+900,,Không mã hiển thị / nội bộ,1.0.1,1,0,data\xslt\XSLT 1.0.1\TKhaiThue\xslt\DangKyThue\TKhai_01_DK_TCT.xslt,structured-only,P3,01-DECLARATIONS.md
+901,,Không mã hiển thị / nội bộ,1.0.1,1,0,data\xslt\XSLT 1.0.1\TKhaiThue\xslt\DangKyThue\TKhai_02_DK_TCT.xslt,structured-only,P3,01-DECLARATIONS.md
+902,,Không mã hiển thị / nội bộ,1.0.1,1,0,data\xslt\XSLT 1.0.1\TKhaiThue\xslt\DangKyThue\TKhai_03_DK_TCT.xslt,structured-only,P3,01-DECLARATIONS.md
+903,,Không mã hiển thị / nội bộ,1.0.1;2.8.1;2.8.3;3.0.8,4,0,data\xslt\XSLT 1.0.1\TKhaiThue\xslt\DangKyThue\TKhai_04_DK_TCT.xslt,structured-only,P3,01-DECLARATIONS.md
+904,,Không mã hiển thị / nội bộ,1.0.1,1,0,data\xslt\XSLT 1.0.1\TKhaiThue\xslt\DangKyThue\TKhai_04.1_DK_TCT.xslt,structured-only,P3,01-DECLARATIONS.md
+905,,Không mã hiển thị / nội bộ,1.0.1,1,0,data\xslt\XSLT 1.0.1\TKhaiThue\xslt\DangKyThue\TKhai_05_DK_TCT.xslt,structured-only,P3,01-DECLARATIONS.md
+906,,Không mã hiển thị / nội bộ,1.0.1;2.8.1;2.8.3,3,0,data\xslt\XSLT 1.0.1\TKhaiThue\xslt\DangKyThue\TKhai_06_DK_TCT.xslt,structured-only,P3,01-DECLARATIONS.md
+907,20-ĐK-TCT,"Đăng ký, khai lần đầu & chuyên ngành",1.0.1,1,1,data\xslt\XSLT 1.0.1\TKhaiThue\xslt\DangKyThue\TKhai_20_DK_TCT.xslt,structured-only,P2,01-DECLARATIONS.md
+909,,Không mã hiển thị / nội bộ,1.0.1;2.8.1;2.8.3,3,0,data\xslt\XSLT 1.0.1\TKhaiThue\xslt\DangKyThue\TKhai_23_DK_TCT.xslt,structured-only,P3,01-DECLARATIONS.md
+910,,Không mã hiển thị / nội bộ,1.0.1;2.7.7;2.8.1;2.8.3,4,0,data\xslt\XSLT 1.0.1\TKhaiThue\xslt\DangKyThue\TKhai_24_DK_TCT.xslt,structured-only,P3,01-DECLARATIONS.md
+911,,Không mã hiển thị / nội bộ,1.0.1;2.8.1;2.8.3,3,0,data\xslt\XSLT 1.0.1\TKhaiThue\xslt\DangKyThue\TKhai_25_DK_TCT.xslt,structured-only,P3,01-DECLARATIONS.md
+912,20-ĐK-TH-TCT,"Đăng ký, khai lần đầu & chuyên ngành",1.0.1,1,0,data\xslt\XSLT 1.0.1\TKhaiThue\xslt\DangKyThue\TKhai_20_DK_TH_TCT.xslt,structured-only,P2,01-DECLARATIONS.md
+913,05-ĐK-TH-TCT,"Đăng ký, khai lần đầu & chuyên ngành",1.0.1,1,0,data\xslt\XSLT 1.0.1\TKhaiThue\xslt\DangKyThue\TKhai_05_DK_TH_TCT.xslt,structured-only,P2,01-DECLARATIONS.md
+914,01/TBVMT,Bảo vệ môi trường,2.5.1;2.8.3,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\TBVMT\TKhai_TBVMT_TT80.xslt,structured-only,P1,01-DECLARATIONS.md
+915,01/ĐNHUY,"Đăng ký, khai lần đầu & chuyên ngành",2.5.2;2.9.2,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\DNHT\TKhai_01_DNHUY.xslt,structured-only,P2,01-DECLARATIONS.md
+916,01/DNXLNT,"Đăng ký, khai lần đầu & chuyên ngành",2.5.2;2.6.4;2.8.3;2.8.6;2.9.1,5,1,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\DNHT\TKhai_01_DNXLHT.xslt,structured-only,P2,01-DECLARATIONS.md
+920,02/PH,Phí / lệ phí,2.5.1;2.6.9;2.7.5,3,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\PLP\TKhai_PH_02_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
+921,02/NTNN,Nhà thầu nước ngoài,2.5.1,1,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\NTNN\TKhai_NTNN_02_TT80.xslt,structured-only,P1,01-DECLARATIONS.md
+922,04/NTNN,Nhà thầu nước ngoài,2.5.1;3.0.8,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\NTNN\TKhai_NTNN_04_TT80.xslt,structured-only,P1,01-DECLARATIONS.md
+923,01/VTNN,Vận tải,2.5.1;3.0.8,2,1,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\NTNN\TKhai_VTNN_01_TT80.xslt,structured-only,P1,01-DECLARATIONS.md
+924,02/TAIN,Tài nguyên,2.5.1;2.8.3,2,1,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\TAIN\TKhai_TAIN_02_TT80.xslt,structured-only,P1,01-DECLARATIONS.md
+950,02/PHLPNG,Phí / lệ phí,2.5.1;3.0.8,2,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\PLP\TKhai_PLPNG_02_TT80.xslt,structured-only,P2,01-DECLARATIONS.md
+952,02/QTT-TNCN,TNCN,2.5.1;2.5.2;2.7.3;2.8.3,4,0,data\xslt\XSLT 2.1.6\TKhaiThue\xslt\CNKK\TKhai_02QTT_TNCN_TT80.xslt,structured-only,P1,01-DECLARATIONS.md
+953,05/QTT-TNCN,TNCN,2.5.1;2.5.2;2.7.9;2.8.3;2.8.4;2.8.5;2.9.3,7,0,data\xslt\XSLT 2.5.2\TKhaiThue\xslt\TNCN\TKhai_05QTT_TNCN_TT80.xslt,full,done,01-DECLARATIONS.md
+954,02/HT,"Đăng ký, khai lần đầu & chuyên ngành",2.8.5,1,0,data\xslt\XSLT 2.8.5\TKhaiThue\xslt\DNHT\TKhai_02_DNHT.xslt,structured-only,P2,01-DECLARATIONS.md
+956,,Không mã hiển thị / nội bộ,2.5.5;2.5.6,2,0,data\xslt\XSLT 2.5.4\TKhaiThue\xslt\Gia Han\TKhai_Gia_Han_NTVTTD.xslt,structured-only,P3,01-DECLARATIONS.md
+958,01/TEM,Tem điện tử,2.5.7;2.8.3;3.0.3,3,0,data\xslt\XSLT 2.5.6\TKhaiThue\xslt\Tem dien tu\TKhai_01_TEM_TT23.xslt,structured-only,P2,01-DECLARATIONS.md
+959,03/TEM,Tem điện tử,2.5.7;2.8.3,2,0,data\xslt\XSLT 2.5.6\TKhaiThue\xslt\Tem dien tu\TKhai_03_TEM_TT23.xslt,structured-only,P2,01-DECLARATIONS.md
+961,CTT24/TEM,Tem điện tử,2.5.7;2.8.9;3.0.2,3,0,data\xslt\XSLT 2.5.7\TKhaiThue\xslt\Tem dien tu\Pxuat_TDT_ThuocLa.xslt,structured-only,P2,01-DECLARATIONS.md
+962,,Không mã hiển thị / nội bộ,1.0.2;2.8.1;2.8.3,3,0,data\xslt\XSLT 1.0.2\TKhaiThue\xslt\DangKyThue\TKhai_08_MST.xslt,structured-only,P3,01-DECLARATIONS.md
+963,02/TEM,Tem điện tử,2.5.8;2.8.3,2,0,data\xslt\XSLT 2.5.7\TKhaiThue\xslt\Tem dien tu\TKhai_02_TEM_TT23.xslt,structured-only,P2,01-DECLARATIONS.md
+964,04/TEM,Tem điện tử,2.5.8;2.8.3,2,0,data\xslt\XSLT 2.5.7\TKhaiThue\xslt\Tem dien tu\TKhai_04_TEM_TT23.xslt,structured-only,P2,01-DECLARATIONS.md
+965,05/TEM,Tem điện tử,2.5.8;2.8.3,2,0,data\xslt\XSLT 2.5.7\TKhaiThue\xslt\Tem dien tu\TKhai_05_TEM_TT23.xslt,structured-only,P2,01-DECLARATIONS.md
+966,06/TEM,Tem điện tử,2.5.8;2.8.3,2,0,data\xslt\XSLT 2.5.7\TKhaiThue\xslt\Tem dien tu\TKhai_06_TEM_TT23.xslt,structured-only,P2,01-DECLARATIONS.md
+967,07/TEM,Tem điện tử,2.5.8;2.8.3,2,0,data\xslt\XSLT 2.5.7\TKhaiThue\xslt\Tem dien tu\TKhai_07_TEM_TT23.xslt,structured-only,P2,01-DECLARATIONS.md
+969,CTT24/TEM,Tem điện tử,2.6.1,1,0,data\xslt\XSLT 2.6.1\TKhaiThue\xslt\Tem dien tu\Pxuat_TDT_NhaIn.xslt,structured-only,P2,01-DECLARATIONS.md
+995,01/CCTT-TMĐT,"Đăng ký, khai lần đầu & chuyên ngành",2.6.0,1,1,data\xslt\XSLT 2.6.0\TKhaiThue\xslt\TMDT\TKhai_01_CCTT.xslt,structured-only,P2,01-DECLARATIONS.md
+997,01/ĐK-TĐKTT,"Đăng ký, khai lần đầu & chuyên ngành",2.7.2;2.8.3;3.0.8,3,0,data\xslt\XSLT 2.7.2\TKhaiThue\xslt\TDKTT\TKhai_01_DK_TDKTT.xslt,structured-only,P2,01-DECLARATIONS.md
+BC26/BLĐT,,Không mã hiển thị / nội bộ,2.1.0,1,0,data\xslt\XSLT 2.8.1\TKhaiThue\xslt\HDDT\TKhai_BC26BLDT.xslt,structured-only,P3,01-DECLARATIONS.md
+CTT50,,Không mã hiển thị / nội bộ,2.1.0,1,0,data\xslt\XSLT 2.8.1\TKhaiThue\xslt\HDDT\TKhai_CTT50.xslt,structured-only,P3,01-DECLARATIONS.md
