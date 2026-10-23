@@ -2,6 +2,14 @@
   "kind": "notice",
   "evidenceType": "Installed registry/template static inspection plus local MSXML fixture transforms; Windows GUI and PDF parity pending",
   "registry": "data/DMucTbao.xml",
+  "sourceHashes": {
+    "data/DMucTbao.xml": "E73F65D9334B0EB70FDF8A20A366CC014B724C0148A0EA9DEE1F5B1417BD2B6F",
+    "data/xslt/XSLT 2.8.1/TBaoThue/include/TBaoHeader.xsl": "EFBF1E7B91DC2C78726EB0C32C51071C7EB27F1EF729F3DF19B819A643951314",
+    "data/xslt/XSLT 2.8.1/TBaoThue/xslt/TBao_108_TB_NSD.xslt": "E00C7532354D356624E77FA95DDEC877DF97AE3120F1647522DBDE86CC30C2D2",
+    "data/xslt/XSLT 2.8.1/TBaoThue/xslt/TBao_107_TB_BSTT_NNT.xslt": "15065E45ABF21DCB4C2E436DF304CE93FC2E46070EE4D4659BDAE4B1F7B657DC",
+    "data/xslt/XSLT 2.8.1/TBaoThue/xslt/TBao_01_TB_SSDT.xslt": "D7C6675378BA1FF8E8FBEA1F412567F1DECCD9516E5C105285417684A3E29A4E"
+  },
+  "executedOracleEvidence": "docs/reverse-engineering/evidence/oracle-batch-expanded-2026-10-23.json",
   "version": "2.1.0",
   "namespaceRule": "Dedicated layouts require unprefixed exact root. Default namespace is tolerated by local-name parser; vendor XSLT oracle input has no namespace, as in its preparation pipeline.",
   "legalReference": "Ban hành kèm theo Nghị định 70/2025/NĐ-CP ngày 20 tháng 3 năm 2025 của Bộ trưởng Bộ Tài chính",

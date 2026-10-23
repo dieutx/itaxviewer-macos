@@ -35,7 +35,11 @@ final class FinancialStatementTests: XCTestCase {
                                   "Missing financial field in \(code): \(value.path)")
                 }
             }
-            XCTAssertTrue(html.contains(">001.01</td>"), "Explanatory references must retain leading zeros and dot")
+            // Section rows legitimately bold their cells. Match the complete
+            // raw note in either cell style, retaining both zeros and the dot.
+            XCTAssertNotNil(html.range(of: #"<td[^>]*>(?:<b>)?001\.01(?:</b>)?</td>"#,
+                                       options: .regularExpression),
+                            "Explanatory references must retain leading zeros and dot")
             XCTAssertTrue(html.contains("Số cuối năm"))
             XCTAssertTrue(html.contains("Số đầu năm"))
         }

@@ -262,6 +262,13 @@ public final class HTMLRenderer {
         html += "</tr></thead><tbody>"
         for row in spec.tableRows ?? [] {
             html += "<tr>" + row.cells.map { cell($0) }.joined() + "</tr>"
+            let displayed = Set(row.cells.compactMap(\.value).map { key($0) })
+            for indicatorRow in spec.rows where !indicatorRow.indicator.isEmpty
+                && indicatorRow.values.contains(where: { displayed.contains(key($0)) }) {
+                html += renderRepeatedTables(document: document, spec: spec,
+                                             afterIndicator: indicatorRow.indicator,
+                                             inlineColumnCount: spec.columns?.count ?? 4)
+            }
         }
         html += "</tbody></table>"
         for row in spec.rows where !row.values.isEmpty && row.values.contains(where: { !represented.contains(key($0)) }) {

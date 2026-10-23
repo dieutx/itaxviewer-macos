@@ -49,8 +49,13 @@ private final class FixtureRunner {
             .sorted { $0.lastPathComponent < $1.lastPathComponent }
         guard !inputs.isEmpty else { throw QAError(stage: "fixture-directory") }
         // Repeated runs must not mix failed current renders with old evidence.
+        // Retain this run's actual app-open evidence collected by the preceding
+        // LaunchServices step; it contains only fixture names and load stages.
+        let appOpenURL = output.appendingPathComponent("app-open-report.json")
+        let appOpenEvidence = try? Data(contentsOf: appOpenURL)
         if files.fileExists(atPath: output.path) { try files.removeItem(at: output) }
         try files.createDirectory(at: output, withIntermediateDirectories: true)
+        if let appOpenEvidence { try appOpenEvidence.write(to: appOpenURL, options: .atomic) }
         let registry = try FormRegistry.bundled()
         let renderer = HTMLRenderer(registry: registry)
         var results: [FixtureResult] = []
