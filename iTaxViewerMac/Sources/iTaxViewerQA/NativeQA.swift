@@ -113,7 +113,8 @@ private final class FixtureRunner {
         try rendered.html.write(to: base.appendingPathExtension("html"), atomically: true, encoding: .utf8)
         let pdfURL = base.appendingPathExtension("pdf")
         if files.fileExists(atPath: pdfURL.path) { try files.removeItem(at: pdfURL) }
-        let info = NSPrintInfo(dictionary: [:])
+        let info = (NSPrintInfo.shared.copy() as? NSPrintInfo) ?? NSPrintInfo.shared
+        info.dictionary()[NSPrintInfo.AttributeKey.allPages] = true
         let mm = 72.0 / 25.4
         info.paperSize = NSSize(width: 210 * mm, height: 297 * mm)
         info.orientation = rendered.orientation == .landscape ? .landscape : .portrait
