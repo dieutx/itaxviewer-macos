@@ -16,12 +16,22 @@ final class NoticeRenderer {
 
     func render() -> String? {
         if document.root.localName == "TBao" {
+            // The factory accepts several MSo values here; they have different
+            // templates. Only this exact code/version has a captured layout.
+            guard value(document.root, "MSo") == "01/TB-BSTT",
+                  value(document.root, "PBan") == "2.1.0" else { return nil }
             return renderTBaoNotice()
         }
+        guard document.root.localName == "TBaoThueDTu",
+              document.root.prefix == nil,
+              let content = noticeRoot()?.firstChild(named: "NDungTBao"),
+              let status = value(content, "trangThai") else { return nil }
         switch document.metadata.noticeCode {
-        case "843":
+        case "843" where document.metadata.noticeVersion == "2.5.6"
+            && ["Y", "0", "N"].contains(status):
             return render843()
-        case "844":
+        case "844" where document.metadata.noticeVersion == "2.4.9"
+            && ["Y", "N"].contains(status):
             return render844()
         default:
             return nil
@@ -40,13 +50,14 @@ final class NoticeRenderer {
 
         var s = "<div class=\"notice-header\">"
         s += "<table class=\"notice-masthead\"><tr>"
-        s += "<td class=\"notice-agency\"><b>\(esc(value(detail, "TCQTCTren") ?? ""))</b></td>"
+        s += "<td class=\"notice-agency\"><b>\(esc(value(detail, "TCQTCTren") ?? ""))</b><br/><b>\(esc(taxOffice))</b></td>"
         s += "<td class=\"notice-form\"><div>Mẫu số: <b>01/TB-BSTT-NNT</b></div>"
         s += "<div class=\"notice-number\">Số: \(esc(number))</div>"
         s += "<div class=\"notice-date\">\(esc(vietnameseDateLine(date)))</div></td>"
         s += "</tr></table>"
         let round = value(detail, "LGTrinh")
         s += "<div class=\"doc-title\">THÔNG BÁO" + (round.map { " (Lần \(esc($0)))" } ?? "") + "</div>"
+        s += "<div class=\"doc-subtitle\">Về việc giải trình, bổ sung thông tin, tài liệu</div>"
         s += "<div class=\"rule\"></div>"
         s += "</div>"
 
@@ -165,7 +176,7 @@ final class NoticeRenderer {
             s += "<p>Căn cứ hồ sơ khai thuế/BCTC/BCAC của <b>\(esc(recipient))</b> gửi tới cơ quan thuế \(esc(taxOffice)). Cơ quan thuế thông báo về việc không chấp nhận hồ sơ khai thuế/BCTC/BCAC của người nộp thuế, cụ thể như sau:</p>"
             s += declarationLines(content)
             s += "<p><b>- Thông tin có sai sót:</b></p>"
-            s += rejectionTable(content, header: ["STT", "Thông tin có sai sót", "Hướng dẫn xử lý", "Ghi chú"])
+            s += rejectionTable(content, header: ["STT", "Thông tin có sai sót", "Hướng dẫn xử lý", "Ghi chú"], parenthesized: true)
             s += "<p>Đề nghị \(esc(recipient)) điều chỉnh và gửi lại hồ sơ khai thuế/BCTC/BCAC theo hướng dẫn nêu trên để được ghi nhận nghĩa vụ nộp hồ sơ thuế/giải quyết hồ sơ thuế theo quy định (trừ hồ sơ đăng ký thuế).</p>"
             s += "</div>"
         }
@@ -200,6 +211,7 @@ final class NoticeRenderer {
         s += "<div class=\"doc-title\">\(esc(title))</div>"
         s += "<div class=\"doc-subtitle\">\(esc(summary))</div>"
         s += "<div class=\"rule\"></div>"
+        s += "</div>"
         return s
     }
 
@@ -211,12 +223,15 @@ final class NoticeRenderer {
     }
 
     private func declarationLines(_ content: XMLNode?) -> String {
-        guard let detail = content?.node(atLocalPath: "HoSoThue/CTietHoSoThue") else { return "" }
+        let details = content?.firstChild(named: "HoSoThue")?.children(named: "CTietHoSoThue") ?? []
+        guard !details.isEmpty else { return "" }
         var s = "<div class=\"notice-fields\">"
+        for detail in details {
         s += line("- Tên tờ khai/Phụ lục:", value(detail, "tokhai-phuluc"))
         s += line("- Loại tờ khai:", value(detail, "loaiToKhai"))
         s += line("- Kỳ tính thuế:", value(detail, "kyTinhThue"))
         s += line("- Lần nộp hoặc lần bổ sung:", value(detail, "lanNop"))
+        }
         if let maGD = value(content, "maGiaoDichDTu"), !maGD.isEmpty {
             s += line("- Mã giao dịch điện tử:", maGD)
         }
@@ -230,7 +245,8 @@ final class NoticeRenderer {
     }
 
     private func rejectionTable(_ content: XMLNode?,
-                                header: [String] = ["STT", "Mô tả lỗi", "Hướng dẫn xử lý", "Ghi chú"]) -> String {
+                                header: [String] = ["STT", "Mô tả lỗi", "Hướng dẫn xử lý", "Ghi chú"],
+                                parenthesized: Bool = false) -> String {
         let rows = content?.node(atLocalPath: "LyDo")?.children(named: "CTietLyDo") ?? []
         guard !rows.isEmpty else { return "" }
         var s = "<table class=\"notice-table\"><thead><tr>"
@@ -239,7 +255,9 @@ final class NoticeRenderer {
         for (index, row) in rows.enumerated() {
             let group = value(row, "tenNhomLoi") ?? ""
             let error = value(row, "tenLoi") ?? ""
-            let description = [group, error].filter { !$0.isEmpty }.joined(separator: " - ")
+            let description = parenthesized && !error.isEmpty
+                ? "\(group) (\(error))"
+                : [group, error].filter { !$0.isEmpty }.joined(separator: " - ")
             s += "<tr><td class=\"c\">\(index + 1)</td>"
             s += "<td>\(esc(description))</td>"
             s += "<td>\(esc(value(row, "huongDanXuLy") ?? ""))</td>"
@@ -262,7 +280,15 @@ final class NoticeRenderer {
             s += "<td>\(esc(value(row, "maDinhDanh") ?? ""))</td>"
             s += "<td class=\"r\">\(esc(VietnameseFormat.number(value(row, "soTienPNop"))))</td>"
             s += "<td class=\"c\">\(esc(value(row, "tenLoaiTien") ?? ""))</td>"
-            s += "<td>\(esc(value(row, "ghiChu") ?? ""))</td></tr>"
+            let supplementary = content?.firstChild(named: "HoSoThue")?
+                .children(named: "CTietHoSoThue").contains { value($0, "loaiToKhai") == "Bổ sung" } ?? false
+            let amount = Decimal(string: value(row, "soTienPNop") ?? "", locale: Locale(identifier: "en_US_POSIX"))
+            var note = ""
+            if supplementary, let amount {
+                if amount > 0 { note = "Số thuế phải nộp tăng thêm do khai bổ sung" }
+                if amount < 0 { note = "Số thuế phải nộp được điều chỉnh giảm do khai bổ sung" }
+            }
+            s += "<td>\(esc(note))</td></tr>"
         }
         s += "</tbody></table>"
         return s

@@ -16,20 +16,37 @@ final class VoucherRenderer {
 
     func render() -> String? {
         guard document.root.localName == "CHUNGTU",
-              document.metadata.voucherCode == "01",
-              let header = document.root.firstDescendant(named: "CHUNGTU_HDR") else {
-            return nil
+              let envelope = document.root.firstChild(named: "NDUNG_CTU_NH") else { return nil }
+        let records = envelope.children(named: "NDUNG_CTU")
+        guard !records.isEmpty else { return nil }
+        // A voucher body is repeated per NDUNG_CTU, including its own header,
+        // currency, rows and total. Do not combine different taxpayers/totals.
+        var bodies: [String] = []
+        for record in records {
+            guard let header = record.firstChild(named: "CHUNGTU_HDR"),
+                  text(header, "MA_CTU") == "01",
+                  text(header, "PBAN_TLIEU_XML") == "4.0.1",
+                  ["", "VND"].contains(text(header, "MA_NGUYENTE")) else { return nil }
+            let total = text(header, "TONG_TIEN")
+            // USD words, negative amounts and other currencies need separate
+            // captured branches; preserve their values in the structured view.
+            guard total.isEmpty || (Int64(total).map { $0 >= 0 } ?? false) else { return nil }
+            bodies.append(renderBody(record: record, header: header, envelope: envelope))
         }
+        return bodies.joined(separator: "<div style=\"page-break-before: always\"></div>")
+    }
+
+    private func renderBody(record: XMLNode, header: XMLNode, envelope: XMLNode) -> String {
         let currency = text(header, "MA_NGUYENTE")
-        let rows = document.root.descendants(named: "ROW_CTIET")
+        let rows = record.firstChild(named: "CHUNGTU_CTIET")?.children(named: "ROW_CTIET") ?? []
 
         var s = "<div class=\"notice-header voucher-header\">"
         s += "<div class=\"voucher-form\">Mẫu số: <b>C1-02/NS</b></div>"
         s += "<div class=\"doc-title\">GIẤY NỘP TIỀN VÀO NGÂN SÁCH NHÀ NƯỚC</div>"
         s += "<div class=\"doc-subtitle\">Ban hành kèm theo Thông tư số 84/2016/TT-BTC của Bộ Tài chính</div>"
         s += "<table class=\"voucher-meta\"><tr>"
-        s += "<td>Mã hiệu: <b>\(esc(orDash(value("MAHIEU_CTU"))))</b></td>"
-        s += "<td>Số: <b>\(esc(orDash(value("SO_GNT") ?? value("SO_CTU"))))</b></td>"
+        s += "<td>Mã hiệu: <b>\(esc(orDash(text(envelope, "MAHIEU_CTU"))))</b></td>"
+        s += "<td>Số: <b>\(esc(orDash(text(envelope, "SO_CTU"))))</b></td>"
         s += "<td>Số tham chiếu: \(esc(orDash(text(header, "MA_THAMCHIEU"))))</td>"
         s += "</tr><tr>"
         s += "<td colspan=\"2\">Tiền mặt [ ]&nbsp;&nbsp;Chuyển khoản [X]</td>"
@@ -53,6 +70,13 @@ final class VoucherRenderer {
         s += "<b>[\(["8991", "3121", "8993", "3397"].contains(text(header, "STK_THU")) ? "X" : " ")]</b> TK thu hồi hoàn thuế GTGT&nbsp;&nbsp;"
         s += "<b>[ ]</b> TK tạm thu"
         s += "</p></div>"
+        s += "<div class=\"notice-body\"><p>"
+        let recommendation = text(header, "ID_TK_KNGHI")
+        for (code, label) in [("01", "Kiểm toán nhà nước"), ("02", "Thanh tra tài chính"),
+                              ("03", "Thanh tra Chính phủ"), ("04", "Cơ quan có thẩm quyền khác")] {
+            s += "\(esc(label)) [\(recommendation == code ? "X" : " ")]&nbsp;&nbsp;"
+        }
+        s += "</p></div>"
 
         s += "<div class=\"voucher-section-title\">Phần dành cho NNT ghi khi nộp tiền vào NSNN</div>"
         s += voucherTable(rows: rows, currency: currency, header: header)
@@ -64,7 +88,7 @@ final class VoucherRenderer {
         s += "<td>Mã CQ thu: ................</td><td>Nợ TK: ................</td>"
         s += "<td>Mã ĐBHC: ................</td><td>Có TK: ................</td>"
         s += "</tr><tr><td colspan=\"2\">Mã nguồn NSNN: ......................</td>"
-        s += "<td colspan=\"2\">Tỷ giá hạch toán: ................</td></tr></table>"
+        s += "<td colspan=\"2\"></td></tr></table>"
 
         s += "<div class=\"date-line voucher-signature\">Ngày \(esc(voucherDate(header)))</div>"
         s += "<table class=\"signature-table\"><tr>"
@@ -162,6 +186,7 @@ final class VoucherRenderer {
     // MARK: - Amount in words (Vietnamese)
 
     func amountInWords(_ raw: String) -> String {
+        if raw.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty { return "" }
         let digitsOnly = raw.filter { $0.isNumber }
         guard let amount = Int64(digitsOnly), amount > 0 else {
             return "Không đồng"

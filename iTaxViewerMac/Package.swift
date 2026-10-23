@@ -7,6 +7,7 @@ let package = Package(
     platforms: [.macOS(.v13)],
     products: [
         .executable(name: "iTaxViewerMac", targets: ["iTaxViewerMac"]),
+        .executable(name: "iTaxViewerQA", targets: ["iTaxViewerQA"]),
         .library(name: "iTaxViewerCore", targets: ["iTaxViewerCore"])
     ],
     targets: [
@@ -19,6 +20,11 @@ let package = Package(
             name: "iTaxViewerMac",
             dependencies: ["iTaxViewerCore"],
             path: "Sources/iTaxViewerMac"
+        ),
+        .executableTarget(
+            name: "iTaxViewerQA",
+            dependencies: ["iTaxViewerCore"],
+            path: "Sources/iTaxViewerQA"
         ),
         .testTarget(
             name: "iTaxViewerCoreTests",

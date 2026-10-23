@@ -156,6 +156,8 @@ public enum SignatureInspector {
         var trustRef: SecTrust?
         if SecTrustCreateWithCertificates(certificate, policy, &trustRef) == errSecSuccess,
            let trustRef {
+            // Certificate inspection must remain offline (no AIA/OCSP fetches).
+            SecTrustSetNetworkFetchAllowed(trustRef, false)
             var error: CFError?
             let ok = SecTrustEvaluateWithError(trustRef, &error)
             if ok {

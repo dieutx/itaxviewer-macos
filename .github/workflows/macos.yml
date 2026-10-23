@@ -1,14 +1,24 @@
 name: macOS build and tests
+run-name: ${{ inputs.request_id != '' && format('Windows build {0}', inputs.request_id) || format('macOS build {0}', github.sha) }}
 
 on:
   push:
     branches: [ main ]
   pull_request:
   workflow_dispatch:
+    inputs:
+      request_id:
+        description: Optional identifier used by the Windows build helper
+        required: false
+        type: string
+
+permissions:
+  contents: read
 
 jobs:
   build:
     runs-on: macos-14
+    timeout-minutes: 30
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -25,15 +35,79 @@ jobs:
       - name: Field-mapping harness
         run: python3 iTaxViewerMac/scripts/validate_fixtures.py
 
+      - name: Bundled sample integration tests
+        working-directory: iTaxViewerMac
+        env:
+          ITAX_FIXTURE_DIR: ../test-data
+        run: |
+          python3 scripts/validate_directory.py ../test-data
+          swift test --filter ExternalFixturesTests
+
       - name: Build universal .app
         working-directory: iTaxViewerMac
         run: |
           chmod +x scripts/build_app.sh
-          scripts/build_app.sh --universal
+          scripts/build_app.sh --universal --dmg
+
+      - name: Launch the native app bundle
+        working-directory: iTaxViewerMac
+        run: |
+          APP="$PWD/build/iTaxViewerMac.app"
+          APP_PID=""
+          trap 'if [[ -n "$APP_PID" ]]; then kill "$APP_PID" 2>/dev/null || true; fi' EXIT
+          open -n "$APP"
+          for attempt in {1..10}; do
+            for candidate in $(pgrep -x iTaxViewerMac || true); do
+              if [[ "$(ps -p "$candidate" -o comm=)" == "$APP/Contents/MacOS/iTaxViewerMac" ]]; then
+                APP_PID="$candidate"
+                break
+              fi
+            done
+            [[ -n "$APP_PID" ]] && break
+            sleep 1
+          done
+          [[ -n "$APP_PID" ]] || { echo "App process did not launch" >&2; exit 1; }
+          sleep 3
+          kill -0 "$APP_PID"
+          echo "Native app bundle launched and remained running; interactive file-open/drag-drop remain manual checks."
+
+      - name: Native WebKit print and PDF smoke checks
+        working-directory: iTaxViewerMac
+        run: swift run iTaxViewerQA
+
+      - name: Upload native QA evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: iTaxViewerMac-native-qa
+          path: iTaxViewerMac/build/native-qa/
+          if-no-files-found: warn
+
+      # upload-artifact does not preserve executable permissions or symlinks.
+      # Keep the .app inside a macOS-created archive for a runnable download.
+      - name: Package app and record build provenance
+        working-directory: iTaxViewerMac
+        run: |
+          ditto -c -k --sequesterRsrc --keepParent build/iTaxViewerMac.app build/iTaxViewerMac-universal.zip
+          {
+            echo "Commit: $GITHUB_SHA"
+            echo "Run: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+            xcodebuild -version
+            swift --version
+            lipo -archs build/iTaxViewerMac.app/Contents/MacOS/iTaxViewerMac
+            codesign --verify --deep --strict --verbose=2 build/iTaxViewerMac.app
+            echo "Ad-hoc signed; not notarized. Native UI, print, and PDF parity require manual verification."
+          } > build/BUILD-INFO.txt 2>&1
+          cd build
+          shasum -a 256 iTaxViewerMac-universal.zip iTaxViewerMac-unsigned.dmg > SHA256SUMS.txt
 
       - name: Upload app bundle
         uses: actions/upload-artifact@v4
         with:
-          name: iTaxViewerMac-unsigned
-          path: iTaxViewerMac/build/iTaxViewerMac.app
+          name: iTaxViewerMac-universal
+          path: |
+            iTaxViewerMac/build/iTaxViewerMac-universal.zip
+            iTaxViewerMac/build/iTaxViewerMac-unsigned.dmg
+            iTaxViewerMac/build/BUILD-INFO.txt
+            iTaxViewerMac/build/SHA256SUMS.txt
           if-no-files-found: error

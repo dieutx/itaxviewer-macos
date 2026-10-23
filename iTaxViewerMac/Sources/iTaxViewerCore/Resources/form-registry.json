@@ -58,6 +58,49 @@
    "spec": "03/TNDN",
    "orientation": "0",
    "title": "Ban hành kèm theo Thông tư số 80/2021/TT-BTC ngày 29 tháng 9 năm 2021 của Bộ trưởng Bộ Tài chính"
+  },
+  {
+   "displayCode": "05/KK-TNCN",
+   "maTKhai": "864",
+   "versions": [
+    "2.9.3"
+   ],
+   "spec": "864",
+   "orientation": "0",
+   "title": "05/KK-TNCN"
+  },
+  {
+   "displayCode": "05/QTT-TNCN",
+   "maTKhai": "395",
+   "versions": [
+    "2.4.2"
+   ],
+   "spec": "395",
+   "orientation": "0",
+   "title": "05/QTT-TNCN"
+  },
+  {
+   "displayCode": "04/GTGT",
+   "maTKhai": "07",
+   "versions": [
+    "2.4.1",
+    "2.5.0"
+   ],
+   "spec": "07",
+   "orientation": "0",
+   "title": "04/GTGT"
+  },
+  {
+   "displayCode": "04/GTGT",
+   "maTKhai": "847",
+   "versions": [
+    "2.5.1",
+    "2.6.8",
+    "2.7.4"
+   ],
+   "spec": "847",
+   "orientation": "0",
+   "title": "04/GTGT"
   }
  ],
  "codes": {

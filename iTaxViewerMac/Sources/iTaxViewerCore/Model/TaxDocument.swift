@@ -172,7 +172,9 @@ enum MetadataExtractor {
 
         if let tbao = root.firstDescendant(named: "TBao") {
             meta.noticeCode = value(tbao, "maTBao") ?? value(root, "maTBao")
+                ?? descendantValue(tbao, "MSo")
             meta.noticeVersion = value(tbao, "pbanTBao") ?? value(root, "pbanTBao")
+                ?? descendantValue(tbao, "PBan")
             meta.title = meta.title ?? value(tbao, "tenTBao")
             meta.taxpayerName = meta.taxpayerName ?? value(tbao, "tenNNT")
             meta.taxpayerTaxCode = meta.taxpayerTaxCode ?? value(tbao, "mst")
@@ -193,14 +195,26 @@ enum MetadataExtractor {
             meta.title = meta.title ?? "Giấy nộp tiền vào ngân sách nhà nước"
         }
 
+        if root.localName == "TBTNhan" {
+            meta.noticeCode = descendantValue(root, "MSo")
+            meta.noticeVersion = descendantValue(root, "PBan")
+        }
+
+        if ["THONGBAO", "THONG_BAO", "TBAO_TKHOAN_NH", "TBAO_TKHOAN_NT", "TBAO_NGUNG"].contains(root.localName) {
+            meta.noticeCode = descendantValue(root, "MA_THONGBAO") ?? descendantValue(root, "MA_TBAO")
+            meta.noticeVersion = descendantValue(root, "PBAN_TLIEU_XML") ?? "4.0.0"
+        }
+
         if root.localName == "DKyThueDTu" {
-            meta.formCode = value(root, "maHSo") ?? value(root, "maDKy")
-            meta.formVersion = value(root, "pbanHSo") ?? value(root, "pbanDVu")
+            // DKyThue.java reads these descendants, not root-level pbanHSo.
+            meta.formCode = descendantValue(root, "maDKy") ?? value(root, "maHSo")
+            meta.formVersion = descendantValue(root, "pBanDKy") ?? value(root, "pbanHSo")
             meta.registrationCode = meta.formCode
         }
 
-        if root.localName == "TOKHAI_OBJ" || root.localName == "TOKHAISUA_OBJ" || root.localName.hasSuffix(":Envelope") {
-            meta.customsCode = value(root, "MA_HIEU_CTU") ?? value(root, "MAHIEU_CTU")
+        if root.localName == "TOKHAI_OBJ" || root.localName == "TOKHAISUA_OBJ" || root.localName == "Envelope" {
+            meta.customsCode = descendantValue(root, "MA_HIEU_CTU")
+                ?? descendantValue(root, "MAHIEU_CTU") ?? descendantValue(root, "ExImCode")
         }
 
         return meta

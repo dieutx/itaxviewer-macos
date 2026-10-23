@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HSoThueDTu>
+  <HSoKhaiThue>
+    <TTinChung>
+      <TTinTKhaiThue>
+        <TKhaiThue>
+          <maTKhai>864</maTKhai>
+          <pbanTKhaiXML>2.9.3</pbanTKhaiXML>
+          <tenTKhai>Tờ khai mẫu 05/KK-TNCN</tenTKhai>
+          <moTaBMau>Thông tư 80/2021/TT-BTC</moTaBMau>
+          <loaiTKhai>C</loaiTKhai>
+          <soLan>0</soLan>
+          <KyKKhaiThue>
+            <kieuKy>Q</kieuKy>
+            <kyKKhai>1/2026</kyKKhai>
+          </KyKKhaiThue>
+        </TKhaiThue>
+        <NNT>
+          <mst>0000000000</mst>
+          <tenNNT>CÔNG TY DỮ LIỆU TỔNG HỢP MẪU</tenNNT>
+          <dchiNNT>Số 1 Đường Mẫu</dchiNNT>
+          <tenXaNNT>Phường Mẫu</tenXaNNT>
+          <tenHuyenNNT>Quận Mẫu</tenHuyenNNT>
+          <tenTinhNNT>Tỉnh Mẫu</tenTinhNNT>
+        </NNT>
+      </TTinTKhaiThue>
+    </TTinChung>
+    <CTieuTKhaiChinh>
+      <ct16>1</ct16>
+      <ct17>2</ct17>
+      <ct18>3</ct18>
+      <ct19>4</ct19>
+      <ct20>5</ct20>
+      <ct21>1000006</ct21>
+      <ct22>1000007</ct22>
+      <ct23>1000008</ct23>
+      <ct24>1000009</ct24>
+      <ct25>1000010</ct25>
+      <ct25_1>1000011</ct25_1>
+      <ct26>1000012</ct26>
+      <ct27>1000013</ct27>
+      <ct28>1000014</ct28>
+      <ct29>1000015</ct29>
+      <ct30>1000016</ct30>
+      <ct31>1000017</ct31>
+      <ct32>1000018</ct32>
+      <ct15>true</ct15>
+    </CTieuTKhaiChinh>
+  </HSoKhaiThue>
+</HSoThueDTu>

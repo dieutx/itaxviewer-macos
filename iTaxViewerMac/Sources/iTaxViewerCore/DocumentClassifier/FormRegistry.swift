@@ -13,9 +13,56 @@ public struct FormSpec: Codable, Identifiable {
         public let codes: [String]
         public let values: [Value]
         public let kind: String
+        public let unit: String?
 
         public var isSection: Bool { kind == "section" }
         public var isCheckbox: Bool { kind == "checkbox" }
+    }
+
+    public struct HeaderField: Codable {
+        public let code: String
+        public let label: String
+        public let root: String?
+        public let path: String
+        public let suffixPath: String?
+        public let suffixFormat: String?
+    }
+
+    public struct ExtraField: Codable {
+        public let code: String
+        public let label: String
+        public let path: String
+        public let format: String
+    }
+
+    public struct RepeatedTable: Codable {
+        public struct Column: Codable {
+            public let label: String
+            public let source: String
+            public let format: String
+        }
+        public let title: String
+        public let recordPath: String
+        public let columns: [Column]
+        public let totals: [Column]
+    }
+
+    public struct TableCell: Codable {
+        public struct Choice: Codable {
+            public let path: String
+            public let equals: [String]
+            public let text: String
+        }
+        public let text: String
+        public let value: Value?
+        public let rowspan: Int?
+        public let colspan: Int?
+        public let bold: Bool?
+        public let choices: [Choice]?
+    }
+
+    public struct TableRow: Codable {
+        public let cells: [TableCell]
     }
 
     public let displayCode: String
@@ -24,8 +71,14 @@ public struct FormSpec: Codable, Identifiable {
     public let sourceTemplate: String
     public let columns: [String]?
     public let rows: [Row]
+    public let headerFields: [HeaderField]?
+    public let extraFields: [ExtraField]?
+    public let repeatedTables: [RepeatedTable]?
+    public let verificationStatus: String?
+    public let tableHeaders: [TableCell]?
+    public let tableRows: [TableRow]?
 
-    public var id: String { displayCode }
+    public var id: String { maTKhai }
 }
 
 public struct FormRegistry: Decodable {
@@ -60,6 +113,7 @@ public struct FormRegistry: Decodable {
     public let supported: [SupportedForm]
     public let codes: [String: CodeInfo]
     private let specs: [String: FormSpec]
+    private let documentEntries: [DocumentRegistryEntry]
 
     enum CodingKeys: String, CodingKey {
         case schemaVersion, source, supported, codes
@@ -72,6 +126,7 @@ public struct FormRegistry: Decodable {
         supported = try c.decode([SupportedForm].self, forKey: .supported)
         codes = try c.decode([String: CodeInfo].self, forKey: .codes)
         specs = [:]
+        documentEntries = []
     }
 
     public static func bundled() throws -> FormRegistry {
@@ -83,26 +138,38 @@ public struct FormRegistry: Decodable {
         let specURL = Bundle.module.url(forResource: "form-specs", withExtension: "json")
         let specs: [String: FormSpec] = try specURL.map { url -> [String: FormSpec] in
             let list = try JSONDecoder().decode([FormSpec].self, from: Data(contentsOf: url))
-            return Dictionary(uniqueKeysWithValues: list.map { ($0.displayCode, $0) })
+            return Dictionary(uniqueKeysWithValues: list.map { ($0.maTKhai, $0) })
         } ?? [:]
-        return base.withSpecs(specs)
+        return base.withSpecs(specs, documents: try DocumentRegistryEntry.bundled())
     }
 
     private init(schemaVersion: Int, source: SourceInfo, supported: [SupportedForm],
-                 codes: [String: CodeInfo], specs: [String: FormSpec]) {
+                 codes: [String: CodeInfo], specs: [String: FormSpec], documents: [DocumentRegistryEntry]) {
         self.schemaVersion = schemaVersion
         self.source = source
         self.supported = supported
         self.codes = codes
         self.specs = specs
+        self.documentEntries = documents
     }
 
-    private func withSpecs(_ specs: [String: FormSpec]) -> FormRegistry {
+    private func withSpecs(_ specs: [String: FormSpec], documents: [DocumentRegistryEntry]) -> FormRegistry {
         FormRegistry(schemaVersion: schemaVersion, source: source, supported: supported,
-                     codes: codes, specs: specs)
+                     codes: codes, specs: specs, documents: documents)
     }
 
-    public func spec(for displayCode: String) -> FormSpec? { specs[displayCode] }
+    public func documentEntry(root: String, code: String?, version: String?) -> DocumentRegistryEntry? {
+        guard let code, let version else { return nil }
+        return documentEntries.first { $0.matches(root: root) && $0.id == code && $0.version == version }
+    }
+
+    /// Kept for callers asking for the primary layout; classification always
+    /// resolves by internal code, since multiple layouts share a display code.
+    public func spec(for displayCode: String) -> FormSpec? {
+        supported.first { $0.displayCode == displayCode }.flatMap { specs[$0.maTKhai] }
+    }
+
+    public func spec(for form: SupportedForm) -> FormSpec? { specs[form.maTKhai] }
 
     public func codeInfo(_ code: String) -> CodeInfo? { codes[code] }
 
@@ -124,6 +191,9 @@ public struct FormRegistry: Decodable {
             return exact
         }
         if let direct = supported.first(where: { $0.maTKhai == code }) {
+            // Newly recovered layouts are version-bound; unknown revisions must
+            // retain all data rather than applying an unverified field map.
+            if specs[code]?.verificationStatus != nil { return nil }
             return direct
         }
         if let alias = Self.legacyCodeAliases[code] {

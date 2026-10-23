@@ -46,7 +46,7 @@ public enum RenderSupport {
 
     public var label: String {
         switch self {
-        case .full: return "Rendering đầy đủ"
+        case .full: return "Bố cục biểu mẫu"
         case .generic: return "Hiển thị dữ liệu có cấu trúc (layout đang hoàn thiện)"
         case .none: return "Không hỗ trợ"
         }
@@ -78,7 +78,8 @@ public enum DocumentClassifier {
     private static let declarationRoot = "HSoThueDTu"
     private static let noticeRoots: Set<String> = [
         "TBaoThueDTu", "THONGBAO", "THONG_BAO", "TBAO_TKHOAN_NH",
-        "TBAO_TKHOAN_NT", "TBAO_NGUNG", "BKE_TBAO", "TBao"
+        "TBAO_TKHOAN_NT", "TBAO_NGUNG", "BKE_TBAO", "TBao", "TBTNhan",
+        "TRASOAT_THUE", "XULY_NTHUA", "XACNHAN_THUE", "XACNHAN_NVTHUE"
     ]
     private static let invoiceRoots: Set<String> = ["TKhai", "DNghi", "BCTHSDBLai", "BLai"]
     private static let registrationRoots: Set<String> = ["DKyThueDTu"]
@@ -110,17 +111,16 @@ public enum DocumentClassifier {
                                   displayCode: meta.voucherCode.map { "CT-\($0)" },
                                   registryCode: meta.voucherCode,
                                   formVersion: meta.formVersion,
-                                  orientation: .portrait,
+                                  orientation: orientation(document, registry: registry, code: meta.voucherCode, version: meta.formVersion),
                                   support: .generic,
                                   warnings: ["Chứng từ được hiển thị dạng bảng dữ liệu; mẫu in chính thức của từng loại chứng từ chưa được tái tạo đầy đủ."])
         case _ where noticeRoots.contains(root):
             return Classification(kind: .notice,
-                                  displayCode: meta.noticeCode.flatMap { registry.codeInfo($0)?.displayCode }
-                                      ?? meta.formDescription
+                                  displayCode: meta.formDescription
                                       ?? meta.noticeCode.map { "TB-\($0)" },
                                   registryCode: meta.noticeCode,
                                   formVersion: meta.noticeVersion,
-                                  orientation: .portrait,
+                                  orientation: orientation(document, registry: registry, code: meta.noticeCode, version: meta.noticeVersion),
                                   support: .generic,
                                   warnings: ["Văn bản/thông báo được hiển thị dạng dữ liệu có cấu trúc. Nội dung diễn giải theo từng mẫu thông báo chưa được tái tạo đầy đủ."])
         case _ where registrationRoots.contains(root):
@@ -128,7 +128,7 @@ public enum DocumentClassifier {
                                   displayCode: meta.formCode,
                                   registryCode: meta.formCode,
                                   formVersion: meta.formVersion,
-                                  orientation: .portrait,
+                                  orientation: orientation(document, registry: registry, code: meta.formCode, version: meta.formVersion),
                                   support: .generic,
                                   warnings: ["Hồ sơ đăng ký thuế được hiển thị dạng bảng dữ liệu."])
         case _ where catalogRoots.contains(root):
@@ -148,7 +148,7 @@ public enum DocumentClassifier {
                                   orientation: .portrait,
                                   support: .generic,
                                   warnings: ["Tài liệu hóa đơn điện tử được hiển thị dạng dữ liệu có cấu trúc."])
-        case _ where customsRoots.contains(root) || root.hasSuffix(":Envelope"):
+        case _ where customsRoots.contains(root) || (root == "Envelope" && document.root.namespaceURI != nil):
             return Classification(kind: .customs,
                                   displayCode: meta.customsCode,
                                   registryCode: nil,
@@ -159,6 +159,12 @@ public enum DocumentClassifier {
         default:
             throw DocumentError.unsupportedRoot(root)
         }
+    }
+
+    private static func orientation(_ document: TaxDocument, registry: FormRegistry,
+                                    code: String?, version: String?) -> PageOrientation {
+        registry.documentEntry(root: document.root.localName, code: code, version: version)?.orientation == "1"
+            ? .landscape : .portrait
     }
 
     private static func classifyDeclaration(_ document: TaxDocument,
@@ -188,7 +194,10 @@ public enum DocumentClassifier {
 
         if let form = registry.resolve(code: code, version: version, filingType: filingType) {
             orientation = form.isLandscape ? .landscape : .portrait
-            if let spec = registry.spec(for: form.displayCode) {
+            if let spec = registry.spec(for: form) {
+                if spec.verificationStatus != nil {
+                    warnings.append("Bố cục được dựng từ các nhãn và đường dẫn dữ liệu đã đối chiếu tĩnh; so sánh ảnh và phân trang với iTax Viewer Windows đang chờ kiểm chứng.")
+                }
                 if !form.versions.contains(effectiveVersion ?? "") {
                     warnings.append("Phiên bản hồ sơ \(version) chưa có trong danh sách đã kiểm chứng (\(form.versions.joined(separator: ", "))). Biểu mẫu được hiển thị theo phiên bản gần nhất; cần đối chiếu với iTaxViewer gốc.")
                 }

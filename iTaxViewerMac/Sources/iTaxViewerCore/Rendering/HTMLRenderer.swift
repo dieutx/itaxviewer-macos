@@ -69,15 +69,24 @@ public final class HTMLRenderer {
             html += "<div class=\"form-section-title\">I. NGHĨA VỤ KHẤU TRỪ THUẾ CỦA TỔ CHỨC, CÁ NHÂN TRẢ THU NHẬP</div>"
         }
         html += "<div class=\"currency-note\"><i>Đơn vị tiền: Đồng Việt Nam</i></div>"
+        for field in spec.extraFields ?? [] {
+            let raw = document.root.firstDescendant(named: "CTieuTKhaiChinh")?.node(atLocalPath: field.path)?.trimmedValue ?? ""
+            let value = field.format == "checkbox" ? (["true", "1", "x"].contains(raw.lowercased()) ? "☒" : "☐") : raw
+            html += "<p>[\(esc(field.code))] \(esc(field.label)) \(esc(value))</p>"
+        }
 
-        switch spec.displayCode {
+        if spec.tableRows != nil {
+            html += renderSpecifiedTable(document: document, spec: spec)
+        } else { switch spec.displayCode {
         case "01/GTGT":
             html += renderGTGTTable(document: document, spec: spec)
         case "05/KK-TNCN", "05/QTT-TNCN":
             html += renderFiveColumnTable(document: document, spec: spec)
         default:
             html += renderIndicatorValueTable(document: document, spec: spec)
-        }
+        } }
+
+        html += renderRepeatedTables(document: document, spec: spec)
 
         html += "</div>"
         html += renderFooter(document: document)
@@ -154,11 +163,11 @@ public final class HTMLRenderer {
             }
             let stt = displaySTT(row.stt)
             let indicator = row.indicator
-            let unit = unitFor(indicator: indicator, displayCode: spec.displayCode)
+            let unit = row.unit ?? unitFor(indicator: indicator, displayCode: spec.displayCode)
             let value = row.values.first.map { resolve($0, context: context) } ?? ""
             // Parent rows (1, 2, 3…) are bold in the official 05/KK and
             // 05/QTT layouts; sub-items (2.1, 5.3…) stay regular.
-            let isSummary = !stt.isEmpty && !stt.contains(".")
+            let isSummary = row.kind == "summary" || (!stt.isEmpty && !stt.contains("."))
             s += isSummary ? "<tr class=\"summary\">" : "<tr>"
             s += "<td class=\"c\">\(esc(stt))</td>"
             s += "<td>\(esc(row.label))</td>"
@@ -201,6 +210,77 @@ public final class HTMLRenderer {
         return s
     }
 
+    /// Cell spans and literal rates are factual form structure; HTML and style
+    /// are authored here. This does not evaluate XPath expressions or scripts.
+    private func renderSpecifiedTable(document: TaxDocument, spec: FormSpec) -> String {
+        let context = CTieuTKhaiChinh(root: document.root)
+        var represented: Set<String> = []
+        func key(_ value: FormSpec.Value) -> String { "\(value.root ?? "tkchinh")/\(value.path)" }
+        func cell(_ item: FormSpec.TableCell, header: Bool = false) -> String {
+            let tag = header ? "th" : "td"
+            var attributes = ""
+            if let span = item.rowspan { attributes += " rowspan=\"\(span)\"" }
+            if let span = item.colspan { attributes += " colspan=\"\(span)\"" }
+            var text = item.text
+            if let value = item.value {
+                text += format(resolve(value, context: context))
+                represented.insert(key(value))
+                attributes += " class=\"r\""
+            }
+            for choice in item.choices ?? [] {
+                let raw = context.tkchinh?.node(atLocalPath: choice.path)?.trimmedValue ?? ""
+                if choice.equals.contains(raw) { text += choice.text; break }
+            }
+            let content = item.bold == true ? "<b>\(esc(text))</b>" : esc(text)
+            return "<\(tag)\(attributes)>\(content)</\(tag)>"
+        }
+        var html = "<table class=\"tax-table specified\"><thead><tr>"
+        html += (spec.tableHeaders ?? []).map { cell($0, header: true) }.joined()
+        html += "</tr></thead><tbody>"
+        for row in spec.tableRows ?? [] {
+            html += "<tr>" + row.cells.map { cell($0) }.joined() + "</tr>"
+        }
+        html += "</tbody></table>"
+        for row in spec.rows where !row.values.isEmpty && row.values.contains(where: { !represented.contains(key($0)) }) {
+            html += "<p><b>\(esc(row.label))</b> "
+            for (index, value) in row.values.enumerated() where !represented.contains(key(value)) {
+                let code = index < row.codes.count ? "[\(row.codes[index])] " : ""
+                html += esc(code + format(resolve(value, context: context))) + " "
+            }
+            html += "</p>"
+        }
+        return html
+    }
+
+    private func renderRepeatedTables(document: TaxDocument, spec: FormSpec) -> String {
+        guard let base = document.root.firstDescendant(named: "CTieuTKhaiChinh") else { return "" }
+        var html = ""
+        for table in spec.repeatedTables ?? [] {
+            let parts = table.recordPath.split(separator: "/").map(String.init)
+            guard let recordName = parts.last else { continue }
+            let parentPath = parts.dropLast().joined(separator: "/")
+            let records = (parentPath.isEmpty ? base : base.node(atLocalPath: parentPath))?.children(named: recordName) ?? []
+            html += "<h3>\(esc(table.title))</h3><table class=\"tax-table\"><thead><tr>"
+            html += table.columns.map { "<th>\(esc($0.label))</th>" }.joined()
+            html += "</tr></thead><tbody>"
+            for record in records {
+                html += "<tr>"
+                for column in table.columns {
+                    let raw = record.node(atLocalPath: column.source)?.trimmedValue ?? ""
+                    let value = column.format == "number" ? format(raw) : raw
+                    html += "<td>\(esc(value))</td>"
+                }
+                html += "</tr>"
+            }
+            html += "</tbody></table>"
+            for total in table.totals {
+                let raw = base.node(atLocalPath: total.source)?.trimmedValue ?? ""
+                html += "<p><b>\(esc(total.label)):</b> \(esc(total.format == "number" ? format(raw) : raw))</p>"
+            }
+        }
+        return html
+    }
+
     // MARK: - Header / footer
 
     private func renderHeader(document: TaxDocument,
@@ -224,7 +304,24 @@ public final class HTMLRenderer {
         }
         s += "<div class=\"rule\"></div>"
 
-        let headerRows = headerFields(document: document, displayCode: displayCode)
+        let headerRows: [HeaderRow]
+        if let fields = spec?.headerFields {
+            let context = CTieuTKhaiChinh(root: document.root)
+            let period = VietnameseFormat.period(type: meta.periodType, period: meta.period, from: meta.periodFrom, to: meta.periodTo)
+            let filing = VietnameseFormat.filingTypeLabel(meta.filingType, supplement: meta.supplementNumber)
+            headerRows = [HeaderRow(code: "01", label: "Kỳ tính thuế:", value: period),
+                          HeaderRow(code: "02/03", label: "", value: filing)] + fields.map { field in
+                let base = context.context(field.root)
+                var value = base?.node(atLocalPath: field.path)?.trimmedValue ?? ""
+                if let suffix = field.suffixPath {
+                    let raw = base?.node(atLocalPath: suffix)?.trimmedValue ?? ""
+                    value += "  Ngày: " + (field.suffixFormat == "date" ? VietnameseFormat.date(raw) : raw)
+                }
+                return HeaderRow(code: field.code, label: field.label, value: value)
+            }
+        } else {
+            headerRows = headerFields(document: document, displayCode: displayCode)
+        }
         s += "<table class=\"taxpayer\">"
         for row in headerRows {
             s += "<tr>"
@@ -412,7 +509,9 @@ public final class HTMLRenderer {
         s += "<div class=\"form-body generic\">"
         s += "<table class=\"data-table\"><thead><tr><th>Đường dẫn dữ liệu</th><th>Giá trị</th></tr></thead><tbody>"
         var count = 0
-        for leaf in document.root.leaves(limit: 800) {
+        // The parser already bounds document size/node count. Never silently
+        // drop rows from a recognised document's structured fallback.
+        for leaf in document.root.leaves(limit: .max) {
             if isSignatureNode(leaf) { continue }
             let value = leaf.trimmedValue
             if value.isEmpty { continue }
@@ -807,7 +906,7 @@ public final class HTMLRenderer {
             color: #333; white-space: nowrap; }
         table.appendix-tree tr.group td { background: #f2f2f2; font-weight: bold; }
         .data-table .path { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 9pt; color: #333; }
-        .data-table td { font-size: 10pt; }
+        .data-table td { font-size: 10pt; overflow-wrap: anywhere; }
         .notice-header { margin-bottom: 8px; }
         .notice-masthead { width: 100%; border-collapse: collapse; }
         .notice-masthead td { vertical-align: top; border: none; padding: 0; }
