@@ -99,7 +99,7 @@ Then it reads child elements:
 
 | Child | Use |
 |---|---|
-| `XMLSchema` | XSD path; existence check only |
+| `XMLSchema` | XSD path; **existence check only** — và bản cài không có `data/XMLSchema`, nên 1.006/1.015 tham chiếu trỏ vào hư không (đo bằng `tools/resolve_registry_refs.py`, xem `GAP-REGISTER.md` mục 17) |
 | `XSLT` | Stylesheet for viewing |
 | `ExcelTemplate` | Excel template (viewMethod=2) |
 | `DSachPLuc/PLuc@plucID` | Appendix list; each has `TenPLuc`, `PLucXSLT`, `plucOrientation`, `plucViewMethod` |

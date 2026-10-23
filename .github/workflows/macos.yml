@@ -33,7 +33,9 @@ jobs:
         run: swift test
 
       - name: Field-mapping harness
-        run: python3 iTaxViewerMac/scripts/validate_fixtures.py
+        run: |
+          python3 iTaxViewerMac/scripts/validate_fixtures.py
+          python3 docs/reverse-engineering/tools/test_extract_xslt_specs.py
 
       - name: Bundled sample integration tests
         working-directory: iTaxViewerMac

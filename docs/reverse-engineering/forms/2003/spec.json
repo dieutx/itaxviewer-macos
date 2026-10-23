@@ -1,0 +1,929 @@
+{
+    "displayCode":  "02/TNDN",
+    "maTKhai":  "2003",
+    "versions":  [
+                     "3.0.9"
+                 ],
+    "sourceTemplate":  "TKhai_TNDN_02_TT89.xslt",
+    "columns":  [
+                    "STT",
+                    "Chỉ tiêu",
+                    "Mã chỉ tiêu",
+                    "Số tiền"
+                ],
+    "rows":  [
+                 {
+                     "label":  "Doanh thu từ hoạt động chuyển nhượng",
+                     "stt":  "1",
+                     "values":  [
+                                    {
+                                        "path":  "ct16",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "row",
+                     "source":  {
+                                    "template":  "TKhai_TNDN_02_TT89.xslt",
+                                    "line":  36
+                                },
+                     "indicator":  "16",
+                     "codes":  [
+                                   "16"
+                               ]
+                 },
+                 {
+                     "label":  "Chi phí từ hoạt động chuyển nhượng",
+                     "stt":  "2",
+                     "values":  [
+                                    {
+                                        "path":  "ct17",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "row",
+                     "source":  {
+                                    "template":  "TKhai_TNDN_02_TT89.xslt",
+                                    "line":  42
+                                },
+                     "indicator":  "17",
+                     "codes":  [
+                                   "17"
+                               ]
+                 },
+                 {
+                     "label":  "- Giá vốn",
+                     "stt":  "2.1",
+                     "values":  [
+                                    {
+                                        "path":  "ct18",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "row",
+                     "source":  {
+                                    "template":  "TKhai_TNDN_02_TT89.xslt",
+                                    "line":  48
+                                },
+                     "indicator":  "18",
+                     "codes":  [
+                                   "18"
+                               ]
+                 },
+                 {
+                     "label":  "- Chi phí đền bù thiệt hại về đất",
+                     "stt":  "2.2",
+                     "values":  [
+                                    {
+                                        "path":  "ct19",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "row",
+                     "source":  {
+                                    "template":  "TKhai_TNDN_02_TT89.xslt",
+                                    "line":  54
+                                },
+                     "indicator":  "19",
+                     "codes":  [
+                                   "19"
+                               ]
+                 },
+                 {
+                     "label":  "- Chi phí đền bù thiệt hại về hoa màu",
+                     "stt":  "2.3",
+                     "values":  [
+                                    {
+                                        "path":  "ct20",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "row",
+                     "source":  {
+                                    "template":  "TKhai_TNDN_02_TT89.xslt",
+                                    "line":  60
+                                },
+                     "indicator":  "20",
+                     "codes":  [
+                                   "20"
+                               ]
+                 },
+                 {
+                     "label":  "- Chi phí cải tạo san lấp mặt bằng",
+                     "stt":  "2.4",
+                     "values":  [
+                                    {
+                                        "path":  "ct21",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "row",
+                     "source":  {
+                                    "template":  "TKhai_TNDN_02_TT89.xslt",
+                                    "line":  66
+                                },
+                     "indicator":  "21",
+                     "codes":  [
+                                   "21"
+                               ]
+                 },
+                 {
+                     "label":  "- Chi phí đầu tư xây dựng kết cấu hạ tầng",
+                     "stt":  "2.5",
+                     "values":  [
+                                    {
+                                        "path":  "ct22",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "row",
+                     "source":  {
+                                    "template":  "TKhai_TNDN_02_TT89.xslt",
+                                    "line":  72
+                                },
+                     "indicator":  "22",
+                     "codes":  [
+                                   "22"
+                               ]
+                 },
+                 {
+                     "label":  "- Chi phí khác",
+                     "stt":  "2.6",
+                     "values":  [
+                                    {
+                                        "path":  "ct23",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "row",
+                     "source":  {
+                                    "template":  "TKhai_TNDN_02_TT89.xslt",
+                                    "line":  78
+                                },
+                     "indicator":  "23",
+                     "codes":  [
+                                   "23"
+                               ]
+                 },
+                 {
+                     "label":  "Thu nhập từ hoạt động chuyển nhượng ([24]=[16]-[17])",
+                     "stt":  "3",
+                     "values":  [
+                                    {
+                                        "path":  "ct24",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "row",
+                     "source":  {
+                                    "template":  "TKhai_TNDN_02_TT89.xslt",
+                                    "line":  84
+                                },
+                     "indicator":  "24",
+                     "codes":  [
+                                   "24"
+                               ]
+                 },
+                 {
+                     "label":  "Thuế suất thuế TNDN",
+                     "stt":  "4",
+                     "values":  [
+                                    {
+                                        "path":  "ct25",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "row",
+                     "source":  {
+                                    "template":  "TKhai_TNDN_02_TT89.xslt",
+                                    "line":  90
+                                },
+                     "indicator":  "25",
+                     "codes":  [
+                                   "25"
+                               ]
+                 },
+                 {
+                     "label":  "Thuế TNDN phải nộp ([26]=[24] x [25])",
+                     "stt":  "5",
+                     "values":  [
+                                    {
+                                        "path":  "ct26",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "summary",
+                     "source":  {
+                                    "template":  "TKhai_TNDN_02_TT89.xslt",
+                                    "line":  96
+                                },
+                     "indicator":  "26",
+                     "codes":  [
+                                   "26"
+                               ]
+                 }
+             ],
+    "tableHeaders":  [
+                         {
+                             "text":  "STT",
+                             "bold":  true
+                         },
+                         {
+                             "text":  "Chỉ tiêu",
+                             "bold":  true
+                         },
+                         {
+                             "text":  "Mã chỉ tiêu",
+                             "bold":  true
+                         },
+                         {
+                             "text":  "Số tiền",
+                             "bold":  true
+                         }
+                     ],
+    "tableRows":  [
+                      {
+                          "cells":  [
+                                        {
+                                            "text":  "1"
+                                        },
+                                        {
+                                            "text":  "Doanh thu từ hoạt động chuyển nhượng"
+                                        },
+                                        {
+                                            "text":  "[16]",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "",
+                                            "value":  {
+                                                          "path":  "ct16",
+                                                          "root":  "tkchinh"
+                                                      }
+                                        }
+                                    ]
+                      },
+                      {
+                          "cells":  [
+                                        {
+                                            "text":  "2"
+                                        },
+                                        {
+                                            "text":  "Chi phí từ hoạt động chuyển nhượng"
+                                        },
+                                        {
+                                            "text":  "[17]",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "",
+                                            "value":  {
+                                                          "path":  "ct17",
+                                                          "root":  "tkchinh"
+                                                      }
+                                        }
+                                    ]
+                      },
+                      {
+                          "cells":  [
+                                        {
+                                            "text":  "2.1"
+                                        },
+                                        {
+                                            "text":  "- Giá vốn"
+                                        },
+                                        {
+                                            "text":  "[18]",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "",
+                                            "value":  {
+                                                          "path":  "ct18",
+                                                          "root":  "tkchinh"
+                                                      }
+                                        }
+                                    ]
+                      },
+                      {
+                          "cells":  [
+                                        {
+                                            "text":  "2.2"
+                                        },
+                                        {
+                                            "text":  "- Chi phí đền bù thiệt hại về đất"
+                                        },
+                                        {
+                                            "text":  "[19]",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "",
+                                            "value":  {
+                                                          "path":  "ct19",
+                                                          "root":  "tkchinh"
+                                                      }
+                                        }
+                                    ]
+                      },
+                      {
+                          "cells":  [
+                                        {
+                                            "text":  "2.3"
+                                        },
+                                        {
+                                            "text":  "- Chi phí đền bù thiệt hại về hoa màu"
+                                        },
+                                        {
+                                            "text":  "[20]",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "",
+                                            "value":  {
+                                                          "path":  "ct20",
+                                                          "root":  "tkchinh"
+                                                      }
+                                        }
+                                    ]
+                      },
+                      {
+                          "cells":  [
+                                        {
+                                            "text":  "2.4"
+                                        },
+                                        {
+                                            "text":  "- Chi phí cải tạo san lấp mặt bằng"
+                                        },
+                                        {
+                                            "text":  "[21]",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "",
+                                            "value":  {
+                                                          "path":  "ct21",
+                                                          "root":  "tkchinh"
+                                                      }
+                                        }
+                                    ]
+                      },
+                      {
+                          "cells":  [
+                                        {
+                                            "text":  "2.5"
+                                        },
+                                        {
+                                            "text":  "- Chi phí đầu tư xây dựng kết cấu hạ tầng"
+                                        },
+                                        {
+                                            "text":  "[22]",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "",
+                                            "value":  {
+                                                          "path":  "ct22",
+                                                          "root":  "tkchinh"
+                                                      }
+                                        }
+                                    ]
+                      },
+                      {
+                          "cells":  [
+                                        {
+                                            "text":  "2.6"
+                                        },
+                                        {
+                                            "text":  "- Chi phí khác"
+                                        },
+                                        {
+                                            "text":  "[23]",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "",
+                                            "value":  {
+                                                          "path":  "ct23",
+                                                          "root":  "tkchinh"
+                                                      }
+                                        }
+                                    ]
+                      },
+                      {
+                          "cells":  [
+                                        {
+                                            "text":  "3"
+                                        },
+                                        {
+                                            "text":  "Thu nhập từ hoạt động chuyển nhượng ([24]=[16]-[17])"
+                                        },
+                                        {
+                                            "text":  "[24]",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "",
+                                            "value":  {
+                                                          "path":  "ct24",
+                                                          "root":  "tkchinh"
+                                                      }
+                                        }
+                                    ]
+                      },
+                      {
+                          "cells":  [
+                                        {
+                                            "text":  "4"
+                                        },
+                                        {
+                                            "text":  "Thuế suất thuế TNDN"
+                                        },
+                                        {
+                                            "text":  "[25]",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "",
+                                            "value":  {
+                                                          "path":  "ct25",
+                                                          "root":  "tkchinh"
+                                                      }
+                                        }
+                                    ]
+                      },
+                      {
+                          "cells":  [
+                                        {
+                                            "text":  "5"
+                                        },
+                                        {
+                                            "text":  "Thuế TNDN phải nộp ([26]=[24] x [25])",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "[26]",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "",
+                                            "value":  {
+                                                          "path":  "ct26",
+                                                          "root":  "tkchinh"
+                                                      }
+                                        }
+                                    ]
+                      }
+                  ],
+    "headerFields":  [
+                         {
+                             "label":  "Kỳ tính thuế: Lần phát sinh",
+                             "root":  "ttkthue",
+                             "code":  "01",
+                             "path":  "TKhaiThue/KyKKhaiThue/kyKKhai",
+                             "format":  "period"
+                         },
+                         {
+                             "label":  "",
+                             "root":  "ttkthue",
+                             "code":  "02/03",
+                             "path":  "TKhaiThue/loaiTKhai",
+                             "format":  "filing"
+                         },
+                         {
+                             "code":  "04",
+                             "label":  "Tên tổ chức chuyển nhượng:",
+                             "root":  "tkchinh",
+                             "path":  "ThongTinBenChuyenNhuong/ct04",
+                             "sourceLine":  1855
+                         },
+                         {
+                             "code":  "05",
+                             "label":  "Mã số thuế:",
+                             "root":  "tkchinh",
+                             "path":  "ThongTinBenChuyenNhuong/ct05",
+                             "sourceLine":  1861
+                         },
+                         {
+                             "code":  "06",
+                             "label":  "Tên tổ chức/cá nhân nhận chuyển nhượng:",
+                             "root":  "tkchinh",
+                             "path":  "ThongTinBenNhanChuyenNhuong/ct06",
+                             "sourceLine":  1873
+                         },
+                         {
+                             "code":  "07",
+                             "label":  "Mã số thuế/số định danh cá nhân/giấy tờ định danh của cá nhân:",
+                             "root":  "tkchinh",
+                             "path":  "ThongTinBenNhanChuyenNhuong/ct07",
+                             "sourceLine":  1879
+                         },
+                         {
+                             "code":  "08a",
+                             "label":  "Số nhà, đường phố:",
+                             "root":  "tkchinh",
+                             "path":  "ThongTinBenNhanChuyenNhuong/CT08/diaChi",
+                             "sourceLine":  1890
+                         },
+                         {
+                             "code":  "08b",
+                             "label":  "Xã/phường/đặc khu:",
+                             "root":  "tkchinh",
+                             "path":  "ThongTinBenNhanChuyenNhuong/CT08/xaPhuong_ten",
+                             "sourceLine":  1896
+                         },
+                         {
+                             "code":  "08c",
+                             "label":  "Tỉnh/Thành phố:",
+                             "root":  "tkchinh",
+                             "path":  "ThongTinBenNhanChuyenNhuong/CT08/tinhTP_ten",
+                             "sourceLine":  1902
+                         },
+                         {
+                             "code":  "09a",
+                             "label":  "Số nhà, đường phố:",
+                             "root":  "tkchinh",
+                             "path":  "ThongTinBenNhanChuyenNhuong/CT09/ct09a",
+                             "sourceLine":  1913
+                         },
+                         {
+                             "code":  "09b",
+                             "label":  "Xã/phường/đặc khu:",
+                             "root":  "tkchinh",
+                             "path":  "ThongTinBenNhanChuyenNhuong/CT09/ct09b_ten",
+                             "sourceLine":  1919
+                         },
+                         {
+                             "code":  "09c",
+                             "label":  "Tỉnh/Tp:",
+                             "root":  "tkchinh",
+                             "path":  "ThongTinBenNhanChuyenNhuong/CT09/ct09c_ten",
+                             "sourceLine":  1924
+                         },
+                         {
+                             "code":  "10",
+                             "label":  "Tên cơ quan/tổ chức:",
+                             "root":  "tkchinh",
+                             "path":  "ThongTinCoQuanBanDauGia/ct10",
+                             "sourceLine":  1958
+                         },
+                         {
+                             "code":  "11",
+                             "label":  "Mã số thuế của cơ quan/tổ chức:",
+                             "root":  "tkchinh",
+                             "path":  "ThongTinCoQuanBanDauGia/ct11",
+                             "sourceLine":  1964
+                         },
+                         {
+                             "code":  "12",
+                             "label":  "Địa chỉ:",
+                             "root":  "tkchinh",
+                             "path":  "ThongTinCoQuanBanDauGia/CT12/diaChi",
+                             "sourceLine":  1970,
+                             "parts":  [
+                                           {
+                                               "prefix":  "  Xã/phường/đặc khu: ",
+                                               "root":  "tkchinh",
+                                               "path":  "ThongTinCoQuanBanDauGia/CT12/xaPhuong_ten",
+                                               "format":  "text"
+                                           },
+                                           {
+                                               "prefix":  "  Tỉnh/Tp: ",
+                                               "root":  "tkchinh",
+                                               "path":  "ThongTinCoQuanBanDauGia/CT12/tinhTP_ten",
+                                               "format":  "text"
+                                           }
+                                       ]
+                         },
+                         {
+                             "code":  "13",
+                             "label":  "Tên đại lý thuế (nếu có):",
+                             "root":  "ttkthue",
+                             "path":  "DLyThue/tenDLyThue",
+                             "sourceLine":  1982
+                         },
+                         {
+                             "code":  "14",
+                             "label":  "Mã số thuế:",
+                             "root":  "ttkthue",
+                             "path":  "DLyThue/mstDLyThue",
+                             "sourceLine":  1988
+                         },
+                         {
+                             "code":  "15",
+                             "label":  "Hợp đồng đại lý thuế: Số",
+                             "root":  "ttkthue",
+                             "path":  "DLyThue/soHDongDLyThue",
+                             "sourceLine":  1993,
+                             "suffixPath":  "DLyThue/ngayKyHDDLyThue",
+                             "suffixFormat":  "date"
+                         }
+                     ],
+    "headerTemplate":  "tkhaiHeader-02TNDN-TT89",
+    "headerFacts":  [
+                        {
+                            "label":  "Kỳ tính thuế: Lần phát sinh",
+                            "code":  "01",
+                            "expressions":  [
+                                                "ihtkk:kyTinhThue($kyKKhai,$kieuKy,$ttkthue/TKhaiThue/KyKKhaiThue/kyKKhaiTuNgay,$ttkthue/TKhaiThue/KyKKhaiThue/kyKKhaiDenNgay)"
+                                            ]
+                        },
+                        {
+                            "label":  "Lần đầu: [X] [03] Bổ sung lần thứ: [ ] [02] Lần đầu: [ ] [03] Bổ sung lần thứ: [ ]",
+                            "code":  "02",
+                            "expressions":  [
+                                                "$ttkthue/TKhaiThue/soLan"
+                                            ]
+                        },
+                        {
+                            "label":  "Tên tổ chức chuyển nhượng:",
+                            "code":  "04",
+                            "expressions":  [
+                                                "$tkchinh/ThongTinBenChuyenNhuong/ct04"
+                                            ]
+                        },
+                        {
+                            "label":  "Mã số thuế:",
+                            "code":  "05",
+                            "expressions":  [
+                                                "$tkchinh/ThongTinBenChuyenNhuong/ct05"
+                                            ]
+                        },
+                        {
+                            "label":  "Tên tổ chức/cá nhân nhận chuyển nhượng:",
+                            "code":  "06",
+                            "expressions":  [
+                                                "$tkchinh/ThongTinBenNhanChuyenNhuong/ct06"
+                                            ]
+                        },
+                        {
+                            "label":  "Mã số thuế/số định danh cá nhân/giấy tờ định danh của cá nhân:",
+                            "code":  "07",
+                            "expressions":  [
+                                                "$tkchinh/ThongTinBenNhanChuyenNhuong/ct07"
+                                            ]
+                        },
+                        {
+                            "label":  "Địa chỉ:",
+                            "code":  "08",
+                            "expressions":  [
+
+                                            ]
+                        },
+                        {
+                            "label":  "Số nhà, đường phố:",
+                            "code":  "08a",
+                            "expressions":  [
+                                                "$tkchinh/ThongTinBenNhanChuyenNhuong/CT08/diaChi"
+                                            ]
+                        },
+                        {
+                            "label":  "Xã/phường/đặc khu:",
+                            "code":  "08b",
+                            "expressions":  [
+                                                "$tkchinh/ThongTinBenNhanChuyenNhuong/CT08/xaPhuong_ten"
+                                            ]
+                        },
+                        {
+                            "label":  "Tỉnh/Thành phố:",
+                            "code":  "08c",
+                            "expressions":  [
+                                                "$tkchinh/ThongTinBenNhanChuyenNhuong/CT08/tinhTP_ten"
+                                            ]
+                        },
+                        {
+                            "label":  "Địa chỉ bất động sản được chuyển nhượng:",
+                            "code":  "09",
+                            "expressions":  [
+
+                                            ]
+                        },
+                        {
+                            "label":  "Số nhà, đường phố:",
+                            "code":  "09a",
+                            "expressions":  [
+                                                "$tkchinh/ThongTinBenNhanChuyenNhuong/CT09/ct09a"
+                                            ]
+                        },
+                        {
+                            "label":  "Xã/phường/đặc khu:",
+                            "code":  "09b",
+                            "expressions":  [
+                                                "$tkchinh/ThongTinBenNhanChuyenNhuong/CT09/ct09b_ten"
+                                            ]
+                        },
+                        {
+                            "label":  "Tỉnh/Tp:",
+                            "code":  "09c",
+                            "expressions":  [
+                                                "$tkchinh/ThongTinBenNhanChuyenNhuong/CT09/ct09c_ten"
+                                            ]
+                        },
+                        {
+                            "label":  "Tên cơ quan/tổ chức:",
+                            "code":  "10",
+                            "expressions":  [
+                                                "$tkchinh/ThongTinCoQuanBanDauGia/ct10"
+                                            ]
+                        },
+                        {
+                            "label":  "Mã số thuế của cơ quan/tổ chức:",
+                            "code":  "11",
+                            "expressions":  [
+                                                "$tkchinh/ThongTinCoQuanBanDauGia/ct11"
+                                            ]
+                        },
+                        {
+                            "label":  "Địa chỉ: Xã/phường/đặc khu: Tỉnh/Tp:",
+                            "code":  "12",
+                            "expressions":  [
+                                                "$tkchinh/ThongTinCoQuanBanDauGia/CT12/diaChi",
+                                                "$tkchinh/ThongTinCoQuanBanDauGia/CT12/xaPhuong_ten",
+                                                "$tkchinh/ThongTinCoQuanBanDauGia/CT12/tinhTP_ten"
+                                            ]
+                        },
+                        {
+                            "label":  "Tên đại lý thuế (nếu có):",
+                            "code":  "13",
+                            "expressions":  [
+                                                "$ttkthue/DLyThue/tenDLyThue"
+                                            ]
+                        },
+                        {
+                            "label":  "Mã số thuế:",
+                            "code":  "14",
+                            "expressions":  [
+                                                "$ttkthue/DLyThue/mstDLyThue"
+                                            ]
+                        },
+                        {
+                            "label":  "Hợp đồng đại lý thuế: Số",
+                            "code":  "15",
+                            "expressions":  [
+                                                "$ttkthue/DLyThue/soHDongDLyThue"
+                                            ]
+                        },
+                        {
+                            "label":  "Tên đại lý thuế (nếu có):",
+                            "code":  "13",
+                            "expressions":  [
+
+                                            ]
+                        },
+                        {
+                            "label":  "Mã số thuế:",
+                            "code":  "14",
+                            "expressions":  [
+
+                                            ]
+                        },
+                        {
+                            "label":  "Hợp đồng đại lý thuế: Số Ngày:",
+                            "code":  "15",
+                            "expressions":  [
+
+                                            ]
+                        }
+                    ],
+    "headerGroups":  [
+                         {
+                             "line":  1848,
+                             "title":  "1. Bên chuyển nhượng:"
+                         },
+                         {
+                             "line":  1867,
+                             "title":  "2. Bên nhận chuyển nhượng:"
+                         },
+                         {
+                             "line":  1952,
+                             "title":  "3. Cơ quan thi hành án, tổ chức có thẩm quyền bán đấu giá bất động sản, tài sản khác là tài sản bảo đảm thi hành án"
+                         }
+                     ],
+    "legalReference":  "Ban hành kèm theo Thông tư số  89/2026/TT-BTC ngày 30 tháng 6 năm 2026  của Bộ trưởng Bộ Tài chính",
+    "scopeNote":  "(Áp dụng đối với hoạt động chuyển nhượng bất động sản theo từng lần phát sinh)",
+    "sourceEvidence":  {
+                           "path":  "data\\xslt\\XSLT 3.0.9\\TKhaiThue\\xslt\\TNDN\\TKhai_TNDN_02_TT89.xslt",
+                           "sha256":  "07b60aae276637182d227e3eb25f63553e07c60af7198d970b933452f7684a06",
+                           "inspectedDate":  "2026-10-23",
+                           "kind":  "static-template-inspection"
+                       },
+    "headerSourceEvidence":  {
+                                 "sha256":  "22a4c9c31a92ed03006b92909a38aec46c0ccbd41996d927062686abf6e86eb2",
+                                 "path":  "data\\xslt\\XSLT 3.0.9\\TKhaiThue\\include\\TKhaiHeader.xsl"
+                             },
+    "verificationStatus":  "Static mapping only; Windows visual/PDF and native macOS pending",
+    "unknowns":  [
+                     "Windows screenshot/print/PDF comparison pending",
+                     "Native macOS display/PDF pending",
+                     "Prompt labels TT89 as2025; installed template legal literal is89/2026 dated30/06/2026; no external legal verification performed"
+                 ],
+    "repeatedTables":  [
+                           {
+                               "columns":  [
+                                               {
+                                                   "label":  "STT",
+                                                   "format":  "position",
+                                                   "source":  "@position"
+                                               },
+                                               {
+                                                   "label":  "Số hợp đồng",
+                                                   "format":  "text",
+                                                   "source":  "so_hd"
+                                               },
+                                               {
+                                                   "label":  "Ngày hợp đồng",
+                                                   "format":  "date",
+                                                   "source":  "ngay_hd"
+                                               },
+                                               {
+                                                   "label":  "Ngày UBND xã/phường/đặc khu hoặc văn phòng công chứng xác nhận",
+                                                   "format":  "date",
+                                                   "source":  "ngay_congChung"
+                                               }
+                                           ],
+                               "insertAfterHeaderCode":  "09c",
+                               "source":  {
+                                              "template":  "TKhaiHeader.xsl",
+                                              "line":  1939
+                                          },
+                               "totals":  [
+
+                                          ],
+                               "recordPath":  "ThongTinBenNhanChuyenNhuong/BangChiTietBDS/NoiDungBatDongSan",
+                               "title":  "Theo Hợp đồng chuyển nhượng bất động sản, tài sản khác:"
+                           }
+                       ],
+    "conditionalHeaderFacts":  [
+                                   {
+                                       "sourceLine":  1789,
+                                       "text":  "[X] Bất động sản [ ] Tài sản khác",
+                                       "test":  "$tkchinh/cnbds =\u00271\u0027"
+                                   },
+                                   {
+                                       "sourceLine":  1792,
+                                       "text":  "[ ] Bất động sản [X] Tài sản khác",
+                                       "test":  "$tkchinh/cnbds =\u00270\u0027"
+                                   },
+                                   {
+                                       "sourceLine":  1799,
+                                       "text":  "[X] Tổ chức áp dụng phương pháp tỷ lệ trên doanh thu theo quy định của pháp luật về thuế TNDN có hoạt động chuyển nhượng bất động sản [ ] Cơ quan thi hành án hoặc tổ chức có thẩm quyền bán đấu giá bất động sản, tài sản khác là tài sản bảo đảm thi hành án",
+                                       "test":  "$tkchinh/cnbds =\u0027true\u0027 or $tkchinh/cnbds=\u00271\u0027"
+                                   },
+                                   {
+                                       "sourceLine":  1808,
+                                       "text":  "[ ] Tổ chức áp dụng phương pháp tỷ lệ trên doanh thu theo quy định của pháp luật về thuế TNDN có hoạt động chuyển nhượng bất động sản [X] Cơ quan thi hành án hoặc tổ chức có thẩm quyền bán đấu giá bất động sản, tài sản khác là tài sản bảo đảm thi hành án",
+                                       "test":  "$tkchinh/bds =\u0027true\u0027 or $tkchinh/bds=\u00271\u0027"
+                                   },
+                                   {
+                                       "sourceLine":  1817,
+                                       "text":  "[ ] Tổ chức áp dụng phương pháp tỷ lệ trên doanh thu theo quy định của pháp luật về thuế TNDN có hoạt động chuyển nhượng bất động sản [X] Cơ quan thi hành án hoặc tổ chức có thẩm quyền bán đấu giá bất động sản, tài sản khác là tài sản bảo đảm thi hành án",
+                                       "test":  "$tkchinh/tsk =\u0027true\u0027 or $tkchinh/tsk=\u00271\u0027"
+                                   }
+                               ],
+    "indicatorStyle":  "brackets",
+    "conditionalHeaderFields":  [
+                                    {
+                                        "path":  "cnbds",
+                                        "sourceLine":  1789,
+                                        "text":  "[X] Bất động sản [ ] Tài sản khác",
+                                        "equals":  [
+                                                       "1"
+                                                   ]
+                                    },
+                                    {
+                                        "path":  "cnbds",
+                                        "sourceLine":  1792,
+                                        "text":  "[ ] Bất động sản [X] Tài sản khác",
+                                        "equals":  [
+                                                       "0"
+                                                   ]
+                                    },
+                                    {
+                                        "path":  "cnbds",
+                                        "sourceLine":  1799,
+                                        "text":  "[X] Tổ chức áp dụng phương pháp tỷ lệ trên doanh thu theo quy định của pháp luật về thuế TNDN có hoạt động chuyển nhượng bất động sản [ ] Cơ quan thi hành án hoặc tổ chức có thẩm quyền bán đấu giá bất động sản, tài sản khác là tài sản bảo đảm thi hành án",
+                                        "equals":  [
+                                                       "true",
+                                                       "1"
+                                                   ]
+                                    },
+                                    {
+                                        "path":  "bds",
+                                        "sourceLine":  1808,
+                                        "text":  "[ ] Tổ chức áp dụng phương pháp tỷ lệ trên doanh thu theo quy định của pháp luật về thuế TNDN có hoạt động chuyển nhượng bất động sản [X] Cơ quan thi hành án hoặc tổ chức có thẩm quyền bán đấu giá bất động sản, tài sản khác là tài sản bảo đảm thi hành án",
+                                        "equals":  [
+                                                       "true",
+                                                       "1"
+                                                   ]
+                                    },
+                                    {
+                                        "path":  "tsk",
+                                        "sourceLine":  1817,
+                                        "text":  "[ ] Tổ chức áp dụng phương pháp tỷ lệ trên doanh thu theo quy định của pháp luật về thuế TNDN có hoạt động chuyển nhượng bất động sản [X] Cơ quan thi hành án hoặc tổ chức có thẩm quyền bán đấu giá bất động sản, tài sản khác là tài sản bảo đảm thi hành án",
+                                        "equals":  [
+                                                       "true",
+                                                       "1"
+                                                   ]
+                                    }
+                                ],
+    "usesStandardPeriodHeader":  false
+}

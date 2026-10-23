@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HSoThueDTu>
+  <HSoKhaiThue>
+    <TTinChung>
+      <TTinTKhaiThue>
+        <TKhaiThue>
+          <maTKhai>2004</maTKhai>
+          <pbanTKhaiXML>3.0.9</pbanTKhaiXML>
+          <tenTKhai>Tờ khai thuế thu nhập doanh nghiệp</tenTKhai>
+          <moTaBMau>Ban hành kèm theo Thông tư số  89/2026/TT-BTC ngày 30 tháng 6 năm 2026  của Bộ trưởng Bộ Tài chính</moTaBMau>
+          <loaiTKhai>C</loaiTKhai>
+          <soLan>0</soLan>
+          <KyKKhaiThue>
+            <kieuKy>D</kieuKy>
+            <kyKKhai>30/06/2026</kyKKhai>
+          </KyKKhaiThue>
+        </TKhaiThue>
+        <NNT>
+          <tenNNT>CÔNG TY DỮ LIỆU MẪU TT89</tenNNT>
+          <mst>0000000000</mst>
+        </NNT>
+        <DLyThue>
+          <tenDLyThue>MẪU-2004-11</tenDLyThue>
+          <mstDLyThue>0000000000</mstDLyThue>
+          <soHDongDLyThue>MẪU-2004-13</soHDongDLyThue>
+          <ngayKyHDDLyThue>2026-06-30</ngayKyHDDLyThue>
+        </DLyThue>
+      </TTinTKhaiThue>
+    </TTinChung>
+    <CTieuTKhaiChinh>
+      <BenCNVon>
+        <ct04>MẪU-2004-04</ct04>
+        <ct05_ten>MẪU-2004-05</ct05_ten>
+        <ct06>MẪU-2004-06</ct06>
+      </BenCNVon>
+      <BenNhanCNVon>
+        <ct07>MẪU-2004-07</ct07>
+        <ct08_ten>MẪU-2004-08</ct08_ten>
+        <ct09>MẪU-2004-09</ct09>
+        <ct10>0000000000</ct10>
+      </BenNhanCNVon>
+      <DNCoVonDuocCN>
+        <ct14>MẪU-2004-14</ct14>
+        <ct15>0000000000</ct15>
+        <ct16_so>MẪU-2004-16</ct16_so>
+        <ct16_ngay>2026-06-30</ct16_ngay>
+      </DNCoVonDuocCN>
+      <ct17>0</ct17>
+      <ct18>200400018</ct18>
+      <ct19>2.5</ct19>
+      <ct20>200400020</ct20>
+      <ct21>200400021</ct21>
+      <ct22>200400022</ct22>
+    </CTieuTKhaiChinh>
+  </HSoKhaiThue>
+</HSoThueDTu>

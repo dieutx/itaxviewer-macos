@@ -2,6 +2,21 @@ import XCTest
 @testable import iTaxViewerCore
 
 final class CoverageSafetyTests: XCTestCase {
+    func testReviewedFormRetainsFutureFieldsWithoutInventingTheirLabels() throws {
+        let source = try String(contentsOf: Fixtures.url("declaration_864_static"), encoding: .utf8)
+        let xml = source.replacingOccurrences(of: "</CTieuTKhaiChinh>",
+            with: "<FutureAmount>987654321</FutureAmount><FutureText>&lt;script&gt;SAFE&lt;/script&gt;</FutureText></CTieuTKhaiChinh>")
+        let document = try load(xml)
+        let registry = try FormRegistry.bundled()
+        let output = HTMLRenderer(registry: registry).render(document: document,
+            classification: try DocumentClassifier.classify(document, registry: registry))
+        XCTAssertTrue(output.html.contains("Dữ liệu XML bổ sung ngoài bố cục đã đối chiếu"))
+        XCTAssertTrue(output.html.contains("FutureAmount[1]"))
+        XCTAssertTrue(output.html.contains("987654321"))
+        XCTAssertTrue(output.html.contains("&lt;script&gt;SAFE&lt;/script&gt;"))
+        XCTAssertFalse(output.html.contains("<script>SAFE</script>"))
+        XCTAssertTrue(output.warnings.contains { $0.contains("ngoài ánh xạ") })
+    }
     func testDocumentLoaderRejectsRemoteURLsBeforeReadingData() {
         for address in ["https://example.invalid/document.xml", "http://example.invalid/document.xml",
                         "data:text/xml,%3CDanhMucDTu/%3E", "file://remote-host/share/document.xml"] {

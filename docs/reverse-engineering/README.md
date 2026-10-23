@@ -18,9 +18,28 @@ Target: official Vietnamese **iTax Viewer** for Windows
 | [render-semantics/](render-semantics/README.md) | Quy tắc render gốc: định dạng số, đọc tiền, kỳ thuế, khung host, cấu hình in/PDF |
 | [registry-tables/](registry-tables/README.md) | Dump lossless 1.917 entry registry + đối chiếu với CSV cũ (1.512) |
 | [install-inventory.md](install-inventory.md) | Kiểm kê bản cài: 4.188 tệp, hash, JRE, certstore, launcher Launch4j |
+| [rar-archives.md](rar-archives.md) | 10 tệp `.rar` đã mở: 145 tệp, 10 tệp không có bản nào trên đĩa |
 | [GAP-REGISTER.md](GAP-REGISTER.md) | Hạng mục chưa đủ cơ sở, cần capture/tìm sau để render |
+| [TOOLING.md](TOOLING.md) | Công cụ cần cài/viết cho từng gap, lệnh cụ thể, cái gì **không** nên dùng |
+| [NEXT-AGENT-PROMPT.md](NEXT-AGENT-PROMPT.md) | Prompt giao việc chi tiết (copy nguyên khối) cho agent kế tiếp |
 | [java/](java/README.md) | Decompile `itaxviewer.jar` (CFR 0.152): bảng dispatch root tag, render XSLT trong browser nhúng, chữ ký |
 | [../security.md](../security.md) | Threat model and hardening of the macOS app |
+
+## Tools (chạy lại được)
+
+| Script | Việc | Đầu ra |
+|---|---|---|
+| `tools/inventory_install.py` | Kiểm kê + hash bản cài | `install-inventory.md`, `evidence/*.json` |
+| `tools/extract_registries.py` | Dump lossless 16 registry | `registry-tables/` |
+| `tools/extract_xslt_specs.py` | Trích cột/nhãn/mã chỉ tiêu + `--verify` | `xslt-specs/` |
+| `tools/extract_xslt_functions.py` | Catalog 37 hàm JScript trong XSLT | `render-semantics/functions.json` |
+| `tools/resolve_registry_refs.py` | Đối chiếu registry → tệp thật | `evidence/registry-refs.json` |
+| `tools/msxml_oracle.js` | Render HTML gốc bằng MSXML 3.0 (engine của app) | `_re/oracle/*.html` |
+| `tools/oracle_batch.py` | Chọn template đúng registry cho bộ fixture, lưu hash/count/status | `_re/oracle/batch/index.json` |
+| `tools/html_diff.py` | So text từng ô; chỉ in vị trí/count, không in giá trị người nộp thuế | stdout JSON |
+
+Theo thứ tự trên: 5 script Python đầu chạy bằng `python3` (chỉ cần stdlib), script cuối chạy bằng
+`cscript` trên Windows. Chi tiết công cụ cho các gap còn lại: [`TOOLING.md`](TOOLING.md).
 
 ## Method (reproducible)
 
@@ -68,7 +87,10 @@ Target: official Vietnamese **iTax Viewer** for Windows
 | Class trong `itaxviewer.jar` | 94 | `unzip -l` |
 | File `.java` sau CFR | 68 | CFR gộp lớp lồng vào lớp ngoài |
 | Mã biểu mẫu đọc từ `mauTKhai` | 447 | pipeline `xslt-specs` |
-| Dòng / mã chỉ tiêu trích được | 14.432 / 2.786 | pipeline `xslt-specs` |
+| Dòng / mã chỉ tiêu trích được | 15.469 / 3.448 | pipeline `xslt-specs`, thêm 253 trường ngoài bảng và mã số BCTC (1.035 template, 46 template 0 dòng) |
+| Tham chiếu XSLT trong registry resolve được | 1.907/1.920 (thiếu 13) | `tools/resolve_registry_refs.py` |
+| Tham chiếu XSD resolve được | 9/1.015 — `data/XMLSchema` không tồn tại | `tools/resolve_registry_refs.py` |
+| RAR đã mở / tệp duy nhất | 10 tệp → 145 tệp / 10 tệp | 7-Zip 26.05, `_re/rar/` |
 
 ## Boundaries
 

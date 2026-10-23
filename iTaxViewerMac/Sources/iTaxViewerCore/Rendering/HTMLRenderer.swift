@@ -31,11 +31,21 @@ public final class HTMLRenderer {
 
         switch classification.support {
         case .full(let spec):
-            body = renderFull(document: document, classification: classification, spec: spec)
+            if let financial = FinancialStatementRenderer(document: document, spec: spec).render() {
+                body = financial
+                break
+            }
+            let extra = spec.verificationStatus == nil ? "" : SupplementalFormData(document: document, spec: spec).render()
+            body = renderFull(document: document, classification: classification, spec: spec, supplementary: extra)
+            if !extra.isEmpty {
+                warnings.append("Có trường XML ngoài ánh xạ đã đối chiếu; ứng dụng giữ chúng trong phần dữ liệu bổ sung.")
+            }
         case .generic:
             if let voucher = VoucherRenderer(document: document).render() {
                 body = voucher
             } else if let notice = NoticeRenderer(document: document).render() {
+                body = notice
+            } else if let notice = AdditionalNoticeRenderer(document: document).render() {
                 body = notice
             } else {
                 body = renderGeneric(document: document, classification: classification)
@@ -62,7 +72,7 @@ public final class HTMLRenderer {
 
     private func renderFull(document: TaxDocument,
                             classification: Classification,
-                            spec: FormSpec) -> String {
+                            spec: FormSpec, supplementary: String = "") -> String {
         var html = renderHeader(document: document, classification: classification, spec: spec)
         html += "<div class=\"form-body\">"
         if let title = spec.bodyTitle, !title.isEmpty { html += "<h3>\(esc(title))</h3>" }
@@ -91,6 +101,7 @@ public final class HTMLRenderer {
         html += renderRepeatedTables(document: document, spec: spec)
 
         html += "</div>"
+        html += supplementary
         html += renderFooter(document: document)
         return spec.maTKhai == "394" ? "<div class=\"withholding-tt92\">\(html)</div>" : html
     }
@@ -211,7 +222,8 @@ public final class HTMLRenderer {
             s += "<tr>"
             s += "<td class=\"c\">\(esc(displaySTT(row.stt)))</td>"
             s += "<td>\(esc(row.label))</td>"
-            s += "<td class=\"c code\">\(esc(row.indicator))</td>"
+            let indicator = spec.indicatorStyle == "brackets" ? codeCell(row.indicator) : esc(row.indicator)
+            s += "<td class=\"c code\">\(indicator)</td>"
             s += "<td class=\"r\">\(esc(format(value)))</td>"
             s += "</tr>"
             s += renderRepeatedTables(document: document, spec: spec,
@@ -343,6 +355,10 @@ public final class HTMLRenderer {
             s += "<div class=\"doc-subtitle\">\(esc(note))</div>"
         }
         s += "<div class=\"rule\"></div>"
+        for field in spec?.conditionalHeaderFields ?? [] {
+            let value = document.root.firstDescendant(named: "CTieuTKhaiChinh")?.node(atLocalPath: field.path)?.trimmedValue ?? ""
+            if field.equals.contains(value) { s += "<p>\(esc(field.text))</p>" }
+        }
 
         let headerRows: [HeaderRow]
         if let fields = spec?.headerFields {

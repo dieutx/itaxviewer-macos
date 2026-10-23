@@ -1,0 +1,586 @@
+{
+    "displayCode":  "05/TNDN",
+    "maTKhai":  "2004",
+    "versions":  [
+                     "3.0.9"
+                 ],
+    "sourceTemplate":  "TKhai_TNDN_05_TT89.xslt",
+    "columns":  [
+                    "STT",
+                    "Chỉ tiêu",
+                    "Mã chỉ tiêu",
+                    "Số tiền"
+                ],
+    "rows":  [
+                 {
+                     "label":  "Không phát sinh thu nhập (đánh dấu \"X\")",
+                     "stt":  "A",
+                     "values":  [
+                                    {
+                                        "path":  "ct17",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "summary",
+                     "source":  {
+                                    "template":  "TKhai_TNDN_05_TT89.xslt",
+                                    "line":  36
+                                },
+                     "indicator":  "17",
+                     "codes":  [
+                                   "17"
+                               ]
+                 },
+                 {
+                     "label":  "Xác định số thuế thu nhập doanh nghiệp phải nộp",
+                     "stt":  "B",
+                     "values":  [
+
+                                ],
+                     "kind":  "section",
+                     "source":  {
+                                    "template":  "TKhai_TNDN_05_TT89.xslt",
+                                    "line":  40
+                                },
+                     "indicator":  "",
+                     "codes":  [
+
+                               ]
+                 },
+                 {
+                     "label":  "Doanh thu tính thuế thu nhập doanh nghiệp từ hoạt động chuyển nhượng vốn phát sinh tại Việt Nam",
+                     "stt":  "1",
+                     "values":  [
+                                    {
+                                        "path":  "ct18",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "row",
+                     "source":  {
+                                    "template":  "TKhai_TNDN_05_TT89.xslt",
+                                    "line":  48
+                                },
+                     "indicator":  "18",
+                     "codes":  [
+                                   "18"
+                               ]
+                 },
+                 {
+                     "label":  "Tỷ lệ tính thuế TNDN (%)",
+                     "stt":  "2",
+                     "values":  [
+                                    {
+                                        "path":  "ct19",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "row",
+                     "source":  {
+                                    "template":  "TKhai_TNDN_05_TT89.xslt",
+                                    "line":  54
+                                },
+                     "indicator":  "19",
+                     "codes":  [
+                                   "19"
+                               ]
+                 },
+                 {
+                     "label":  "Số thuế thu nhập doanh nghiệp phải nộp [20]=[18]x[19]",
+                     "stt":  "3",
+                     "values":  [
+                                    {
+                                        "path":  "ct20",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "summary",
+                     "source":  {
+                                    "template":  "TKhai_TNDN_05_TT89.xslt",
+                                    "line":  60
+                                },
+                     "indicator":  "20",
+                     "codes":  [
+                                   "20"
+                               ]
+                 },
+                 {
+                     "label":  "Số thuế thu nhập doanh nghiệp miễn giảm theo Hiệp định",
+                     "stt":  "4",
+                     "values":  [
+                                    {
+                                        "path":  "ct21",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "row",
+                     "source":  {
+                                    "template":  "TKhai_TNDN_05_TT89.xslt",
+                                    "line":  66
+                                },
+                     "indicator":  "21",
+                     "codes":  [
+                                   "21"
+                               ]
+                 },
+                 {
+                     "label":  "Số thuế thu nhập doanh nghiệp phải nộp [22]=[20]-[21]",
+                     "stt":  "5",
+                     "values":  [
+                                    {
+                                        "path":  "ct22",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "summary",
+                     "source":  {
+                                    "template":  "TKhai_TNDN_05_TT89.xslt",
+                                    "line":  72
+                                },
+                     "indicator":  "22",
+                     "codes":  [
+                                   "22"
+                               ]
+                 }
+             ],
+    "tableHeaders":  [
+                         {
+                             "text":  "STT",
+                             "bold":  true
+                         },
+                         {
+                             "text":  "Chỉ tiêu",
+                             "bold":  true
+                         },
+                         {
+                             "text":  "Mã chỉ tiêu",
+                             "bold":  true
+                         },
+                         {
+                             "text":  "Số tiền",
+                             "bold":  true
+                         }
+                     ],
+    "tableRows":  [
+                      {
+                          "cells":  [
+                                        {
+                                            "text":  "A",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "Không phát sinh thu nhập (đánh dấu \"X\")",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "[17]",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "",
+                                            "value":  {
+                                                          "path":  "ct17",
+                                                          "root":  "tkchinh"
+                                                      }
+                                        }
+                                    ]
+                      },
+                      {
+                          "cells":  [
+                                        {
+                                            "text":  "B",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "Xác định số thuế thu nhập doanh nghiệp phải nộp",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  ""
+                                        },
+                                        {
+                                            "text":  ""
+                                        }
+                                    ]
+                      },
+                      {
+                          "cells":  [
+                                        {
+                                            "text":  "1"
+                                        },
+                                        {
+                                            "text":  "Doanh thu tính thuế thu nhập doanh nghiệp từ hoạt động chuyển nhượng vốn phát sinh tại Việt Nam"
+                                        },
+                                        {
+                                            "text":  "[18]",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "",
+                                            "value":  {
+                                                          "path":  "ct18",
+                                                          "root":  "tkchinh"
+                                                      }
+                                        }
+                                    ]
+                      },
+                      {
+                          "cells":  [
+                                        {
+                                            "text":  "2"
+                                        },
+                                        {
+                                            "text":  "Tỷ lệ tính thuế TNDN (%)"
+                                        },
+                                        {
+                                            "text":  "[19]",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "",
+                                            "value":  {
+                                                          "path":  "ct19",
+                                                          "root":  "tkchinh"
+                                                      }
+                                        }
+                                    ]
+                      },
+                      {
+                          "cells":  [
+                                        {
+                                            "text":  "3"
+                                        },
+                                        {
+                                            "text":  "Số thuế thu nhập doanh nghiệp phải nộp [20]=[18]x[19]",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "[20]",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "",
+                                            "value":  {
+                                                          "path":  "ct20",
+                                                          "root":  "tkchinh"
+                                                      }
+                                        }
+                                    ]
+                      },
+                      {
+                          "cells":  [
+                                        {
+                                            "text":  "4"
+                                        },
+                                        {
+                                            "text":  "Số thuế thu nhập doanh nghiệp miễn giảm theo Hiệp định"
+                                        },
+                                        {
+                                            "text":  "[21]",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "",
+                                            "value":  {
+                                                          "path":  "ct21",
+                                                          "root":  "tkchinh"
+                                                      }
+                                        }
+                                    ]
+                      },
+                      {
+                          "cells":  [
+                                        {
+                                            "text":  "5"
+                                        },
+                                        {
+                                            "text":  "Số thuế thu nhập doanh nghiệp phải nộp [22]=[20]-[21]",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "[22]",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "",
+                                            "value":  {
+                                                          "path":  "ct22",
+                                                          "root":  "tkchinh"
+                                                      }
+                                        }
+                                    ]
+                      }
+                  ],
+    "headerFields":  [
+                         {
+                             "label":  "Kỳ tính thuế: Từng lần phát sinh",
+                             "root":  "ttkthue",
+                             "code":  "01",
+                             "path":  "TKhaiThue/KyKKhaiThue/kyKKhai",
+                             "format":  "period"
+                         },
+                         {
+                             "label":  "",
+                             "root":  "ttkthue",
+                             "code":  "02/03",
+                             "path":  "TKhaiThue/loaiTKhai",
+                             "format":  "filing"
+                         },
+                         {
+                             "code":  "04",
+                             "label":  "Tên tổ chức có vốn chuyển nhượng:",
+                             "root":  "tkchinh",
+                             "path":  "BenCNVon/ct04",
+                             "sourceLine":  3143
+                         },
+                         {
+                             "code":  "05",
+                             "label":  "Quốc tịch:",
+                             "root":  "tkchinh",
+                             "path":  "BenCNVon/ct05_ten",
+                             "sourceLine":  3149
+                         },
+                         {
+                             "code":  "06",
+                             "label":  "Địa chỉ trụ sở chính:",
+                             "root":  "tkchinh",
+                             "path":  "BenCNVon/ct06",
+                             "sourceLine":  3155
+                         },
+                         {
+                             "code":  "07",
+                             "label":  "Tên tổ chức/cá nhân nhận vốn chuyển nhượng:",
+                             "root":  "tkchinh",
+                             "path":  "BenNhanCNVon/ct07",
+                             "sourceLine":  3168
+                         },
+                         {
+                             "code":  "08",
+                             "label":  "Quốc tịch:",
+                             "root":  "tkchinh",
+                             "path":  "BenNhanCNVon/ct08_ten",
+                             "sourceLine":  3174
+                         },
+                         {
+                             "code":  "09",
+                             "label":  "Địa chỉ trụ sở chính:",
+                             "root":  "tkchinh",
+                             "path":  "BenNhanCNVon/ct09",
+                             "sourceLine":  3180
+                         },
+                         {
+                             "code":  "10",
+                             "label":  "Mã số thuế (nếu có):",
+                             "root":  "tkchinh",
+                             "path":  "BenNhanCNVon/ct10",
+                             "sourceLine":  3186
+                         },
+                         {
+                             "code":  "11",
+                             "label":  "Tên tổ chức, cá nhân cung cấp dịch vụ làm thủ tục về thuế (nếu có):",
+                             "root":  "ttkthue",
+                             "path":  "DLyThue/tenDLyThue",
+                             "sourceLine":  3194
+                         },
+                         {
+                             "code":  "12",
+                             "label":  "Mã số thuế:",
+                             "root":  "ttkthue",
+                             "path":  "DLyThue/mstDLyThue",
+                             "sourceLine":  3200
+                         },
+                         {
+                             "code":  "13",
+                             "label":  "Hợp đồng đại lý thuế: Số:",
+                             "root":  "ttkthue",
+                             "path":  "DLyThue/soHDongDLyThue",
+                             "sourceLine":  3206,
+                             "suffixPath":  "DLyThue/ngayKyHDDLyThue",
+                             "suffixFormat":  "date"
+                         },
+                         {
+                             "code":  "14",
+                             "label":  "Tên doanh nghiệp có vốn được chuyển nhượng:",
+                             "root":  "tkchinh",
+                             "path":  "DNCoVonDuocCN/ct14",
+                             "sourceLine":  3237
+                         },
+                         {
+                             "code":  "15",
+                             "label":  "Mã số thuế (nếu có):",
+                             "root":  "tkchinh",
+                             "path":  "DNCoVonDuocCN/ct15",
+                             "sourceLine":  3243
+                         },
+                         {
+                             "code":  "16",
+                             "label":  "Hợp đồng chuyển nhượng: Số:",
+                             "root":  "tkchinh",
+                             "path":  "DNCoVonDuocCN/ct16_so",
+                             "sourceLine":  3249,
+                             "suffixPath":  "DNCoVonDuocCN/ct16_ngay",
+                             "suffixFormat":  "date"
+                         }
+                     ],
+    "headerTemplate":  "tkhaiHeader-05TNDN-TT89",
+    "headerFacts":  [
+                        {
+                            "label":  "Kỳ tính thuế: Từng lần phát sinh",
+                            "code":  "01",
+                            "expressions":  [
+                                                "ihtkk:kyTinhThue($kyKKhai,$kieuKy,$ttkthue/TKhaiThue/KyKKhaiThue/kyKKhaiTuNgay,$ttkthue/TKhaiThue/KyKKhaiThue/kyKKhaiDenNgay)"
+                                            ]
+                        },
+                        {
+                            "label":  "Lần đầu: [X] [03] Bổ sung lần thứ: [ ] [02] Lần đầu: [ ] [03] Bổ sung lần thứ: [ ]",
+                            "code":  "02",
+                            "expressions":  [
+                                                "$ttkthue/TKhaiThue/soLan"
+                                            ]
+                        },
+                        {
+                            "label":  "Tên tổ chức có vốn chuyển nhượng:",
+                            "code":  "04",
+                            "expressions":  [
+                                                "$tkchinh/BenCNVon/ct04"
+                                            ]
+                        },
+                        {
+                            "label":  "Quốc tịch:",
+                            "code":  "05",
+                            "expressions":  [
+                                                "$tkchinh/BenCNVon/ct05_ten"
+                                            ]
+                        },
+                        {
+                            "label":  "Địa chỉ trụ sở chính:",
+                            "code":  "06",
+                            "expressions":  [
+                                                "$tkchinh/BenCNVon/ct06"
+                                            ]
+                        },
+                        {
+                            "label":  "Tên tổ chức/cá nhân nhận vốn chuyển nhượng:",
+                            "code":  "07",
+                            "expressions":  [
+                                                "$tkchinh/BenNhanCNVon/ct07"
+                                            ]
+                        },
+                        {
+                            "label":  "Quốc tịch:",
+                            "code":  "08",
+                            "expressions":  [
+                                                "$tkchinh/BenNhanCNVon/ct08_ten"
+                                            ]
+                        },
+                        {
+                            "label":  "Địa chỉ trụ sở chính:",
+                            "code":  "09",
+                            "expressions":  [
+                                                "$tkchinh/BenNhanCNVon/ct09"
+                                            ]
+                        },
+                        {
+                            "label":  "Mã số thuế (nếu có):",
+                            "code":  "10",
+                            "expressions":  [
+                                                "$tkchinh/BenNhanCNVon/ct10"
+                                            ]
+                        },
+                        {
+                            "label":  "Tên tổ chức, cá nhân cung cấp dịch vụ làm thủ tục về thuế (nếu có):",
+                            "code":  "11",
+                            "expressions":  [
+                                                "$ttkthue/DLyThue/tenDLyThue"
+                                            ]
+                        },
+                        {
+                            "label":  "Mã số thuế:",
+                            "code":  "12",
+                            "expressions":  [
+                                                "$ttkthue/DLyThue/mstDLyThue"
+                                            ]
+                        },
+                        {
+                            "label":  "Hợp đồng đại lý thuế: Số:",
+                            "code":  "13",
+                            "expressions":  [
+                                                "$ttkthue/DLyThue/soHDongDLyThue"
+                                            ]
+                        },
+                        {
+                            "label":  "Tên tổ chức, cá nhân cung cấp dịch vụ làm thủ tục về thuế (nếu có):",
+                            "code":  "11",
+                            "expressions":  [
+
+                                            ]
+                        },
+                        {
+                            "label":  "Mã số thuế:",
+                            "code":  "12",
+                            "expressions":  [
+
+                                            ]
+                        },
+                        {
+                            "label":  "Hợp đồng đại lý thuế: Số:",
+                            "code":  "13",
+                            "expressions":  [
+                                                "$ttkthue/DLyThue/soHDongDLyThue"
+                                            ]
+                        },
+                        {
+                            "label":  "Tên doanh nghiệp có vốn được chuyển nhượng:",
+                            "code":  "14",
+                            "expressions":  [
+                                                "$tkchinh/DNCoVonDuocCN/ct14"
+                                            ]
+                        },
+                        {
+                            "label":  "Mã số thuế (nếu có):",
+                            "code":  "15",
+                            "expressions":  [
+                                                "$tkchinh/DNCoVonDuocCN/ct15"
+                                            ]
+                        },
+                        {
+                            "label":  "Hợp đồng chuyển nhượng: Số: ngày:",
+                            "code":  "16",
+                            "expressions":  [
+                                                "$tkchinh/DNCoVonDuocCN/ct16_so",
+                                                "ihtkk:stringDatetime($tkchinh/DNCoVonDuocCN/ct16_ngay,\u0027dd/mm/yyyy\u0027)"
+                                            ]
+                        }
+                    ],
+    "headerGroups":  [
+                         {
+                             "line":  3136,
+                             "title":  "1. Bên chuyển nhượng vốn:"
+                         },
+                         {
+                             "line":  3161,
+                             "title":  "2. Bên nhận chuyển nhượng vốn"
+                         }
+                     ],
+    "legalReference":  "Ban hành kèm theo Thông tư số  89/2026/TT-BTC ngày 30 tháng 6 năm 2026  của Bộ trưởng Bộ Tài chính",
+    "scopeNote":  "(Áp dụng đối với hoạt động chuyển nhượng vốn của doanh nghiệp nước ngoài)",
+    "sourceEvidence":  {
+                           "path":  "data\\xslt\\XSLT 3.0.9\\TKhaiThue\\xslt\\TNDN\\TKhai_TNDN_05_TT89.xslt",
+                           "sha256":  "03bc8bcaaa3b60074c042948e9565caa3892140885c889c1a157ee78dbe5628f",
+                           "inspectedDate":  "2026-10-23",
+                           "kind":  "static-template-inspection"
+                       },
+    "headerSourceEvidence":  {
+                                 "sha256":  "22a4c9c31a92ed03006b92909a38aec46c0ccbd41996d927062686abf6e86eb2",
+                                 "path":  "data\\xslt\\XSLT 3.0.9\\TKhaiThue\\include\\TKhaiHeader.xsl"
+                             },
+    "verificationStatus":  "Static mapping only; Windows visual/PDF and native macOS pending",
+    "unknowns":  [
+                     "Windows screenshot/print/PDF comparison pending",
+                     "Native macOS display/PDF pending",
+                     "Prompt labels TT89 as2025; installed template legal literal is89/2026 dated30/06/2026; no external legal verification performed",
+                     "ct17 label requestsX but source executesformatNumber(ct17); preserve numeric/text source output rather than assume boolean checkbox"
+                 ],
+    "indicatorStyle":  "brackets",
+    "usesStandardPeriodHeader":  false
+}

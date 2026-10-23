@@ -101,6 +101,66 @@
    "spec": "847",
    "orientation": "0",
    "title": "04/GTGT"
+  },
+  {
+   "displayCode": "04/TNDN",
+   "maTKhai": "2002",
+   "versions": [
+    "3.0.9"
+   ],
+   "spec": "2002",
+   "orientation": "0",
+   "title": "04/TNDN"
+  },
+  {
+   "displayCode": "02/TNDN",
+   "maTKhai": "2003",
+   "versions": [
+    "3.0.9"
+   ],
+   "spec": "2003",
+   "orientation": "0",
+   "title": "02/TNDN"
+  },
+  {
+   "displayCode": "05/TNDN",
+   "maTKhai": "2004",
+   "versions": [
+    "3.0.9"
+   ],
+   "spec": "2004",
+   "orientation": "0",
+   "title": "05/TNDN"
+  },
+  {
+   "displayCode": "B01/BCTC",
+   "maTKhai": "701",
+   "versions": [
+    "2.3.5"
+   ],
+   "spec": "701",
+   "orientation": "0",
+   "title": "B01/BCTC"
+  },
+  {
+   "displayCode": "B05/BCTC",
+   "maTKhai": "702",
+   "versions": [
+    "2.3.5"
+   ],
+   "spec": "702",
+   "orientation": "0",
+   "title": "B05/BCTC"
+  },
+  {
+   "displayCode": "B01/BCTC",
+   "maTKhai": "1254",
+   "versions": [
+    "2.9.0"
+   ],
+   "spec": "1254",
+   "orientation": "0",
+   "title": "B01/BCTC"
   }
  ],
  "codes": {

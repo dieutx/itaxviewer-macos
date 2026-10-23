@@ -201,6 +201,7 @@ enum MetadataExtractor {
         if root.localName == "TBTNhan" {
             meta.noticeCode = descendantValue(root, "MSo")
             meta.noticeVersion = descendantValue(root, "PBan")
+            meta.formDescription = meta.noticeCode
         }
 
         if ["THONGBAO", "THONG_BAO", "TBAO_TKHOAN_NH", "TBAO_TKHOAN_NT", "TBAO_NGUNG"].contains(root.localName) {

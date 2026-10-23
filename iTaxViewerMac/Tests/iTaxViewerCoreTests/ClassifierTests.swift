@@ -9,7 +9,7 @@ final class RegistryTests: XCTestCase {
         XCTAssertEqual(registry.source.entries, 1150)
         XCTAssertEqual(registry.source.formCodes, 410)
         XCTAssertEqual(Set(registry.supported.map(\.maTKhai)),
-                       Set(["842", "394", "953", "892", "864", "395", "07", "847"]))
+                       Set(["842", "394", "953", "892", "864", "395", "07", "847", "2002", "2003", "2004", "701", "702", "1254"]))
     }
 
     func testKnownDisplayCodes() throws {

@@ -3,7 +3,7 @@
 Reference application: official **iTax Viewer** installed at
 `C:\Program Files (x86)\iTax Viewer` (bundled JRE 1.8.0_112; registry contains XSLT
 templates through **3.0.9** and 2026 CA certificates).
-Comparison date: 2026-10-22.
+Windows comparison date: 2026-10-22. Latest executed macOS CI checks: 2026-10-23.
 
 Status legend:
 
@@ -12,6 +12,53 @@ Status legend:
 * **PARTIAL** — supported with a documented limitation
 * **PENDING** — not verified yet
 * **NOT VERIFIED** — deliberately not claimed (cryptographic signatures)
+
+## Current executed build — 2026-10-23
+
+[Successful macOS runner execution](https://github.com/dieutx/itaxviewer-macos/actions/runs/39899718886)
+at application commit `f7eaa338fa8707cd1729ea95e62c6a37e007bb93` supersedes the older
+pending native-print statements below. Runner: macOS 14 / arm64, Xcode 15.4, Swift 5.10.
+
+| Check | Executed result |
+|---|---|
+| Swift XCTest | **PASS** — 80 tests, 79 passed, one optional external-fixture test skipped, zero failures |
+| Separate external-fixture XCTest | **PASS** — all nine bundled synthetic/anonymised samples parsed and rendered |
+| Cross-platform mapping harness | **PASS** — including four new version-bound declaration specs and correction fixture |
+| Universal app + DMG | **PASS** — `lipo` confirms arm64 + x86_64; resource bundle present; ad-hoc signature verified; not notarized |
+| Actual app launch | **PASS** — launched through macOS LaunchServices and remained running; native execution on Intel remains pending |
+| Native print/export pipeline | **PASS for automated checks** — 20 fixtures exported through AppKit/WebKit; every PDF has nonempty A4 pages and contains all distinct rendered numeric table cells plus fixed fixture markers; XXE fixture rejected |
+| PDF visual evidence | PDFKit rendered every output page to PNG (39 pages), plus WebKit viewport snapshots; artifacts contain only bundled synthetic fixtures |
+| Offline/security | Update fetching disabled, network entitlement removed, certificate inspection network fetch disabled; signature state remains `.notVerified` |
+| Manual interactions | Finder double-click, drag/drop, printer hardware and print-panel controls remain **PENDING** |
+
+Actual native fixture page counts:
+
+| Fixture/group | A4 pages |
+|---|---:|
+| `gtgt_842_return` / UTF-16 / legacy `01` | 2 each |
+| `tncn_394_05kk_tt92` | **1** (header groups/table proportions corrected; matches Windows fixture count) |
+| `tncn_953_05qtt` | 2 |
+| `tndn_892_03tndn_v2.9.4` including raw appendix | 5 |
+| New `864`, `395`, `07`, `847` synthetic declarations | 2 each in this run |
+| Combined TT80 correction/explanation fixture | 5 |
+| NQ142 declaration + appendix | 3 |
+| Notice 843 accepted/rejected, 844, 01/TB-BSTT | 1 each |
+| CT-01 4.0.1 voucher | 1 |
+
+**Remaining visual limitations:** several multi-page native tables continue a row across
+pages and do not repeat their column headings. Text/value-presence tests pass, but this
+is not a claim of Windows pagination or pixel parity. Native margins are configured as
+top/right/left 20 mm and bottom 10 mm; A4 page size is checked automatically. The new
+declaration and KHBS layouts still need independent Windows screenshot/PDF comparisons.
+The 844 renderer preserves a populated amount with a blank payment identifier in an
+explicit supplementary-data section; the original hides that table in this case.
+
+Static Windows/MSXML evidence and the correction to gap 18 are recorded in
+[`gap-build-2026-10-23.md`](docs/reverse-engineering/documents/results/gap-build-2026-10-23.md).
+There is no full-layout coverage claim for all 410 codes: eight specs plus legacy `01`
+cover nine codes at reviewed versions; other codes/versions retain structured data.
+
+The following sections retain the earlier Windows captures and historical results.
 
 > **Executed on macOS 15 (Intel) on 2026-10-22** with Xcode 16.1 / Swift 6.0.2.
 > `swift test` ran 45 tests (44 passed, 1 skipped because `ITAX_FIXTURE_DIR` was not set),
@@ -37,8 +84,8 @@ Status legend:
 
 | Document | Code / versions | Why not full | Current behaviour |
 |---|---|---|---|
-| 05/KK-TNCN under TT 80/2021 | `864` / 2.5.1, 2.8.3, 2.9.3 | different rows `[16]–[32]` | structured view + warning |
-| 05/QTT-TNCN legacy | `395` / 2.1.6, 2.4.2 | pre-TT80 layout | structured view + warning |
+| 05/KK-TNCN under TT 80/2021 | `864` / 2.5.1, 2.8.3 | different header/rows from the new 2.9.3 spec | structured view + warning; 2.9.3 has a dedicated layout |
+| 05/QTT-TNCN legacy | `395` / 2.1.6 | revision not yet mapped | structured view + warning; 2.4.2 has a dedicated layout |
 | CIT under TT 89/2025 | `2002`, `2003`, `2004` | new 2025 layouts | structured view + warning |
 | BCTC B01/B05 | `701`, `1254`, `702` | multi-table financial statements | structured view + warning |
 | 04/GTGT | `07` / 2.0.x–2.1.2 (also `847`) | no captured Windows layout/spec for the gold-silver-gemstone form | structured view + warning |
@@ -174,7 +221,7 @@ Corrections established by running the original:
 | Registry integrity (1,150 entries / 410 codes / 4 specs) | **PASS** |
 | XXE rejection, UTF-16 parsing, malformed XML, oversized/hidden-DTD inputs | **PASS** (Swift XCTest) |
 | Swift XCTest suite (`swift test`) | **PASS** — 58 tests executed, 57 passed, 1 skipped (`ExternalFixturesTests` without `ITAX_FIXTURE_DIR`) |
-| Update check (`AppVersion` comparison + GitHub releases client) | **PASS** — 3 XCTest cases; manual check executed against the public repo (no release published yet → "newest") |
+| Update check | **DISABLED** in the offline build; version-comparison tests retained and a deterministic offline-refusal test added |
 | External fixture run (`ITAX_FIXTURE_DIR=../test-data`) | **PASS** — all 9 XML files classified and rendered; test walks subdirectories recursively |
 | Real-file run (`ITAX_FIXTURE_DIR="../realdata to test"`, local only) | **PASS** — 12 files parsed and rendered; 9 × 01/GTGT full renderer (incl. legacy 2.1.2 / 2.5.0), 3 × 04/GTGT structured view (no captured layout) |
 | Notice/voucher renderer tests | **PASS** — 843 accepted + rejected, 844 accepted, 01/TB-BSTT, CT-01 layout and amount-in-words |

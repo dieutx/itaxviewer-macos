@@ -214,7 +214,7 @@ def extract(path: Path) -> dict:
         indicator = ""
         if indicator_column is not None and indicator_column < len(texts):
             candidate = texts[indicator_column]
-            if candidate and (CODE.match(candidate) or INDICATOR.match(candidate)):
+            if candidate and (CODE.match(candidate) or re.fullmatch(r"\d{1,4}[a-z]?", candidate) or INDICATOR.match(candidate)):
                 match = INDICATOR.match(candidate)
                 indicator = match.group(1) if match else candidate
         for text in texts:
@@ -226,8 +226,9 @@ def extract(path: Path) -> dict:
                 break
         if not indicator:
             for text in texts:
-                if FORMULA_CELL.match(text):
-                    indicator = INLINE_INDICATOR.match(text).group(1)
+                match = INLINE_INDICATOR.match(text)
+                if FORMULA_CELL.match(text) and match:
+                    indicator = match.group(1)
                     break
         values: list[dict] = []
         for cell in cells:

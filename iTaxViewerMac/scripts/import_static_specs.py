@@ -5,7 +5,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 RES = ROOT / "iTaxViewerMac/Sources/iTaxViewerCore/Resources"
-CODES = ("864", "395", "07", "847")
+CODES = ("864", "395", "07", "847", "2002", "2003", "2004", "701", "702", "1254")
 
 
 def main():
@@ -21,6 +21,10 @@ def main():
         assert spec["maTKhai"] == code
         assert spec["sourceEvidence"]["sha256"] and spec["verificationStatus"]
         assert set(spec["versions"]) <= set(registry["codes"][code]["versions"])
+        assert isinstance(spec["rows"], list)
+        for row in spec["rows"]:
+            assert isinstance(row["codes"], list), f"{code}: codes must be an array"
+            assert isinstance(row["values"], list), f"{code}: values must be an array"
         specs.append(spec)
         registry["supported"].append({
             "displayCode": spec["displayCode"], "maTKhai": code, "versions": spec["versions"],

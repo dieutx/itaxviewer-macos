@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TBao>
+  <MSo>01/TB-BSTT-NNT</MSo><PBan>2.1.0</PBan>
+  <STBao><So>BSTT-NNT-SYNTHETIC-01</So><NTBao>2026-10-23</NTBao></STBao>
+  <DLTBao>
+    <TNNT>DOANH NGHIỆP MẪU BSTT</TNNT><MST>0000000000</MST>
+    <TCQTCTren>CƠ QUAN CẤP TRÊN MẪU</TCQTCTren><TCQT>CƠ QUAN THUẾ MẪU</TCQT>
+    <MHSo>BSTT-APPLICATION-01</MHSo><THGTBSung>2026-11-09</THGTBSung>
+    <DTCQT>0000000000</DTCQT><DCCQT>ĐỊA CHỈ CƠ QUAN MẪU</DCCQT>
+    <DSNDGTBSung>
+      <NDGTBSung><NDung>NỘI DUNG MẪU MỘT</NDung><HSThue>HỒ SƠ MẪU MỘT</HSThue><LKTThue>Quý</LKTThue><KTThue>3/2026</KTThue><TTTLieu>TÀI LIỆU MẪU MỘT</TTTLieu></NDGTBSung>
+      <NDGTBSung><NDung>NỘI DUNG MẪU HAI</NDung><HSThue>HỒ SƠ MẪU HAI</HSThue><LKTThue>Năm</LKTThue><KTThue>2025</KTThue><TTTLieu>TÀI LIỆU MẪU HAI &amp; BA</TTTLieu></NDGTBSung>
+    </DSNDGTBSung>
+    <Extension>BSTT-NNT-EXTRA-VALUE</Extension>
+  </DLTBao>
+</TBao>

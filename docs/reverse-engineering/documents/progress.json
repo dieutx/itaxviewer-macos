@@ -19,19 +19,19 @@
     "declarations": {
       "root": "HSoThueDTu",
       "status": "in-progress",
-      "note": "4 form full; 406 remaining codes use structured view",
+      "note": "14 reviewed layouts plus legacy 01 alias (15 codes); 395 other codes structured. Added TT89 2002/2003/2004 at3.0.9 and BCTC701/702 at2.3.5,1254 at2.9.0; MSXML mapped amounts present and extractor14/14. Windows visual parity pending; see COMPATIBILITY.md for actual native results.",
       "priority": "P1"
     },
     "appendices": {
       "root": "PLuc",
       "status": "in-progress",
-      "note": "PL_NQ43/101/142 implemented; PL01_KHBS, PL01_1_KHBS, BaoCaoTaiChinh pending",
+      "note": "PL_NQ43/101/142 implemented; standard TT80 PL01_KHBS and PL01_1_KHBS implemented for exact parent/version mappings, native PDF exercised. Windows visual parity and other variants/BaoCaoTaiChinh layouts pending.",
       "priority": "P0"
     },
     "notices": {
       "root": ["TBaoThueDTu", "THONGBAO", "THONG_BAO", "TBAO_TKHOAN_NH", "TBAO_TKHOAN_NT", "TBAO_NGUNG", "BKE_TBAO", "TBao"],
       "status": "in-progress",
-      "note": "843/844/01-TB-BSTT captured + spec; other 109 notice codes generic-only",
+      "note": "843/844/01-TB-BSTT captured + spec; added exact2.1.0 NSD/BSTT-NNT/SSĐT from static source facts. Other116 notice IDs generic-only. Windows visual parity for new notices pending; see COMPATIBILITY.md for actual native results.",
       "priority": "P0"
     },
     "paymentVouchers": {

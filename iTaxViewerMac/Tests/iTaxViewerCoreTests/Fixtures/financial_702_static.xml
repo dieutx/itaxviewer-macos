@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HSoThueDTu>
+  <HSoKhaiThue>
+    <TTinChung>
+      <TTinTKhaiThue>
+        <TKhaiThue>
+          <maTKhai>702</maTKhai>
+          <pbanTKhaiXML>2.3.5</pbanTKhaiXML>
+          <tenTKhai>BÁO CÁO TÌNH HÌNH TÀI CHÍNH</tenTKhai>
+          <moTaBMau>Ban hành theo Thông tư số 107/2017/TT-BTC ngày 10/10/2017 của Bộ Tài chính</moTaBMau>
+          <loaiTKhai>C</loaiTKhai>
+          <KyKKhaiThue>
+            <kieuKy>Y</kieuKy>
+            <kyKKhai>2025</kyKKhai>
+            <kyKKhaiDenNgay>2025-12-31</kyKKhaiDenNgay>
+          </KyKKhaiThue>
+        </TKhaiThue>
+        <NNT>
+          <mst>0000000000</mst>
+          <tenNNT>ĐƠN VỊ SỰ NGHIỆP MẪU</tenNNT>
+          <dchiNNT>ĐỊA CHỈ TỔNG HỢP MẪU</dchiNNT>
+          <tenHuyenNNT>HUYỆN MẪU</tenHuyenNNT>
+          <tenTinhNNT>TỈNH MẪU</tenTinhNNT>
+          <dthoaiNNT>0000000000</dthoaiNNT>
+          <faxNNT>0000000000</faxNNT>
+          <emailNNT>sample@example.invalid</emailNNT>
+        </NNT>
+      </TTinTKhaiThue>
+    </TTinChung>
+    <CTieuTKhaiChinh>
+      <ThuyetMinh>
+        <ct01>001.01</ct01>
+        <ct03>001.02</ct03>
+        <ct05>001.03</ct05>
+        <ct10>001.04</ct10>
+        <ct11>001.05</ct11>
+        <ct12>001.06</ct12>
+        <ct13>001.07</ct13>
+        <ct15>001.08</ct15>
+        <ct16>001.09</ct16>
+        <ct17>001.10</ct17>
+        <ct20>001.11</ct20>
+        <ct30>001.12</ct30>
+        <ct40>001.13</ct40>
+        <ct45>001.14</ct45>
+        <ct46>001.15</ct46>
+        <ct47>001.16</ct47>
+        <ct48>001.17</ct48>
+        <ct500>001.18</ct500>
+      </ThuyetMinh>
+      <SoCuoiNam>
+        <ct01>702100001</ct01>
+        <ct03>702100002</ct03>
+        <ct05>702100003</ct05>
+        <ct10>702100004</ct10>
+        <ct11>702100005</ct11>
+        <ct12>702100006</ct12>
+        <ct13>702100007</ct13>
+        <ct15>702100008</ct15>
+        <ct16>702100009</ct16>
+        <ct17>702100010</ct17>
+        <ct20>702100011</ct20>
+        <ct30>702100012</ct30>
+        <ct40>702100013</ct40>
+        <ct45>702100014</ct45>
+        <ct46>702100015</ct46>
+        <ct47>702100016</ct47>
+        <ct48>702100017</ct48>
+        <ct50>702100018</ct50>
+      </SoCuoiNam>
+      <SoDauNam>
+        <ct01>702200001</ct01>
+        <ct03>702200002</ct03>
+        <ct05>702200003</ct05>
+        <ct10>702200004</ct10>
+        <ct11>702200005</ct11>
+        <ct12>702200006</ct12>
+        <ct13>702200007</ct13>
+        <ct15>702200008</ct15>
+        <ct16>702200009</ct16>
+        <ct17>702200010</ct17>
+        <ct20>702200011</ct20>
+        <ct30>702200012</ct30>
+        <ct40>702200013</ct40>
+        <ct45>702200014</ct45>
+        <ct46>702200015</ct46>
+        <ct47>702200016</ct47>
+        <ct48>702200017</ct48>
+        <ct50>702200018</ct50>
+      </SoDauNam>
+      <nguoiLapBieu>NGƯỜI LẬP MẪU</nguoiLapBieu>
+      <keToanTruong>KẾ TOÁN MẪU</keToanTruong>
+      <thuTruongdonVi>ĐẠI DIỆN MẪU</thuTruongdonVi>
+      <ngayLap>2026-02-28</ngayLap>
+      <ThongTinBoSung>BCTC-EXTRA-702</ThongTinBoSung>
+      <bctcDaKiemToan>true</bctcDaKiemToan>
+      <tenYKienKToan>Ý KIẾN KIỂM TOÁN MẪU</tenYKienKToan>
+    </CTieuTKhaiChinh>
+  </HSoKhaiThue>
+</HSoThueDTu>

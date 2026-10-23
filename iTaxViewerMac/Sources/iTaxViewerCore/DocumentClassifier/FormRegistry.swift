@@ -44,6 +44,12 @@ public struct FormSpec: Codable, Identifiable {
         public let format: String
     }
 
+    public struct ConditionalHeaderField: Codable {
+        public let path: String
+        public let equals: [String]
+        public let text: String
+    }
+
     public struct RepeatedTable: Codable {
         public struct Column: Codable {
             public let label: String
@@ -93,6 +99,8 @@ public struct FormSpec: Codable, Identifiable {
     public let legalReference: String?
     public let bodyTitle: String?
     public let usesStandardPeriodHeader: Bool?
+    public let indicatorStyle: String?
+    public let conditionalHeaderFields: [ConditionalHeaderField]?
 
     public var id: String { maTKhai }
 }

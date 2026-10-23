@@ -1,0 +1,523 @@
+{
+    "displayCode":  "04/TNDN",
+    "maTKhai":  "2002",
+    "versions":  [
+                     "3.0.9"
+                 ],
+    "sourceTemplate":  "TKhai_TNDN_04_TT89.xslt",
+    "columns":  [
+                    "STT",
+                    "Chỉ tiêu",
+                    "Mã chỉ tiêu",
+                    "Số tiền"
+                ],
+    "rows":  [
+                 {
+                     "label":  "Doanh thu tính thuế thu nhập doanh nghiệp",
+                     "stt":  "1",
+                     "values":  [
+                                    {
+                                        "path":  "ct11",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "row",
+                     "source":  {
+                                    "template":  "TKhai_TNDN_04_TT89.xslt",
+                                    "line":  44
+                                },
+                     "indicator":  "11",
+                     "codes":  [
+                                   "11"
+                               ]
+                 },
+                 {
+                     "label":  "Số thuế TNDN phải nộp",
+                     "stt":  "2",
+                     "values":  [
+                                    {
+                                        "path":  "ct12",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "row",
+                     "source":  {
+                                    "template":  "TKhai_TNDN_04_TT89.xslt",
+                                    "line":  73
+                                },
+                     "indicator":  "12",
+                     "codes":  [
+                                   "12"
+                               ]
+                 },
+                 {
+                     "label":  "Số thuế TNDN được miễn, giảm",
+                     "stt":  "3",
+                     "values":  [
+                                    {
+                                        "path":  "ct13",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "row",
+                     "source":  {
+                                    "template":  "TKhai_TNDN_04_TT89.xslt",
+                                    "line":  79
+                                },
+                     "indicator":  "13",
+                     "codes":  [
+                                   "13"
+                               ]
+                 },
+                 {
+                     "label":  "Số thuế TNDN phải nộp sau miễn, giảm ([14]=[12]-[13])",
+                     "stt":  "4",
+                     "values":  [
+                                    {
+                                        "path":  "ct14",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "row",
+                     "source":  {
+                                    "template":  "TKhai_TNDN_04_TT89.xslt",
+                                    "line":  86
+                                },
+                     "indicator":  "14",
+                     "codes":  [
+                                   "14"
+                               ]
+                 },
+                 {
+                     "label":  "Số thuế TNDN nộp thừa kỳ trước chuyển sang kỳ này (nếu có)",
+                     "stt":  "5",
+                     "values":  [
+                                    {
+                                        "path":  "ct15",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "row",
+                     "source":  {
+                                    "template":  "TKhai_TNDN_04_TT89.xslt",
+                                    "line":  92
+                                },
+                     "indicator":  "15",
+                     "codes":  [
+                                   "15"
+                               ]
+                 },
+                 {
+                     "label":  "Số thuế TNDN đã tạm nộp trong năm đến thời điểm quyết toán",
+                     "stt":  "6",
+                     "values":  [
+                                    {
+                                        "path":  "ct16",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "row",
+                     "source":  {
+                                    "template":  "TKhai_TNDN_04_TT89.xslt",
+                                    "line":  98
+                                },
+                     "indicator":  "16",
+                     "codes":  [
+                                   "16"
+                               ]
+                 },
+                 {
+                     "label":  "Chênh lệch giữa số thuế phải nộp và số thuế đã tạm nộp trong năm ([17]=[14]-[16])",
+                     "stt":  "7",
+                     "values":  [
+                                    {
+                                        "path":  "ct17",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "row",
+                     "source":  {
+                                    "template":  "TKhai_TNDN_04_TT89.xslt",
+                                    "line":  104
+                                },
+                     "indicator":  "17",
+                     "codes":  [
+                                   "17"
+                               ]
+                 },
+                 {
+                     "label":  "Số thuế TNDN còn phải nộp sau quyết toán ([18]=[14]-[15]-[16])",
+                     "stt":  "8",
+                     "values":  [
+                                    {
+                                        "path":  "ct18",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "row",
+                     "source":  {
+                                    "template":  "TKhai_TNDN_04_TT89.xslt",
+                                    "line":  110
+                                },
+                     "indicator":  "18",
+                     "codes":  [
+                                   "18"
+                               ]
+                 }
+             ],
+    "tableHeaders":  [
+                         {
+                             "text":  "STT",
+                             "bold":  true
+                         },
+                         {
+                             "text":  "Chỉ tiêu",
+                             "bold":  true
+                         },
+                         {
+                             "text":  "Mã chỉ tiêu",
+                             "bold":  true
+                         },
+                         {
+                             "text":  "Số tiền",
+                             "bold":  true
+                         }
+                     ],
+    "tableRows":  [
+                      {
+                          "cells":  [
+                                        {
+                                            "text":  "1"
+                                        },
+                                        {
+                                            "text":  "Doanh thu tính thuế thu nhập doanh nghiệp"
+                                        },
+                                        {
+                                            "text":  "[11]",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "",
+                                            "value":  {
+                                                          "path":  "ct11",
+                                                          "root":  "tkchinh"
+                                                      }
+                                        }
+                                    ]
+                      },
+                      {
+                          "cells":  [
+                                        {
+                                            "text":  "2"
+                                        },
+                                        {
+                                            "text":  "Số thuế TNDN phải nộp"
+                                        },
+                                        {
+                                            "text":  "[12]",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "",
+                                            "value":  {
+                                                          "path":  "ct12",
+                                                          "root":  "tkchinh"
+                                                      }
+                                        }
+                                    ]
+                      },
+                      {
+                          "cells":  [
+                                        {
+                                            "text":  "3"
+                                        },
+                                        {
+                                            "text":  "Số thuế TNDN được miễn, giảm"
+                                        },
+                                        {
+                                            "text":  "[13]",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "",
+                                            "value":  {
+                                                          "path":  "ct13",
+                                                          "root":  "tkchinh"
+                                                      }
+                                        }
+                                    ]
+                      },
+                      {
+                          "cells":  [
+                                        {
+                                            "text":  "4"
+                                        },
+                                        {
+                                            "text":  "Số thuế TNDN phải nộp sau miễn, giảm ([14]=[12]-[13])"
+                                        },
+                                        {
+                                            "text":  "[14]",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "",
+                                            "value":  {
+                                                          "path":  "ct14",
+                                                          "root":  "tkchinh"
+                                                      }
+                                        }
+                                    ]
+                      },
+                      {
+                          "cells":  [
+                                        {
+                                            "text":  "5"
+                                        },
+                                        {
+                                            "text":  "Số thuế TNDN nộp thừa kỳ trước chuyển sang kỳ này (nếu có)"
+                                        },
+                                        {
+                                            "text":  "[15]",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "",
+                                            "value":  {
+                                                          "path":  "ct15",
+                                                          "root":  "tkchinh"
+                                                      }
+                                        }
+                                    ]
+                      },
+                      {
+                          "cells":  [
+                                        {
+                                            "text":  "6"
+                                        },
+                                        {
+                                            "text":  "Số thuế TNDN đã tạm nộp trong năm đến thời điểm quyết toán"
+                                        },
+                                        {
+                                            "text":  "[16]",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "",
+                                            "value":  {
+                                                          "path":  "ct16",
+                                                          "root":  "tkchinh"
+                                                      }
+                                        }
+                                    ]
+                      },
+                      {
+                          "cells":  [
+                                        {
+                                            "text":  "7"
+                                        },
+                                        {
+                                            "text":  "Chênh lệch giữa số thuế phải nộp và số thuế đã tạm nộp trong năm ([17]=[14]-[16])"
+                                        },
+                                        {
+                                            "text":  "[17]",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "",
+                                            "value":  {
+                                                          "path":  "ct17",
+                                                          "root":  "tkchinh"
+                                                      }
+                                        }
+                                    ]
+                      },
+                      {
+                          "cells":  [
+                                        {
+                                            "text":  "8"
+                                        },
+                                        {
+                                            "text":  "Số thuế TNDN còn phải nộp sau quyết toán ([18]=[14]-[15]-[16])"
+                                        },
+                                        {
+                                            "text":  "[18]",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "",
+                                            "value":  {
+                                                          "path":  "ct18",
+                                                          "root":  "tkchinh"
+                                                      }
+                                        }
+                                    ]
+                      }
+                  ],
+    "headerFields":  [
+                         {
+                             "label":  "Kỳ tính thuế:",
+                             "root":  "ttkthue",
+                             "code":  "01",
+                             "path":  "TKhaiThue/KyKKhaiThue/kyKKhai",
+                             "format":  "period"
+                         },
+                         {
+                             "label":  "",
+                             "root":  "ttkthue",
+                             "code":  "02/03",
+                             "path":  "TKhaiThue/loaiTKhai",
+                             "format":  "filing"
+                         },
+                         {
+                             "code":  "04",
+                             "label":  "Tên người nộp thuế:",
+                             "root":  "ttkthue",
+                             "path":  "NNT/tenNNT",
+                             "sourceLine":  2619
+                         },
+                         {
+                             "code":  "05",
+                             "label":  "Mã số thuế:",
+                             "root":  "ttkthue",
+                             "path":  "NNT/mst",
+                             "sourceLine":  2622
+                         },
+                         {
+                             "code":  "06",
+                             "label":  "Tên tổ chức, cá nhân cung cấp dịch vụ làm thủ tục về thuế (nếu có):",
+                             "root":  "ttkthue",
+                             "path":  "DLyThue/tenDLyThue",
+                             "sourceLine":  2626
+                         },
+                         {
+                             "code":  "07",
+                             "label":  "Mã số thuế:",
+                             "root":  "ttkthue",
+                             "path":  "DLyThue/mstDLyThue",
+                             "sourceLine":  2630
+                         },
+                         {
+                             "code":  "08",
+                             "label":  "Hợp đồng dịch vụ làm thủ tục về thuế: Số",
+                             "root":  "ttkthue",
+                             "path":  "DLyThue/soHDongDLyThue",
+                             "sourceLine":  2634,
+                             "suffixPath":  "DLyThue/ngayKyHDDLyThue",
+                             "suffixFormat":  "date"
+                         }
+                     ],
+    "headerTemplate":  "tkhaiHeader-04TNDN-TT89",
+    "headerFacts":  [
+                        {
+                            "label":  "Kỳ tính thuế:",
+                            "code":  "01",
+                            "expressions":  [
+                                                "ihtkk:kyTinhThue($kyKKhai,$kieuKy,$ttkthue/TKhaiThue/KyKKhaiThue/kyKKhaiTuNgay,$ttkthue/TKhaiThue/KyKKhaiThue/kyKKhaiDenNgay)"
+                                            ]
+                        },
+                        {
+                            "label":  "Lần đầu: [ ] [03] Bổ sung lần thứ: [ ] [02] Lần đầu: [X] [03] Bổ sung lần thứ: [ ]",
+                            "code":  "02",
+                            "expressions":  [
+                                                "$ttkthue/TKhaiThue/soLan"
+                                            ]
+                        },
+                        {
+                            "label":  "Tên người nộp thuế:",
+                            "code":  "04",
+                            "expressions":  [
+                                                "$ttkthue/NNT/tenNNT"
+                                            ]
+                        },
+                        {
+                            "label":  "Mã số thuế:",
+                            "code":  "05",
+                            "expressions":  [
+                                                "$ttkthue/NNT/mst"
+                                            ]
+                        },
+                        {
+                            "label":  "Tên tổ chức, cá nhân cung cấp dịch vụ làm thủ tục về thuế (nếu có):",
+                            "code":  "06",
+                            "expressions":  [
+                                                "$ttkthue/DLyThue/tenDLyThue"
+                                            ]
+                        },
+                        {
+                            "label":  "Mã số thuế:",
+                            "code":  "07",
+                            "expressions":  [
+                                                "$ttkthue/DLyThue/mstDLyThue"
+                                            ]
+                        },
+                        {
+                            "label":  "Hợp đồng dịch vụ làm thủ tục về thuế: Số ngày",
+                            "code":  "08",
+                            "expressions":  [
+                                                "$ttkthue/DLyThue/soHDongDLyThue",
+                                                "ihtkk:stringDatetime($ngayKyHDDLyThue,\u0027dd/mm/yyyy\u0027)"
+                                            ]
+                        }
+                    ],
+    "headerGroups":  [
+
+                     ],
+    "legalReference":  "Kèm theo Thông tư số 89/2026/TT-BTC ngày 30 tháng 6 năm 2026 của Bộ trưởng Bộ Tài chính",
+    "scopeNote":  "(Áp dụng đối với phương pháp tỷ lệ trên doanh thu)",
+    "sourceEvidence":  {
+                           "path":  "data\\xslt\\XSLT 3.0.9\\TKhaiThue\\xslt\\TNDN\\TKhai_TNDN_04_TT89.xslt",
+                           "sha256":  "d0f324f8232eb9671027706a010e952f65e5609229a8d3e89bdbb00435e528f1",
+                           "inspectedDate":  "2026-10-23",
+                           "kind":  "static-template-inspection"
+                       },
+    "headerSourceEvidence":  {
+                                 "sha256":  "22a4c9c31a92ed03006b92909a38aec46c0ccbd41996d927062686abf6e86eb2",
+                                 "path":  "data\\xslt\\XSLT 3.0.9\\TKhaiThue\\include\\TKhaiHeader.xsl"
+                             },
+    "verificationStatus":  "Static mapping only; Windows visual/PDF and native macOS pending",
+    "unknowns":  [
+                     "Windows screenshot/print/PDF comparison pending",
+                     "Native macOS display/PDF pending",
+                     "Prompt labels TT89 as2025; installed template legal literal is89/2026 dated30/06/2026; no external legal verification performed"
+                 ],
+    "repeatedTables":  [
+                           {
+                               "insertAfterIndicator":  "11",
+                               "source":  {
+                                              "template":  "TKhai_TNDN_04_TT89.xslt",
+                                              "line":  52
+                                          },
+                               "columns":  [
+                                               {
+                                                   "label":  "STT",
+                                                   "fallbackPositionPrefix":  "1.",
+                                                   "format":  "text",
+                                                   "source":  "stt"
+                                               },
+                                               {
+                                                   "label":  "Chỉ tiêu",
+                                                   "format":  "text",
+                                                   "source":  "tenChiTieu"
+                                               },
+                                               {
+                                                   "label":  "Mã chỉ tiêu",
+                                                   "format":  "text",
+                                                   "source":  "maChiTieu"
+                                               },
+                                               {
+                                                   "label":  "Số tiền",
+                                                   "format":  "number",
+                                                   "source":  "soTien"
+                                               }
+                                           ],
+                               "inlineRows":  true,
+                               "recordPath":  "BangDoanhThu/CTietDoanhThu",
+                               "totals":  [
+
+                                          ],
+                               "title":  "Trong đó:"
+                           }
+                       ],
+    "indicatorStyle":  "brackets",
+    "usesStandardPeriodHeader":  false
+}

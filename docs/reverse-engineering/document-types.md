@@ -42,8 +42,8 @@ write a temp copy with `xmlns="…"` stripped before running XSLT.
 | **05/KK-TNCN** | `394` (also `42`, `864`) | **2.1.6** | `data/xslt/XSLT 2.1.6/TKhaiThue/xslt/CNKK/TKhai_05KK_TNCN.xslt` | portrait | **Full** (16 rows) |
 | **05/QTT-TNCN** | `953` (legacy `395`) | 2.5.1, 2.5.2, 2.7.9, 2.8.3, 2.8.4, 2.8.5, **2.9.3** | `data/xslt/XSLT 2.9.3/TKhaiThue/xslt/TNCN/TKhai_05QTT_TNCN_TT80.xslt` | portrait | **Full** (26 rows, incl. `NVuQToanThay`) |
 | **03/TNDN** | `892` (legacy `03`) | 2.5.1, 2.8.3, 2.9.2, **2.9.4** | `data/xslt/XSLT 2.9.2/TKhaiThue/xslt/TNDN/TKhai_TNDN_03_TT80.xslt` | portrait | **Full** (74 rows, 66 mapped indicators) |
-| Financial statement B01/BCTC | `701` (and `1254`) | up to 2.9.0 | `TKhai_BCTC41_Nam.xslt` (v2.9.0 set) | portrait | Structured data view |
-| Financial statement B05/BCTC | `702` | 2.3.5 | B05 template | portrait | Structured data view |
+| Financial statement B01/BCTC | `701`, `1254` | 2.3.5 / 2.9.0 | `TKhai_BCTC_107_DD.xslt` / `TKhai_BCTC24_2024_Nam.xslt` | portrait | Reviewed exact-version layouts; see section 6 |
+| Financial statement B05/BCTC | `702` | 2.3.5 | `TKhai_BCTC_107_DG.xslt` | portrait | Reviewed exact-version layout; see section 6 |
 | Notice 01/TB-BSTT | `01/TB-BSTT` (notice registry key) | 2.1.0 | `data/xslt/XSLT 2.8.1/TBaoThue/xslt/TBao_107_TB_BSTT.xslt` | portrait | Structured data view |
 | Payment voucher | `CHUNGTU`, `MA_CTU=01` | `PBAN_TLIEU_XML` e.g. 4.0.1 | `data/xslt/CTu/GNT_4_0_1.xsl` | portrait | Structured data view |
 
@@ -92,11 +92,30 @@ registry, not copied template code.
   `kyKKhaiTuNgay`/`kyKKhaiDenNgay`.
 * **Appendices** are discovered dynamically from the first `<PLuc>` element; each child tag
   is the appendix ID. A form's appendix set is not fixed by the schema.
-* **Tables that repeat** (e.g. appendix line items) are inside appendix XSLTs; the main forms
-  in this project are fixed indicator tables.
+* **Tables that repeat** include appendix line items and the TT89 main-form revenue and
+  contract tables. Only paths recorded in reviewed specs receive official labels.
 * **Checkbox row** `[21]` of 01/GTGT accepts `true/false` or `1/0` (template tests both).
 
-## 6. Forms deliberately not rendered pixel-perfectly yet
+## 6. Additional reviewed layouts (2026-10-23)
+
+The following independently authored layouts are version-bound. Their factual labels,
+indicator paths and source template hashes are in the linked specs, also imported into
+the app's `form-specs.json`. Native executed status is tracked in `COMPATIBILITY.md`.
+
+| Registry code | Version | Display code | Evidence |
+|---|---|---|---|
+| 2002 | 3.0.9 | 04/TNDN TT89 | [Spec](forms/2002/spec.json) |
+| 2003 | 3.0.9 | 02/TNDN TT89 | [Spec](forms/2003/spec.json) |
+| 2004 | 3.0.9 | 05/TNDN TT89 | [Spec](forms/2004/spec.json) |
+| 701 | 2.3.5 | B01/BCTC TT107 | [Spec](forms/701/spec.json) |
+| 702 | 2.3.5 | B05/BCTC TT107 | [Spec](forms/702/spec.json) |
+| 1254 | 2.9.0 | B01/BCTC TT24 | [Spec](forms/1254/spec.json) |
+
+The TT89 legal-reference literal is recorded as observed in the installed template
+(89/2026/TT-BTC); this is not independent validation of its legal status. Other revisions
+retain the structured fallback. Financial notes remain text, preserving leading zeros.
+
+## 7. Forms deliberately not rendered pixel-perfectly yet
 
 | Area | Current macOS behaviour | Gap |
 |---|---|---|
@@ -105,5 +124,5 @@ registry, not copied template code.
 | Excel-based forms (`viewMethod=2`) | Not applicable (no entry uses it) | — |
 | Word forms (`viewMethod=3`) | Not applicable (no entry uses it) | — |
 
-The classifier still names these documents correctly (display code + kind) and never drops
-data.
+The classifier uses recovered registry identities. Structured fallback retains leaf values;
+this is not a claim of official layout coverage for every document.

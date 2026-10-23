@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TBao>
+  <MSo>01/TB-NSD</MSo><PBan>2.1.0</PBan>
+  <STBao><So>NSD-SYNTHETIC-01</So><NTBao>2026-10-23</NTBao></STBao>
+  <DLTBao>
+    <TNNT>DOANH NGHIỆP MẪU NSD</TNNT><MST>0000000000</MST>
+    <DChi>ĐỊA CHỈ MẪU NSD</DChi>
+    <DSLDo><LDo><LDo>LÝ DO MẪU THỨ NHẤT</LDo></LDo><LDo><LDo>LÝ DO MẪU THỨ HAI &amp; BỔ SUNG</LDo></LDo></DSLDo>
+    <Extension><Unmapped>NSD-EXTRA-VALUE</Unmapped></Extension>
+  </DLTBao>
+</TBao>

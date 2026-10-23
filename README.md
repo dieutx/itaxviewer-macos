@@ -5,13 +5,11 @@ built from black-box reverse engineering of the official Windows **iTax Viewer**
 
 * Opens `.xml` files from Finder, drag-and-drop, or `⌘O`
 * Classifies declarations, notices and payment vouchers using the official registry rules
-* Renders four priority forms with their real Vietnamese layout and indicator tables
+* Includes fourteen reviewed declaration/financial layouts, notice/voucher layouts and TT80 correction appendices
 * Prints with the native macOS print panel and exports multi-page PDF
 * Shows digital-signature and certificate metadata without ever claiming an unverified
   document is valid
-* Notifies you when a newer release is published (checks once a day; no document data is
-  ever sent) and opens the release page
-* Fully offline for document processing; no login, telemetry or cloud processing
+* Fully offline; no login, update fetch, telemetry or cloud processing
 
 > This is **not** an official product of the Vietnamese tax authority (Tổng cục Thuế /
 > GDT). It is an independent interoperability project. No assets from the original
@@ -21,25 +19,32 @@ built from black-box reverse engineering of the official Windows **iTax Viewer**
 
 ## Supported documents
 
-| Form | Internal code | Verified XML versions | Rendering |
+| Form | Internal code | Mapped XML versions | Rendering |
 |---|---|---|---|
 | **01/GTGT** – VAT declaration | `842` (legacy `01`) | 2.5.1, 2.6.8, 2.7.4, 2.8.3 | Full (27 rows) |
-| **05/KK-TNCN** – PIT withholding | `394` (legacy `42`, `864`) | 2.1.6 | Full (16 rows) |
-| **05/QTT-TNCN** – PIT finalisation | `953` (legacy `395`) | 2.5.x – 2.9.3 | Full (26 rows) |
-| **03/TNDN** – CIT finalisation | `892` (legacy `03`) | 2.5.1 – 2.9.4 | Full (74 rows) |
+| **05/KK-TNCN** – PIT withholding | `394` | 2.1.6 | Full (16 rows; native fixture PDF is one A4 page) |
+| **05/KK-TNCN TT80** | `864` | 2.9.3 | 18 rows including `[25.1]`; Windows visual comparison pending |
+| **05/QTT-TNCN** – PIT finalisation | `953` | 2.5.x – 2.9.3 | Full (26 rows) |
+| **05/QTT-TNCN legacy** | `395` | 2.4.2 | Separate 26-row layout; Windows visual comparison pending |
+| **04/GTGT** | `07`, `847` | `07`: 2.4.1/2.5.0; `847`: 2.5.1/2.6.8/2.7.4 | Version-specific tables, below-table totals and collection rows; Windows visual comparison pending |
+| **03/TNDN** – CIT finalisation | `892` | 2.5.1 – 2.9.4 | Full (74 rows) |
+| **04/TNDN, 02/TNDN, 05/TNDN TT89** | `2002`, `2003`, `2004` | 3.0.9 | Reviewed indicator/header mappings and repeated revenue/contract tables; Windows visual comparison pending |
+| **B01/BCTC, B05/BCTC TT107; B01/BCTC TT24** | `701`, `702`, `1254` | 2.3.5 / 2.3.5 / 2.9.0 | Separate six-column financial layouts, text notes and three signatories; Windows visual comparison pending |
 | **01/GTGT VAT-reduction appendices** | `PL_NQ43_GTGT`, `PL_NQ101_GTGT`, `PL_NQ142_GTGT` | any | Full appendix layout (I/II/III + totals) |
-| Notices (`TBaoThueDTu`, `THONGBAO`, …) | — | any | Structured data view |
-| Payment vouchers (`CHUNGTU`) | `MA_CTU` | any | Structured data view |
+| **01/KHBS / 01-1/KHBS** | `PL01_KHBS`, `PL01_1_KHBS` | Exact TT80 parent/version mapping | Correction/explanation layouts; Windows visual comparison pending |
+| Notices (`TBaoThueDTu`, `TBao`, …) | `843`, `844`, `01/TB-BSTT` | 2.5.6 / 2.4.9 / 2.1.0 respectively | Dedicated layouts for captured branches; other notices use structured data |
+| Payment vouchers (`CHUNGTU`) | `MA_CTU=01` | 4.0.1, VND | Dedicated layout; other revisions/currencies use structured data |
 | Registration, catalogs, customs, e-invoice | — | any | Structured data view |
-| All other 406 declaration codes | — | any | Structured data view + explicit warning |
+| Other 395 declaration codes | — | any | Structured data view + explicit warning |
 
-The registry shipped with the app contains **410 form codes / 244 display codes** extracted
+The registry shipped with the app contains **410 form codes** extracted
 from the installed `DMucTKhai.xml` (1,150 entries). See
 [`docs/reverse-engineering/document-types.md`](docs/reverse-engineering/document-types.md).
 
 **Known coverage gaps:** newer versions that use a different indicator numbering are not yet
-mapped to a dedicated layout — notably `864` (05/KK-TNCN under TT 80/2021, indicators
-`[16]–[32]`), legacy `395` (05/QTT), and the TT 89/2025 CIT forms (`2002`/`2003`/`2004`).
+mapped to a dedicated layout — including older revisions of `864` (2.5.1/2.8.3), `395`
+(2.1.6) and `07` (2.1.2). TT89 forms (`2002`/`2003`/`2004`) are mapped only at 3.0.9;
+their legal-reference literal is recorded from installed evidence, not independently validated.
 Those files open in the structured data view with all values and an explicit warning; they
 are never mis-labelled as fully rendered.
 
@@ -75,7 +80,8 @@ The helper uploads no local XML. Windows cannot compile AppKit/SwiftUI for macOS
 The viewer itself has no network entitlement and does not check for updates.
 
 The new version-bound layouts are `864` (2.9.3), `395` (2.4.2), `07` (2.4.1/2.5.0)
-and `847` (2.5.1/2.6.8/2.7.4). Standard TT80 `01/KHBS` and `01-1/KHBS` appendices
+and `847` (2.5.1/2.6.8/2.7.4), TT89 `2002`/`2003`/`2004` (3.0.9), and BCTC
+`701`/`702` (2.3.5) / `1254` (2.9.0). Standard TT80 `01/KHBS` and `01-1/KHBS` appendices
 also have dedicated layouts for the exact parent versions in the bundled mapping.
 These are independently recreated from traceable field facts; Windows visual and
 pagination comparison remains pending. Unmapped versions retain the structured view.
@@ -140,8 +146,10 @@ This mirrors the Swift registry lookup and XPath field mapping and asserts the e
 official indicator values for every fixture. It passes for all four priority forms, the
 payment voucher and the notice fixture.
 
-The Swift suite was executed on macOS 15 (Xcode 16.1 / Swift 6.0.2): **45 tests, 44 passed,
-1 skipped** (the optional external-fixture test). See
+The current Swift suite ran on the macOS 14 Actions runner (Xcode 15.4 / Swift 5.10):
+**80 tests, 79 passed, 1 skipped** (the optional external-fixture test). A separate
+external-fixture run passed for all nine bundled samples. Native WebKit/PDFKit QA passed
+for 20 rendered fixtures plus rejection of the XXE fixture. See
 [`COMPATIBILITY.md`](COMPATIBILITY.md) for the executed UI/print results.
 
 ### Bundled test data

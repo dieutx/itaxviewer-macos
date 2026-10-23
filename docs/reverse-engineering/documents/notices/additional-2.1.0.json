@@ -1,0 +1,79 @@
+{
+  "kind": "notice",
+  "evidenceType": "Installed registry/template static inspection plus local MSXML fixture transforms; Windows GUI and PDF parity pending",
+  "registry": "data/DMucTbao.xml",
+  "version": "2.1.0",
+  "namespaceRule": "Dedicated layouts require unprefixed exact root. Default namespace is tolerated by local-name parser; vendor XSLT oracle input has no namespace, as in its preparation pipeline.",
+  "legalReference": "Ban hành kèm theo Nghị định 70/2025/NĐ-CP ngày 20 tháng 3 năm 2025 của Bộ trưởng Bộ Tài chính",
+  "header": {
+    "title": "THÔNG BÁO",
+    "number": "STBao/So",
+    "date": "STBao/NTBao",
+    "datePattern": "Hà Nội, ngày dd tháng mm năm yyyy",
+    "recipient": "DLTBao/TNNT",
+    "taxCode": "DLTBao/MST",
+    "nationalHeading": ["CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM", "Độc lập - Tự do - Hạnh phúc"]
+  },
+  "variants": [
+    {
+      "id": "01/TB-NSD",
+      "root": "TBao",
+      "template": "data/xslt/XSLT 2.8.1/TBaoThue/xslt/TBao_108_TB_NSD.xslt",
+      "headerTemplate": "tbaoHeader_108_TB_NSD",
+      "headerLines": [1395, 1453],
+      "subject": "Về việc ngừng sử dụng hóa đơn",
+      "agency": ["BỘ TÀI CHÍNH", "CỤC THUẾ"],
+      "sections": [
+        {"kind":"prose", "references":["Luật Quản lý thuế ngày 13/6/2019", "Điểm c, Khoản 12, Điều 1 Nghị định số 70/2025/NĐ-CP ngày 20/3/2025", "Nghị định số 123/2020/NĐ-CP"],"sourceFields":["DLTBao/TNNT","DLTBao/MST","STBao/NTBao","STBao/So"]},
+        {"kind":"fields","fields":[{"label":"Mã số thuế:","source":"DLTBao/MST"},{"label":"Địa chỉ trụ sở kinh doanh:","source":"DLTBao/DChi"}]},
+        {"kind":"table","title":"Lý do thông báo ngừng sử dụng hóa đơn điện tử/hóa đơn điện tử khởi tạo từ máy tính tiền:","recordPath":"DLTBao/DSLDo/LDo","columns":[{"format":"index"},{"source":"LDo","format":"text"}],"note":"Nested LDo/LDo is intentional; outer LDo is a record."},
+        {"kind":"prose","effectiveTime":"0 giờ 0 phút 0 giây + STBao/NTBao","sourceFields":["DLTBao/TNNT","DLTBao/MST"],"reference":"Điều 4 Nghị định số 125/2020/NĐ-CP ngày 19/10/2020"}
+      ],
+      "signature":["CƠ QUAN THUẾ","THỦ TRƯỞNG CƠ QUAN THUẾ","(Chữ ký số)"],
+      "fixture":"notice_01_tb_nsd.xml"
+    },
+    {
+      "id":"01/TB-BSTT-NNT",
+      "root":"TBao",
+      "template":"data/xslt/XSLT 2.8.1/TBaoThue/xslt/TBao_107_TB_BSTT_NNT.xslt",
+      "headerTemplate":"tbaoHeader_107_TB_BSTT_NNT",
+      "headerLines":[1247,1313],
+      "subject":"Về việc giải trình, bổ sung thông tin, tài liệu",
+      "agencyFields":["DLTBao/TCQTCTren","DLTBao/TCQT"],
+      "sections":[
+        {"kind":"prose","text":"Căn cứ quy định của pháp luật thuế hiện hành về trách nhiệm của người nộp thuế trong việc cung cấp thông tin theo yêu cầu của cơ quan quản lý thuế;"},
+        {"kind":"table","title":"Để làm rõ các nội dung:","recordPath":"DLTBao/DSNDGTBSung/NDGTBSung","columns":[{"label":"STT","format":"index"},{"label":"Nội dung","source":"NDung"},{"label":"Hồ sơ thuế","source":"HSThue"},{"label":"Loại kỳ tính thuế","source":"LKTThue"},{"label":"Kỳ tính thuế","source":"KTThue"}]},
+        {"kind":"fields","fields":[{"label":"Về việc giải trình, bổ sung thông tin, tài liệu trong hồ sơ:","source":"DLTBao/MHSo"}]},
+        {"kind":"table","title":"{TCQT} đề nghị {TNNT} giải trình và bổ sung thông tin, tài liệu sau đây:","recordPath":"DLTBao/DSNDGTBSung/NDGTBSung","columns":[{"label":"STT","format":"index"},{"label":"Nội dung","source":"NDung"},{"label":"Hồ sơ thuế","source":"HSThue"},{"label":"Loại kỳ tính thuế","source":"LKTThue"},{"label":"Kỳ tính thuế","source":"KTThue"},{"label":"Thông tin tài liệu","source":"TTTLieu"}]},
+        {"kind":"prose","sourceFields":["DLTBao/THGTBSung","DLTBao/TCQT","DLTBao/DTCQT","DLTBao/DCCQT","DLTBao/TNNT"],"dateFormat":"ngày dd tháng mm năm yyyy"}
+      ],
+      "recipients":["Nơi nhận:","- Như trên;","- Lưu VT;"],
+      "signature":["CƠ QUAN THUẾ","THỦ TRƯỞNG CƠ QUAN THUẾ","(Chữ ký số)"],
+      "fixture":"notice_01_tb_bstt_nnt.xml"
+    },
+    {
+      "id":"01/TB-SSĐT",
+      "root":"TBTNhan",
+      "template":"data/xslt/XSLT 2.8.1/TBaoThue/xslt/TBao_01_TB_SSDT.xslt",
+      "headerTemplate":"tbaoHeader_01_TB_SSDT",
+      "headerLines":[903,967],
+      "subject":"Về việc tiếp nhận và kết quả xử lý về việc hóa đơn điện tử/chứng từ điện tử đã lập sai",
+      "agency":["BỘ TÀI CHÍNH","CỤC THUẾ"],
+      "legalReferencePrinted": false,
+      "sections":[
+        {"kind":"prose","source":"DLTBao/NTBNNT","text":"Sau khi xem xét Thông báo hóa đơn điện tử/chứng từ điện tử đã lập sai ngày {dd} tháng {mm} năm {yyyy} của:"},
+        {"kind":"fields","fields":[{"label":"Người nộp thuế:","source":"DLTBao/TNNT"},{"label":"Mã số thuế:","source":"DLTBao/MST"}]},
+        {"kind":"prose","text":"Cơ quan thuế thông báo tiếp nhận hóa đơn điện tử/chứng từ điện tử đã lập sai."},
+        {"kind":"prose","source":"DLTBao/NTBNNT","text":"Cơ quan Thuế đã tiếp nhận Thông báo hóa đơn điện tử/chứng từ điện tử đã lập sai ngày {dd} tháng {mm} năm {yyyy} của quý công ty."},
+        {"kind":"prose","text":"Cơ quan thuế thông báo để người nộp thuế biết, thực hiện."},
+        {"kind":"fields","fields":[{"label":"Mã hồ sơ:","source":"DLTBao/MHSo"}]}
+      ],
+      "signature":"Empty sigDiv only; no fixed signature heading",
+      "fixture":"notice_01_tb_ssdt.xml",
+      "rootCaution":"Factory also accepts TBao with this MSo, but this installed template selects TBTNhan paths only. Dedicated renderer deliberately falls back for TBao to preserve values."
+    }
+  ],
+  "unmappedFields":"Preserve every unconsumed nonempty leaf in a separately labelled XML path/value table, excluding Signature subtrees. No inferred labels or truncation.",
+  "branches":"No Y/N branch exists in these three templates. Do not impose registration-notice branch semantics on them.",
+  "unknowns":["Windows GUI capture pending", "Windows original PD4ML PDF pagination pending", "MSXML transform proves the installed XSLT output, not original app execution or XMLDSig validity", "Dedicated renderers for TNĐT and ĐKĐT remain pending"]
+}

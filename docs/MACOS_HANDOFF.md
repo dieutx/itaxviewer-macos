@@ -1,8 +1,9 @@
 # macOS Handoff
 
-This repository was prepared on a Windows analysis machine. The Windows iTax Viewer was
-decompiled and captured; the Swift app was written but **not compiled**. Follow this document
-on macOS to turn the source into a tested `.app`.
+This repository was prepared on a Windows analysis machine. On 2026-10-23 macOS Actions
+compiled and tested the app, built its universal bundle, opened the safe fixtures through
+LaunchServices, and exported native PDFs. See `COMPATIBILITY.md` for exact runs and limits.
+Follow this document on a local Mac to repeat checks and finish manual interaction/visual QA.
 
 ## 1. Prerequisites
 
@@ -32,7 +33,7 @@ cd iTaxViewerMac
 swift test 2>&1 | tee /tmp/itax-tests.log
 ```
 
-Expected: 33 XCTest methods pass. If compilation fails, fix the code, never delete or weaken
+Use the current test count in `COMPATIBILITY.md`. If compilation fails, fix the code, never delete or weaken
 assertions. Likely hotspots are listed in `AGENTS.md`.
 
 Then:
@@ -135,19 +136,18 @@ Record discrepancies in `COMPATIBILITY.md` with a screenshot and a root-cause no
 - Original crashes on an unmapped `<PLuc>` appendix; this app renders the data.
 - Footer page numbers are not implemented (WebKit limitation).
 - 01/GTGT `[11a]–[11c]` render on three stacked rows instead of one three-column row.
-- Notices, vouchers, BCTC, registration, customs and the other 406 codes use a structured
-  data view, not the official layout.
+- Captured notice/voucher revisions and the reviewed new declaration/KHBS revisions have
+  dedicated layouts; other codes/versions retain structured data. Consult the current matrix.
 
 ## 6. Remaining implementation work (prioritised)
 
 1. **P1** — fix any visual/data mismatches found above.
 2. **P3** — add specs for:
-   - `864` 05/KK-TNCN under TT 80/2021 (indicators `[16]–[32]`)
-   - `395` legacy 05/QTT
-   - `2002`/`2003`/`2004` TT 89/2025 CIT layouts
-   - `701`/`1254` B01/BCTC, `702` B05/BCTC
+   - earlier revisions of `864` and `395` (newest reviewed revisions have dedicated layouts)
+   - other revisions of `2002`/`2003`/`2004` (3.0.9 now has reviewed TT89 layouts)
+   - other BCTC variants (`701`/`702` 2.3.5 and `1254` 2.9.0 now have reviewed layouts)
    - official `PLuc` appendix layouts
-   - notice prose templates (e.g. `107` / 01/TB-BSTT)
+   - remaining notice prose templates (`01/TB-BSTT` is already mapped; `107` is not its notice code)
 3. **P4** — real XMLDSig verification:
    - XML C14N 1.0/1.1 over the referenced subtree;
    - digest check (SHA-1/256/512);

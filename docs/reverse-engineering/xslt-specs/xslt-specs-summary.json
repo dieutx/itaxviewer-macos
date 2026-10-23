@@ -2,13 +2,13 @@
  "templatesParsed": 1035,
  "templatesWithDisplayCode": 774,
  "distinctDisplayCodes": 447,
- "rows": 15201,
- "indicators": 2786,
+ "rows": 15469,
+ "indicators": 3448,
  "parseErrors": 7,
  "kinds": {
-  "section": 2894,
-  "row": 11502,
-  "listrow": 784,
-  "checkbox": 21
+  "section": 2374,
+  "row": 12305,
+  "listrow": 786,
+  "checkbox": 4
  }
 }

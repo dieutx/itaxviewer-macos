@@ -77,8 +77,9 @@ subject/issuer và trust store của hệ điều hành — xem [`signature-veri
 ## 7. Tệp "lạ" cần biết
 
 - **10 tệp `.rar`** nằm rải trong `data/xslt/**` (ví dụ `XSLT 2.8.4/TKhaiThue/xslt.rar`,
-  `XSLT 2.2.3/XSLT 2.5.2/TKhaiThue.rar`) — bản backup template của vendor, chưa đọc được
-  (chưa có unrar/libarchive hỗ trợ RAR).
+  `XSLT 2.2.3/XSLT 2.5.2/TKhaiThue.rar`). **Đã mở được** bằng 7-Zip 26.05: 145 tệp, 135 là
+  XSLT/XSL, **10 tệp không có bản nào trên đĩa** — chi tiết ở
+  [`rar-archives.md`](rar-archives.md).
 - 157 tệp `.bak` (bản cũ của XSLT/registry) — hữu ích để so version cũ.
 - 5 tệp `.pf` thuộc `jre/lib/cmm` (color profile của JRE, không liên quan).
 - 8 tệp `.ttf` là font Lucida của JRE (`jre/lib/fonts/`), không phải font tài liệu.

@@ -37,6 +37,12 @@ class ExtractorRegressionTests(unittest.TestCase):
         self.assertEqual(len(result["rows"]), 1)
         self.assertNotIn("origin", result["rows"][0])
 
+    def test_financial_numeric_code_preserves_leading_zeros_in_code_column(self):
+        result = self.extract_text('''<table><tr><td>STT</td><td>Chỉ tiêu</td><td>Mã số</td><td>Số cuối năm</td></tr>
+        <tr><td>I</td><td>Tiền</td><td>01</td><td><xsl:value-of select="$tkchinh/SoCuoiNam/ct01"/></td></tr></table>''')
+        self.assertEqual(result["rows"][0]["indicator"], "01")
+        self.assertEqual(result["rows"][0]["label"], "Tiền")
+
     def test_conditional_placeholders_and_currency_are_not_part_of_the_label(self):
         result = self.extract_text('''<div>Tổng doanh thu ([32] =[21]+[30]):
         <xsl:if test="$tkchinh/ct32 != ''"><xsl:value-of select="ihtkk:formatNumber($tkchinh/ct32)"/></xsl:if>

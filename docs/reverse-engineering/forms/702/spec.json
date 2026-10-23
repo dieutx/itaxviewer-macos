@@ -1,0 +1,1478 @@
+{
+    "displayCode":  "B05/BCTC",
+    "maTKhai":  "702",
+    "versions":  [
+                     "2.3.5"
+                 ],
+    "sourceTemplate":  "TKhai_BCTC_107_DG.xslt",
+    "columns":  [
+                    "STT",
+                    "Chỉ tiêu",
+                    "Mã số",
+                    "Thuyết minh",
+                    "Số cuối năm",
+                    "Số đầu năm"
+                ],
+    "rows":  [
+                 {
+                     "label":  "Tiền",
+                     "stt":  "I",
+                     "values":  [
+                                    {
+                                        "path":  "ThuyetMinh/ct01",
+                                        "root":  "tkchinh"
+                                    },
+                                    {
+                                        "path":  "SoCuoiNam/ct01",
+                                        "root":  "tkchinh"
+                                    },
+                                    {
+                                        "path":  "SoDauNam/ct01",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "summary",
+                     "source":  {
+                                    "template":  "TKhai_BCTC_107_DG.xslt",
+                                    "line":  54
+                                },
+                     "codes":  [
+                                   "01"
+                               ],
+                     "indicator":  "01"
+                 },
+                 {
+                     "label":  "Các khoản phải thu",
+                     "stt":  "II",
+                     "values":  [
+                                    {
+                                        "path":  "ThuyetMinh/ct03",
+                                        "root":  "tkchinh"
+                                    },
+                                    {
+                                        "path":  "SoCuoiNam/ct03",
+                                        "root":  "tkchinh"
+                                    },
+                                    {
+                                        "path":  "SoDauNam/ct03",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "summary",
+                     "source":  {
+                                    "template":  "TKhai_BCTC_107_DG.xslt",
+                                    "line":  62
+                                },
+                     "codes":  [
+                                   "03"
+                               ],
+                     "indicator":  "03"
+                 },
+                 {
+                     "label":  "Hàng tồn kho",
+                     "stt":  "III",
+                     "values":  [
+                                    {
+                                        "path":  "ThuyetMinh/ct05",
+                                        "root":  "tkchinh"
+                                    },
+                                    {
+                                        "path":  "SoCuoiNam/ct05",
+                                        "root":  "tkchinh"
+                                    },
+                                    {
+                                        "path":  "SoDauNam/ct05",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "summary",
+                     "source":  {
+                                    "template":  "TKhai_BCTC_107_DG.xslt",
+                                    "line":  70
+                                },
+                     "codes":  [
+                                   "05"
+                               ],
+                     "indicator":  "05"
+                 },
+                 {
+                     "label":  "Tài sản cố định",
+                     "stt":  "IV",
+                     "values":  [
+                                    {
+                                        "path":  "ThuyetMinh/ct10",
+                                        "root":  "tkchinh"
+                                    },
+                                    {
+                                        "path":  "SoCuoiNam/ct10",
+                                        "root":  "tkchinh"
+                                    },
+                                    {
+                                        "path":  "SoDauNam/ct10",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "summary",
+                     "source":  {
+                                    "template":  "TKhai_BCTC_107_DG.xslt",
+                                    "line":  78
+                                },
+                     "codes":  [
+                                   "10"
+                               ],
+                     "indicator":  "10"
+                 },
+                 {
+                     "label":  "Tài sản cố định hữu hình",
+                     "stt":  "1",
+                     "values":  [
+                                    {
+                                        "path":  "ThuyetMinh/ct11",
+                                        "root":  "tkchinh"
+                                    },
+                                    {
+                                        "path":  "SoCuoiNam/ct11",
+                                        "root":  "tkchinh"
+                                    },
+                                    {
+                                        "path":  "SoDauNam/ct11",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "row",
+                     "source":  {
+                                    "template":  "TKhai_BCTC_107_DG.xslt",
+                                    "line":  86
+                                },
+                     "codes":  [
+                                   "11"
+                               ],
+                     "indicator":  "11"
+                 },
+                 {
+                     "label":  "- Nguyên giá",
+                     "stt":  "",
+                     "values":  [
+                                    {
+                                        "path":  "ThuyetMinh/ct12",
+                                        "root":  "tkchinh"
+                                    },
+                                    {
+                                        "path":  "SoCuoiNam/ct12",
+                                        "root":  "tkchinh"
+                                    },
+                                    {
+                                        "path":  "SoDauNam/ct12",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "row",
+                     "source":  {
+                                    "template":  "TKhai_BCTC_107_DG.xslt",
+                                    "line":  94
+                                },
+                     "codes":  [
+                                   "12"
+                               ],
+                     "indicator":  "12"
+                 },
+                 {
+                     "label":  "- Hao mòn lũy kế",
+                     "stt":  "",
+                     "values":  [
+                                    {
+                                        "path":  "ThuyetMinh/ct13",
+                                        "root":  "tkchinh"
+                                    },
+                                    {
+                                        "path":  "SoCuoiNam/ct13",
+                                        "root":  "tkchinh"
+                                    },
+                                    {
+                                        "path":  "SoDauNam/ct13",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "row",
+                     "source":  {
+                                    "template":  "TKhai_BCTC_107_DG.xslt",
+                                    "line":  102
+                                },
+                     "codes":  [
+                                   "13"
+                               ],
+                     "indicator":  "13"
+                 },
+                 {
+                     "label":  "Tài sản cố định vô hình",
+                     "stt":  "2",
+                     "values":  [
+                                    {
+                                        "path":  "ThuyetMinh/ct15",
+                                        "root":  "tkchinh"
+                                    },
+                                    {
+                                        "path":  "SoCuoiNam/ct15",
+                                        "root":  "tkchinh"
+                                    },
+                                    {
+                                        "path":  "SoDauNam/ct15",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "row",
+                     "source":  {
+                                    "template":  "TKhai_BCTC_107_DG.xslt",
+                                    "line":  110
+                                },
+                     "codes":  [
+                                   "15"
+                               ],
+                     "indicator":  "15"
+                 },
+                 {
+                     "label":  "- Nguyên giá",
+                     "stt":  "",
+                     "values":  [
+                                    {
+                                        "path":  "ThuyetMinh/ct16",
+                                        "root":  "tkchinh"
+                                    },
+                                    {
+                                        "path":  "SoCuoiNam/ct16",
+                                        "root":  "tkchinh"
+                                    },
+                                    {
+                                        "path":  "SoDauNam/ct16",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "row",
+                     "source":  {
+                                    "template":  "TKhai_BCTC_107_DG.xslt",
+                                    "line":  118
+                                },
+                     "codes":  [
+                                   "16"
+                               ],
+                     "indicator":  "16"
+                 },
+                 {
+                     "label":  "- Hao mòn lũy kế",
+                     "stt":  "",
+                     "values":  [
+                                    {
+                                        "path":  "ThuyetMinh/ct17",
+                                        "root":  "tkchinh"
+                                    },
+                                    {
+                                        "path":  "SoCuoiNam/ct17",
+                                        "root":  "tkchinh"
+                                    },
+                                    {
+                                        "path":  "SoDauNam/ct17",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "row",
+                     "source":  {
+                                    "template":  "TKhai_BCTC_107_DG.xslt",
+                                    "line":  126
+                                },
+                     "codes":  [
+                                   "17"
+                               ],
+                     "indicator":  "17"
+                 },
+                 {
+                     "label":  "Tài sản khác",
+                     "stt":  "V",
+                     "values":  [
+                                    {
+                                        "path":  "ThuyetMinh/ct20",
+                                        "root":  "tkchinh"
+                                    },
+                                    {
+                                        "path":  "SoCuoiNam/ct20",
+                                        "root":  "tkchinh"
+                                    },
+                                    {
+                                        "path":  "SoDauNam/ct20",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "summary",
+                     "source":  {
+                                    "template":  "TKhai_BCTC_107_DG.xslt",
+                                    "line":  134
+                                },
+                     "codes":  [
+                                   "20"
+                               ],
+                     "indicator":  "20"
+                 },
+                 {
+                     "label":  "TỔNG CỘNG TÀI SẢN (30=01+03+05+10+20)",
+                     "stt":  "",
+                     "values":  [
+                                    {
+                                        "path":  "ThuyetMinh/ct30",
+                                        "root":  "tkchinh"
+                                    },
+                                    {
+                                        "path":  "SoCuoiNam/ct30",
+                                        "root":  "tkchinh"
+                                    },
+                                    {
+                                        "path":  "SoDauNam/ct30",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "summary",
+                     "source":  {
+                                    "template":  "TKhai_BCTC_107_DG.xslt",
+                                    "line":  142
+                                },
+                     "codes":  [
+                                   "30"
+                               ],
+                     "indicator":  "30"
+                 },
+                 {
+                     "label":  "Nợ phải trả",
+                     "stt":  "I",
+                     "values":  [
+                                    {
+                                        "path":  "ThuyetMinh/ct40",
+                                        "root":  "tkchinh"
+                                    },
+                                    {
+                                        "path":  "SoCuoiNam/ct40",
+                                        "root":  "tkchinh"
+                                    },
+                                    {
+                                        "path":  "SoDauNam/ct40",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "summary",
+                     "source":  {
+                                    "template":  "TKhai_BCTC_107_DG.xslt",
+                                    "line":  159
+                                },
+                     "codes":  [
+                                   "40"
+                               ],
+                     "indicator":  "40"
+                 },
+                 {
+                     "label":  "Tài sản thuần",
+                     "stt":  "II",
+                     "values":  [
+                                    {
+                                        "path":  "ThuyetMinh/ct45",
+                                        "root":  "tkchinh"
+                                    },
+                                    {
+                                        "path":  "SoCuoiNam/ct45",
+                                        "root":  "tkchinh"
+                                    },
+                                    {
+                                        "path":  "SoDauNam/ct45",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "summary",
+                     "source":  {
+                                    "template":  "TKhai_BCTC_107_DG.xslt",
+                                    "line":  167
+                                },
+                     "codes":  [
+                                   "45"
+                               ],
+                     "indicator":  "45"
+                 },
+                 {
+                     "label":  "Thặng dư/ thâm hụt lũy kế",
+                     "stt":  "1",
+                     "values":  [
+                                    {
+                                        "path":  "ThuyetMinh/ct46",
+                                        "root":  "tkchinh"
+                                    },
+                                    {
+                                        "path":  "SoCuoiNam/ct46",
+                                        "root":  "tkchinh"
+                                    },
+                                    {
+                                        "path":  "SoDauNam/ct46",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "row",
+                     "source":  {
+                                    "template":  "TKhai_BCTC_107_DG.xslt",
+                                    "line":  175
+                                },
+                     "codes":  [
+                                   "46"
+                               ],
+                     "indicator":  "46"
+                 },
+                 {
+                     "label":  "Các quỹ",
+                     "stt":  "2",
+                     "values":  [
+                                    {
+                                        "path":  "ThuyetMinh/ct47",
+                                        "root":  "tkchinh"
+                                    },
+                                    {
+                                        "path":  "SoCuoiNam/ct47",
+                                        "root":  "tkchinh"
+                                    },
+                                    {
+                                        "path":  "SoDauNam/ct47",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "row",
+                     "source":  {
+                                    "template":  "TKhai_BCTC_107_DG.xslt",
+                                    "line":  183
+                                },
+                     "codes":  [
+                                   "47"
+                               ],
+                     "indicator":  "47"
+                 },
+                 {
+                     "label":  "Tài sản thuần khác",
+                     "stt":  "3",
+                     "values":  [
+                                    {
+                                        "path":  "ThuyetMinh/ct48",
+                                        "root":  "tkchinh"
+                                    },
+                                    {
+                                        "path":  "SoCuoiNam/ct48",
+                                        "root":  "tkchinh"
+                                    },
+                                    {
+                                        "path":  "SoDauNam/ct48",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "row",
+                     "source":  {
+                                    "template":  "TKhai_BCTC_107_DG.xslt",
+                                    "line":  191
+                                },
+                     "codes":  [
+                                   "48"
+                               ],
+                     "indicator":  "48"
+                 },
+                 {
+                     "label":  "TỔNG CỘNG NGUỒN VỐN (50=40+45)",
+                     "stt":  "",
+                     "values":  [
+                                    {
+                                        "path":  "ThuyetMinh/ct500",
+                                        "root":  "tkchinh"
+                                    },
+                                    {
+                                        "path":  "SoCuoiNam/ct50",
+                                        "root":  "tkchinh"
+                                    },
+                                    {
+                                        "path":  "SoDauNam/ct50",
+                                        "root":  "tkchinh"
+                                    }
+                                ],
+                     "kind":  "summary",
+                     "source":  {
+                                    "template":  "TKhai_BCTC_107_DG.xslt",
+                                    "line":  199
+                                },
+                     "codes":  [
+                                   "50"
+                               ],
+                     "indicator":  "50"
+                 }
+             ],
+    "tableHeaders":  [
+                         {
+                             "text":  "STT",
+                             "bold":  true
+                         },
+                         {
+                             "text":  "Chỉ tiêu",
+                             "bold":  true
+                         },
+                         {
+                             "text":  "Mã số",
+                             "bold":  true
+                         },
+                         {
+                             "text":  "Thuyết minh",
+                             "bold":  true
+                         },
+                         {
+                             "text":  "Số cuối năm",
+                             "bold":  true
+                         },
+                         {
+                             "text":  "Số đầu năm",
+                             "bold":  true
+                         }
+                     ],
+    "tableRows":  [
+                      {
+                          "cells":  [
+                                        {
+                                            "text":  "A",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "B",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "C",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "D",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "1",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "2",
+                                            "bold":  true
+                                        }
+                                    ]
+                      },
+                      {
+                          "cells":  [
+                                        {
+                                            "text":  "",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "TÀI SẢN",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "",
+                                            "bold":  true
+                                        }
+                                    ]
+                      },
+                      {
+                          "cells":  [
+                                        {
+                                            "text":  "I",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "Tiền",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "01",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "",
+                                            "bold":  true,
+                                            "value":  {
+                                                          "path":  "ThuyetMinh/ct01",
+                                                          "root":  "tkchinh"
+                                                      },
+                                            "format":  "text",
+                                            "sourceLine":  54
+                                        },
+                                        {
+                                            "text":  "",
+                                            "bold":  true,
+                                            "value":  {
+                                                          "path":  "SoCuoiNam/ct01",
+                                                          "root":  "tkchinh"
+                                                      },
+                                            "format":  "number",
+                                            "sourceLine":  55
+                                        },
+                                        {
+                                            "text":  "",
+                                            "bold":  true,
+                                            "value":  {
+                                                          "path":  "SoDauNam/ct01",
+                                                          "root":  "tkchinh"
+                                                      },
+                                            "format":  "number",
+                                            "sourceLine":  56
+                                        }
+                                    ]
+                      },
+                      {
+                          "cells":  [
+                                        {
+                                            "text":  "II",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "Các khoản phải thu",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "03",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "",
+                                            "bold":  true,
+                                            "value":  {
+                                                          "path":  "ThuyetMinh/ct03",
+                                                          "root":  "tkchinh"
+                                                      },
+                                            "format":  "text",
+                                            "sourceLine":  62
+                                        },
+                                        {
+                                            "text":  "",
+                                            "bold":  true,
+                                            "value":  {
+                                                          "path":  "SoCuoiNam/ct03",
+                                                          "root":  "tkchinh"
+                                                      },
+                                            "format":  "number",
+                                            "sourceLine":  63
+                                        },
+                                        {
+                                            "text":  "",
+                                            "bold":  true,
+                                            "value":  {
+                                                          "path":  "SoDauNam/ct03",
+                                                          "root":  "tkchinh"
+                                                      },
+                                            "format":  "number",
+                                            "sourceLine":  64
+                                        }
+                                    ]
+                      },
+                      {
+                          "cells":  [
+                                        {
+                                            "text":  "III",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "Hàng tồn kho",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "05",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "",
+                                            "bold":  true,
+                                            "value":  {
+                                                          "path":  "ThuyetMinh/ct05",
+                                                          "root":  "tkchinh"
+                                                      },
+                                            "format":  "text",
+                                            "sourceLine":  70
+                                        },
+                                        {
+                                            "text":  "",
+                                            "bold":  true,
+                                            "value":  {
+                                                          "path":  "SoCuoiNam/ct05",
+                                                          "root":  "tkchinh"
+                                                      },
+                                            "format":  "number",
+                                            "sourceLine":  71
+                                        },
+                                        {
+                                            "text":  "",
+                                            "bold":  true,
+                                            "value":  {
+                                                          "path":  "SoDauNam/ct05",
+                                                          "root":  "tkchinh"
+                                                      },
+                                            "format":  "number",
+                                            "sourceLine":  72
+                                        }
+                                    ]
+                      },
+                      {
+                          "cells":  [
+                                        {
+                                            "text":  "IV",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "Tài sản cố định",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "10",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "",
+                                            "bold":  true,
+                                            "value":  {
+                                                          "path":  "ThuyetMinh/ct10",
+                                                          "root":  "tkchinh"
+                                                      },
+                                            "format":  "text",
+                                            "sourceLine":  78
+                                        },
+                                        {
+                                            "text":  "",
+                                            "bold":  true,
+                                            "value":  {
+                                                          "path":  "SoCuoiNam/ct10",
+                                                          "root":  "tkchinh"
+                                                      },
+                                            "format":  "number",
+                                            "sourceLine":  79
+                                        },
+                                        {
+                                            "text":  "",
+                                            "bold":  true,
+                                            "value":  {
+                                                          "path":  "SoDauNam/ct10",
+                                                          "root":  "tkchinh"
+                                                      },
+                                            "format":  "number",
+                                            "sourceLine":  80
+                                        }
+                                    ]
+                      },
+                      {
+                          "cells":  [
+                                        {
+                                            "text":  "1"
+                                        },
+                                        {
+                                            "text":  "Tài sản cố định hữu hình"
+                                        },
+                                        {
+                                            "text":  "11"
+                                        },
+                                        {
+                                            "text":  "",
+                                            "value":  {
+                                                          "path":  "ThuyetMinh/ct11",
+                                                          "root":  "tkchinh"
+                                                      },
+                                            "format":  "text",
+                                            "sourceLine":  86
+                                        },
+                                        {
+                                            "text":  "",
+                                            "value":  {
+                                                          "path":  "SoCuoiNam/ct11",
+                                                          "root":  "tkchinh"
+                                                      },
+                                            "format":  "number",
+                                            "sourceLine":  87
+                                        },
+                                        {
+                                            "text":  "",
+                                            "value":  {
+                                                          "path":  "SoDauNam/ct11",
+                                                          "root":  "tkchinh"
+                                                      },
+                                            "format":  "number",
+                                            "sourceLine":  88
+                                        }
+                                    ]
+                      },
+                      {
+                          "cells":  [
+                                        {
+                                            "text":  ""
+                                        },
+                                        {
+                                            "text":  "- Nguyên giá"
+                                        },
+                                        {
+                                            "text":  "12"
+                                        },
+                                        {
+                                            "text":  "",
+                                            "value":  {
+                                                          "path":  "ThuyetMinh/ct12",
+                                                          "root":  "tkchinh"
+                                                      },
+                                            "format":  "text",
+                                            "sourceLine":  94
+                                        },
+                                        {
+                                            "text":  "",
+                                            "value":  {
+                                                          "path":  "SoCuoiNam/ct12",
+                                                          "root":  "tkchinh"
+                                                      },
+                                            "format":  "number",
+                                            "sourceLine":  95
+                                        },
+                                        {
+                                            "text":  "",
+                                            "value":  {
+                                                          "path":  "SoDauNam/ct12",
+                                                          "root":  "tkchinh"
+                                                      },
+                                            "format":  "number",
+                                            "sourceLine":  96
+                                        }
+                                    ]
+                      },
+                      {
+                          "cells":  [
+                                        {
+                                            "text":  ""
+                                        },
+                                        {
+                                            "text":  "- Hao mòn lũy kế"
+                                        },
+                                        {
+                                            "text":  "13"
+                                        },
+                                        {
+                                            "text":  "",
+                                            "value":  {
+                                                          "path":  "ThuyetMinh/ct13",
+                                                          "root":  "tkchinh"
+                                                      },
+                                            "format":  "text",
+                                            "sourceLine":  102
+                                        },
+                                        {
+                                            "text":  "",
+                                            "value":  {
+                                                          "path":  "SoCuoiNam/ct13",
+                                                          "root":  "tkchinh"
+                                                      },
+                                            "format":  "number",
+                                            "sourceLine":  103
+                                        },
+                                        {
+                                            "text":  "",
+                                            "value":  {
+                                                          "path":  "SoDauNam/ct13",
+                                                          "root":  "tkchinh"
+                                                      },
+                                            "format":  "number",
+                                            "sourceLine":  104
+                                        }
+                                    ]
+                      },
+                      {
+                          "cells":  [
+                                        {
+                                            "text":  "2"
+                                        },
+                                        {
+                                            "text":  "Tài sản cố định vô hình"
+                                        },
+                                        {
+                                            "text":  "15"
+                                        },
+                                        {
+                                            "text":  "",
+                                            "value":  {
+                                                          "path":  "ThuyetMinh/ct15",
+                                                          "root":  "tkchinh"
+                                                      },
+                                            "format":  "text",
+                                            "sourceLine":  110
+                                        },
+                                        {
+                                            "text":  "",
+                                            "value":  {
+                                                          "path":  "SoCuoiNam/ct15",
+                                                          "root":  "tkchinh"
+                                                      },
+                                            "format":  "number",
+                                            "sourceLine":  111
+                                        },
+                                        {
+                                            "text":  "",
+                                            "value":  {
+                                                          "path":  "SoDauNam/ct15",
+                                                          "root":  "tkchinh"
+                                                      },
+                                            "format":  "number",
+                                            "sourceLine":  112
+                                        }
+                                    ]
+                      },
+                      {
+                          "cells":  [
+                                        {
+                                            "text":  ""
+                                        },
+                                        {
+                                            "text":  "- Nguyên giá"
+                                        },
+                                        {
+                                            "text":  "16"
+                                        },
+                                        {
+                                            "text":  "",
+                                            "value":  {
+                                                          "path":  "ThuyetMinh/ct16",
+                                                          "root":  "tkchinh"
+                                                      },
+                                            "format":  "text",
+                                            "sourceLine":  118
+                                        },
+                                        {
+                                            "text":  "",
+                                            "value":  {
+                                                          "path":  "SoCuoiNam/ct16",
+                                                          "root":  "tkchinh"
+                                                      },
+                                            "format":  "number",
+                                            "sourceLine":  119
+                                        },
+                                        {
+                                            "text":  "",
+                                            "value":  {
+                                                          "path":  "SoDauNam/ct16",
+                                                          "root":  "tkchinh"
+                                                      },
+                                            "format":  "number",
+                                            "sourceLine":  120
+                                        }
+                                    ]
+                      },
+                      {
+                          "cells":  [
+                                        {
+                                            "text":  ""
+                                        },
+                                        {
+                                            "text":  "- Hao mòn lũy kế"
+                                        },
+                                        {
+                                            "text":  "17"
+                                        },
+                                        {
+                                            "text":  "",
+                                            "value":  {
+                                                          "path":  "ThuyetMinh/ct17",
+                                                          "root":  "tkchinh"
+                                                      },
+                                            "format":  "text",
+                                            "sourceLine":  126
+                                        },
+                                        {
+                                            "text":  "",
+                                            "value":  {
+                                                          "path":  "SoCuoiNam/ct17",
+                                                          "root":  "tkchinh"
+                                                      },
+                                            "format":  "number",
+                                            "sourceLine":  127
+                                        },
+                                        {
+                                            "text":  "",
+                                            "value":  {
+                                                          "path":  "SoDauNam/ct17",
+                                                          "root":  "tkchinh"
+                                                      },
+                                            "format":  "number",
+                                            "sourceLine":  128
+                                        }
+                                    ]
+                      },
+                      {
+                          "cells":  [
+                                        {
+                                            "text":  "V",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "Tài sản khác",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "20",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "",
+                                            "bold":  true,
+                                            "value":  {
+                                                          "path":  "ThuyetMinh/ct20",
+                                                          "root":  "tkchinh"
+                                                      },
+                                            "format":  "text",
+                                            "sourceLine":  134
+                                        },
+                                        {
+                                            "text":  "",
+                                            "bold":  true,
+                                            "value":  {
+                                                          "path":  "SoCuoiNam/ct20",
+                                                          "root":  "tkchinh"
+                                                      },
+                                            "format":  "number",
+                                            "sourceLine":  135
+                                        },
+                                        {
+                                            "text":  "",
+                                            "bold":  true,
+                                            "value":  {
+                                                          "path":  "SoDauNam/ct20",
+                                                          "root":  "tkchinh"
+                                                      },
+                                            "format":  "number",
+                                            "sourceLine":  136
+                                        }
+                                    ]
+                      },
+                      {
+                          "cells":  [
+                                        {
+                                            "text":  "",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "TỔNG CỘNG TÀI SẢN (30=01+03+05+10+20)",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "30",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "",
+                                            "bold":  true,
+                                            "value":  {
+                                                          "path":  "ThuyetMinh/ct30",
+                                                          "root":  "tkchinh"
+                                                      },
+                                            "format":  "text",
+                                            "sourceLine":  142
+                                        },
+                                        {
+                                            "text":  "",
+                                            "bold":  true,
+                                            "value":  {
+                                                          "path":  "SoCuoiNam/ct30",
+                                                          "root":  "tkchinh"
+                                                      },
+                                            "format":  "number",
+                                            "sourceLine":  143
+                                        },
+                                        {
+                                            "text":  "",
+                                            "bold":  true,
+                                            "value":  {
+                                                          "path":  "SoDauNam/ct30",
+                                                          "root":  "tkchinh"
+                                                      },
+                                            "format":  "number",
+                                            "sourceLine":  144
+                                        }
+                                    ]
+                      },
+                      {
+                          "cells":  [
+                                        {
+                                            "text":  "",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "NGUỒN VỐN",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "",
+                                            "bold":  true
+                                        }
+                                    ]
+                      },
+                      {
+                          "cells":  [
+                                        {
+                                            "text":  "I",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "Nợ phải trả",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "40",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "",
+                                            "bold":  true,
+                                            "value":  {
+                                                          "path":  "ThuyetMinh/ct40",
+                                                          "root":  "tkchinh"
+                                                      },
+                                            "format":  "text",
+                                            "sourceLine":  159
+                                        },
+                                        {
+                                            "text":  "",
+                                            "bold":  true,
+                                            "value":  {
+                                                          "path":  "SoCuoiNam/ct40",
+                                                          "root":  "tkchinh"
+                                                      },
+                                            "format":  "number",
+                                            "sourceLine":  160
+                                        },
+                                        {
+                                            "text":  "",
+                                            "bold":  true,
+                                            "value":  {
+                                                          "path":  "SoDauNam/ct40",
+                                                          "root":  "tkchinh"
+                                                      },
+                                            "format":  "number",
+                                            "sourceLine":  161
+                                        }
+                                    ]
+                      },
+                      {
+                          "cells":  [
+                                        {
+                                            "text":  "II",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "Tài sản thuần",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "45",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "",
+                                            "bold":  true,
+                                            "value":  {
+                                                          "path":  "ThuyetMinh/ct45",
+                                                          "root":  "tkchinh"
+                                                      },
+                                            "format":  "text",
+                                            "sourceLine":  167
+                                        },
+                                        {
+                                            "text":  "",
+                                            "bold":  true,
+                                            "value":  {
+                                                          "path":  "SoCuoiNam/ct45",
+                                                          "root":  "tkchinh"
+                                                      },
+                                            "format":  "number",
+                                            "sourceLine":  168
+                                        },
+                                        {
+                                            "text":  "",
+                                            "bold":  true,
+                                            "value":  {
+                                                          "path":  "SoDauNam/ct45",
+                                                          "root":  "tkchinh"
+                                                      },
+                                            "format":  "number",
+                                            "sourceLine":  169
+                                        }
+                                    ]
+                      },
+                      {
+                          "cells":  [
+                                        {
+                                            "text":  "1"
+                                        },
+                                        {
+                                            "text":  "Thặng dư/ thâm hụt lũy kế"
+                                        },
+                                        {
+                                            "text":  "46"
+                                        },
+                                        {
+                                            "text":  "",
+                                            "value":  {
+                                                          "path":  "ThuyetMinh/ct46",
+                                                          "root":  "tkchinh"
+                                                      },
+                                            "format":  "text",
+                                            "sourceLine":  175
+                                        },
+                                        {
+                                            "text":  "",
+                                            "value":  {
+                                                          "path":  "SoCuoiNam/ct46",
+                                                          "root":  "tkchinh"
+                                                      },
+                                            "format":  "number",
+                                            "sourceLine":  176
+                                        },
+                                        {
+                                            "text":  "",
+                                            "value":  {
+                                                          "path":  "SoDauNam/ct46",
+                                                          "root":  "tkchinh"
+                                                      },
+                                            "format":  "number",
+                                            "sourceLine":  177
+                                        }
+                                    ]
+                      },
+                      {
+                          "cells":  [
+                                        {
+                                            "text":  "2"
+                                        },
+                                        {
+                                            "text":  "Các quỹ"
+                                        },
+                                        {
+                                            "text":  "47"
+                                        },
+                                        {
+                                            "text":  "",
+                                            "value":  {
+                                                          "path":  "ThuyetMinh/ct47",
+                                                          "root":  "tkchinh"
+                                                      },
+                                            "format":  "text",
+                                            "sourceLine":  183
+                                        },
+                                        {
+                                            "text":  "",
+                                            "value":  {
+                                                          "path":  "SoCuoiNam/ct47",
+                                                          "root":  "tkchinh"
+                                                      },
+                                            "format":  "number",
+                                            "sourceLine":  184
+                                        },
+                                        {
+                                            "text":  "",
+                                            "value":  {
+                                                          "path":  "SoDauNam/ct47",
+                                                          "root":  "tkchinh"
+                                                      },
+                                            "format":  "number",
+                                            "sourceLine":  185
+                                        }
+                                    ]
+                      },
+                      {
+                          "cells":  [
+                                        {
+                                            "text":  "3"
+                                        },
+                                        {
+                                            "text":  "Tài sản thuần khác"
+                                        },
+                                        {
+                                            "text":  "48"
+                                        },
+                                        {
+                                            "text":  "",
+                                            "value":  {
+                                                          "path":  "ThuyetMinh/ct48",
+                                                          "root":  "tkchinh"
+                                                      },
+                                            "format":  "text",
+                                            "sourceLine":  191
+                                        },
+                                        {
+                                            "text":  "",
+                                            "value":  {
+                                                          "path":  "SoCuoiNam/ct48",
+                                                          "root":  "tkchinh"
+                                                      },
+                                            "format":  "number",
+                                            "sourceLine":  192
+                                        },
+                                        {
+                                            "text":  "",
+                                            "value":  {
+                                                          "path":  "SoDauNam/ct48",
+                                                          "root":  "tkchinh"
+                                                      },
+                                            "format":  "number",
+                                            "sourceLine":  193
+                                        }
+                                    ]
+                      },
+                      {
+                          "cells":  [
+                                        {
+                                            "text":  "",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "TỔNG CỘNG NGUỒN VỐN (50=40+45)",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "50",
+                                            "bold":  true
+                                        },
+                                        {
+                                            "text":  "",
+                                            "bold":  true,
+                                            "value":  {
+                                                          "path":  "ThuyetMinh/ct500",
+                                                          "root":  "tkchinh"
+                                                      },
+                                            "format":  "text",
+                                            "sourceLine":  199
+                                        },
+                                        {
+                                            "text":  "",
+                                            "bold":  true,
+                                            "value":  {
+                                                          "path":  "SoCuoiNam/ct50",
+                                                          "root":  "tkchinh"
+                                                      },
+                                            "format":  "number",
+                                            "sourceLine":  200
+                                        },
+                                        {
+                                            "text":  "",
+                                            "bold":  true,
+                                            "value":  {
+                                                          "path":  "SoDauNam/ct50",
+                                                          "root":  "tkchinh"
+                                                      },
+                                            "format":  "number",
+                                            "sourceLine":  201
+                                        }
+                                    ]
+                      }
+                  ],
+    "headerFields":  [
+
+                     ],
+    "headerTemplate":  "tkhaiHeader-BCTC133_B01a",
+    "headerFacts":  [
+                        {
+                            "condition":  null,
+                            "expression":  "$ttkthue/NNT/tenNNT"
+                        },
+                        {
+                            "condition":  null,
+                            "expression":  "$ttkthue/NNT/mst"
+                        },
+                        {
+                            "condition":  null,
+                            "expression":  "$ttkthue/NNT/dchiNNT"
+                        },
+                        {
+                            "condition":  null,
+                            "expression":  "$ttkthue/NNT/tenHuyenNNT"
+                        },
+                        {
+                            "condition":  null,
+                            "expression":  "$ttkthue/NNT/tenTinhNNT"
+                        },
+                        {
+                            "condition":  null,
+                            "expression":  "$ttkthue/NNT/dthoaiNNT"
+                        },
+                        {
+                            "condition":  null,
+                            "expression":  "$ttkthue/NNT/faxNNT"
+                        },
+                        {
+                            "condition":  null,
+                            "expression":  "$ttkthue/NNT/emailNNT"
+                        },
+                        {
+                            "condition":  "$tkchinh/bctcDaKiemToan = \u0027true\u0027 or $tkchinh/bctcDaKiemToan = \u00271\u0027",
+                            "expression":  null
+                        },
+                        {
+                            "condition":  null,
+                            "expression":  "$tkchinh/tenYKienKToan"
+                        }
+                    ],
+    "footerTemplate":  "tkhaiFooter-BCTC107-DG",
+    "footerFacts":  [
+                        {
+                            "expression":  "$tkchinh/nguoiLapBieu"
+                        },
+                        {
+                            "expression":  "$tkchinh/keToanTruong"
+                        },
+                        {
+                            "expression":  "ihtkk:stringDatetime($tkchinh/ngayLap,\u0027dd\u0027)"
+                        },
+                        {
+                            "expression":  "ihtkk:stringDatetime($tkchinh/ngayLap,\u0027mm\u0027)"
+                        },
+                        {
+                            "expression":  "ihtkk:stringDatetime($tkchinh/ngayLap,\u0027yyyy\u0027)"
+                        },
+                        {
+                            "expression":  "$tkchinh/thuTruongdonVi"
+                        }
+                    ],
+    "financialTitle":  "BÁO CÁO TÌNH HÌNH TÀI CHÍNH",
+    "legalBasis":  "Ban hành theo Thông tư số 107/2017/TT-BTC ngày 10/10/2017 của Bộ Tài chính",
+    "footnotes":  [
+                      "Ghi chú: (1) Số liệu trong các chỉ tiêu có dấu (*) được ghi bằng số âm dưới hình thức ghi trong ngoặc đơn (...). (2) Các chỉ tiêu không có số liệu thì không phải báo cáo nhưng không được đánh lại \"Mã số\". (3) Doanh nghiệp có kỳ kế toán năm là năm dương lịch (X) thì \"Số cuối năm\" có thể ghi là \"31.12.X\"; \"Số đầu năm\" có thể ghi là \"01.01.X\". (4) Đối với trường hợp thuê dịch vụ làm kế toán, làm kế toán trưởng thì phải ghi rõ số Giấy chứng nhận đăng ký hành nghề dịch vụ kế toán, tên đơn vị cung cấp dịch vụ kế toán."
+                  ],
+    "verificationStatus":  "STATIC_MSXML_ORACLE_WINDOWS_VISUAL_PENDING",
+    "sourceEvidence":  {
+                           "path":  "data/xslt/XSLT 2.3.5/TKhaiThue/xslt/BCTC/TKhai_BCTC_107_DG.xslt",
+                           "sha256":  "9b45a65c1ffda42997110ecfbbed5a8648f1219e194ecc0004acc51337466e0b",
+                           "registry":  "DMucTKhai.xml",
+                           "orientation":  "0",
+                           "method":  "PowerShell XML inspection; MSXML transform oracle; not Windows UI/PDF parity"
+                       },
+    "headerSourceEvidence":  {
+                                 "sha256":  "76655b50bc6b71882b57768f26dda97fca9e0c50ca308006e1d19627c6ec9287",
+                                 "path":  "data/xslt/XSLT 2.3.5/TKhaiThue/include/TKhaiHeader.xsl"
+                             },
+    "footerSourceEvidence":  {
+                                 "sha256":  "700f45aac0ca7ba260f04e7dac2df5b6515bd4532d2599f9497863cf8db092eb",
+                                 "path":  "data/xslt/XSLT 2.3.5/TKhaiThue/include/TKhaiFooter.xsl"
+                             }
+}

@@ -32,6 +32,25 @@ khác — `data/itax.html`).
 - Sau khi chèn HTML, jQuery chạy khi DOM ready: mọi phần tử `.number` được thay bằng
   `formatNumber(text)` (`$(document).ready(... .number ...)`).
 
+### 2.1 Dựng lại được ngay trên Windows — `tools/msxml_oracle.js`
+
+Không cần GUI: `cscript //nologo docs/reverse-engineering/tools/msxml_oracle.js <ho-so.xml>
+<mau.xslt> <ra.html>` chạy đúng MSXML 3.0 + `XSLTemplate` như `data/run.html`. Đã kiểm chứng
+2026-10-23. Lượt probe 9.353 ký tự ban đầu dùng template TNCN khác, không chứng minh
+mapping 864. Batch đúng registry ở `evidence/oracle-batch-2026-10-23.json` xác nhận
+864/2.9.3 có 7.970 ký tự, 127 ô và đủ 13 số tiền tổng hợp khác nhau.
+
+Ba giới hạn phải nhớ khi dùng oracle:
+
+1. `xsl:include` resolve theo đường dẫn tương đối của mẫu → phải trỏ vào **cây XSLT của bản cài**,
+   không copy lẻ từng tệp.
+2. `<msxsl:script>` chạy được, nhưng các hàm dùng `node.nextNode()` (DOM của IE). Gọi
+   `ihtkk:formatNumber('123')` bằng chuỗi → `Object doesn't support this property or method`;
+   chỉ gọi được với node-set. Đây là lý do phải **port** các hàm sang Swift, không thể thay
+   bằng libxslt.
+3. Oracle trả HTML **trước** bước `.number`; muốn HTML cuối cùng phải port `formatNumber` từ
+   `data/js/common.js` rồi áp lên phần tử `class="number"`.
+
 ## 3. Định dạng số — quy tắc chính xác
 
 Hai bản copy cùng một thuật toán: `data/js/common.js` (chạy sau render) và JScript
@@ -103,4 +122,9 @@ Phụ lục được gộp bằng `mergePDF` (PDFBox `PDFMergerUtility`) sau khi
 
 Xem [`../GAP-REGISTER.md`](../GAP-REGISTER.md). Tóm tắt: chưa có **PDF thật của từng mẫu** để
 đối chiếu số trang; chưa có metric font TTF của `fonts.jar` (không được copy); vài dòng chỉ
-tiêu nằm ngoài bảng XSLT; 10 tệp `.rar` backup chưa đọc được.
+tiêu nằm ngoài bảng XSLT.
+
+Đã đóng trong lượt 2026-10-23: HTML gốc thì **đã có nguồn** (oracle MSXML, mục 2.1) — từ nay
+chỉ còn thiếu PDF/ảnh cho bước so bố cục; 10 tệp `.rar` đã mở được bằng 7-Zip (145 tệp, 10 tệp
+duy nhất); đã đo được registry → tệp thật (13/1.920 tham chiếu XSLT thiếu, 1.006/1.015
+tham chiếu XSD thiếu vì bản cài không có `data/XMLSchema`).

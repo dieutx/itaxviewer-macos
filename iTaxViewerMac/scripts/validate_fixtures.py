@@ -183,10 +183,22 @@ for _code, _indicators in {
     "395": {"21": "1", "28": "1000008", "34": "1000014", "46": "1000026"},
     "07": {"21": "1000001", "32": "1000012", "33": "1000013"},
     "847": {"21": "1000001", "31": "1000011"},
+    "2002": {"11": "200200011", "18": "200200018"},
+    "2003": {"16": "200300016", "26": "200300026"},
+    "2004": {"18": "200400018", "22": "200400022"},
 }.items():
     EXPECTED[f"declaration_{_code}_static"] = {
         "kind": "Tờ khai thuế", "display": SPECS[_code]["displayCode"], "code": _code,
         "indicators": _indicators,
+    }
+
+for _code in ("701", "702", "1254"):
+    EXPECTED[f"financial_{_code}_static"] = {
+        "kind": "Tờ khai thuế", "display": SPECS[_code]["displayCode"], "code": _code,
+    }
+for _name, _display in (("nsd", "01/TB-NSD"), ("bstt_nnt", "01/TB-BSTT-NNT"), ("ssdt", "01/TB-SSĐT")):
+    EXPECTED[f"notice_01_tb_{_name}"] = {
+        "kind": "Thông báo / văn bản của cơ quan thuế", "display": _display, "code": None,
     }
 
 
@@ -202,7 +214,7 @@ def classify(fixture: Fixture) -> tuple[str, str | None, str | None]:
         return "Tờ khai thuế", display.strip() if display else None, code
     if root == "CHUNGTU":
         return "Giấy nộp tiền / chứng từ", "CT-01", "01"
-    if root in ("TBaoThueDTu", "THONGBAO", "THONG_BAO", "TBao"):
+    if root in ("TBaoThueDTu", "THONGBAO", "THONG_BAO", "TBao", "TBTNhan"):
         mso = next(descendants(fixture.root, "MSo"), None)
         code = next(descendants(fixture.root, "maTBao"), None)
         return ("Thông báo / văn bản của cơ quan thuế",

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HSoThueDTu>
+  <HSoKhaiThue>
+    <TTinChung>
+      <TTinTKhaiThue>
+        <TKhaiThue>
+          <maTKhai>2002</maTKhai>
+          <pbanTKhaiXML>3.0.9</pbanTKhaiXML>
+          <tenTKhai>Tờ khai thuế thu nhập doanh nghiệp</tenTKhai>
+          <moTaBMau>Kèm theo Thông tư số 89/2026/TT-BTC ngày 30 tháng 6 năm 2026 của Bộ trưởng Bộ Tài chính</moTaBMau>
+          <loaiTKhai>C</loaiTKhai>
+          <soLan>0</soLan>
+          <KyKKhaiThue>
+            <kieuKy>Y</kieuKy>
+            <kyKKhai>2026</kyKKhai>
+          </KyKKhaiThue>
+        </TKhaiThue>
+        <NNT>
+          <tenNNT>MẪU-2002-04</tenNNT>
+          <mst>0000000000</mst>
+        </NNT>
+        <DLyThue>
+          <tenDLyThue>MẪU-2002-06</tenDLyThue>
+          <mstDLyThue>0000000000</mstDLyThue>
+          <soHDongDLyThue>MẪU-2002-08</soHDongDLyThue>
+          <ngayKyHDDLyThue>2026-06-30</ngayKyHDDLyThue>
+        </DLyThue>
+      </TTinTKhaiThue>
+    </TTinChung>
+    <CTieuTKhaiChinh>
+      <ct11>200200011</ct11>
+      <ct12>200200012</ct12>
+      <ct13>200200013</ct13>
+      <ct14>200200014</ct14>
+      <ct15>200200015</ct15>
+      <ct16>200200016</ct16>
+      <ct17>200200017</ct17>
+      <ct18>200200018</ct18>
+      <BangDoanhThu><CTietDoanhThu><stt></stt><tenChiTieu>Doanh thu tổng hợp mẫu 1</tenChiTieu><maChiTieu>[11.1]</maChiTieu><soTien>300000001</soTien></CTietDoanhThu><CTietDoanhThu><stt>1.12</stt><tenChiTieu>Doanh thu tổng hợp mẫu 2</tenChiTieu><maChiTieu>[11.2]</maChiTieu><soTien>300000002</soTien></CTietDoanhThu></BangDoanhThu>
+    </CTieuTKhaiChinh>
+  </HSoKhaiThue>
+</HSoThueDTu>

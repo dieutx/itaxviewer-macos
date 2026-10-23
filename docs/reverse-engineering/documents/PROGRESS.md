@@ -1,6 +1,13 @@
 # Tiến độ RE tài liệu — iTax Viewer Windows
 
-Cập nhật lần cuối: **2026-10-23** (phiên 3: legacy 01/GTGT + renderer thông báo/chứng từ).
+Cập nhật lần cuối: **2026-10-23** (build native qua runner Mac, spec 864/395/07/847, phụ lục KHBS).
+
+**Kết quả thực thi mới:** 80 XCTest (79 pass, một test tuỳ chọn skip), integration chín
+sample pass; universal arm64/x86_64 build + launch pass. Native WebKit/AppKit xuất 20
+fixture PDF và từ chối XXE; 05/KK-TNCN 394 đã về một trang. Xem
+[`../../../COMPATIBILITY.md`](../../../COMPATIBILITY.md) và
+[`results/gap-build-2026-10-23.md`](results/gap-build-2026-10-23.md). Những số trang dưới đây
+trước phần này là kết quả lịch sử; đối chiếu ảnh Windows của layout mới vẫn pending.
 
 > File này là bản người đọc. Bản máy đọc: `progress.json`. Kết quả chi tiết:
 > `results/<kind>-<id>.md`. Inventory: `document-inventory.md` / `.json` / `document-registry.csv`.
@@ -13,9 +20,9 @@ Cập nhật lần cuối: **2026-10-23** (phiên 3: legacy 01/GTGT + renderer t
 
 | Loại | Root | Trạng thái clone | Inventory | Capture | Spec | Fixture | Handoff |
 |---|---|---|---|---|---|---|---|
-| Tờ khai | `HSoThueDTu` | **partial** — 4 form full | ✅ 1150 entry / 410 mã / 568 template | 🟡 4 form | 🟡 4 form | 🟡 | 🟡 |
+| Tờ khai | `HSoThueDTu` | **partial** — 14 spec theo version + alias 01 | ✅ 1150 entry / 410 mã / 568 template | 🟡 4 form | 🟡 14 spec | 🟡 | 🟡 |
 | Phụ lục | `PLuc` | **partial** — NQ43/101/142 | ✅ | 🟡 | 🟡 | 🟡 | 🟡 |
-| Thông báo | `TBaoThueDTu`, `THONGBAO`, `TBao`, … | **partial** — 3 mẫu có spec | ✅ 226 entry (9 registry) | 🟡 843 / 844 / 01-TB-BSTT | 🟡 3 mẫu | 🟡 3 fixture | 🟡 |
+| Thông báo | `TBaoThueDTu`, `THONGBAO`, `TBao`, `TBTNhan`, … | **partial** — 6 mẫu có spec | ✅ 226 entry (9 registry) | 🟡 843 / 844 / 01-TB-BSTT | 🟡 6 mẫu | 🟡 | 🟡 |
 | Giấy nộp tiền | `CHUNGTU` | **partial** — CT-01 có spec + layout | ✅ 5 entry, 1 mã | ✅ 4.0.1 (2 biến thể) | ✅ CT-01 | ✅ 1 fixture | 🟡 |
 | Đăng ký thuế | `DKyThueDTu` | generic-only | ✅ 11 entry / 10 mã | ⬜ | ⬜ | ⬜ | ⬜ |
 | Danh mục | `DanhMucDTu` | generic-only | 🟡 1 entry mẫu (template placeholder) | ⬜ | ⬜ | ⬜ | ⬜ |
@@ -29,7 +36,7 @@ Ký hiệu: ✅ xong · 🟡 một phần · ⬜ chưa làm.
 | Mã | Mẫu số | Version | Render | PDF | Verify Windows | Ghi chú |
 |---|---|---|---|---|---|---|
 | 842 | 01/GTGT | 2.8.3 | ✅ | ✅ 2 trang | 🟡 header/table | phụ lục NQ142 |
-| 394 | 05/KK-TNCN | 2.1.6 | ✅ | ✅ 2 trang | 🟡 header/table | |
+| 394 | 05/KK-TNCN | 2.1.6 | ✅ | ✅ **1 trang native** | 🟡 header/table, số trang khớp | nhóm địa bàn/liên hệ chung hàng |
 | 953 | 05/QTT-TNCN | 2.9.3 | ✅ | ✅ 2 trang | 🟡 header/table | |
 | 892 | 03/TNDN | 2.9.4 | ✅ | ✅ 4+1 trang | ⬜ reference invalid | |
 
@@ -66,8 +73,8 @@ số tiền bằng chữ). Đã chạy XCTest; đối chiếu ảnh/PDF Windows 
 | `PL_NQ142_GTGT` | ✅ layout I/II/III | ⬜ | ✅ | ✅ synthetic | ⬜ |
 | `PL_NQ43_GTGT` | ✅ bảng phẳng | ⬜ | ✅ | ✅ test in-memory | ⬜ |
 | `PL_NQ101_GTGT` | ✅ bảng phẳng | ⬜ | ✅ | ⬜ | ⬜ |
-| `PL01_KHBS` | generic-only | ⬜ | ⬜ | ⬜ | ⬜ |
-| `PL01_1_KHBS` | generic-only | ⬜ | ⬜ | ⬜ | ⬜ |
+| `PL01_KHBS` | layout TT80, exact parent/version | ⬜ | ✅ facts tĩnh | ✅ synthetic | native PDF đã chạy; Windows visual pending |
+| `PL01_1_KHBS` | layout TT80, exact parent/version | ⬜ | ✅ facts tĩnh | ✅ synthetic | native PDF đã chạy; Windows visual pending |
 | `BaoCaoTaiChinh` | generic-only | ⬜ | ⬜ | 🟡 fixture tối giản | ⬜ |
 | khác | generic-only | ⬜ | ⬜ | ⬜ | ⬜ |
 

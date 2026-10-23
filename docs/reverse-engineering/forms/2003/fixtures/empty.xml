@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HSoThueDTu>
+  <HSoKhaiThue>
+    <TTinChung>
+      <TTinTKhaiThue>
+        <TKhaiThue>
+          <maTKhai>2003</maTKhai>
+          <pbanTKhaiXML>3.0.9</pbanTKhaiXML>
+          <tenTKhai>Tờ khai thuế thu nhập doanh nghiệp</tenTKhai>
+          <moTaBMau>Ban hành kèm theo Thông tư số  89/2026/TT-BTC ngày 30 tháng 6 năm 2026  của Bộ trưởng Bộ Tài chính</moTaBMau>
+          <loaiTKhai>C</loaiTKhai>
+          <soLan>0</soLan>
+          <KyKKhaiThue>
+            <kieuKy>D</kieuKy>
+            <kyKKhai>30/06/2026</kyKKhai>
+          </KyKKhaiThue>
+        </TKhaiThue>
+        <NNT>
+          <tenNNT>CÔNG TY DỮ LIỆU MẪU TT89</tenNNT>
+          <mst>0000000000</mst>
+        </NNT>
+        <DLyThue>
+          <tenDLyThue>MẪU-2003-13</tenDLyThue>
+          <mstDLyThue>0000000000</mstDLyThue>
+          <soHDongDLyThue>MẪU-2003-15</soHDongDLyThue>
+          <ngayKyHDDLyThue>2026-06-30</ngayKyHDDLyThue>
+        </DLyThue>
+      </TTinTKhaiThue>
+    </TTinChung>
+    <CTieuTKhaiChinh>
+      <ThongTinBenChuyenNhuong>
+        <ct04>MẪU-2003-04</ct04>
+        <ct05>0000000000</ct05>
+      </ThongTinBenChuyenNhuong>
+      <ThongTinBenNhanChuyenNhuong>
+        <ct06>MẪU-2003-06</ct06>
+        <ct07>0000000000</ct07>
+        <CT08>
+          <diaChi>MẪU-2003-08a</diaChi>
+          <xaPhuong_ten>MẪU-2003-08b</xaPhuong_ten>
+          <tinhTP_ten>MẪU-2003-08c</tinhTP_ten>
+        </CT08>
+        <CT09>
+          <ct09a>MẪU-2003-09a</ct09a>
+          <ct09b_ten>MẪU-2003-09b</ct09b_ten>
+          <ct09c_ten>MẪU-2003-09c</ct09c_ten>
+        </CT09>
+        <BangChiTietBDS></BangChiTietBDS>
+      </ThongTinBenNhanChuyenNhuong>
+      <ThongTinCoQuanBanDauGia>
+        <ct10>MẪU-2003-10</ct10>
+        <ct11>0000000000</ct11>
+        <CT12>
+          <diaChi>MẪU-2003-12</diaChi>
+          <xaPhuong_ten>MẪU-2003-12-xaPhuong_ten</xaPhuong_ten>
+          <tinhTP_ten>MẪU-2003-12-tinhTP_ten</tinhTP_ten>
+        </CT12>
+      </ThongTinCoQuanBanDauGia>
+      <ct16>0</ct16>
+      <ct17>0</ct17>
+      <ct18>0</ct18>
+      <ct19>0</ct19>
+      <ct20>0</ct20>
+      <ct21>0</ct21>
+      <ct22>0</ct22>
+      <ct23>0</ct23>
+      <ct24>0</ct24>
+      <ct25>0</ct25>
+      <ct26>0</ct26>
+      <cnbds>1</cnbds>
+      <bds>0</bds>
+      <tsk>0</tsk>
+    </CTieuTKhaiChinh>
+  </HSoKhaiThue>
+</HSoThueDTu>

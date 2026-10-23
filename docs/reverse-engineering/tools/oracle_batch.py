@@ -68,7 +68,7 @@ def main():
             code, version, kind = text(root, "MA_CTU"), text(root, "PBAN_TLIEU_XML"), "paymentVoucher"
         elif name == "TBaoThueDTu":
             code, version, kind = text(root, "maTBao"), text(root, "pbanTBao"), "notice"
-        elif name == "TBao":
+        elif name in ("TBao", "TBTNhan"):
             code, version, kind = text(root, "MSo"), text(root, "PBan"), "notice"
         else:
             result["status"] = "unmapped-root"
@@ -76,7 +76,7 @@ def main():
         result.update({"code": code, "version": version})
         # DMucTbao's inventory groups these registry rows under TBaoThueDTu,
         # but HSoThueFactory dispatches the MSo family through TBaoHDDT.
-        registry_root = "TBaoThueDTu" if name == "TBao" else name
+        registry_root = "TBaoThueDTu" if name in ("TBao", "TBTNhan") else name
         matches = [row for row in registry if row["kind"] == kind and row["root"] == registry_root and row["id"] == code and row["version"] == version]
         templates = sorted({row["xslt"] for row in matches if row["xslt"]})
         if len(templates) != 1:

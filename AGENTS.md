@@ -7,9 +7,9 @@ Read this file first, then `docs/MACOS_HANDOFF.md`, `README.md` and `COMPATIBILI
 
 An independent macOS viewer for Vietnamese tax XML (iTax Viewer compatible behaviour).
 The Windows application has already been reverse engineered; the recovered facts are in
-`docs/reverse-engineering/`. The Swift/SwiftUI implementation is complete in source form but
-**has never been compiled or run**, because the previous environment was Windows without
-Xcode/Swift.
+`docs/reverse-engineering/`. On 2026-10-23 the Windows continuation used macOS GitHub
+Actions to compile/test, launch the universal app and execute native WebKit/PDFKit checks.
+See `COMPATIBILITY.md` for executed results and the remaining manual/visual gaps.
 
 ## Your first job (in order)
 
