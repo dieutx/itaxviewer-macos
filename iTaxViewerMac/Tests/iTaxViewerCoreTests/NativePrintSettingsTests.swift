@@ -17,8 +17,9 @@ final class NativePrintSettingsTests: XCTestCase {
         let info = NativePrintSettings.make(orientation: .portrait, savingTo: destination, base: previous)
 
         XCTAssertEqual(info.dictionary()[NSPrintInfo.AttributeKey.allPages] as? Bool, true)
-        XCTAssertNil(info.dictionary()[NSPrintInfo.AttributeKey.firstPage])
-        XCTAssertNil(info.dictionary()[NSPrintInfo.AttributeKey.lastPage])
+        // AppKit materializes these defaults when dictionary() is read again.
+        XCTAssertEqual(info.dictionary()[NSPrintInfo.AttributeKey.firstPage] as? Int, 1)
+        XCTAssertEqual(info.dictionary()[NSPrintInfo.AttributeKey.lastPage] as? Int, Int.max)
         XCTAssertEqual(info.jobDisposition, .save)
         XCTAssertEqual(info.dictionary()[NSPrintInfo.AttributeKey.jobSavingURL] as? URL, destination)
         XCTAssertFalse(info === previous)
