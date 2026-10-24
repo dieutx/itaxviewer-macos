@@ -119,7 +119,7 @@ jobs:
         run: swift test
 
       - name: Download the universal app built on arm64
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: iTaxViewerMac-universal
           path: iTaxViewerMac/build
