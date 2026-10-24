@@ -19,6 +19,8 @@ public enum NativePrintSettings {
         info.isHorizontallyCentered = true
         info.isVerticallyCentered = false
         // A prior print-panel page selection must not truncate a PDF export.
+        info.dictionary().removeObject(forKey: NSPrintInfo.AttributeKey.firstPage)
+        info.dictionary().removeObject(forKey: NSPrintInfo.AttributeKey.lastPage)
         info.dictionary()[NSPrintInfo.AttributeKey.allPages] = true
         info.jobDisposition = url == nil ? .spool : .save
         info.dictionary().removeObject(forKey: NSPrintInfo.AttributeKey.jobSavingURL)
