@@ -53,33 +53,7 @@ jobs:
 
       - name: Launch the native app bundle
         working-directory: iTaxViewerMac
-        run: |
-          APP="$PWD/build/iTaxViewerMac.app"
-          APP_PID=""
-          trap 'if [[ -n "$APP_PID" ]]; then kill "$APP_PID" 2>/dev/null || true; fi' EXIT
-          mkdir -p "$PWD/build/native-qa"
-          OPEN_REPORT="$PWD/build/native-qa/app-open-report.json"
-          open -n "$APP" --args --qa-open-report "$OPEN_REPORT"
-          for attempt in {1..10}; do
-            for candidate in $(pgrep -x iTaxViewerMac || true); do
-              if [[ "$(ps -p "$candidate" -o comm=)" == "$APP/Contents/MacOS/iTaxViewerMac" ]]; then
-                APP_PID="$candidate"
-                break
-              fi
-            done
-            [[ -n "$APP_PID" ]] && break
-            sleep 1
-          done
-          [[ -n "$APP_PID" ]] || { echo "App process did not launch" >&2; exit 1; }
-          sleep 3
-          kill -0 "$APP_PID"
-          for fixture in "$PWD"/Tests/iTaxViewerCoreTests/Fixtures/*.xml; do
-            name="$(basename "$fixture")"
-            [[ "$name" == "xxe_attack.xml" ]] && continue
-            open -a "$APP" "$fixture"
-            python3 scripts/check_app_open.py "$OPEN_REPORT" "$name"
-          done
-          echo "Native app bundle launched and loaded the file; Finder gestures and drag/drop remain manual checks."
+        run: bash scripts/run_app_qa.sh
 
       - name: Native WebKit print and PDF smoke checks
         working-directory: iTaxViewerMac
@@ -122,3 +96,52 @@ jobs:
             iTaxViewerMac/build/BUILD-INFO.txt
             iTaxViewerMac/build/SHA256SUMS.txt
           if-no-files-found: error
+
+  intel-validation:
+    needs: build
+    runs-on: macos-15-intel
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Intel toolchain and architecture
+        run: |
+          test "$(uname -m)" = x86_64
+          xcodebuild -version
+          swift --version
+
+      - name: Intel unit tests
+        working-directory: iTaxViewerMac
+        run: swift test
+
+      - name: Download the universal app built on arm64
+        uses: actions/download-artifact@v4
+        with:
+          name: iTaxViewerMac-universal
+          path: iTaxViewerMac/build
+
+      - name: Verify and unpack the same distributed binary
+        working-directory: iTaxViewerMac/build
+        run: |
+          shasum -a 256 -c SHA256SUMS.txt
+          ditto -x -k iTaxViewerMac-universal.zip .
+          codesign --verify --deep --strict --verbose=2 iTaxViewerMac.app
+          lipo -verify_arch arm64 x86_64 iTaxViewerMac.app/Contents/MacOS/iTaxViewerMac
+
+      - name: Launch universal app and open all safe fixtures on Intel
+        working-directory: iTaxViewerMac
+        run: bash scripts/run_app_qa.sh
+
+      - name: Intel native print and PDF checks
+        working-directory: iTaxViewerMac
+        timeout-minutes: 4
+        run: python3 scripts/run_native_qa.py
+
+      - name: Upload Intel QA evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: iTaxViewerMac-native-qa-intel
+          path: iTaxViewerMac/build/native-qa/
+          if-no-files-found: warn

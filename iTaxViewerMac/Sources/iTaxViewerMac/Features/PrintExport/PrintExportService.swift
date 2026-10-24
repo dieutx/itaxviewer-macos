@@ -8,8 +8,7 @@ enum PrintExportService {
 
     static func print(orientation: PageOrientation) {
         guard let webView = WebViewStore.shared.webView, let window = webView.window else { return }
-        let info = (NSPrintInfo.shared.copy() as? NSPrintInfo) ?? NSPrintInfo.shared
-        configure(info, orientation: orientation)
+        let info = NativePrintSettings.make(orientation: orientation)
         let operation = webView.printOperation(with: info)
         operation.showsPrintPanel = true
         operation.showsProgressPanel = true
@@ -28,10 +27,7 @@ enum PrintExportService {
         panel.nameFieldStringValue = base.isEmpty ? "ho-so-thue.pdf" : "\(base).pdf"
         guard panel.runModal() == .OK, let url = panel.url else { return }
 
-        let info = (NSPrintInfo.shared.copy() as? NSPrintInfo) ?? NSPrintInfo.shared
-        configure(info, orientation: orientation)
-        info.jobDisposition = .save
-        info.dictionary()[NSPrintInfo.AttributeKey.jobSavingURL] = url
+        let info = NativePrintSettings.make(orientation: orientation, savingTo: url)
 
         let operation = webView.printOperation(with: info)
         operation.showsPrintPanel = false
@@ -44,18 +40,4 @@ enum PrintExportService {
         } }
     }
 
-    private static func configure(_ info: NSPrintInfo, orientation: PageOrientation) {
-        // A4, matching the original: top/left/right 20 mm, bottom 10 mm.
-        let mm = 72.0 / 25.4
-        info.paperSize = NSSize(width: 210 * mm, height: 297 * mm)
-        info.topMargin = 20 * mm
-        info.leftMargin = 20 * mm
-        info.rightMargin = 20 * mm
-        info.bottomMargin = 10 * mm
-        info.orientation = orientation == .landscape ? .landscape : .portrait
-        info.horizontalPagination = .fit
-        info.verticalPagination = .automatic
-        info.isHorizontallyCentered = true
-        info.isVerticallyCentered = false
-    }
 }

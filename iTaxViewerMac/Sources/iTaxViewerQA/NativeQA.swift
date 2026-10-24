@@ -118,21 +118,16 @@ private final class FixtureRunner {
         try rendered.html.write(to: base.appendingPathExtension("html"), atomically: true, encoding: .utf8)
         let pdfURL = base.appendingPathExtension("pdf")
         if files.fileExists(atPath: pdfURL.path) { try files.removeItem(at: pdfURL) }
-        let info = (NSPrintInfo.shared.copy() as? NSPrintInfo) ?? NSPrintInfo.shared
-        info.dictionary()[NSPrintInfo.AttributeKey.allPages] = true
+        // Reproduce a user's previous partial-page PDF job. The production
+        // configuration must reset this or multi-page fixture checks fail.
+        let previousJob = NSPrintInfo()
+        previousJob.dictionary()[NSPrintInfo.AttributeKey.allPages] = false
+        previousJob.dictionary()[NSPrintInfo.AttributeKey.firstPage] = 2
+        previousJob.dictionary()[NSPrintInfo.AttributeKey.lastPage] = 2
+        previousJob.jobDisposition = .save
+        previousJob.dictionary()[NSPrintInfo.AttributeKey.jobSavingURL] = output.appendingPathComponent("stale.pdf")
+        let info = NativePrintSettings.make(orientation: rendered.orientation, savingTo: pdfURL, base: previousJob)
         let mm = 72.0 / 25.4
-        info.paperSize = NSSize(width: 210 * mm, height: 297 * mm)
-        info.orientation = rendered.orientation == .landscape ? .landscape : .portrait
-        info.topMargin = 20 * mm
-        info.leftMargin = 20 * mm
-        info.rightMargin = 20 * mm
-        info.bottomMargin = 10 * mm
-        info.horizontalPagination = .fit
-        info.verticalPagination = .automatic
-        info.isHorizontallyCentered = true
-        info.isVerticallyCentered = false
-        info.jobDisposition = .save
-        info.dictionary()[NSPrintInfo.AttributeKey.jobSavingURL] = pdfURL
         let operation = web.printOperation(with: info)
         operation.showsPrintPanel = false
         operation.showsProgressPanel = false
