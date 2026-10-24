@@ -65,7 +65,7 @@ jobs:
 
       - name: Upload native QA evidence
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: iTaxViewerMac-native-qa
           path: iTaxViewerMac/build/native-qa/
@@ -90,7 +90,7 @@ jobs:
           shasum -a 256 iTaxViewerMac-universal.zip iTaxViewerMac-unsigned.dmg > SHA256SUMS.txt
 
       - name: Upload app bundle
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: iTaxViewerMac-universal
           path: |
@@ -119,7 +119,7 @@ jobs:
         run: swift test
 
       - name: Download the universal app built on arm64
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: iTaxViewerMac-universal
           path: iTaxViewerMac/build
@@ -143,7 +143,7 @@ jobs:
 
       - name: Upload Intel QA evidence
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: iTaxViewerMac-native-qa-intel
           path: iTaxViewerMac/build/native-qa/
