@@ -115,6 +115,12 @@ The TT89 legal-reference literal is recorded as observed in the installed templa
 (89/2026/TT-BTC); this is not independent validation of its legal status. Other revisions
 retain the structured fallback. Financial notes remain text, preserving leading zeros.
 
+Additional notice layouts at version 2.1.0 use exact unprefixed roots: `TBao` for
+`01/TB-NSD` and `01/TB-BSTT-NNT`, `TBTNhan` for `01/TB-SSĐT`. Field paths, nested
+reason records, repeated clarification tables, header facts and source hashes are in
+[the notice spec](documents/notices/additional-2.1.0.json). Other roots/versions fall back
+to structured data. GUI and original Windows PDF parity remain pending.
+
 ## 7. Forms deliberately not rendered pixel-perfectly yet
 
 | Area | Current macOS behaviour | Gap |

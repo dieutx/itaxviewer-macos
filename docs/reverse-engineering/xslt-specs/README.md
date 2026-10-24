@@ -16,7 +16,7 @@ python3 docs/reverse-engineering/tools/extract_xslt_specs.py \
   --verify iTaxViewerMac/Sources/iTaxViewerCore/Resources/form-specs.json
 ```
 
-- `--verify` so bản trích với 8 spec đã viết tay. Exit code `1` nếu có mục lệch.
+- `--verify` so bản trích với 14 spec đã review. Exit code `1` nếu có mục lệch.
 - Chỉ dùng thư viện chuẩn Python; không cần JDK, không cần mạng.
 - Không ghi gì vào `Program Files`; chỉ đọc.
 
@@ -53,7 +53,7 @@ template cùng tên ở version mới hơn. Kiểm này đo nhãn/chỉ tiêu/c�
 
 ## 4. Kiểm chứng với spec viết tay
 
-`--verify` so từng dòng của 8 entry trong `form-specs.json` với bản trích:
+`--verify` so từng dòng của 14 entry trong `form-specs.json` với bản trích:
 
 | Mẫu | Kết quả |
 |---|---|
@@ -65,6 +65,8 @@ template cùng tên ở version mới hơn. Kiểm này đo nhãn/chỉ tiêu/c�
 | 03/TNDN (`TKhai_TNDN_03_TT80`) | khớp 74 dòng; bản trích **thừa 1 dòng** hợp lệ ("Loại thu nhập miễn thuế") và **nhiều hơn** 3 mã (`C3a`, `C3b`, `C8a` từng để trống) |
 | 04/GTGT TT80 | khớp sau khi bổ sung trường ngoài bảng và ghim đúng template/hash |
 | 04/GTGT (cũ) | khớp sau khi bổ sung trường ngoài bảng và giữ nguyên dấu câu của nguồn được chọn |
+| TT89 2002 / 2003 / 2004 | khớp lần lượt 8 / 11 / 7 dòng spec; cột và chỉ tiêu khớp |
+| BCTC 701 / 702 / 1254 | khớp lần lượt 34 / 18 / 66 dòng spec; giữ mã số có số 0 đầu |
 
 Cách đo: mọi dòng của spec phải xuất hiện **đúng thứ tự** trong bản trích (so theo nhãn); nếu
 spec có mã chỉ tiêu thì bản trích phải trùng mã. Bản trích được phép **thừa** dòng/mã vì nó là

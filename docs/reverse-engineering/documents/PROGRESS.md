@@ -1,10 +1,10 @@
 # Tiến độ RE tài liệu — iTax Viewer Windows
 
-Cập nhật lần cuối: **2026-10-23** (build native qua runner Mac, spec 864/395/07/847, phụ lục KHBS).
+Cập nhật lần cuối: **2026-10-23** (build native qua runner Mac, thêm TT89/BCTC/thông báo, phụ lục KHBS).
 
-**Kết quả thực thi mới:** 80 XCTest (79 pass, một test tuỳ chọn skip), integration chín
-sample pass; universal arm64/x86_64 build + launch pass. Native WebKit/AppKit xuất 20
-fixture PDF và từ chối XXE; 05/KK-TNCN 394 đã về một trang. Xem
+**Kết quả thực thi mới:** 97 XCTest (96 pass, một test tuỳ chọn skip), integration chín
+sample pass; universal arm64/x86_64 build pass. App thật mở và load WebKit đủ 29 fixture;
+native WebKit/AppKit xuất 29 PDF (55 trang A4) và từ chối XXE; 05/KK-TNCN 394 một trang. Xem
 [`../../../COMPATIBILITY.md`](../../../COMPATIBILITY.md) và
 [`results/gap-build-2026-10-23.md`](results/gap-build-2026-10-23.md). Những số trang dưới đây
 trước phần này là kết quả lịch sử; đối chiếu ảnh Windows của layout mới vẫn pending.

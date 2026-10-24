@@ -15,19 +15,19 @@ Status legend:
 
 ## Current executed build — 2026-10-23
 
-[Successful macOS runner execution](https://github.com/dieutx/itaxviewer-macos/actions/runs/39899718886)
-at application commit `f7eaa338fa8707cd1729ea95e62c6a37e007bb93` supersedes the older
+[Successful macOS runner execution](https://github.com/dieutx/itaxviewer-macos/actions/runs/39970873502)
+at application commit `c327fe310bf4ae1fc76eb5158aea1f27f92b99ca` supersedes the older
 pending native-print statements below. Runner: macOS 14 / arm64, Xcode 15.4, Swift 5.10.
 
 | Check | Executed result |
 |---|---|
-| Swift XCTest | **PASS** — 80 tests, 79 passed, one optional external-fixture test skipped, zero failures |
+| Swift XCTest | **PASS** — 97 tests, 96 passed, one optional external-fixture test skipped, zero failures |
 | Separate external-fixture XCTest | **PASS** — all nine bundled synthetic/anonymised samples parsed and rendered |
-| Cross-platform mapping harness | **PASS** — including four new version-bound declaration specs and correction fixture |
+| Cross-platform mapping harness | **PASS** — all bundled classification/mapping assertions, including TT89/BCTC/notices; five Python extractor regressions passed |
 | Universal app + DMG | **PASS** — `lipo` confirms arm64 + x86_64; resource bundle present; ad-hoc signature verified; not notarized |
-| Actual app launch | **PASS** — launched through macOS LaunchServices and remained running; native execution on Intel remains pending |
-| Native print/export pipeline | **PASS for automated checks** — 20 fixtures exported through AppKit/WebKit; every PDF has nonempty A4 pages and contains all distinct rendered numeric table cells plus fixed fixture markers; XXE fixture rejected |
-| PDF visual evidence | PDFKit rendered every output page to PNG (39 pages), plus WebKit viewport snapshots; artifacts contain only bundled synthetic fixtures |
+| Actual app launch | **PASS** — launched through macOS LaunchServices, opened all 29 safe fixtures, actual app WKWebView completed loading each; Intel execution of this binary remains pending |
+| Native print/export pipeline | **PASS for automated checks** — 29 fixtures exported through AppKit/WebKit; every PDF has nonempty A4 pages and contains all distinct rendered numeric table cells plus fixed fixture markers; XXE fixture rejected |
+| PDF visual evidence | PDFKit rendered every output page to PNG (55 pages), plus WebKit viewport snapshots; artifacts contain only bundled synthetic fixtures |
 | Offline/security | Update fetching disabled, network entitlement removed, certificate inspection network fetch disabled; signature state remains `.notVerified` |
 | Manual interactions | Finder double-click, drag/drop, printer hardware and print-panel controls remain **PENDING** |
 
@@ -40,6 +40,9 @@ Actual native fixture page counts:
 | `tncn_953_05qtt` | 2 |
 | `tndn_892_03tndn_v2.9.4` including raw appendix | 5 |
 | New `864`, `395`, `07`, `847` synthetic declarations | 2 each in this run |
+| TT89 `2002` / `2003` / `2004` | 1 / 2 / 1 |
+| BCTC `701` / `702` / `1254` | 2 / 2 / 3 |
+| Notices NSD / BSTT-NNT / SSĐT | 2 / 2 / 1 |
 | Combined TT80 correction/explanation fixture | 5 |
 | NQ142 declaration + appendix | 3 |
 | Notice 843 accepted/rejected, 844, 01/TB-BSTT | 1 each |
@@ -55,8 +58,14 @@ explicit supplementary-data section; the original hides that table in this case.
 
 Static Windows/MSXML evidence and the correction to gap 18 are recorded in
 [`gap-build-2026-10-23.md`](docs/reverse-engineering/documents/results/gap-build-2026-10-23.md).
-There is no full-layout coverage claim for all 410 codes: eight specs plus legacy `01`
-cover nine codes at reviewed versions; other codes/versions retain structured data.
+There is no full-layout coverage claim for all 410 codes: fourteen specs plus legacy `01`
+cover fifteen codes at reviewed versions; other codes/versions retain structured data.
+Six notice layouts and the CT-01 voucher layout have version/root guards. Exact-source
+extraction checks passed 14/14; MSXML transformed all nine newly added fixtures. See
+[the expansion evidence](docs/reverse-engineering/documents/results/expanded-layouts-2026-10-23.md).
+
+The downloaded DMG and universal ZIP from run `39970873502` both matched their SHA-256
+manifest. DMG SHA-256: `76a4b58721d14185646ca192d5c0890ee9e5194e311bd6237c69a104911ed1da`.
 
 The following sections retain the earlier Windows captures and historical results.
 
@@ -86,7 +95,7 @@ The following sections retain the earlier Windows captures and historical result
 |---|---|---|---|
 | 05/KK-TNCN under TT 80/2021 | `864` / 2.5.1, 2.8.3 | different header/rows from the new 2.9.3 spec | structured view + warning; 2.9.3 has a dedicated layout |
 | 05/QTT-TNCN legacy | `395` / 2.1.6 | revision not yet mapped | structured view + warning; 2.4.2 has a dedicated layout |
-| CIT under TT 89/2025 | `2002`, `2003`, `2004` | new 2025 layouts | structured view + warning |
+| CIT TT89 | `2002`, `2003`, `2004` | exact 3.0.9 reviewed; installed literal says 89/2026 | dedicated layouts at 3.0.9, other versions structured; Windows visual parity pending |
 | BCTC B01/B05 | `701`, `1254`, `702` | multi-table financial statements | structured view + warning |
 | 04/GTGT | `07` / 2.0.x–2.1.2 (also `847`) | no captured Windows layout/spec for the gold-silver-gemstone form | structured view + warning |
 

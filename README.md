@@ -33,6 +33,7 @@ built from black-box reverse engineering of the official Windows **iTax Viewer**
 | **01/GTGT VAT-reduction appendices** | `PL_NQ43_GTGT`, `PL_NQ101_GTGT`, `PL_NQ142_GTGT` | any | Full appendix layout (I/II/III + totals) |
 | **01/KHBS / 01-1/KHBS** | `PL01_KHBS`, `PL01_1_KHBS` | Exact TT80 parent/version mapping | Correction/explanation layouts; Windows visual comparison pending |
 | Notices (`TBaoThueDTu`, `TBao`, …) | `843`, `844`, `01/TB-BSTT` | 2.5.6 / 2.4.9 / 2.1.0 respectively | Dedicated layouts for captured branches; other notices use structured data |
+| NSD, BSTT-NNT, SSĐT notices | `01/TB-NSD`, `01/TB-BSTT-NNT`, `01/TB-SSĐT` | 2.1.0 | Dedicated exact-root layouts, repeated reasons/clarification tables; Windows visual comparison pending |
 | Payment vouchers (`CHUNGTU`) | `MA_CTU=01` | 4.0.1, VND | Dedicated layout; other revisions/currencies use structured data |
 | Registration, catalogs, customs, e-invoice | — | any | Structured data view |
 | Other 395 declaration codes | — | any | Structured data view + explicit warning |
@@ -147,9 +148,10 @@ official indicator values for every fixture. It passes for all four priority for
 payment voucher and the notice fixture.
 
 The current Swift suite ran on the macOS 14 Actions runner (Xcode 15.4 / Swift 5.10):
-**80 tests, 79 passed, 1 skipped** (the optional external-fixture test). A separate
+**97 tests, 96 passed, 1 skipped** (the optional external-fixture test). A separate
 external-fixture run passed for all nine bundled samples. Native WebKit/PDFKit QA passed
-for 20 rendered fixtures plus rejection of the XXE fixture. See
+for 29 rendered fixtures (55 A4 pages) plus rejection of the XXE fixture. The actual app
+also opened all 29 fixtures through LaunchServices and completed WebKit loads. See
 [`COMPATIBILITY.md`](COMPATIBILITY.md) for the executed UI/print results.
 
 ### Bundled test data
