@@ -147,11 +147,14 @@ This mirrors the Swift registry lookup and XPath field mapping and asserts the e
 official indicator values for every fixture. It passes for all four priority forms, the
 payment voucher and the notice fixture.
 
-The current Swift suite ran on the macOS 14 Actions runner (Xcode 15.4 / Swift 5.10):
-**97 tests, 96 passed, 1 skipped** (the optional external-fixture test). A separate
-external-fixture run passed for all nine bundled samples. Native WebKit/PDFKit QA passed
-for 29 rendered fixtures (55 A4 pages) plus rejection of the XXE fixture. The actual app
-also opened all 29 fixtures through LaunchServices and completed WebKit loads. See
+The current Swift suite ran on macOS 14 / arm64 (Xcode 15.4 / Swift 5.10) and macOS 15 /
+Intel (Xcode 16.4 / Swift 6.1.2): **99 tests per runner, 98 passed, 1 skipped** (the optional
+external-fixture test). A separate arm64 integration run passed all nine bundled samples.
+On each architecture, native WebKit/PDFKit QA exported 29 PDFs (55 A4 pages) and rejected
+the XXE fixture, including a regression check for a previous partial-page print job.
+The same universal app ZIP opened all 29 safe fixtures through LaunchServices on both
+architectures and completed WebKit loads. Row splitting/continuation headings and manual
+Finder/drag-drop/print-panel checks remain unresolved. See
 [`COMPATIBILITY.md`](COMPATIBILITY.md) for the executed UI/print results.
 
 ### Bundled test data

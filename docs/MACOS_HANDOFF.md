@@ -1,8 +1,10 @@
 # macOS Handoff
 
-This repository was prepared on a Windows analysis machine. On 2026-10-23 macOS Actions
-compiled and tested the app, built its universal bundle, opened the safe fixtures through
-LaunchServices, and exported native PDFs. See `COMPATIBILITY.md` for exact runs and limits.
+This repository was prepared on a Windows analysis machine. On 2026-10-24 macOS Actions
+ran 99 tests (98 passed, one optional skip) on arm64 and Intel, launched the same universal
+bundle with all 29 safe fixtures on both architectures, and exported 29 native PDFs / 55
+A4 pages per runner. Full-document export also resets an inherited partial-page print job.
+See `COMPATIBILITY.md` for exact runs, the visual review and remaining limitations.
 Follow this document on a local Mac to repeat checks and finish manual interaction/visual QA.
 
 ## 1. Prerequisites

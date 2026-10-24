@@ -1,0 +1,212 @@
+[
+  {
+    "fixture" : "correction_tt80.xml",
+    "numericCellsChecked" : 17,
+    "pages" : 5,
+    "snapshot" : true,
+    "status" : "passed"
+  },
+  {
+    "fixture" : "declaration_07_static.xml",
+    "numericCellsChecked" : 15,
+    "pages" : 2,
+    "snapshot" : true,
+    "status" : "passed"
+  },
+  {
+    "fixture" : "declaration_2002_static.xml",
+    "numericCellsChecked" : 20,
+    "pages" : 1,
+    "snapshot" : true,
+    "status" : "passed"
+  },
+  {
+    "fixture" : "declaration_2003_static.xml",
+    "numericCellsChecked" : 22,
+    "pages" : 2,
+    "snapshot" : true,
+    "status" : "passed"
+  },
+  {
+    "fixture" : "declaration_2004_static.xml",
+    "numericCellsChecked" : 11,
+    "pages" : 1,
+    "snapshot" : true,
+    "status" : "passed"
+  },
+  {
+    "fixture" : "declaration_395_static.xml",
+    "numericCellsChecked" : 39,
+    "pages" : 2,
+    "snapshot" : true,
+    "status" : "passed"
+  },
+  {
+    "fixture" : "declaration_847_static.xml",
+    "numericCellsChecked" : 19,
+    "pages" : 2,
+    "snapshot" : true,
+    "status" : "passed"
+  },
+  {
+    "fixture" : "declaration_864_static.xml",
+    "numericCellsChecked" : 30,
+    "pages" : 2,
+    "snapshot" : true,
+    "status" : "passed"
+  },
+  {
+    "fixture" : "financial_1254_static.xml",
+    "numericCellsChecked" : 271,
+    "pages" : 3,
+    "snapshot" : true,
+    "status" : "passed"
+  },
+  {
+    "fixture" : "financial_701_static.xml",
+    "numericCellsChecked" : 144,
+    "pages" : 2,
+    "snapshot" : true,
+    "status" : "passed"
+  },
+  {
+    "fixture" : "financial_702_static.xml",
+    "numericCellsChecked" : 75,
+    "pages" : 2,
+    "snapshot" : true,
+    "status" : "passed"
+  },
+  {
+    "fixture" : "gnt_chungtu.xml",
+    "numericCellsChecked" : 1,
+    "pages" : 1,
+    "snapshot" : true,
+    "status" : "passed"
+  },
+  {
+    "fixture" : "gtgt_01_legacy_212.xml",
+    "numericCellsChecked" : 14,
+    "pages" : 2,
+    "snapshot" : true,
+    "status" : "passed"
+  },
+  {
+    "fixture" : "gtgt_842_nq142.xml",
+    "numericCellsChecked" : 21,
+    "pages" : 3,
+    "snapshot" : true,
+    "status" : "passed"
+  },
+  {
+    "fixture" : "gtgt_842_return.xml",
+    "numericCellsChecked" : 13,
+    "pages" : 2,
+    "snapshot" : true,
+    "status" : "passed"
+  },
+  {
+    "fixture" : "gtgt_842_return_utf16.xml",
+    "numericCellsChecked" : 13,
+    "pages" : 2,
+    "snapshot" : true,
+    "status" : "passed"
+  },
+  {
+    "fixture" : "notice_01_tb_bstt.xml",
+    "numericCellsChecked" : 0,
+    "pages" : 1,
+    "snapshot" : true,
+    "status" : "passed"
+  },
+  {
+    "fixture" : "notice_01_tb_bstt_nnt.xml",
+    "numericCellsChecked" : 3,
+    "pages" : 2,
+    "snapshot" : true,
+    "status" : "passed"
+  },
+  {
+    "fixture" : "notice_01_tb_nsd.xml",
+    "numericCellsChecked" : 2,
+    "pages" : 2,
+    "snapshot" : true,
+    "status" : "passed"
+  },
+  {
+    "fixture" : "notice_01_tb_ssdt.xml",
+    "numericCellsChecked" : 0,
+    "pages" : 1,
+    "snapshot" : true,
+    "status" : "passed"
+  },
+  {
+    "fixture" : "notice_843.xml",
+    "numericCellsChecked" : 0,
+    "pages" : 1,
+    "snapshot" : true,
+    "status" : "passed"
+  },
+  {
+    "fixture" : "notice_843_rejected.xml",
+    "numericCellsChecked" : 1,
+    "pages" : 1,
+    "snapshot" : true,
+    "status" : "passed"
+  },
+  {
+    "fixture" : "notice_844.xml",
+    "numericCellsChecked" : 2,
+    "pages" : 1,
+    "snapshot" : true,
+    "status" : "passed"
+  },
+  {
+    "fixture" : "signed_demo.xml",
+    "numericCellsChecked" : 7,
+    "pages" : 2,
+    "snapshot" : true,
+    "status" : "passed"
+  },
+  {
+    "fixture" : "tbao_107_bstt.xml",
+    "numericCellsChecked" : 3,
+    "pages" : 1,
+    "snapshot" : true,
+    "status" : "passed"
+  },
+  {
+    "fixture" : "tncn_394_05kk_tt92.xml",
+    "numericCellsChecked" : 24,
+    "pages" : 1,
+    "snapshot" : true,
+    "status" : "passed"
+  },
+  {
+    "fixture" : "tncn_953_05qtt.xml",
+    "numericCellsChecked" : 30,
+    "pages" : 2,
+    "snapshot" : true,
+    "status" : "passed"
+  },
+  {
+    "fixture" : "tndn_892_03tndn_v2.9.4.xml",
+    "numericCellsChecked" : 42,
+    "pages" : 5,
+    "snapshot" : true,
+    "status" : "passed"
+  },
+  {
+    "fixture" : "voucher_ct01.xml",
+    "numericCellsChecked" : 14,
+    "pages" : 1,
+    "snapshot" : true,
+    "status" : "passed"
+  },
+  {
+    "fixture" : "xxe_attack.xml",
+    "numericCellsChecked" : 0,
+    "pages" : 0,
+    "snapshot" : false,
+    "status" : "rejected-as-required"
+  }
+]

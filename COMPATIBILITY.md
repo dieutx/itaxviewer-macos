@@ -3,7 +3,7 @@
 Reference application: official **iTax Viewer** installed at
 `C:\Program Files (x86)\iTax Viewer` (bundled JRE 1.8.0_112; registry contains XSLT
 templates through **3.0.9** and 2026 CA certificates).
-Windows comparison date: 2026-10-22. Latest executed macOS CI checks: 2026-10-23.
+Windows reference captures: 2026-10-22. Latest native-output review and macOS CI: 2026-10-24.
 
 Status legend:
 
@@ -13,25 +13,27 @@ Status legend:
 * **PENDING** — not verified yet
 * **NOT VERIFIED** — deliberately not claimed (cryptographic signatures)
 
-## Current executed build — 2026-10-23
+## Current executed build — 2026-10-24
 
-[Successful macOS runner execution](https://github.com/dieutx/itaxviewer-macos/actions/runs/39970873502)
-at application commit `c327fe310bf4ae1fc76eb5158aea1f27f92b99ca` supersedes the older
-pending native-print statements below. Runner: macOS 14 / arm64, Xcode 15.4, Swift 5.10.
+[Successful two-architecture execution](https://github.com/dieutx/itaxviewer-macos/actions/runs/40049293344)
+at commit `3beb9ceba7e6783dd04f5cc966a6d1e4d8c86eef`. Runners: macOS 14 / arm64,
+Xcode 15.4 / Swift 5.10; macOS 15 / x86_64, Xcode 16.4 / Swift 6.1.2.
+Intel downloaded, checksum-checked and launched the exact universal ZIP built on arm64.
 
 | Check | Executed result |
 |---|---|
-| Swift XCTest | **PASS** — 97 tests, 96 passed, one optional external-fixture test skipped, zero failures |
-| Separate external-fixture XCTest | **PASS** — all nine bundled synthetic/anonymised samples parsed and rendered |
+| Swift XCTest | **PASS on both architectures** — 99 tests per runner, 98 passed, one optional external-fixture test skipped, zero failures |
+| Separate external-fixture XCTest (arm64) | **PASS** — all nine bundled synthetic/anonymised samples parsed and rendered |
 | Cross-platform mapping harness | **PASS** — all bundled classification/mapping assertions, including TT89/BCTC/notices; five Python extractor regressions passed |
 | Universal app + DMG | **PASS** — `lipo` confirms arm64 + x86_64; resource bundle present; ad-hoc signature verified; not notarized |
-| Actual app launch | **PASS** — launched through macOS LaunchServices, opened all 29 safe fixtures, actual app WKWebView completed loading each; Intel execution of this binary remains pending |
-| Native print/export pipeline | **PASS for automated checks** — 29 fixtures exported through AppKit/WebKit; every PDF has nonempty A4 pages and contains all distinct rendered numeric table cells plus fixed fixture markers; XXE fixture rejected |
-| PDF visual evidence | PDFKit rendered every output page to PNG (55 pages), plus WebKit viewport snapshots; artifacts contain only bundled synthetic fixtures |
+| Actual app launch | **PASS on both architectures** — launched through macOS LaunchServices, opened all 29 safe fixtures, actual app WKWebView completed loading each |
+| Native print/export pipeline | **PASS for automated checks on both architectures** — 29 PDFs / 55 pages per runner; nonempty A4 pages, all distinct rendered numeric table cells and fixed fixture markers present; XXE fixture rejected |
+| Inherited print-range regression | **PASS on both architectures** — production and QA share print settings; a previous PDF job restricted to page 2 is reset before full-document export; copy isolation/destination/A4-margin tests pass |
+| PDF visual evidence | PDFKit rendered all 55 pages on each runner, plus WebKit viewport snapshots. Baseline 55 pages reviewed on Windows; visual limitations remain below. Artifacts contain only bundled synthetic fixtures |
 | Offline/security | Update fetching disabled, network entitlement removed, certificate inspection network fetch disabled; signature state remains `.notVerified` |
 | Manual interactions | Finder double-click, drag/drop, printer hardware and print-panel controls remain **PENDING** |
 
-Actual native fixture page counts:
+Actual native fixture page counts (same on arm64 and Intel):
 
 | Fixture/group | A4 pages |
 |---|---:|
@@ -55,6 +57,8 @@ top/right/left 20 mm and bottom 10 mm; A4 page size is checked automatically. Th
 declaration and KHBS layouts still need independent Windows screenshot/PDF comparisons.
 The 844 renderer preserves a populated amount with a blank payment identifier in an
 explicit supplementary-data section; the original hides that table in this case.
+The [dated visual review](docs/reverse-engineering/documents/results/native-review-2026-10-24.md)
+records the specific split rows, sparse continuation pages and Windows reference limits.
 
 Static Windows/MSXML evidence and the correction to gap 18 are recorded in
 [`gap-build-2026-10-23.md`](docs/reverse-engineering/documents/results/gap-build-2026-10-23.md).
@@ -64,10 +68,12 @@ Six notice layouts and the CT-01 voucher layout have version/root guards. Exact-
 extraction checks passed 14/14; MSXML transformed all nine newly added fixtures. See
 [the expansion evidence](docs/reverse-engineering/documents/results/expanded-layouts-2026-10-23.md).
 
-The downloaded DMG and universal ZIP from run `39970873502` both matched their SHA-256
-manifest. DMG SHA-256: `76a4b58721d14185646ca192d5c0890ee9e5194e311bd6237c69a104911ed1da`.
+The downloaded DMG and universal ZIP from run `40049293344` both matched their SHA-256
+manifest locally and on the Intel runner. DMG SHA-256:
+`0e8ddd8d8e1d93a2d0c4dd52dbbbf5f87f84c135ed09ea1f8774da790f8fc96d`.
 
-The following sections retain the earlier Windows captures and historical results.
+The document matrix below reflects the executed build above. Windows captures and
+the explicitly dated historical observations remain evidence, not newer native results.
 
 > **Executed on macOS 15 (Intel) on 2026-10-22** with Xcode 16.1 / Swift 6.0.2.
 > `swift test` ran 45 tests (44 passed, 1 skipped because `ITAX_FIXTURE_DIR` was not set),
@@ -80,14 +86,14 @@ The following sections retain the earlier Windows captures and historical result
 
 | Document | Internal code / version | Fixture | Classification | Data accuracy | Renderer | Print/PDF | Signatures | Overall |
 |---|---|---|---|---|---|---|---|---|
-| **01/GTGT** | `842` / 2.8.3 · legacy `01` / 2.1.2–2.6.2 | `gtgt_842_return.xml`, `gtgt_01_legacy_212.xml` | **PASS** | **PASS** (21 indicators) | **PASS** (27 rows; legacy versions reuse the same laid-out tags) | **PASS** (CSS pagination, 2 A4 pages) · native print pending | NOT VERIFIED | **PASS (render/pagination)** |
-| **05/KK-TNCN** | `394` / 2.1.6 | `tncn_394_05kk_tt92.xml` | **PASS** | **PASS** (16 indicators) | **PASS** (16 rows) | **PARTIAL** — Windows prints **1** A4 page, cloned output reported 2 · native print pending | NOT VERIFIED | **PARTIAL (pagination gap)** |
-| **05/QTT-TNCN** | `953` / 2.9.3 | `tncn_953_05qtt.xml` | **PASS** | **PASS** (26 indicators incl. `NVuQToanThay`) | **PASS** (26 rows, authorisation section renumbered 1–6) | **PASS** (CSS pagination, 2 A4 pages) · native print pending | NOT VERIFIED | **PASS (render/pagination)** |
-| **03/TNDN** | `892` / 2.9.4 | `tndn_892_03tndn_v2.9.4.xml` | **PASS** | **PASS** (66 indicators) | **PASS** (74 rows) | **PASS** (CSS pagination, 4 A4 pages + appendix) · native print pending | NOT VERIFIED | **PASS (render/pagination) / visual diff pending** |
-| Financial statements | `B01/BCTC` = `701`/`1254`, `B05` = `702` | — | PASS (code mapping) | structured view | Structured only | IMPLEMENTED | NOT VERIFIED | **PARTIAL** |
-| Tax-authority notice | `843` / 2.5.6 (`01-01/TB-TĐT`), `844` / 2.4.9 (`01-2/TB-TĐT`), `01/TB-BSTT` / 2.1.0 | `notice_843.xml`, `notice_843_rejected.xml`, `notice_844.xml`, `notice_01_tb_bstt.xml` | **PASS** (macOS, root `TBao` now classified as a notice) | **PASS** (paths from `documents/notices/*.json`) | **IMPLEMENTED** — official prose/table layout for 843 (both branches), 844 (accepted/rejected) and 01/TB-BSTT | Windows PDF **PASS** (1 page each); macOS print pending | NOT VERIFIED | **PARTIAL (renderer implemented, visual diff pending)** |
-| Payment voucher | `CHUNGTU` / `MA_CTU=01` (4.0.1) | `gnt_chungtu.xml`, `voucher_ct01.xml` | **PASS** | **PASS** (paths from `documents/paymentVouchers/CT-01.json`) | **IMPLEMENTED** — C1-02/NS layout with detail table, VND/USD columns, totals and amount in words | Windows PDF **PASS** (1 page); macOS print pending | NOT VERIFIED | **PARTIAL (renderer implemented, visual diff pending)** |
-| Other 406 declaration codes | various | — | PASS (display code from registry) | structured view | Structured only | IMPLEMENTED | NOT VERIFIED | **PARTIAL** |
+| **01/GTGT** | `842` / 2.8.3 · legacy `01` / 2.1.2–2.6.2 | `gtgt_842_return.xml`, `gtgt_01_legacy_212.xml` | **PASS** | **PASS** (21 indicators) | **PASS** (27 rows) | Native **PASS** for automated content checks, 2 A4 pages; split row / missing continuation header | NOT VERIFIED | **PARTIAL (visual pagination)** |
+| **05/KK-TNCN** | `394` / 2.1.6 | `tncn_394_05kk_tt92.xml` | **PASS** | **PASS** (16 indicators) | **PASS** (16 rows) | Native **PASS** for automated content checks, **1** A4 page, matching Windows count | NOT VERIFIED | **PARTIAL (visual differences)** |
+| **05/QTT-TNCN** | `953` / 2.9.3 | `tncn_953_05qtt.xml` | **PASS** | **PASS** (26 indicators incl. `NVuQToanThay`) | **PASS** (26 rows) | Native **PASS** for automated content checks, 2 A4 pages; continuation layout needs review | NOT VERIFIED | **PARTIAL (visual pagination)** |
+| **03/TNDN** | `892` / 2.9.4 | `tndn_892_03tndn_v2.9.4.xml` | **PASS** | **PASS** (66 indicators) | **PASS** (74 rows) | Native **PASS** for automated content checks, 5 A4 pages including raw appendix | NOT VERIFIED | **PARTIAL (Windows comparison unavailable for full fixture)** |
+| Financial statements | `701`/`702` 2.3.5, `1254` 2.9.0 | `financial_*_static.xml` | **PASS** | Reviewed mappings + native numeric-cell checks | Dedicated financial layouts | Native **PASS** for automated content checks, 2/2/3 pages | NOT VERIFIED | **PARTIAL (Windows visual comparison pending)** |
+| Tax-authority notice | `843` / 2.5.6, `844` / 2.4.9, `01/TB-BSTT` / 2.1.0 | `notice_843.xml`, `notice_843_rejected.xml`, `notice_844.xml`, `notice_01_tb_bstt.xml` | **PASS** | Reviewed paths + native fixture-marker checks | Dedicated prose/table layouts | Native **PASS** for automated content checks, 1 page each | NOT VERIFIED | **PARTIAL (visual comparison pending)** |
+| Payment voucher | `CHUNGTU` / `MA_CTU=01` (4.0.1, VND) | `voucher_ct01.xml` | **PASS** | Reviewed paths + native numeric-cell checks | Dedicated C1-02/NS layout; unsupported currencies/revisions use structured data | Native **PASS** for automated content checks, 1 page | NOT VERIFIED | **PARTIAL (visual comparison pending)** |
+| Other unmapped declaration codes/versions | various | — | Registry mapping | structured view | Structured only | Native checks cover bundled examples only | NOT VERIFIED | **PARTIAL** |
 
 ### Known coverage gaps (different indicator numbering)
 
@@ -96,8 +102,8 @@ The following sections retain the earlier Windows captures and historical result
 | 05/KK-TNCN under TT 80/2021 | `864` / 2.5.1, 2.8.3 | different header/rows from the new 2.9.3 spec | structured view + warning; 2.9.3 has a dedicated layout |
 | 05/QTT-TNCN legacy | `395` / 2.1.6 | revision not yet mapped | structured view + warning; 2.4.2 has a dedicated layout |
 | CIT TT89 | `2002`, `2003`, `2004` | exact 3.0.9 reviewed; installed literal says 89/2026 | dedicated layouts at 3.0.9, other versions structured; Windows visual parity pending |
-| BCTC B01/B05 | `701`, `1254`, `702` | multi-table financial statements | structured view + warning |
-| 04/GTGT | `07` / 2.0.x–2.1.2 (also `847`) | no captured Windows layout/spec for the gold-silver-gemstone form | structured view + warning |
+| BCTC B01/B05 | Other revisions of `701`, `1254`, `702` | only 701/702 2.3.5 and 1254 2.9.0 reviewed | reviewed versions dedicated; others structured + warning |
+| 04/GTGT | `07` / 2.0.x–2.1.2 and other unmapped revisions | only `07` 2.4.1/2.5.0 and `847` 2.5.1/2.6.8/2.7.4 reviewed | reviewed versions dedicated; others structured + warning |
 
 These are never presented as “fully rendered”; the classifier still reports the correct
 display code and all source values remain visible.
@@ -151,7 +157,7 @@ Ctrl+P → PD4ML path). Files live under
 | Document | Windows result | Pages | Notes |
 |---|---|---:|---|
 | 01/GTGT (`842`/2.8.3) | opens | **2** | matches the cloned pagination |
-| 05/KK-TNCN (`394`/2.1.6) | opens | **1** | clone pagination differs (2) |
+| 05/KK-TNCN (`394`/2.1.6) | opens | **1** | current native fixture PDF also has 1 page |
 | 05/QTT-TNCN (`953`/2.9.3) | opens | **2** | matches |
 | 03/TNDN (`892`/2.9.4) | **NPE, no window** | — | reproducible on the bundled `<BaoCaoTaiChinh>` appendix; see the NPE note below |
 | Notice `843` (2.5.6) | opens, received + rejected branches | 1 | rejected branch captured with a synthetic `LyDo` |
@@ -199,8 +205,9 @@ Corrections established by running the original:
   official layout: identity `[01]`–`[04]`, section I (purchases), section II (sales),
   section III difference `[09] = [08] - [06]`, with all rows and totals. Covered by
   `gtgt_842_nq142.xml` and unit tests.
-* `PL01_KHBS`, `PL01_1_KHBS`, `BaoCaoTaiChinh` and appendices of other forms still use the
-  generic path/value table. The Windows RE prompt lists them for dedicated layout specs.
+* `PL01_KHBS` and `PL01_1_KHBS` have dedicated layouts for the exact reviewed TT80
+  parent/version mappings. Unmapped revisions, `BaoCaoTaiChinh` and other appendix IDs
+  retain the generic path/value table.
 
 ## 4. Known differences (not hidden)
 
@@ -209,11 +216,11 @@ Corrections established by running the original:
 | 01/GTGT `[11a]–[11c]` | one row, three columns | three stacked rows | cosmetic |
 | Footer page numbers | PD4ML `page/total` | not emitted | cosmetic; all pages print |
 | Appendix layout | dedicated XSLT per `plucID` | **structured layout for `PL_NQ43_GTGT`, `PL_NQ101_GTGT`, `PL_NQ142_GTGT`** (I/II/III, totals `[05]`–`[09]`); other IDs use a path/value table | **partially implemented**; see [`docs/PROMPTS/WINDOWS_DOCUMENT_RE.md`](docs/PROMPTS/WINDOWS_DOCUMENT_RE.md) and [`documents/PROGRESS.md`](docs/reverse-engineering/documents/PROGRESS.md) for the remaining ID/types |
-| Notices | prose paragraphs per template | structured field table | **content layout pending** |
-| Other 406 form codes | official XSLT | structured field table | **layout pending** |
+| Notices | prose paragraphs per template | six dedicated exact-root/version layouts; others structured | **partial coverage; visual comparison pending** |
+| Other unmapped form codes/versions | official XSLT | structured field table | **layout pending** |
 | Title diacritics | XSLT `translate()` bug | correct Unicode | improvement |
 | Unmapped appendix | crash (NPE) | renders data | improvement |
-| Table pagination | table breaks disabled; long table forced onto one page | breaks between rows, header repeats on each page | improvement; Windows prints 2 (842) / 1 (394) / 2 (953) pages; the cloned 394 output still produces 2 pages — parity gap |
+| Table pagination | PD4ML pagination | native WebKit can split rows and omit continuation headings despite CSS rules | visual gap; current fixture counts match Windows for 842 (2), 394 (1), 953 (2) |
 | Signature | full XMLDSig + OCSP | metadata only | **NOT VERIFIED (by design)** |
 | Dark mode | not supported (Windows) | native chrome + white paper | improvement |
 
@@ -227,9 +234,9 @@ Corrections established by running the original:
 | Suite | Status |
 |---|---|
 | `scripts/validate_fixtures.py` (classification, indicator mapping, formatting) | **PASS** (executed 2026-10-22) |
-| Registry integrity (1,150 entries / 410 codes / 4 specs) | **PASS** |
+| Registry integrity (1,150 entries / 410 codes / 14 specs) | **PASS** |
 | XXE rejection, UTF-16 parsing, malformed XML, oversized/hidden-DTD inputs | **PASS** (Swift XCTest) |
-| Swift XCTest suite (`swift test`) | **PASS** — 58 tests executed, 57 passed, 1 skipped (`ExternalFixturesTests` without `ITAX_FIXTURE_DIR`) |
+| Swift XCTest suite (`swift test`) | See the current executed-build table above for the run and exact count |
 | Update check | **DISABLED** in the offline build; version-comparison tests retained and a deterministic offline-refusal test added |
 | External fixture run (`ITAX_FIXTURE_DIR=../test-data`) | **PASS** — all 9 XML files classified and rendered; test walks subdirectories recursively |
 | Real-file run (`ITAX_FIXTURE_DIR="../realdata to test"`, local only) | **PASS** — 12 files parsed and rendered; 9 × 01/GTGT full renderer (incl. legacy 2.1.2 / 2.5.0), 3 × 04/GTGT structured view (no captured layout) |
@@ -237,8 +244,8 @@ Corrections established by running the original:
 | Appendix layout tests | **PASS** — NQ142 sections/totals/difference, 150-row no-truncation, NQ43 flat layout |
 | macOS app build (`scripts/build_app.sh`) | **PASS** — `.app` built and launched on macOS 15 / x86_64 |
 | App file-open, drag-and-drop | File-open path covered by tests and app launch; drag-and-drop not automated |
-| Print / PDF export | CSS pagination **PASS** (headless Chromium, A4 594×841 pt, 2/2/2/4+appendix pages); **native WKWebView print panel pending** (no UI automation permission in this environment) |
-| Visual diff of macOS renderer vs reference screenshots | **PARTIAL** — 01/GTGT, 05/KK-TNCN and 05/QTT-TNCN headers/tables match the captured reference; 03/TNDN reference capture is invalid (splash screen), so it remains pending |
+| Print / PDF export | Native WebKit/AppKit automated export passed for all safe fixtures; actual print-panel interaction and printer hardware remain **PENDING** |
+| Visual diff of macOS renderer vs reference screenshots | **PARTIAL** — field/header structure reviewed; exact typography, header placement and pagination differ. 03/TNDN reference capture is invalid (splash screen), so comparison remains pending |
 
 ## 6. Reproduction commands
 

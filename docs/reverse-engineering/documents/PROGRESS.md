@@ -1,13 +1,14 @@
 # Tiến độ RE tài liệu — iTax Viewer Windows
 
-Cập nhật lần cuối: **2026-10-23** (build native qua runner Mac, thêm TT89/BCTC/thông báo, phụ lục KHBS).
+Cập nhật lần cuối: **2026-10-24** (kiểm thử native arm64 + Intel, sửa dải trang xuất PDF, rà ảnh kết quả).
 
-**Kết quả thực thi mới:** 97 XCTest (96 pass, một test tuỳ chọn skip), integration chín
-sample pass; universal arm64/x86_64 build pass. App thật mở và load WebKit đủ 29 fixture;
-native WebKit/AppKit xuất 29 PDF (55 trang A4) và từ chối XXE; 05/KK-TNCN 394 một trang. Xem
+**Kết quả thực thi mới:** mỗi runner arm64/Intel chạy 99 XCTest (98 pass, một test tuỳ chọn
+skip); integration chín sample pass trên arm64. Cùng gói universal mở và load WebKit đủ
+29 fixture trên cả hai kiến trúc; mỗi runner xuất 29 PDF (55 trang A4) và từ chối XXE.
+Kiểm thử hồi quy xuất đủ trang sau một lần chỉ chọn trang 2 pass; 05/KK-TNCN 394 một trang. Xem
 [`../../../COMPATIBILITY.md`](../../../COMPATIBILITY.md) và
-[`results/gap-build-2026-10-23.md`](results/gap-build-2026-10-23.md). Những số trang dưới đây
-trước phần này là kết quả lịch sử; đối chiếu ảnh Windows của layout mới vẫn pending.
+[`results/native-review-2026-10-24.md`](results/native-review-2026-10-24.md). Các số trang trong
+những phần tiếp theo là kết quả lịch sử; đối chiếu ảnh Windows của layout mới vẫn pending.
 
 > File này là bản người đọc. Bản máy đọc: `progress.json`. Kết quả chi tiết:
 > `results/<kind>-<id>.md`. Inventory: `document-inventory.md` / `.json` / `document-registry.csv`.
