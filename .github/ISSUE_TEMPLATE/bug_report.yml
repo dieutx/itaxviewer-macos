@@ -24,7 +24,7 @@ body:
     attributes:
       label: Phiên bản macOS
       options:
-        - macOS 16
+        - macOS 26 Tahoe hoặc mới hơn
         - macOS 15 Sequoia
         - macOS 14 Sonoma
         - macOS 13 Ventura
