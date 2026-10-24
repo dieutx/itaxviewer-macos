@@ -1,0 +1,90 @@
+name: Yêu cầu hỗ trợ biểu mẫu
+description: Báo một mã/phiên bản XML chưa nhận diện hoặc chưa có bố cục đúng.
+title: "[Biểu mẫu] "
+labels:
+  - biểu mẫu
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Không tải lên hồ sơ thật hoặc template/tài sản lấy từ bộ cài ứng dụng gốc.**
+        Chỉ mô tả cấu trúc, dùng fixture tổng hợp đã rà soát, và dẫn nguồn biểu mẫu công khai nếu có.
+
+  - type: input
+    id: display_code
+    attributes:
+      label: Tên hoặc mã biểu mẫu hiển thị
+      placeholder: Ví dụ 05/KK-TNCN
+    validations:
+      required: true
+
+  - type: input
+    id: internal_code
+    attributes:
+      label: Mã nội bộ trong XML
+      description: Ví dụ `maTKhai`; không điền mã hồ sơ/giao dịch cá nhân.
+      placeholder: Ví dụ 864
+    validations:
+      required: true
+
+  - type: input
+    id: xml_version
+    attributes:
+      label: Phiên bản XML
+      placeholder: Ví dụ 2.9.3
+    validations:
+      required: true
+
+  - type: input
+    id: root_element
+    attributes:
+      label: Root element
+      placeholder: Ví dụ HSoThueDTu
+    validations:
+      required: true
+
+  - type: dropdown
+    id: current_behavior
+    attributes:
+      label: Hành vi hiện tại
+      options:
+        - Không mở được
+        - Nhận diện sai loại/mã
+        - Chỉ hiện structured view
+        - Có bố cục riêng nhưng thiếu/sai chỉ tiêu
+        - In/PDF sai
+        - Khác
+    validations:
+      required: true
+
+  - type: textarea
+    id: details
+    attributes:
+      label: Cấu trúc và khác biệt quan sát được
+      description: Chỉ ghi tên element/chỉ tiêu và hành vi; không chép giá trị người nộp thuế.
+    validations:
+      required: true
+
+  - type: input
+    id: official_source
+    attributes:
+      label: Nguồn biểu mẫu công khai
+      description: Link văn bản hoặc biểu mẫu chính thức nếu có.
+
+  - type: textarea
+    id: synthetic_fixture
+    attributes:
+      label: Fixture tổng hợp (không bắt buộc)
+      description: Link branch/PR chứa fixture tối thiểu đã ẩn danh hoàn toàn; không đính kèm XML thật vào Issue.
+
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Xác nhận nguồn và dữ liệu
+      options:
+        - label: Tôi không gửi dữ liệu người nộp thuế, chữ ký/chứng thư số hoặc mã định danh thật.
+          required: true
+        - label: Tôi không gửi XSLT, CSS, font, icon, ảnh hoặc tài sản khác từ bộ cài ứng dụng gốc.
+          required: true
+        - label: Tôi phân biệt rõ điều đã quan sát với điều chưa được kiểm chứng.
+          required: true

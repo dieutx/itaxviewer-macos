@@ -1,0 +1,104 @@
+name: Báo lỗi ứng dụng
+description: Báo lỗi mở XML, hiển thị, in, xuất PDF hoặc thao tác trên macOS.
+title: "[Lỗi] "
+labels:
+  - lỗi
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Cảm ơn bạn đã báo lỗi. **Không đính kèm hồ sơ thuế thật, chữ ký số hoặc ảnh chụp có dữ liệu người nộp thuế.**
+        Hãy dùng fixture tổng hợp/đã ẩn danh và kiểm tra lại thủ công trước khi tải lên.
+
+  - type: input
+    id: app_version
+    attributes:
+      label: Phiên bản ứng dụng
+      description: Xem trong thông tin ứng dụng hoặc tên release đã tải.
+      placeholder: Ví dụ 1.0.0
+    validations:
+      required: true
+
+  - type: dropdown
+    id: macos_version
+    attributes:
+      label: Phiên bản macOS
+      options:
+        - macOS 16
+        - macOS 15 Sequoia
+        - macOS 14 Sonoma
+        - macOS 13 Ventura
+        - Khác
+    validations:
+      required: true
+
+  - type: dropdown
+    id: architecture
+    attributes:
+      label: Kiến trúc máy
+      options:
+        - Apple Silicon (M1/M2/M3/M4/...)
+        - Intel
+        - Không rõ
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Khu vực gặp lỗi
+      options:
+        - Cài đặt / mở ứng dụng
+        - Mở hoặc nhận diện XML
+        - Hiển thị biểu mẫu
+        - In
+        - Xuất PDF
+        - Kéo thả / Open With
+        - Thông tin chữ ký
+        - Khác
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Hiện tượng
+      description: Mô tả điều đã xảy ra. Không chép nội dung hoặc giá trị trong XML thật.
+      placeholder: Ứng dụng hiển thị..., sau đó...
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Các bước tái hiện
+      placeholder: |
+        1. Mở ứng dụng
+        2. Chọn fixture tổng hợp loại...
+        3. Nhấn...
+        4. Quan sát...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Kết quả mong đợi
+    validations:
+      required: true
+
+  - type: textarea
+    id: safe_evidence
+    attributes:
+      label: Bằng chứng an toàn (không bắt buộc)
+      description: Chỉ thêm log không có giá trị XML, ảnh đã che sạch dữ liệu, hoặc fixture tổng hợp tối thiểu.
+
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Xác nhận quyền riêng tư
+      options:
+        - label: Tôi đã kiểm tra và không gửi hồ sơ thuế thật, dữ liệu nhận dạng, chữ ký/chứng thư số, secret hoặc private key.
+          required: true
+        - label: Tôi đã tìm Issue trùng trước khi tạo báo cáo này.
+          required: true

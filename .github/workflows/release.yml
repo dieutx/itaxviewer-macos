@@ -1,0 +1,124 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-${{ github.ref_name }}
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: macos-14
+    timeout-minutes: 40
+
+    steps:
+      - name: Checkout full history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Require a tag on main
+        run: |
+          set -euo pipefail
+          git fetch origin main --tags
+          if ! git merge-base --is-ancestor "$GITHUB_SHA" origin/main; then
+            echo "Release tags must point to a commit reachable from main." >&2
+            exit 1
+          fi
+
+      - name: Toolchain
+        run: |
+          xcodebuild -version
+          swift --version
+
+      - name: Unit tests
+        working-directory: iTaxViewerMac
+        run: swift test
+
+      - name: Public repository safety check
+        run: python3 .github/scripts/check_public_safety.py
+
+      - name: Field-mapping harness
+        run: |
+          python3 iTaxViewerMac/scripts/validate_fixtures.py
+          python3 docs/reverse-engineering/tools/test_extract_xslt_specs.py
+
+      - name: Bundled sample integration tests
+        working-directory: iTaxViewerMac
+        env:
+          ITAX_FIXTURE_DIR: ../test-data
+        run: |
+          python3 scripts/validate_directory.py ../test-data
+          swift test --filter ExternalFixturesTests
+
+      - name: Build universal .app and DMG
+        working-directory: iTaxViewerMac
+        run: |
+          chmod +x scripts/build_app.sh
+          scripts/build_app.sh --universal --dmg
+
+      - name: Launch the native app bundle
+        working-directory: iTaxViewerMac
+        run: bash scripts/run_app_qa.sh
+
+      - name: Native WebKit print and PDF smoke checks
+        working-directory: iTaxViewerMac
+        timeout-minutes: 4
+        run: python3 scripts/run_native_qa.py
+
+      - name: Package release assets
+        working-directory: iTaxViewerMac
+        run: |
+          set -euo pipefail
+          ditto -c -k --sequesterRsrc --keepParent \
+            build/iTaxViewerMac.app build/iTaxViewerMac-universal.zip
+          {
+            echo "Tag: $GITHUB_REF_NAME"
+            echo "Commit: $GITHUB_SHA"
+            echo "Run: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+            xcodebuild -version
+            swift --version
+            lipo -archs build/iTaxViewerMac.app/Contents/MacOS/iTaxViewerMac
+            codesign --verify --deep --strict --verbose=2 build/iTaxViewerMac.app
+            echo "Ad-hoc signed; not notarized. Native UI, print, and PDF parity require manual verification."
+          } > build/BUILD-INFO.txt 2>&1
+          cd build
+          shasum -a 256 iTaxViewerMac-universal.zip iTaxViewerMac-unsigned.dmg > SHA256SUMS.txt
+
+      - name: Create GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          notes="docs/releases/${GITHUB_REF_NAME}.md"
+          args=(release create "$GITHUB_REF_NAME"
+            --verify-tag
+            --title "iTax Viewer cho macOS ${GITHUB_REF_NAME#v}"
+            --latest
+            iTaxViewerMac/build/iTaxViewerMac-unsigned.dmg
+            iTaxViewerMac/build/iTaxViewerMac-universal.zip
+            iTaxViewerMac/build/BUILD-INFO.txt
+            iTaxViewerMac/build/SHA256SUMS.txt)
+          if [[ -f "$notes" ]]; then
+            args+=(--notes-file "$notes")
+          else
+            args+=(--generate-notes)
+          fi
+          gh "${args[@]}"
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: iTaxViewerMac-release-${{ github.ref_name }}
+          path: |
+            iTaxViewerMac/build/iTaxViewerMac-universal.zip
+            iTaxViewerMac/build/iTaxViewerMac-unsigned.dmg
+            iTaxViewerMac/build/BUILD-INFO.txt
+            iTaxViewerMac/build/SHA256SUMS.txt
+          if-no-files-found: error

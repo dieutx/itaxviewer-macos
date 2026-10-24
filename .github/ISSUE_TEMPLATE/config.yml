@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Hỏi đáp và hỗ trợ sử dụng
+    url: https://github.com/dieutx/itaxviewer-macos/discussions
+    about: Đặt câu hỏi, chia sẻ kinh nghiệm hoặc trao đổi ý tưởng chưa thành yêu cầu cụ thể.
+  - name: Báo cáo lỗ hổng riêng tư
+    url: https://github.com/dieutx/itaxviewer-macos/security/advisories/new
+    about: Không đăng lỗ hổng chưa vá hoặc dữ liệu nhạy cảm trong Issue công khai.

@@ -10,8 +10,8 @@ Không cần `unrar`: **7-Zip 26.05** đọc được cả RAR (cũ) và RAR5.
 cd "/c/Program Files (x86)/iTax Viewer/data/xslt"
 find . -name "*.rar" -print0 | while IFS= read -r -d '' f; do
   slug=$(echo "${f#./}" | sed 's#/#__#g; s#\.rar$##')
-  mkdir -p "/c/Users/dieut/itaxviwer-macos/_re/rar/$slug"
-  "/c/Program Files/7-Zip/7z.exe" x -y -o"/c/Users/dieut/itaxviwer-macos/_re/rar/$slug" "$f"
+  mkdir -p "/c/path/to/itaxviewer-macos/_re/rar/$slug"
+  "/c/Program Files/7-Zip/7z.exe" x -y -o"/c/path/to/itaxviewer-macos/_re/rar/$slug" "$f"
 done
 ```
 

@@ -28,6 +28,9 @@ jobs:
           xcodebuild -version
           swift --version
 
+      - name: Public repository safety check
+        run: python3 .github/scripts/check_public_safety.py
+
       - name: Unit tests
         working-directory: iTaxViewerMac
         run: swift test
